@@ -1,0 +1,13 @@
+{
+    "extensions": {
+        "DynamicItemIndexListener": { 
+            "enabled": true,
+            "context": 
+            {
+                "columnName": "temp",
+                "columnTitle": "Temp14",
+                "order": 1 
+            }
+        }
+    }
+}

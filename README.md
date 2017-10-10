@@ -1,2 +1,2 @@
 # sitefinity-ui-extensions
-Sitefinity Iris extensions
+Sitefinity Administration reinvention extensions

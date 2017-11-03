@@ -18,13 +18,13 @@ npm start
 ```
 The app is now served on [localhost](http://localhost:3000). When you first navigate to the url you will be prompted to configure the Sitefinity instance you will be working with. Fill the url field and click save. This configuration is saved and can be changed later by navigating to http://localhost:3000/config. 
 
-Once this setup is completed you are ready to go. The server is in watch mode and will recompile and serve your changes immediately.
+Once this setup is completed you are ready to go. The server is set up to be in watch mode - it will automatically recompile and serve the newly created files.
 
-When you are done developing execute 
+When you are done developing execute:
 ```
 npm run build
 ```
-An extension bundle (extensions.bundle.js) will be produced in the dist folder. Upload this file to the root if the Sitefintiy web application. After that just refresh your Sitefinity page.
+A JavaScript file (extensions.bundle.js) will be produced in the dist folder. Upload this file to the root if the Sitefintiy web application. After that just refresh your Sitefinity page.
 
 ---
 ### Examples

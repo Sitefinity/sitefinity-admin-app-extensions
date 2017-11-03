@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FieldBase } from "../node_modules/iris/app/api/v1/custom-fields/field-base";
+import { FieldBase } from "sitefinity-admin-app/app/api/v1/custom-fields/field-base";
 
 @Component({
     template: require("./custom-field-readonly.component.html"),

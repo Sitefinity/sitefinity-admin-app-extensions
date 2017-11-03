@@ -21,33 +21,33 @@ ImportPlugin.prototype.apply = function (compiler) {
     this.options.source = "dll-reference " + "iris";
     externals[this.options.source] = "iris";
     compiler.apply(new ExternalsPlugin("var", externals));
-    var alteredModules = {};
+    var delegatedModuleCache = {};
+    var delegatedModuleCounter = 0;
 
     compiler.plugin("compile", function (params) {
         var nmf = params.normalModuleFactory;
 
         // fake counter to get the modules to have some ids
-        var counter = 0;
         nmf.plugin("module", function (module) {
             if (module.libIdent) {
                 var request = module.libIdent(this.options);
 
                 // TODO: for debuggin only. remove this once extensions are separated into their own repo
                 if (request.startsWith("../dist")) {
-                    request = request.replace("../dist", "./node_modules/iris");
+                    request = request.replace("../dist", "./node_modules/sitefinity-admin-app");
                 }
 
                 const found = this.options.modules.find(x => x === request);
                 if (found) {
-                    var newValue;
-                    if (alteredModules[module.request]) {
-                        newValue = alteredModules[module.request];
+                    let delegatedModuleId = null;
+                    if (delegatedModuleCache.hasOwnProperty(request)) {
+                        delegatedModuleId = delegatedModuleCache[request];
                     } else {
-                        newValue = ++counter;
-                        alteredModules[module.request] = newValue;
+                        delegatedModuleId = ++delegatedModuleCounter;
+                        delegatedModuleCache[request] = delegatedModuleId;
                     }
 
-                    return new DelegatedModule(this.options.source, newValue, request);
+                    return new DelegatedModule(this.options.source, delegatedModuleId, request);
                 }
             }
             return module;
@@ -60,15 +60,15 @@ ImportPlugin.prototype.apply = function (compiler) {
         compilation.dependencyFactories.set(DelegatedSourceDependency, normalModuleFactory);
     });
 
+    let optimizeCounter = 1;
     compiler.plugin("compilation", function (compilation) {
         compilation.plugin("optimize-module-ids", function (modules) {
             modules.forEach(function (module) {
                 if (module.userRequest && module.userRequest.endsWith("__extensions_index.ts")) {
                     module.id = initialModuleId;
-                }
-                else {
+                } else {
                     if (module.id <= initialModuleId) {
-                        module.id = module.id + initialModuleId + 1;
+                        module.id = initialModuleId + optimizeCounter++;
                     }
                 }
             });

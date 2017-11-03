@@ -1,15 +1,15 @@
-import { Extension } from "./node_modules/iris/app/api";
+import { Extension } from "sitefinity-admin-app/app/api";
 
 import { GridExtenderModule } from "./grid-extender";
-import { LoggerModule } from "./custom-logger";
 import { CustomFieldsModule } from "./custom-fields";
+import { OperationsExtenderModule } from "./operations-extender";
 
 export class SamplesExtension implements Extension {
     getNgModules(): Array<any> {
         return [
             GridExtenderModule,
-            LoggerModule,
-            CustomFieldsModule
+            CustomFieldsModule,
+            OperationsExtenderModule
         ];
     }
 }

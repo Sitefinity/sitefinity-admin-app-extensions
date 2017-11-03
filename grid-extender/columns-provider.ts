@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { ColumnsProvider, ColumnModel, COLUMNS_TOKEN } from "./../node_modules/iris/app/api";
+import { ColumnsProvider, ColumnModel, COLUMNS_TOKEN } from "./../node_modules/sitefinity-admin-app/app/api"; // TODO: change to "sitefinity-admin-app/app/api" once the app is published on npm
 import { ImageComponent } from "./image.component";
 import { ClassProvider } from "@angular/core";
 

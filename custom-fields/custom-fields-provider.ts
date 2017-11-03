@@ -1,8 +1,8 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ValidatorFn } from "@angular/forms";
 
-import { FieldsProvider, FieldRegistryKey } from "iris/app/api";
-import { FieldRegistration } from "iris/app/api/v1/custom-fields/field-registration";
+import { FieldsProvider, FieldRegistryKey, Entity } from "sitefinity-admin-app/app/api";
+import { FieldRegistration } from "sitefinity-admin-app/app/api/v1/custom-fields/field-registration";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";
@@ -19,11 +19,11 @@ export class CustomFieldsProvider extends FieldsProvider {
         this.registerCustomComponents();
     }
 
-    getFieldRegistration(fieldRegistryKey: FieldRegistryKey): FieldRegistration {
+    getFieldRegistration(fieldRegistryKey: FieldRegistryKey, entity: Entity): FieldRegistration {
         const registration: FieldRegistration = this.findRegistration(fieldRegistryKey);
 
         if (!registration) {
-            const defaultRegistration: FieldRegistration = super.getFieldRegistration(fieldRegistryKey);
+            const defaultRegistration: FieldRegistration = super.getFieldRegistration(fieldRegistryKey, entity);
             return defaultRegistration;
         }
 

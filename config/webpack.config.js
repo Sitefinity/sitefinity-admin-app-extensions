@@ -27,7 +27,7 @@ module.exports = {
     plugins: [
         new ImportPlugin({
             context: ".",
-            manifest: require("../../dist/manifest.json")
+            manifest: require("sitefinity-admin-app/manifest.json")
         })
     ],
 

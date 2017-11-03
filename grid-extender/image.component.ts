@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataContextComponent } from "./../node_modules/iris/app/api";
+import { DataContextComponent } from "sitefinity-admin-app/app/api";
 
 // Get a collection with images in base64 format from image-data.json file
 const imageData = require("./image-data.json");

@@ -1,7 +1,7 @@
 {
-  "name": "sitefinity-admin-app-extensions",
+  "name": "iris-extensions",
   "version": "0.0.1",
-  "description": "Provides extensions for the reinvented administration of Sitefinity(sitefinity-admin-app)",
+  "description": "Provides extensions for the backend of Sitefinity(Iris)",
   "main": "main.ts",
   "scripts": {
     "build": "webpack --config config/webpack.config.js --display-modules",
@@ -9,8 +9,7 @@
   },
   "keywords": [
     "extensions",
-    "sitefinity-admin-app",
-    "extensions"
+    "iris"
   ],
   "license": "ISC",
   "devDependencies": {
@@ -35,7 +34,6 @@
     "webpack-dev-server": "2.7.1",
     "webpack-sources": "1.0.1"
   },
-
   "peerDependencies": {
     "@angular/animations": "4.3.5",
     "@angular/common": "4.3.5",

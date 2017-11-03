@@ -27,7 +27,7 @@ This mappings file is used during the import process to replace all the "require
 e.g. Mappings file:
 ```javascript
 {
-	"./node_modules/iris/api/v1/column.js": 1,
+	"./node_modules/sitefinity_admin_app/api/v1/column.js": 1,
 	"./node_modules/rxjs/Observable.js": 2
 }
 ```

@@ -16,13 +16,16 @@ You are not limited to these, you can extend ..... (more info here). Screenshots
 ### Getting started
 
 The workflow is simple. Clone or download this repository to a location of your choice and execute the following commands in the xxxxx folder.
-> npm install
-
-> npm start
-
+```
+npm install
+```
+```
+npm start
+```
 The app is now served on port 3000 (http://localhost:3000). When you first navigate to the url you will be prompted to configure the Sitefinity instance you will be working with. Fill the url field and click save. This configuration is saved and can be changed later by navigating to http://localhost:3000/config. Once this setup is completed you are ready to go. The server is in watch mode and will recompile and serve your changes immediately.
 
 Once you are done developing you can execute 
-> npm build
-
+```
+npm build
+```
 An extension bundle will be produced. This is the only file you need. Just upload it to the root folder of your Sitefinity instance and you will have your extended UI.

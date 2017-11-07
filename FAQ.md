@@ -1,3 +1,4 @@
+
 # FAQ 
  
  
@@ -25,6 +26,7 @@ Once you switch to the new interface, it will be available for all Sitefinity CM
 
 #### How does The Admin App work? 
 > The Admin App is a Single Page Application (SPA) that works with AngularJS 4.0, TypeScript, and OData web services to manage content. As a result, the Admin App enables you to implement a better security model, benefit from better performance, and leverage fluid and responsive user interface. 
+
 
 #### What do I need to install the Admin App? 
 > The Admin App is bundled in Sitefinity CMS, so you just need to upgrade or create a new project. If you want to extend the Admin App, you can leverage the SDK that uses the NPM package manager. For details, see the next question.
@@ -66,4 +68,5 @@ In case you want to develop extensions of the Admin App, Sitefinity CMS provides
 * New Screens
 * Module builder modifications
 * Definitions
+
 However, in case you made changes in the editing actions, dialogs, and grids, you need to port them to new Admin App by developing new extensions. 

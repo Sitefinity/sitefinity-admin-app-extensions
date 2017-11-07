@@ -1,8 +1,8 @@
 ## Sitefinity Admin App sample extensions
 
-Leveraging the API-first approach of the Admin App, you can extend and add the functionality, for example, the *Actions* menu, the grid, or editing of items. The examples in this repository demonstrate the main extensibility points of the API.
+Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or for editing of items. The examples in this repository demonstrate the main extensibility points of the API.
 
-You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and checking it in your project for testing and production deployment.
+You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
 ### Prereqiusities
 
@@ -10,7 +10,7 @@ Install the [node package manager(npm)](https://docs.npmjs.com/getting-started/i
 
 ### Quick start
 
-1. Clone or download this repository to a location of your choice and execute the following commands in the repository **root** folder:
+1. Clone or download this repository to a location of your choice and execute the following command in the repository **root** folder:
 ```
 npm install
 ```

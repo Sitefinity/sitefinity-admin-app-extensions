@@ -44,7 +44,7 @@ Example extensions in this project that you can work with include:
 
   Demonstrates how to replace a default field with a custom one that you can see when creaing and editing items. You can find the sample code in the **custom-fields** folder.
 
-**NOTE** By default, Sitefinity CMS comes with fields for all data types. This sample enables you to create a specific field in case your scenario requires it.
+**NOTE:** By default, Sitefinity CMS comes with fields for all data types. This sample enables you to create a specific field in case your scenario requires it.
 
 ### API
 

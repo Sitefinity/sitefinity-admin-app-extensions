@@ -6,7 +6,7 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 ### Prereqiusities
 
-Install the [node package manager(npm)](https://docs.npmjs.com/getting-started/installing-node).
+Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
 
 ### Quick start
 

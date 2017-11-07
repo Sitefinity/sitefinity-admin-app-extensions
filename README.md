@@ -1,46 +1,49 @@
-## Sitefinity Admin App sample extensions
+**# Sitefinity Admin App sample extensions
 
-This repository holds the code samples for extending the Sitefinity Admin App.
+Leveraging the API-first approach of the Admin App, you can extend and add the functionality, for example, the *Actions* menu, the grid, or editing of items. The examples in this repository demonstrate the main extensibility points of the API.
+
+You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and checking it in your project for testing and production deployment.
 
 ### Prereqiusities
 
-Install the [node package manager(npm)](https://docs.npmjs.com/getting-started/installing-node)
+Install the [node package manager(npm)](https://docs.npmjs.com/getting-started/installing-node).
 
 ---
-### Getting started
+### Quick start
 
-Clone or download this repository to a location of your choice and execute the following commands in the repository root folder:
+1. Clone or download this repository to a location of your choice and execute the following commands in the repository **root** folder:
 ```
 npm install
 ```
+
+2. Start the development server by executing the following command:
 ```
 npm start
 ```
-The app is now served on [localhost](http://localhost:3000). When you first navigate to the url you will be prompted to configure the Sitefinity instance you will be working with. Fill the url field and click save. This configuration is saved and can be changed later by navigating to http://localhost:3000/config. 
+The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to http://localhost:3000/config. 
 
-Once this setup is completed you are ready to go. The server is set up to be in watch mode - it will automatically recompile and serve the newly created files.
+Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically recompiles and serves any newly created files.
 
-When you are done developing execute:
+3. When you are done developing execute the following command:
 ```
 npm run build
 ```
-A JavaScript file (extensions.bundle.js) will be produced in the dist folder. Upload this file to the root if the Sitefintiy web application. After that just refresh your Sitefinity page.
+As a result, a JavaScript file (**extensions.bundle.js**) is generated in the **dist** folder.
+
+4. Register your extensions with the Admin APp by upload this file to the **extensions.bundle.js** file in the **root** of the Sitefintiy CMS web application and then refresh your Sitefinity CMS page.
 
 ---
 ### Examples
 
-Example extensions included in the project are:
-* Custom action menu command - demonstates how to register a custom action menu command. You can find the example code in the operations-extender folder.
-* Custom column in the grid - demonstates how to add your own column in the grid. The example is just adding a column with random images in the item list. The code is in the grid-extender folder.
-* Replacing an OOB field with a custom one (during edit/create etc..) - we are providing fields for all data types, but if you have an advanced scenario you can hook up here. Files are located in the custom-fields folder
+Example extensions in this project that you can work with include:
+* Custom *Actions* menu
+Demonstates how to register a custom command in the *Actions* menu of an item. You can find the sample code in the **operations-extender** folder.
+* Custom grid
+Demonstates how to add a custom column in the grid. Using this sample, you add a column with random images in the item list. You can find the sample code is in the **grid-extender** folder.
+* Custom field
+Demonstrates how to replace a default field with a custom one that you can see when creaing and editing items. You can find the sample code in the **custom-fields** folder.
+**NOTE** By default, Sitefinity CMS comes with fields for all data types. This sample enables you to create a specific field in case your scenario requires it.
 
-Screenshots from the examples?
+### API
 
-### How it works
-In order for the Admin App to know of the custom extensions, they need to be registered with it. This happens through [NgModules](https://angular.io/guide/ngmodule) and [Angular's DI](https://angular.io/guide/dependency-injection). We have provided specific tokens that can be used to register custom providers, which are then invoked by the Admin App.
-
-The "\_\_extensions_index.ts" file is the starting point where all the NgModules are registered. These modules are registered with the AdminApp before the application boots.
-
-### Api
-
-The custom extensions can use the Angular APIs inside the Admin App as in any other Angular project.
+As with any other Angular project, custom extensions can use the Angular APIs inside the Admin App.

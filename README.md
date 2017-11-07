@@ -1,4 +1,4 @@
-**# Sitefinity Admin App sample extensions
+## Sitefinity Admin App sample extensions
 
 Leveraging the API-first approach of the Admin App, you can extend and add the functionality, for example, the *Actions* menu, the grid, or editing of items. The examples in this repository demonstrate the main extensibility points of the API.
 
@@ -8,7 +8,6 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 Install the [node package manager(npm)](https://docs.npmjs.com/getting-started/installing-node).
 
----
 ### Quick start
 
 1. Clone or download this repository to a location of your choice and execute the following commands in the repository **root** folder:
@@ -30,18 +29,21 @@ npm run build
 ```
 As a result, a JavaScript file (**extensions.bundle.js**) is generated in the **dist** folder.
 
-4. Register your extensions with the Admin APp by upload this file to the **extensions.bundle.js** file in the **root** of the Sitefintiy CMS web application and then refresh your Sitefinity CMS page.
+4. Register your extensions with the Admin App by upload this file to the **extensions.bundle.js** file in the **root** of the Sitefintiy CMS web application and then refresh your Sitefinity CMS page.
 
----
 ### Examples
 
 Example extensions in this project that you can work with include:
 * Custom *Actions* menu
-Demonstates how to register a custom command in the *Actions* menu of an item. You can find the sample code in the **operations-extender** folder.
+
+  Demonstates how to register a custom command in the *Actions* menu of an item. You can find the sample code in the **operations-    extender** folder.
 * Custom grid
-Demonstates how to add a custom column in the grid. Using this sample, you add a column with random images in the item list. You can find the sample code is in the **grid-extender** folder.
+
+  Demonstates how to add a custom column in the grid. Using this sample, you add a column with random images in the item list. You can find the sample code is in the **grid-extender** folder.
 * Custom field
-Demonstrates how to replace a default field with a custom one that you can see when creaing and editing items. You can find the sample code in the **custom-fields** folder.
+
+  Demonstrates how to replace a default field with a custom one that you can see when creaing and editing items. You can find the sample code in the **custom-fields** folder.
+
 **NOTE** By default, Sitefinity CMS comes with fields for all data types. This sample enables you to create a specific field in case your scenario requires it.
 
 ### API

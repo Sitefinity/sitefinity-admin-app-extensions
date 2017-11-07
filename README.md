@@ -1,4 +1,4 @@
-## Sitefinity Admin App sample extensions
+ ## Sitefinity CMS Admin App sample extensions
 
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or for editing of items. The examples in this repository demonstrate the main extensibility points of the API.
 

@@ -1,8 +1,8 @@
- ## Sitefinity CMS Admin App sample extensions
+  ## Sitefinity CMS Admin App sample extensions
 
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or for editing of items. The examples in this repository demonstrate the main extensibility points of the API.
 
-You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
+You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, Webstorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
 ### Prereqiusities
 
@@ -19,7 +19,7 @@ npm install
 ```
 npm start
 ```
-The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to http://localhost:3000/config. 
+The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config] (http://localhost:3000/config). 
 
 Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically recompiles and serves any newly created files.
 
@@ -43,8 +43,6 @@ Example extensions in this project that you can work with include:
 * Custom field
 
   Demonstrates how to replace a default field with a custom one that you can see when creaing and editing items. You can find the sample code in the **custom-fields** folder.
-
-**NOTE:** By default, Sitefinity CMS comes with fields for all data types. This sample enables you to create a specific field in case your scenario requires it.
 
 ### API
 

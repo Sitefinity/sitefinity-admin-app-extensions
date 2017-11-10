@@ -14,25 +14,25 @@
 > The Admin App reinvents the way you:
 * Browse and edit content
 * Embed media
-* Insert or relate images from libraries
+c* Insert or relate images from libraries
 * Implement your workflow
 * Schedule publishing
 Sitefinity CMS ODATA web services are also updated, so that you can manage content easier and help you manage your integrations and automations.
+
 **NOTE:** Keep in mind that the new Admin App is in BETA, so it currently only works with the default system language. 
 
 #### How do I turn on the new Admin App? 
 > In Sitefinity CMS 10.2, you simply navigate to *Administration* and choose *Switch to the new interface*.
 Once you switch to the new interface, it will be available for all Sitefinity CMS users. You can always switch back to the classic interface.
-
 #### How does The Admin App work? 
-> The Admin App is a Single Page Application (SPA) that works with AngularJS 4.0, TypeScript, and OData web services to manage content. As a result, the Admin App enables you to implement a better security model, benefit from better performance, and leverage fluid and responsive user interface. 
+> The Admin App is a Single Page Application (SPA) that works with Angular 4.0, TypeScript, and OData web services to manage content. As a result, the Admin App enables you to implement a better security model, benefit from better performance, and leverage fluid and responsive user interface. 
 
 
 #### What do I need to install the Admin App? 
 > The Admin App is bundled in Sitefinity CMS, so you just need to upgrade or create a new project. If you want to extend the Admin App, you can leverage the SDK that uses the NPM package manager. For details, see the next question.
 
 #### How do I install the SDK? 
-> To develop extensions of the Admin App, you need the NPM package manager version 4 or newer, part of the *Node.js* installation. For more information, see Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). 
+> To develop extensions of the Admin App, you need the NPM package manager version 4 or newer, part of the *Node.js* installation. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). 
 We recommend to update the *Node.js* to latest version using this command line: 
 **npm install npm@latest -g**
 
@@ -48,7 +48,8 @@ In case you want to develop extensions of the Admin App, Sitefinity CMS provides
 
 #### What functionality can I extend and how?
 > You can leverage the Admin App SDK for extension development, along with few samples that demonstrate the main extension points in the UI, such as the *Actions* menu, the grid, and the content editing experience.
-**NOTE:** You are welcome to provide feedback about the samples, as well as for your extensibility needs. 
+ 
+ **NOTE:** You are welcome to provide feedback about the samples, as well as for your extensibility needs. 
 
 #### What IDE should I use - VS, VS Code, or Notepad? 
 > For extension development, you can use any editor that you are comfortable working with. For example, VS Code has excellent TypeScript support and clean UI.
@@ -63,7 +64,7 @@ In case you want to develop extensions of the Admin App, Sitefinity CMS provides
 > You can leverage any JavaScript or TypeScript testing framework. 
 
 #### I made customizations to the classic interface, can I apply them in the new Admin App? 
-> When working with the Admin App in integrated mode (switching on the new iterfcae via the *Administration* panel), the modifications you made are present in the new Admin App. This includes:
+> When working with the Admin App in integrated mode (switching on the new interface via the *Administration* panel), the modifications you made are present in the new Admin App. This includes:
 * Menus
 * New Screens
 * Module builder modifications

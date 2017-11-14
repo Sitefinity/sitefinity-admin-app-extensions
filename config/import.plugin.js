@@ -15,8 +15,8 @@ function ImportPlugin(options) {
 ImportPlugin.prototype.apply = function (compiler) {
 
     var externals = {};
-    this.options.source = "dll-reference " + "iris";
-    externals[this.options.source] = "iris";
+    this.options.source = "dll-reference " + "adminapp";
+    externals[this.options.source] = "adminapp";
     compiler.apply(new ExternalsPlugin("var", externals));
     var delegatedModuleCache = {};
     var delegatedModuleCounter = 0;
@@ -24,7 +24,6 @@ ImportPlugin.prototype.apply = function (compiler) {
     compiler.plugin("compile", function (params) {
         var nmf = params.normalModuleFactory;
 
-        // fake counter to get the modules to have some ids
         nmf.plugin("module", function (module) {
             if (module.libIdent) {
                 var request = module.libIdent(this.options);

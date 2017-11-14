@@ -1,5 +1,5 @@
-import { FieldRegistryKey } from "sitefinity-admin-app/app/api";
-import { FieldRegistration } from "sitefinity-admin-app/app/api/v1/custom-fields/field-registration";
+import { FieldRegistryKey } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 export interface RegistrationPair {
     key: FieldRegistryKey;

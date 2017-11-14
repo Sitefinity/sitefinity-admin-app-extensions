@@ -1,4 +1,4 @@
 import { ValidatorFn } from "@angular/forms";
-import { SettingsBase } from "sitefinity-admin-app/app/api/v1/custom-fields/field-settings-base";
+import { SettingsBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 export class CustomShortTextSettings extends SettingsBase { }

@@ -29,7 +29,7 @@
     "html-loader": "0.4.5",
     "json-loader": "0.5.4",
     "rxjs": "5.4.3",
-    "progress-sitefinity-adminapp-sdk": "0.1.0",
+    "progress-sitefinity-adminapp-sdk": "0.1.1",
     "tslib": "1.7.1",
     "typescript": "2.3.3",
     "webpack": "3.4.0",

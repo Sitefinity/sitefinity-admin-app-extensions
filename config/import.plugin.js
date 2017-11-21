@@ -14,12 +14,9 @@ function ImportPlugin(options) {
 
 ImportPlugin.prototype.apply = function (compiler) {
 
-    // TODO: remove this
-    // TODO: try to remove the delgating module and replace the webpack require directly
-
     var externals = {};
-    this.options.source = "dll-reference " + "iris";
-    externals[this.options.source] = "iris";
+    this.options.source = "dll-reference " + "adminapp";
+    externals[this.options.source] = "adminapp";
     compiler.apply(new ExternalsPlugin("var", externals));
     var delegatedModuleCache = {};
     var delegatedModuleCounter = 0;
@@ -27,15 +24,9 @@ ImportPlugin.prototype.apply = function (compiler) {
     compiler.plugin("compile", function (params) {
         var nmf = params.normalModuleFactory;
 
-        // fake counter to get the modules to have some ids
         nmf.plugin("module", function (module) {
             if (module.libIdent) {
                 var request = module.libIdent(this.options);
-
-                // TODO: for debuggin only. remove this once extensions are separated into their own repo
-                if (request.startsWith("../dist")) {
-                    request = request.replace("../dist", "./node_modules/sitefinity-admin-app");
-                }
 
                 const found = this.options.modules.find(x => x === request);
                 if (found) {
@@ -84,8 +75,6 @@ ImportPlugin.prototype.apply = function (compiler) {
                 });
 
                 chunk.ids = modifiedIds;
-                // hack to force webpack to output the extensions bundle as a single chunk
-                // TODO: check how this works with multiple chunks
                 if (chunk.name === extensionsKey) {
                     chunk.entrypoints[0] = {
                         name: "app",

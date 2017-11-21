@@ -1,8 +1,8 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ValidatorFn } from "@angular/forms";
 
-import { FieldsProvider, FieldRegistryKey, Entity } from "sitefinity-admin-app/app/api";
-import { FieldRegistration } from "sitefinity-admin-app/app/api/v1/custom-fields/field-registration";
+import { FieldsProvider, FieldRegistryKey, Entity } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";
@@ -46,7 +46,7 @@ export class CustomFieldsProvider extends FieldsProvider {
         const customInputKey: FieldRegistryKey = {
             fieldName: "Title",
             fieldType: "sf-short-text-default",
-            typeName: "titleonlies"
+            typeName: "newsitems"
         };
         const customInputRegistration: FieldRegistration = {
             writeComponent: CustomInputWriteComponent,

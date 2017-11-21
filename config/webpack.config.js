@@ -10,12 +10,12 @@ module.exports = {
     },
 
     output: {
-        path: path.join(__dirname, "../../dist/wwwroot"),
+        path: path.join(__dirname, "../dist"),
         filename: "./[name].bundle.js",
         pathinfo: true
     },
     devServer: {
-        contentBase: path.join(__dirname, "../../dist/wwwroot"),
+        contentBase: path.join(__dirname, "../node_modules/progress-sitefinity-adminapp-sdk/wwwroot"),
         inline: true,
         port: 3000,
         historyApiFallback: true,
@@ -27,7 +27,7 @@ module.exports = {
     plugins: [
         new ImportPlugin({
             context: ".",
-            manifest: require("sitefinity-admin-app/manifest.json")
+            manifest: require("progress-sitefinity-adminapp-sdk/manifest.json")
         })
     ],
 

@@ -1,4 +1,4 @@
-import { OperationsProvider, OperationsData, Operation, OPERATIONS_TOKEN, OperationsTarget, UrlService, URL_SERVICE } from "./../node_modules/sitefinity-admin-app/app/api"; // TODO: change to "sitefinity-admin-app/app/api" once the app is published on npm
+import { OperationsProvider, OperationsData, Operation, OPERATIONS_TOKEN, OperationsTarget, UrlService, URL_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable } from "rxjs";
 import { ClassProvider, Inject } from "@angular/core";
 

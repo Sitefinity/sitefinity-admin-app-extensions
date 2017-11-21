@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { Http } from "@angular/http";
-import { DataContextComponent, HTTP_ODATA_REQUEST_WRAPPER, RequestWrapper } from "sitefinity-admin-app/app/api";
+import { DataContextComponent, HTTP_ODATA_REQUEST_WRAPPER, RequestWrapper } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

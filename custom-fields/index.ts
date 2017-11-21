@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FieldsProvider } from "sitefinity-admin-app/app/api";
+import { FieldsProvider } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FormsModule } from "@angular/forms";
 
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";

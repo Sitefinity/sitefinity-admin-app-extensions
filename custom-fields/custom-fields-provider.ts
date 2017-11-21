@@ -46,7 +46,7 @@ export class CustomFieldsProvider extends FieldsProvider {
         const customInputKey: FieldRegistryKey = {
             fieldName: "Title",
             fieldType: "sf-short-text-default",
-            typeName: "titleonlies"
+            typeName: "newsitems"
         };
         const customInputRegistration: FieldRegistration = {
             writeComponent: CustomInputWriteComponent,

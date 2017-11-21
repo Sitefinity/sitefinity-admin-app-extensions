@@ -47,3 +47,5 @@ Example extensions in this project that you can work with include:
 ### API
 
 As with any other Angular project, custom extensions can use the Angular APIs inside the Admin App.
+
+## NOTE: The APIs for the Beta release of Sitefinity CMS Admin App are not final and are subject to change.

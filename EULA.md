@@ -47,13 +47,15 @@ You are granted the following limited license rights while You maintain, and are
 9. Entire Agreement
 
    This Agreement shall constitute the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior and contemporaneous communications regarding the subject matter hereof. Use of any purchase order or other Licensee document in connection herewith shall be for administrative convenience only and all terms and conditions stated therein shall be void and of no effect unless otherwise agreed to in writing by both parties. In cases where this license is being obtained through an approved third party, these terms shall supersede any third party license or purchase agreement.
-
+   
 10. No Assignment
-
-   You may not assign, sublicense, sub-contract, or otherwise transfer this Agreement, or any rights or obligations under it, without Telerik&#39;s prior written consent.
+   
+ 
+    You may not assign, sublicense, sub-contract, or otherwise transfer this Agreement, or any rights or obligations under it, without Telerik&#39;s prior written consent.
 
 11. Survival
 
+   
    Any provisions of the Agreement containing license restrictions, including but not limited to those related to the Program source code, warranties and warranty disclaimers, limitations of liability and/or indemnity terms, and any provision of the Agreement which, by its nature, is intended to survive shall remain in effect following any termination or expiration of the Agreement.
 
 12. Severability
@@ -64,4 +66,5 @@ You are granted the following limited license rights while You maintain, and are
 
    You expressly agree not to export or re-export Telerik Software or Your Integrated Product to any country, person, entity or end user subject to U.S. export restrictions. You specifically agree not to export, re-export, or transfer the Software to any country to which the U.S. has embargoed or restricted the export of goods or services, or to any national of any such country, wherever located, who intends to transmit or transport the products back to such country, or to any person or entity who has been prohibited from participating in U.S. export transactions by any federal agency of the U.S. government. You warrant and represent that neither the U.S.A. Bureau of Export Administration nor any other federal agency has suspended, revoked or denied Your export privileges.
 
+   
    YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND THIS AGREEMENT, AND UNDERSTAND THAT BY CONTINUING THE DOWNLOAD, INSTALLATION AND/OR USE OF THE SOFTWARE PRODUCT, BY LOADING OR RUNNING THE SOFTWARE PRODUCT, OR BY PLACING OR COPYING THE SOFTWARE ONTO YOUR COMPUTER HARD DRIVE, YOU AGREE TO BE BOUND BY THIS AGREEMENT&#39;S TERMS AND CONDITIONS. YOU FURTHER AGREE THAT, EXCEPT FOR WRITTEN SEPARATE AGREEMENTS BETWEEN TELERIK AND YOU, THIS AGREEMENT IS A COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE PARTIES.

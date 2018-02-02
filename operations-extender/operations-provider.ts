@@ -11,27 +11,21 @@ const CUSTOM_OPERATION: Operation = {
     Ordinal: -1,
     Category: "Custom",
     Description: null,
-    Link: null,
-    Parameters: null,
-    RequiresConfirmation: false
+    Link: null
 };
 
 class DynamicItemIndexOperationsProvider implements OperationsProvider {
     constructor(@Inject(URL_SERVICE) private urlService: UrlService) {}
 
     getOperations(data: OperationsData): Observable<Operation[]> {
-        let operation = CUSTOM_OPERATION;
         const operations = [];
         if (data.target === OperationsTarget.List && data.dataItem) {
-            const previewOperation = Object.assign({}, CUSTOM_OPERATION, { Link: this.urlService.getAbsoluteUrl(`/print-preview?entitySet=${data.type.entitySet}&id=${data.dataItem.Id}&provider=${data.type.provider.name}`) });
+            const url = `/print-preview?entitySet=${data.dataItem.metadata.setName}&id=${data.dataItem.key}` + (data.dataItem.provider ? `&provider=${data.dataItem.provider}` : ``);
+            const previewOperation = Object.assign({}, CUSTOM_OPERATION, { Link: this.urlService.getAbsoluteUrl(url) });
             operations.push(previewOperation);
         }
 
         return Observable.of(operations);
-    }
-
-    refresh(data: OperationsData): boolean {
-        return false;
     }
 }
 

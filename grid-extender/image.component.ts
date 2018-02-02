@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataContextComponent } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { DataContextComponent, DataContext } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 // Get a collection with images in base64 format from image-data.json file
 const imageData = require("./image-data.json");
@@ -8,11 +8,11 @@ const imageData = require("./image-data.json");
     template: require("./image.component.html")
 })
 export class ImageComponent implements OnInit, DataContextComponent {
+    context: DataContext;
     // Get dataItem context item from DataContextComponent interface
-    public dataItem;
     // Sample height of the image
-    private imageHeight = 50;
-    private imageSource;
+    protected imageHeight = 50;
+    protected imageSource;
 
     ngOnInit() {
         // Get a random image index from imageData

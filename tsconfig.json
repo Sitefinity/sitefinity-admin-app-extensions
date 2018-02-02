@@ -10,10 +10,14 @@
     "noImplicitAny": false,
     "noEmitHelpers": true,
     "importHelpers": true,
+    "noUnusedLocals": true,
     "outDir": "./../dist/wwwroot/app",
     "lib": [
       "es6",
       "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
   "files": [

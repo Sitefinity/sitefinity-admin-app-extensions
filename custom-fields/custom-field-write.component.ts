@@ -1,8 +1,5 @@
 import { Component } from "@angular/core";
 import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { Observable } from "rxjs/Observable";
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { StatusType } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 @Component({
     template: require("./custom-field-write.component.html"),

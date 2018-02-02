@@ -1,5 +1,4 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ValidatorFn } from "@angular/forms";
 
 import { FieldsProvider, FieldRegistryKey, Entity } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";

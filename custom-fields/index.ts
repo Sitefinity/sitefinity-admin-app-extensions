@@ -1,10 +1,9 @@
 import { NgModule } from "@angular/core";
-import { FieldsProvider } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FormsModule } from "@angular/forms";
 
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";
-import { CustomFieldsProvider, CUSTOM_FIELDS_PROVIDER } from "./custom-fields-provider";
+import { CUSTOM_FIELDS_PROVIDER } from "./custom-fields-provider";
 
 @NgModule({
     declarations: [

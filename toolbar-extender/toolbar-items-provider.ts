@@ -16,11 +16,8 @@ class CustomToolBarItemsProvider implements ToolBarItemsProvider {
         const CUSTOM_TOOLBAR_ITEM: ToolBarItem = {
             name: "Alert",
             tooltip: "Alert",
-            exec: (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                wordsCount();
-            }
+            ordinal: 5,
+            exec: wordsCount
         };
 
         return [CUSTOM_TOOLBAR_ITEM];

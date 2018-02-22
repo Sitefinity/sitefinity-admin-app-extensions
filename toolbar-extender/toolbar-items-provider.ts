@@ -2,7 +2,7 @@ import { ClassProvider } from '@angular/core';
 import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from 'progress-sitefinity-adminapp-sdk/app/api/v1';
 
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {
-    getToolBarItems(editorHost: any, tools: any[]): void {
+    getToolBarItems(editorHost: any): ToolBarItem[] {
         const wordsCount = () => {  
             const editor = editorHost.getKendoEditor();
             const count = editor.value() ? editor.value().split(' ').length : 0;
@@ -23,14 +23,14 @@ class CustomToolBarItemsProvider implements ToolBarItemsProvider {
             }
         };
 
-        tools.unshift(CUSTOM_TOOLBAR_ITEM);
+        return [CUSTOM_TOOLBAR_ITEM];
     }
 }
 
 /**
  * The provider registration for Angular's DI
  */
-export const EXTERNAL_OPERATIONS_PROVIDER: ClassProvider = {
+export const EXTERNAL_TOOLBAR_ITEMS_PROVIDER: ClassProvider = {
     multi: true,
     provide: TOOLBARITEMS_TOKEN,
     useClass: CustomToolBarItemsProvider

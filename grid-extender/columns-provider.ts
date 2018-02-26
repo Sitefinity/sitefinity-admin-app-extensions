@@ -11,7 +11,10 @@ class DynamicItemIndexColumnsProvider implements ColumnsProvider {
         const column: ColumnModel = {
             name: this.columnName,
             title: this.columnTitle,
-            component: ImageComponent
+            componentData: 
+            {
+                type: ImageComponent
+            }
         };
 
         return Observable.of([column]);

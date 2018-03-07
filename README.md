@@ -1,5 +1,7 @@
   ## Sitefinity CMS Admin App extensions development kit with samples
 
+  ## NOTE: The APIs for the Beta release of Sitefinity CMS Admin App are not final and are subject to change.
+
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or for editing of items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, Webstorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
@@ -47,5 +49,3 @@ Example extensions in this project that you can work with include:
 ### API
 
 As with any other Angular project, custom extensions can use the Angular APIs inside the Admin App.
-
-## NOTE: The APIs for the Beta release of Sitefinity CMS Admin App are not final and are subject to change.

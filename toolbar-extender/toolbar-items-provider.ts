@@ -1,5 +1,6 @@
 import { ClassProvider } from '@angular/core';
 import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from 'progress-sitefinity-adminapp-sdk/app/api/v1';
+require("./toolbar.css");
 
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {

@@ -1,0 +1,4 @@
+.k-editor-toolbar .k-i-Words-count::before {
+    /* Kendo UI Icons: https://docs.telerik.com/kendo-ui/styles-and-layout/icons-web */
+    content: "\e696";
+}

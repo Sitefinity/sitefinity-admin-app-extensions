@@ -39,7 +39,8 @@ module.exports = {
         rules: [
             { test: /\.ts$/, use:[ "awesome-typescript-loader" ] },
             { test: /\.html$/, use:[ "html-loader" ] },
-            { test: /\.json$/, use:[ "json-loader" ] }
+            { test: /\.json$/, use:[ "json-loader" ] },       
+            { test: /\.css$/, use: [ "style-loader", "css-loader" ] }
         ]
     }
 };

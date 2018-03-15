@@ -1,8 +1,13 @@
 import { Injectable, ClassProvider, Inject } from "@angular/core";
 import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, VideoLibraryProxy, VIDEO_LIBRARY_PROXY } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
-const DEFAULT_WIDTH = 300;
-const DEFAULT_HEIGHT = 300;
+require("./sf-video-toolbar.css");
+
+const TRAILING_BREAK = "<br class='k-br'>";
+
+export const ensureTrailingBreaks = (html: string): string => {
+    return `${TRAILING_BREAK}${html}${TRAILING_BREAK}`;
+};
 
 @Injectable()
 class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
@@ -24,9 +29,9 @@ class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
                             const videoElement = document.createElement("video");
 
                             videoElement.src = video.url;
-                            videoElement.width = DEFAULT_WIDTH;
-                            videoElement.height = DEFAULT_HEIGHT;
-                            editor.exec("inserthtml", { value: videoElement.outerHTML });
+                            videoElement.controls = true;
+                            videoElement.setAttribute("data-sf-ec-immutable", "");
+                            editor.exec("inserthtml", { value:  ensureTrailingBreaks(videoElement.outerHTML) });
                         });
                     }
                 });

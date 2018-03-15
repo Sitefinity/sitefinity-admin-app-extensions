@@ -10,7 +10,7 @@ export const ensureTrailingBreaks = (html: string): string => {
 };
 
 @Injectable()
-class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
+class VideosToolbarItemProvider implements ToolBarItemsProvider {
     constructor(@Inject(SELECTOR_SERVICE) private readonly videoLibraryProxy: SelectorService) { }
 
     getToolBarItems(editorHost: any): ToolBarItem[] {
@@ -48,8 +48,8 @@ class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
 /**
  * The provider registration for Angular's DI
  */
-export const SITEFINITY_VIDEO_TOOLBAR_ITEM_PROVIDER: ClassProvider = {
+export const VIDEO_TOOLBAR_ITEM_PROVIDER: ClassProvider = {
     multi: true,
     provide: TOOLBARITEMS_TOKEN,
-    useClass: SitefinityVideosToolbarItemProvider
+    useClass: VideosToolbarItemProvider
 };

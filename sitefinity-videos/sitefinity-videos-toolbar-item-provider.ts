@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider, Inject } from "@angular/core";
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, VideoLibraryProxy, VIDEO_LIBRARY_PROXY } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 require("./sf-video-toolbar.css");
 
@@ -11,7 +11,7 @@ export const ensureTrailingBreaks = (html: string): string => {
 
 @Injectable()
 class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
-    constructor(@Inject(VIDEO_LIBRARY_PROXY) private readonly videoLibraryProxy: VideoLibraryProxy) { }
+    constructor(@Inject(SELECTOR_SERVICE) private readonly videoLibraryProxy: SelectorService) { }
 
     getToolBarItems(editorHost: any): ToolBarItem[] {
         const CUSTOM_TOOLBAR_ITEM: ToolBarItem = {
@@ -21,8 +21,11 @@ class SitefinityVideosToolbarItemProvider implements ToolBarItemsProvider {
             exec: () => {
                 const editor = editorHost.getKendoEditor();
                 const currentRange = editor.getRange();
+                const selectorOptions: SelectorOptions = {
+                    multiple: true
+                };
 
-                this.videoLibraryProxy.selectVideo(true).subscribe(videos => {
+                this.videoLibraryProxy.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
                     if (videos.length) {
                         editor.selectRange(currentRange);
                         videos.forEach(video => {

@@ -1,15 +1,15 @@
-import { ClassProvider } from '@angular/core';
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from 'progress-sitefinity-adminapp-sdk/app/api/v1';
+import { ClassProvider } from "@angular/core";
+import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 require("./toolbar.css");
 
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {
-        const wordsCount = () => {  
+        const wordsCount = () => {
             const editor = editorHost.getKendoEditor();
-            const count = editor.value() ? editor.value().split(' ').length : 0;
+            const count = editor.value() ? editor.value().split(" ").length : 0;
 
             alert(`Words count: ${count}!`);
-        }
+        };
 
         /**
          * A custom toolbar item

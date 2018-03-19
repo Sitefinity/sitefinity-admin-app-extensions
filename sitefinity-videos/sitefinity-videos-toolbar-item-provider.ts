@@ -11,7 +11,7 @@ export const ensureTrailingBreaks = (html: string): string => {
 
 @Injectable()
 class VideosToolbarItemProvider implements ToolBarItemsProvider {
-    constructor(@Inject(SELECTOR_SERVICE) private readonly videoLibraryProxy: SelectorService) { }
+    constructor(@Inject(SELECTOR_SERVICE) private readonly selectorService: SelectorService) { }
 
     getToolBarItems(editorHost: any): ToolBarItem[] {
         const CUSTOM_TOOLBAR_ITEM: ToolBarItem = {
@@ -25,7 +25,7 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
                     multiple: true
                 };
 
-                this.videoLibraryProxy.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
+                this.selectorService.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
                     if (videos.length) {
                         editor.selectRange(currentRange);
                         videos.forEach(video => {
@@ -33,7 +33,7 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
 
                             videoElement.src = video.url;
                             videoElement.controls = true;
-                            videoElement.setAttribute("data-sf-ec-immutable", "");
+                            videoElement.setAttribute("contenteditable", "false");
                             editor.exec("inserthtml", { value:  ensureTrailingBreaks(videoElement.outerHTML) });
                         });
                     }

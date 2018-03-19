@@ -32,7 +32,6 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
                             const videoElement = document.createElement("video");
 
                             videoElement.src = video.url;
-                            videoElement.controls = true;
                             videoElement.setAttribute("contenteditable", "false");
                             editor.exec("inserthtml", { value:  ensureTrailingBreaks(videoElement.outerHTML) });
                         });

@@ -20,6 +20,9 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
             ordinal: 6,
             exec: () => {
                 const editor = editorHost.getKendoEditor();
+
+                // Save editor's current range, so we can insert
+                // later the HTML at this position.
                 const currentRange = editor.getRange();
                 const selectorOptions: SelectorOptions = {
                     multiple: true
@@ -27,14 +30,19 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
 
                 this.selectorService.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
                     if (videos.length) {
+                        // Restore editor's saved position.
                         editor.selectRange(currentRange);
                         videos.forEach(video => {
                             const videoElement = document.createElement("video");
 
+                            // Disable video playing, but show controls,
+                            // so the video can be playable on the frontend.
                             videoElement.contentEditable = "false";
                             videoElement.src = video.url;
                             videoElement.setAttribute("controls", "true");
 
+                            // Insert the HTML and trigger editor's change, so the
+                            // HTML can be saved.
                             editor.paste(ensureTrailingBreaks(videoElement.outerHTML));
                             editor.trigger("change");
                         });

@@ -1,13 +1,16 @@
 import { NgModule } from "@angular/core";
-import { DecExtensibilityLoaderCellComponent } from "./dec-cell.component";
+import { DecExtensibilityInsightsCellComponent } from "./dec-insights-cell.component";
 import { COLUMNS_PROVIDER } from "./columns-provider";
+import { DecExtensibilityDetailsViewComponent } from "./dec-insights-details-view.component";
 
 @NgModule({
     declarations: [
-        DecExtensibilityLoaderCellComponent
+        DecExtensibilityInsightsCellComponent,
+        DecExtensibilityDetailsViewComponent
     ],
     entryComponents: [
-        DecExtensibilityLoaderCellComponent
+        DecExtensibilityInsightsCellComponent,
+        DecExtensibilityDetailsViewComponent
     ],
     providers: [
         COLUMNS_PROVIDER

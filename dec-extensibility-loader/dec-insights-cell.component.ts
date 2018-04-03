@@ -1,13 +1,14 @@
-import {Component, Inject, OnInit} from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
 import {
     DataContextComponent, DataContext, SELECTOR_SERVICE,
     SelectorService
 } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { DecExtensibilityDetailsViewComponent } from "./dec-insights-details-view.component";
 
 @Component({
-    template: require("./dec-cell.component.html")
+    template: require("./dec-insights-cell.component.html")
 })
-export class DecExtensibilityLoaderCellComponent implements OnInit, DataContextComponent {
+export class DecExtensibilityInsightsCellComponent implements OnInit, DataContextComponent {
     context: DataContext;
 
     constructor(@Inject(SELECTOR_SERVICE) private readonly selectorService: SelectorService) {
@@ -21,8 +22,8 @@ export class DecExtensibilityLoaderCellComponent implements OnInit, DataContextC
 
     onClick() {
         this.selectorService.openDialog({
-            type: DecExtensibilityLoaderCellComponent
-        }).subscribe(() => {
+            type: DecExtensibilityDetailsViewComponent
+        }).subscribe(() =>{
         });
     }
 }

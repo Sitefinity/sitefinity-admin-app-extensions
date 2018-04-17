@@ -1,36 +1,55 @@
-import { OperationsProvider, OperationsData, Operation, OPERATIONS_TOKEN, OperationsTarget, UrlService, URL_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { CommandProvider, OperationsData, Command, OPERATIONS_TOKEN, OperationsTarget, UrlService, URL_SERVICE, CommandModel } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable } from "rxjs";
 import { ClassProvider, Inject } from "@angular/core";
+import { ExecutionContext } from "progress-sitefinity-adminapp-sdk/app/api/v1/operations/execution-context";
 
 /**
- * A custom operation
+ * A custom commad
  */
-const CUSTOM_OPERATION: Operation = {
+const CUSTOM_COMMAND_BASE: any = {
     Name: "Custom",
     Title: "Print preview",
     Ordinal: -1,
-    Category: "Custom",
+    Category: {
+        Name: "Custom",
+        Title: "Custom commands"
+    },
     Description: null,
     Link: null
 };
 
-class DynamicItemIndexOperationsProvider implements OperationsProvider {
-    constructor(@Inject(URL_SERVICE) private urlService: UrlService) {}
-
-    getOperations(data: OperationsData): Observable<Operation[]> {
-        const operations = [];
+class DynamicItemIndexCommandProvider implements CommandProvider {
+    getCommands(data: OperationsData): Observable<CommandModel[]> {
+        const commands = [];
         if (data.target === OperationsTarget.List && data.dataItem) {
-            const url = `/print-preview?entitySet=${data.dataItem.metadata.setName}&id=${data.dataItem.key}` + (data.dataItem.provider ? `&provider=${data.dataItem.provider}` : ``);
-            const previewOperation = Object.assign({}, CUSTOM_OPERATION, { Link: this.urlService.getAbsoluteUrl(url) });
-            operations.push(previewOperation);
+            const previewCommand = Object.assign({}, CUSTOM_COMMAND_BASE);
+            previewCommand.token = {
+                type: PrintPreviewCommand,
+                properties: {
+                    dataItem: data.dataItem
+                }
+            }
+
+            commands.push(previewCommand);
         }
 
-        return Observable.of(operations);
+        return Observable.of(commands);
+    }
+}
+
+export class PrintPreviewCommand implements Command {   
+    constructor(@Inject(URL_SERVICE) private urlService: UrlService) {}
+
+    execute(context: ExecutionContext): Observable<any> {
+        const dataItem = context.data.dataItem;
+        const url = `/print-preview?entitySet=${dataItem.metadata.setName}&id=${dataItem.key}` + (dataItem.provider ? `&provider=${dataItem.provider}` : ``);
+        window.open(this.urlService.getAbsoluteUrl(url), "_blank");
+        return null;
     }
 }
 
 export const OPERATIONS_PROVIDER: ClassProvider = {
-    useClass: DynamicItemIndexOperationsProvider,
+    useClass: DynamicItemIndexCommandProvider,
     multi: true,
     provide: OPERATIONS_TOKEN
 };

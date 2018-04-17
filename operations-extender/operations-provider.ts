@@ -5,17 +5,15 @@ import { Router } from "@angular/router";
 
 const CUSTOM_CATEGORY_NAME = "Custom";
 const CUSTOM_COMMAND_BASE: CommandModel = {
-    Name: "Custom",
-    Title: "Print preview",
-    Ordinal: -1,
-    Category: CUSTOM_CATEGORY_NAME,
-    Description: null,
-    Link: null
+    name: "Custom",
+    title: "Print preview",
+    ordinal: -1,
+    category: CUSTOM_CATEGORY_NAME
 };
 
 const CUSTOM_CATEGORY: CommandCategory = {
-    Name: "Custom",
-    Title: "Custom commands"
+    name: "Custom",
+    title: "Custom commands"
 };
 
 class DynamicItemIndexCommandProvider implements CommandProvider {

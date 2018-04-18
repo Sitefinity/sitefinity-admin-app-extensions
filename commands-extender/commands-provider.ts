@@ -56,7 +56,7 @@ export class PrintPreviewCommand implements Command {
     }
 }
 
-export const OPERATIONS_PROVIDER: ClassProvider = {
+export const COMMANDS_PROVIDER: ClassProvider = {
     useClass: DynamicItemIndexCommandProvider,
     multi: true,
     provide: COMMANDS_TOKEN

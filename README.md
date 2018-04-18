@@ -38,7 +38,7 @@ As a result, a JavaScript file (**extensions.bundle.js**) is generated in the **
 Example extensions in this project that you can work with include:
 * Custom *Actions* menu
 
-  Demonstates how to register a custom command in the *Actions* menu of an item. You can find the sample code in the **operations-    extender** folder.
+  Demonstates how to register a custom command in the *Actions* menu of an item. You can find the sample code in the **commands-extender** folder.
 * Custom grid
 
   Demonstates how to add a custom column in the grid. Using this sample, you add a column with random images in the item list. You can find the sample code is in the **grid-extender** folder.

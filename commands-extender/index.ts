@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
-import { OPERATIONS_PROVIDER, PrintPreviewCommand } from "./operations-provider";
+import { COMMANDS_PROVIDER, PrintPreviewCommand } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
 
 @NgModule({
@@ -13,7 +13,7 @@ import { PrintPreviewComponent } from "./print-preview.component";
         PrintPreviewComponent
     ],
     providers: [
-        OPERATIONS_PROVIDER,
+        COMMANDS_PROVIDER,
         PrintPreviewCommand
     ],
     imports: [
@@ -21,6 +21,6 @@ import { PrintPreviewComponent } from "./print-preview.component";
         CommonModule
     ]
 })
-export class OperationsExtenderModule {
+export class CommandsExtenderModule {
     /* empty */
 }

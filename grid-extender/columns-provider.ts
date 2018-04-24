@@ -4,7 +4,7 @@ import { ImageComponent } from "./image.component";
 import { ClassProvider } from "@angular/core";
 
 class DynamicItemIndexColumnsProvider implements ColumnsProvider {
-    private columnName: string = "image";
+    private columnName: string = "image3";
     private columnTitle: string = "Image";
 
     getColumns(entityData: EntityData): Observable<ColumnModel[]> {

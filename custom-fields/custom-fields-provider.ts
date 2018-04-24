@@ -1,6 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
 
-import { FieldsProvider, FieldRegistryKey, Entity } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
@@ -8,28 +8,21 @@ import { CustomInputWriteComponent } from "./custom-field-write.component";
 import { CustomShortTextSettings } from "./custom-field.settings";
 
 @Injectable()
-export class CustomFieldsProvider extends FieldsProvider {
+export class CustomFieldsProvider implements FieldsProvider {
     private customFieldsMappings: RegistrationPair[];
 
     constructor() {
-        super();
         this.customFieldsMappings = [];
 
         this.registerCustomComponents();
     }
 
-    getFieldRegistration(fieldRegistryKey: FieldRegistryKey, entity: Entity): FieldRegistration {
+    overrideField(fieldRegistryKey: FieldData): FieldRegistration {
         const registration: FieldRegistration = this.findRegistration(fieldRegistryKey);
-
-        if (!registration) {
-            const defaultRegistration: FieldRegistration = super.getFieldRegistration(fieldRegistryKey, entity);
-            return defaultRegistration;
-        }
-
         return registration;
     }
 
-    private findRegistration(fieldRegistryKey: FieldRegistryKey): FieldRegistration {
+    private findRegistration(fieldRegistryKey: FieldData): FieldRegistration {
         for (const pair of this.customFieldsMappings) {
             if (fieldRegistryKey.fieldName === pair.key.fieldName &&
                 fieldRegistryKey.fieldType === pair.key.fieldType &&
@@ -42,7 +35,7 @@ export class CustomFieldsProvider extends FieldsProvider {
     }
 
     private registerCustomComponents(): void {
-        const customInputKey: FieldRegistryKey = {
+        const customInputKey: FieldData = {
             fieldName: "Title",
             fieldType: "sf-short-text-default",
             typeName: "newsitems"
@@ -59,6 +52,7 @@ export class CustomFieldsProvider extends FieldsProvider {
 }
 
 export const CUSTOM_FIELDS_PROVIDER: ClassProvider = {
-    provide: FieldsProvider,
-    useClass: CustomFieldsProvider
+    provide: FIELDS_PROVIDER_TOKEN,
+    useClass: CustomFieldsProvider,
+    multi: true
 };

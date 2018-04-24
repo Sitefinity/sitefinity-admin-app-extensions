@@ -2,7 +2,7 @@ import { Extension } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 import { GridExtenderModule } from "./grid-extender";
 import { CustomFieldsModule } from "./custom-fields";
-import { OperationsExtenderModule } from "./operations-extender";
+import { CommandsExtenderModule } from "./commands-extender";
 import { ToolbarExtenderModule } from "./toolbar-extender";
 
 export class SamplesExtension implements Extension {
@@ -10,7 +10,7 @@ export class SamplesExtension implements Extension {
         return [
             GridExtenderModule,
             CustomFieldsModule,
-            OperationsExtenderModule,
+            CommandsExtenderModule,
             ToolbarExtenderModule
         ];
     }

@@ -1,12 +1,15 @@
 var ImportPlugin = require("./import.plugin");
 var path = require("path");
-const extensionsFileName = "./__extensions_index.ts";
+const constants = require("./constants");
+
+const extensionsFileName = "./" + constants.indexFileName;
+const extensionsKey = constants.extensionsKey;
 
 module.exports = {
     cache: true,
     devtool: "source-map",
     entry: {
-        "extensions": extensionsFileName
+        [extensionsKey]: extensionsFileName
     },
 
     output: {

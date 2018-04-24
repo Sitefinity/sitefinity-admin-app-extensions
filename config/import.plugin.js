@@ -3,7 +3,9 @@ var DelegatedSourceDependency = require("webpack/lib/dependencies/DelegatedSourc
 var ExternalsPlugin = require("webpack/lib/ExternalsPlugin");
 
 const initialModuleId = 100000;
-const extensionsKey = "extensions";
+const constants = require("./constants");
+
+const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
     this.options = {
@@ -55,7 +57,7 @@ ImportPlugin.prototype.apply = function (compiler) {
     compiler.plugin("compilation", function (compilation) {
         compilation.plugin("optimize-module-ids", function (modules) {
             modules.forEach(function (module) {
-                if (module.userRequest && module.userRequest.endsWith("__extensions_index.ts")) {
+                if (module.userRequest && module.userRequest.endsWith(constants.indexFileName)) {
                     module.id = initialModuleId;
                 } else {
                     if (module.id <= initialModuleId) {

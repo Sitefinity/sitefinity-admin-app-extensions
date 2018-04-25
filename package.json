@@ -4,7 +4,7 @@
   "description": "Provides extensions for the backend of the Progress Sitefinity Admin App",
   "main": "main.ts",
   "scripts": {
-    "build": "echo Coming up in Sitefinity 11.1",
+    "build": "webpack --config config/webpack.config.js --display-modules",
     "start": "webpack-dev-server --config config/webpack.config.js",
     "lint": "tslint --project ./tsconfig.json"
   },

@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 
 import { COMMANDS_PROVIDER, PrintPreviewCommand } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { PrintPreviewComponent } from "./print-preview.component";
     ],
     imports: [
         RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent }]),
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ]
 })
 export class CommandsExtenderModule {

@@ -1,1 +1,4 @@
-<h1 *ngIf="dataItem">{{dataItem.Title}}</h1>
+<div style="position: fixed;top: 50%;left: 50%;">
+    <h1 *ngIf="dataItem">{{dataItem.Title}}</h1>
+    <h1 *ngIf="!dataItem">Loading..</h1>
+</div>

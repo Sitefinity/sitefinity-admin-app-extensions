@@ -40,10 +40,10 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.ts$/, use:[ "awesome-typescript-loader" ] },
+            { test: /\.ts$/, use:[ "awesome-typescript-loader", "angular2-template-loader" ] },
             { test: /\.html$/, use:[ "html-loader" ] },
-            { test: /\.json$/, use:[ "json-loader" ] },       
-            { test: /\.css$/, use: [ "style-loader", "css-loader" ] }
+            { test: /\.json$/, use:[ "json-loader" ] },
+            { test: /\.css$/, use: [ "css-to-string-loader", "css-loader" ] }
         ]
     }
 };

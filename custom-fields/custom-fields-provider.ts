@@ -45,7 +45,10 @@ export class CustomFieldsProvider implements FieldsProvider {
             readComponent: CustomInputReadonlyComponent,
             settingsType: CustomShortTextSettings
         };
-        const customFieldRegistrationPair: RegistrationPair = { key: customInputKey, registration: customInputRegistration };
+        const customFieldRegistrationPair: RegistrationPair = {
+             key: customInputKey,
+             registration: customInputRegistration
+        };
 
         this.customFieldsMappings.push(customFieldRegistrationPair);
     }

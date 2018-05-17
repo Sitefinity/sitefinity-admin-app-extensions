@@ -1,6 +1,7 @@
 import { ClassProvider } from "@angular/core";
 import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
+// This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./toolbar-items-provider.css");
 
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {

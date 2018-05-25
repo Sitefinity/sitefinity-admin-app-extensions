@@ -6,6 +6,7 @@ require("!style-loader!css-loader!./toolbar-items-provider.css");
 
 /**
  * A custom toolbar provider implementation for counting the words in the html editor.
+ * Kendo UI Editor custom tools documentation -> https://demos.telerik.com/kendo-ui/editor/custom-tools
  */
 @Injectable()
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {

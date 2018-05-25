@@ -12,6 +12,7 @@ export const ensureTrailingBreaks = (html: string): string => {
 
 /**
  * A custom toolbar provider implementation for inserting existing videos in the editor.
+ * Kendo UI Editor custom tools documentation -> https://demos.telerik.com/kendo-ui/editor/custom-tools
  */
 @Injectable()
 class VideosToolbarItemProvider implements ToolBarItemsProvider {

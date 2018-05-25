@@ -1,7 +1,10 @@
 import { Component } from "@angular/core";
 import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
-// One can use inline temlate & styles OR templateUrl & styleUrs OR mixture of that like here. See -write.component.ts version for alternative
+/**
+ * The component used to display the field in read only mode.
+ * One can use inline temlate & styles OR templateUrl & styleUrls OR a mixture of that like here. See the -write.component.ts version for the write mode type.
+ */
 @Component({
     templateUrl: "./custom-field-readonly.component.html",
     styles: [`

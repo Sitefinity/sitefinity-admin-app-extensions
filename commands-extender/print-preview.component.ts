@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { HTTP_PREFIX } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 /**
- * A component that loads the data item from the OData rest services and display's the title of the data item.
+ * A component that loads the data item from the OData rest services and displays the title of the data item.
  */
 @Component({
     template: require("./print-preview.component.html")

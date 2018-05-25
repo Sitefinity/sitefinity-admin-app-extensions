@@ -10,6 +10,7 @@ const CUSTOM_CATEGORY_NAME = "Custom";
 
 /**
  * The command model containing the metadata of the command.
+ * The ordinal indicates where to place the command in the dropdown.
  */
 const CUSTOM_COMMAND_BASE: CommandModel = {
     name: "Custom",
@@ -27,7 +28,7 @@ const CUSTOM_CATEGORY: CommandCategory = {
 };
 
 /**
- * The comamnd provider provides the necessary commands back to the AdminApp.
+ * The command provider provides the necessary commands back to the AdminApp.
  */
 @Injectable()
 class DynamicItemIndexCommandProvider implements CommandProvider {
@@ -59,12 +60,13 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
             commands.push(previewCommand);
         }
 
-        // return an observable here, because this might be a time consuming operation
+        // return an observable here, because generating the actions might be a time consuming operation
         return Observable.of(commands);
     }
 
     /**
      * The method that gets invoked asking for the category models when the action menu is constructed.
+     * Categories are used to group similar commands in the action menu
      * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
      */
     getCategories(data: CommandsData): Observable<CommandCategory[]> {

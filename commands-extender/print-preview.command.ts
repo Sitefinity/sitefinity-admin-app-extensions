@@ -26,7 +26,7 @@ export class PrintPreviewCommand implements Command {
      */
     execute(context: ExecutionContext): Observable<any> {
 
-        // get the data itemfrom the context.
+        // get the data item from the context.
         const dataItem = context.data.dataItem;
 
         // construct the query params so the component that we navigate to

@@ -16,9 +16,7 @@ export class PrintPreviewCommand implements Command {
      * Initializes a new instance of the PrintPreviewCommand.
      * @param router The router that is used to navigate.
      */
-    constructor(protected router: Router) {
-
-    }
+    constructor(protected router: Router) { }
 
     /**
      * This method gets invoked when the print preview action is clicked.

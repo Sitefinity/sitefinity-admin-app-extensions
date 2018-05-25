@@ -1,7 +1,6 @@
-import { CommandProvider, CommandsData, Command, COMMANDS_TOKEN, CommandsTarget, CommandModel, CommandCategory, ExecutionContext } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandModel, CommandCategory } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { PrintPreviewCommand } from "./print-preview.command";
 
 /**
@@ -55,7 +54,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
                 properties: {
                     dataItem: data.dataItem
                 }
-            }
+            };
 
             commands.push(previewCommand);
         }

@@ -5,7 +5,7 @@ import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from "progress-
 require("!style-loader!css-loader!./toolbar-items-provider.css");
 
 /**
- * A custom toolbar provider implmentation for counting the words in the html editor.
+ * A custom toolbar provider implementation for counting the words in the html editor.
  */
 @Injectable()
 class CustomToolBarItemsProvider implements ToolBarItemsProvider {

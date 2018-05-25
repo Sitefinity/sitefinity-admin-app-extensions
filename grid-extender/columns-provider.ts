@@ -11,6 +11,10 @@ class DynamicItemIndexColumnsProvider implements ColumnsProvider {
     private columnName: string = "image3";
     private columnTitle: string = "Image";
 
+    /**
+     * This method gets invoked by the AdminApp when the columns from all of the providers are needed.
+     * @param entityData Provides metadata for the current type.
+     */
     getColumns(entityData: EntityData): Observable<ColumnModel[]> {
 
         // return the column model

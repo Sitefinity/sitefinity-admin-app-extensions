@@ -6,14 +6,14 @@ import { CommandsExtenderModule } from "./commands-extender";
 import { ToolbarExtenderModule } from "./toolbar-extender";
 
 /**
- * The entry point of the extensions. Each extension needs to have exactly one export
+ * The entry point of the extensions. Each extension bundle needs to have exactly one export
  * of the Extensions interface and it needs to be placed in the __extensions_index file.
- * Here all of the angular modules are returned and are loaded into the main module.
+ * Here all of the NgModules are returned and are loaded into the main module.
  */
 export class SamplesExtension implements Extension {
 
     /**
-     * Gets the NgModules.
+     * On application bootstrap this method is called to get all extensions as angular modules.
      */
     getNgModules(): Array<any> {
         return [

@@ -8,7 +8,7 @@ import { CustomInputWriteComponent } from "./custom-field-write.component";
 import { CustomShortTextSettings } from "./custom-field.settings";
 
 /**
- * The fields provider provides the overriden fields back to the AdminApp.
+ * The fields provider provides the overridden fields back to the AdminApp.
  */
 @Injectable()
 export class CustomFieldsProvider implements FieldsProvider {
@@ -30,7 +30,7 @@ export class CustomFieldsProvider implements FieldsProvider {
     }
 
     /**
-     * This method finds an implmentation of the field to be overriden.
+     * This method finds an implmentation of the field to be overridden.
      * @param fieldRegistryKey The metadata needed to determine which field to display.
      */
     private findRegistration(fieldRegistryKey: FieldData): FieldRegistration {
@@ -52,7 +52,7 @@ export class CustomFieldsProvider implements FieldsProvider {
 
         // The field name is the name which identifies the field uniquely.
         // The typename is the OData entity set name. It matches the url segment when navigating
-        // to the list view ot the specific type.
+        // to the list view of the specific type.
         const customInputKey: FieldData = {
             fieldName: "Title",
             fieldType: "sf-short-text-default",

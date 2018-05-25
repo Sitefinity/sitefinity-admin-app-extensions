@@ -11,7 +11,7 @@ export const ensureTrailingBreaks = (html: string): string => {
 };
 
 /**
- * A custom toolbar provider implmentation for inserting existing videos in the editor.
+ * A custom toolbar provider implementation for inserting existing videos in the editor.
  */
 @Injectable()
 class VideosToolbarItemProvider implements ToolBarItemsProvider {
@@ -32,7 +32,7 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
                     multiple: true
                 };
 
-                // open the selector ans suubscribe to the result
+                // open the selector and subscribe to the result
                 this.selectorService.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
                     if (videos.length) {
                         // Restore editor's saved position.

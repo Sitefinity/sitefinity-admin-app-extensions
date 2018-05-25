@@ -14,7 +14,7 @@ import { CUSTOM_FIELDS_PROVIDER } from "./custom-fields-provider";
         CustomInputWriteComponent
     ],
     entryComponents: [
-        // The components need to be registered here as they are instantiated dynamically
+        // The components need to be registered here as they are instantiated dynamically.
         CustomInputReadonlyComponent,
         CustomInputWriteComponent
     ],

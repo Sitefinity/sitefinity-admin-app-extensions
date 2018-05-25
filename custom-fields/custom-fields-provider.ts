@@ -22,7 +22,7 @@ export class CustomFieldsProvider implements FieldsProvider {
 
     /**
      * This method gets called before each field is instantiated, allowing custom fields to be plugged in for any type.
-     * @param fieldRegistryKey The metadata needed to detirmine which field to display.
+     * @param fieldRegistryKey The metadata needed to determine which field to display.
      */
     overrideField(fieldRegistryKey: FieldData): FieldRegistration {
         const registration: FieldRegistration = this.findRegistration(fieldRegistryKey);
@@ -31,7 +31,7 @@ export class CustomFieldsProvider implements FieldsProvider {
 
     /**
      * This method finds an implmentation of the field to be overriden.
-     * @param fieldRegistryKey The metadata needed to detirmine which field to display.
+     * @param fieldRegistryKey The metadata needed to determine which field to display.
      */
     private findRegistration(fieldRegistryKey: FieldData): FieldRegistration {
         for (const pair of this.customFieldsMappings) {
@@ -46,12 +46,12 @@ export class CustomFieldsProvider implements FieldsProvider {
     }
 
     /**
-     * Initialzies the custom field(component) registrations.
+     * Initializes the custom field(component) registrations.
      */
     private registerCustomComponents(): void {
 
-        // The field name is the name which identifies the field uniquely
-        // the typename is the OData entity set name. It matches the url segment when navigating
+        // The field name is the name which identifies the field uniquely.
+        // The typename is the OData entity set name. It matches the url segment when navigating
         // to the list view ot the specific type.
         const customInputKey: FieldData = {
             fieldName: "Title",

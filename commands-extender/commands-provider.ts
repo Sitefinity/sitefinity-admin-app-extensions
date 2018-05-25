@@ -35,7 +35,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
 
     /**
      * The method that gets invoked asking for the command models when the action menu is constructed.
-     * @param data The data needed to detirmine the types of command to return
+     * @param data The data needed to determine the types of command to return
      * and where to place them - in the list or in edit mode
      */
     getCommands(data: CommandsData): Observable<CommandModel[]> {
@@ -66,8 +66,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
 
     /**
      * The method that gets invoked asking for the category models when the action menu is constructed.
-     * @param data The data needed to detirmine the types of command to return
-     * and where to place them - in the list or in edit mode
+     * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
      */
     getCategories(data: CommandsData): Observable<CommandCategory[]> {
         return Observable.of([CUSTOM_CATEGORY]);

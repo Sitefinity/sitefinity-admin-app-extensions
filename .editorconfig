@@ -1,8 +1,3 @@
-# Manage common editor configurations
-# set for example indentation tab and space
-# VS Extension: https://visualstudiogallery.msdn.microsoft.com/c8bccfe2-650c-4b42-bc5c-845e21f96328
-# more extensions and plugins for your favorite editor here: http://editorconfig.org/#download
-
 ; Top-most EditorConfig file
 root = true
 

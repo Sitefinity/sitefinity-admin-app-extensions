@@ -6,7 +6,7 @@ import { Command, ExecutionContext } from "progress-sitefinity-adminapp-sdk/app/
 
 
 /**
- * Serves as a command that gets invoked when the print preview button
+ * Serves as a command that gets invoked when the print preview action
  * in the actions menu is clicked.
  */
 @Injectable()

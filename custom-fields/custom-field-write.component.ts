@@ -1,7 +1,10 @@
 import { Component } from "@angular/core";
 import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
-// One can use inline temlate & styles OR templateUrl & styleUrs, like here OR mixture of that. See -read.component.ts version for alternative
+/**
+ * The component used to display the field in write mode.
+ * One can use inline temlpate & styles OR templateUrl & styleUrls, like here OR mixture of that. See -readonly.component.ts version for the read mode type.
+ */
 @Component({
     templateUrl: "./custom-field-write.component.html",
     styleUrls: [ "./custom-field-write.component.css" ]

@@ -10,6 +10,10 @@ export const ensureTrailingBreaks = (html: string): string => {
     return `${TRAILING_BREAK}${html}${TRAILING_BREAK}`;
 };
 
+/**
+ * A custom toolbar provider implementation for inserting existing videos in the editor.
+ * Kendo UI Editor custom tools documentation -> https://demos.telerik.com/kendo-ui/editor/custom-tools
+ */
 @Injectable()
 class VideosToolbarItemProvider implements ToolBarItemsProvider {
     constructor(@Inject(SELECTOR_SERVICE) private readonly selectorService: SelectorService) { }
@@ -29,6 +33,7 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
                     multiple: true
                 };
 
+                // open the selector and subscribe to the result
                 this.selectorService.openVideoLibrarySelector(selectorOptions).subscribe(videos => {
                     if (videos.length) {
                         // Restore editor's saved position.
@@ -57,7 +62,8 @@ class VideosToolbarItemProvider implements ToolBarItemsProvider {
 }
 
 /**
- * The provider registration for Angular's DI
+ * Export a 'multi' class provider so that multiple instances of the same provider can coexist.
+ * This allows for more than one provider to be registered within one or more bundles.
  */
 export const VIDEO_TOOLBAR_ITEM_PROVIDER: ClassProvider = {
     multi: true,

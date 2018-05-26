@@ -4,12 +4,17 @@ import { DataContextComponent, DataContext } from "progress-sitefinity-adminapp-
 // Get a collection with images in base64 format from image-data.json file
 const imageData = require("./image-data.json");
 
+/**
+ * A custom component to be displayed in each cell in a specific column in the grid.
+ */
 @Component({
     template: require("./image.component.html")
 })
 export class ImageComponent implements OnInit, DataContextComponent {
+
+    // This context is automatically set for each component instantiated in the grid.
+    // It holds metadata that includes the data item for the current row and the column model as well.
     context: DataContext;
-    // Get dataItem context item from DataContextComponent interface
     // Sample height of the image
     protected imageHeight = 50;
     protected imageSource;

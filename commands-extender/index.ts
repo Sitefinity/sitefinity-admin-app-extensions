@@ -1,11 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-
-import { COMMANDS_PROVIDER, PrintPreviewCommand } from "./commands-provider";
-import { PrintPreviewComponent } from "./print-preview.component";
 import { HttpClientModule } from "@angular/common/http";
 
+import { COMMANDS_PROVIDER } from "./commands-provider";
+import { PrintPreviewComponent } from "./print-preview.component";
+import { PrintPreviewCommand } from "./print-preview.command";
+
+/**
+ * The command extender module.
+ */
 @NgModule({
     declarations: [
         PrintPreviewComponent

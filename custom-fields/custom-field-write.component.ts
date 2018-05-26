@@ -9,4 +9,10 @@ import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
     templateUrl: "./custom-field-write.component.html",
     styleUrls: [ "./custom-field-write.component.css" ]
 })
-export class CustomInputWriteComponent extends FieldBase { }
+export class CustomInputWriteComponent extends FieldBase {
+    charactersLeft: Number;
+
+    public onKeyUp () {
+        this.charactersLeft = 140 - (<String>this.getValue()).length;
+    }
+}

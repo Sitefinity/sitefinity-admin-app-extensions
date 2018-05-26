@@ -7,3 +7,8 @@
     width: 100%;
     color: #38ab63;
 }
+
+.custom-count {
+    float: right;
+    color: blueviolet;
+}

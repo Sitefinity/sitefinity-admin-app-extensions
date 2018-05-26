@@ -1,1 +1,2 @@
-<input class="custom-title-input" [(ngModel)]="value" />
+<input class="custom-title-input" [(ngModel)]="value" (keyup)="onKeyUp()"/>
+<div class="custom-count">{{charactersLeft}}</div>

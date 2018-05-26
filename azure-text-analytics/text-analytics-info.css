@@ -1,0 +1,19 @@
+.k-editor-toolbar .k-i-Text-analytics::before {
+    /* Kendo UI Icons: https://docs.telerik.com/kendo-ui/styles-and-layout/icons-web */
+    content: "\e13d";
+}
+
+.custom-text-analytics {
+    float: right;
+    width: 20%;
+    margin-right: -20%;
+    padding: 0 .5em;
+}
+
+.custom-sentiment-Positive {
+    color: green;
+}
+
+.custom-sentiment-Negative {
+    color: darkred;
+}

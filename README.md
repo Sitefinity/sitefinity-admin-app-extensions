@@ -6,25 +6,6 @@ Leveraging the API-first approach of the Admin App, you can extend and add funct
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, Webstorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
-### Development and extensibility
-
-With the Admin App Extensibility API, you can customize the Sitefinity CMS backend look and feel without a complex set of tooling, such as Visual Studio, IIS, or .NET framework. The Admin App and the Extensibility API are based on Angular and Typescript and the extensibility development is simple and intuitive, leveraging the Angular’s dependency injection (DI) mechanism and the architecture for writing NgModules. Thus, working with the Extensibility API resembles the straightforward code workflow of writing an Angular application.
-
-#### NgModules
-
-You use the **__extensions_index.ts** file as an entry point for extending the Admin App. You implement a single class with the **getNgModules()** method, which returns all the NgModules of the extension you implement. 
-Once the method is invoked by the Admin App, all relevant modules are loaded. You can thus not only plug in to existing code but also write their own application-specific UI code. For example, you can register a route named **/custom** and then either navigate to it directly, or from a custom command in the *Actions* menu.
-
-#### Dependency injection mechanism
-
-The extensibility API leverages Angular DI mechanism via **InjectionTokens** and **ClassProviders**. Thus, you can start coding seamlessly straight away. The **multi** property of the class provider interface allows for multiple references to the same token. The Extensibility API endpoints use the multi property of the **ClassProviders**, so that multiple instances of the providers can coexist within the same bundle.
-
-To start debugging, execute the following command:
-**npm start**
-
-**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
-
-
 ### Prereqiusities
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
@@ -74,6 +55,25 @@ Enter **http://localhost:3000/auth/oidc/sign-in**
 
 The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config] (http://localhost:3000/config).
 Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically recompiles and serves any newly created files.
+
+### Development and extensibility
+
+With the Admin App Extensibility API, you can customize the Sitefinity CMS backend look and feel without a complex set of tooling, such as Visual Studio, IIS, or .NET framework. The Admin App and the Extensibility API are based on Angular and Typescript and the extensibility development is simple and intuitive, leveraging the Angular’s dependency injection (DI) mechanism and the architecture for writing NgModules. Thus, working with the Extensibility API resembles the straightforward code workflow of writing an Angular application.
+
+#### NgModules
+
+You use the **__extensions_index.ts** file as an entry point for extending the Admin App. You implement a single class with the **getNgModules()** method, which returns all the NgModules of the extension you implement. 
+Once the method is invoked by the Admin App, all relevant modules are loaded. You can thus not only plug in to existing code but also write their own application-specific UI code. For example, you can register a route named **/custom** and then either navigate to it directly, or from a custom command in the *Actions* menu.
+
+#### Dependency injection mechanism
+
+The extensibility API leverages Angular DI mechanism via **InjectionTokens** and **ClassProviders**. Thus, you can start coding seamlessly straight away. The **multi** property of the class provider interface allows for multiple references to the same token. The Extensibility API endpoints use the multi property of the **ClassProviders**, so that multiple instances of the providers can coexist within the same bundle.
+
+To start debugging, execute the following command:
+**npm start**
+
+**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
+
 
 ### Deployment
 

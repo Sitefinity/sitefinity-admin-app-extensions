@@ -70,11 +70,11 @@ Once the method is invoked by the Admin App, all relevant modules are loaded. Yo
 
 The extensibility API leverages Angular DI mechanism via **InjectionTokens** and **ClassProviders**. Thus, you can start coding seamlessly straight away. The **multi** property of the class provider interface allows for multiple references to the same token. The Extensibility API endpoints use the multi property of the **ClassProviders**, so that multiple instances of the providers can coexist within the same bundle.
 
+### Debugging
 To start debugging, execute the following command:
 **npm start**
 
 **NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
-
 
 ### Deployment
 
@@ -90,7 +90,7 @@ Once you are done with the backend customizations and development:
 
 ### Multiple bundles support
 
-After you execute the npm **run:build** command, you get as an output the **sample.extensions.bundle** file. This file is a single bundle that contains a specific piece of functionality. With the Admin App, however, you can support more than one extensions bundle. This is handy when you need to compile two different types of functionalities and distribute them separately.
+After you execute the **npm run build** command, you get as an output the **sample.extensions.bundle** file. This file is a single bundle that contains a specific piece of functionality. With the Admin App, however, you can support more than one extensions bundle. This is handy when you need to compile two different types of functionalities and distribute them separately.
 For example, the folder structure in Admin App folder may look like the following:
 
 * **sample.extensions.bundle.js**
@@ -102,7 +102,7 @@ For example, the folder structure in Admin App folder may look like the followin
 ### Extensibility endpoints
 
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
-The following provide you with some example extensions.
+The following provides you with some example extensions.
 
 #### Custom *Actions* menu
 
@@ -142,7 +142,7 @@ A reference to the component that is displayed in the grid cell.
 
 Once the component is instantiated, the Admin App assigns the context property to it. This property displays in the grid the information for the current item, as well as the model properties you defined.
 
-### Custom content editor toolbar
+#### Custom content editor toolbar
 
 When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. Out-of-the-box, content editors can work with image and link selector contextual toolsets for Sitefinity CMS content. You can also add a custom video selector for Sitefinity CMS content by injecting a custom **ToolBarItem**.
 To do this, you provide a custom implementation of the **ToolBarItemsProvider**. The provider has a single method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want displayed in the editor. In this case, this is the video selector.

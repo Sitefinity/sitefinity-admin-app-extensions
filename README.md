@@ -28,7 +28,7 @@ npm run build
 ```
 As a result, a JavaScript file (**extensions.bundle.js**) is generated in the **dist** folder.
 
-4. Register your extensions with the Admin App by upload this file to the **extensions.bundle.js** file in the **root** of the Sitefintiy CMS web application and then refresh your Sitefinity CMS page.
+4. Register your extensions with the Admin App by uploading this file to the **extensions.bundle.js** file in the **root** of the Sitefintiy CMS web application and then refresh your Sitefinity CMS page.
 
 
 ### Configure Sitefinity CMS for development of custom extensions
@@ -46,14 +46,15 @@ Enter **http://localhost:3000/assets/auth/silent-renew.html**
 4. Under **RedirectUris**, click the *Create new* button.
 Enter **http://localhost:3000/auth/oidc/sign-in**
 5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
-6. In case you modified the authentication settings, you need to restart the application.
+
+**NOTE:** In case you modified the authentication settings, you need to restart the application.
 
 ####	Web service configuration
 1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
 2.	Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**. 
 3.	Save your changes.
 
-The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config] (http://localhost:3000/config).
+The Admin App is now served on [localhost:3000](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config](http://localhost:3000/config).
 Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically recompiles and serves any newly created files.
 
 ### Development and extensibility
@@ -81,7 +82,7 @@ Once you are done with the backend customizations and development:
 1.	Copy the output bundle from the **dist** folder.
 
 **NOTE:** You can change the name of the **sample.extensions.bundle.js** file to any other name, for example, **<name_of_sample>.extensions.bundle.js**
-IMPORTANT: 
+
 2.	Paste the bundle in the **/adminapp** folder in the Sitefinity CMS project directory.
 3.	Restart the Sitefinity CMS application, so that all files are processed.
 
@@ -89,7 +90,7 @@ IMPORTANT:
 
 ### Multiple bundles support
 
-After you execute the npm run build command, you get as an output the **sample.extensions.bundle** file. This file is a single bundle that contains a specific piece of functionality. With the Admin App, however, you can support more than one extensions bundle. This is handy when you need to compile two different types of functionalities and distribute them separately.
+After you execute the npm **run:build** command, you get as an output the **sample.extensions.bundle** file. This file is a single bundle that contains a specific piece of functionality. With the Admin App, however, you can support more than one extensions bundle. This is handy when you need to compile two different types of functionalities and distribute them separately.
 For example, the folder structure in Admin App folder may look like the following:
 
 * **sample.extensions.bundle.js**

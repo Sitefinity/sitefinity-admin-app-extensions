@@ -61,16 +61,15 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 Enter the URL of the development server of the Admin App Extensibility SDK.
 The default value is **http://localhost:3000**.
 3. Under **RedirectUris**, click the *Create new* button.
-Enter **<URL of your development server>/assets/auth/silent-renew.html**
+Enter **http://localhost:3000/assets/auth/silent-renew.html**
 4. Under **RedirectUris**, click the *Create new* button.
-Enter **<URL of your development server>/auth/oidc/sign-in**
-5. Under **PostLogoutRedirectUris**, enter **<URL of your development server>/auth/oidc/sign-out**
+Enter **http://localhost:3000/auth/oidc/sign-in**
+5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
 6. In case you modified the authentication settings, you need to restart the application.
 
 ####	Web service configuration
 1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
-2.	Enter the URL of the development server of the Admin App Extensibility SDK
-The default value is **http://localhost:3000**. 
+2.	Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**. 
 3.	Save your changes.
 
 The Admin App is now served on [localhost](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config] (http://localhost:3000/config).

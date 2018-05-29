@@ -170,7 +170,7 @@ Holds the type of component to be instantiated and what properties are assigned 
 * **commands** property
 Contains commands that serve as buttons in the dialog that is displayed.
 
-#### Access data form OData services
+#### Access data from OData services
 
 You can HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the HTTP_PREFIX constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.
 

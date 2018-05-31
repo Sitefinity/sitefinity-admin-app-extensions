@@ -47,10 +47,10 @@ Enter **http://localhost:3000/assets/auth/silent-renew.html**
 Enter **http://localhost:3000/auth/oidc/sign-in**
 5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
 
-**NOTE:** In case you modified the authentication settings, you need to restart the application.
+**NOTE:** After modifying the authentication settings, you need to restart the application.
 
 ####	Web service configuration
-1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
+1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Routes* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
 2.	Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**. 
 3.	Save your changes.
 
@@ -73,6 +73,8 @@ The extensibility API leverages Angular DI mechanism via **InjectionTokens** and
 ### Debugging
 To start debugging, execute the following command:
 **npm start**
+
+The command will start the webpack development server and will host the Admin App alongisde the compiled extensions under http://localhost:3000. If you wish to debug the application simply open the developer tools on your browser and search for your code as with any regular Angular app.
 
 **NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
 

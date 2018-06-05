@@ -1,0 +1,15 @@
+<div class="sf-form -framed -sf-centered-box -sf-pl-m -sf-pr-m -sf-mt-8xl">
+
+    <h1>Theme settings</h1>
+    <form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+        <div class="sf-field">
+            <label class="sf-field__label" for="--color-main-black">
+                    Main black color:
+            </label>
+            <input formControlName="--color-main-black">
+        </div>
+
+        <button type="submit" [disabled]="themeForm.pristine || !themeForm.valid" class="sf-button -action -large -sf-mt-m">Save</button>
+    </form>
+
+</div>

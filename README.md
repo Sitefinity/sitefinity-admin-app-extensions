@@ -6,6 +6,8 @@ Leveraging the API-first approach of the Admin App, you can extend and add funct
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, Webstorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
+**NOTE:** The samples in this reposotory are supported from Sitefintiy version 11.0.6700.0 and above.
+
 ### Prerequisites
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
@@ -100,6 +102,7 @@ For example, the folder structure in Admin App folder may look like the followin
 * **edtitor-power-tools.extensions.bundle.js**
 
 **IMPORTANT:** You must follow the naming convention: **{{bundle prefix}}.extensions.bundle.js**
+**NOTE:** the source map files **{{bundle prefix}}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect so skip deploying them.
 
 ### Extensibility endpoints
 

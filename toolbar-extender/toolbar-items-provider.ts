@@ -37,7 +37,11 @@ class CustomToolBarItemsProvider implements ToolBarItemsProvider {
     }
 
     getToolBarItemsNamesToRemove(): string[] {
-        return ["embed"];
+        // If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
+        // Otherwise return an empty array.
+        // Example: return [ "embed" ];
+        // The above code will remove the embed toolbar item from the editor.
+        return [];
     }
 }
 

@@ -102,7 +102,7 @@ For example, the folder structure in Admin App folder may look like the followin
 * **edtitor-power-tools.extensions.bundle.js**
 
 **IMPORTANT:** You must follow the naming convention: **{{bundle prefix}}.extensions.bundle.js**
-**NOTE:** the source map files **{{bundle prefix}}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect so skip deploying them.
+**NOTE:** the source map files **{{bundle prefix}}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect.
 
 ### Extensibility endpoints
 

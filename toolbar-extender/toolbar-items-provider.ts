@@ -35,6 +35,10 @@ class CustomToolBarItemsProvider implements ToolBarItemsProvider {
 
         return [CUSTOM_TOOLBAR_ITEM];
     }
+
+    getToolBarItemsNamesToRemove(): string[] {
+        return ["embed"];
+    }
 }
 
 /**

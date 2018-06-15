@@ -1,6 +1,7 @@
 var ImportPlugin = require("./import.plugin");
 var path = require("path");
 const constants = require("./constants");
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const extensionsFileName = "./" + constants.indexFileName;
 const extensionsKey = constants.extensionsKey;
@@ -31,6 +32,9 @@ module.exports = {
         new ImportPlugin({
             context: ".",
             manifest: require("progress-sitefinity-adminapp-sdk/manifest.json")
+        }),
+        new DefinePlugin({
+            VERSION: JSON.stringify(require("../package.json").devDependencies["progress-sitefinity-adminapp-sdk"])
         })
     ],
 

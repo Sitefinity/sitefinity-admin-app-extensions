@@ -1,16 +1,15 @@
 import { ClassProvider, Injectable } from "@angular/core";
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
-require("!style-loader!css-loader!./toolbar-items-provider.css");
+require("!style-loader!css-loader!./editor-config-provider.css");
 
 /**
  * A custom toolbar provider implementation for counting the words in the html editor.
  * Kendo UI Editor custom tools documentation -> https://demos.telerik.com/kendo-ui/editor/custom-tools
  */
 @Injectable()
-class CustomToolBarItemsProvider implements ToolBarItemsProvider {
-
+class CustomEditorConfigProvider implements EditorConfigProvider {
     /**
      * The method that gets invoked when the editor constructs the toolbar actions.
      * @param editorHost The instance of the editor.
@@ -43,14 +42,19 @@ class CustomToolBarItemsProvider implements ToolBarItemsProvider {
         // The above code will remove the embed toolbar item from the editor.
         return [];
     }
+
+    configureEditor(configuration: any) {
+        configuration.pasteCleanup.span = false;
+        return configuration;
+    }
 }
 
 /**
  * Export a 'multi' class provider so that multiple instances of the same provider can coexist.
  * This allows for more than one provider to be registered within one or more bundles.
  */
-export const EXTERNAL_TOOLBAR_ITEMS_PROVIDER: ClassProvider = {
+export const EDITOR_CONFIG_PROVIDER: ClassProvider = {
     multi: true,
-    provide: TOOLBARITEMS_TOKEN,
-    useClass: CustomToolBarItemsProvider
+    provide: EDITOR_CONFIG_TOKEN,
+    useClass: CustomEditorConfigProvider
 };

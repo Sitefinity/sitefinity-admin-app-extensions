@@ -11,7 +11,6 @@ import { ToolbarExtenderModule } from "./toolbar-extender";
  * Here all of the NgModules are returned and are loaded into the main module.
  */
 export class SamplesExtension implements Extension {
-
     /**
      * On application bootstrap this method is called to get all extensions as angular modules.
      */

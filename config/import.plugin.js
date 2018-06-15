@@ -48,6 +48,27 @@ ImportPlugin.prototype.apply = function (compiler) {
 
     }.bind(this));
 
+    compiler.plugin("emit", function(compilation, callback) {
+        const compilationAssetName = Object.keys(compilation.assets).find(x => x.includes(constants.extensionsKey));
+        const asset = compilation.assets[compilationAssetName];
+        if (asset) {
+            var originalSource = asset.source().toString();
+
+            const indexOfMethod = originalSource.lastIndexOf("getNgModules");
+            const indexOfExports = originalSource.indexOf("exports.", indexOfMethod);
+            const indexOfDelimeter = originalSource.indexOf(";", indexOfExports);
+
+            const codeToInject = `exports.metadata = { version: ${JSON.stringify(require("../package.json").devDependencies["progress-sitefinity-adminapp-sdk"])}, name: "${constants.extensionsKey}" };`;
+            let modifiedSource = originalSource.slice(0, indexOfDelimeter + 1) + codeToInject + originalSource.slice(indexOfDelimeter + 1);
+
+            asset.source = () => { return modifiedSource; };
+
+            asset.size = () => { return modifiedSource.length; };
+        }
+
+        callback();
+    }.bind(this));
+
     compiler.plugin("compilation", function (compilation, params) {
         var normalModuleFactory = params.normalModuleFactory;
         compilation.dependencyFactories.set(DelegatedSourceDependency, normalModuleFactory);

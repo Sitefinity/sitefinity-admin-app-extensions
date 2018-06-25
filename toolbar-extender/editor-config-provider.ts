@@ -36,13 +36,20 @@ class CustomEditorConfigProvider implements EditorConfigProvider {
     }
 
     getToolBarItemsNamesToRemove(): string[] {
-        // If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
-        // Otherwise return an empty array.
-        // Example: return [ "embed" ];
-        // The above code will remove the embed toolbar item from the editor.
+        /**
+         * If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
+         * Otherwise return an empty array.
+         * Example: return [ "embed" ];
+         * The above code will remove the embed toolbar item from the editor.
+         */
         return [];
     }
 
+    /**
+     *  This gives access to Kendo UI Editor configuration object
+     * that is used to initialize the editor upon creation
+     * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
+     */
     configureEditor(configuration: any) {
         configuration.pasteCleanup.span = false;
         return configuration;

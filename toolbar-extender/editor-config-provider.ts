@@ -47,7 +47,7 @@ class CustomEditorConfigProvider implements EditorConfigProvider {
     }
 
     /**
-     * This gives access to Kendo UI Editor configuration object
+     * This gives access to the Kendo UI Editor configuration object
      * that is used to initialize the editor upon creation
      * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      */

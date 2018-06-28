@@ -41,6 +41,7 @@ class CustomEditorConfigProvider implements EditorConfigProvider {
          * Otherwise return an empty array.
          * Example: return [ "embed" ];
          * The above code will remove the embed toolbar item from the editor.
+         * Documentation where you can find all tools' names: https://docs.telerik.com/kendo-ui/api/javascript/ui/editor/configuration/tools
          */
         return [];
     }

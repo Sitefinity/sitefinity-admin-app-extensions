@@ -4,6 +4,9 @@ import { ToolBarItemsProvider, ToolBarItem, TOOLBARITEMS_TOKEN } from "progress-
 // These classes are defined in the application's styles.
 const RTL_CLASS = "-sf-direction-rtl";
 const LTR_CLASS = "-sf-direction-ltr";
+const SELECTED_CLASS = "k-state-selected";
+const LTR_BUTTON_SELECTOR = ".k-i-Left-to-right";
+const RTL_BUTTON_SELECTOR = ".k-i-Right-to-left";
 
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
@@ -13,24 +16,28 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         const SWITCH_LEFT_TO_RIGHT_TOOL: ToolBarItem = {
             name: "Left-to-right",
             tooltip: "Left-to-right",
-            ordinal: 7,
+            ordinal: 6,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);
 
                 elementContainer.classList.remove(RTL_CLASS);
                 elementContainer.classList.add(LTR_CLASS);
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         };
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
             name: "Right-to-left",
             tooltip: "Right-to-left",
-            ordinal: 6,
+            ordinal: 7,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);
 
                 elementContainer.classList.remove(LTR_CLASS);
                 elementContainer.classList.add(RTL_CLASS);
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         };
 
@@ -59,6 +66,10 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
     private isInlineElement(element: HTMLElement) {
         const style = window.getComputedStyle(element, "");
         return style.display === "inline";
+    }
+
+    private getToolbarButton(selector: string): HTMLElement {
+        return document.querySelector(selector).parentElement;
     }
 }
 

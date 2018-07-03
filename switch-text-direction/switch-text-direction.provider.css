@@ -15,20 +15,20 @@
     padding: 5px 5px 5px 0;
 }
 
-.k-editor-toolbar .k-i-Right-to-left::before {
-    content: "\f0da";
-}
-
 .k-editor-toolbar .k-i-Right-to-left::after {
-    content: "\f1dd";
+    content: "\f0d9";
 }
 
-.k-editor-toolbar .k-i-Left-to-right::before {
+.k-editor-toolbar .k-i-Right-to-left::before {
     content: "\f1dd";
 }
 
 .k-editor-toolbar .k-i-Left-to-right::after {
-    content: "\f0d9";
+    content: "\f1dd";
+}
+
+.k-editor-toolbar .k-i-Left-to-right::before {
+    content: "\f0da";
 }
 
 .k-state-selected .k-icon::after {

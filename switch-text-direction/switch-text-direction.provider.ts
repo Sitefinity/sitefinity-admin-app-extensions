@@ -47,9 +47,18 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
 
     private findParent(editorHost): HTMLElement {
         const editor = editorHost.getKendoEditor();
-        const node = editor.getRange().startContainer.parentElement;
+        let currentNode = editor.getRange().startContainer.parentElement;
 
-        return node;
+        while (this.isInlineElement(currentNode)) {
+            currentNode = currentNode.parentElement;
+        }
+
+        return currentNode;
+    }
+
+    private isInlineElement(element: HTMLElement) {
+        const style = window.getComputedStyle(element, "");
+        return style.display === "inline";
     }
 }
 

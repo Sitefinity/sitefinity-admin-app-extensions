@@ -1,6 +1,7 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ToolBarItemsProvider, ToolBarItem, TOOLBARITEMS_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
+// These classes are defined in the application's styles.
 const RTL_CLASS = "-sf-direction-rtl";
 const LTR_CLASS = "-sf-direction-ltr";
 
@@ -11,7 +12,7 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {
         const SWITCH_LEFT_TO_RIGHT_TOOL: ToolBarItem = {
             name: "Left-to-right",
-            tooltip: "Switch text left to right.",
+            tooltip: "Left-to-right",
             ordinal: 7,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);
@@ -23,7 +24,7 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
             name: "Right-to-left",
-            tooltip: "Switch text right to left.",
+            tooltip: "Right-to-left",
             ordinal: 6,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);

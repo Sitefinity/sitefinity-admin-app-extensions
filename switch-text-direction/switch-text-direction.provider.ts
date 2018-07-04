@@ -1,5 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ToolBarItemsProvider, ToolBarItem, TOOLBARITEMS_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItemsProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { Observable } from "rxjs";
 
 // These classes are defined in the application's styles.
 const RTL_CLASS = "-sf-direction-rtl";
@@ -37,8 +38,8 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
 
                 elementContainer.classList.remove(RTL_CLASS);
                 elementContainer.classList.add(LTR_CLASS);
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         };
 
@@ -51,10 +52,18 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
 
                 elementContainer.classList.remove(LTR_CLASS);
                 elementContainer.classList.add(RTL_CLASS);
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         };
+
+        Observable
+            .fromEvent(editorHost.context, "focusin")
+            .first()
+            .subscribe(() => {
+                const toolbar = editorHost.getKendoEditor().toolbar.element;
+                groupToolbarButtons(toolbar, RTL_BUTTON_SELECTOR, LTR_BUTTON_SELECTOR, false);
+            });
 
         return [SWITCH_LEFT_TO_RIGHT_TOOL, SWITCH_RIGHT_TO_LEFT_TOOL];
     }
@@ -67,13 +76,17 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         return [];
     }
 
-    private findParent(editorHost, withClass: string = null): HTMLElement {
+    private findParent(editorHost): HTMLElement {
         const editor = editorHost.getKendoEditor();
-        let currentNode: HTMLElement = editor.getRange().startContainer.parentElement;
+        let currentNode: HTMLElement = editor.getRange().startContainer;
+
+        if (currentNode.nodeName === "#text") {
+            currentNode = currentNode.parentElement;
+        }
 
         // When the editor returns itself as current element, we should find the first child
         // where the actual content is. The hierarchy is sf-editor -> div.k-editor -> actual content
-        if (currentNode.tagName.toLocaleLowerCase() === SF_EDITOR_TAG_NAME) {
+        if (currentNode.tagName && currentNode.tagName.toLocaleLowerCase() === SF_EDITOR_TAG_NAME) {
             return currentNode.firstElementChild.firstElementChild as HTMLElement;
         }
 
@@ -100,8 +113,13 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         return style.display === "inline";
     }
 
-    private getToolbarButton(selector: string): HTMLElement {
-        return document.querySelector(selector).parentElement;
+    private getToolbarButton(editorHost, selector: string): HTMLElement {
+        return editorHost
+            .getKendoEditor()
+            .toolbar
+            .element[0]
+            .querySelector(selector)
+            .parentElement;
     }
 
     private handleCursorMove(editorHost) {
@@ -119,14 +137,14 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
             }
 
             if (parent.classList.contains(LTR_CLASS)) {
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             } else if (parent.classList.contains(RTL_CLASS) && !parent.classList.contains(KENDO_EDITOR_CLASS)) {
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             } else {
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         };
 
@@ -135,8 +153,8 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
             if (arrowKeycodes.has(ev.keyCode)) {
                 toggleToolbarButtonsSelectedClasses();
             } else if (!editorElement.textContent) {
-                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
-                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         });
     }

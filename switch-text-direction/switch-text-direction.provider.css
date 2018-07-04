@@ -3,18 +3,6 @@
     font-family: FontAwesome;
 }
 
-.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::before,
-.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::before {
-    /* Make the nesting in Iris for adding the padding over the k-icon more simple  */
-    padding-right: 0 !important;
-}
-
-.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::after,
-.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::after {
-    /* Should this comes with Iris styles?  */
-    padding: 5px 5px 5px 0;
-}
-
 .k-editor-toolbar .k-i-Right-to-left::after {
     content: "\f0d9";
 }
@@ -31,8 +19,25 @@
     content: "\f0da";
 }
 
+/* Find better solution */
+.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::before,
+.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::before {
+    /* Make the nesting in Iris for adding the padding over the k-icon more simple  */
+    padding-right: 0 !important;
+}
+
+.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::after,
+.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::after {
+    /* Should this comes with Iris styles?  */
+    padding: 5px 5px 5px 0;
+}
+
 .k-state-selected .k-icon::after {
     background-color: #e4e4e4;
     border-radius: 0;
 }
 
+/*  font-size - smaller (14px)
+    group the two icons
+    margin-right for the grouped tools
+*/

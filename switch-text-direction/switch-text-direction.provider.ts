@@ -99,7 +99,7 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         // the class globally for the whole editor.
         if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
             const wrapper: HTMLDivElement = document.createElement("div");
-            wrapper.textContent = currentNode.textContent;
+            wrapper.textContent = currentNode.innerHTML;
             currentNode.textContent = "";
             currentNode.appendChild(wrapper);
             currentNode = wrapper;

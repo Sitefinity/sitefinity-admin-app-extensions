@@ -7,15 +7,30 @@ const LTR_CLASS = "-sf-direction-ltr";
 const SELECTED_CLASS = "k-state-selected";
 const LTR_BUTTON_SELECTOR = ".k-i-Left-to-right";
 const RTL_BUTTON_SELECTOR = ".k-i-Right-to-left";
+const KENDO_EDITOR_CLASS = "k-editor";
+const SF_EDITOR_TAG_NAME = "sf-editor";
+const TOOLBAR_BUTTONS_DATA = {
+    LTR: {
+        name: "Left-to-right",
+        tooltip: "Left-to-right"
+    },
+    RTL: {
+        name: "Right-to-left",
+        tooltip: "Right-to-left"
+    }
+};
+const arrowKeycodes = new Set([37, 38, 39, 40]);
 
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
 @Injectable()
 class SwitchTextDirectionProvider implements ToolBarItemsProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {
+        this.handleCursorMove(editorHost);
+
         const SWITCH_LEFT_TO_RIGHT_TOOL: ToolBarItem = {
-            name: "Left-to-right",
-            tooltip: "Left-to-right",
+            name: TOOLBAR_BUTTONS_DATA.LTR.name,
+            tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);
@@ -28,8 +43,8 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         };
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
-            name: "Right-to-left",
-            tooltip: "Right-to-left",
+            name: TOOLBAR_BUTTONS_DATA.RTL.name,
+            tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
             exec: () => {
                 const elementContainer: HTMLElement = this.findParent(editorHost);
@@ -52,12 +67,29 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         return [];
     }
 
-    private findParent(editorHost): HTMLElement {
+    private findParent(editorHost, withClass: string = null): HTMLElement {
         const editor = editorHost.getKendoEditor();
-        let currentNode = editor.getRange().startContainer.parentElement;
+        let currentNode: HTMLElement = editor.getRange().startContainer.parentElement;
+
+        // When the editor returns itself as current element, we should find the first child
+        // where the actual content is. The hierarchy is sf-editor -> div.k-editor -> actual content
+        if (currentNode.tagName.toLocaleLowerCase() === SF_EDITOR_TAG_NAME) {
+            return currentNode.firstElementChild.firstElementChild as HTMLElement;
+        }
 
         while (this.isInlineElement(currentNode)) {
             currentNode = currentNode.parentElement;
+        }
+
+        // When the editor returns div.k-editor that means there isn't any formatting,
+        // so we have to wrap the raw content in some element because otherwise we add
+        // the class globally for the whole editor.
+        if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
+            const wrapper: HTMLDivElement = document.createElement("div");
+            wrapper.textContent = currentNode.textContent;
+            currentNode.textContent = "";
+            currentNode.appendChild(wrapper);
+            currentNode = wrapper;
         }
 
         return currentNode;
@@ -70,6 +102,36 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
 
     private getToolbarButton(selector: string): HTMLElement {
         return document.querySelector(selector).parentElement;
+    }
+
+    private handleCursorMove(editorHost) {
+        const editorElement: HTMLElement = editorHost.context;
+        const toggleToolbarButtonsSelectedClasses = () => {
+            let parent = this.findParent(editorHost);
+
+            // When the parent doesn't have classes, this means it is just a kendo wrapper.
+            if (!parent.classList.length) {
+                parent = parent.parentElement;
+            }
+
+            if (parent.classList.contains(LTR_CLASS)) {
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+            } else if (parent.classList.contains(RTL_CLASS)) {
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+            } else {
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+            }
+        };
+
+        editorElement.addEventListener("click", () => toggleToolbarButtonsSelectedClasses());
+        editorElement.addEventListener("keydown", (ev: KeyboardEvent) => {
+            if (arrowKeycodes.has(ev.keyCode)) {
+                toggleToolbarButtonsSelectedClasses();
+            }
+        });
     }
 }
 

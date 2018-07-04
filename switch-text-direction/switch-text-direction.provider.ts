@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ToolBarItemsProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { EditorConfigProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable } from "rxjs";
 
 // These classes are defined in the application's styles.
@@ -25,7 +25,11 @@ const arrowKeycodes = new Set([37, 38, 39, 40]);
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
 @Injectable()
-class SwitchTextDirectionProvider implements ToolBarItemsProvider {
+class SwitchTextDirectionProvider implements EditorConfigProvider {
+    /**
+     * The method that gets invoked when the editor constructs the toolbar actions.
+     * @param editorHost The instance of the editor.
+     */
     getToolBarItems(editorHost: any): ToolBarItem[] {
         this.handleCursorMove(editorHost);
 
@@ -34,12 +38,13 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
             tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
             exec: () => {
-                const elementContainer: HTMLElement = this.findParent(editorHost);
+                if (!this.tryHandleSelection(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))) {
+                    const elementContainer: HTMLElement = this.findParent(editorHost);
 
-                elementContainer.classList.remove(RTL_CLASS);
-                elementContainer.classList.add(LTR_CLASS);
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                    elementContainer.classList.remove(RTL_CLASS);
+                    elementContainer.classList.add(LTR_CLASS);
+                    this.handleButtonStylesOnLTRButtonClicked(editorHost);
+                }
             }
         };
 
@@ -48,12 +53,12 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
             tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
             exec: () => {
-                const elementContainer: HTMLElement = this.findParent(editorHost);
+                if (!this.tryHandleSelection(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))) {
+                    const elementContainer: HTMLElement = this.findParent(editorHost);
 
-                elementContainer.classList.remove(LTR_CLASS);
-                elementContainer.classList.add(RTL_CLASS);
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                    elementContainer.classList.remove(LTR_CLASS);
+                    elementContainer.classList.add(RTL_CLASS);
+                }
             }
         };
 
@@ -74,6 +79,16 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         // Example: return [ "embed" ];
         // The above code will remove the embed toolbar item from the editor.
         return [];
+    }
+
+    /**
+     * This gives access to the Kendo UI Editor configuration object
+     * that is used to initialize the editor upon creation
+     * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
+     */
+    configureEditor(configuration: any) {
+        configuration.pasteCleanup.span = false;
+        return configuration;
     }
 
     private findParent(editorHost): HTMLElement {
@@ -99,13 +114,23 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         // the class globally for the whole editor.
         if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
             const wrapper: HTMLDivElement = document.createElement("div");
-            wrapper.textContent = currentNode.innerHTML;
-            currentNode.textContent = "";
+            wrapper.innerHTML = currentNode.innerHTML;
+            currentNode.innerHTML = "";
             currentNode.appendChild(wrapper);
             currentNode = wrapper;
         }
 
         return currentNode;
+    }
+
+    private handleButtonStylesOnLTRButtonClicked(editorHost) {
+        this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+        this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+    }
+
+    private handleButtonStylesOnRTLButtonClicked(editorHost) {
+        this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
+        this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
     }
 
     private isInlineElement(element: HTMLElement) {
@@ -157,6 +182,30 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
                 this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         });
+    }
+
+    private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
+        const selection = editorHost.getKendoEditor().getSelection();
+
+        if (!selection.isCollapsed) {
+            let node = selection.focusNode;
+
+            while (selection.containsNode(node)) {
+                node.parentElement.classList.remove(classToRemove);
+                node.parentElement.classList.add(classToAdd);
+
+                if (!node.parentElement.nextElementSibling || !node.parentElement.nextElementSibling.firstChild) {
+                    break;
+                }
+
+                node = node.parentElement.nextElementSibling.firstChild;
+            }
+
+            doneCb();
+            return true;
+        }
+
+        return false;
     }
 }
 

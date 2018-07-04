@@ -109,6 +109,10 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         const toggleToolbarButtonsSelectedClasses = () => {
             let parent = this.findParent(editorHost);
 
+            if (!parent) {
+                return;
+            }
+
             // When the parent doesn't have classes, this means it is just a kendo wrapper.
             if (!parent.classList.length) {
                 parent = parent.parentElement;
@@ -117,7 +121,7 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
             if (parent.classList.contains(LTR_CLASS)) {
                 this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
                 this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
-            } else if (parent.classList.contains(RTL_CLASS)) {
+            } else if (parent.classList.contains(RTL_CLASS) && !parent.classList.contains(KENDO_EDITOR_CLASS)) {
                 this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
                 this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             } else {
@@ -130,6 +134,9 @@ class SwitchTextDirectionProvider implements ToolBarItemsProvider {
         editorElement.addEventListener("keydown", (ev: KeyboardEvent) => {
             if (arrowKeycodes.has(ev.keyCode)) {
                 toggleToolbarButtonsSelectedClasses();
+            } else if (!editorElement.textContent) {
+                this.getToolbarButton(LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.getToolbarButton(RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
             }
         });
     }

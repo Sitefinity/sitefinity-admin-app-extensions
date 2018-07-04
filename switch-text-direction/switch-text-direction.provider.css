@@ -1,34 +1,31 @@
-.k-editor-toolbar .k-tool-icon.k-i-Left-to-right,
-.k-editor-toolbar .k-tool-icon.k-i-Right-to-left {
+.k-icon.k-i-Left-to-right,
+.k-icon.k-i-Right-to-left {
     font-family: FontAwesome;
 }
 
-.k-editor-toolbar .k-i-Right-to-left::after {
+.k-i-Right-to-left::after {
     content: "\f0d9";
 }
 
-.k-editor-toolbar .k-i-Right-to-left::before {
+.k-i-Right-to-left::before {
     content: "\f1dd";
 }
 
-.k-editor-toolbar .k-i-Left-to-right::after {
+.k-i-Left-to-right::after {
     content: "\f1dd";
 }
 
-.k-editor-toolbar .k-i-Left-to-right::before {
+.k-i-Left-to-right::before {
     content: "\f0da";
 }
 
-/* Find better solution */
-.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::before,
-.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::before {
-    /* Make the nesting in Iris for adding the padding over the k-icon more simple  */
-    padding-right: 0 !important;
+.k-tool-icon.k-i-Left-to-right::before,
+.k-tool-icon.k-i-Right-to-left::before {
+    padding-right: 0;
 }
 
-.k-editor-toolbar .k-tool-icon.k-i-Left-to-right::after,
-.k-editor-toolbar .k-tool-icon.k-i-Right-to-left::after {
-    /* Should this comes with Iris styles?  */
+.k-tool-icon.k-i-Left-to-right::after,
+.k-tool-icon.k-i-Right-to-left::after {
     padding: 5px 5px 5px 0;
 }
 
@@ -36,8 +33,3 @@
     background-color: #e4e4e4;
     border-radius: 0;
 }
-
-/*  font-size - smaller (14px)
-    group the two icons
-    margin-right for the grouped tools
-*/

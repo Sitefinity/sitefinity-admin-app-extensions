@@ -28,7 +28,10 @@ require("!style-loader!css-loader!./switch-text-direction.provider.css");
 class SwitchTextDirectionProvider implements EditorConfigProvider {
     /**
      * The method that gets invoked when the editor constructs the toolbar actions.
-     * @param editorHost The instance of the editor.
+     *
+     * @param {*} editorHost The Kendo's editor object.
+     * @returns {ToolBarItem[]} The custom toolbar items that will be added to the Kendo's toolbar.
+     * @memberof SwitchTextDirectionProvider
      */
     getToolBarItems(editorHost: any): ToolBarItem[] {
         this.handleCursorMove(editorHost);
@@ -62,6 +65,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             }
         };
 
+        // Should group the direction buttons once the editor is loaded and focused.
         Observable
             .fromEvent(editorHost.context, "focusin")
             .first()
@@ -73,11 +77,16 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         return [SWITCH_LEFT_TO_RIGHT_TOOL, SWITCH_RIGHT_TO_LEFT_TOOL];
     }
 
+    /**
+     * If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
+     * Otherwise return an empty array.
+     * Example: return [ "embed" ];
+     * The above code will remove the embed toolbar item from the editor.
+     *
+     * @returns {string[]}
+     * @memberof SwitchTextDirectionProvider
+     */
     getToolBarItemsNamesToRemove(): string[] {
-        // If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
-        // Otherwise return an empty array.
-        // Example: return [ "embed" ];
-        // The above code will remove the embed toolbar item from the editor.
         return [];
     }
 
@@ -85,12 +94,24 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * This gives access to the Kendo UI Editor configuration object
      * that is used to initialize the editor upon creation
      * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
+     *
+     * @param {*} configuration
+     * @returns The modified configuration.
+     * @memberof SwitchTextDirectionProvider
      */
-    configureEditor(configuration: any) {
+    configureEditor(configuration: any): any {
         configuration.pasteCleanup.span = false;
         return configuration;
     }
 
+    /**
+     * Finds the parent element of the one that is the carret on.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @returns {HTMLElement}
+     * @memberof SwitchTextDirectionProvider
+     */
     private findParent(editorHost): HTMLElement {
         const editor = editorHost.getKendoEditor();
         let currentNode: HTMLElement = editor.getRange().startContainer;
@@ -123,21 +144,52 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         return currentNode;
     }
 
-    private handleButtonStylesOnLTRButtonClicked(editorHost) {
+    /**
+     * Make the LTR button selected, and the RTL button unselected.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private handleButtonStylesOnLTRButtonClicked(editorHost: any) {
         this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
         this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
     }
 
+    /**
+     * Make the RTL button selected, and the LTR button unselected.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @memberof SwitchTextDirectionProvider
+     */
     private handleButtonStylesOnRTLButtonClicked(editorHost) {
         this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
         this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
     }
 
+    /**
+     * Determines if the passed element has display: inline.
+     *
+     * @private
+     * @param {HTMLElement} element The element which will be checked.
+     * @returns True if the element is inline, otherwise false.
+     * @memberof SwitchTextDirectionProvider
+     */
     private isInlineElement(element: HTMLElement) {
         const style = window.getComputedStyle(element, "");
         return style.display === "inline";
     }
 
+    /**
+     * Retrieves toolbar button by given class.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @param {string} selector The selector for which the button will be queried.
+     * @returns {HTMLElement}
+     * @memberof SwitchTextDirectionProvider
+     */
     private getToolbarButton(editorHost, selector: string): HTMLElement {
         return editorHost
             .getKendoEditor()
@@ -147,6 +199,16 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             .parentElement;
     }
 
+    /**
+     * When the carret's position is changed by clicking in the editor or
+     * by navigating with the arrows, the toolbar's buttons should have
+     * the correct selected state, depending on the direction of the element
+     * on which the carret is.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @memberof SwitchTextDirectionProvider
+     */
     private handleCursorMove(editorHost) {
         const editorElement: HTMLElement = editorHost.context;
         const toggleToolbarButtonsSelectedClasses = () => {
@@ -184,6 +246,18 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         });
     }
 
+    /**
+     * When there is selection, all the selected nodes should have the specified
+     * direction.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @param {string} classToAdd The class that should be added on each of the nodes that are in the selection.
+     * @param {string} classToRemove The class that should be removed on each of the nodes that are in the selection.
+     * @param {Function} doneCb Function that is called when the processing of the selection is done. It's called only when there is particular selection.
+     * @returns {boolean}
+     * @memberof SwitchTextDirectionProvider
+     */
     private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
         const selection = editorHost.getKendoEditor().getSelection();
 

@@ -10,6 +10,7 @@ const LTR_BUTTON_SELECTOR = ".k-i-Left-to-right";
 const RTL_BUTTON_SELECTOR = ".k-i-Right-to-left";
 const KENDO_EDITOR_CLASS = "k-editor";
 const SF_EDITOR_TAG_NAME = "sf-editor";
+const EDIT_MENU_SELECTOR = "sf-edit-menu";
 const TOOLBAR_BUTTONS_DATA = {
     LTR: {
         name: "Left-to-right",
@@ -25,6 +26,8 @@ enum SelectionDirection {
     topToBottom,
     bottomToTop
 }
+
+declare var jQuery: any;
 
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
@@ -45,6 +48,8 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
             exec: () => {
+                jQuery(EDIT_MENU_SELECTOR).hide();
+
                 if (!this.tryHandleSelection(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))) {
                     const elementContainer: HTMLElement = this.findParent(editorHost);
 
@@ -60,6 +65,8 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
             exec: () => {
+                jQuery(EDIT_MENU_SELECTOR).hide();
+
                 if (!this.tryHandleSelection(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))) {
                     const elementContainer: HTMLElement = this.findParent(editorHost);
 
@@ -266,11 +273,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @memberof SwitchTextDirectionProvider
      */
     private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
-        debugger;
         const selection = editorHost.getKendoEditor().getSelection();
         const selectionDirection = this.getSelectionDirection(selection);
+        const baseNode = selection.baseNode || selection.anchorNode;
 
-        if (!selection.isCollapsed && selection.focusNode !== selection.baseNode) {
+        if (!selection.isCollapsed && selection.focusNode !== baseNode) {
             let node = selection.focusNode;
 
             while (selection.containsNode(node)) {
@@ -299,7 +306,16 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         return false;
     }
 
-    private getSelectionDirection(selection) {
+    /**
+     * Determines when the selections starts from top to bottom
+     * or from bottom to top.
+     *
+     * @private
+     * @param {*} selection Current selection.
+     * @returns {SelectionDirection} Selection's direction.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private getSelectionDirection(selection): SelectionDirection {
         const focusNode: HTMLElement = selection.focusNode;
 
         // Workaround for firefox. The slection API does not provide baseNode. The alternative is anchorNode.

@@ -266,6 +266,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @memberof SwitchTextDirectionProvider
      */
     private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
+        debugger;
         const selection = editorHost.getKendoEditor().getSelection();
         const selectionDirection = this.getSelectionDirection(selection);
 
@@ -300,7 +301,9 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
 
     private getSelectionDirection(selection) {
         const focusNode: HTMLElement = selection.focusNode;
-        const baseNode: HTMLElement = selection.baseNode;
+
+        // Workaround for firefox. The slection API does not provide baseNode. The alternative is anchorNode.
+        const baseNode: HTMLElement = selection.baseNode || selection.anchorNode;
         const positionA = focusNode.compareDocumentPosition(baseNode);
         const positionB = baseNode.compareDocumentPosition(focusNode);
         const isBefore = positionB > positionA;

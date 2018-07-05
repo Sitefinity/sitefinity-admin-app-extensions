@@ -21,6 +21,10 @@ const TOOLBAR_BUTTONS_DATA = {
     }
 };
 const arrowKeycodes = new Set([37, 38, 39, 40]);
+enum SelectionDirection {
+    topToBottom,
+    bottomToTop
+}
 
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
@@ -61,6 +65,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
 
                     elementContainer.classList.remove(LTR_CLASS);
                     elementContainer.classList.add(RTL_CLASS);
+                    this.handleButtonStylesOnRTLButtonClicked(editorHost);
                 }
             }
         };
@@ -133,7 +138,9 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         // When the editor returns div.k-editor that means there isn't any formatting,
         // so we have to wrap the raw content in some element because otherwise we add
         // the class globally for the whole editor.
-        if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
+        if (currentNode.classList.contains(KENDO_EDITOR_CLASS) &&
+            currentNode.firstElementChild instanceof HTMLElement &&
+            !this.isInlineElement(currentNode.firstElementChild as HTMLElement)) {
             const wrapper: HTMLDivElement = document.createElement("div");
             wrapper.innerHTML = currentNode.innerHTML;
             currentNode.innerHTML = "";
@@ -260,19 +267,28 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      */
     private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
         const selection = editorHost.getKendoEditor().getSelection();
+        const selectionDirection = this.getSelectionDirection(selection);
 
-        if (!selection.isCollapsed) {
+        if (!selection.isCollapsed && selection.focusNode !== selection.baseNode) {
             let node = selection.focusNode;
 
             while (selection.containsNode(node)) {
                 node.parentElement.classList.remove(classToRemove);
                 node.parentElement.classList.add(classToAdd);
 
-                if (!node.parentElement.nextElementSibling || !node.parentElement.nextElementSibling.firstChild) {
-                    break;
-                }
+                if (selectionDirection === SelectionDirection.topToBottom) {
+                    if (!node.parentElement.previousElementSibling || !node.parentElement.previousElementSibling.firstChild) {
+                        break;
+                    }
 
-                node = node.parentElement.nextElementSibling.firstChild;
+                    node = node.parentElement.previousElementSibling.firstChild;
+                } else {
+                    if (!node.parentElement.nextElementSibling || !node.parentElement.nextElementSibling.firstChild) {
+                        break;
+                    }
+
+                    node = node.parentElement.nextElementSibling.firstChild;
+                }
             }
 
             doneCb();
@@ -280,6 +296,20 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         }
 
         return false;
+    }
+
+    private getSelectionDirection(selection) {
+        const focusNode: HTMLElement = selection.focusNode;
+        const baseNode: HTMLElement = selection.baseNode;
+        const positionA = focusNode.compareDocumentPosition(baseNode);
+        const positionB = baseNode.compareDocumentPosition(focusNode);
+        const isBefore = positionB > positionA;
+
+        if (isBefore) {
+            return SelectionDirection.topToBottom;
+        }
+
+        return SelectionDirection.bottomToTop;
     }
 }
 

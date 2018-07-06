@@ -47,14 +47,14 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             name: TOOLBAR_BUTTONS_DATA.LTR.name,
             tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
-            exec: () => this.handleExec(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))
+            exec: () => this.handleExec(editorHost, LTR_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))
         };
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
             name: TOOLBAR_BUTTONS_DATA.RTL.name,
             tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
-            exec: () => this.handleExec(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))
+            exec: () => this.handleExec(editorHost, RTL_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))
         };
 
         // Should group the direction buttons once the editor is loaded and focused.

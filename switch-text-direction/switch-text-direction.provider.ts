@@ -328,6 +328,13 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         }
     }
 
+    /**
+     * Returns toolbar buttons to their normal state.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @memberof SwitchTextDirectionProvider
+     */
     private turnOffSelectedButtons(editorHost) {
         this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
         this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);

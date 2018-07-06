@@ -242,12 +242,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @private
      * @param {*} editorHost The Kendo's editor object.
      * @param {string} classToAdd The class that should be added on each of the nodes that are in the selection.
-     * @param {string} classToRemove The class that should be removed on each of the nodes that are in the selection.
      * @param {Function} doneCb Function that is called when the processing of the selection is done. It's called only when there is particular selection.
      * @returns {boolean}
      * @memberof SwitchTextDirectionProvider
      */
-    private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
+    private tryHandleSelection(editorHost, classToAdd: string, doneCb: Function): boolean {
         const selection = editorHost.getKendoEditor().getSelection();
         const selectionDirection = this.getSelectionDirection(selection);
         const baseNode = selection.baseNode || selection.anchorNode;
@@ -256,8 +255,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             let node = selection.focusNode;
 
             while (selection.containsNode(node)) {
-                node.parentElement.classList.remove(classToRemove);
-                node.parentElement.classList.add(classToAdd);
+                this.setDirection(node.parentElement, classToAdd);
 
                 if (selectionDirection === SelectionDirection.topToBottom) {
                     if (!node.parentElement.previousElementSibling || !node.parentElement.previousElementSibling.firstChild) {
@@ -316,14 +314,13 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @param {Function} applyButtonStyles Function that applies styles to the toolbar buttons.
      * @memberof SwitchTextDirectionProvider
      */
-    private handleExec(editorHost, dirClassToAdd: string, dirClassToRemove: string, applyButtonStyles: Function) {
+    private handleExec(editorHost, dirClassToAdd: string, applyButtonStyles: Function) {
         jQuery(EDIT_MENU_SELECTOR).hide();
 
-        if (!this.tryHandleSelection(editorHost, dirClassToAdd, dirClassToRemove, () => applyButtonStyles())) {
+        if (!this.tryHandleSelection(editorHost, dirClassToAdd, () => applyButtonStyles())) {
             const elementContainer: HTMLElement = this.findParent(editorHost);
 
-            elementContainer.classList.remove(dirClassToRemove);
-            elementContainer.classList.add(dirClassToAdd);
+            this.setDirection(elementContainer, dirClassToAdd);
             applyButtonStyles();
         }
     }
@@ -338,6 +335,40 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     private turnOffSelectedButtons(editorHost) {
         this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
         this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+    }
+
+    /**
+     * Checks desired text direction and sets required styles.
+     *
+     * @private
+     * @param {*} elementToStyle the element that has to be styled.
+     * @param {*} classToAdd RTL or LTR class to be added to the element.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private setDirection(elementToStyle, classToAdd: string) {
+        if (classToAdd === RTL_CLASS) {
+            this.setDirectionStyles(elementToStyle, LTR_CLASS, RTL_CLASS, "rtl", "right" );
+        } else {
+            this.setDirectionStyles(elementToStyle, RTL_CLASS, LTR_CLASS, "ltr", "left" );
+        }
+    }
+
+    /**
+     * Sets required styles for text direction.
+     *
+     * @private
+     * @param {*} elementToStyle the element that has to be styled.
+     * @param {*} classToAdd RTL or LTR class to be added to the element.
+     * @param {*} classToRemove RTL or LTR class to be removed from the element.
+     * @param {*} directionStyle rtl or ltr css direction property value to be set to the element.
+     * @param {*} alignmentStyle right or left css text-align property value to be set to the element.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private setDirectionStyles(elementToStyle: any, classToRemove: string, classToAdd: string, directionStyle: string, alignmentStyle: string) {
+        elementToStyle.classList.remove(classToRemove);
+        elementToStyle.classList.add(classToAdd);
+        elementToStyle.style.direction = directionStyle;
+        elementToStyle.style.textAlign = alignmentStyle;
     }
 }
 

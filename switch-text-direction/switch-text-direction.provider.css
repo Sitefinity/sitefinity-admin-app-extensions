@@ -1,0 +1,35 @@
+.k-icon.k-i-Left-to-right,
+.k-icon.k-i-Right-to-left {
+    font-family: FontAwesome;
+}
+
+.k-i-Right-to-left::after {
+    content: "\f0d9";
+}
+
+.k-i-Right-to-left::before {
+    content: "\f1dd";
+}
+
+.k-i-Left-to-right::after {
+    content: "\f1dd";
+}
+
+.k-i-Left-to-right::before {
+    content: "\f0da";
+}
+
+.k-tool-icon.k-i-Left-to-right::before,
+.k-tool-icon.k-i-Right-to-left::before {
+    padding-right: 0;
+}
+
+.k-tool-icon.k-i-Left-to-right::after,
+.k-tool-icon.k-i-Right-to-left::after {
+    padding: 5px 5px 5px 0;
+}
+
+.k-state-selected .k-icon::after {
+    background-color: #e4e4e4;
+    border-radius: 0;
+}

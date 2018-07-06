@@ -47,34 +47,14 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             name: TOOLBAR_BUTTONS_DATA.LTR.name,
             tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
-            exec: () => {
-                jQuery(EDIT_MENU_SELECTOR).hide();
-
-                if (!this.tryHandleSelection(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))) {
-                    const elementContainer: HTMLElement = this.findParent(editorHost);
-
-                    elementContainer.classList.remove(RTL_CLASS);
-                    elementContainer.classList.add(LTR_CLASS);
-                    this.handleButtonStylesOnLTRButtonClicked(editorHost);
-                }
-            }
+            exec: () => this.handleExec(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))
         };
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
             name: TOOLBAR_BUTTONS_DATA.RTL.name,
             tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
-            exec: () => {
-                jQuery(EDIT_MENU_SELECTOR).hide();
-
-                if (!this.tryHandleSelection(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))) {
-                    const elementContainer: HTMLElement = this.findParent(editorHost);
-
-                    elementContainer.classList.remove(LTR_CLASS);
-                    elementContainer.classList.add(RTL_CLASS);
-                    this.handleButtonStylesOnRTLButtonClicked(editorHost);
-                }
-            }
+            exec: () => this.handleExec(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))
         };
 
         // Should group the direction buttons once the editor is loaded and focused.
@@ -191,7 +171,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @memberof SwitchTextDirectionProvider
      */
     private isInlineElement(element: HTMLElement) {
-        const style = window.getComputedStyle(element, "");
+        const style = getComputedStyle(element, "");
         return style.display === "inline";
     }
 
@@ -329,6 +309,28 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         }
 
         return SelectionDirection.bottomToTop;
+    }
+
+    /**
+     * Handles toolbar button click.
+     *
+     * @private
+     * @param {*} editorHost The Kendo's editor object.
+     * @param {string} dirClassToAdd Text direction class that will be added to the current element or the elements in the selection.
+     * @param {string} dirClassToRemove Text direction class that will be removed from the current element or from the elements in the selection.
+     * @param {Function} applyButtonStyles Function that applies styles to the toolbar buttons.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private handleExec(editorHost, dirClassToAdd: string, dirClassToRemove: string, applyButtonStyles: Function) {
+        jQuery(EDIT_MENU_SELECTOR).hide();
+
+        if (!this.tryHandleSelection(editorHost, dirClassToAdd, dirClassToRemove, () => applyButtonStyles())) {
+            const elementContainer: HTMLElement = this.findParent(editorHost);
+
+            elementContainer.classList.remove(dirClassToRemove);
+            elementContainer.classList.add(dirClassToAdd);
+            applyButtonStyles();
+        }
     }
 }
 

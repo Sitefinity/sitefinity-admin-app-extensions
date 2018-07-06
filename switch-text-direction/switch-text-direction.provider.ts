@@ -92,7 +92,6 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @memberof SwitchTextDirectionProvider
      */
     configureEditor(configuration: any): any {
-        configuration.pasteCleanup.span = false;
         return configuration;
     }
 
@@ -218,14 +217,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             }
 
             if (parent.classList.contains(LTR_CLASS)) {
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.handleButtonStylesOnLTRButtonClicked(editorHost);
             } else if (parent.classList.contains(RTL_CLASS) && !parent.classList.contains(KENDO_EDITOR_CLASS)) {
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.add(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.handleButtonStylesOnRTLButtonClicked(editorHost);
             } else {
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.turnOffSelectedButtons(editorHost);
             }
         };
 
@@ -234,8 +230,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             if (arrowKeycodes.has(ev.keyCode)) {
                 toggleToolbarButtonsSelectedClasses();
             } else if (!editorElement.textContent) {
-                this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
-                this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+                this.turnOffSelectedButtons(editorHost);
             }
         });
     }
@@ -331,6 +326,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             elementContainer.classList.add(dirClassToAdd);
             applyButtonStyles();
         }
+    }
+
+    private turnOffSelectedButtons(editorHost) {
+        this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+        this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
     }
 }
 

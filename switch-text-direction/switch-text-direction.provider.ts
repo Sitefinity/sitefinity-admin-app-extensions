@@ -130,10 +130,8 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         // When the editor returns div.k-editor that means there isn't any formatting,
         // so we have to wrap the raw content in some element because otherwise we add
         // the class globally for the whole editor.
-        if (currentNode.classList.contains(KENDO_EDITOR_CLASS) &&
-            currentNode.firstElementChild instanceof HTMLElement &&
-            !this.isInlineElement(currentNode.firstElementChild as HTMLElement)) {
-            const wrapper: HTMLDivElement = document.createElement("div");
+        if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
+            const wrapper: HTMLParagraphElement = document.createElement("p");
             wrapper.innerHTML = currentNode.innerHTML;
             currentNode.innerHTML = "";
             currentNode.appendChild(wrapper);

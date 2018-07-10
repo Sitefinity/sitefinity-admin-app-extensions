@@ -47,14 +47,20 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             name: TOOLBAR_BUTTONS_DATA.LTR.name,
             tooltip: TOOLBAR_BUTTONS_DATA.LTR.tooltip,
             ordinal: 6,
-            exec: () => this.handleExec(editorHost, LTR_CLASS, RTL_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost))
+            exec: () => {
+                const ltrButtonParent = jQuery(LTR_BUTTON_SELECTOR).parent()[0];
+                this.handleExec(ltrButtonParent, editorHost, LTR_CLASS, () => this.handleButtonStylesOnLTRButtonClicked(editorHost));
+            }
         };
 
         const SWITCH_RIGHT_TO_LEFT_TOOL: ToolBarItem = {
             name: TOOLBAR_BUTTONS_DATA.RTL.name,
             tooltip:  TOOLBAR_BUTTONS_DATA.RTL.tooltip,
             ordinal: 7,
-            exec: () => this.handleExec(editorHost, RTL_CLASS, LTR_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost))
+            exec: () => {
+                const rtlButtonParent = jQuery(RTL_BUTTON_SELECTOR).parent()[0];
+                this.handleExec(rtlButtonParent, editorHost, RTL_CLASS, () => this.handleButtonStylesOnRTLButtonClicked(editorHost));
+            }
         };
 
         // Should group the direction buttons once the editor is loaded and focused.
@@ -124,10 +130,8 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         // When the editor returns div.k-editor that means there isn't any formatting,
         // so we have to wrap the raw content in some element because otherwise we add
         // the class globally for the whole editor.
-        if (currentNode.classList.contains(KENDO_EDITOR_CLASS) &&
-            currentNode.firstElementChild instanceof HTMLElement &&
-            !this.isInlineElement(currentNode.firstElementChild as HTMLElement)) {
-            const wrapper: HTMLDivElement = document.createElement("div");
+        if (currentNode.classList.contains(KENDO_EDITOR_CLASS)) {
+            const wrapper: HTMLParagraphElement = document.createElement("p");
             wrapper.innerHTML = currentNode.innerHTML;
             currentNode.innerHTML = "";
             currentNode.appendChild(wrapper);
@@ -242,12 +246,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @private
      * @param {*} editorHost The Kendo's editor object.
      * @param {string} classToAdd The class that should be added on each of the nodes that are in the selection.
-     * @param {string} classToRemove The class that should be removed on each of the nodes that are in the selection.
      * @param {Function} doneCb Function that is called when the processing of the selection is done. It's called only when there is particular selection.
      * @returns {boolean}
      * @memberof SwitchTextDirectionProvider
      */
-    private tryHandleSelection(editorHost, classToAdd: string, classToRemove: string, doneCb: Function): boolean {
+    private tryHandleSelection(toolbarButton, editorHost, classToAdd: string, doneCb: Function): boolean {
         const selection = editorHost.getKendoEditor().getSelection();
         const selectionDirection = this.getSelectionDirection(selection);
         const baseNode = selection.baseNode || selection.anchorNode;
@@ -256,8 +259,11 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
             let node = selection.focusNode;
 
             while (selection.containsNode(node)) {
-                node.parentElement.classList.remove(classToRemove);
-                node.parentElement.classList.add(classToAdd);
+                if (toolbarButton.classList.contains(SELECTED_CLASS)) {
+                    this.removeDirection(toolbarButton, node.parentElement, classToAdd);
+                } else {
+                    this.setDirection(node.parentElement, classToAdd);
+                }
 
                 if (selectionDirection === SelectionDirection.topToBottom) {
                     if (!node.parentElement.previousElementSibling || !node.parentElement.previousElementSibling.firstChild) {
@@ -310,21 +316,24 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * Handles toolbar button click.
      *
      * @private
+     * @param {*} toolbarButton kendo toolbar button for rtl or ltr direction.
      * @param {*} editorHost The Kendo's editor object.
      * @param {string} dirClassToAdd Text direction class that will be added to the current element or the elements in the selection.
-     * @param {string} dirClassToRemove Text direction class that will be removed from the current element or from the elements in the selection.
      * @param {Function} applyButtonStyles Function that applies styles to the toolbar buttons.
      * @memberof SwitchTextDirectionProvider
      */
-    private handleExec(editorHost, dirClassToAdd: string, dirClassToRemove: string, applyButtonStyles: Function) {
+    private handleExec(toolbarButton, editorHost, dirClassToAdd: string, applyButtonStyles: Function) {
         jQuery(EDIT_MENU_SELECTOR).hide();
 
-        if (!this.tryHandleSelection(editorHost, dirClassToAdd, dirClassToRemove, () => applyButtonStyles())) {
+        if (!this.tryHandleSelection(toolbarButton, editorHost, dirClassToAdd, () => applyButtonStyles())) {
             const elementContainer: HTMLElement = this.findParent(editorHost);
 
-            elementContainer.classList.remove(dirClassToRemove);
-            elementContainer.classList.add(dirClassToAdd);
-            applyButtonStyles();
+            if (toolbarButton.classList.contains(SELECTED_CLASS)) {
+                this.removeDirection(toolbarButton, elementContainer, dirClassToAdd);
+            } else {
+                this.setDirection(elementContainer, dirClassToAdd);
+                applyButtonStyles();
+            }
         }
     }
 
@@ -338,6 +347,56 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     private turnOffSelectedButtons(editorHost) {
         this.getToolbarButton(editorHost, LTR_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
         this.getToolbarButton(editorHost, RTL_BUTTON_SELECTOR).classList.remove(SELECTED_CLASS);
+    }
+
+    /**
+     * Checks desired text direction and sets required styles.
+     *
+     * @private
+     * @param {*} elementToStyle the element that has to be styled.
+     * @param {*} classToAdd RTL or LTR class to be added to the element.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private setDirection(elementToStyle, classToAdd: string) {
+        if (classToAdd === RTL_CLASS) {
+            this.setDirectionStyles(elementToStyle, LTR_CLASS, "rtl", "right", RTL_CLASS );
+        } else {
+            this.setDirectionStyles(elementToStyle, RTL_CLASS, "ltr", "left", LTR_CLASS );
+        }
+    }
+
+    /**
+     * Removes text direction styles.
+     *
+     * @private
+     * @param {*} toolbarButton kendo toolbar button for rtl or ltr direction.
+     * @param {*} elementToStyle the element that has to be styled.
+     * @param {*} classToRemove RTL or LTR class to be removed to the element.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private removeDirection(toolbarButton, elementToStyle, classToRemove: string) {
+        this.setDirectionStyles(elementToStyle, classToRemove, null, null);
+        toolbarButton.classList.remove(SELECTED_CLASS);
+    }
+
+    /**
+     * Sets required styles for text direction.
+     *
+     * @private
+     * @param {*} elementToStyle the element that has to be styled.
+     * @param {*} classToAdd RTL or LTR class to be added to the element.
+     * @param {*} classToRemove RTL or LTR class to be removed from the element.
+     * @param {*} directionStyle rtl or ltr css direction property value to be set to the element.
+     * @param {*} alignmentStyle right or left css text-align property value to be set to the element.
+     * @memberof SwitchTextDirectionProvider
+     */
+    private setDirectionStyles(elementToStyle: any, classToRemove: string, directionStyle: string, alignmentStyle: string, classToAdd?: string) {
+        elementToStyle.classList.remove(classToRemove);
+        if (classToAdd) {
+            elementToStyle.classList.add(classToAdd);
+        }
+        elementToStyle.style.direction = directionStyle;
+        elementToStyle.style.textAlign = alignmentStyle;
     }
 }
 

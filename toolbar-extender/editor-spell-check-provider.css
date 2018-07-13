@@ -1,0 +1,13 @@
+.k-editor-toolbar .k-i-Spell-correction::before {
+    /* Kendo UI Icons: https://docs.telerik.com/kendo-ui/styles-and-layout/icons-web */
+    content: "\e13c";
+}
+
+.k-editor-toolbar .k-i-Spell-check::before {
+    /* Kendo UI Icons: https://docs.telerik.com/kendo-ui/styles-and-layout/icons-web */
+    content: "\e68d";
+}
+
+span[suggestion] {
+    background-color: yellow;
+}

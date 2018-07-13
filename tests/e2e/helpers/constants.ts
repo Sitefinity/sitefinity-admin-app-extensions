@@ -4,16 +4,19 @@ export const ACTIVATE_DYNAMIC_MODULE_SERVICE_URL = "/sf/system/content-types-ser
 
 export const BASE_URL = "http://localhost:3000/";
 
+export const NEWS_TYPE_NAME = "newsitems"
+
 export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;
 export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
+export const CONTENT_NEWS_URL = `${BASE_URL}content/newsitems`;
 
 export const EC = protractor.ExpectedConditions;
 export const URL_IN_CONFIG_FILE = browser.params.sfUrl;
 export const USERNAME = browser.params.login.username;
 export const PASSWORD = browser.params.login.password;
 
-export const DEFAULT_ITEMS_NUMBER = 50;
+export const DEFAULT_ITEMS_NUMBER = 20;
 export const DEFAULT_SERVICE_URL = "sf/system/";
 export const DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX = "/sf/system/content-types-service/";
 export const DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX = "/?deleteData=true";

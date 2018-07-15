@@ -2,7 +2,7 @@ import { browser, ElementFinder } from "protractor";
 import { EC, TIME_TO_WAIT } from "./constants";
 
 export async function BrowserWaitForElement(element: ElementFinder) {
-    await browser.wait(EC.visibilityOf(element), TIME_TO_WAIT, "Element is not visible");
+    await browser.wait(EC.visibilityOf(element), TIME_TO_WAIT, "Element is not visible. Locator used - " + element.locator());
 }
 
 export async function BrowserGetUrl(): Promise<string> {

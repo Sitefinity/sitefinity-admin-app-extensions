@@ -43,7 +43,8 @@ export class ItemList {
 
     static async ClickOnItem(title: string) {
         await BrowserWaitForElement(ItemListMap.CountLabel);
-        var item = ItemListMap.GetTableRow(title);
+        await BrowserWaitForElement(ItemListMap.GetRowTitleCell(title));
+        var item = ItemListMap.GetRowTitleCell(title);
         await item.click();
     }
 

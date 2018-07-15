@@ -7,12 +7,17 @@ export class ItemListMap {
     public static TableHeaders: ElementArrayFinder = element(by.className("sf-tree-list__row -head")).all(by.className("sf-tree-list__cell -head"));
     public static TableElements: ElementArrayFinder = element.all(by.css(".sf-tree-list__row:not(.-head):not(.-loading)"));
 
-    public static GetTableRow(rowTitle: string): ElementFinder {
-        return element(by.cssContainingText(".tree-node-level-1", rowTitle));
+    public static GetRowTitleCell(rowTitle: string): ElementFinder {
+        var itemRow = ItemListMap.GetTableRow(rowTitle);
+        return itemRow.element(by.css(".sf-tree-list__cell.-title"));
     }
 
     public static GetItemActionsMenu(rowTitle: string): ElementFinder {
-        var item = ItemListMap.GetTableRow(rowTitle);
-        return item.element(by.css("[title=Actions]"));
+        var itemRow = ItemListMap.GetTableRow(rowTitle);
+        return itemRow.element(by.css("[title=Actions]"));
+    }
+
+    private static GetTableRow(rowTitle: string): ElementFinder {
+        return element(by.cssContainingText(".tree-node-level-1", rowTitle));
     }
 }

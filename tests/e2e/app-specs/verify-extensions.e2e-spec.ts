@@ -4,11 +4,9 @@ import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTA
 import { BrowserNavigate } from '../helpers/browser-helpers';
 import { PrintPreview } from '../app-elements/print-preview.component';
 import { ItemDetails } from '../app-elements/item-details.component';
+import { VideosModal } from '../app-elements/videos-modal.component';
 
 describe("Verify extensions", () => {
-    const itemList = new ItemList();
-    const printPreview  = new PrintPreview();
-    const itemDetails  = new ItemDetails();
 
     const typeToTest = "News";
     const imageColumnHeader = "IMAGE";
@@ -20,21 +18,32 @@ describe("Verify extensions", () => {
     }, TIMEOUT);
 
     it("images column", async () => {
-        BrowserNavigate(CONTENT_NEWS_URL);
-        await itemList.verifyBasicUIElements(NEWS_TYPE_NAME, typeToTest);
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.VerifyBasicUIElements(NEWS_TYPE_NAME, typeToTest);
 
         var extensionHeaders = DYNAMIC_ITEM_HEADERS.map((header) => { return header === TABLE_HEADERS_CONSTANTS.DATE_CREATED ? imageColumnHeader : header })
-        await itemList.verifyBasicGridElements(typeToTest, extensionHeaders, 34);
+        await ItemList.VerifyBasicGridElements(typeToTest, extensionHeaders, 34);
     });
 
     it("print preview ", async () => {
-        await itemList.clickPrintPreview(itemToVerify);
-        await printPreview.verifyPrintPreview(itemToVerify);
+        await ItemList.ClickPrintPreview(itemToVerify);
+        await PrintPreview.VerifyPrintPreview(itemToVerify);
     });
 
     it("custom title field ", async () => {
-        BrowserNavigate(CONTENT_NEWS_URL);
-        await itemList.clickOnItem(itemToVerify);
-        await itemDetails.verifyCustomTitleField();
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.VerifyCustomTitleField();
+    });
+
+    it("word count editor toolbar button ", async () => {
+        await ItemDetails.ClickOnHtmlField();
+        await ItemDetails.VerifyHtmlToolbarWordCount();
+    });
+
+    it("word count editor toolbar button ", async () => {
+        await ItemDetails.ClickHtmlToolbarSitefinityVideos();
+        await VideosModal.VerifyModalTitle();
+        await VideosModal.CancelModal();
     });
 });

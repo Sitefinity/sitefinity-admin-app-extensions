@@ -4,8 +4,9 @@
   "license": "private",
   "private": true,
   "scripts": {
+    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone",
     "e2e": "node ./node_modules/protractor/bin/protractor",
-    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update"
+    "e2e:headlessChrome": "npm run e2e -- --params.browser=chrome --params.headless"
   },
   "dependencies": {
     "@types/es6-shim": "0.31.32",

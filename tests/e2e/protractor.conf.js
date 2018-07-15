@@ -1,17 +1,80 @@
 "use strict";
 var jasmineReporters = require("jasmine-reporters");
-var protractor = require("protractor");
-
-const modifiedReporter = new jasmineReporters.JUnitXmlReporter({
-    consolidateAll: true,
-    savePath: "test-results",
-    filePrefix: "e2e-tests.xml"
-});
 
 // Override "source-map-support"'s install function, since it is causing issues protractor bootstrap
 // TODO
 require("source-map-support").install = function() {};
 require("ts-node/register");
+
+var junitReporter = new jasmineReporters.JUnitXmlReporter({
+    filePrefix: "e2e-tests.xml",
+    consolidateAll: true
+});
+
+var browserParameter;
+var headlessParameter = false;
+  
+for (let index = 0; index < process.argv.length; index++) {
+    const element = process.argv[index];
+
+    var browserParameterMatch = element.match(/^--params\.browser=(.*)$/);
+    var headlessParameterMatch = element.match(/^--params\.headless$/);
+
+    if (browserParameterMatch !== null) {
+        browserParameter = browserParameterMatch[1];
+    }
+
+    if (headlessParameterMatch !== null) {
+        headlessParameter = true;
+    }
+}
+
+var browserSettings;
+switch(browserParameter) {
+    case "chrome":                
+        browserSettings = {
+            browserName: "chrome",
+            chromeOptions: {
+                args: []
+            }
+        };
+
+        if (headlessParameter) {
+            browserSettings.chromeOptions.args = browserSettings.chromeOptions.args.concat([
+                "--headless",
+                "--disable-gpu",
+                "--window-size=1024,768"
+            ]);
+        }
+        break;
+        
+    case "firefox":
+        browserSettings = {
+            browserName: "firefox",
+            "moz:firefoxOptions": {
+                args: [],
+                log: {
+                    "level": "error"
+                }
+            }
+        };
+
+        if (headlessParameter) {
+            browserSettings["moz:firefoxOptions"].args = browserSettings["moz:firefoxOptions"].args.concat([
+                "--headless"
+            ]);
+        }        
+        break;
+
+    default:
+        console.log("No or unrecognized browser parameter. Falling back to default browser Chrome.");
+        browserSettings = {
+            browserName: "chrome",
+            chromeOptions: {
+                args: []
+            }
+        };
+}
 
 exports.config = {
     directConnect: true,
@@ -19,13 +82,7 @@ exports.config = {
     allScriptsTimeout: 40000,
 
     // Capabilities to be passed to the webdriver instance.
-    capabilities: {
-        browserName: "chrome",
-        // TODO: Temporary workaround for Chrome version 52.0.2743.116 m!
-        chromeOptions: {
-            args: ["--no-sandbox", "--disable-gpu", "--window-size=1024,768"]
-        }
-    },
+    capabilities: browserSettings,
 
     // Framework to use. Jasmine is recommended.
     framework: "jasmine",
@@ -50,7 +107,14 @@ exports.config = {
     useAllAngular2AppRoots: true,
 
     baseUrl: "http://localhost:3000/",
-
+    
+    onPrepare: function() {
+        browser
+            .manage()
+            .window()
+            .maximize();
+        jasmine.getEnv().addReporter(junitReporter);
+    },
 
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {

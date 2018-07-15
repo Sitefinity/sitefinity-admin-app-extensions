@@ -7,7 +7,7 @@ import { CONTENT_PAGE_URL, DEFAULT_ITEMS_NUMBER } from "../helpers/constants";
 
 export class ItemList {
 
-    async verifyBasicUIElements(typeName: string, itemTitlePlural: string) {
+    static async VerifyBasicUIElements(typeName: string, itemTitlePlural: string) {
         await BrowserWaitForElement(ItemListMap.CountLabel);
         var trimmedUrl = await removeQueryParams(BrowserGetUrl());
         var expectedUrl = CONTENT_PAGE_URL + typeName.toLowerCase();
@@ -16,9 +16,9 @@ export class ItemList {
         expect(await ItemListMap.TitleTag.getText()).toBe(itemTitlePlural);
     }
 
-    async verifyBasicGridElements(itemTitle: string, headers: string[], allItems: number, currentLoadedItems = DEFAULT_ITEMS_NUMBER) {
+    static async VerifyBasicGridElements(itemTitle: string, headers: string[], allItems: number, currentLoadedItems = DEFAULT_ITEMS_NUMBER) {
         await BrowserWaitForElement(ItemListMap.TitleTag);
-        await this.verifyHeaders(headers);
+        await ItemList.VerifyHeaders(headers);
         expect(await ItemListMap.CountLabel.isDisplayed()).toBeTruthy();
         expect(await ItemListMap.TableElements.count()).toBe(currentLoadedItems);
 
@@ -33,7 +33,7 @@ export class ItemList {
         expect(await ItemListMap.CountLabel.getText()).toBe(expectedItemCountLabel);
     }
 
-    async clickPrintPreview(title: string) {
+    static async ClickPrintPreview(title: string) {
         var actionButton = ItemListMap.GetItemActionsMenu(title);
 
         await actionButton.click();
@@ -41,13 +41,13 @@ export class ItemList {
         await ItemListMap.PrintPreviewButton.click();
     }
 
-    async clickOnItem(title: string) {
+    static async ClickOnItem(title: string) {
         await BrowserWaitForElement(ItemListMap.CountLabel);
         var item = ItemListMap.GetTableRow(title);
         await item.click();
     }
 
-    private async verifyHeaders(headers: string[]) {
+    private static async VerifyHeaders(headers: string[]) {
         const headersNumber = headers.length;
         try {
             expect(await ItemListMap.TableHeaders.count()).toBe(headersNumber);

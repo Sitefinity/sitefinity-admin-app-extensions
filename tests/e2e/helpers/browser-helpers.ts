@@ -12,3 +12,11 @@ export async function BrowserGetUrl(): Promise<string> {
 export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
+
+export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
+    await browser.wait(EC.alertIsPresent(), 5000, "Alert is not shown");
+    var alertDialog = browser.switchTo().alert();
+    var actualAlertText = await alertDialog.getText();
+    expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
+    await alertDialog.accept();
+}

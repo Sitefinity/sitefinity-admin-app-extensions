@@ -134,6 +134,7 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
         const editor = editorHost.getKendoEditor();
         // TODO: get selection not the whole text
         let text = editor.value();
+        text = this.removeSpellChecks(text);
 
         // TODO: use the real culture
         this.makeRequest(text).subscribe((response: any) => {
@@ -173,6 +174,19 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
                 alert("An error occured");
             }
         });
+    }
+
+    private removeSpellChecks(text: string) {
+        var wrapper= document.createElement('div');
+        wrapper.innerHTML= text;
+
+        //const doc = new DOMParser().parseFromString(text, "text/xml");
+        const spans = wrapper.querySelectorAll("span[suggestion]");
+        for (let i = 0; i < spans.length; i++) {
+            spans[i].outerHTML = spans[i].textContent;
+        }
+
+        return wrapper.outerHTML;
     }
 
     private makeRequest(text: string, culture: string = "en-US"): Observable<object> {

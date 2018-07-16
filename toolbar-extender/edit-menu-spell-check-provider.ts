@@ -18,12 +18,11 @@ class EditMenuSpellCheckProvider implements EditMenuProvider {
             name: "check",
             action: () => {
                 element.outerHTML = suggestion;
-                element.dispatchEvent(new Event("mousedown"));
             },
             text: `${suggestion} - ${Math.round( element.attributes["certainty"].value * 100)}%`,
             tooltip: "Make correction",
-            includeUrl: true,
-            isActive: false
+            isActive: false,
+            closeMenuOnClick: true
         };
 
         const cancelButton: EditMenuButton = {
@@ -31,10 +30,10 @@ class EditMenuSpellCheckProvider implements EditMenuProvider {
             action: () => {
                 element.outerHTML = element.innerText;
             },
-            text: "",
+            text: null,
             tooltip: "Discard correction",
-            includeUrl: false,
-            isActive: false
+            isActive: false,
+            closeMenuOnClick: true
         };
 
         return [

@@ -1,0 +1,31 @@
+.k-icon.k-i-insertsymbol {
+    font-family: WebComponentsIcons;
+    font-size: 1.4em;
+}
+
+.k-i-insertsymbol::before {
+    font-family: WebComponentsIcons;
+    content: "Ω";
+}
+
+.k-i-insertsymbol::after {
+    font-family: WebComponentsIcons;
+    content: "\e006";
+}
+
+.k-tool-icon.k-i-insert-symbol::before {
+    padding-right: 0;
+}
+
+.k-state-selected .k-icon::after {
+    background-color: #e4e4e4;
+    border-radius: 0;
+}
+
+.symbol-cell {
+    width: 12px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.1em;
+}

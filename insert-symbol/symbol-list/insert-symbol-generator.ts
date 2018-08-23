@@ -8,7 +8,7 @@ export class InsertSymbolGenerator {
     private symbolConfig;
 
     constructor () {
-        this.symbolConfig = require("./symbol-list.json").slice(0, 200);
+        this.symbolConfig = require("./symbol-list.json");
     }
 
     /**

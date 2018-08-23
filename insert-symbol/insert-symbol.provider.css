@@ -5,7 +5,7 @@
 
 .k-i-insertsymbol::before {
     font-family: WebComponentsIcons;
-    content: "Ω";
+    content: "\03a9";
 }
 
 .k-i-insertsymbol::after {

@@ -7,8 +7,8 @@ export const DATA_ATTRIBUTE_NAME = "data-value";
 export class InsertSymbolGenerator {
     private symbolConfig;
 
-    constructor () {
-        this.symbolConfig = require("./symbol-list.json");
+    constructor (symbolList) {
+        this.symbolConfig = symbolList;
     }
 
     /**

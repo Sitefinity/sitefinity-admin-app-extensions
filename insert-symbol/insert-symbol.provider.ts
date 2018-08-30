@@ -39,8 +39,8 @@ class InsertSymbolProvider implements EditorConfigProvider {
      * @returns The modified configuration.
      * @memberof InsertSymbolProvider
      */
-    configureEditor(config) {
-        return config;
+    configureEditor(configuration: any) {
+        return configuration;
     }
 
     /**
@@ -70,7 +70,8 @@ class InsertSymbolProvider implements EditorConfigProvider {
         const NS = "kendoEditor";
 
         const popupTemplateGenerator = function () {
-            const symbolGenerator = new InsertSymbolGenerator();
+            const symbolList = require("./symbol-list/symbol-list.json");
+            const symbolGenerator = new InsertSymbolGenerator(symbolList);
             const generatedHtml = symbolGenerator.generateHtml();
             return `<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'>INSERT SPECIAL CHARACTERS</div>${generatedHtml}</div>`;
         };

@@ -23,11 +23,17 @@
 }
 
 .symbol-cell {
-    width: 12px;
+    font-size: 15px;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     font-size: 1.1em;
+    color: #333333;
+    padding: 0px 5px 0px 5px;
+}
+
+.symbol-cell:hover {
+    color: #999999;
 }
 
 .k-ct-popup.symbol-popup {

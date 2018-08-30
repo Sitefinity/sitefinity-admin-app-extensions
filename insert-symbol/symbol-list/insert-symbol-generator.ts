@@ -25,7 +25,7 @@ export class InsertSymbolGenerator {
     }
 
     private generateCell(symbol: SymbolModel): string {
-        return `<div class="symbol-cell" ${DATA_ATTRIBUTE_NAME}="${symbol.value}" title="${symbol.tooltip}">${symbol.value}</div>`;
+        return `<div class="symbol-cell" ${DATA_ATTRIBUTE_NAME}='${symbol.value}' title="${symbol.tooltip}">${symbol.value}</div>`;
     }
 }
 

@@ -96,13 +96,7 @@ exports.config = {
     SELENIUM_PROMISE_MANAGER: false,
 
     // If needed to run/debug protractor tests via WebStorm, uncomment the following lines and set parameters.
-    // params: {
-    //     sfUrl: "",
-    //     login: {
-    //         username: "",
-    //         password: ""
-    //     }
-    // },
+    params: require("./config.json"),
 
     useAllAngular2AppRoots: true,
 

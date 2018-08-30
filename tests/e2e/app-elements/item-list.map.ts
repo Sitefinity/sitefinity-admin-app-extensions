@@ -8,12 +8,12 @@ export class ItemListMap {
     public static TableElements: ElementArrayFinder = element.all(by.css(".sf-tree-list__row:not(.-head):not(.-loading)"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {
-        var itemRow = ItemListMap.GetTableRow(rowTitle);
+        const itemRow = ItemListMap.GetTableRow(rowTitle);
         return itemRow.element(by.css(".sf-tree-list__cell.-title"));
     }
 
     public static GetItemActionsMenu(rowTitle: string): ElementFinder {
-        var itemRow = ItemListMap.GetTableRow(rowTitle);
+        const itemRow = ItemListMap.GetTableRow(rowTitle);
         return itemRow.element(by.css("[title=Actions]"));
     }
 

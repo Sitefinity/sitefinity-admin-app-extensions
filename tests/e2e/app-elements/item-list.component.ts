@@ -1,7 +1,7 @@
 require("jasmine-expect");
 
 import { removeQueryParams } from "../helpers/common";
-import { ItemListMap } from './item-list.map';
+import { ItemListMap } from "./item-list.map";
 import { BrowserWaitForElement, BrowserGetUrl } from "../helpers/browser-helpers";
 import { CONTENT_PAGE_URL, DEFAULT_ITEMS_NUMBER } from "../helpers/constants";
 
@@ -9,8 +9,8 @@ export class ItemList {
 
     static async VerifyBasicUIElements(typeName: string, itemTitlePlural: string) {
         await BrowserWaitForElement(ItemListMap.CountLabel);
-        var trimmedUrl = await removeQueryParams(BrowserGetUrl());
-        var expectedUrl = CONTENT_PAGE_URL + typeName.toLowerCase();
+        const trimmedUrl = await removeQueryParams(BrowserGetUrl());
+        const expectedUrl = CONTENT_PAGE_URL + typeName.toLowerCase();
         expect(trimmedUrl).toBe(expectedUrl);
         expect(await ItemListMap.TitleTag.isDisplayed()).toBeTruthy();
         expect(await ItemListMap.TitleTag.getText()).toBe(itemTitlePlural);
@@ -34,7 +34,7 @@ export class ItemList {
     }
 
     static async ClickPrintPreview(title: string) {
-        var actionButton = ItemListMap.GetItemActionsMenu(title);
+        const actionButton = ItemListMap.GetItemActionsMenu(title);
 
         await actionButton.click();
         await BrowserWaitForElement(ItemListMap.PrintPreviewButton);
@@ -44,7 +44,7 @@ export class ItemList {
     static async ClickOnItem(title: string) {
         await BrowserWaitForElement(ItemListMap.CountLabel);
         await BrowserWaitForElement(ItemListMap.GetRowTitleCell(title));
-        var item = ItemListMap.GetRowTitleCell(title);
+        const item = ItemListMap.GetRowTitleCell(title);
         await item.click();
     }
 
@@ -59,5 +59,5 @@ export class ItemList {
         } catch (e) {
             throw new Error("Table headers are not correct.");
         }
-    }    
+    }
 }

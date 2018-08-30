@@ -15,8 +15,8 @@ export async function BrowserNavigate(url: string): Promise<void> {
 
 export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
     await browser.wait(EC.alertIsPresent(), 5000, "Alert is not shown");
-    var alertDialog = browser.switchTo().alert();
-    var actualAlertText = await alertDialog.getText();
+    const alertDialog = browser.switchTo().alert();
+    const actualAlertText = await alertDialog.getText();
     expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
     await alertDialog.accept();
 }

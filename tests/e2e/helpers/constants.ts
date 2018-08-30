@@ -4,7 +4,7 @@ export const ACTIVATE_DYNAMIC_MODULE_SERVICE_URL = "/sf/system/content-types-ser
 
 export const BASE_URL = "http://localhost:3000/";
 
-export const NEWS_TYPE_NAME = "newsitems"
+export const NEWS_TYPE_NAME = "newsitems";
 
 export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;

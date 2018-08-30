@@ -1,5 +1,4 @@
 /* tslint:disable:no-console */
-
 import SitefinitySdk from "./sitefinitySdk";
 import { Request } from "./request";
 import { browser } from "protractor";

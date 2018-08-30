@@ -1,14 +1,13 @@
 require("jasmine-expect");
-import { ItemDetailsMap } from './item-details.map';
+import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert } from "../helpers/browser-helpers";
 
-
-export class ItemDetails{
+export class ItemDetails {
 
     static async VerifyHtmlToolbarWordCount(): Promise<void> {
         const wordCountButtonClass = "k-i-Words-count";
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        var toolbarButton = await ItemDetailsMap.ToolbarButton(wordCountButtonClass);
+        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
         await toolbarButton.click();
         await BrowserVerifyAlert("Words count: 1115");
     }
@@ -16,13 +15,13 @@ export class ItemDetails{
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
         const wordCountButtonClass = "k-i-Sitefinity-videos";
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        var toolbarButton = await ItemDetailsMap.ToolbarButton(wordCountButtonClass);
+        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
         await toolbarButton.click();
     }
 
     static async ClickOnHtmlField(): Promise<void>  {
         await BrowserWaitForElement(ItemDetailsMap.HtmlField);
-        var htmlField = await ItemDetailsMap.HtmlField;
+        const htmlField = ItemDetailsMap.HtmlField;
         await htmlField.click();
     }
 

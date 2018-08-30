@@ -9,7 +9,7 @@ require("!style-loader!css-loader!./editor-config-provider.css");
  * Kendo UI Editor custom tools documentation -> https://demos.telerik.com/kendo-ui/editor/custom-tools
  */
 @Injectable()
-class CustomEditorConfigProvider implements EditorConfigProvider {
+class WordCountProvider implements EditorConfigProvider {
     /**
      * The method that gets invoked when the editor constructs the toolbar actions.
      * @param editorHost The instance of the editor.
@@ -61,8 +61,8 @@ class CustomEditorConfigProvider implements EditorConfigProvider {
  * Export a 'multi' class provider so that multiple instances of the same provider can coexist.
  * This allows for more than one provider to be registered within one or more bundles.
  */
-export const EDITOR_CONFIG_PROVIDER: ClassProvider = {
+export const WORD_COUNT_PROVIDER: ClassProvider = {
     multi: true,
     provide: EDITOR_CONFIG_TOKEN,
-    useClass: CustomEditorConfigProvider
+    useClass: WordCountProvider
 };

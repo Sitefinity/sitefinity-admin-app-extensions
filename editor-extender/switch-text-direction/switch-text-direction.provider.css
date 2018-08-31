@@ -1,6 +1,8 @@
 .k-icon.k-i-Left-to-right,
 .k-icon.k-i-Right-to-left {
     font-family: FontAwesome;
+    font-size: 16px !important;
+    width: auto !important;
 }
 
 .k-i-Right-to-left::after {
@@ -27,6 +29,14 @@
 .k-tool-icon.k-i-Left-to-right::after,
 .k-tool-icon.k-i-Right-to-left::after {
     padding: 5px 5px 5px 0;
+}
+
+.k-tool-icon.k-i-Right-to-left::before {
+    margin-right: 0 !important;
+}
+
+.k-tool-icon.k-i-Right-to-left::after {
+    margin-right: 15px;
 }
 
 .k-state-selected .k-icon::after {

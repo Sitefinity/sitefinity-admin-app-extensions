@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs/Observable";
+import { Observable, from } from "rxjs";
 
 import { Command, ExecutionContext } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-
 
 /**
  * Serves as a command that gets invoked when the print preview action
@@ -39,6 +38,6 @@ export class PrintPreviewCommand implements Command {
         // return an observable here, because this might be a time consuming operation
         const url = `/print-preview`;
         const navPromise = this.router.navigate([url], { queryParams: currentQueryParams });
-        return Observable.fromPromise(navPromise);
+        return from(navPromise);
     }
 }

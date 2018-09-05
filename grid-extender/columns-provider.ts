@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { ColumnsProvider, ColumnModel, COLUMNS_TOKEN, EntityData } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { ImageComponent } from "./image.component";
 import { ClassProvider, Injectable } from "@angular/core";
@@ -30,7 +30,7 @@ class DynamicItemIndexColumnsProvider implements ColumnsProvider {
         };
 
         // return an observable here, because this might be a time consuming operation
-        return Observable.of([column]);
+        return of([column]);
     }
 }
 

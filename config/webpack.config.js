@@ -1,5 +1,6 @@
-var ImportPlugin = require("./import.plugin");
-var path = require("path");
+const webpack = require("webpack");
+const ImportPlugin = require("./import.plugin");
+const path = require("path");
 const constants = require("./constants");
 
 const extensionsFileName = "./" + constants.indexFileName;
@@ -28,6 +29,7 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.ContextReplacementPlugin(/angular(\\|\/)core/, __dirname, {}),
         new ImportPlugin({
             context: ".",
             manifest: require("progress-sitefinity-adminapp-sdk/manifest.json")

@@ -1,8 +1,10 @@
 #!/bin/bash
 
 sandboxurl="$1"
+userpage="$2"
+secret="$3"
 echo "Starting headless E2E test execution targeting $sandboxurl"
-wget -S "${sandboxurl}/08d586c0-8436-4088-96af-006150e38123.aspx?k=C8E7279CD035B23BB9C0F1F954DFF5B3&un=e2euser" -O credentials.txt
+wget -S "${sandboxurl}/${userpage}.aspx?k=${secret}&un=e2euser" -O credentials.txt
 echo 'User created on CI sandbox'
 
 response=`cat credentials.txt`

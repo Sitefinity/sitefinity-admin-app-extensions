@@ -1,6 +1,7 @@
 require("jasmine-expect");
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert } from "../helpers/browser-helpers";
+import { EditorPopupMap } from "./editor-popup.map";
 
 export class ItemDetails {
 
@@ -28,5 +29,15 @@ export class ItemDetails {
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
         expect(await ItemDetailsMap.ExtendedTitleField.isPresent()).toBeTruthy("The title field extension class was not found");
+    }
+
+    static async VerifyAndClickSymbolListButton(): Promise<void> {
+        const symbolListButtonClass = "k-i-insertsymbol";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(symbolListButtonClass));
+        const toolbarButton = ItemDetailsMap.ToolbarButton(symbolListButtonClass);
+        await toolbarButton.click();
+        await BrowserWaitForElement(EditorPopupMap.ToolPopup);
+        const symbolButton = EditorPopupMap.SymbolCell;
+        await symbolButton.click();
     }
 }

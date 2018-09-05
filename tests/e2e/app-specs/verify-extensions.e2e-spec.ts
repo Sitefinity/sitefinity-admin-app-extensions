@@ -45,4 +45,11 @@ describe("Verify extensions", () => {
         await VideosModal.VerifyModalTitle();
         await VideosModal.CancelModal();
     });
+
+    it("insert symbol", async () => {
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.ClickOnHtmlField();
+        await ItemDetails.VerifyAndClickSymbolListButton();
+    });
 });

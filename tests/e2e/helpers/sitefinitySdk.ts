@@ -1,4 +1,3 @@
-
 import { mockGlobalWindow, enableXMLHttpRequests } from "./sitefinitySdk-dependencies";
 import { URL_IN_CONFIG_FILE, DEFAULT_SERVICE_URL } from "./constants";
 

@@ -17,4 +17,3 @@ createdPass=${BASH_REMATCH[1]}
 echo "Password is: $createdPass"
 
 npm run e2e -- --params.sfUrl="$sandboxurl" --params.login.username="$createdUser" --params.login.password="$createdPass" --params.browser="chrome" --params.headless
-                    

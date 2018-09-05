@@ -88,3 +88,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Protractor test resuts
+e2e-tests.xml

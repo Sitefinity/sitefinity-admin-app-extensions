@@ -1,6 +1,6 @@
 require("jasmine-expect");
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 
 export class ItemDetails {
@@ -38,6 +38,15 @@ export class ItemDetails {
         await toolbarButton.click();
         await BrowserWaitForElement(EditorPopupMap.ToolPopup);
         const symbolButton = EditorPopupMap.SymbolCell;
+        const editor = ItemDetailsMap.EditorInternalField;
+
+        const contents = await editor.getText();
         await symbolButton.click();
+        const contentAfterInsert = await editor.getText();
+        // should hide the popup when symbol is clicked
+        await BrowserWaitForElementHidden(EditorPopupMap.ToolPopup);
+
+        // should have one more characted after the symbol is inserted
+        expect(contents.length).toBe(contentAfterInsert.length - 1);
     }
 }

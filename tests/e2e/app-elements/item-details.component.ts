@@ -10,7 +10,7 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
         const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
         await toolbarButton.click();
-        await BrowserVerifyAlert("Words count: 1115");
+        await BrowserVerifyAlert("Words count: 1223");
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {

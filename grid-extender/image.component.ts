@@ -20,6 +20,7 @@ export class ImageComponent implements OnInit, DataContextComponent {
     protected imageSource;
 
     ngOnInit() {
+        console.log(this.context.dataItem);
         // Get a random image index from imageData
         let randomNumber = this.getRandomInt(0, imageData.images.length);
         // Get this image's source for rendering

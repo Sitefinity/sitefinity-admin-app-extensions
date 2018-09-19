@@ -1,0 +1,8690 @@
+[
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;Tab;",
+    "tooltip": "CHARACTER TABULATION"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;NewLine;",
+    "tooltip": "LINE FEED (LF)"
+  },
+  {
+    "name": "!",
+    "value": "!",
+    "escapedValue": "&amp;excl;",
+    "tooltip": "EXCLAMATION MARK"
+  },
+  {
+    "name": "\"",
+    "value": "\"",
+    "escapedValue": "&amp;quot; &amp;QUOT;",
+    "tooltip": "QUOTATION MARK"
+  },
+  {
+    "name": "#",
+    "value": "#",
+    "escapedValue": "&amp;num;",
+    "tooltip": "NUMBER SIGN"
+  },
+  {
+    "name": "$",
+    "value": "$",
+    "escapedValue": "&amp;dollar;",
+    "tooltip": "DOLLAR SIGN"
+  },
+  {
+    "name": "%",
+    "value": "%",
+    "escapedValue": "&amp;percnt;",
+    "tooltip": "PERCENT SIGN"
+  },
+  {
+    "name": "&amp;",
+    "value": "&amp;",
+    "escapedValue": "&amp;amp; &amp;AMP;",
+    "tooltip": "AMPERSAND"
+  },
+  {
+    "name": "'",
+    "value": "'",
+    "escapedValue": "&amp;apos;",
+    "tooltip": "APOSTROPHE"
+  },
+  {
+    "name": "(",
+    "value": "(",
+    "escapedValue": "&amp;lpar;",
+    "tooltip": "LEFT PARENTHESIS"
+  },
+  {
+    "name": ")",
+    "value": ")",
+    "escapedValue": "&amp;rpar;",
+    "tooltip": "RIGHT PARENTHESIS"
+  },
+  {
+    "name": "*",
+    "value": "*",
+    "escapedValue": "&amp;ast; &amp;midast;",
+    "tooltip": "ASTERISK"
+  },
+  {
+    "name": "+",
+    "value": "+",
+    "escapedValue": "&amp;plus;",
+    "tooltip": "PLUS SIGN"
+  },
+  {
+    "name": ",",
+    "value": ",",
+    "escapedValue": "&amp;comma;",
+    "tooltip": "COMMA"
+  },
+  {
+    "name": ".",
+    "value": ".",
+    "escapedValue": "&amp;period;",
+    "tooltip": "FULL STOP"
+  },
+  {
+    "name": "/",
+    "value": "/",
+    "escapedValue": "&amp;sol;",
+    "tooltip": "SOLIDUS"
+  },
+  {
+    "name": ":",
+    "value": ":",
+    "escapedValue": "&amp;colon;",
+    "tooltip": "COLON"
+  },
+  {
+    "name": ";",
+    "value": ";",
+    "escapedValue": "&amp;semi;",
+    "tooltip": "SEMICOLON"
+  },
+  {
+    "name": "&lt;",
+    "value": "&lt;",
+    "escapedValue": "&amp;lt; &amp;LT;",
+    "tooltip": "LESS-THAN SIGN"
+  },
+  {
+    "name": "=",
+    "value": "=",
+    "escapedValue": "&amp;equals;",
+    "tooltip": "EQUALS SIGN"
+  },
+  {
+    "name": "&gt;",
+    "value": "&gt;",
+    "escapedValue": "&amp;gt; &amp;GT;",
+    "tooltip": "GREATER-THAN SIGN"
+  },
+  {
+    "name": "?",
+    "value": "?",
+    "escapedValue": "&amp;quest;",
+    "tooltip": "QUESTION MARK"
+  },
+  {
+    "name": "@",
+    "value": "@",
+    "escapedValue": "&amp;commat;",
+    "tooltip": "COMMERCIAL AT"
+  },
+  {
+    "name": "[",
+    "value": "[",
+    "escapedValue": "&amp;lsqb; &amp;lbrack;",
+    "tooltip": "LEFT SQUARE BRACKET"
+  },
+  {
+    "name": "\\",
+    "value": "\\",
+    "escapedValue": "&amp;bsol;",
+    "tooltip": "REVERSE SOLIDUS"
+  },
+  {
+    "name": "]",
+    "value": "]",
+    "escapedValue": "&amp;rsqb; &amp;rbrack;",
+    "tooltip": "RIGHT SQUARE BRACKET"
+  },
+  {
+    "name": "^",
+    "value": "^",
+    "escapedValue": "&amp;Hat;",
+    "tooltip": "CIRCUMFLEX ACCENT"
+  },
+  {
+    "name": "_",
+    "value": "_",
+    "escapedValue": "&amp;lowbar;",
+    "tooltip": "LOW LINE"
+  },
+  {
+    "name": "`",
+    "value": "`",
+    "escapedValue": "&amp;grave; &amp;DiacriticalGrave;",
+    "tooltip": "GRAVE ACCENT"
+  },
+  {
+    "name": "{",
+    "value": "{",
+    "escapedValue": "&amp;lcub; &amp;lbrace;",
+    "tooltip": "LEFT CURLY BRACKET"
+  },
+  {
+    "name": "|",
+    "value": "|",
+    "escapedValue": "&amp;verbar; &amp;vert; &amp;VerticalLine;",
+    "tooltip": "VERTICAL LINE"
+  },
+  {
+    "name": "}",
+    "value": "}",
+    "escapedValue": "&amp;rcub; &amp;rbrace;",
+    "tooltip": "RIGHT CURLY BRACKET"
+  },
+  {
+    "name": "&nbsp;",
+    "value": "&nbsp;",
+    "escapedValue": "&amp;nbsp; &amp;NonBreakingSpace;",
+    "tooltip": "NO-BREAK SPACE"
+  },
+  {
+    "name": "¡",
+    "value": "¡",
+    "escapedValue": "&amp;iexcl;",
+    "tooltip": "INVERTED EXCLAMATION MARK"
+  },
+  {
+    "name": "¢",
+    "value": "¢",
+    "escapedValue": "&amp;cent;",
+    "tooltip": "CENT SIGN"
+  },
+  {
+    "name": "£",
+    "value": "£",
+    "escapedValue": "&amp;pound;",
+    "tooltip": "POUND SIGN"
+  },
+  {
+    "name": "¤",
+    "value": "¤",
+    "escapedValue": "&amp;curren;",
+    "tooltip": "CURRENCY SIGN"
+  },
+  {
+    "name": "¥",
+    "value": "¥",
+    "escapedValue": "&amp;yen;",
+    "tooltip": "YEN SIGN"
+  },
+  {
+    "name": "¦",
+    "value": "¦",
+    "escapedValue": "&amp;brvbar;",
+    "tooltip": "BROKEN BAR"
+  },
+  {
+    "name": "§",
+    "value": "§",
+    "escapedValue": "&amp;sect;",
+    "tooltip": "SECTION SIGN"
+  },
+  {
+    "name": "¨",
+    "value": "¨",
+    "escapedValue": "&amp;Dot; &amp;die; &amp;DoubleDot; &amp;uml;",
+    "tooltip": "DIAERESIS"
+  },
+  {
+    "name": "©",
+    "value": "©",
+    "escapedValue": "&amp;copy; &amp;COPY;",
+    "tooltip": "COPYRIGHT SIGN"
+  },
+  {
+    "name": "ª",
+    "value": "ª",
+    "escapedValue": "&amp;ordf;",
+    "tooltip": "FEMININE ORDINAL INDICATOR"
+  },
+  {
+    "name": "«",
+    "value": "«",
+    "escapedValue": "&amp;laquo;",
+    "tooltip": "LEFT-POINTING DOUBLE ANGLE QUOTATION MARK"
+  },
+  {
+    "name": "¬",
+    "value": "¬",
+    "escapedValue": "&amp;not;",
+    "tooltip": "NOT SIGN"
+  },
+  {
+    "name": "­",
+    "value": "­",
+    "escapedValue": "&amp;shy;",
+    "tooltip": "SOFT HYPHEN"
+  },
+  {
+    "name": "®",
+    "value": "®",
+    "escapedValue": "&amp;reg; &amp;circledR; &amp;REG;",
+    "tooltip": "REGISTERED SIGN"
+  },
+  {
+    "name": "¯",
+    "value": "¯",
+    "escapedValue": "&amp;macr; &amp;OverBar; &amp;strns;",
+    "tooltip": "MACRON"
+  },
+  {
+    "name": "°",
+    "value": "°",
+    "escapedValue": "&amp;deg;",
+    "tooltip": "DEGREE SIGN"
+  },
+  {
+    "name": "±",
+    "value": "±",
+    "escapedValue": "&amp;plusmn; &amp;pm; &amp;PlusMinus;",
+    "tooltip": "PLUS-MINUS SIGN"
+  },
+  {
+    "name": "²",
+    "value": "²",
+    "escapedValue": "&amp;sup2;",
+    "tooltip": "SUPERSCRIPT TWO"
+  },
+  {
+    "name": "³",
+    "value": "³",
+    "escapedValue": "&amp;sup3;",
+    "tooltip": "SUPERSCRIPT THREE"
+  },
+  {
+    "name": "´",
+    "value": "´",
+    "escapedValue": "&amp;acute; &amp;DiacriticalAcute;",
+    "tooltip": "ACUTE ACCENT"
+  },
+  {
+    "name": "µ",
+    "value": "µ",
+    "escapedValue": "&amp;micro;",
+    "tooltip": "MICRO SIGN"
+  },
+  {
+    "name": "¶",
+    "value": "¶",
+    "escapedValue": "&amp;para;",
+    "tooltip": "PILCROW SIGN"
+  },
+  {
+    "name": "·",
+    "value": "·",
+    "escapedValue": "&amp;middot; &amp;centerdot; &amp;CenterDot;",
+    "tooltip": "MIDDLE DOT"
+  },
+  {
+    "name": "¸",
+    "value": "¸",
+    "escapedValue": "&amp;cedil; &amp;Cedilla;",
+    "tooltip": "CEDILLA"
+  },
+  {
+    "name": "¹",
+    "value": "¹",
+    "escapedValue": "&amp;sup1;",
+    "tooltip": "SUPERSCRIPT ONE"
+  },
+  {
+    "name": "º",
+    "value": "º",
+    "escapedValue": "&amp;ordm;",
+    "tooltip": "MASCULINE ORDINAL INDICATOR"
+  },
+  {
+    "name": "»",
+    "value": "»",
+    "escapedValue": "&amp;raquo;",
+    "tooltip": "RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK"
+  },
+  {
+    "name": "¼",
+    "value": "¼",
+    "escapedValue": "&amp;frac14;",
+    "tooltip": "VULGAR FRACTION ONE QUARTER"
+  },
+  {
+    "name": "½",
+    "value": "½",
+    "escapedValue": "&amp;frac12; &amp;half;",
+    "tooltip": "VULGAR FRACTION ONE HALF"
+  },
+  {
+    "name": "¾",
+    "value": "¾",
+    "escapedValue": "&amp;frac34;",
+    "tooltip": "VULGAR FRACTION THREE QUARTERS"
+  },
+  {
+    "name": "¿",
+    "value": "¿",
+    "escapedValue": "&amp;iquest;",
+    "tooltip": "INVERTED QUESTION MARK"
+  },
+  {
+    "name": "À",
+    "value": "À",
+    "escapedValue": "&amp;Agrave;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH GRAVE"
+  },
+  {
+    "name": "Á",
+    "value": "Á",
+    "escapedValue": "&amp;Aacute;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH ACUTE"
+  },
+  {
+    "name": "Â",
+    "value": "Â",
+    "escapedValue": "&amp;Acirc;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ã",
+    "value": "Ã",
+    "escapedValue": "&amp;Atilde;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH TILDE"
+  },
+  {
+    "name": "Ä",
+    "value": "Ä",
+    "escapedValue": "&amp;Auml;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH DIAERESIS"
+  },
+  {
+    "name": "Å",
+    "value": "Å",
+    "escapedValue": "&amp;Aring;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH RING ABOVE"
+  },
+  {
+    "name": "Æ",
+    "value": "Æ",
+    "escapedValue": "&amp;AElig;",
+    "tooltip": "LATIN CAPITAL LETTER AE"
+  },
+  {
+    "name": "Ç",
+    "value": "Ç",
+    "escapedValue": "&amp;Ccedil;",
+    "tooltip": "LATIN CAPITAL LETTER C WITH CEDILLA"
+  },
+  {
+    "name": "È",
+    "value": "È",
+    "escapedValue": "&amp;Egrave;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH GRAVE"
+  },
+  {
+    "name": "É",
+    "value": "É",
+    "escapedValue": "&amp;Eacute;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH ACUTE"
+  },
+  {
+    "name": "Ê",
+    "value": "Ê",
+    "escapedValue": "&amp;Ecirc;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ë",
+    "value": "Ë",
+    "escapedValue": "&amp;Euml;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH DIAERESIS"
+  },
+  {
+    "name": "Ì",
+    "value": "Ì",
+    "escapedValue": "&amp;Igrave;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH GRAVE"
+  },
+  {
+    "name": "Í",
+    "value": "Í",
+    "escapedValue": "&amp;Iacute;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH ACUTE"
+  },
+  {
+    "name": "Î",
+    "value": "Î",
+    "escapedValue": "&amp;Icirc;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ï",
+    "value": "Ï",
+    "escapedValue": "&amp;Iuml;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH DIAERESIS"
+  },
+  {
+    "name": "Ð",
+    "value": "Ð",
+    "escapedValue": "&amp;ETH;",
+    "tooltip": "LATIN CAPITAL LETTER ETH"
+  },
+  {
+    "name": "Ñ",
+    "value": "Ñ",
+    "escapedValue": "&amp;Ntilde;",
+    "tooltip": "LATIN CAPITAL LETTER N WITH TILDE"
+  },
+  {
+    "name": "Ò",
+    "value": "Ò",
+    "escapedValue": "&amp;Ograve;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH GRAVE"
+  },
+  {
+    "name": "Ó",
+    "value": "Ó",
+    "escapedValue": "&amp;Oacute;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH ACUTE"
+  },
+  {
+    "name": "Ô",
+    "value": "Ô",
+    "escapedValue": "&amp;Ocirc;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Õ",
+    "value": "Õ",
+    "escapedValue": "&amp;Otilde;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH TILDE"
+  },
+  {
+    "name": "Ö",
+    "value": "Ö",
+    "escapedValue": "&amp;Ouml;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH DIAERESIS"
+  },
+  {
+    "name": "×",
+    "value": "×",
+    "escapedValue": "&amp;times;",
+    "tooltip": "MULTIPLICATION SIGN"
+  },
+  {
+    "name": "Ø",
+    "value": "Ø",
+    "escapedValue": "&amp;Oslash;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH STROKE"
+  },
+  {
+    "name": "Ù",
+    "value": "Ù",
+    "escapedValue": "&amp;Ugrave;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH GRAVE"
+  },
+  {
+    "name": "Ú",
+    "value": "Ú",
+    "escapedValue": "&amp;Uacute;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH ACUTE"
+  },
+  {
+    "name": "Û",
+    "value": "Û",
+    "escapedValue": "&amp;Ucirc;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ü",
+    "value": "Ü",
+    "escapedValue": "&amp;Uuml;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH DIAERESIS"
+  },
+  {
+    "name": "Ý",
+    "value": "Ý",
+    "escapedValue": "&amp;Yacute;",
+    "tooltip": "LATIN CAPITAL LETTER Y WITH ACUTE"
+  },
+  {
+    "name": "Þ",
+    "value": "Þ",
+    "escapedValue": "&amp;THORN;",
+    "tooltip": "LATIN CAPITAL LETTER THORN"
+  },
+  {
+    "name": "ß",
+    "value": "ß",
+    "escapedValue": "&amp;szlig;",
+    "tooltip": "LATIN SMALL LETTER SHARP S"
+  },
+  {
+    "name": "à",
+    "value": "à",
+    "escapedValue": "&amp;agrave;",
+    "tooltip": "LATIN SMALL LETTER A WITH GRAVE"
+  },
+  {
+    "name": "á",
+    "value": "á",
+    "escapedValue": "&amp;aacute;",
+    "tooltip": "LATIN SMALL LETTER A WITH ACUTE"
+  },
+  {
+    "name": "â",
+    "value": "â",
+    "escapedValue": "&amp;acirc;",
+    "tooltip": "LATIN SMALL LETTER A WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ã",
+    "value": "ã",
+    "escapedValue": "&amp;atilde;",
+    "tooltip": "LATIN SMALL LETTER A WITH TILDE"
+  },
+  {
+    "name": "ä",
+    "value": "ä",
+    "escapedValue": "&amp;auml;",
+    "tooltip": "LATIN SMALL LETTER A WITH DIAERESIS"
+  },
+  {
+    "name": "å",
+    "value": "å",
+    "escapedValue": "&amp;aring;",
+    "tooltip": "LATIN SMALL LETTER A WITH RING ABOVE"
+  },
+  {
+    "name": "æ",
+    "value": "æ",
+    "escapedValue": "&amp;aelig;",
+    "tooltip": "LATIN SMALL LETTER AE"
+  },
+  {
+    "name": "ç",
+    "value": "ç",
+    "escapedValue": "&amp;ccedil;",
+    "tooltip": "LATIN SMALL LETTER C WITH CEDILLA"
+  },
+  {
+    "name": "è",
+    "value": "è",
+    "escapedValue": "&amp;egrave;",
+    "tooltip": "LATIN SMALL LETTER E WITH GRAVE"
+  },
+  {
+    "name": "é",
+    "value": "é",
+    "escapedValue": "&amp;eacute;",
+    "tooltip": "LATIN SMALL LETTER E WITH ACUTE"
+  },
+  {
+    "name": "ê",
+    "value": "ê",
+    "escapedValue": "&amp;ecirc;",
+    "tooltip": "LATIN SMALL LETTER E WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ë",
+    "value": "ë",
+    "escapedValue": "&amp;euml;",
+    "tooltip": "LATIN SMALL LETTER E WITH DIAERESIS"
+  },
+  {
+    "name": "ì",
+    "value": "ì",
+    "escapedValue": "&amp;igrave;",
+    "tooltip": "LATIN SMALL LETTER I WITH GRAVE"
+  },
+  {
+    "name": "í",
+    "value": "í",
+    "escapedValue": "&amp;iacute;",
+    "tooltip": "LATIN SMALL LETTER I WITH ACUTE"
+  },
+  {
+    "name": "î",
+    "value": "î",
+    "escapedValue": "&amp;icirc;",
+    "tooltip": "LATIN SMALL LETTER I WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ï",
+    "value": "ï",
+    "escapedValue": "&amp;iuml;",
+    "tooltip": "LATIN SMALL LETTER I WITH DIAERESIS"
+  },
+  {
+    "name": "ð",
+    "value": "ð",
+    "escapedValue": "&amp;eth;",
+    "tooltip": "LATIN SMALL LETTER ETH"
+  },
+  {
+    "name": "ñ",
+    "value": "ñ",
+    "escapedValue": "&amp;ntilde;",
+    "tooltip": "LATIN SMALL LETTER N WITH TILDE"
+  },
+  {
+    "name": "ò",
+    "value": "ò",
+    "escapedValue": "&amp;ograve;",
+    "tooltip": "LATIN SMALL LETTER O WITH GRAVE"
+  },
+  {
+    "name": "ó",
+    "value": "ó",
+    "escapedValue": "&amp;oacute;",
+    "tooltip": "LATIN SMALL LETTER O WITH ACUTE"
+  },
+  {
+    "name": "ô",
+    "value": "ô",
+    "escapedValue": "&amp;ocirc;",
+    "tooltip": "LATIN SMALL LETTER O WITH CIRCUMFLEX"
+  },
+  {
+    "name": "õ",
+    "value": "õ",
+    "escapedValue": "&amp;otilde;",
+    "tooltip": "LATIN SMALL LETTER O WITH TILDE"
+  },
+  {
+    "name": "ö",
+    "value": "ö",
+    "escapedValue": "&amp;ouml;",
+    "tooltip": "LATIN SMALL LETTER O WITH DIAERESIS"
+  },
+  {
+    "name": "÷",
+    "value": "÷",
+    "escapedValue": "&amp;divide; &amp;div;",
+    "tooltip": "DIVISION SIGN"
+  },
+  {
+    "name": "ø",
+    "value": "ø",
+    "escapedValue": "&amp;oslash;",
+    "tooltip": "LATIN SMALL LETTER O WITH STROKE"
+  },
+  {
+    "name": "ù",
+    "value": "ù",
+    "escapedValue": "&amp;ugrave;",
+    "tooltip": "LATIN SMALL LETTER U WITH GRAVE"
+  },
+  {
+    "name": "ú",
+    "value": "ú",
+    "escapedValue": "&amp;uacute;",
+    "tooltip": "LATIN SMALL LETTER U WITH ACUTE"
+  },
+  {
+    "name": "û",
+    "value": "û",
+    "escapedValue": "&amp;ucirc;",
+    "tooltip": "LATIN SMALL LETTER U WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ü",
+    "value": "ü",
+    "escapedValue": "&amp;uuml;",
+    "tooltip": "LATIN SMALL LETTER U WITH DIAERESIS"
+  },
+  {
+    "name": "ý",
+    "value": "ý",
+    "escapedValue": "&amp;yacute;",
+    "tooltip": "LATIN SMALL LETTER Y WITH ACUTE"
+  },
+  {
+    "name": "þ",
+    "value": "þ",
+    "escapedValue": "&amp;thorn;",
+    "tooltip": "LATIN SMALL LETTER THORN"
+  },
+  {
+    "name": "ÿ",
+    "value": "ÿ",
+    "escapedValue": "&amp;yuml;",
+    "tooltip": "LATIN SMALL LETTER Y WITH DIAERESIS"
+  },
+  {
+    "name": "Ā",
+    "value": "Ā",
+    "escapedValue": "&amp;Amacr;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH MACRON"
+  },
+  {
+    "name": "ā",
+    "value": "ā",
+    "escapedValue": "&amp;amacr;",
+    "tooltip": "LATIN SMALL LETTER A WITH MACRON"
+  },
+  {
+    "name": "Ă",
+    "value": "Ă",
+    "escapedValue": "&amp;Abreve;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH BREVE"
+  },
+  {
+    "name": "ă",
+    "value": "ă",
+    "escapedValue": "&amp;abreve;",
+    "tooltip": "LATIN SMALL LETTER A WITH BREVE"
+  },
+  {
+    "name": "Ą",
+    "value": "Ą",
+    "escapedValue": "&amp;Aogon;",
+    "tooltip": "LATIN CAPITAL LETTER A WITH OGONEK"
+  },
+  {
+    "name": "ą",
+    "value": "ą",
+    "escapedValue": "&amp;aogon;",
+    "tooltip": "LATIN SMALL LETTER A WITH OGONEK"
+  },
+  {
+    "name": "Ć",
+    "value": "Ć",
+    "escapedValue": "&amp;Cacute;",
+    "tooltip": "LATIN CAPITAL LETTER C WITH ACUTE"
+  },
+  {
+    "name": "ć",
+    "value": "ć",
+    "escapedValue": "&amp;cacute;",
+    "tooltip": "LATIN SMALL LETTER C WITH ACUTE"
+  },
+  {
+    "name": "Ĉ",
+    "value": "Ĉ",
+    "escapedValue": "&amp;Ccirc;",
+    "tooltip": "LATIN CAPITAL LETTER C WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ĉ",
+    "value": "ĉ",
+    "escapedValue": "&amp;ccirc;",
+    "tooltip": "LATIN SMALL LETTER C WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ċ",
+    "value": "Ċ",
+    "escapedValue": "&amp;Cdot;",
+    "tooltip": "LATIN CAPITAL LETTER C WITH DOT ABOVE"
+  },
+  {
+    "name": "ċ",
+    "value": "ċ",
+    "escapedValue": "&amp;cdot;",
+    "tooltip": "LATIN SMALL LETTER C WITH DOT ABOVE"
+  },
+  {
+    "name": "Č",
+    "value": "Č",
+    "escapedValue": "&amp;Ccaron;",
+    "tooltip": "LATIN CAPITAL LETTER C WITH CARON"
+  },
+  {
+    "name": "č",
+    "value": "č",
+    "escapedValue": "&amp;ccaron;",
+    "tooltip": "LATIN SMALL LETTER C WITH CARON"
+  },
+  {
+    "name": "Ď",
+    "value": "Ď",
+    "escapedValue": "&amp;Dcaron;",
+    "tooltip": "LATIN CAPITAL LETTER D WITH CARON"
+  },
+  {
+    "name": "ď",
+    "value": "ď",
+    "escapedValue": "&amp;dcaron;",
+    "tooltip": "LATIN SMALL LETTER D WITH CARON"
+  },
+  {
+    "name": "Đ",
+    "value": "Đ",
+    "escapedValue": "&amp;Dstrok;",
+    "tooltip": "LATIN CAPITAL LETTER D WITH STROKE"
+  },
+  {
+    "name": "đ",
+    "value": "đ",
+    "escapedValue": "&amp;dstrok;",
+    "tooltip": "LATIN SMALL LETTER D WITH STROKE"
+  },
+  {
+    "name": "Ē",
+    "value": "Ē",
+    "escapedValue": "&amp;Emacr;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH MACRON"
+  },
+  {
+    "name": "ē",
+    "value": "ē",
+    "escapedValue": "&amp;emacr;",
+    "tooltip": "LATIN SMALL LETTER E WITH MACRON"
+  },
+  {
+    "name": "Ė",
+    "value": "Ė",
+    "escapedValue": "&amp;Edot;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH DOT ABOVE"
+  },
+  {
+    "name": "ė",
+    "value": "ė",
+    "escapedValue": "&amp;edot;",
+    "tooltip": "LATIN SMALL LETTER E WITH DOT ABOVE"
+  },
+  {
+    "name": "Ę",
+    "value": "Ę",
+    "escapedValue": "&amp;Eogon;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH OGONEK"
+  },
+  {
+    "name": "ę",
+    "value": "ę",
+    "escapedValue": "&amp;eogon;",
+    "tooltip": "LATIN SMALL LETTER E WITH OGONEK"
+  },
+  {
+    "name": "Ě",
+    "value": "Ě",
+    "escapedValue": "&amp;Ecaron;",
+    "tooltip": "LATIN CAPITAL LETTER E WITH CARON"
+  },
+  {
+    "name": "ě",
+    "value": "ě",
+    "escapedValue": "&amp;ecaron;",
+    "tooltip": "LATIN SMALL LETTER E WITH CARON"
+  },
+  {
+    "name": "Ĝ",
+    "value": "Ĝ",
+    "escapedValue": "&amp;Gcirc;",
+    "tooltip": "LATIN CAPITAL LETTER G WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ĝ",
+    "value": "ĝ",
+    "escapedValue": "&amp;gcirc;",
+    "tooltip": "LATIN SMALL LETTER G WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ğ",
+    "value": "Ğ",
+    "escapedValue": "&amp;Gbreve;",
+    "tooltip": "LATIN CAPITAL LETTER G WITH BREVE"
+  },
+  {
+    "name": "ğ",
+    "value": "ğ",
+    "escapedValue": "&amp;gbreve;",
+    "tooltip": "LATIN SMALL LETTER G WITH BREVE"
+  },
+  {
+    "name": "Ġ",
+    "value": "Ġ",
+    "escapedValue": "&amp;Gdot;",
+    "tooltip": "LATIN CAPITAL LETTER G WITH DOT ABOVE"
+  },
+  {
+    "name": "ġ",
+    "value": "ġ",
+    "escapedValue": "&amp;gdot;",
+    "tooltip": "LATIN SMALL LETTER G WITH DOT ABOVE"
+  },
+  {
+    "name": "Ģ",
+    "value": "Ģ",
+    "escapedValue": "&amp;Gcedil;",
+    "tooltip": "LATIN CAPITAL LETTER G WITH CEDILLA"
+  },
+  {
+    "name": "Ĥ",
+    "value": "Ĥ",
+    "escapedValue": "&amp;Hcirc;",
+    "tooltip": "LATIN CAPITAL LETTER H WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ĥ",
+    "value": "ĥ",
+    "escapedValue": "&amp;hcirc;",
+    "tooltip": "LATIN SMALL LETTER H WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ħ",
+    "value": "Ħ",
+    "escapedValue": "&amp;Hstrok;",
+    "tooltip": "LATIN CAPITAL LETTER H WITH STROKE"
+  },
+  {
+    "name": "ħ",
+    "value": "ħ",
+    "escapedValue": "&amp;hstrok;",
+    "tooltip": "LATIN SMALL LETTER H WITH STROKE"
+  },
+  {
+    "name": "Ĩ",
+    "value": "Ĩ",
+    "escapedValue": "&amp;Itilde;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH TILDE"
+  },
+  {
+    "name": "ĩ",
+    "value": "ĩ",
+    "escapedValue": "&amp;itilde;",
+    "tooltip": "LATIN SMALL LETTER I WITH TILDE"
+  },
+  {
+    "name": "Ī",
+    "value": "Ī",
+    "escapedValue": "&amp;Imacr;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH MACRON"
+  },
+  {
+    "name": "ī",
+    "value": "ī",
+    "escapedValue": "&amp;imacr;",
+    "tooltip": "LATIN SMALL LETTER I WITH MACRON"
+  },
+  {
+    "name": "Į",
+    "value": "Į",
+    "escapedValue": "&amp;Iogon;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH OGONEK"
+  },
+  {
+    "name": "į",
+    "value": "į",
+    "escapedValue": "&amp;iogon;",
+    "tooltip": "LATIN SMALL LETTER I WITH OGONEK"
+  },
+  {
+    "name": "İ",
+    "value": "İ",
+    "escapedValue": "&amp;Idot;",
+    "tooltip": "LATIN CAPITAL LETTER I WITH DOT ABOVE"
+  },
+  {
+    "name": "ı",
+    "value": "ı",
+    "escapedValue": "&amp;imath; &amp;inodot;",
+    "tooltip": "LATIN SMALL LETTER DOTLESS I"
+  },
+  {
+    "name": "Ĳ",
+    "value": "Ĳ",
+    "escapedValue": "&amp;IJlig;",
+    "tooltip": "LATIN CAPITAL LIGATURE IJ"
+  },
+  {
+    "name": "ĳ",
+    "value": "ĳ",
+    "escapedValue": "&amp;ijlig;",
+    "tooltip": "LATIN SMALL LIGATURE IJ"
+  },
+  {
+    "name": "Ĵ",
+    "value": "Ĵ",
+    "escapedValue": "&amp;Jcirc;",
+    "tooltip": "LATIN CAPITAL LETTER J WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ĵ",
+    "value": "ĵ",
+    "escapedValue": "&amp;jcirc;",
+    "tooltip": "LATIN SMALL LETTER J WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ķ",
+    "value": "Ķ",
+    "escapedValue": "&amp;Kcedil;",
+    "tooltip": "LATIN CAPITAL LETTER K WITH CEDILLA"
+  },
+  {
+    "name": "ķ",
+    "value": "ķ",
+    "escapedValue": "&amp;kcedil;",
+    "tooltip": "LATIN SMALL LETTER K WITH CEDILLA"
+  },
+  {
+    "name": "ĸ",
+    "value": "ĸ",
+    "escapedValue": "&amp;kgreen;",
+    "tooltip": "LATIN SMALL LETTER KRA"
+  },
+  {
+    "name": "Ĺ",
+    "value": "Ĺ",
+    "escapedValue": "&amp;Lacute;",
+    "tooltip": "LATIN CAPITAL LETTER L WITH ACUTE"
+  },
+  {
+    "name": "ĺ",
+    "value": "ĺ",
+    "escapedValue": "&amp;lacute;",
+    "tooltip": "LATIN SMALL LETTER L WITH ACUTE"
+  },
+  {
+    "name": "Ļ",
+    "value": "Ļ",
+    "escapedValue": "&amp;Lcedil;",
+    "tooltip": "LATIN CAPITAL LETTER L WITH CEDILLA"
+  },
+  {
+    "name": "ļ",
+    "value": "ļ",
+    "escapedValue": "&amp;lcedil;",
+    "tooltip": "LATIN SMALL LETTER L WITH CEDILLA"
+  },
+  {
+    "name": "Ľ",
+    "value": "Ľ",
+    "escapedValue": "&amp;Lcaron;",
+    "tooltip": "LATIN CAPITAL LETTER L WITH CARON"
+  },
+  {
+    "name": "ľ",
+    "value": "ľ",
+    "escapedValue": "&amp;lcaron;",
+    "tooltip": "LATIN SMALL LETTER L WITH CARON"
+  },
+  {
+    "name": "Ŀ",
+    "value": "Ŀ",
+    "escapedValue": "&amp;Lmidot;",
+    "tooltip": "LATIN CAPITAL LETTER L WITH MIDDLE DOT"
+  },
+  {
+    "name": "ŀ",
+    "value": "ŀ",
+    "escapedValue": "&amp;lmidot;",
+    "tooltip": "LATIN SMALL LETTER L WITH MIDDLE DOT"
+  },
+  {
+    "name": "Ł",
+    "value": "Ł",
+    "escapedValue": "&amp;Lstrok;",
+    "tooltip": "LATIN CAPITAL LETTER L WITH STROKE"
+  },
+  {
+    "name": "ł",
+    "value": "ł",
+    "escapedValue": "&amp;lstrok;",
+    "tooltip": "LATIN SMALL LETTER L WITH STROKE"
+  },
+  {
+    "name": "Ń",
+    "value": "Ń",
+    "escapedValue": "&amp;Nacute;",
+    "tooltip": "LATIN CAPITAL LETTER N WITH ACUTE"
+  },
+  {
+    "name": "ń",
+    "value": "ń",
+    "escapedValue": "&amp;nacute;",
+    "tooltip": "LATIN SMALL LETTER N WITH ACUTE"
+  },
+  {
+    "name": "Ņ",
+    "value": "Ņ",
+    "escapedValue": "&amp;Ncedil;",
+    "tooltip": "LATIN CAPITAL LETTER N WITH CEDILLA"
+  },
+  {
+    "name": "ņ",
+    "value": "ņ",
+    "escapedValue": "&amp;ncedil;",
+    "tooltip": "LATIN SMALL LETTER N WITH CEDILLA"
+  },
+  {
+    "name": "Ň",
+    "value": "Ň",
+    "escapedValue": "&amp;Ncaron;",
+    "tooltip": "LATIN CAPITAL LETTER N WITH CARON"
+  },
+  {
+    "name": "ň",
+    "value": "ň",
+    "escapedValue": "&amp;ncaron;",
+    "tooltip": "LATIN SMALL LETTER N WITH CARON"
+  },
+  {
+    "name": "ŉ",
+    "value": "ŉ",
+    "escapedValue": "&amp;napos;",
+    "tooltip": "LATIN SMALL LETTER N PRECEDED BY APOSTROPHE"
+  },
+  {
+    "name": "Ŋ",
+    "value": "Ŋ",
+    "escapedValue": "&amp;ENG;",
+    "tooltip": "LATIN CAPITAL LETTER ENG"
+  },
+  {
+    "name": "ŋ",
+    "value": "ŋ",
+    "escapedValue": "&amp;eng;",
+    "tooltip": "LATIN SMALL LETTER ENG"
+  },
+  {
+    "name": "Ō",
+    "value": "Ō",
+    "escapedValue": "&amp;Omacr;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH MACRON"
+  },
+  {
+    "name": "ō",
+    "value": "ō",
+    "escapedValue": "&amp;omacr;",
+    "tooltip": "LATIN SMALL LETTER O WITH MACRON"
+  },
+  {
+    "name": "Ő",
+    "value": "Ő",
+    "escapedValue": "&amp;Odblac;",
+    "tooltip": "LATIN CAPITAL LETTER O WITH DOUBLE ACUTE"
+  },
+  {
+    "name": "ő",
+    "value": "ő",
+    "escapedValue": "&amp;odblac;",
+    "tooltip": "LATIN SMALL LETTER O WITH DOUBLE ACUTE"
+  },
+  {
+    "name": "Œ",
+    "value": "Œ",
+    "escapedValue": "&amp;OElig;",
+    "tooltip": "LATIN CAPITAL LIGATURE OE"
+  },
+  {
+    "name": "œ",
+    "value": "œ",
+    "escapedValue": "&amp;oelig;",
+    "tooltip": "LATIN SMALL LIGATURE OE"
+  },
+  {
+    "name": "Ŕ",
+    "value": "Ŕ",
+    "escapedValue": "&amp;Racute;",
+    "tooltip": "LATIN CAPITAL LETTER R WITH ACUTE"
+  },
+  {
+    "name": "ŕ",
+    "value": "ŕ",
+    "escapedValue": "&amp;racute;",
+    "tooltip": "LATIN SMALL LETTER R WITH ACUTE"
+  },
+  {
+    "name": "Ŗ",
+    "value": "Ŗ",
+    "escapedValue": "&amp;Rcedil;",
+    "tooltip": "LATIN CAPITAL LETTER R WITH CEDILLA"
+  },
+  {
+    "name": "ŗ",
+    "value": "ŗ",
+    "escapedValue": "&amp;rcedil;",
+    "tooltip": "LATIN SMALL LETTER R WITH CEDILLA"
+  },
+  {
+    "name": "Ř",
+    "value": "Ř",
+    "escapedValue": "&amp;Rcaron;",
+    "tooltip": "LATIN CAPITAL LETTER R WITH CARON"
+  },
+  {
+    "name": "ř",
+    "value": "ř",
+    "escapedValue": "&amp;rcaron;",
+    "tooltip": "LATIN SMALL LETTER R WITH CARON"
+  },
+  {
+    "name": "Ś",
+    "value": "Ś",
+    "escapedValue": "&amp;Sacute;",
+    "tooltip": "LATIN CAPITAL LETTER S WITH ACUTE"
+  },
+  {
+    "name": "ś",
+    "value": "ś",
+    "escapedValue": "&amp;sacute;",
+    "tooltip": "LATIN SMALL LETTER S WITH ACUTE"
+  },
+  {
+    "name": "Ŝ",
+    "value": "Ŝ",
+    "escapedValue": "&amp;Scirc;",
+    "tooltip": "LATIN CAPITAL LETTER S WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ŝ",
+    "value": "ŝ",
+    "escapedValue": "&amp;scirc;",
+    "tooltip": "LATIN SMALL LETTER S WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ş",
+    "value": "Ş",
+    "escapedValue": "&amp;Scedil;",
+    "tooltip": "LATIN CAPITAL LETTER S WITH CEDILLA"
+  },
+  {
+    "name": "ş",
+    "value": "ş",
+    "escapedValue": "&amp;scedil;",
+    "tooltip": "LATIN SMALL LETTER S WITH CEDILLA"
+  },
+  {
+    "name": "Š",
+    "value": "Š",
+    "escapedValue": "&amp;Scaron;",
+    "tooltip": "LATIN CAPITAL LETTER S WITH CARON"
+  },
+  {
+    "name": "š",
+    "value": "š",
+    "escapedValue": "&amp;scaron;",
+    "tooltip": "LATIN SMALL LETTER S WITH CARON"
+  },
+  {
+    "name": "Ţ",
+    "value": "Ţ",
+    "escapedValue": "&amp;Tcedil;",
+    "tooltip": "LATIN CAPITAL LETTER T WITH CEDILLA"
+  },
+  {
+    "name": "ţ",
+    "value": "ţ",
+    "escapedValue": "&amp;tcedil;",
+    "tooltip": "LATIN SMALL LETTER T WITH CEDILLA"
+  },
+  {
+    "name": "Ť",
+    "value": "Ť",
+    "escapedValue": "&amp;Tcaron;",
+    "tooltip": "LATIN CAPITAL LETTER T WITH CARON"
+  },
+  {
+    "name": "ť",
+    "value": "ť",
+    "escapedValue": "&amp;tcaron;",
+    "tooltip": "LATIN SMALL LETTER T WITH CARON"
+  },
+  {
+    "name": "Ŧ",
+    "value": "Ŧ",
+    "escapedValue": "&amp;Tstrok;",
+    "tooltip": "LATIN CAPITAL LETTER T WITH STROKE"
+  },
+  {
+    "name": "ŧ",
+    "value": "ŧ",
+    "escapedValue": "&amp;tstrok;",
+    "tooltip": "LATIN SMALL LETTER T WITH STROKE"
+  },
+  {
+    "name": "Ũ",
+    "value": "Ũ",
+    "escapedValue": "&amp;Utilde;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH TILDE"
+  },
+  {
+    "name": "ũ",
+    "value": "ũ",
+    "escapedValue": "&amp;utilde;",
+    "tooltip": "LATIN SMALL LETTER U WITH TILDE"
+  },
+  {
+    "name": "Ū",
+    "value": "Ū",
+    "escapedValue": "&amp;Umacr;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH MACRON"
+  },
+  {
+    "name": "ū",
+    "value": "ū",
+    "escapedValue": "&amp;umacr;",
+    "tooltip": "LATIN SMALL LETTER U WITH MACRON"
+  },
+  {
+    "name": "Ŭ",
+    "value": "Ŭ",
+    "escapedValue": "&amp;Ubreve;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH BREVE"
+  },
+  {
+    "name": "ŭ",
+    "value": "ŭ",
+    "escapedValue": "&amp;ubreve;",
+    "tooltip": "LATIN SMALL LETTER U WITH BREVE"
+  },
+  {
+    "name": "Ů",
+    "value": "Ů",
+    "escapedValue": "&amp;Uring;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH RING ABOVE"
+  },
+  {
+    "name": "ů",
+    "value": "ů",
+    "escapedValue": "&amp;uring;",
+    "tooltip": "LATIN SMALL LETTER U WITH RING ABOVE"
+  },
+  {
+    "name": "Ű",
+    "value": "Ű",
+    "escapedValue": "&amp;Udblac;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH DOUBLE ACUTE"
+  },
+  {
+    "name": "ű",
+    "value": "ű",
+    "escapedValue": "&amp;udblac;",
+    "tooltip": "LATIN SMALL LETTER U WITH DOUBLE ACUTE"
+  },
+  {
+    "name": "Ų",
+    "value": "Ų",
+    "escapedValue": "&amp;Uogon;",
+    "tooltip": "LATIN CAPITAL LETTER U WITH OGONEK"
+  },
+  {
+    "name": "ų",
+    "value": "ų",
+    "escapedValue": "&amp;uogon;",
+    "tooltip": "LATIN SMALL LETTER U WITH OGONEK"
+  },
+  {
+    "name": "Ŵ",
+    "value": "Ŵ",
+    "escapedValue": "&amp;Wcirc;",
+    "tooltip": "LATIN CAPITAL LETTER W WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ŵ",
+    "value": "ŵ",
+    "escapedValue": "&amp;wcirc;",
+    "tooltip": "LATIN SMALL LETTER W WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ŷ",
+    "value": "Ŷ",
+    "escapedValue": "&amp;Ycirc;",
+    "tooltip": "LATIN CAPITAL LETTER Y WITH CIRCUMFLEX"
+  },
+  {
+    "name": "ŷ",
+    "value": "ŷ",
+    "escapedValue": "&amp;ycirc;",
+    "tooltip": "LATIN SMALL LETTER Y WITH CIRCUMFLEX"
+  },
+  {
+    "name": "Ÿ",
+    "value": "Ÿ",
+    "escapedValue": "&amp;Yuml;",
+    "tooltip": "LATIN CAPITAL LETTER Y WITH DIAERESIS"
+  },
+  {
+    "name": "Ź",
+    "value": "Ź",
+    "escapedValue": "&amp;Zacute;",
+    "tooltip": "LATIN CAPITAL LETTER Z WITH ACUTE"
+  },
+  {
+    "name": "ź",
+    "value": "ź",
+    "escapedValue": "&amp;zacute;",
+    "tooltip": "LATIN SMALL LETTER Z WITH ACUTE"
+  },
+  {
+    "name": "Ż",
+    "value": "Ż",
+    "escapedValue": "&amp;Zdot;",
+    "tooltip": "LATIN CAPITAL LETTER Z WITH DOT ABOVE"
+  },
+  {
+    "name": "ż",
+    "value": "ż",
+    "escapedValue": "&amp;zdot;",
+    "tooltip": "LATIN SMALL LETTER Z WITH DOT ABOVE"
+  },
+  {
+    "name": "Ž",
+    "value": "Ž",
+    "escapedValue": "&amp;Zcaron;",
+    "tooltip": "LATIN CAPITAL LETTER Z WITH CARON"
+  },
+  {
+    "name": "ž",
+    "value": "ž",
+    "escapedValue": "&amp;zcaron;",
+    "tooltip": "LATIN SMALL LETTER Z WITH CARON"
+  },
+  {
+    "name": "ƒ",
+    "value": "ƒ",
+    "escapedValue": "&amp;fnof;",
+    "tooltip": "LATIN SMALL LETTER F WITH HOOK"
+  },
+  {
+    "name": "Ƶ",
+    "value": "Ƶ",
+    "escapedValue": "&amp;imped;",
+    "tooltip": "LATIN CAPITAL LETTER Z WITH STROKE"
+  },
+  {
+    "name": "ǵ",
+    "value": "ǵ",
+    "escapedValue": "&amp;gacute;",
+    "tooltip": "LATIN SMALL LETTER G WITH ACUTE"
+  },
+  {
+    "name": "ȷ",
+    "value": "ȷ",
+    "escapedValue": "&amp;jmath;",
+    "tooltip": "LATIN SMALL LETTER DOTLESS J"
+  },
+  {
+    "name": "ˆ",
+    "value": "ˆ",
+    "escapedValue": "&amp;circ;",
+    "tooltip": "MODIFIER LETTER CIRCUMFLEX ACCENT"
+  },
+  {
+    "name": "ˇ",
+    "value": "ˇ",
+    "escapedValue": "&amp;caron; &amp;Hacek;",
+    "tooltip": "CARON"
+  },
+  {
+    "name": "˘",
+    "value": "˘",
+    "escapedValue": "&amp;breve; &amp;Breve;",
+    "tooltip": "BREVE"
+  },
+  {
+    "name": "˙",
+    "value": "˙",
+    "escapedValue": "&amp;dot; &amp;DiacriticalDot;",
+    "tooltip": "DOT ABOVE"
+  },
+  {
+    "name": "˚",
+    "value": "˚",
+    "escapedValue": "&amp;ring;",
+    "tooltip": "RING ABOVE"
+  },
+  {
+    "name": "˛",
+    "value": "˛",
+    "escapedValue": "&amp;ogon;",
+    "tooltip": "OGONEK"
+  },
+  {
+    "name": "˜",
+    "value": "˜",
+    "escapedValue": "&amp;tilde; &amp;DiacriticalTilde;",
+    "tooltip": "SMALL TILDE"
+  },
+  {
+    "name": "˝",
+    "value": "˝",
+    "escapedValue": "&amp;dblac; &amp;DiacriticalDoubleAcute;",
+    "tooltip": "DOUBLE ACUTE ACCENT"
+  },
+  {
+    "name": "̑",
+    "value": "̑",
+    "escapedValue": "&amp;DownBreve;",
+    "tooltip": "COMBINING INVERTED BREVE"
+  },
+  {
+    "name": "̲",
+    "value": "̲",
+    "escapedValue": "&amp;UnderBar;",
+    "tooltip": "COMBINING LOW LINE"
+  },
+  {
+    "name": "Α",
+    "value": "Α",
+    "escapedValue": "&amp;Alpha;",
+    "tooltip": "GREEK CAPITAL LETTER ALPHA"
+  },
+  {
+    "name": "Β",
+    "value": "Β",
+    "escapedValue": "&amp;Beta;",
+    "tooltip": "GREEK CAPITAL LETTER BETA"
+  },
+  {
+    "name": "Γ",
+    "value": "Γ",
+    "escapedValue": "&amp;Gamma;",
+    "tooltip": "GREEK CAPITAL LETTER GAMMA"
+  },
+  {
+    "name": "Δ",
+    "value": "Δ",
+    "escapedValue": "&amp;Delta;",
+    "tooltip": "GREEK CAPITAL LETTER DELTA"
+  },
+  {
+    "name": "Ε",
+    "value": "Ε",
+    "escapedValue": "&amp;Epsilon;",
+    "tooltip": "GREEK CAPITAL LETTER EPSILON"
+  },
+  {
+    "name": "Ζ",
+    "value": "Ζ",
+    "escapedValue": "&amp;Zeta;",
+    "tooltip": "GREEK CAPITAL LETTER ZETA"
+  },
+  {
+    "name": "Η",
+    "value": "Η",
+    "escapedValue": "&amp;Eta;",
+    "tooltip": "GREEK CAPITAL LETTER ETA"
+  },
+  {
+    "name": "Θ",
+    "value": "Θ",
+    "escapedValue": "&amp;Theta;",
+    "tooltip": "GREEK CAPITAL LETTER THETA"
+  },
+  {
+    "name": "Ι",
+    "value": "Ι",
+    "escapedValue": "&amp;Iota;",
+    "tooltip": "GREEK CAPITAL LETTER IOTA"
+  },
+  {
+    "name": "Κ",
+    "value": "Κ",
+    "escapedValue": "&amp;Kappa;",
+    "tooltip": "GREEK CAPITAL LETTER KAPPA"
+  },
+  {
+    "name": "Λ",
+    "value": "Λ",
+    "escapedValue": "&amp;Lambda;",
+    "tooltip": "GREEK CAPITAL LETTER LAMDA"
+  },
+  {
+    "name": "Μ",
+    "value": "Μ",
+    "escapedValue": "&amp;Mu;",
+    "tooltip": "GREEK CAPITAL LETTER MU"
+  },
+  {
+    "name": "Ν",
+    "value": "Ν",
+    "escapedValue": "&amp;Nu;",
+    "tooltip": "GREEK CAPITAL LETTER NU"
+  },
+  {
+    "name": "Ξ",
+    "value": "Ξ",
+    "escapedValue": "&amp;Xi;",
+    "tooltip": "GREEK CAPITAL LETTER XI"
+  },
+  {
+    "name": "Ο",
+    "value": "Ο",
+    "escapedValue": "&amp;Omicron;",
+    "tooltip": "GREEK CAPITAL LETTER OMICRON"
+  },
+  {
+    "name": "Π",
+    "value": "Π",
+    "escapedValue": "&amp;Pi;",
+    "tooltip": "GREEK CAPITAL LETTER PI"
+  },
+  {
+    "name": "Ρ",
+    "value": "Ρ",
+    "escapedValue": "&amp;Rho;",
+    "tooltip": "GREEK CAPITAL LETTER RHO"
+  },
+  {
+    "name": "Σ",
+    "value": "Σ",
+    "escapedValue": "&amp;Sigma;",
+    "tooltip": "GREEK CAPITAL LETTER SIGMA"
+  },
+  {
+    "name": "Τ",
+    "value": "Τ",
+    "escapedValue": "&amp;Tau;",
+    "tooltip": "GREEK CAPITAL LETTER TAU"
+  },
+  {
+    "name": "Υ",
+    "value": "Υ",
+    "escapedValue": "&amp;Upsilon;",
+    "tooltip": "GREEK CAPITAL LETTER UPSILON"
+  },
+  {
+    "name": "Φ",
+    "value": "Φ",
+    "escapedValue": "&amp;Phi;",
+    "tooltip": "GREEK CAPITAL LETTER PHI"
+  },
+  {
+    "name": "Χ",
+    "value": "Χ",
+    "escapedValue": "&amp;Chi;",
+    "tooltip": "GREEK CAPITAL LETTER CHI"
+  },
+  {
+    "name": "Ψ",
+    "value": "Ψ",
+    "escapedValue": "&amp;Psi;",
+    "tooltip": "GREEK CAPITAL LETTER PSI"
+  },
+  {
+    "name": "Ω",
+    "value": "Ω",
+    "escapedValue": "&amp;Omega;",
+    "tooltip": "GREEK CAPITAL LETTER OMEGA"
+  },
+  {
+    "name": "α",
+    "value": "α",
+    "escapedValue": "&amp;alpha;",
+    "tooltip": "GREEK SMALL LETTER ALPHA"
+  },
+  {
+    "name": "β",
+    "value": "β",
+    "escapedValue": "&amp;beta;",
+    "tooltip": "GREEK SMALL LETTER BETA"
+  },
+  {
+    "name": "γ",
+    "value": "γ",
+    "escapedValue": "&amp;gamma;",
+    "tooltip": "GREEK SMALL LETTER GAMMA"
+  },
+  {
+    "name": "δ",
+    "value": "δ",
+    "escapedValue": "&amp;delta;",
+    "tooltip": "GREEK SMALL LETTER DELTA"
+  },
+  {
+    "name": "ε",
+    "value": "ε",
+    "escapedValue": "&amp;epsiv; &amp;varepsilon; &amp;epsilon;",
+    "tooltip": "GREEK SMALL LETTER EPSILON"
+  },
+  {
+    "name": "ζ",
+    "value": "ζ",
+    "escapedValue": "&amp;zeta;",
+    "tooltip": "GREEK SMALL LETTER ZETA"
+  },
+  {
+    "name": "η",
+    "value": "η",
+    "escapedValue": "&amp;eta;",
+    "tooltip": "GREEK SMALL LETTER ETA"
+  },
+  {
+    "name": "θ",
+    "value": "θ",
+    "escapedValue": "&amp;theta;",
+    "tooltip": "GREEK SMALL LETTER THETA"
+  },
+  {
+    "name": "ι",
+    "value": "ι",
+    "escapedValue": "&amp;iota;",
+    "tooltip": "GREEK SMALL LETTER IOTA"
+  },
+  {
+    "name": "κ",
+    "value": "κ",
+    "escapedValue": "&amp;kappa;",
+    "tooltip": "GREEK SMALL LETTER KAPPA"
+  },
+  {
+    "name": "λ",
+    "value": "λ",
+    "escapedValue": "&amp;lambda;",
+    "tooltip": "GREEK SMALL LETTER LAMDA"
+  },
+  {
+    "name": "μ",
+    "value": "μ",
+    "escapedValue": "&amp;mu;",
+    "tooltip": "GREEK SMALL LETTER MU"
+  },
+  {
+    "name": "ν",
+    "value": "ν",
+    "escapedValue": "&amp;nu;",
+    "tooltip": "GREEK SMALL LETTER NU"
+  },
+  {
+    "name": "ξ",
+    "value": "ξ",
+    "escapedValue": "&amp;xi;",
+    "tooltip": "GREEK SMALL LETTER XI"
+  },
+  {
+    "name": "ο",
+    "value": "ο",
+    "escapedValue": "&amp;omicron;",
+    "tooltip": "GREEK SMALL LETTER OMICRON"
+  },
+  {
+    "name": "π",
+    "value": "π",
+    "escapedValue": "&amp;pi;",
+    "tooltip": "GREEK SMALL LETTER PI"
+  },
+  {
+    "name": "ρ",
+    "value": "ρ",
+    "escapedValue": "&amp;rho;",
+    "tooltip": "GREEK SMALL LETTER RHO"
+  },
+  {
+    "name": "ς",
+    "value": "ς",
+    "escapedValue": "&amp;sigmav; &amp;varsigma; &amp;sigmaf;",
+    "tooltip": "GREEK SMALL LETTER FINAL SIGMA"
+  },
+  {
+    "name": "σ",
+    "value": "σ",
+    "escapedValue": "&amp;sigma;",
+    "tooltip": "GREEK SMALL LETTER SIGMA"
+  },
+  {
+    "name": "τ",
+    "value": "τ",
+    "escapedValue": "&amp;tau;",
+    "tooltip": "GREEK SMALL LETTER TAU"
+  },
+  {
+    "name": "υ",
+    "value": "υ",
+    "escapedValue": "&amp;upsi; &amp;upsilon;",
+    "tooltip": "GREEK SMALL LETTER UPSILON"
+  },
+  {
+    "name": "φ",
+    "value": "φ",
+    "escapedValue": "&amp;phi; &amp;phiv; &amp;varphi;",
+    "tooltip": "GREEK SMALL LETTER PHI"
+  },
+  {
+    "name": "χ",
+    "value": "χ",
+    "escapedValue": "&amp;chi;",
+    "tooltip": "GREEK SMALL LETTER CHI"
+  },
+  {
+    "name": "ψ",
+    "value": "ψ",
+    "escapedValue": "&amp;psi;",
+    "tooltip": "GREEK SMALL LETTER PSI"
+  },
+  {
+    "name": "ω",
+    "value": "ω",
+    "escapedValue": "&amp;omega;",
+    "tooltip": "GREEK SMALL LETTER OMEGA"
+  },
+  {
+    "name": "ϑ",
+    "value": "ϑ",
+    "escapedValue": "&amp;thetav; &amp;vartheta; &amp;thetasym;",
+    "tooltip": "GREEK THETA SYMBOL"
+  },
+  {
+    "name": "ϒ",
+    "value": "ϒ",
+    "escapedValue": "&amp;Upsi; &amp;upsih;",
+    "tooltip": "GREEK UPSILON WITH HOOK SYMBOL"
+  },
+  {
+    "name": "ϕ",
+    "value": "ϕ",
+    "escapedValue": "&amp;straightphi;",
+    "tooltip": "GREEK PHI SYMBOL"
+  },
+  {
+    "name": "ϖ",
+    "value": "ϖ",
+    "escapedValue": "&amp;piv; &amp;varpi;",
+    "tooltip": "GREEK PI SYMBOL"
+  },
+  {
+    "name": "Ϝ",
+    "value": "Ϝ",
+    "escapedValue": "&amp;Gammad;",
+    "tooltip": "GREEK LETTER DIGAMMA"
+  },
+  {
+    "name": "ϝ",
+    "value": "ϝ",
+    "escapedValue": "&amp;gammad; &amp;digamma;",
+    "tooltip": "GREEK SMALL LETTER DIGAMMA"
+  },
+  {
+    "name": "ϰ",
+    "value": "ϰ",
+    "escapedValue": "&amp;kappav; &amp;varkappa;",
+    "tooltip": "GREEK KAPPA SYMBOL"
+  },
+  {
+    "name": "ϱ",
+    "value": "ϱ",
+    "escapedValue": "&amp;rhov; &amp;varrho;",
+    "tooltip": "GREEK RHO SYMBOL"
+  },
+  {
+    "name": "ϵ",
+    "value": "ϵ",
+    "escapedValue": "&amp;epsi; &amp;straightepsilon;",
+    "tooltip": "GREEK LUNATE EPSILON SYMBOL"
+  },
+  {
+    "name": "϶",
+    "value": "϶",
+    "escapedValue": "&amp;bepsi; &amp;backepsilon;",
+    "tooltip": "GREEK REVERSED LUNATE EPSILON SYMBOL"
+  },
+  {
+    "name": "Ё",
+    "value": "Ё",
+    "escapedValue": "&amp;IOcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER IO"
+  },
+  {
+    "name": "Ђ",
+    "value": "Ђ",
+    "escapedValue": "&amp;DJcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER DJE"
+  },
+  {
+    "name": "Ѓ",
+    "value": "Ѓ",
+    "escapedValue": "&amp;GJcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER GJE"
+  },
+  {
+    "name": "Є",
+    "value": "Є",
+    "escapedValue": "&amp;Jukcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER UKRAINIAN IE"
+  },
+  {
+    "name": "Ѕ",
+    "value": "Ѕ",
+    "escapedValue": "&amp;DScy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER DZE"
+  },
+  {
+    "name": "І",
+    "value": "І",
+    "escapedValue": "&amp;Iukcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER BYELORUSSIAN-UKRAINIAN I"
+  },
+  {
+    "name": "Ї",
+    "value": "Ї",
+    "escapedValue": "&amp;YIcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER YI"
+  },
+  {
+    "name": "Ј",
+    "value": "Ј",
+    "escapedValue": "&amp;Jsercy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER JE"
+  },
+  {
+    "name": "Љ",
+    "value": "Љ",
+    "escapedValue": "&amp;LJcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER LJE"
+  },
+  {
+    "name": "Њ",
+    "value": "Њ",
+    "escapedValue": "&amp;NJcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER NJE"
+  },
+  {
+    "name": "Ћ",
+    "value": "Ћ",
+    "escapedValue": "&amp;TSHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER TSHE"
+  },
+  {
+    "name": "Ќ",
+    "value": "Ќ",
+    "escapedValue": "&amp;KJcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER KJE"
+  },
+  {
+    "name": "Ў",
+    "value": "Ў",
+    "escapedValue": "&amp;Ubrcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER SHORT U"
+  },
+  {
+    "name": "Џ",
+    "value": "Џ",
+    "escapedValue": "&amp;DZcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER DZHE"
+  },
+  {
+    "name": "А",
+    "value": "А",
+    "escapedValue": "&amp;Acy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER A"
+  },
+  {
+    "name": "Б",
+    "value": "Б",
+    "escapedValue": "&amp;Bcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER BE"
+  },
+  {
+    "name": "В",
+    "value": "В",
+    "escapedValue": "&amp;Vcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER VE"
+  },
+  {
+    "name": "Г",
+    "value": "Г",
+    "escapedValue": "&amp;Gcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER GHE"
+  },
+  {
+    "name": "Д",
+    "value": "Д",
+    "escapedValue": "&amp;Dcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER DE"
+  },
+  {
+    "name": "Е",
+    "value": "Е",
+    "escapedValue": "&amp;IEcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER IE"
+  },
+  {
+    "name": "Ж",
+    "value": "Ж",
+    "escapedValue": "&amp;ZHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER ZHE"
+  },
+  {
+    "name": "З",
+    "value": "З",
+    "escapedValue": "&amp;Zcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER ZE"
+  },
+  {
+    "name": "И",
+    "value": "И",
+    "escapedValue": "&amp;Icy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER I"
+  },
+  {
+    "name": "Й",
+    "value": "Й",
+    "escapedValue": "&amp;Jcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER SHORT I"
+  },
+  {
+    "name": "К",
+    "value": "К",
+    "escapedValue": "&amp;Kcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER KA"
+  },
+  {
+    "name": "Л",
+    "value": "Л",
+    "escapedValue": "&amp;Lcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER EL"
+  },
+  {
+    "name": "М",
+    "value": "М",
+    "escapedValue": "&amp;Mcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER EM"
+  },
+  {
+    "name": "Н",
+    "value": "Н",
+    "escapedValue": "&amp;Ncy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER EN"
+  },
+  {
+    "name": "О",
+    "value": "О",
+    "escapedValue": "&amp;Ocy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER O"
+  },
+  {
+    "name": "П",
+    "value": "П",
+    "escapedValue": "&amp;Pcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER PE"
+  },
+  {
+    "name": "Р",
+    "value": "Р",
+    "escapedValue": "&amp;Rcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER ER"
+  },
+  {
+    "name": "С",
+    "value": "С",
+    "escapedValue": "&amp;Scy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER ES"
+  },
+  {
+    "name": "Т",
+    "value": "Т",
+    "escapedValue": "&amp;Tcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER TE"
+  },
+  {
+    "name": "У",
+    "value": "У",
+    "escapedValue": "&amp;Ucy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER U"
+  },
+  {
+    "name": "Ф",
+    "value": "Ф",
+    "escapedValue": "&amp;Fcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER EF"
+  },
+  {
+    "name": "Х",
+    "value": "Х",
+    "escapedValue": "&amp;KHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER HA"
+  },
+  {
+    "name": "Ц",
+    "value": "Ц",
+    "escapedValue": "&amp;TScy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER TSE"
+  },
+  {
+    "name": "Ч",
+    "value": "Ч",
+    "escapedValue": "&amp;CHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER CHE"
+  },
+  {
+    "name": "Ш",
+    "value": "Ш",
+    "escapedValue": "&amp;SHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER SHA"
+  },
+  {
+    "name": "Щ",
+    "value": "Щ",
+    "escapedValue": "&amp;SHCHcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER SHCHA"
+  },
+  {
+    "name": "Ъ",
+    "value": "Ъ",
+    "escapedValue": "&amp;HARDcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER HARD SIGN"
+  },
+  {
+    "name": "Ы",
+    "value": "Ы",
+    "escapedValue": "&amp;Ycy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER YERU"
+  },
+  {
+    "name": "Ь",
+    "value": "Ь",
+    "escapedValue": "&amp;SOFTcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER SOFT SIGN"
+  },
+  {
+    "name": "Э",
+    "value": "Э",
+    "escapedValue": "&amp;Ecy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER E"
+  },
+  {
+    "name": "Ю",
+    "value": "Ю",
+    "escapedValue": "&amp;YUcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER YU"
+  },
+  {
+    "name": "Я",
+    "value": "Я",
+    "escapedValue": "&amp;YAcy;",
+    "tooltip": "CYRILLIC CAPITAL LETTER YA"
+  },
+  {
+    "name": "а",
+    "value": "а",
+    "escapedValue": "&amp;acy;",
+    "tooltip": "CYRILLIC SMALL LETTER A"
+  },
+  {
+    "name": "б",
+    "value": "б",
+    "escapedValue": "&amp;bcy;",
+    "tooltip": "CYRILLIC SMALL LETTER BE"
+  },
+  {
+    "name": "в",
+    "value": "в",
+    "escapedValue": "&amp;vcy;",
+    "tooltip": "CYRILLIC SMALL LETTER VE"
+  },
+  {
+    "name": "г",
+    "value": "г",
+    "escapedValue": "&amp;gcy;",
+    "tooltip": "CYRILLIC SMALL LETTER GHE"
+  },
+  {
+    "name": "д",
+    "value": "д",
+    "escapedValue": "&amp;dcy;",
+    "tooltip": "CYRILLIC SMALL LETTER DE"
+  },
+  {
+    "name": "е",
+    "value": "е",
+    "escapedValue": "&amp;iecy;",
+    "tooltip": "CYRILLIC SMALL LETTER IE"
+  },
+  {
+    "name": "ж",
+    "value": "ж",
+    "escapedValue": "&amp;zhcy;",
+    "tooltip": "CYRILLIC SMALL LETTER ZHE"
+  },
+  {
+    "name": "з",
+    "value": "з",
+    "escapedValue": "&amp;zcy;",
+    "tooltip": "CYRILLIC SMALL LETTER ZE"
+  },
+  {
+    "name": "и",
+    "value": "и",
+    "escapedValue": "&amp;icy;",
+    "tooltip": "CYRILLIC SMALL LETTER I"
+  },
+  {
+    "name": "й",
+    "value": "й",
+    "escapedValue": "&amp;jcy;",
+    "tooltip": "CYRILLIC SMALL LETTER SHORT I"
+  },
+  {
+    "name": "к",
+    "value": "к",
+    "escapedValue": "&amp;kcy;",
+    "tooltip": "CYRILLIC SMALL LETTER KA"
+  },
+  {
+    "name": "л",
+    "value": "л",
+    "escapedValue": "&amp;lcy;",
+    "tooltip": "CYRILLIC SMALL LETTER EL"
+  },
+  {
+    "name": "м",
+    "value": "м",
+    "escapedValue": "&amp;mcy;",
+    "tooltip": "CYRILLIC SMALL LETTER EM"
+  },
+  {
+    "name": "н",
+    "value": "н",
+    "escapedValue": "&amp;ncy;",
+    "tooltip": "CYRILLIC SMALL LETTER EN"
+  },
+  {
+    "name": "о",
+    "value": "о",
+    "escapedValue": "&amp;ocy;",
+    "tooltip": "CYRILLIC SMALL LETTER O"
+  },
+  {
+    "name": "п",
+    "value": "п",
+    "escapedValue": "&amp;pcy;",
+    "tooltip": "CYRILLIC SMALL LETTER PE"
+  },
+  {
+    "name": "р",
+    "value": "р",
+    "escapedValue": "&amp;rcy;",
+    "tooltip": "CYRILLIC SMALL LETTER ER"
+  },
+  {
+    "name": "с",
+    "value": "с",
+    "escapedValue": "&amp;scy;",
+    "tooltip": "CYRILLIC SMALL LETTER ES"
+  },
+  {
+    "name": "т",
+    "value": "т",
+    "escapedValue": "&amp;tcy;",
+    "tooltip": "CYRILLIC SMALL LETTER TE"
+  },
+  {
+    "name": "у",
+    "value": "у",
+    "escapedValue": "&amp;ucy;",
+    "tooltip": "CYRILLIC SMALL LETTER U"
+  },
+  {
+    "name": "ф",
+    "value": "ф",
+    "escapedValue": "&amp;fcy;",
+    "tooltip": "CYRILLIC SMALL LETTER EF"
+  },
+  {
+    "name": "х",
+    "value": "х",
+    "escapedValue": "&amp;khcy;",
+    "tooltip": "CYRILLIC SMALL LETTER HA"
+  },
+  {
+    "name": "ц",
+    "value": "ц",
+    "escapedValue": "&amp;tscy;",
+    "tooltip": "CYRILLIC SMALL LETTER TSE"
+  },
+  {
+    "name": "ч",
+    "value": "ч",
+    "escapedValue": "&amp;chcy;",
+    "tooltip": "CYRILLIC SMALL LETTER CHE"
+  },
+  {
+    "name": "ш",
+    "value": "ш",
+    "escapedValue": "&amp;shcy;",
+    "tooltip": "CYRILLIC SMALL LETTER SHA"
+  },
+  {
+    "name": "щ",
+    "value": "щ",
+    "escapedValue": "&amp;shchcy;",
+    "tooltip": "CYRILLIC SMALL LETTER SHCHA"
+  },
+  {
+    "name": "ъ",
+    "value": "ъ",
+    "escapedValue": "&amp;hardcy;",
+    "tooltip": "CYRILLIC SMALL LETTER HARD SIGN"
+  },
+  {
+    "name": "ы",
+    "value": "ы",
+    "escapedValue": "&amp;ycy;",
+    "tooltip": "CYRILLIC SMALL LETTER YERU"
+  },
+  {
+    "name": "ь",
+    "value": "ь",
+    "escapedValue": "&amp;softcy;",
+    "tooltip": "CYRILLIC SMALL LETTER SOFT SIGN"
+  },
+  {
+    "name": "э",
+    "value": "э",
+    "escapedValue": "&amp;ecy;",
+    "tooltip": "CYRILLIC SMALL LETTER E"
+  },
+  {
+    "name": "ю",
+    "value": "ю",
+    "escapedValue": "&amp;yucy;",
+    "tooltip": "CYRILLIC SMALL LETTER YU"
+  },
+  {
+    "name": "я",
+    "value": "я",
+    "escapedValue": "&amp;yacy;",
+    "tooltip": "CYRILLIC SMALL LETTER YA"
+  },
+  {
+    "name": "ё",
+    "value": "ё",
+    "escapedValue": "&amp;iocy;",
+    "tooltip": "CYRILLIC SMALL LETTER IO"
+  },
+  {
+    "name": "ђ",
+    "value": "ђ",
+    "escapedValue": "&amp;djcy;",
+    "tooltip": "CYRILLIC SMALL LETTER DJE"
+  },
+  {
+    "name": "ѓ",
+    "value": "ѓ",
+    "escapedValue": "&amp;gjcy;",
+    "tooltip": "CYRILLIC SMALL LETTER GJE"
+  },
+  {
+    "name": "є",
+    "value": "є",
+    "escapedValue": "&amp;jukcy;",
+    "tooltip": "CYRILLIC SMALL LETTER UKRAINIAN IE"
+  },
+  {
+    "name": "ѕ",
+    "value": "ѕ",
+    "escapedValue": "&amp;dscy;",
+    "tooltip": "CYRILLIC SMALL LETTER DZE"
+  },
+  {
+    "name": "і",
+    "value": "і",
+    "escapedValue": "&amp;iukcy;",
+    "tooltip": "CYRILLIC SMALL LETTER BYELORUSSIAN-UKRAINIAN I"
+  },
+  {
+    "name": "ї",
+    "value": "ї",
+    "escapedValue": "&amp;yicy;",
+    "tooltip": "CYRILLIC SMALL LETTER YI"
+  },
+  {
+    "name": "ј",
+    "value": "ј",
+    "escapedValue": "&amp;jsercy;",
+    "tooltip": "CYRILLIC SMALL LETTER JE"
+  },
+  {
+    "name": "љ",
+    "value": "љ",
+    "escapedValue": "&amp;ljcy;",
+    "tooltip": "CYRILLIC SMALL LETTER LJE"
+  },
+  {
+    "name": "њ",
+    "value": "њ",
+    "escapedValue": "&amp;njcy;",
+    "tooltip": "CYRILLIC SMALL LETTER NJE"
+  },
+  {
+    "name": "ћ",
+    "value": "ћ",
+    "escapedValue": "&amp;tshcy;",
+    "tooltip": "CYRILLIC SMALL LETTER TSHE"
+  },
+  {
+    "name": "ќ",
+    "value": "ќ",
+    "escapedValue": "&amp;kjcy;",
+    "tooltip": "CYRILLIC SMALL LETTER KJE"
+  },
+  {
+    "name": "ў",
+    "value": "ў",
+    "escapedValue": "&amp;ubrcy;",
+    "tooltip": "CYRILLIC SMALL LETTER SHORT U"
+  },
+  {
+    "name": "џ",
+    "value": "џ",
+    "escapedValue": "&amp;dzcy;",
+    "tooltip": "CYRILLIC SMALL LETTER DZHE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;ensp;",
+    "tooltip": "EN SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;emsp;",
+    "tooltip": "EM SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;emsp13;",
+    "tooltip": "THREE-PER-EM SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;emsp14;",
+    "tooltip": "FOUR-PER-EM SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;numsp;",
+    "tooltip": "FIGURE SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;puncsp;",
+    "tooltip": "PUNCTUATION SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;thinsp; &amp;ThinSpace;",
+    "tooltip": "THIN SPACE"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;hairsp; &amp;VeryThinSpace;",
+    "tooltip": "HAIR SPACE"
+  },
+  {
+    "name": "​",
+    "value": "​",
+    "escapedValue": "&amp;ZeroWidthSpace; &amp;NegativeVeryThinSpace; &amp;NegativeThinSpace; &amp;NegativeMediumSpace; &amp;NegativeThickSpace;",
+    "tooltip": "ZERO WIDTH SPACE"
+  },
+  {
+    "name": "‌",
+    "value": "‌",
+    "escapedValue": "&amp;zwnj;",
+    "tooltip": "ZERO WIDTH NON-JOINER"
+  },
+  {
+    "name": "‍",
+    "value": "‍",
+    "escapedValue": "&amp;zwj;",
+    "tooltip": "ZERO WIDTH JOINER"
+  },
+  {
+    "name": "‎",
+    "value": "‎",
+    "escapedValue": "&amp;lrm;",
+    "tooltip": "LEFT-TO-RIGHT MARK"
+  },
+  {
+    "name": "‏",
+    "value": "‏",
+    "escapedValue": "&amp;rlm;",
+    "tooltip": "RIGHT-TO-LEFT MARK"
+  },
+  {
+    "name": "‐",
+    "value": "‐",
+    "escapedValue": "&amp;hyphen; &amp;dash;",
+    "tooltip": "HYPHEN"
+  },
+  {
+    "name": "–",
+    "value": "–",
+    "escapedValue": "&amp;ndash;",
+    "tooltip": "EN DASH"
+  },
+  {
+    "name": "—",
+    "value": "—",
+    "escapedValue": "&amp;mdash;",
+    "tooltip": "EM DASH"
+  },
+  {
+    "name": "―",
+    "value": "―",
+    "escapedValue": "&amp;horbar;",
+    "tooltip": "HORIZONTAL BAR"
+  },
+  {
+    "name": "‖",
+    "value": "‖",
+    "escapedValue": "&amp;Verbar; &amp;Vert;",
+    "tooltip": "DOUBLE VERTICAL LINE"
+  },
+  {
+    "name": "‘",
+    "value": "‘",
+    "escapedValue": "&amp;lsquo; &amp;OpenCurlyQuote;",
+    "tooltip": "LEFT SINGLE QUOTATION MARK"
+  },
+  {
+    "name": "’",
+    "value": "’",
+    "escapedValue": "&amp;rsquo; &amp;rsquor; &amp;CloseCurlyQuote;",
+    "tooltip": "RIGHT SINGLE QUOTATION MARK"
+  },
+  {
+    "name": "‚",
+    "value": "‚",
+    "escapedValue": "&amp;lsquor; &amp;sbquo;",
+    "tooltip": "SINGLE LOW-9 QUOTATION MARK"
+  },
+  {
+    "name": "“",
+    "value": "“",
+    "escapedValue": "&amp;ldquo; &amp;OpenCurlyDoubleQuote;",
+    "tooltip": "LEFT DOUBLE QUOTATION MARK"
+  },
+  {
+    "name": "”",
+    "value": "”",
+    "escapedValue": "&amp;rdquo; &amp;rdquor; &amp;CloseCurlyDoubleQuote;",
+    "tooltip": "RIGHT DOUBLE QUOTATION MARK"
+  },
+  {
+    "name": "„",
+    "value": "„",
+    "escapedValue": "&amp;ldquor; &amp;bdquo;",
+    "tooltip": "DOUBLE LOW-9 QUOTATION MARK"
+  },
+  {
+    "name": "†",
+    "value": "†",
+    "escapedValue": "&amp;dagger;",
+    "tooltip": "DAGGER"
+  },
+  {
+    "name": "‡",
+    "value": "‡",
+    "escapedValue": "&amp;Dagger; &amp;ddagger;",
+    "tooltip": "DOUBLE DAGGER"
+  },
+  {
+    "name": "•",
+    "value": "•",
+    "escapedValue": "&amp;bull; &amp;bullet;",
+    "tooltip": "BULLET"
+  },
+  {
+    "name": "‥",
+    "value": "‥",
+    "escapedValue": "&amp;nldr;",
+    "tooltip": "TWO DOT LEADER"
+  },
+  {
+    "name": "…",
+    "value": "…",
+    "escapedValue": "&amp;hellip; &amp;mldr;",
+    "tooltip": "HORIZONTAL ELLIPSIS"
+  },
+  {
+    "name": "‰",
+    "value": "‰",
+    "escapedValue": "&amp;permil;",
+    "tooltip": "PER MILLE SIGN"
+  },
+  {
+    "name": "‱",
+    "value": "‱",
+    "escapedValue": "&amp;pertenk;",
+    "tooltip": "PER TEN THOUSAND SIGN"
+  },
+  {
+    "name": "′",
+    "value": "′",
+    "escapedValue": "&amp;prime;",
+    "tooltip": "PRIME"
+  },
+  {
+    "name": "″",
+    "value": "″",
+    "escapedValue": "&amp;Prime;",
+    "tooltip": "DOUBLE PRIME"
+  },
+  {
+    "name": "‴",
+    "value": "‴",
+    "escapedValue": "&amp;tprime;",
+    "tooltip": "TRIPLE PRIME"
+  },
+  {
+    "name": "‵",
+    "value": "‵",
+    "escapedValue": "&amp;bprime; &amp;backprime;",
+    "tooltip": "REVERSED PRIME"
+  },
+  {
+    "name": "‹",
+    "value": "‹",
+    "escapedValue": "&amp;lsaquo;",
+    "tooltip": "SINGLE LEFT-POINTING ANGLE QUOTATION MARK"
+  },
+  {
+    "name": "›",
+    "value": "›",
+    "escapedValue": "&amp;rsaquo;",
+    "tooltip": "SINGLE RIGHT-POINTING ANGLE QUOTATION MARK"
+  },
+  {
+    "name": "‾",
+    "value": "‾",
+    "escapedValue": "&amp;oline;",
+    "tooltip": "OVERLINE"
+  },
+  {
+    "name": "⁁",
+    "value": "⁁",
+    "escapedValue": "&amp;caret;",
+    "tooltip": "CARET INSERTION POINT"
+  },
+  {
+    "name": "⁃",
+    "value": "⁃",
+    "escapedValue": "&amp;hybull;",
+    "tooltip": "HYPHEN BULLET"
+  },
+  {
+    "name": "⁄",
+    "value": "⁄",
+    "escapedValue": "&amp;frasl;",
+    "tooltip": "FRACTION SLASH"
+  },
+  {
+    "name": "⁏",
+    "value": "⁏",
+    "escapedValue": "&amp;bsemi;",
+    "tooltip": "REVERSED SEMICOLON"
+  },
+  {
+    "name": "⁗",
+    "value": "⁗",
+    "escapedValue": "&amp;qprime;",
+    "tooltip": "QUADRUPLE PRIME"
+  },
+  {
+    "name": "",
+    "value": "",
+    "escapedValue": "&amp;MediumSpace;",
+    "tooltip": "MEDIUM MATHEMATICAL SPACE"
+  },
+  {
+    "name": "⁠",
+    "value": "⁠",
+    "escapedValue": "&amp;NoBreak;",
+    "tooltip": "WORD JOINER"
+  },
+  {
+    "name": "⁡",
+    "value": "⁡",
+    "escapedValue": "&amp;ApplyFunction; &amp;af;",
+    "tooltip": "FUNCTION APPLICATION"
+  },
+  {
+    "name": "⁢",
+    "value": "⁢",
+    "escapedValue": "&amp;InvisibleTimes; &amp;it;",
+    "tooltip": "INVISIBLE TIMES"
+  },
+  {
+    "name": "⁣",
+    "value": "⁣",
+    "escapedValue": "&amp;InvisibleComma; &amp;ic;",
+    "tooltip": "INVISIBLE SEPARATOR"
+  },
+  {
+    "name": "€",
+    "value": "€",
+    "escapedValue": "&amp;euro;",
+    "tooltip": "EURO SIGN"
+  },
+  {
+    "name": "⃛",
+    "value": "⃛",
+    "escapedValue": "&amp;tdot; &amp;TripleDot;",
+    "tooltip": "COMBINING THREE DOTS ABOVE"
+  },
+  {
+    "name": "⃜",
+    "value": "⃜",
+    "escapedValue": "&amp;DotDot;",
+    "tooltip": "COMBINING FOUR DOTS ABOVE"
+  },
+  {
+    "name": "ℂ",
+    "value": "ℂ",
+    "escapedValue": "&amp;Copf; &amp;complexes;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL C"
+  },
+  {
+    "name": "℅",
+    "value": "℅",
+    "escapedValue": "&amp;incare;",
+    "tooltip": "CARE OF"
+  },
+  {
+    "name": "ℊ",
+    "value": "ℊ",
+    "escapedValue": "&amp;gscr;",
+    "tooltip": "SCRIPT SMALL G"
+  },
+  {
+    "name": "ℋ",
+    "value": "ℋ",
+    "escapedValue": "&amp;hamilt; &amp;HilbertSpace; &amp;Hscr;",
+    "tooltip": "SCRIPT CAPITAL H"
+  },
+  {
+    "name": "ℌ",
+    "value": "ℌ",
+    "escapedValue": "&amp;Hfr; &amp;Poincareplane;",
+    "tooltip": "BLACK-LETTER CAPITAL H"
+  },
+  {
+    "name": "ℍ",
+    "value": "ℍ",
+    "escapedValue": "&amp;quaternions; &amp;Hopf;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL H"
+  },
+  {
+    "name": "ℎ",
+    "value": "ℎ",
+    "escapedValue": "&amp;planckh;",
+    "tooltip": "PLANCK CONSTANT"
+  },
+  {
+    "name": "ℏ",
+    "value": "ℏ",
+    "escapedValue": "&amp;planck; &amp;hbar; &amp;plankv; &amp;hslash;",
+    "tooltip": "PLANCK CONSTANT OVER TWO PI"
+  },
+  {
+    "name": "ℐ",
+    "value": "ℐ",
+    "escapedValue": "&amp;Iscr; &amp;imagline;",
+    "tooltip": "SCRIPT CAPITAL I"
+  },
+  {
+    "name": "ℑ",
+    "value": "ℑ",
+    "escapedValue": "&amp;image; &amp;Im; &amp;imagpart; &amp;Ifr;",
+    "tooltip": "BLACK-LETTER CAPITAL I"
+  },
+  {
+    "name": "ℒ",
+    "value": "ℒ",
+    "escapedValue": "&amp;Lscr; &amp;lagran; &amp;Laplacetrf;",
+    "tooltip": "SCRIPT CAPITAL L"
+  },
+  {
+    "name": "ℓ",
+    "value": "ℓ",
+    "escapedValue": "&amp;ell;",
+    "tooltip": "SCRIPT SMALL L"
+  },
+  {
+    "name": "ℕ",
+    "value": "ℕ",
+    "escapedValue": "&amp;Nopf; &amp;naturals;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL N"
+  },
+  {
+    "name": "№",
+    "value": "№",
+    "escapedValue": "&amp;numero;",
+    "tooltip": "NUMERO SIGN"
+  },
+  {
+    "name": "℗",
+    "value": "℗",
+    "escapedValue": "&amp;copysr;",
+    "tooltip": "SOUND RECORDING COPYRIGHT"
+  },
+  {
+    "name": "℘",
+    "value": "℘",
+    "escapedValue": "&amp;weierp; &amp;wp;",
+    "tooltip": "SCRIPT CAPITAL P"
+  },
+  {
+    "name": "ℙ",
+    "value": "ℙ",
+    "escapedValue": "&amp;Popf; &amp;primes;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL P"
+  },
+  {
+    "name": "ℚ",
+    "value": "ℚ",
+    "escapedValue": "&amp;rationals; &amp;Qopf;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL Q"
+  },
+  {
+    "name": "ℛ",
+    "value": "ℛ",
+    "escapedValue": "&amp;Rscr; &amp;realine;",
+    "tooltip": "SCRIPT CAPITAL R"
+  },
+  {
+    "name": "ℜ",
+    "value": "ℜ",
+    "escapedValue": "&amp;real; &amp;Re; &amp;realpart; &amp;Rfr;",
+    "tooltip": "BLACK-LETTER CAPITAL R"
+  },
+  {
+    "name": "ℝ",
+    "value": "ℝ",
+    "escapedValue": "&amp;reals; &amp;Ropf;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL R"
+  },
+  {
+    "name": "℞",
+    "value": "℞",
+    "escapedValue": "&amp;rx;",
+    "tooltip": "PRESCRIPTION TAKE"
+  },
+  {
+    "name": "™",
+    "value": "™",
+    "escapedValue": "&amp;trade; &amp;TRADE;",
+    "tooltip": "TRADE MARK SIGN"
+  },
+  {
+    "name": "ℤ",
+    "value": "ℤ",
+    "escapedValue": "&amp;integers; &amp;Zopf;",
+    "tooltip": "DOUBLE-STRUCK CAPITAL Z"
+  },
+  {
+    "name": "Ω",
+    "value": "Ω",
+    "escapedValue": "&amp;ohm;",
+    "tooltip": "OHM SIGN"
+  },
+  {
+    "name": "℧",
+    "value": "℧",
+    "escapedValue": "&amp;mho;",
+    "tooltip": "INVERTED OHM SIGN"
+  },
+  {
+    "name": "ℨ",
+    "value": "ℨ",
+    "escapedValue": "&amp;Zfr; &amp;zeetrf;",
+    "tooltip": "BLACK-LETTER CAPITAL Z"
+  },
+  {
+    "name": "℩",
+    "value": "℩",
+    "escapedValue": "&amp;iiota;",
+    "tooltip": "TURNED GREEK SMALL LETTER IOTA"
+  },
+  {
+    "name": "Å",
+    "value": "Å",
+    "escapedValue": "&amp;angst;",
+    "tooltip": "ANGSTROM SIGN"
+  },
+  {
+    "name": "ℬ",
+    "value": "ℬ",
+    "escapedValue": "&amp;bernou; &amp;Bernoullis; &amp;Bscr;",
+    "tooltip": "SCRIPT CAPITAL B"
+  },
+  {
+    "name": "ℭ",
+    "value": "ℭ",
+    "escapedValue": "&amp;Cfr; &amp;Cayleys;",
+    "tooltip": "BLACK-LETTER CAPITAL C"
+  },
+  {
+    "name": "ℯ",
+    "value": "ℯ",
+    "escapedValue": "&amp;escr;",
+    "tooltip": "SCRIPT SMALL E"
+  },
+  {
+    "name": "ℰ",
+    "value": "ℰ",
+    "escapedValue": "&amp;Escr; &amp;expectation;",
+    "tooltip": "SCRIPT CAPITAL E"
+  },
+  {
+    "name": "ℱ",
+    "value": "ℱ",
+    "escapedValue": "&amp;Fscr; &amp;Fouriertrf;",
+    "tooltip": "SCRIPT CAPITAL F"
+  },
+  {
+    "name": "ℳ",
+    "value": "ℳ",
+    "escapedValue": "&amp;phmmat; &amp;Mellintrf; &amp;Mscr;",
+    "tooltip": "SCRIPT CAPITAL M"
+  },
+  {
+    "name": "ℴ",
+    "value": "ℴ",
+    "escapedValue": "&amp;order; &amp;orderof; &amp;oscr;",
+    "tooltip": "SCRIPT SMALL O"
+  },
+  {
+    "name": "ℵ",
+    "value": "ℵ",
+    "escapedValue": "&amp;alefsym; &amp;aleph;",
+    "tooltip": "ALEF SYMBOL"
+  },
+  {
+    "name": "ℶ",
+    "value": "ℶ",
+    "escapedValue": "&amp;beth;",
+    "tooltip": "BET SYMBOL"
+  },
+  {
+    "name": "ℷ",
+    "value": "ℷ",
+    "escapedValue": "&amp;gimel;",
+    "tooltip": "GIMEL SYMBOL"
+  },
+  {
+    "name": "ℸ",
+    "value": "ℸ",
+    "escapedValue": "&amp;daleth;",
+    "tooltip": "DALET SYMBOL"
+  },
+  {
+    "name": "ⅅ",
+    "value": "ⅅ",
+    "escapedValue": "&amp;CapitalDifferentialD; &amp;DD;",
+    "tooltip": "DOUBLE-STRUCK ITALIC CAPITAL D"
+  },
+  {
+    "name": "ⅆ",
+    "value": "ⅆ",
+    "escapedValue": "&amp;DifferentialD; &amp;dd;",
+    "tooltip": "DOUBLE-STRUCK ITALIC SMALL D"
+  },
+  {
+    "name": "ⅇ",
+    "value": "ⅇ",
+    "escapedValue": "&amp;ExponentialE; &amp;exponentiale; &amp;ee;",
+    "tooltip": "DOUBLE-STRUCK ITALIC SMALL E"
+  },
+  {
+    "name": "ⅈ",
+    "value": "ⅈ",
+    "escapedValue": "&amp;ImaginaryI; &amp;ii;",
+    "tooltip": "DOUBLE-STRUCK ITALIC SMALL I"
+  },
+  {
+    "name": "⅓",
+    "value": "⅓",
+    "escapedValue": "&amp;frac13;",
+    "tooltip": "VULGAR FRACTION ONE THIRD"
+  },
+  {
+    "name": "⅔",
+    "value": "⅔",
+    "escapedValue": "&amp;frac23;",
+    "tooltip": "VULGAR FRACTION TWO THIRDS"
+  },
+  {
+    "name": "⅕",
+    "value": "⅕",
+    "escapedValue": "&amp;frac15;",
+    "tooltip": "VULGAR FRACTION ONE FIFTH"
+  },
+  {
+    "name": "⅖",
+    "value": "⅖",
+    "escapedValue": "&amp;frac25;",
+    "tooltip": "VULGAR FRACTION TWO FIFTHS"
+  },
+  {
+    "name": "⅗",
+    "value": "⅗",
+    "escapedValue": "&amp;frac35;",
+    "tooltip": "VULGAR FRACTION THREE FIFTHS"
+  },
+  {
+    "name": "⅘",
+    "value": "⅘",
+    "escapedValue": "&amp;frac45;",
+    "tooltip": "VULGAR FRACTION FOUR FIFTHS"
+  },
+  {
+    "name": "⅙",
+    "value": "⅙",
+    "escapedValue": "&amp;frac16;",
+    "tooltip": "VULGAR FRACTION ONE SIXTH"
+  },
+  {
+    "name": "⅚",
+    "value": "⅚",
+    "escapedValue": "&amp;frac56;",
+    "tooltip": "VULGAR FRACTION FIVE SIXTHS"
+  },
+  {
+    "name": "⅛",
+    "value": "⅛",
+    "escapedValue": "&amp;frac18;",
+    "tooltip": "VULGAR FRACTION ONE EIGHTH"
+  },
+  {
+    "name": "⅜",
+    "value": "⅜",
+    "escapedValue": "&amp;frac38;",
+    "tooltip": "VULGAR FRACTION THREE EIGHTHS"
+  },
+  {
+    "name": "⅝",
+    "value": "⅝",
+    "escapedValue": "&amp;frac58;",
+    "tooltip": "VULGAR FRACTION FIVE EIGHTHS"
+  },
+  {
+    "name": "⅞",
+    "value": "⅞",
+    "escapedValue": "&amp;frac78;",
+    "tooltip": "VULGAR FRACTION SEVEN EIGHTHS"
+  },
+  {
+    "name": "←",
+    "value": "←",
+    "escapedValue": "&amp;larr; &amp;leftarrow; &amp;LeftArrow; &amp;slarr; &amp;ShortLeftArrow;",
+    "tooltip": "LEFTWARDS ARROW"
+  },
+  {
+    "name": "↑",
+    "value": "↑",
+    "escapedValue": "&amp;uarr; &amp;uparrow; &amp;UpArrow; &amp;ShortUpArrow;",
+    "tooltip": "UPWARDS ARROW"
+  },
+  {
+    "name": "→",
+    "value": "→",
+    "escapedValue": "&amp;rarr; &amp;rightarrow; &amp;RightArrow; &amp;srarr; &amp;ShortRightArrow;",
+    "tooltip": "RIGHTWARDS ARROW"
+  },
+  {
+    "name": "↓",
+    "value": "↓",
+    "escapedValue": "&amp;darr; &amp;downarrow; &amp;DownArrow; &amp;ShortDownArrow;",
+    "tooltip": "DOWNWARDS ARROW"
+  },
+  {
+    "name": "↔",
+    "value": "↔",
+    "escapedValue": "&amp;harr; &amp;leftrightarrow; &amp;LeftRightArrow;",
+    "tooltip": "LEFT RIGHT ARROW"
+  },
+  {
+    "name": "↕",
+    "value": "↕",
+    "escapedValue": "&amp;varr; &amp;updownarrow; &amp;UpDownArrow;",
+    "tooltip": "UP DOWN ARROW"
+  },
+  {
+    "name": "↖",
+    "value": "↖",
+    "escapedValue": "&amp;nwarr; &amp;UpperLeftArrow; &amp;nwarrow;",
+    "tooltip": "NORTH WEST ARROW"
+  },
+  {
+    "name": "↗",
+    "value": "↗",
+    "escapedValue": "&amp;nearr; &amp;UpperRightArrow; &amp;nearrow;",
+    "tooltip": "NORTH EAST ARROW"
+  },
+  {
+    "name": "↘",
+    "value": "↘",
+    "escapedValue": "&amp;searr; &amp;searrow; &amp;LowerRightArrow;",
+    "tooltip": "SOUTH EAST ARROW"
+  },
+  {
+    "name": "↙",
+    "value": "↙",
+    "escapedValue": "&amp;swarr; &amp;swarrow; &amp;LowerLeftArrow;",
+    "tooltip": "SOUTH WEST ARROW"
+  },
+  {
+    "name": "↚",
+    "value": "↚",
+    "escapedValue": "&amp;nlarr; &amp;nleftarrow;",
+    "tooltip": "LEFTWARDS ARROW WITH STROKE"
+  },
+  {
+    "name": "↛",
+    "value": "↛",
+    "escapedValue": "&amp;nrarr; &amp;nrightarrow;",
+    "tooltip": "RIGHTWARDS ARROW WITH STROKE"
+  },
+  {
+    "name": "↝",
+    "value": "↝",
+    "escapedValue": "&amp;rarrw; &amp;rightsquigarrow;",
+    "tooltip": "RIGHTWARDS WAVE ARROW"
+  },
+  {
+    "name": "↞",
+    "value": "↞",
+    "escapedValue": "&amp;Larr; &amp;twoheadleftarrow;",
+    "tooltip": "LEFTWARDS TWO HEADED ARROW"
+  },
+  {
+    "name": "↟",
+    "value": "↟",
+    "escapedValue": "&amp;Uarr;",
+    "tooltip": "UPWARDS TWO HEADED ARROW"
+  },
+  {
+    "name": "↠",
+    "value": "↠",
+    "escapedValue": "&amp;Rarr; &amp;twoheadrightarrow;",
+    "tooltip": "RIGHTWARDS TWO HEADED ARROW"
+  },
+  {
+    "name": "↡",
+    "value": "↡",
+    "escapedValue": "&amp;Darr;",
+    "tooltip": "DOWNWARDS TWO HEADED ARROW"
+  },
+  {
+    "name": "↢",
+    "value": "↢",
+    "escapedValue": "&amp;larrtl; &amp;leftarrowtail;",
+    "tooltip": "LEFTWARDS ARROW WITH TAIL"
+  },
+  {
+    "name": "↣",
+    "value": "↣",
+    "escapedValue": "&amp;rarrtl; &amp;rightarrowtail;",
+    "tooltip": "RIGHTWARDS ARROW WITH TAIL"
+  },
+  {
+    "name": "↤",
+    "value": "↤",
+    "escapedValue": "&amp;LeftTeeArrow; &amp;mapstoleft;",
+    "tooltip": "LEFTWARDS ARROW FROM BAR"
+  },
+  {
+    "name": "↥",
+    "value": "↥",
+    "escapedValue": "&amp;UpTeeArrow; &amp;mapstoup;",
+    "tooltip": "UPWARDS ARROW FROM BAR"
+  },
+  {
+    "name": "↦",
+    "value": "↦",
+    "escapedValue": "&amp;map; &amp;RightTeeArrow; &amp;mapsto;",
+    "tooltip": "RIGHTWARDS ARROW FROM BAR"
+  },
+  {
+    "name": "↧",
+    "value": "↧",
+    "escapedValue": "&amp;DownTeeArrow; &amp;mapstodown;",
+    "tooltip": "DOWNWARDS ARROW FROM BAR"
+  },
+  {
+    "name": "↩",
+    "value": "↩",
+    "escapedValue": "&amp;larrhk; &amp;hookleftarrow;",
+    "tooltip": "LEFTWARDS ARROW WITH HOOK"
+  },
+  {
+    "name": "↪",
+    "value": "↪",
+    "escapedValue": "&amp;rarrhk; &amp;hookrightarrow;",
+    "tooltip": "RIGHTWARDS ARROW WITH HOOK"
+  },
+  {
+    "name": "↫",
+    "value": "↫",
+    "escapedValue": "&amp;larrlp; &amp;looparrowleft;",
+    "tooltip": "LEFTWARDS ARROW WITH LOOP"
+  },
+  {
+    "name": "↬",
+    "value": "↬",
+    "escapedValue": "&amp;rarrlp; &amp;looparrowright;",
+    "tooltip": "RIGHTWARDS ARROW WITH LOOP"
+  },
+  {
+    "name": "↭",
+    "value": "↭",
+    "escapedValue": "&amp;harrw; &amp;leftrightsquigarrow;",
+    "tooltip": "LEFT RIGHT WAVE ARROW"
+  },
+  {
+    "name": "↮",
+    "value": "↮",
+    "escapedValue": "&amp;nharr; &amp;nleftrightarrow;",
+    "tooltip": "LEFT RIGHT ARROW WITH STROKE"
+  },
+  {
+    "name": "↰",
+    "value": "↰",
+    "escapedValue": "&amp;lsh; &amp;Lsh;",
+    "tooltip": "UPWARDS ARROW WITH TIP LEFTWARDS"
+  },
+  {
+    "name": "↱",
+    "value": "↱",
+    "escapedValue": "&amp;rsh; &amp;Rsh;",
+    "tooltip": "UPWARDS ARROW WITH TIP RIGHTWARDS"
+  },
+  {
+    "name": "↲",
+    "value": "↲",
+    "escapedValue": "&amp;ldsh;",
+    "tooltip": "DOWNWARDS ARROW WITH TIP LEFTWARDS"
+  },
+  {
+    "name": "↳",
+    "value": "↳",
+    "escapedValue": "&amp;rdsh;",
+    "tooltip": "DOWNWARDS ARROW WITH TIP RIGHTWARDS"
+  },
+  {
+    "name": "↵",
+    "value": "↵",
+    "escapedValue": "&amp;crarr;",
+    "tooltip": "DOWNWARDS ARROW WITH CORNER LEFTWARDS"
+  },
+  {
+    "name": "↶",
+    "value": "↶",
+    "escapedValue": "&amp;cularr; &amp;curvearrowleft;",
+    "tooltip": "ANTICLOCKWISE TOP SEMICIRCLE ARROW"
+  },
+  {
+    "name": "↷",
+    "value": "↷",
+    "escapedValue": "&amp;curarr; &amp;curvearrowright;",
+    "tooltip": "CLOCKWISE TOP SEMICIRCLE ARROW"
+  },
+  {
+    "name": "↺",
+    "value": "↺",
+    "escapedValue": "&amp;olarr; &amp;circlearrowleft;",
+    "tooltip": "ANTICLOCKWISE OPEN CIRCLE ARROW"
+  },
+  {
+    "name": "↻",
+    "value": "↻",
+    "escapedValue": "&amp;orarr; &amp;circlearrowright;",
+    "tooltip": "CLOCKWISE OPEN CIRCLE ARROW"
+  },
+  {
+    "name": "↼",
+    "value": "↼",
+    "escapedValue": "&amp;lharu; &amp;LeftVector; &amp;leftharpoonup;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UPWARDS"
+  },
+  {
+    "name": "↽",
+    "value": "↽",
+    "escapedValue": "&amp;lhard; &amp;leftharpoondown; &amp;DownLeftVector;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB DOWNWARDS"
+  },
+  {
+    "name": "↾",
+    "value": "↾",
+    "escapedValue": "&amp;uharr; &amp;upharpoonright; &amp;RightUpVector;",
+    "tooltip": "UPWARDS HARPOON WITH BARB RIGHTWARDS"
+  },
+  {
+    "name": "↿",
+    "value": "↿",
+    "escapedValue": "&amp;uharl; &amp;upharpoonleft; &amp;LeftUpVector;",
+    "tooltip": "UPWARDS HARPOON WITH BARB LEFTWARDS"
+  },
+  {
+    "name": "⇀",
+    "value": "⇀",
+    "escapedValue": "&amp;rharu; &amp;RightVector; &amp;rightharpoonup;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UPWARDS"
+  },
+  {
+    "name": "⇁",
+    "value": "⇁",
+    "escapedValue": "&amp;rhard; &amp;rightharpoondown; &amp;DownRightVector;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB DOWNWARDS"
+  },
+  {
+    "name": "⇂",
+    "value": "⇂",
+    "escapedValue": "&amp;dharr; &amp;RightDownVector; &amp;downharpoonright;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB RIGHTWARDS"
+  },
+  {
+    "name": "⇃",
+    "value": "⇃",
+    "escapedValue": "&amp;dharl; &amp;LeftDownVector; &amp;downharpoonleft;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB LEFTWARDS"
+  },
+  {
+    "name": "⇄",
+    "value": "⇄",
+    "escapedValue": "&amp;rlarr; &amp;rightleftarrows; &amp;RightArrowLeftArrow;",
+    "tooltip": "RIGHTWARDS ARROW OVER LEFTWARDS ARROW"
+  },
+  {
+    "name": "⇅",
+    "value": "⇅",
+    "escapedValue": "&amp;udarr; &amp;UpArrowDownArrow;",
+    "tooltip": "UPWARDS ARROW LEFTWARDS OF DOWNWARDS ARROW"
+  },
+  {
+    "name": "⇆",
+    "value": "⇆",
+    "escapedValue": "&amp;lrarr; &amp;leftrightarrows; &amp;LeftArrowRightArrow;",
+    "tooltip": "LEFTWARDS ARROW OVER RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⇇",
+    "value": "⇇",
+    "escapedValue": "&amp;llarr; &amp;leftleftarrows;",
+    "tooltip": "LEFTWARDS PAIRED ARROWS"
+  },
+  {
+    "name": "⇈",
+    "value": "⇈",
+    "escapedValue": "&amp;uuarr; &amp;upuparrows;",
+    "tooltip": "UPWARDS PAIRED ARROWS"
+  },
+  {
+    "name": "⇉",
+    "value": "⇉",
+    "escapedValue": "&amp;rrarr; &amp;rightrightarrows;",
+    "tooltip": "RIGHTWARDS PAIRED ARROWS"
+  },
+  {
+    "name": "⇊",
+    "value": "⇊",
+    "escapedValue": "&amp;ddarr; &amp;downdownarrows;",
+    "tooltip": "DOWNWARDS PAIRED ARROWS"
+  },
+  {
+    "name": "⇋",
+    "value": "⇋",
+    "escapedValue": "&amp;lrhar; &amp;ReverseEquilibrium; &amp;leftrightharpoons;",
+    "tooltip": "LEFTWARDS HARPOON OVER RIGHTWARDS HARPOON"
+  },
+  {
+    "name": "⇌",
+    "value": "⇌",
+    "escapedValue": "&amp;rlhar; &amp;rightleftharpoons; &amp;Equilibrium;",
+    "tooltip": "RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON"
+  },
+  {
+    "name": "⇍",
+    "value": "⇍",
+    "escapedValue": "&amp;nlArr; &amp;nLeftarrow;",
+    "tooltip": "LEFTWARDS DOUBLE ARROW WITH STROKE"
+  },
+  {
+    "name": "⇎",
+    "value": "⇎",
+    "escapedValue": "&amp;nhArr; &amp;nLeftrightarrow;",
+    "tooltip": "LEFT RIGHT DOUBLE ARROW WITH STROKE"
+  },
+  {
+    "name": "⇏",
+    "value": "⇏",
+    "escapedValue": "&amp;nrArr; &amp;nRightarrow;",
+    "tooltip": "RIGHTWARDS DOUBLE ARROW WITH STROKE"
+  },
+  {
+    "name": "⇐",
+    "value": "⇐",
+    "escapedValue": "&amp;lArr; &amp;Leftarrow; &amp;DoubleLeftArrow;",
+    "tooltip": "LEFTWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⇑",
+    "value": "⇑",
+    "escapedValue": "&amp;uArr; &amp;Uparrow; &amp;DoubleUpArrow;",
+    "tooltip": "UPWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⇒",
+    "value": "⇒",
+    "escapedValue": "&amp;rArr; &amp;Rightarrow; &amp;Implies; &amp;DoubleRightArrow;",
+    "tooltip": "RIGHTWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⇓",
+    "value": "⇓",
+    "escapedValue": "&amp;dArr; &amp;Downarrow; &amp;DoubleDownArrow;",
+    "tooltip": "DOWNWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⇔",
+    "value": "⇔",
+    "escapedValue": "&amp;hArr; &amp;Leftrightarrow; &amp;DoubleLeftRightArrow; &amp;iff;",
+    "tooltip": "LEFT RIGHT DOUBLE ARROW"
+  },
+  {
+    "name": "⇕",
+    "value": "⇕",
+    "escapedValue": "&amp;vArr; &amp;Updownarrow; &amp;DoubleUpDownArrow;",
+    "tooltip": "UP DOWN DOUBLE ARROW"
+  },
+  {
+    "name": "⇖",
+    "value": "⇖",
+    "escapedValue": "&amp;nwArr;",
+    "tooltip": "NORTH WEST DOUBLE ARROW"
+  },
+  {
+    "name": "⇗",
+    "value": "⇗",
+    "escapedValue": "&amp;neArr;",
+    "tooltip": "NORTH EAST DOUBLE ARROW"
+  },
+  {
+    "name": "⇘",
+    "value": "⇘",
+    "escapedValue": "&amp;seArr;",
+    "tooltip": "SOUTH EAST DOUBLE ARROW"
+  },
+  {
+    "name": "⇙",
+    "value": "⇙",
+    "escapedValue": "&amp;swArr;",
+    "tooltip": "SOUTH WEST DOUBLE ARROW"
+  },
+  {
+    "name": "⇚",
+    "value": "⇚",
+    "escapedValue": "&amp;lAarr; &amp;Lleftarrow;",
+    "tooltip": "LEFTWARDS TRIPLE ARROW"
+  },
+  {
+    "name": "⇛",
+    "value": "⇛",
+    "escapedValue": "&amp;rAarr; &amp;Rrightarrow;",
+    "tooltip": "RIGHTWARDS TRIPLE ARROW"
+  },
+  {
+    "name": "⇝",
+    "value": "⇝",
+    "escapedValue": "&amp;zigrarr;",
+    "tooltip": "RIGHTWARDS SQUIGGLE ARROW"
+  },
+  {
+    "name": "⇤",
+    "value": "⇤",
+    "escapedValue": "&amp;larrb; &amp;LeftArrowBar;",
+    "tooltip": "LEFTWARDS ARROW TO BAR"
+  },
+  {
+    "name": "⇥",
+    "value": "⇥",
+    "escapedValue": "&amp;rarrb; &amp;RightArrowBar;",
+    "tooltip": "RIGHTWARDS ARROW TO BAR"
+  },
+  {
+    "name": "⇵",
+    "value": "⇵",
+    "escapedValue": "&amp;duarr; &amp;DownArrowUpArrow;",
+    "tooltip": "DOWNWARDS ARROW LEFTWARDS OF UPWARDS ARROW"
+  },
+  {
+    "name": "⇽",
+    "value": "⇽",
+    "escapedValue": "&amp;loarr;",
+    "tooltip": "LEFTWARDS OPEN-HEADED ARROW"
+  },
+  {
+    "name": "⇾",
+    "value": "⇾",
+    "escapedValue": "&amp;roarr;",
+    "tooltip": "RIGHTWARDS OPEN-HEADED ARROW"
+  },
+  {
+    "name": "⇿",
+    "value": "⇿",
+    "escapedValue": "&amp;hoarr;",
+    "tooltip": "LEFT RIGHT OPEN-HEADED ARROW"
+  },
+  {
+    "name": "∀",
+    "value": "∀",
+    "escapedValue": "&amp;forall; &amp;ForAll;",
+    "tooltip": "FOR ALL"
+  },
+  {
+    "name": "∁",
+    "value": "∁",
+    "escapedValue": "&amp;comp; &amp;complement;",
+    "tooltip": "COMPLEMENT"
+  },
+  {
+    "name": "∂",
+    "value": "∂",
+    "escapedValue": "&amp;part; &amp;PartialD;",
+    "tooltip": "PARTIAL DIFFERENTIAL"
+  },
+  {
+    "name": "∃",
+    "value": "∃",
+    "escapedValue": "&amp;exist; &amp;Exists;",
+    "tooltip": "THERE EXISTS"
+  },
+  {
+    "name": "∄",
+    "value": "∄",
+    "escapedValue": "&amp;nexist; &amp;NotExists; &amp;nexists;",
+    "tooltip": "THERE DOES NOT EXIST"
+  },
+  {
+    "name": "∅",
+    "value": "∅",
+    "escapedValue": "&amp;empty; &amp;emptyset; &amp;emptyv; &amp;varnothing;",
+    "tooltip": "EMPTY SET"
+  },
+  {
+    "name": "∇",
+    "value": "∇",
+    "escapedValue": "&amp;nabla; &amp;Del;",
+    "tooltip": "NABLA"
+  },
+  {
+    "name": "∈",
+    "value": "∈",
+    "escapedValue": "&amp;isin; &amp;isinv; &amp;Element; &amp;in;",
+    "tooltip": "ELEMENT OF"
+  },
+  {
+    "name": "∉",
+    "value": "∉",
+    "escapedValue": "&amp;notin; &amp;NotElement; &amp;notinva;",
+    "tooltip": "NOT AN ELEMENT OF"
+  },
+  {
+    "name": "∋",
+    "value": "∋",
+    "escapedValue": "&amp;niv; &amp;ReverseElement; &amp;ni; &amp;SuchThat;",
+    "tooltip": "CONTAINS AS MEMBER"
+  },
+  {
+    "name": "∌",
+    "value": "∌",
+    "escapedValue": "&amp;notni; &amp;notniva; &amp;NotReverseElement;",
+    "tooltip": "DOES NOT CONTAIN AS MEMBER"
+  },
+  {
+    "name": "∏",
+    "value": "∏",
+    "escapedValue": "&amp;prod; &amp;Product;",
+    "tooltip": "N-ARY PRODUCT"
+  },
+  {
+    "name": "∐",
+    "value": "∐",
+    "escapedValue": "&amp;coprod; &amp;Coproduct;",
+    "tooltip": "N-ARY COPRODUCT"
+  },
+  {
+    "name": "∑",
+    "value": "∑",
+    "escapedValue": "&amp;sum; &amp;Sum;",
+    "tooltip": "N-ARY SUMMATION"
+  },
+  {
+    "name": "−",
+    "value": "−",
+    "escapedValue": "&amp;minus;",
+    "tooltip": "MINUS SIGN"
+  },
+  {
+    "name": "∓",
+    "value": "∓",
+    "escapedValue": "&amp;mnplus; &amp;mp; &amp;MinusPlus;",
+    "tooltip": "MINUS-OR-PLUS SIGN"
+  },
+  {
+    "name": "∔",
+    "value": "∔",
+    "escapedValue": "&amp;plusdo; &amp;dotplus;",
+    "tooltip": "DOT PLUS"
+  },
+  {
+    "name": "∖",
+    "value": "∖",
+    "escapedValue": "&amp;setmn; &amp;setminus; &amp;Backslash; &amp;ssetmn; &amp;smallsetminus;",
+    "tooltip": "SET MINUS"
+  },
+  {
+    "name": "∗",
+    "value": "∗",
+    "escapedValue": "&amp;lowast;",
+    "tooltip": "ASTERISK OPERATOR"
+  },
+  {
+    "name": "∘",
+    "value": "∘",
+    "escapedValue": "&amp;compfn; &amp;SmallCircle;",
+    "tooltip": "RING OPERATOR"
+  },
+  {
+    "name": "√",
+    "value": "√",
+    "escapedValue": "&amp;radic; &amp;Sqrt;",
+    "tooltip": "SQUARE ROOT"
+  },
+  {
+    "name": "∝",
+    "value": "∝",
+    "escapedValue": "&amp;prop; &amp;propto; &amp;Proportional; &amp;vprop; &amp;varpropto;",
+    "tooltip": "PROPORTIONAL TO"
+  },
+  {
+    "name": "∞",
+    "value": "∞",
+    "escapedValue": "&amp;infin;",
+    "tooltip": "INFINITY"
+  },
+  {
+    "name": "∟",
+    "value": "∟",
+    "escapedValue": "&amp;angrt;",
+    "tooltip": "RIGHT ANGLE"
+  },
+  {
+    "name": "∠",
+    "value": "∠",
+    "escapedValue": "&amp;ang; &amp;angle;",
+    "tooltip": "ANGLE"
+  },
+  {
+    "name": "∡",
+    "value": "∡",
+    "escapedValue": "&amp;angmsd; &amp;measuredangle;",
+    "tooltip": "MEASURED ANGLE"
+  },
+  {
+    "name": "∢",
+    "value": "∢",
+    "escapedValue": "&amp;angsph;",
+    "tooltip": "SPHERICAL ANGLE"
+  },
+  {
+    "name": "∣",
+    "value": "∣",
+    "escapedValue": "&amp;mid; &amp;VerticalBar; &amp;smid; &amp;shortmid;",
+    "tooltip": "DIVIDES"
+  },
+  {
+    "name": "∤",
+    "value": "∤",
+    "escapedValue": "&amp;nmid; &amp;NotVerticalBar; &amp;nsmid; &amp;nshortmid;",
+    "tooltip": "DOES NOT DIVIDE"
+  },
+  {
+    "name": "∥",
+    "value": "∥",
+    "escapedValue": "&amp;par; &amp;parallel; &amp;DoubleVerticalBar; &amp;spar; &amp;shortparallel;",
+    "tooltip": "PARALLEL TO"
+  },
+  {
+    "name": "∦",
+    "value": "∦",
+    "escapedValue": "&amp;npar; &amp;nparallel; &amp;NotDoubleVerticalBar; &amp;nspar; &amp;nshortparallel;",
+    "tooltip": "NOT PARALLEL TO"
+  },
+  {
+    "name": "∧",
+    "value": "∧",
+    "escapedValue": "&amp;and; &amp;wedge;",
+    "tooltip": "LOGICAL AND"
+  },
+  {
+    "name": "∨",
+    "value": "∨",
+    "escapedValue": "&amp;or; &amp;vee;",
+    "tooltip": "LOGICAL OR"
+  },
+  {
+    "name": "∩",
+    "value": "∩",
+    "escapedValue": "&amp;cap;",
+    "tooltip": "INTERSECTION"
+  },
+  {
+    "name": "∪",
+    "value": "∪",
+    "escapedValue": "&amp;cup;",
+    "tooltip": "UNION"
+  },
+  {
+    "name": "∫",
+    "value": "∫",
+    "escapedValue": "&amp;int; &amp;Integral;",
+    "tooltip": "INTEGRAL"
+  },
+  {
+    "name": "∬",
+    "value": "∬",
+    "escapedValue": "&amp;Int;",
+    "tooltip": "DOUBLE INTEGRAL"
+  },
+  {
+    "name": "∭",
+    "value": "∭",
+    "escapedValue": "&amp;tint; &amp;iiint;",
+    "tooltip": "TRIPLE INTEGRAL"
+  },
+  {
+    "name": "∮",
+    "value": "∮",
+    "escapedValue": "&amp;conint; &amp;oint; &amp;ContourIntegral;",
+    "tooltip": "CONTOUR INTEGRAL"
+  },
+  {
+    "name": "∯",
+    "value": "∯",
+    "escapedValue": "&amp;Conint; &amp;DoubleContourIntegral;",
+    "tooltip": "SURFACE INTEGRAL"
+  },
+  {
+    "name": "∰",
+    "value": "∰",
+    "escapedValue": "&amp;Cconint;",
+    "tooltip": "VOLUME INTEGRAL"
+  },
+  {
+    "name": "∱",
+    "value": "∱",
+    "escapedValue": "&amp;cwint;",
+    "tooltip": "CLOCKWISE INTEGRAL"
+  },
+  {
+    "name": "∲",
+    "value": "∲",
+    "escapedValue": "&amp;cwconint; &amp;ClockwiseContourIntegral;",
+    "tooltip": "CLOCKWISE CONTOUR INTEGRAL"
+  },
+  {
+    "name": "∳",
+    "value": "∳",
+    "escapedValue": "&amp;awconint; &amp;CounterClockwiseContourIntegral;",
+    "tooltip": "ANTICLOCKWISE CONTOUR INTEGRAL"
+  },
+  {
+    "name": "∴",
+    "value": "∴",
+    "escapedValue": "&amp;there4; &amp;therefore; &amp;Therefore;",
+    "tooltip": "THEREFORE"
+  },
+  {
+    "name": "∵",
+    "value": "∵",
+    "escapedValue": "&amp;becaus; &amp;because; &amp;Because;",
+    "tooltip": "BECAUSE"
+  },
+  {
+    "name": "∶",
+    "value": "∶",
+    "escapedValue": "&amp;ratio;",
+    "tooltip": "RATIO"
+  },
+  {
+    "name": "∷",
+    "value": "∷",
+    "escapedValue": "&amp;Colon; &amp;Proportion;",
+    "tooltip": "PROPORTION"
+  },
+  {
+    "name": "∸",
+    "value": "∸",
+    "escapedValue": "&amp;minusd; &amp;dotminus;",
+    "tooltip": "DOT MINUS"
+  },
+  {
+    "name": "∺",
+    "value": "∺",
+    "escapedValue": "&amp;mDDot;",
+    "tooltip": "GEOMETRIC PROPORTION"
+  },
+  {
+    "name": "∻",
+    "value": "∻",
+    "escapedValue": "&amp;homtht;",
+    "tooltip": "HOMOTHETIC"
+  },
+  {
+    "name": "∼",
+    "value": "∼",
+    "escapedValue": "&amp;sim; &amp;Tilde; &amp;thksim; &amp;thicksim;",
+    "tooltip": "TILDE OPERATOR"
+  },
+  {
+    "name": "∽",
+    "value": "∽",
+    "escapedValue": "&amp;bsim; &amp;backsim;",
+    "tooltip": "REVERSED TILDE"
+  },
+  {
+    "name": "∾",
+    "value": "∾",
+    "escapedValue": "&amp;ac; &amp;mstpos;",
+    "tooltip": "INVERTED LAZY S"
+  },
+  {
+    "name": "∿",
+    "value": "∿",
+    "escapedValue": "&amp;acd;",
+    "tooltip": "SINE WAVE"
+  },
+  {
+    "name": "≀",
+    "value": "≀",
+    "escapedValue": "&amp;wreath; &amp;VerticalTilde; &amp;wr;",
+    "tooltip": "WREATH PRODUCT"
+  },
+  {
+    "name": "≁",
+    "value": "≁",
+    "escapedValue": "&amp;nsim; &amp;NotTilde;",
+    "tooltip": "NOT TILDE"
+  },
+  {
+    "name": "≂",
+    "value": "≂",
+    "escapedValue": "&amp;esim; &amp;EqualTilde; &amp;eqsim;",
+    "tooltip": "MINUS TILDE"
+  },
+  {
+    "name": "≃",
+    "value": "≃",
+    "escapedValue": "&amp;sime; &amp;TildeEqual; &amp;simeq;",
+    "tooltip": "ASYMPTOTICALLY EQUAL TO"
+  },
+  {
+    "name": "≄",
+    "value": "≄",
+    "escapedValue": "&amp;nsime; &amp;nsimeq; &amp;NotTildeEqual;",
+    "tooltip": "NOT ASYMPTOTICALLY EQUAL TO"
+  },
+  {
+    "name": "≅",
+    "value": "≅",
+    "escapedValue": "&amp;cong; &amp;TildeFullEqual;",
+    "tooltip": "APPROXIMATELY EQUAL TO"
+  },
+  {
+    "name": "≆",
+    "value": "≆",
+    "escapedValue": "&amp;simne;",
+    "tooltip": "APPROXIMATELY BUT NOT ACTUALLY EQUAL TO"
+  },
+  {
+    "name": "≇",
+    "value": "≇",
+    "escapedValue": "&amp;ncong; &amp;NotTildeFullEqual;",
+    "tooltip": "NEITHER APPROXIMATELY NOR ACTUALLY EQUAL TO"
+  },
+  {
+    "name": "≈",
+    "value": "≈",
+    "escapedValue": "&amp;asymp; &amp;ap; &amp;TildeTilde; &amp;approx; &amp;thkap; &amp;thickapprox;",
+    "tooltip": "ALMOST EQUAL TO"
+  },
+  {
+    "name": "≉",
+    "value": "≉",
+    "escapedValue": "&amp;nap; &amp;NotTildeTilde; &amp;napprox;",
+    "tooltip": "NOT ALMOST EQUAL TO"
+  },
+  {
+    "name": "≊",
+    "value": "≊",
+    "escapedValue": "&amp;ape; &amp;approxeq;",
+    "tooltip": "ALMOST EQUAL OR EQUAL TO"
+  },
+  {
+    "name": "≋",
+    "value": "≋",
+    "escapedValue": "&amp;apid;",
+    "tooltip": "TRIPLE TILDE"
+  },
+  {
+    "name": "≌",
+    "value": "≌",
+    "escapedValue": "&amp;bcong; &amp;backcong;",
+    "tooltip": "ALL EQUAL TO"
+  },
+  {
+    "name": "≍",
+    "value": "≍",
+    "escapedValue": "&amp;asympeq; &amp;CupCap;",
+    "tooltip": "EQUIVALENT TO"
+  },
+  {
+    "name": "≎",
+    "value": "≎",
+    "escapedValue": "&amp;bump; &amp;HumpDownHump; &amp;Bumpeq;",
+    "tooltip": "GEOMETRICALLY EQUIVALENT TO"
+  },
+  {
+    "name": "≏",
+    "value": "≏",
+    "escapedValue": "&amp;bumpe; &amp;HumpEqual; &amp;bumpeq;",
+    "tooltip": "DIFFERENCE BETWEEN"
+  },
+  {
+    "name": "≐",
+    "value": "≐",
+    "escapedValue": "&amp;esdot; &amp;DotEqual; &amp;doteq;",
+    "tooltip": "APPROACHES THE LIMIT"
+  },
+  {
+    "name": "≑",
+    "value": "≑",
+    "escapedValue": "&amp;eDot; &amp;doteqdot;",
+    "tooltip": "GEOMETRICALLY EQUAL TO"
+  },
+  {
+    "name": "≒",
+    "value": "≒",
+    "escapedValue": "&amp;efDot; &amp;fallingdotseq;",
+    "tooltip": "APPROXIMATELY EQUAL TO OR THE IMAGE OF"
+  },
+  {
+    "name": "≓",
+    "value": "≓",
+    "escapedValue": "&amp;erDot; &amp;risingdotseq;",
+    "tooltip": "IMAGE OF OR APPROXIMATELY EQUAL TO"
+  },
+  {
+    "name": "≔",
+    "value": "≔",
+    "escapedValue": "&amp;colone; &amp;coloneq; &amp;Assign;",
+    "tooltip": "COLON EQUALS"
+  },
+  {
+    "name": "≕",
+    "value": "≕",
+    "escapedValue": "&amp;ecolon; &amp;eqcolon;",
+    "tooltip": "EQUALS COLON"
+  },
+  {
+    "name": "≖",
+    "value": "≖",
+    "escapedValue": "&amp;ecir; &amp;eqcirc;",
+    "tooltip": "RING IN EQUAL TO"
+  },
+  {
+    "name": "≗",
+    "value": "≗",
+    "escapedValue": "&amp;cire; &amp;circeq;",
+    "tooltip": "RING EQUAL TO"
+  },
+  {
+    "name": "≙",
+    "value": "≙",
+    "escapedValue": "&amp;wedgeq;",
+    "tooltip": "ESTIMATES"
+  },
+  {
+    "name": "≚",
+    "value": "≚",
+    "escapedValue": "&amp;veeeq;",
+    "tooltip": "EQUIANGULAR TO"
+  },
+  {
+    "name": "≜",
+    "value": "≜",
+    "escapedValue": "&amp;trie; &amp;triangleq;",
+    "tooltip": "DELTA EQUAL TO"
+  },
+  {
+    "name": "≟",
+    "value": "≟",
+    "escapedValue": "&amp;equest; &amp;questeq;",
+    "tooltip": "QUESTIONED EQUAL TO"
+  },
+  {
+    "name": "≠",
+    "value": "≠",
+    "escapedValue": "&amp;ne; &amp;NotEqual;",
+    "tooltip": "NOT EQUAL TO"
+  },
+  {
+    "name": "≡",
+    "value": "≡",
+    "escapedValue": "&amp;equiv; &amp;Congruent;",
+    "tooltip": "IDENTICAL TO"
+  },
+  {
+    "name": "≢",
+    "value": "≢",
+    "escapedValue": "&amp;nequiv; &amp;NotCongruent;",
+    "tooltip": "NOT IDENTICAL TO"
+  },
+  {
+    "name": "≤",
+    "value": "≤",
+    "escapedValue": "&amp;le; &amp;leq;",
+    "tooltip": "LESS-THAN OR EQUAL TO"
+  },
+  {
+    "name": "≥",
+    "value": "≥",
+    "escapedValue": "&amp;ge; &amp;GreaterEqual; &amp;geq;",
+    "tooltip": "GREATER-THAN OR EQUAL TO"
+  },
+  {
+    "name": "≦",
+    "value": "≦",
+    "escapedValue": "&amp;lE; &amp;LessFullEqual; &amp;leqq;",
+    "tooltip": "LESS-THAN OVER EQUAL TO"
+  },
+  {
+    "name": "≧",
+    "value": "≧",
+    "escapedValue": "&amp;gE; &amp;GreaterFullEqual; &amp;geqq;",
+    "tooltip": "GREATER-THAN OVER EQUAL TO"
+  },
+  {
+    "name": "≨",
+    "value": "≨",
+    "escapedValue": "&amp;lnE; &amp;lneqq;",
+    "tooltip": "LESS-THAN BUT NOT EQUAL TO"
+  },
+  {
+    "name": "≩",
+    "value": "≩",
+    "escapedValue": "&amp;gnE; &amp;gneqq;",
+    "tooltip": "GREATER-THAN BUT NOT EQUAL TO"
+  },
+  {
+    "name": "≪",
+    "value": "≪",
+    "escapedValue": "&amp;Lt; &amp;NestedLessLess; &amp;ll;",
+    "tooltip": "MUCH LESS-THAN"
+  },
+  {
+    "name": "≫",
+    "value": "≫",
+    "escapedValue": "&amp;Gt; &amp;NestedGreaterGreater; &amp;gg;",
+    "tooltip": "MUCH GREATER-THAN"
+  },
+  {
+    "name": "≬",
+    "value": "≬",
+    "escapedValue": "&amp;twixt; &amp;between;",
+    "tooltip": "BETWEEN"
+  },
+  {
+    "name": "≭",
+    "value": "≭",
+    "escapedValue": "&amp;NotCupCap;",
+    "tooltip": "NOT EQUIVALENT TO"
+  },
+  {
+    "name": "≮",
+    "value": "≮",
+    "escapedValue": "&amp;nlt; &amp;NotLess; &amp;nless;",
+    "tooltip": "NOT LESS-THAN"
+  },
+  {
+    "name": "≯",
+    "value": "≯",
+    "escapedValue": "&amp;ngt; &amp;NotGreater; &amp;ngtr;",
+    "tooltip": "NOT GREATER-THAN"
+  },
+  {
+    "name": "≰",
+    "value": "≰",
+    "escapedValue": "&amp;nle; &amp;NotLessEqual; &amp;nleq;",
+    "tooltip": "NEITHER LESS-THAN NOR EQUAL TO"
+  },
+  {
+    "name": "≱",
+    "value": "≱",
+    "escapedValue": "&amp;nge; &amp;NotGreaterEqual; &amp;ngeq;",
+    "tooltip": "NEITHER GREATER-THAN NOR EQUAL TO"
+  },
+  {
+    "name": "≲",
+    "value": "≲",
+    "escapedValue": "&amp;lsim; &amp;LessTilde; &amp;lesssim;",
+    "tooltip": "LESS-THAN OR EQUIVALENT TO"
+  },
+  {
+    "name": "≳",
+    "value": "≳",
+    "escapedValue": "&amp;gsim; &amp;gtrsim; &amp;GreaterTilde;",
+    "tooltip": "GREATER-THAN OR EQUIVALENT TO"
+  },
+  {
+    "name": "≴",
+    "value": "≴",
+    "escapedValue": "&amp;nlsim; &amp;NotLessTilde;",
+    "tooltip": "NEITHER LESS-THAN NOR EQUIVALENT TO"
+  },
+  {
+    "name": "≵",
+    "value": "≵",
+    "escapedValue": "&amp;ngsim; &amp;NotGreaterTilde;",
+    "tooltip": "NEITHER GREATER-THAN NOR EQUIVALENT TO"
+  },
+  {
+    "name": "≶",
+    "value": "≶",
+    "escapedValue": "&amp;lg; &amp;lessgtr; &amp;LessGreater;",
+    "tooltip": "LESS-THAN OR GREATER-THAN"
+  },
+  {
+    "name": "≷",
+    "value": "≷",
+    "escapedValue": "&amp;gl; &amp;gtrless; &amp;GreaterLess;",
+    "tooltip": "GREATER-THAN OR LESS-THAN"
+  },
+  {
+    "name": "≸",
+    "value": "≸",
+    "escapedValue": "&amp;ntlg; &amp;NotLessGreater;",
+    "tooltip": "NEITHER LESS-THAN NOR GREATER-THAN"
+  },
+  {
+    "name": "≹",
+    "value": "≹",
+    "escapedValue": "&amp;ntgl; &amp;NotGreaterLess;",
+    "tooltip": "NEITHER GREATER-THAN NOR LESS-THAN"
+  },
+  {
+    "name": "≺",
+    "value": "≺",
+    "escapedValue": "&amp;pr; &amp;Precedes; &amp;prec;",
+    "tooltip": "PRECEDES"
+  },
+  {
+    "name": "≻",
+    "value": "≻",
+    "escapedValue": "&amp;sc; &amp;Succeeds; &amp;succ;",
+    "tooltip": "SUCCEEDS"
+  },
+  {
+    "name": "≼",
+    "value": "≼",
+    "escapedValue": "&amp;prcue; &amp;PrecedesSlantEqual; &amp;preccurlyeq;",
+    "tooltip": "PRECEDES OR EQUAL TO"
+  },
+  {
+    "name": "≽",
+    "value": "≽",
+    "escapedValue": "&amp;sccue; &amp;SucceedsSlantEqual; &amp;succcurlyeq;",
+    "tooltip": "SUCCEEDS OR EQUAL TO"
+  },
+  {
+    "name": "≾",
+    "value": "≾",
+    "escapedValue": "&amp;prsim; &amp;precsim; &amp;PrecedesTilde;",
+    "tooltip": "PRECEDES OR EQUIVALENT TO"
+  },
+  {
+    "name": "≿",
+    "value": "≿",
+    "escapedValue": "&amp;scsim; &amp;succsim; &amp;SucceedsTilde;",
+    "tooltip": "SUCCEEDS OR EQUIVALENT TO"
+  },
+  {
+    "name": "⊀",
+    "value": "⊀",
+    "escapedValue": "&amp;npr; &amp;nprec; &amp;NotPrecedes;",
+    "tooltip": "DOES NOT PRECEDE"
+  },
+  {
+    "name": "⊁",
+    "value": "⊁",
+    "escapedValue": "&amp;nsc; &amp;nsucc; &amp;NotSucceeds;",
+    "tooltip": "DOES NOT SUCCEED"
+  },
+  {
+    "name": "⊂",
+    "value": "⊂",
+    "escapedValue": "&amp;sub; &amp;subset;",
+    "tooltip": "SUBSET OF"
+  },
+  {
+    "name": "⊃",
+    "value": "⊃",
+    "escapedValue": "&amp;sup; &amp;supset; &amp;Superset;",
+    "tooltip": "SUPERSET OF"
+  },
+  {
+    "name": "⊄",
+    "value": "⊄",
+    "escapedValue": "&amp;nsub;",
+    "tooltip": "NOT A SUBSET OF"
+  },
+  {
+    "name": "⊅",
+    "value": "⊅",
+    "escapedValue": "&amp;nsup;",
+    "tooltip": "NOT A SUPERSET OF"
+  },
+  {
+    "name": "⊆",
+    "value": "⊆",
+    "escapedValue": "&amp;sube; &amp;SubsetEqual; &amp;subseteq;",
+    "tooltip": "SUBSET OF OR EQUAL TO"
+  },
+  {
+    "name": "⊇",
+    "value": "⊇",
+    "escapedValue": "&amp;supe; &amp;supseteq; &amp;SupersetEqual;",
+    "tooltip": "SUPERSET OF OR EQUAL TO"
+  },
+  {
+    "name": "⊈",
+    "value": "⊈",
+    "escapedValue": "&amp;nsube; &amp;nsubseteq; &amp;NotSubsetEqual;",
+    "tooltip": "NEITHER A SUBSET OF NOR EQUAL TO"
+  },
+  {
+    "name": "⊉",
+    "value": "⊉",
+    "escapedValue": "&amp;nsupe; &amp;nsupseteq; &amp;NotSupersetEqual;",
+    "tooltip": "NEITHER A SUPERSET OF NOR EQUAL TO"
+  },
+  {
+    "name": "⊊",
+    "value": "⊊",
+    "escapedValue": "&amp;subne; &amp;subsetneq;",
+    "tooltip": "SUBSET OF WITH NOT EQUAL TO"
+  },
+  {
+    "name": "⊋",
+    "value": "⊋",
+    "escapedValue": "&amp;supne; &amp;supsetneq;",
+    "tooltip": "SUPERSET OF WITH NOT EQUAL TO"
+  },
+  {
+    "name": "⊍",
+    "value": "⊍",
+    "escapedValue": "&amp;cupdot;",
+    "tooltip": "MULTISET MULTIPLICATION"
+  },
+  {
+    "name": "⊎",
+    "value": "⊎",
+    "escapedValue": "&amp;uplus; &amp;UnionPlus;",
+    "tooltip": "MULTISET UNION"
+  },
+  {
+    "name": "⊏",
+    "value": "⊏",
+    "escapedValue": "&amp;sqsub; &amp;SquareSubset; &amp;sqsubset;",
+    "tooltip": "SQUARE IMAGE OF"
+  },
+  {
+    "name": "⊐",
+    "value": "⊐",
+    "escapedValue": "&amp;sqsup; &amp;SquareSuperset; &amp;sqsupset;",
+    "tooltip": "SQUARE ORIGINAL OF"
+  },
+  {
+    "name": "⊑",
+    "value": "⊑",
+    "escapedValue": "&amp;sqsube; &amp;SquareSubsetEqual; &amp;sqsubseteq;",
+    "tooltip": "SQUARE IMAGE OF OR EQUAL TO"
+  },
+  {
+    "name": "⊒",
+    "value": "⊒",
+    "escapedValue": "&amp;sqsupe; &amp;SquareSupersetEqual; &amp;sqsupseteq;",
+    "tooltip": "SQUARE ORIGINAL OF OR EQUAL TO"
+  },
+  {
+    "name": "⊓",
+    "value": "⊓",
+    "escapedValue": "&amp;sqcap; &amp;SquareIntersection;",
+    "tooltip": "SQUARE CAP"
+  },
+  {
+    "name": "⊔",
+    "value": "⊔",
+    "escapedValue": "&amp;sqcup; &amp;SquareUnion;",
+    "tooltip": "SQUARE CUP"
+  },
+  {
+    "name": "⊕",
+    "value": "⊕",
+    "escapedValue": "&amp;oplus; &amp;CirclePlus;",
+    "tooltip": "CIRCLED PLUS"
+  },
+  {
+    "name": "⊖",
+    "value": "⊖",
+    "escapedValue": "&amp;ominus; &amp;CircleMinus;",
+    "tooltip": "CIRCLED MINUS"
+  },
+  {
+    "name": "⊗",
+    "value": "⊗",
+    "escapedValue": "&amp;otimes; &amp;CircleTimes;",
+    "tooltip": "CIRCLED TIMES"
+  },
+  {
+    "name": "⊘",
+    "value": "⊘",
+    "escapedValue": "&amp;osol;",
+    "tooltip": "CIRCLED DIVISION SLASH"
+  },
+  {
+    "name": "⊙",
+    "value": "⊙",
+    "escapedValue": "&amp;odot; &amp;CircleDot;",
+    "tooltip": "CIRCLED DOT OPERATOR"
+  },
+  {
+    "name": "⊚",
+    "value": "⊚",
+    "escapedValue": "&amp;ocir; &amp;circledcirc;",
+    "tooltip": "CIRCLED RING OPERATOR"
+  },
+  {
+    "name": "⊛",
+    "value": "⊛",
+    "escapedValue": "&amp;oast; &amp;circledast;",
+    "tooltip": "CIRCLED ASTERISK OPERATOR"
+  },
+  {
+    "name": "⊝",
+    "value": "⊝",
+    "escapedValue": "&amp;odash; &amp;circleddash;",
+    "tooltip": "CIRCLED DASH"
+  },
+  {
+    "name": "⊞",
+    "value": "⊞",
+    "escapedValue": "&amp;plusb; &amp;boxplus;",
+    "tooltip": "SQUARED PLUS"
+  },
+  {
+    "name": "⊟",
+    "value": "⊟",
+    "escapedValue": "&amp;minusb; &amp;boxminus;",
+    "tooltip": "SQUARED MINUS"
+  },
+  {
+    "name": "⊠",
+    "value": "⊠",
+    "escapedValue": "&amp;timesb; &amp;boxtimes;",
+    "tooltip": "SQUARED TIMES"
+  },
+  {
+    "name": "⊡",
+    "value": "⊡",
+    "escapedValue": "&amp;sdotb; &amp;dotsquare;",
+    "tooltip": "SQUARED DOT OPERATOR"
+  },
+  {
+    "name": "⊢",
+    "value": "⊢",
+    "escapedValue": "&amp;vdash; &amp;RightTee;",
+    "tooltip": "RIGHT TACK"
+  },
+  {
+    "name": "⊣",
+    "value": "⊣",
+    "escapedValue": "&amp;dashv; &amp;LeftTee;",
+    "tooltip": "LEFT TACK"
+  },
+  {
+    "name": "⊤",
+    "value": "⊤",
+    "escapedValue": "&amp;top; &amp;DownTee;",
+    "tooltip": "DOWN TACK"
+  },
+  {
+    "name": "⊥",
+    "value": "⊥",
+    "escapedValue": "&amp;bottom; &amp;bot; &amp;perp; &amp;UpTee;",
+    "tooltip": "UP TACK"
+  },
+  {
+    "name": "⊧",
+    "value": "⊧",
+    "escapedValue": "&amp;models;",
+    "tooltip": "MODELS"
+  },
+  {
+    "name": "⊨",
+    "value": "⊨",
+    "escapedValue": "&amp;vDash; &amp;DoubleRightTee;",
+    "tooltip": "TRUE"
+  },
+  {
+    "name": "⊩",
+    "value": "⊩",
+    "escapedValue": "&amp;Vdash;",
+    "tooltip": "FORCES"
+  },
+  {
+    "name": "⊪",
+    "value": "⊪",
+    "escapedValue": "&amp;Vvdash;",
+    "tooltip": "TRIPLE VERTICAL BAR RIGHT TURNSTILE"
+  },
+  {
+    "name": "⊫",
+    "value": "⊫",
+    "escapedValue": "&amp;VDash;",
+    "tooltip": "DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE"
+  },
+  {
+    "name": "⊬",
+    "value": "⊬",
+    "escapedValue": "&amp;nvdash;",
+    "tooltip": "DOES NOT PROVE"
+  },
+  {
+    "name": "⊭",
+    "value": "⊭",
+    "escapedValue": "&amp;nvDash;",
+    "tooltip": "NOT TRUE"
+  },
+  {
+    "name": "⊮",
+    "value": "⊮",
+    "escapedValue": "&amp;nVdash;",
+    "tooltip": "DOES NOT FORCE"
+  },
+  {
+    "name": "⊯",
+    "value": "⊯",
+    "escapedValue": "&amp;nVDash;",
+    "tooltip": "NEGATED DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE"
+  },
+  {
+    "name": "⊰",
+    "value": "⊰",
+    "escapedValue": "&amp;prurel;",
+    "tooltip": "PRECEDES UNDER RELATION"
+  },
+  {
+    "name": "⊲",
+    "value": "⊲",
+    "escapedValue": "&amp;vltri; &amp;vartriangleleft; &amp;LeftTriangle;",
+    "tooltip": "NORMAL SUBGROUP OF"
+  },
+  {
+    "name": "⊳",
+    "value": "⊳",
+    "escapedValue": "&amp;vrtri; &amp;vartriangleright; &amp;RightTriangle;",
+    "tooltip": "CONTAINS AS NORMAL SUBGROUP"
+  },
+  {
+    "name": "⊴",
+    "value": "⊴",
+    "escapedValue": "&amp;ltrie; &amp;trianglelefteq; &amp;LeftTriangleEqual;",
+    "tooltip": "NORMAL SUBGROUP OF OR EQUAL TO"
+  },
+  {
+    "name": "⊵",
+    "value": "⊵",
+    "escapedValue": "&amp;rtrie; &amp;trianglerighteq; &amp;RightTriangleEqual;",
+    "tooltip": "CONTAINS AS NORMAL SUBGROUP OR EQUAL TO"
+  },
+  {
+    "name": "⊶",
+    "value": "⊶",
+    "escapedValue": "&amp;origof;",
+    "tooltip": "ORIGINAL OF"
+  },
+  {
+    "name": "⊷",
+    "value": "⊷",
+    "escapedValue": "&amp;imof;",
+    "tooltip": "IMAGE OF"
+  },
+  {
+    "name": "⊸",
+    "value": "⊸",
+    "escapedValue": "&amp;mumap; &amp;multimap;",
+    "tooltip": "MULTIMAP"
+  },
+  {
+    "name": "⊹",
+    "value": "⊹",
+    "escapedValue": "&amp;hercon;",
+    "tooltip": "HERMITIAN CONJUGATE MATRIX"
+  },
+  {
+    "name": "⊺",
+    "value": "⊺",
+    "escapedValue": "&amp;intcal; &amp;intercal;",
+    "tooltip": "INTERCALATE"
+  },
+  {
+    "name": "⊻",
+    "value": "⊻",
+    "escapedValue": "&amp;veebar;",
+    "tooltip": "XOR"
+  },
+  {
+    "name": "⊽",
+    "value": "⊽",
+    "escapedValue": "&amp;barvee;",
+    "tooltip": "NOR"
+  },
+  {
+    "name": "⊾",
+    "value": "⊾",
+    "escapedValue": "&amp;angrtvb;",
+    "tooltip": "RIGHT ANGLE WITH ARC"
+  },
+  {
+    "name": "⊿",
+    "value": "⊿",
+    "escapedValue": "&amp;lrtri;",
+    "tooltip": "RIGHT TRIANGLE"
+  },
+  {
+    "name": "⋀",
+    "value": "⋀",
+    "escapedValue": "&amp;xwedge; &amp;Wedge; &amp;bigwedge;",
+    "tooltip": "N-ARY LOGICAL AND"
+  },
+  {
+    "name": "⋁",
+    "value": "⋁",
+    "escapedValue": "&amp;xvee; &amp;Vee; &amp;bigvee;",
+    "tooltip": "N-ARY LOGICAL OR"
+  },
+  {
+    "name": "⋂",
+    "value": "⋂",
+    "escapedValue": "&amp;xcap; &amp;Intersection; &amp;bigcap;",
+    "tooltip": "N-ARY INTERSECTION"
+  },
+  {
+    "name": "⋃",
+    "value": "⋃",
+    "escapedValue": "&amp;xcup; &amp;Union; &amp;bigcup;",
+    "tooltip": "N-ARY UNION"
+  },
+  {
+    "name": "⋄",
+    "value": "⋄",
+    "escapedValue": "&amp;diam; &amp;diamond; &amp;Diamond;",
+    "tooltip": "DIAMOND OPERATOR"
+  },
+  {
+    "name": "⋅",
+    "value": "⋅",
+    "escapedValue": "&amp;sdot;",
+    "tooltip": "DOT OPERATOR"
+  },
+  {
+    "name": "⋆",
+    "value": "⋆",
+    "escapedValue": "&amp;sstarf; &amp;Star;",
+    "tooltip": "STAR OPERATOR"
+  },
+  {
+    "name": "⋇",
+    "value": "⋇",
+    "escapedValue": "&amp;divonx; &amp;divideontimes;",
+    "tooltip": "DIVISION TIMES"
+  },
+  {
+    "name": "⋈",
+    "value": "⋈",
+    "escapedValue": "&amp;bowtie;",
+    "tooltip": "BOWTIE"
+  },
+  {
+    "name": "⋉",
+    "value": "⋉",
+    "escapedValue": "&amp;ltimes;",
+    "tooltip": "LEFT NORMAL FACTOR SEMIDIRECT PRODUCT"
+  },
+  {
+    "name": "⋊",
+    "value": "⋊",
+    "escapedValue": "&amp;rtimes;",
+    "tooltip": "RIGHT NORMAL FACTOR SEMIDIRECT PRODUCT"
+  },
+  {
+    "name": "⋋",
+    "value": "⋋",
+    "escapedValue": "&amp;lthree; &amp;leftthreetimes;",
+    "tooltip": "LEFT SEMIDIRECT PRODUCT"
+  },
+  {
+    "name": "⋌",
+    "value": "⋌",
+    "escapedValue": "&amp;rthree; &amp;rightthreetimes;",
+    "tooltip": "RIGHT SEMIDIRECT PRODUCT"
+  },
+  {
+    "name": "⋍",
+    "value": "⋍",
+    "escapedValue": "&amp;bsime; &amp;backsimeq;",
+    "tooltip": "REVERSED TILDE EQUALS"
+  },
+  {
+    "name": "⋎",
+    "value": "⋎",
+    "escapedValue": "&amp;cuvee; &amp;curlyvee;",
+    "tooltip": "CURLY LOGICAL OR"
+  },
+  {
+    "name": "⋏",
+    "value": "⋏",
+    "escapedValue": "&amp;cuwed; &amp;curlywedge;",
+    "tooltip": "CURLY LOGICAL AND"
+  },
+  {
+    "name": "⋐",
+    "value": "⋐",
+    "escapedValue": "&amp;Sub; &amp;Subset;",
+    "tooltip": "DOUBLE SUBSET"
+  },
+  {
+    "name": "⋑",
+    "value": "⋑",
+    "escapedValue": "&amp;Sup; &amp;Supset;",
+    "tooltip": "DOUBLE SUPERSET"
+  },
+  {
+    "name": "⋒",
+    "value": "⋒",
+    "escapedValue": "&amp;Cap;",
+    "tooltip": "DOUBLE INTERSECTION"
+  },
+  {
+    "name": "⋓",
+    "value": "⋓",
+    "escapedValue": "&amp;Cup;",
+    "tooltip": "DOUBLE UNION"
+  },
+  {
+    "name": "⋔",
+    "value": "⋔",
+    "escapedValue": "&amp;fork; &amp;pitchfork;",
+    "tooltip": "PITCHFORK"
+  },
+  {
+    "name": "⋕",
+    "value": "⋕",
+    "escapedValue": "&amp;epar;",
+    "tooltip": "EQUAL AND PARALLEL TO"
+  },
+  {
+    "name": "⋖",
+    "value": "⋖",
+    "escapedValue": "&amp;ltdot; &amp;lessdot;",
+    "tooltip": "LESS-THAN WITH DOT"
+  },
+  {
+    "name": "⋗",
+    "value": "⋗",
+    "escapedValue": "&amp;gtdot; &amp;gtrdot;",
+    "tooltip": "GREATER-THAN WITH DOT"
+  },
+  {
+    "name": "⋘",
+    "value": "⋘",
+    "escapedValue": "&amp;Ll;",
+    "tooltip": "VERY MUCH LESS-THAN"
+  },
+  {
+    "name": "⋙",
+    "value": "⋙",
+    "escapedValue": "&amp;Gg; &amp;ggg;",
+    "tooltip": "VERY MUCH GREATER-THAN"
+  },
+  {
+    "name": "⋚",
+    "value": "⋚",
+    "escapedValue": "&amp;leg; &amp;LessEqualGreater; &amp;lesseqgtr;",
+    "tooltip": "LESS-THAN EQUAL TO OR GREATER-THAN"
+  },
+  {
+    "name": "⋛",
+    "value": "⋛",
+    "escapedValue": "&amp;gel; &amp;gtreqless; &amp;GreaterEqualLess;",
+    "tooltip": "GREATER-THAN EQUAL TO OR LESS-THAN"
+  },
+  {
+    "name": "⋞",
+    "value": "⋞",
+    "escapedValue": "&amp;cuepr; &amp;curlyeqprec;",
+    "tooltip": "EQUAL TO OR PRECEDES"
+  },
+  {
+    "name": "⋟",
+    "value": "⋟",
+    "escapedValue": "&amp;cuesc; &amp;curlyeqsucc;",
+    "tooltip": "EQUAL TO OR SUCCEEDS"
+  },
+  {
+    "name": "⋠",
+    "value": "⋠",
+    "escapedValue": "&amp;nprcue; &amp;NotPrecedesSlantEqual;",
+    "tooltip": "DOES NOT PRECEDE OR EQUAL"
+  },
+  {
+    "name": "⋡",
+    "value": "⋡",
+    "escapedValue": "&amp;nsccue; &amp;NotSucceedsSlantEqual;",
+    "tooltip": "DOES NOT SUCCEED OR EQUAL"
+  },
+  {
+    "name": "⋢",
+    "value": "⋢",
+    "escapedValue": "&amp;nsqsube; &amp;NotSquareSubsetEqual;",
+    "tooltip": "NOT SQUARE IMAGE OF OR EQUAL TO"
+  },
+  {
+    "name": "⋣",
+    "value": "⋣",
+    "escapedValue": "&amp;nsqsupe; &amp;NotSquareSupersetEqual;",
+    "tooltip": "NOT SQUARE ORIGINAL OF OR EQUAL TO"
+  },
+  {
+    "name": "⋦",
+    "value": "⋦",
+    "escapedValue": "&amp;lnsim;",
+    "tooltip": "LESS-THAN BUT NOT EQUIVALENT TO"
+  },
+  {
+    "name": "⋧",
+    "value": "⋧",
+    "escapedValue": "&amp;gnsim;",
+    "tooltip": "GREATER-THAN BUT NOT EQUIVALENT TO"
+  },
+  {
+    "name": "⋨",
+    "value": "⋨",
+    "escapedValue": "&amp;prnsim; &amp;precnsim;",
+    "tooltip": "PRECEDES BUT NOT EQUIVALENT TO"
+  },
+  {
+    "name": "⋩",
+    "value": "⋩",
+    "escapedValue": "&amp;scnsim; &amp;succnsim;",
+    "tooltip": "SUCCEEDS BUT NOT EQUIVALENT TO"
+  },
+  {
+    "name": "⋪",
+    "value": "⋪",
+    "escapedValue": "&amp;nltri; &amp;ntriangleleft; &amp;NotLeftTriangle;",
+    "tooltip": "NOT NORMAL SUBGROUP OF"
+  },
+  {
+    "name": "⋫",
+    "value": "⋫",
+    "escapedValue": "&amp;nrtri; &amp;ntriangleright; &amp;NotRightTriangle;",
+    "tooltip": "DOES NOT CONTAIN AS NORMAL SUBGROUP"
+  },
+  {
+    "name": "⋬",
+    "value": "⋬",
+    "escapedValue": "&amp;nltrie; &amp;ntrianglelefteq; &amp;NotLeftTriangleEqual;",
+    "tooltip": "NOT NORMAL SUBGROUP OF OR EQUAL TO"
+  },
+  {
+    "name": "⋭",
+    "value": "⋭",
+    "escapedValue": "&amp;nrtrie; &amp;ntrianglerighteq; &amp;NotRightTriangleEqual;",
+    "tooltip": "DOES NOT CONTAIN AS NORMAL SUBGROUP OR EQUAL"
+  },
+  {
+    "name": "⋮",
+    "value": "⋮",
+    "escapedValue": "&amp;vellip;",
+    "tooltip": "VERTICAL ELLIPSIS"
+  },
+  {
+    "name": "⋯",
+    "value": "⋯",
+    "escapedValue": "&amp;ctdot;",
+    "tooltip": "MIDLINE HORIZONTAL ELLIPSIS"
+  },
+  {
+    "name": "⋰",
+    "value": "⋰",
+    "escapedValue": "&amp;utdot;",
+    "tooltip": "UP RIGHT DIAGONAL ELLIPSIS"
+  },
+  {
+    "name": "⋱",
+    "value": "⋱",
+    "escapedValue": "&amp;dtdot;",
+    "tooltip": "DOWN RIGHT DIAGONAL ELLIPSIS"
+  },
+  {
+    "name": "⋲",
+    "value": "⋲",
+    "escapedValue": "&amp;disin;",
+    "tooltip": "ELEMENT OF WITH LONG HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋳",
+    "value": "⋳",
+    "escapedValue": "&amp;isinsv;",
+    "tooltip": "ELEMENT OF WITH VERTICAL BAR AT END OF HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋴",
+    "value": "⋴",
+    "escapedValue": "&amp;isins;",
+    "tooltip": "SMALL ELEMENT OF WITH VERTICAL BAR AT END OF HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋵",
+    "value": "⋵",
+    "escapedValue": "&amp;isindot;",
+    "tooltip": "ELEMENT OF WITH DOT ABOVE"
+  },
+  {
+    "name": "⋶",
+    "value": "⋶",
+    "escapedValue": "&amp;notinvc;",
+    "tooltip": "ELEMENT OF WITH OVERBAR"
+  },
+  {
+    "name": "⋷",
+    "value": "⋷",
+    "escapedValue": "&amp;notinvb;",
+    "tooltip": "SMALL ELEMENT OF WITH OVERBAR"
+  },
+  {
+    "name": "⋹",
+    "value": "⋹",
+    "escapedValue": "&amp;isinE;",
+    "tooltip": "ELEMENT OF WITH TWO HORIZONTAL STROKES"
+  },
+  {
+    "name": "⋺",
+    "value": "⋺",
+    "escapedValue": "&amp;nisd;",
+    "tooltip": "CONTAINS WITH LONG HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋻",
+    "value": "⋻",
+    "escapedValue": "&amp;xnis;",
+    "tooltip": "CONTAINS WITH VERTICAL BAR AT END OF HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋼",
+    "value": "⋼",
+    "escapedValue": "&amp;nis;",
+    "tooltip": "SMALL CONTAINS WITH VERTICAL BAR AT END OF HORIZONTAL STROKE"
+  },
+  {
+    "name": "⋽",
+    "value": "⋽",
+    "escapedValue": "&amp;notnivc;",
+    "tooltip": "CONTAINS WITH OVERBAR"
+  },
+  {
+    "name": "⋾",
+    "value": "⋾",
+    "escapedValue": "&amp;notnivb;",
+    "tooltip": "SMALL CONTAINS WITH OVERBAR"
+  },
+  {
+    "name": "⌅",
+    "value": "⌅",
+    "escapedValue": "&amp;barwed; &amp;barwedge;",
+    "tooltip": "PROJECTIVE"
+  },
+  {
+    "name": "⌆",
+    "value": "⌆",
+    "escapedValue": "&amp;Barwed; &amp;doublebarwedge;",
+    "tooltip": "PERSPECTIVE"
+  },
+  {
+    "name": "⌈",
+    "value": "⌈",
+    "escapedValue": "&amp;lceil; &amp;LeftCeiling;",
+    "tooltip": "LEFT CEILING"
+  },
+  {
+    "name": "⌉",
+    "value": "⌉",
+    "escapedValue": "&amp;rceil; &amp;RightCeiling;",
+    "tooltip": "RIGHT CEILING"
+  },
+  {
+    "name": "⌊",
+    "value": "⌊",
+    "escapedValue": "&amp;lfloor; &amp;LeftFloor;",
+    "tooltip": "LEFT FLOOR"
+  },
+  {
+    "name": "⌋",
+    "value": "⌋",
+    "escapedValue": "&amp;rfloor; &amp;RightFloor;",
+    "tooltip": "RIGHT FLOOR"
+  },
+  {
+    "name": "⌌",
+    "value": "⌌",
+    "escapedValue": "&amp;drcrop;",
+    "tooltip": "BOTTOM RIGHT CROP"
+  },
+  {
+    "name": "⌍",
+    "value": "⌍",
+    "escapedValue": "&amp;dlcrop;",
+    "tooltip": "BOTTOM LEFT CROP"
+  },
+  {
+    "name": "⌎",
+    "value": "⌎",
+    "escapedValue": "&amp;urcrop;",
+    "tooltip": "TOP RIGHT CROP"
+  },
+  {
+    "name": "⌏",
+    "value": "⌏",
+    "escapedValue": "&amp;ulcrop;",
+    "tooltip": "TOP LEFT CROP"
+  },
+  {
+    "name": "⌐",
+    "value": "⌐",
+    "escapedValue": "&amp;bnot;",
+    "tooltip": "REVERSED NOT SIGN"
+  },
+  {
+    "name": "⌒",
+    "value": "⌒",
+    "escapedValue": "&amp;profline;",
+    "tooltip": "ARC"
+  },
+  {
+    "name": "⌓",
+    "value": "⌓",
+    "escapedValue": "&amp;profsurf;",
+    "tooltip": "SEGMENT"
+  },
+  {
+    "name": "⌕",
+    "value": "⌕",
+    "escapedValue": "&amp;telrec;",
+    "tooltip": "TELEPHONE RECORDER"
+  },
+  {
+    "name": "⌖",
+    "value": "⌖",
+    "escapedValue": "&amp;target;",
+    "tooltip": "POSITION INDICATOR"
+  },
+  {
+    "name": "⌜",
+    "value": "⌜",
+    "escapedValue": "&amp;ulcorn; &amp;ulcorner;",
+    "tooltip": "TOP LEFT CORNER"
+  },
+  {
+    "name": "⌝",
+    "value": "⌝",
+    "escapedValue": "&amp;urcorn; &amp;urcorner;",
+    "tooltip": "TOP RIGHT CORNER"
+  },
+  {
+    "name": "⌞",
+    "value": "⌞",
+    "escapedValue": "&amp;dlcorn; &amp;llcorner;",
+    "tooltip": "BOTTOM LEFT CORNER"
+  },
+  {
+    "name": "⌟",
+    "value": "⌟",
+    "escapedValue": "&amp;drcorn; &amp;lrcorner;",
+    "tooltip": "BOTTOM RIGHT CORNER"
+  },
+  {
+    "name": "⌢",
+    "value": "⌢",
+    "escapedValue": "&amp;frown; &amp;sfrown;",
+    "tooltip": "FROWN"
+  },
+  {
+    "name": "⌣",
+    "value": "⌣",
+    "escapedValue": "&amp;smile; &amp;ssmile;",
+    "tooltip": "SMILE"
+  },
+  {
+    "name": "⌭",
+    "value": "⌭",
+    "escapedValue": "&amp;cylcty;",
+    "tooltip": "CYLINDRICITY"
+  },
+  {
+    "name": "⌮",
+    "value": "⌮",
+    "escapedValue": "&amp;profalar;",
+    "tooltip": "ALL AROUND-PROFILE"
+  },
+  {
+    "name": "⌶",
+    "value": "⌶",
+    "escapedValue": "&amp;topbot;",
+    "tooltip": "APL FUNCTIONAL SYMBOL I-BEAM"
+  },
+  {
+    "name": "⌽",
+    "value": "⌽",
+    "escapedValue": "&amp;ovbar;",
+    "tooltip": "APL FUNCTIONAL SYMBOL CIRCLE STILE"
+  },
+  {
+    "name": "⌿",
+    "value": "⌿",
+    "escapedValue": "&amp;solbar;",
+    "tooltip": "APL FUNCTIONAL SYMBOL SLASH BAR"
+  },
+  {
+    "name": "⍼",
+    "value": "⍼",
+    "escapedValue": "&amp;angzarr;",
+    "tooltip": "RIGHT ANGLE WITH DOWNWARDS ZIGZAG ARROW"
+  },
+  {
+    "name": "⎰",
+    "value": "⎰",
+    "escapedValue": "&amp;lmoust; &amp;lmoustache;",
+    "tooltip": "UPPER LEFT OR LOWER RIGHT CURLY BRACKET SECTION"
+  },
+  {
+    "name": "⎱",
+    "value": "⎱",
+    "escapedValue": "&amp;rmoust; &amp;rmoustache;",
+    "tooltip": "UPPER RIGHT OR LOWER LEFT CURLY BRACKET SECTION"
+  },
+  {
+    "name": "⎴",
+    "value": "⎴",
+    "escapedValue": "&amp;tbrk; &amp;OverBracket;",
+    "tooltip": "TOP SQUARE BRACKET"
+  },
+  {
+    "name": "⎵",
+    "value": "⎵",
+    "escapedValue": "&amp;bbrk; &amp;UnderBracket;",
+    "tooltip": "BOTTOM SQUARE BRACKET"
+  },
+  {
+    "name": "⎶",
+    "value": "⎶",
+    "escapedValue": "&amp;bbrktbrk;",
+    "tooltip": "BOTTOM SQUARE BRACKET OVER TOP SQUARE BRACKET"
+  },
+  {
+    "name": "⏜",
+    "value": "⏜",
+    "escapedValue": "&amp;OverParenthesis;",
+    "tooltip": "TOP PARENTHESIS"
+  },
+  {
+    "name": "⏝",
+    "value": "⏝",
+    "escapedValue": "&amp;UnderParenthesis;",
+    "tooltip": "BOTTOM PARENTHESIS"
+  },
+  {
+    "name": "⏞",
+    "value": "⏞",
+    "escapedValue": "&amp;OverBrace;",
+    "tooltip": "TOP CURLY BRACKET"
+  },
+  {
+    "name": "⏟",
+    "value": "⏟",
+    "escapedValue": "&amp;UnderBrace;",
+    "tooltip": "BOTTOM CURLY BRACKET"
+  },
+  {
+    "name": "⏢",
+    "value": "⏢",
+    "escapedValue": "&amp;trpezium;",
+    "tooltip": "WHITE TRAPEZIUM"
+  },
+  {
+    "name": "⏧",
+    "value": "⏧",
+    "escapedValue": "&amp;elinters;",
+    "tooltip": "ELECTRICAL INTERSECTION"
+  },
+  {
+    "name": "␣",
+    "value": "␣",
+    "escapedValue": "&amp;blank;",
+    "tooltip": "OPEN BOX"
+  },
+  {
+    "name": "Ⓢ",
+    "value": "Ⓢ",
+    "escapedValue": "&amp;oS; &amp;circledS;",
+    "tooltip": "CIRCLED LATIN CAPITAL LETTER S"
+  },
+  {
+    "name": "─",
+    "value": "─",
+    "escapedValue": "&amp;boxh; &amp;HorizontalLine;",
+    "tooltip": "BOX DRAWINGS LIGHT HORIZONTAL"
+  },
+  {
+    "name": "│",
+    "value": "│",
+    "escapedValue": "&amp;boxv;",
+    "tooltip": "BOX DRAWINGS LIGHT VERTICAL"
+  },
+  {
+    "name": "┌",
+    "value": "┌",
+    "escapedValue": "&amp;boxdr;",
+    "tooltip": "BOX DRAWINGS LIGHT DOWN AND RIGHT"
+  },
+  {
+    "name": "┐",
+    "value": "┐",
+    "escapedValue": "&amp;boxdl;",
+    "tooltip": "BOX DRAWINGS LIGHT DOWN AND LEFT"
+  },
+  {
+    "name": "└",
+    "value": "└",
+    "escapedValue": "&amp;boxur;",
+    "tooltip": "BOX DRAWINGS LIGHT UP AND RIGHT"
+  },
+  {
+    "name": "┘",
+    "value": "┘",
+    "escapedValue": "&amp;boxul;",
+    "tooltip": "BOX DRAWINGS LIGHT UP AND LEFT"
+  },
+  {
+    "name": "├",
+    "value": "├",
+    "escapedValue": "&amp;boxvr;",
+    "tooltip": "BOX DRAWINGS LIGHT VERTICAL AND RIGHT"
+  },
+  {
+    "name": "┤",
+    "value": "┤",
+    "escapedValue": "&amp;boxvl;",
+    "tooltip": "BOX DRAWINGS LIGHT VERTICAL AND LEFT"
+  },
+  {
+    "name": "┬",
+    "value": "┬",
+    "escapedValue": "&amp;boxhd;",
+    "tooltip": "BOX DRAWINGS LIGHT DOWN AND HORIZONTAL"
+  },
+  {
+    "name": "┴",
+    "value": "┴",
+    "escapedValue": "&amp;boxhu;",
+    "tooltip": "BOX DRAWINGS LIGHT UP AND HORIZONTAL"
+  },
+  {
+    "name": "┼",
+    "value": "┼",
+    "escapedValue": "&amp;boxvh;",
+    "tooltip": "BOX DRAWINGS LIGHT VERTICAL AND HORIZONTAL"
+  },
+  {
+    "name": "═",
+    "value": "═",
+    "escapedValue": "&amp;boxH;",
+    "tooltip": "BOX DRAWINGS DOUBLE HORIZONTAL"
+  },
+  {
+    "name": "║",
+    "value": "║",
+    "escapedValue": "&amp;boxV;",
+    "tooltip": "BOX DRAWINGS DOUBLE VERTICAL"
+  },
+  {
+    "name": "╒",
+    "value": "╒",
+    "escapedValue": "&amp;boxdR;",
+    "tooltip": "BOX DRAWINGS DOWN SINGLE AND RIGHT DOUBLE"
+  },
+  {
+    "name": "╓",
+    "value": "╓",
+    "escapedValue": "&amp;boxDr;",
+    "tooltip": "BOX DRAWINGS DOWN DOUBLE AND RIGHT SINGLE"
+  },
+  {
+    "name": "╔",
+    "value": "╔",
+    "escapedValue": "&amp;boxDR;",
+    "tooltip": "BOX DRAWINGS DOUBLE DOWN AND RIGHT"
+  },
+  {
+    "name": "╕",
+    "value": "╕",
+    "escapedValue": "&amp;boxdL;",
+    "tooltip": "BOX DRAWINGS DOWN SINGLE AND LEFT DOUBLE"
+  },
+  {
+    "name": "╖",
+    "value": "╖",
+    "escapedValue": "&amp;boxDl;",
+    "tooltip": "BOX DRAWINGS DOWN DOUBLE AND LEFT SINGLE"
+  },
+  {
+    "name": "╗",
+    "value": "╗",
+    "escapedValue": "&amp;boxDL;",
+    "tooltip": "BOX DRAWINGS DOUBLE DOWN AND LEFT"
+  },
+  {
+    "name": "╘",
+    "value": "╘",
+    "escapedValue": "&amp;boxuR;",
+    "tooltip": "BOX DRAWINGS UP SINGLE AND RIGHT DOUBLE"
+  },
+  {
+    "name": "╙",
+    "value": "╙",
+    "escapedValue": "&amp;boxUr;",
+    "tooltip": "BOX DRAWINGS UP DOUBLE AND RIGHT SINGLE"
+  },
+  {
+    "name": "╚",
+    "value": "╚",
+    "escapedValue": "&amp;boxUR;",
+    "tooltip": "BOX DRAWINGS DOUBLE UP AND RIGHT"
+  },
+  {
+    "name": "╛",
+    "value": "╛",
+    "escapedValue": "&amp;boxuL;",
+    "tooltip": "BOX DRAWINGS UP SINGLE AND LEFT DOUBLE"
+  },
+  {
+    "name": "╜",
+    "value": "╜",
+    "escapedValue": "&amp;boxUl;",
+    "tooltip": "BOX DRAWINGS UP DOUBLE AND LEFT SINGLE"
+  },
+  {
+    "name": "╝",
+    "value": "╝",
+    "escapedValue": "&amp;boxUL;",
+    "tooltip": "BOX DRAWINGS DOUBLE UP AND LEFT"
+  },
+  {
+    "name": "╞",
+    "value": "╞",
+    "escapedValue": "&amp;boxvR;",
+    "tooltip": "BOX DRAWINGS VERTICAL SINGLE AND RIGHT DOUBLE"
+  },
+  {
+    "name": "╟",
+    "value": "╟",
+    "escapedValue": "&amp;boxVr;",
+    "tooltip": "BOX DRAWINGS VERTICAL DOUBLE AND RIGHT SINGLE"
+  },
+  {
+    "name": "╠",
+    "value": "╠",
+    "escapedValue": "&amp;boxVR;",
+    "tooltip": "BOX DRAWINGS DOUBLE VERTICAL AND RIGHT"
+  },
+  {
+    "name": "╡",
+    "value": "╡",
+    "escapedValue": "&amp;boxvL;",
+    "tooltip": "BOX DRAWINGS VERTICAL SINGLE AND LEFT DOUBLE"
+  },
+  {
+    "name": "╢",
+    "value": "╢",
+    "escapedValue": "&amp;boxVl;",
+    "tooltip": "BOX DRAWINGS VERTICAL DOUBLE AND LEFT SINGLE"
+  },
+  {
+    "name": "╣",
+    "value": "╣",
+    "escapedValue": "&amp;boxVL;",
+    "tooltip": "BOX DRAWINGS DOUBLE VERTICAL AND LEFT"
+  },
+  {
+    "name": "╤",
+    "value": "╤",
+    "escapedValue": "&amp;boxHd;",
+    "tooltip": "BOX DRAWINGS DOWN SINGLE AND HORIZONTAL DOUBLE"
+  },
+  {
+    "name": "╥",
+    "value": "╥",
+    "escapedValue": "&amp;boxhD;",
+    "tooltip": "BOX DRAWINGS DOWN DOUBLE AND HORIZONTAL SINGLE"
+  },
+  {
+    "name": "╦",
+    "value": "╦",
+    "escapedValue": "&amp;boxHD;",
+    "tooltip": "BOX DRAWINGS DOUBLE DOWN AND HORIZONTAL"
+  },
+  {
+    "name": "╧",
+    "value": "╧",
+    "escapedValue": "&amp;boxHu;",
+    "tooltip": "BOX DRAWINGS UP SINGLE AND HORIZONTAL DOUBLE"
+  },
+  {
+    "name": "╨",
+    "value": "╨",
+    "escapedValue": "&amp;boxhU;",
+    "tooltip": "BOX DRAWINGS UP DOUBLE AND HORIZONTAL SINGLE"
+  },
+  {
+    "name": "╩",
+    "value": "╩",
+    "escapedValue": "&amp;boxHU;",
+    "tooltip": "BOX DRAWINGS DOUBLE UP AND HORIZONTAL"
+  },
+  {
+    "name": "╪",
+    "value": "╪",
+    "escapedValue": "&amp;boxvH;",
+    "tooltip": "BOX DRAWINGS VERTICAL SINGLE AND HORIZONTAL DOUBLE"
+  },
+  {
+    "name": "╫",
+    "value": "╫",
+    "escapedValue": "&amp;boxVh;",
+    "tooltip": "BOX DRAWINGS VERTICAL DOUBLE AND HORIZONTAL SINGLE"
+  },
+  {
+    "name": "╬",
+    "value": "╬",
+    "escapedValue": "&amp;boxVH;",
+    "tooltip": "BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL"
+  },
+  {
+    "name": "▀",
+    "value": "▀",
+    "escapedValue": "&amp;uhblk;",
+    "tooltip": "UPPER HALF BLOCK"
+  },
+  {
+    "name": "▄",
+    "value": "▄",
+    "escapedValue": "&amp;lhblk;",
+    "tooltip": "LOWER HALF BLOCK"
+  },
+  {
+    "name": "█",
+    "value": "█",
+    "escapedValue": "&amp;block;",
+    "tooltip": "FULL BLOCK"
+  },
+  {
+    "name": "░",
+    "value": "░",
+    "escapedValue": "&amp;blk14;",
+    "tooltip": "LIGHT SHADE"
+  },
+  {
+    "name": "▒",
+    "value": "▒",
+    "escapedValue": "&amp;blk12;",
+    "tooltip": "MEDIUM SHADE"
+  },
+  {
+    "name": "▓",
+    "value": "▓",
+    "escapedValue": "&amp;blk34;",
+    "tooltip": "DARK SHADE"
+  },
+  {
+    "name": "□",
+    "value": "□",
+    "escapedValue": "&amp;squ; &amp;square; &amp;Square;",
+    "tooltip": "WHITE SQUARE"
+  },
+  {
+    "name": "▪",
+    "value": "▪",
+    "escapedValue": "&amp;squf; &amp;squarf; &amp;blacksquare; &amp;FilledVerySmallSquare;",
+    "tooltip": "BLACK SMALL SQUARE"
+  },
+  {
+    "name": "▫",
+    "value": "▫",
+    "escapedValue": "&amp;EmptyVerySmallSquare;",
+    "tooltip": "WHITE SMALL SQUARE"
+  },
+  {
+    "name": "▭",
+    "value": "▭",
+    "escapedValue": "&amp;rect;",
+    "tooltip": "WHITE RECTANGLE"
+  },
+  {
+    "name": "▮",
+    "value": "▮",
+    "escapedValue": "&amp;marker;",
+    "tooltip": "BLACK VERTICAL RECTANGLE"
+  },
+  {
+    "name": "▱",
+    "value": "▱",
+    "escapedValue": "&amp;fltns;",
+    "tooltip": "WHITE PARALLELOGRAM"
+  },
+  {
+    "name": "△",
+    "value": "△",
+    "escapedValue": "&amp;xutri; &amp;bigtriangleup;",
+    "tooltip": "WHITE UP-POINTING TRIANGLE"
+  },
+  {
+    "name": "▴",
+    "value": "▴",
+    "escapedValue": "&amp;utrif; &amp;blacktriangle;",
+    "tooltip": "BLACK UP-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "▵",
+    "value": "▵",
+    "escapedValue": "&amp;utri; &amp;triangle;",
+    "tooltip": "WHITE UP-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "▸",
+    "value": "▸",
+    "escapedValue": "&amp;rtrif; &amp;blacktriangleright;",
+    "tooltip": "BLACK RIGHT-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "▹",
+    "value": "▹",
+    "escapedValue": "&amp;rtri; &amp;triangleright;",
+    "tooltip": "WHITE RIGHT-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "▽",
+    "value": "▽",
+    "escapedValue": "&amp;xdtri; &amp;bigtriangledown;",
+    "tooltip": "WHITE DOWN-POINTING TRIANGLE"
+  },
+  {
+    "name": "▾",
+    "value": "▾",
+    "escapedValue": "&amp;dtrif; &amp;blacktriangledown;",
+    "tooltip": "BLACK DOWN-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "▿",
+    "value": "▿",
+    "escapedValue": "&amp;dtri; &amp;triangledown;",
+    "tooltip": "WHITE DOWN-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "◂",
+    "value": "◂",
+    "escapedValue": "&amp;ltrif; &amp;blacktriangleleft;",
+    "tooltip": "BLACK LEFT-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "◃",
+    "value": "◃",
+    "escapedValue": "&amp;ltri; &amp;triangleleft;",
+    "tooltip": "WHITE LEFT-POINTING SMALL TRIANGLE"
+  },
+  {
+    "name": "◊",
+    "value": "◊",
+    "escapedValue": "&amp;loz; &amp;lozenge;",
+    "tooltip": "LOZENGE"
+  },
+  {
+    "name": "○",
+    "value": "○",
+    "escapedValue": "&amp;cir;",
+    "tooltip": "WHITE CIRCLE"
+  },
+  {
+    "name": "◬",
+    "value": "◬",
+    "escapedValue": "&amp;tridot;",
+    "tooltip": "WHITE UP-POINTING TRIANGLE WITH DOT"
+  },
+  {
+    "name": "◯",
+    "value": "◯",
+    "escapedValue": "&amp;xcirc; &amp;bigcirc;",
+    "tooltip": "LARGE CIRCLE"
+  },
+  {
+    "name": "◸",
+    "value": "◸",
+    "escapedValue": "&amp;ultri;",
+    "tooltip": "UPPER LEFT TRIANGLE"
+  },
+  {
+    "name": "◹",
+    "value": "◹",
+    "escapedValue": "&amp;urtri;",
+    "tooltip": "UPPER RIGHT TRIANGLE"
+  },
+  {
+    "name": "◺",
+    "value": "◺",
+    "escapedValue": "&amp;lltri;",
+    "tooltip": "LOWER LEFT TRIANGLE"
+  },
+  {
+    "name": "◻",
+    "value": "◻",
+    "escapedValue": "&amp;EmptySmallSquare;",
+    "tooltip": "WHITE MEDIUM SQUARE"
+  },
+  {
+    "name": "◼",
+    "value": "◼",
+    "escapedValue": "&amp;FilledSmallSquare;",
+    "tooltip": "BLACK MEDIUM SQUARE"
+  },
+  {
+    "name": "★",
+    "value": "★",
+    "escapedValue": "&amp;starf; &amp;bigstar;",
+    "tooltip": "BLACK STAR"
+  },
+  {
+    "name": "☆",
+    "value": "☆",
+    "escapedValue": "&amp;star;",
+    "tooltip": "WHITE STAR"
+  },
+  {
+    "name": "☎",
+    "value": "☎",
+    "escapedValue": "&amp;phone;",
+    "tooltip": "BLACK TELEPHONE"
+  },
+  {
+    "name": "♀",
+    "value": "♀",
+    "escapedValue": "&amp;female;",
+    "tooltip": "FEMALE SIGN"
+  },
+  {
+    "name": "♂",
+    "value": "♂",
+    "escapedValue": "&amp;male;",
+    "tooltip": "MALE SIGN"
+  },
+  {
+    "name": "♠",
+    "value": "♠",
+    "escapedValue": "&amp;spades; &amp;spadesuit;",
+    "tooltip": "BLACK SPADE SUIT"
+  },
+  {
+    "name": "♣",
+    "value": "♣",
+    "escapedValue": "&amp;clubs; &amp;clubsuit;",
+    "tooltip": "BLACK CLUB SUIT"
+  },
+  {
+    "name": "♥",
+    "value": "♥",
+    "escapedValue": "&amp;hearts; &amp;heartsuit;",
+    "tooltip": "BLACK HEART SUIT"
+  },
+  {
+    "name": "♦",
+    "value": "♦",
+    "escapedValue": "&amp;diams; &amp;diamondsuit;",
+    "tooltip": "BLACK DIAMOND SUIT"
+  },
+  {
+    "name": "♪",
+    "value": "♪",
+    "escapedValue": "&amp;sung;",
+    "tooltip": "EIGHTH NOTE"
+  },
+  {
+    "name": "♭",
+    "value": "♭",
+    "escapedValue": "&amp;flat;",
+    "tooltip": "MUSIC FLAT SIGN"
+  },
+  {
+    "name": "♮",
+    "value": "♮",
+    "escapedValue": "&amp;natur; &amp;natural;",
+    "tooltip": "MUSIC NATURAL SIGN"
+  },
+  {
+    "name": "♯",
+    "value": "♯",
+    "escapedValue": "&amp;sharp;",
+    "tooltip": "MUSIC SHARP SIGN"
+  },
+  {
+    "name": "✓",
+    "value": "✓",
+    "escapedValue": "&amp;check; &amp;checkmark;",
+    "tooltip": "CHECK MARK"
+  },
+  {
+    "name": "✗",
+    "value": "✗",
+    "escapedValue": "&amp;cross;",
+    "tooltip": "BALLOT X"
+  },
+  {
+    "name": "✠",
+    "value": "✠",
+    "escapedValue": "&amp;malt; &amp;maltese;",
+    "tooltip": "MALTESE CROSS"
+  },
+  {
+    "name": "✶",
+    "value": "✶",
+    "escapedValue": "&amp;sext;",
+    "tooltip": "SIX POINTED BLACK STAR"
+  },
+  {
+    "name": "❘",
+    "value": "❘",
+    "escapedValue": "&amp;VerticalSeparator;",
+    "tooltip": "LIGHT VERTICAL BAR"
+  },
+  {
+    "name": "❲",
+    "value": "❲",
+    "escapedValue": "&amp;lbbrk;",
+    "tooltip": "LIGHT LEFT TORTOISE SHELL BRACKET ORNAMENT"
+  },
+  {
+    "name": "❳",
+    "value": "❳",
+    "escapedValue": "&amp;rbbrk;",
+    "tooltip": "LIGHT RIGHT TORTOISE SHELL BRACKET ORNAMENT"
+  },
+  {
+    "name": "⟦",
+    "value": "⟦",
+    "escapedValue": "&amp;lobrk; &amp;LeftDoubleBracket;",
+    "tooltip": "MATHEMATICAL LEFT WHITE SQUARE BRACKET"
+  },
+  {
+    "name": "⟧",
+    "value": "⟧",
+    "escapedValue": "&amp;robrk; &amp;RightDoubleBracket;",
+    "tooltip": "MATHEMATICAL RIGHT WHITE SQUARE BRACKET"
+  },
+  {
+    "name": "⟨",
+    "value": "⟨",
+    "escapedValue": "&amp;lang; &amp;LeftAngleBracket; &amp;langle;",
+    "tooltip": "MATHEMATICAL LEFT ANGLE BRACKET"
+  },
+  {
+    "name": "⟩",
+    "value": "⟩",
+    "escapedValue": "&amp;rang; &amp;RightAngleBracket; &amp;rangle;",
+    "tooltip": "MATHEMATICAL RIGHT ANGLE BRACKET"
+  },
+  {
+    "name": "⟪",
+    "value": "⟪",
+    "escapedValue": "&amp;Lang;",
+    "tooltip": "MATHEMATICAL LEFT DOUBLE ANGLE BRACKET"
+  },
+  {
+    "name": "⟫",
+    "value": "⟫",
+    "escapedValue": "&amp;Rang;",
+    "tooltip": "MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET"
+  },
+  {
+    "name": "⟬",
+    "value": "⟬",
+    "escapedValue": "&amp;loang;",
+    "tooltip": "MATHEMATICAL LEFT WHITE TORTOISE SHELL BRACKET"
+  },
+  {
+    "name": "⟭",
+    "value": "⟭",
+    "escapedValue": "&amp;roang;",
+    "tooltip": "MATHEMATICAL RIGHT WHITE TORTOISE SHELL BRACKET"
+  },
+  {
+    "name": "⟵",
+    "value": "⟵",
+    "escapedValue": "&amp;xlarr; &amp;longleftarrow; &amp;LongLeftArrow;",
+    "tooltip": "LONG LEFTWARDS ARROW"
+  },
+  {
+    "name": "⟶",
+    "value": "⟶",
+    "escapedValue": "&amp;xrarr; &amp;longrightarrow; &amp;LongRightArrow;",
+    "tooltip": "LONG RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⟷",
+    "value": "⟷",
+    "escapedValue": "&amp;xharr; &amp;longleftrightarrow; &amp;LongLeftRightArrow;",
+    "tooltip": "LONG LEFT RIGHT ARROW"
+  },
+  {
+    "name": "⟸",
+    "value": "⟸",
+    "escapedValue": "&amp;xlArr; &amp;Longleftarrow; &amp;DoubleLongLeftArrow;",
+    "tooltip": "LONG LEFTWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⟹",
+    "value": "⟹",
+    "escapedValue": "&amp;xrArr; &amp;Longrightarrow; &amp;DoubleLongRightArrow;",
+    "tooltip": "LONG RIGHTWARDS DOUBLE ARROW"
+  },
+  {
+    "name": "⟺",
+    "value": "⟺",
+    "escapedValue": "&amp;xhArr; &amp;Longleftrightarrow; &amp;DoubleLongLeftRightArrow;",
+    "tooltip": "LONG LEFT RIGHT DOUBLE ARROW"
+  },
+  {
+    "name": "⟼",
+    "value": "⟼",
+    "escapedValue": "&amp;xmap; &amp;longmapsto;",
+    "tooltip": "LONG RIGHTWARDS ARROW FROM BAR"
+  },
+  {
+    "name": "⟿",
+    "value": "⟿",
+    "escapedValue": "&amp;dzigrarr;",
+    "tooltip": "LONG RIGHTWARDS SQUIGGLE ARROW"
+  },
+  {
+    "name": "⤂",
+    "value": "⤂",
+    "escapedValue": "&amp;nvlArr;",
+    "tooltip": "LEFTWARDS DOUBLE ARROW WITH VERTICAL STROKE"
+  },
+  {
+    "name": "⤃",
+    "value": "⤃",
+    "escapedValue": "&amp;nvrArr;",
+    "tooltip": "RIGHTWARDS DOUBLE ARROW WITH VERTICAL STROKE"
+  },
+  {
+    "name": "⤄",
+    "value": "⤄",
+    "escapedValue": "&amp;nvHarr;",
+    "tooltip": "LEFT RIGHT DOUBLE ARROW WITH VERTICAL STROKE"
+  },
+  {
+    "name": "⤅",
+    "value": "⤅",
+    "escapedValue": "&amp;Map;",
+    "tooltip": "RIGHTWARDS TWO-HEADED ARROW FROM BAR"
+  },
+  {
+    "name": "⤌",
+    "value": "⤌",
+    "escapedValue": "&amp;lbarr;",
+    "tooltip": "LEFTWARDS DOUBLE DASH ARROW"
+  },
+  {
+    "name": "⤍",
+    "value": "⤍",
+    "escapedValue": "&amp;rbarr; &amp;bkarow;",
+    "tooltip": "RIGHTWARDS DOUBLE DASH ARROW"
+  },
+  {
+    "name": "⤎",
+    "value": "⤎",
+    "escapedValue": "&amp;lBarr;",
+    "tooltip": "LEFTWARDS TRIPLE DASH ARROW"
+  },
+  {
+    "name": "⤏",
+    "value": "⤏",
+    "escapedValue": "&amp;rBarr; &amp;dbkarow;",
+    "tooltip": "RIGHTWARDS TRIPLE DASH ARROW"
+  },
+  {
+    "name": "⤐",
+    "value": "⤐",
+    "escapedValue": "&amp;RBarr; &amp;drbkarow;",
+    "tooltip": "RIGHTWARDS TWO-HEADED TRIPLE DASH ARROW"
+  },
+  {
+    "name": "⤑",
+    "value": "⤑",
+    "escapedValue": "&amp;DDotrahd;",
+    "tooltip": "RIGHTWARDS ARROW WITH DOTTED STEM"
+  },
+  {
+    "name": "⤒",
+    "value": "⤒",
+    "escapedValue": "&amp;UpArrowBar;",
+    "tooltip": "UPWARDS ARROW TO BAR"
+  },
+  {
+    "name": "⤓",
+    "value": "⤓",
+    "escapedValue": "&amp;DownArrowBar;",
+    "tooltip": "DOWNWARDS ARROW TO BAR"
+  },
+  {
+    "name": "⤖",
+    "value": "⤖",
+    "escapedValue": "&amp;Rarrtl;",
+    "tooltip": "RIGHTWARDS TWO-HEADED ARROW WITH TAIL"
+  },
+  {
+    "name": "⤙",
+    "value": "⤙",
+    "escapedValue": "&amp;latail;",
+    "tooltip": "LEFTWARDS ARROW-TAIL"
+  },
+  {
+    "name": "⤚",
+    "value": "⤚",
+    "escapedValue": "&amp;ratail;",
+    "tooltip": "RIGHTWARDS ARROW-TAIL"
+  },
+  {
+    "name": "⤛",
+    "value": "⤛",
+    "escapedValue": "&amp;lAtail;",
+    "tooltip": "LEFTWARDS DOUBLE ARROW-TAIL"
+  },
+  {
+    "name": "⤜",
+    "value": "⤜",
+    "escapedValue": "&amp;rAtail;",
+    "tooltip": "RIGHTWARDS DOUBLE ARROW-TAIL"
+  },
+  {
+    "name": "⤝",
+    "value": "⤝",
+    "escapedValue": "&amp;larrfs;",
+    "tooltip": "LEFTWARDS ARROW TO BLACK DIAMOND"
+  },
+  {
+    "name": "⤞",
+    "value": "⤞",
+    "escapedValue": "&amp;rarrfs;",
+    "tooltip": "RIGHTWARDS ARROW TO BLACK DIAMOND"
+  },
+  {
+    "name": "⤟",
+    "value": "⤟",
+    "escapedValue": "&amp;larrbfs;",
+    "tooltip": "LEFTWARDS ARROW FROM BAR TO BLACK DIAMOND"
+  },
+  {
+    "name": "⤠",
+    "value": "⤠",
+    "escapedValue": "&amp;rarrbfs;",
+    "tooltip": "RIGHTWARDS ARROW FROM BAR TO BLACK DIAMOND"
+  },
+  {
+    "name": "⤣",
+    "value": "⤣",
+    "escapedValue": "&amp;nwarhk;",
+    "tooltip": "NORTH WEST ARROW WITH HOOK"
+  },
+  {
+    "name": "⤤",
+    "value": "⤤",
+    "escapedValue": "&amp;nearhk;",
+    "tooltip": "NORTH EAST ARROW WITH HOOK"
+  },
+  {
+    "name": "⤥",
+    "value": "⤥",
+    "escapedValue": "&amp;searhk; &amp;hksearow;",
+    "tooltip": "SOUTH EAST ARROW WITH HOOK"
+  },
+  {
+    "name": "⤦",
+    "value": "⤦",
+    "escapedValue": "&amp;swarhk; &amp;hkswarow;",
+    "tooltip": "SOUTH WEST ARROW WITH HOOK"
+  },
+  {
+    "name": "⤧",
+    "value": "⤧",
+    "escapedValue": "&amp;nwnear;",
+    "tooltip": "NORTH WEST ARROW AND NORTH EAST ARROW"
+  },
+  {
+    "name": "⤨",
+    "value": "⤨",
+    "escapedValue": "&amp;nesear; &amp;toea;",
+    "tooltip": "NORTH EAST ARROW AND SOUTH EAST ARROW"
+  },
+  {
+    "name": "⤩",
+    "value": "⤩",
+    "escapedValue": "&amp;seswar; &amp;tosa;",
+    "tooltip": "SOUTH EAST ARROW AND SOUTH WEST ARROW"
+  },
+  {
+    "name": "⤪",
+    "value": "⤪",
+    "escapedValue": "&amp;swnwar;",
+    "tooltip": "SOUTH WEST ARROW AND NORTH WEST ARROW"
+  },
+  {
+    "name": "⤳",
+    "value": "⤳",
+    "escapedValue": "&amp;rarrc;",
+    "tooltip": "WAVE ARROW POINTING DIRECTLY RIGHT"
+  },
+  {
+    "name": "⤵",
+    "value": "⤵",
+    "escapedValue": "&amp;cudarrr;",
+    "tooltip": "ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS"
+  },
+  {
+    "name": "⤶",
+    "value": "⤶",
+    "escapedValue": "&amp;ldca;",
+    "tooltip": "ARROW POINTING DOWNWARDS THEN CURVING LEFTWARDS"
+  },
+  {
+    "name": "⤷",
+    "value": "⤷",
+    "escapedValue": "&amp;rdca;",
+    "tooltip": "ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS"
+  },
+  {
+    "name": "⤸",
+    "value": "⤸",
+    "escapedValue": "&amp;cudarrl;",
+    "tooltip": "RIGHT-SIDE ARC CLOCKWISE ARROW"
+  },
+  {
+    "name": "⤹",
+    "value": "⤹",
+    "escapedValue": "&amp;larrpl;",
+    "tooltip": "LEFT-SIDE ARC ANTICLOCKWISE ARROW"
+  },
+  {
+    "name": "⤼",
+    "value": "⤼",
+    "escapedValue": "&amp;curarrm;",
+    "tooltip": "TOP ARC CLOCKWISE ARROW WITH MINUS"
+  },
+  {
+    "name": "⤽",
+    "value": "⤽",
+    "escapedValue": "&amp;cularrp;",
+    "tooltip": "TOP ARC ANTICLOCKWISE ARROW WITH PLUS"
+  },
+  {
+    "name": "⥅",
+    "value": "⥅",
+    "escapedValue": "&amp;rarrpl;",
+    "tooltip": "RIGHTWARDS ARROW WITH PLUS BELOW"
+  },
+  {
+    "name": "⥈",
+    "value": "⥈",
+    "escapedValue": "&amp;harrcir;",
+    "tooltip": "LEFT RIGHT ARROW THROUGH SMALL CIRCLE"
+  },
+  {
+    "name": "⥉",
+    "value": "⥉",
+    "escapedValue": "&amp;Uarrocir;",
+    "tooltip": "UPWARDS TWO-HEADED ARROW FROM SMALL CIRCLE"
+  },
+  {
+    "name": "⥊",
+    "value": "⥊",
+    "escapedValue": "&amp;lurdshar;",
+    "tooltip": "LEFT BARB UP RIGHT BARB DOWN HARPOON"
+  },
+  {
+    "name": "⥋",
+    "value": "⥋",
+    "escapedValue": "&amp;ldrushar;",
+    "tooltip": "LEFT BARB DOWN RIGHT BARB UP HARPOON"
+  },
+  {
+    "name": "⥎",
+    "value": "⥎",
+    "escapedValue": "&amp;LeftRightVector;",
+    "tooltip": "LEFT BARB UP RIGHT BARB UP HARPOON"
+  },
+  {
+    "name": "⥏",
+    "value": "⥏",
+    "escapedValue": "&amp;RightUpDownVector;",
+    "tooltip": "UP BARB RIGHT DOWN BARB RIGHT HARPOON"
+  },
+  {
+    "name": "⥐",
+    "value": "⥐",
+    "escapedValue": "&amp;DownLeftRightVector;",
+    "tooltip": "LEFT BARB DOWN RIGHT BARB DOWN HARPOON"
+  },
+  {
+    "name": "⥑",
+    "value": "⥑",
+    "escapedValue": "&amp;LeftUpDownVector;",
+    "tooltip": "UP BARB LEFT DOWN BARB LEFT HARPOON"
+  },
+  {
+    "name": "⥒",
+    "value": "⥒",
+    "escapedValue": "&amp;LeftVectorBar;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UP TO BAR"
+  },
+  {
+    "name": "⥓",
+    "value": "⥓",
+    "escapedValue": "&amp;RightVectorBar;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UP TO BAR"
+  },
+  {
+    "name": "⥔",
+    "value": "⥔",
+    "escapedValue": "&amp;RightUpVectorBar;",
+    "tooltip": "UPWARDS HARPOON WITH BARB RIGHT TO BAR"
+  },
+  {
+    "name": "⥕",
+    "value": "⥕",
+    "escapedValue": "&amp;RightDownVectorBar;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB RIGHT TO BAR"
+  },
+  {
+    "name": "⥖",
+    "value": "⥖",
+    "escapedValue": "&amp;DownLeftVectorBar;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB DOWN TO BAR"
+  },
+  {
+    "name": "⥗",
+    "value": "⥗",
+    "escapedValue": "&amp;DownRightVectorBar;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB DOWN TO BAR"
+  },
+  {
+    "name": "⥘",
+    "value": "⥘",
+    "escapedValue": "&amp;LeftUpVectorBar;",
+    "tooltip": "UPWARDS HARPOON WITH BARB LEFT TO BAR"
+  },
+  {
+    "name": "⥙",
+    "value": "⥙",
+    "escapedValue": "&amp;LeftDownVectorBar;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB LEFT TO BAR"
+  },
+  {
+    "name": "⥚",
+    "value": "⥚",
+    "escapedValue": "&amp;LeftTeeVector;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UP FROM BAR"
+  },
+  {
+    "name": "⥛",
+    "value": "⥛",
+    "escapedValue": "&amp;RightTeeVector;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UP FROM BAR"
+  },
+  {
+    "name": "⥜",
+    "value": "⥜",
+    "escapedValue": "&amp;RightUpTeeVector;",
+    "tooltip": "UPWARDS HARPOON WITH BARB RIGHT FROM BAR"
+  },
+  {
+    "name": "⥝",
+    "value": "⥝",
+    "escapedValue": "&amp;RightDownTeeVector;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB RIGHT FROM BAR"
+  },
+  {
+    "name": "⥞",
+    "value": "⥞",
+    "escapedValue": "&amp;DownLeftTeeVector;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB DOWN FROM BAR"
+  },
+  {
+    "name": "⥟",
+    "value": "⥟",
+    "escapedValue": "&amp;DownRightTeeVector;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB DOWN FROM BAR"
+  },
+  {
+    "name": "⥠",
+    "value": "⥠",
+    "escapedValue": "&amp;LeftUpTeeVector;",
+    "tooltip": "UPWARDS HARPOON WITH BARB LEFT FROM BAR"
+  },
+  {
+    "name": "⥡",
+    "value": "⥡",
+    "escapedValue": "&amp;LeftDownTeeVector;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB LEFT FROM BAR"
+  },
+  {
+    "name": "⥢",
+    "value": "⥢",
+    "escapedValue": "&amp;lHar;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UP ABOVE LEFTWARDS HARPOON WITH BARB DOWN"
+  },
+  {
+    "name": "⥣",
+    "value": "⥣",
+    "escapedValue": "&amp;uHar;",
+    "tooltip": "UPWARDS HARPOON WITH BARB LEFT BESIDE UPWARDS HARPOON WITH BARB RIGHT"
+  },
+  {
+    "name": "⥤",
+    "value": "⥤",
+    "escapedValue": "&amp;rHar;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UP ABOVE RIGHTWARDS HARPOON WITH BARB DOWN"
+  },
+  {
+    "name": "⥥",
+    "value": "⥥",
+    "escapedValue": "&amp;dHar;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB LEFT BESIDE DOWNWARDS HARPOON WITH BARB RIGHT"
+  },
+  {
+    "name": "⥦",
+    "value": "⥦",
+    "escapedValue": "&amp;luruhar;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UP ABOVE RIGHTWARDS HARPOON WITH BARB UP"
+  },
+  {
+    "name": "⥧",
+    "value": "⥧",
+    "escapedValue": "&amp;ldrdhar;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB DOWN ABOVE RIGHTWARDS HARPOON WITH BARB DOWN"
+  },
+  {
+    "name": "⥨",
+    "value": "⥨",
+    "escapedValue": "&amp;ruluhar;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UP ABOVE LEFTWARDS HARPOON WITH BARB UP"
+  },
+  {
+    "name": "⥩",
+    "value": "⥩",
+    "escapedValue": "&amp;rdldhar;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB DOWN ABOVE LEFTWARDS HARPOON WITH BARB DOWN"
+  },
+  {
+    "name": "⥪",
+    "value": "⥪",
+    "escapedValue": "&amp;lharul;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB UP ABOVE LONG DASH"
+  },
+  {
+    "name": "⥫",
+    "value": "⥫",
+    "escapedValue": "&amp;llhard;",
+    "tooltip": "LEFTWARDS HARPOON WITH BARB DOWN BELOW LONG DASH"
+  },
+  {
+    "name": "⥬",
+    "value": "⥬",
+    "escapedValue": "&amp;rharul;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB UP ABOVE LONG DASH"
+  },
+  {
+    "name": "⥭",
+    "value": "⥭",
+    "escapedValue": "&amp;lrhard;",
+    "tooltip": "RIGHTWARDS HARPOON WITH BARB DOWN BELOW LONG DASH"
+  },
+  {
+    "name": "⥮",
+    "value": "⥮",
+    "escapedValue": "&amp;udhar; &amp;UpEquilibrium;",
+    "tooltip": "UPWARDS HARPOON WITH BARB LEFT BESIDE DOWNWARDS HARPOON WITH BARB RIGHT"
+  },
+  {
+    "name": "⥯",
+    "value": "⥯",
+    "escapedValue": "&amp;duhar; &amp;ReverseUpEquilibrium;",
+    "tooltip": "DOWNWARDS HARPOON WITH BARB LEFT BESIDE UPWARDS HARPOON WITH BARB RIGHT"
+  },
+  {
+    "name": "⥰",
+    "value": "⥰",
+    "escapedValue": "&amp;RoundImplies;",
+    "tooltip": "RIGHT DOUBLE ARROW WITH ROUNDED HEAD"
+  },
+  {
+    "name": "⥱",
+    "value": "⥱",
+    "escapedValue": "&amp;erarr;",
+    "tooltip": "EQUALS SIGN ABOVE RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⥲",
+    "value": "⥲",
+    "escapedValue": "&amp;simrarr;",
+    "tooltip": "TILDE OPERATOR ABOVE RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⥳",
+    "value": "⥳",
+    "escapedValue": "&amp;larrsim;",
+    "tooltip": "LEFTWARDS ARROW ABOVE TILDE OPERATOR"
+  },
+  {
+    "name": "⥴",
+    "value": "⥴",
+    "escapedValue": "&amp;rarrsim;",
+    "tooltip": "RIGHTWARDS ARROW ABOVE TILDE OPERATOR"
+  },
+  {
+    "name": "⥵",
+    "value": "⥵",
+    "escapedValue": "&amp;rarrap;",
+    "tooltip": "RIGHTWARDS ARROW ABOVE ALMOST EQUAL TO"
+  },
+  {
+    "name": "⥶",
+    "value": "⥶",
+    "escapedValue": "&amp;ltlarr;",
+    "tooltip": "LESS-THAN ABOVE LEFTWARDS ARROW"
+  },
+  {
+    "name": "⥸",
+    "value": "⥸",
+    "escapedValue": "&amp;gtrarr;",
+    "tooltip": "GREATER-THAN ABOVE RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⥹",
+    "value": "⥹",
+    "escapedValue": "&amp;subrarr;",
+    "tooltip": "SUBSET ABOVE RIGHTWARDS ARROW"
+  },
+  {
+    "name": "⥻",
+    "value": "⥻",
+    "escapedValue": "&amp;suplarr;",
+    "tooltip": "SUPERSET ABOVE LEFTWARDS ARROW"
+  },
+  {
+    "name": "⥼",
+    "value": "⥼",
+    "escapedValue": "&amp;lfisht;",
+    "tooltip": "LEFT FISH TAIL"
+  },
+  {
+    "name": "⥽",
+    "value": "⥽",
+    "escapedValue": "&amp;rfisht;",
+    "tooltip": "RIGHT FISH TAIL"
+  },
+  {
+    "name": "⥾",
+    "value": "⥾",
+    "escapedValue": "&amp;ufisht;",
+    "tooltip": "UP FISH TAIL"
+  },
+  {
+    "name": "⥿",
+    "value": "⥿",
+    "escapedValue": "&amp;dfisht;",
+    "tooltip": "DOWN FISH TAIL"
+  },
+  {
+    "name": "⦅",
+    "value": "⦅",
+    "escapedValue": "&amp;lopar;",
+    "tooltip": "LEFT WHITE PARENTHESIS"
+  },
+  {
+    "name": "⦆",
+    "value": "⦆",
+    "escapedValue": "&amp;ropar;",
+    "tooltip": "RIGHT WHITE PARENTHESIS"
+  },
+  {
+    "name": "⦋",
+    "value": "⦋",
+    "escapedValue": "&amp;lbrke;",
+    "tooltip": "LEFT SQUARE BRACKET WITH UNDERBAR"
+  },
+  {
+    "name": "⦌",
+    "value": "⦌",
+    "escapedValue": "&amp;rbrke;",
+    "tooltip": "RIGHT SQUARE BRACKET WITH UNDERBAR"
+  },
+  {
+    "name": "⦍",
+    "value": "⦍",
+    "escapedValue": "&amp;lbrkslu;",
+    "tooltip": "LEFT SQUARE BRACKET WITH TICK IN TOP CORNER"
+  },
+  {
+    "name": "⦎",
+    "value": "⦎",
+    "escapedValue": "&amp;rbrksld;",
+    "tooltip": "RIGHT SQUARE BRACKET WITH TICK IN BOTTOM CORNER"
+  },
+  {
+    "name": "⦏",
+    "value": "⦏",
+    "escapedValue": "&amp;lbrksld;",
+    "tooltip": "LEFT SQUARE BRACKET WITH TICK IN BOTTOM CORNER"
+  },
+  {
+    "name": "⦐",
+    "value": "⦐",
+    "escapedValue": "&amp;rbrkslu;",
+    "tooltip": "RIGHT SQUARE BRACKET WITH TICK IN TOP CORNER"
+  },
+  {
+    "name": "⦑",
+    "value": "⦑",
+    "escapedValue": "&amp;langd;",
+    "tooltip": "LEFT ANGLE BRACKET WITH DOT"
+  },
+  {
+    "name": "⦒",
+    "value": "⦒",
+    "escapedValue": "&amp;rangd;",
+    "tooltip": "RIGHT ANGLE BRACKET WITH DOT"
+  },
+  {
+    "name": "⦓",
+    "value": "⦓",
+    "escapedValue": "&amp;lparlt;",
+    "tooltip": "LEFT ARC LESS-THAN BRACKET"
+  },
+  {
+    "name": "⦔",
+    "value": "⦔",
+    "escapedValue": "&amp;rpargt;",
+    "tooltip": "RIGHT ARC GREATER-THAN BRACKET"
+  },
+  {
+    "name": "⦕",
+    "value": "⦕",
+    "escapedValue": "&amp;gtlPar;",
+    "tooltip": "DOUBLE LEFT ARC GREATER-THAN BRACKET"
+  },
+  {
+    "name": "⦖",
+    "value": "⦖",
+    "escapedValue": "&amp;ltrPar;",
+    "tooltip": "DOUBLE RIGHT ARC LESS-THAN BRACKET"
+  },
+  {
+    "name": "⦚",
+    "value": "⦚",
+    "escapedValue": "&amp;vzigzag;",
+    "tooltip": "VERTICAL ZIGZAG LINE"
+  },
+  {
+    "name": "⦜",
+    "value": "⦜",
+    "escapedValue": "&amp;vangrt;",
+    "tooltip": "RIGHT ANGLE VARIANT WITH SQUARE"
+  },
+  {
+    "name": "⦝",
+    "value": "⦝",
+    "escapedValue": "&amp;angrtvbd;",
+    "tooltip": "MEASURED RIGHT ANGLE WITH DOT"
+  },
+  {
+    "name": "⦤",
+    "value": "⦤",
+    "escapedValue": "&amp;ange;",
+    "tooltip": "ANGLE WITH UNDERBAR"
+  },
+  {
+    "name": "⦥",
+    "value": "⦥",
+    "escapedValue": "&amp;range;",
+    "tooltip": "REVERSED ANGLE WITH UNDERBAR"
+  },
+  {
+    "name": "⦦",
+    "value": "⦦",
+    "escapedValue": "&amp;dwangle;",
+    "tooltip": "OBLIQUE ANGLE OPENING UP"
+  },
+  {
+    "name": "⦧",
+    "value": "⦧",
+    "escapedValue": "&amp;uwangle;",
+    "tooltip": "OBLIQUE ANGLE OPENING DOWN"
+  },
+  {
+    "name": "⦨",
+    "value": "⦨",
+    "escapedValue": "&amp;angmsdaa;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING UP AND RIGHT"
+  },
+  {
+    "name": "⦩",
+    "value": "⦩",
+    "escapedValue": "&amp;angmsdab;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING UP AND LEFT"
+  },
+  {
+    "name": "⦪",
+    "value": "⦪",
+    "escapedValue": "&amp;angmsdac;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING DOWN AND RIGHT"
+  },
+  {
+    "name": "⦫",
+    "value": "⦫",
+    "escapedValue": "&amp;angmsdad;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING DOWN AND LEFT"
+  },
+  {
+    "name": "⦬",
+    "value": "⦬",
+    "escapedValue": "&amp;angmsdae;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING RIGHT AND UP"
+  },
+  {
+    "name": "⦭",
+    "value": "⦭",
+    "escapedValue": "&amp;angmsdaf;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING LEFT AND UP"
+  },
+  {
+    "name": "⦮",
+    "value": "⦮",
+    "escapedValue": "&amp;angmsdag;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING RIGHT AND DOWN"
+  },
+  {
+    "name": "⦯",
+    "value": "⦯",
+    "escapedValue": "&amp;angmsdah;",
+    "tooltip": "MEASURED ANGLE WITH OPEN ARM ENDING IN ARROW POINTING LEFT AND DOWN"
+  },
+  {
+    "name": "⦰",
+    "value": "⦰",
+    "escapedValue": "&amp;bemptyv;",
+    "tooltip": "REVERSED EMPTY SET"
+  },
+  {
+    "name": "⦱",
+    "value": "⦱",
+    "escapedValue": "&amp;demptyv;",
+    "tooltip": "EMPTY SET WITH OVERBAR"
+  },
+  {
+    "name": "⦲",
+    "value": "⦲",
+    "escapedValue": "&amp;cemptyv;",
+    "tooltip": "EMPTY SET WITH SMALL CIRCLE ABOVE"
+  },
+  {
+    "name": "⦳",
+    "value": "⦳",
+    "escapedValue": "&amp;raemptyv;",
+    "tooltip": "EMPTY SET WITH RIGHT ARROW ABOVE"
+  },
+  {
+    "name": "⦴",
+    "value": "⦴",
+    "escapedValue": "&amp;laemptyv;",
+    "tooltip": "EMPTY SET WITH LEFT ARROW ABOVE"
+  },
+  {
+    "name": "⦵",
+    "value": "⦵",
+    "escapedValue": "&amp;ohbar;",
+    "tooltip": "CIRCLE WITH HORIZONTAL BAR"
+  },
+  {
+    "name": "⦶",
+    "value": "⦶",
+    "escapedValue": "&amp;omid;",
+    "tooltip": "CIRCLED VERTICAL BAR"
+  },
+  {
+    "name": "⦷",
+    "value": "⦷",
+    "escapedValue": "&amp;opar;",
+    "tooltip": "CIRCLED PARALLEL"
+  },
+  {
+    "name": "⦹",
+    "value": "⦹",
+    "escapedValue": "&amp;operp;",
+    "tooltip": "CIRCLED PERPENDICULAR"
+  },
+  {
+    "name": "⦻",
+    "value": "⦻",
+    "escapedValue": "&amp;olcross;",
+    "tooltip": "CIRCLE WITH SUPERIMPOSED X"
+  },
+  {
+    "name": "⦼",
+    "value": "⦼",
+    "escapedValue": "&amp;odsold;",
+    "tooltip": "CIRCLED ANTICLOCKWISE-ROTATED DIVISION SIGN"
+  },
+  {
+    "name": "⦾",
+    "value": "⦾",
+    "escapedValue": "&amp;olcir;",
+    "tooltip": "CIRCLED WHITE BULLET"
+  },
+  {
+    "name": "⦿",
+    "value": "⦿",
+    "escapedValue": "&amp;ofcir;",
+    "tooltip": "CIRCLED BULLET"
+  },
+  {
+    "name": "⧀",
+    "value": "⧀",
+    "escapedValue": "&amp;olt;",
+    "tooltip": "CIRCLED LESS-THAN"
+  },
+  {
+    "name": "⧁",
+    "value": "⧁",
+    "escapedValue": "&amp;ogt;",
+    "tooltip": "CIRCLED GREATER-THAN"
+  },
+  {
+    "name": "⧂",
+    "value": "⧂",
+    "escapedValue": "&amp;cirscir;",
+    "tooltip": "CIRCLE WITH SMALL CIRCLE TO THE RIGHT"
+  },
+  {
+    "name": "⧃",
+    "value": "⧃",
+    "escapedValue": "&amp;cirE;",
+    "tooltip": "CIRCLE WITH TWO HORIZONTAL STROKES TO THE RIGHT"
+  },
+  {
+    "name": "⧄",
+    "value": "⧄",
+    "escapedValue": "&amp;solb;",
+    "tooltip": "SQUARED RISING DIAGONAL SLASH"
+  },
+  {
+    "name": "⧅",
+    "value": "⧅",
+    "escapedValue": "&amp;bsolb;",
+    "tooltip": "SQUARED FALLING DIAGONAL SLASH"
+  },
+  {
+    "name": "⧉",
+    "value": "⧉",
+    "escapedValue": "&amp;boxbox;",
+    "tooltip": "TWO JOINED SQUARES"
+  },
+  {
+    "name": "⧍",
+    "value": "⧍",
+    "escapedValue": "&amp;trisb;",
+    "tooltip": "TRIANGLE WITH SERIFS AT BOTTOM"
+  },
+  {
+    "name": "⧎",
+    "value": "⧎",
+    "escapedValue": "&amp;rtriltri;",
+    "tooltip": "RIGHT TRIANGLE ABOVE LEFT TRIANGLE"
+  },
+  {
+    "name": "⧏",
+    "value": "⧏",
+    "escapedValue": "&amp;LeftTriangleBar;",
+    "tooltip": "LEFT TRIANGLE BESIDE VERTICAL BAR"
+  },
+  {
+    "name": "⧐",
+    "value": "⧐",
+    "escapedValue": "&amp;RightTriangleBar;",
+    "tooltip": "VERTICAL BAR BESIDE RIGHT TRIANGLE"
+  },
+  {
+    "name": "⧚",
+    "value": "⧚",
+    "escapedValue": "&amp;race;",
+    "tooltip": "LEFT DOUBLE WIGGLY FENCE"
+  },
+  {
+    "name": "⧜",
+    "value": "⧜",
+    "escapedValue": "&amp;iinfin;",
+    "tooltip": "INCOMPLETE INFINITY"
+  },
+  {
+    "name": "⧝",
+    "value": "⧝",
+    "escapedValue": "&amp;infintie;",
+    "tooltip": "TIE OVER INFINITY"
+  },
+  {
+    "name": "⧞",
+    "value": "⧞",
+    "escapedValue": "&amp;nvinfin;",
+    "tooltip": "INFINITY NEGATED WITH VERTICAL BAR"
+  },
+  {
+    "name": "⧣",
+    "value": "⧣",
+    "escapedValue": "&amp;eparsl;",
+    "tooltip": "EQUALS SIGN AND SLANTED PARALLEL"
+  },
+  {
+    "name": "⧤",
+    "value": "⧤",
+    "escapedValue": "&amp;smeparsl;",
+    "tooltip": "EQUALS SIGN AND SLANTED PARALLEL WITH TILDE ABOVE"
+  },
+  {
+    "name": "⧥",
+    "value": "⧥",
+    "escapedValue": "&amp;eqvparsl;",
+    "tooltip": "IDENTICAL TO AND SLANTED PARALLEL"
+  },
+  {
+    "name": "⧫",
+    "value": "⧫",
+    "escapedValue": "&amp;lozf; &amp;blacklozenge;",
+    "tooltip": "BLACK LOZENGE"
+  },
+  {
+    "name": "⧴",
+    "value": "⧴",
+    "escapedValue": "&amp;RuleDelayed;",
+    "tooltip": "RULE-DELAYED"
+  },
+  {
+    "name": "⧶",
+    "value": "⧶",
+    "escapedValue": "&amp;dsol;",
+    "tooltip": "SOLIDUS WITH OVERBAR"
+  },
+  {
+    "name": "⨀",
+    "value": "⨀",
+    "escapedValue": "&amp;xodot; &amp;bigodot;",
+    "tooltip": "N-ARY CIRCLED DOT OPERATOR"
+  },
+  {
+    "name": "⨁",
+    "value": "⨁",
+    "escapedValue": "&amp;xoplus; &amp;bigoplus;",
+    "tooltip": "N-ARY CIRCLED PLUS OPERATOR"
+  },
+  {
+    "name": "⨂",
+    "value": "⨂",
+    "escapedValue": "&amp;xotime; &amp;bigotimes;",
+    "tooltip": "N-ARY CIRCLED TIMES OPERATOR"
+  },
+  {
+    "name": "⨄",
+    "value": "⨄",
+    "escapedValue": "&amp;xuplus; &amp;biguplus;",
+    "tooltip": "N-ARY UNION OPERATOR WITH PLUS"
+  },
+  {
+    "name": "⨆",
+    "value": "⨆",
+    "escapedValue": "&amp;xsqcup; &amp;bigsqcup;",
+    "tooltip": "N-ARY SQUARE UNION OPERATOR"
+  },
+  {
+    "name": "⨌",
+    "value": "⨌",
+    "escapedValue": "&amp;qint; &amp;iiiint;",
+    "tooltip": "QUADRUPLE INTEGRAL OPERATOR"
+  },
+  {
+    "name": "⨍",
+    "value": "⨍",
+    "escapedValue": "&amp;fpartint;",
+    "tooltip": "FINITE PART INTEGRAL"
+  },
+  {
+    "name": "⨐",
+    "value": "⨐",
+    "escapedValue": "&amp;cirfnint;",
+    "tooltip": "CIRCULATION FUNCTION"
+  },
+  {
+    "name": "⨑",
+    "value": "⨑",
+    "escapedValue": "&amp;awint;",
+    "tooltip": "ANTICLOCKWISE INTEGRATION"
+  },
+  {
+    "name": "⨒",
+    "value": "⨒",
+    "escapedValue": "&amp;rppolint;",
+    "tooltip": "LINE INTEGRATION WITH RECTANGULAR PATH AROUND POLE"
+  },
+  {
+    "name": "⨓",
+    "value": "⨓",
+    "escapedValue": "&amp;scpolint;",
+    "tooltip": "LINE INTEGRATION WITH SEMICIRCULAR PATH AROUND POLE"
+  },
+  {
+    "name": "⨔",
+    "value": "⨔",
+    "escapedValue": "&amp;npolint;",
+    "tooltip": "LINE INTEGRATION NOT INCLUDING THE POLE"
+  },
+  {
+    "name": "⨕",
+    "value": "⨕",
+    "escapedValue": "&amp;pointint;",
+    "tooltip": "INTEGRAL AROUND A POINT OPERATOR"
+  },
+  {
+    "name": "⨖",
+    "value": "⨖",
+    "escapedValue": "&amp;quatint;",
+    "tooltip": "QUATERNION INTEGRAL OPERATOR"
+  },
+  {
+    "name": "⨗",
+    "value": "⨗",
+    "escapedValue": "&amp;intlarhk;",
+    "tooltip": "INTEGRAL WITH LEFTWARDS ARROW WITH HOOK"
+  },
+  {
+    "name": "⨢",
+    "value": "⨢",
+    "escapedValue": "&amp;pluscir;",
+    "tooltip": "PLUS SIGN WITH SMALL CIRCLE ABOVE"
+  },
+  {
+    "name": "⨣",
+    "value": "⨣",
+    "escapedValue": "&amp;plusacir;",
+    "tooltip": "PLUS SIGN WITH CIRCUMFLEX ACCENT ABOVE"
+  },
+  {
+    "name": "⨤",
+    "value": "⨤",
+    "escapedValue": "&amp;simplus;",
+    "tooltip": "PLUS SIGN WITH TILDE ABOVE"
+  },
+  {
+    "name": "⨥",
+    "value": "⨥",
+    "escapedValue": "&amp;plusdu;",
+    "tooltip": "PLUS SIGN WITH DOT BELOW"
+  },
+  {
+    "name": "⨦",
+    "value": "⨦",
+    "escapedValue": "&amp;plussim;",
+    "tooltip": "PLUS SIGN WITH TILDE BELOW"
+  },
+  {
+    "name": "⨧",
+    "value": "⨧",
+    "escapedValue": "&amp;plustwo;",
+    "tooltip": "PLUS SIGN WITH SUBSCRIPT TWO"
+  },
+  {
+    "name": "⨩",
+    "value": "⨩",
+    "escapedValue": "&amp;mcomma;",
+    "tooltip": "MINUS SIGN WITH COMMA ABOVE"
+  },
+  {
+    "name": "⨪",
+    "value": "⨪",
+    "escapedValue": "&amp;minusdu;",
+    "tooltip": "MINUS SIGN WITH DOT BELOW"
+  },
+  {
+    "name": "⨭",
+    "value": "⨭",
+    "escapedValue": "&amp;loplus;",
+    "tooltip": "PLUS SIGN IN LEFT HALF CIRCLE"
+  },
+  {
+    "name": "⨮",
+    "value": "⨮",
+    "escapedValue": "&amp;roplus;",
+    "tooltip": "PLUS SIGN IN RIGHT HALF CIRCLE"
+  },
+  {
+    "name": "⨯",
+    "value": "⨯",
+    "escapedValue": "&amp;Cross;",
+    "tooltip": "VECTOR OR CROSS PRODUCT"
+  },
+  {
+    "name": "⨰",
+    "value": "⨰",
+    "escapedValue": "&amp;timesd;",
+    "tooltip": "MULTIPLICATION SIGN WITH DOT ABOVE"
+  },
+  {
+    "name": "⨱",
+    "value": "⨱",
+    "escapedValue": "&amp;timesbar;",
+    "tooltip": "MULTIPLICATION SIGN WITH UNDERBAR"
+  },
+  {
+    "name": "⨳",
+    "value": "⨳",
+    "escapedValue": "&amp;smashp;",
+    "tooltip": "SMASH PRODUCT"
+  },
+  {
+    "name": "⨴",
+    "value": "⨴",
+    "escapedValue": "&amp;lotimes;",
+    "tooltip": "MULTIPLICATION SIGN IN LEFT HALF CIRCLE"
+  },
+  {
+    "name": "⨵",
+    "value": "⨵",
+    "escapedValue": "&amp;rotimes;",
+    "tooltip": "MULTIPLICATION SIGN IN RIGHT HALF CIRCLE"
+  },
+  {
+    "name": "⨶",
+    "value": "⨶",
+    "escapedValue": "&amp;otimesas;",
+    "tooltip": "CIRCLED MULTIPLICATION SIGN WITH CIRCUMFLEX ACCENT"
+  },
+  {
+    "name": "⨷",
+    "value": "⨷",
+    "escapedValue": "&amp;Otimes;",
+    "tooltip": "MULTIPLICATION SIGN IN DOUBLE CIRCLE"
+  },
+  {
+    "name": "⨸",
+    "value": "⨸",
+    "escapedValue": "&amp;odiv;",
+    "tooltip": "CIRCLED DIVISION SIGN"
+  },
+  {
+    "name": "⨹",
+    "value": "⨹",
+    "escapedValue": "&amp;triplus;",
+    "tooltip": "PLUS SIGN IN TRIANGLE"
+  },
+  {
+    "name": "⨺",
+    "value": "⨺",
+    "escapedValue": "&amp;triminus;",
+    "tooltip": "MINUS SIGN IN TRIANGLE"
+  },
+  {
+    "name": "⨻",
+    "value": "⨻",
+    "escapedValue": "&amp;tritime;",
+    "tooltip": "MULTIPLICATION SIGN IN TRIANGLE"
+  },
+  {
+    "name": "⨼",
+    "value": "⨼",
+    "escapedValue": "&amp;iprod; &amp;intprod;",
+    "tooltip": "INTERIOR PRODUCT"
+  },
+  {
+    "name": "⨿",
+    "value": "⨿",
+    "escapedValue": "&amp;amalg;",
+    "tooltip": "AMALGAMATION OR COPRODUCT"
+  },
+  {
+    "name": "⩀",
+    "value": "⩀",
+    "escapedValue": "&amp;capdot;",
+    "tooltip": "INTERSECTION WITH DOT"
+  },
+  {
+    "name": "⩂",
+    "value": "⩂",
+    "escapedValue": "&amp;ncup;",
+    "tooltip": "UNION WITH OVERBAR"
+  },
+  {
+    "name": "⩃",
+    "value": "⩃",
+    "escapedValue": "&amp;ncap;",
+    "tooltip": "INTERSECTION WITH OVERBAR"
+  },
+  {
+    "name": "⩄",
+    "value": "⩄",
+    "escapedValue": "&amp;capand;",
+    "tooltip": "INTERSECTION WITH LOGICAL AND"
+  },
+  {
+    "name": "⩅",
+    "value": "⩅",
+    "escapedValue": "&amp;cupor;",
+    "tooltip": "UNION WITH LOGICAL OR"
+  },
+  {
+    "name": "⩆",
+    "value": "⩆",
+    "escapedValue": "&amp;cupcap;",
+    "tooltip": "UNION ABOVE INTERSECTION"
+  },
+  {
+    "name": "⩇",
+    "value": "⩇",
+    "escapedValue": "&amp;capcup;",
+    "tooltip": "INTERSECTION ABOVE UNION"
+  },
+  {
+    "name": "⩈",
+    "value": "⩈",
+    "escapedValue": "&amp;cupbrcap;",
+    "tooltip": "UNION ABOVE BAR ABOVE INTERSECTION"
+  },
+  {
+    "name": "⩉",
+    "value": "⩉",
+    "escapedValue": "&amp;capbrcup;",
+    "tooltip": "INTERSECTION ABOVE BAR ABOVE UNION"
+  },
+  {
+    "name": "⩊",
+    "value": "⩊",
+    "escapedValue": "&amp;cupcup;",
+    "tooltip": "UNION BESIDE AND JOINED WITH UNION"
+  },
+  {
+    "name": "⩋",
+    "value": "⩋",
+    "escapedValue": "&amp;capcap;",
+    "tooltip": "INTERSECTION BESIDE AND JOINED WITH INTERSECTION"
+  },
+  {
+    "name": "⩌",
+    "value": "⩌",
+    "escapedValue": "&amp;ccups;",
+    "tooltip": "CLOSED UNION WITH SERIFS"
+  },
+  {
+    "name": "⩍",
+    "value": "⩍",
+    "escapedValue": "&amp;ccaps;",
+    "tooltip": "CLOSED INTERSECTION WITH SERIFS"
+  },
+  {
+    "name": "⩐",
+    "value": "⩐",
+    "escapedValue": "&amp;ccupssm;",
+    "tooltip": "CLOSED UNION WITH SERIFS AND SMASH PRODUCT"
+  },
+  {
+    "name": "⩓",
+    "value": "⩓",
+    "escapedValue": "&amp;And;",
+    "tooltip": "DOUBLE LOGICAL AND"
+  },
+  {
+    "name": "⩔",
+    "value": "⩔",
+    "escapedValue": "&amp;Or;",
+    "tooltip": "DOUBLE LOGICAL OR"
+  },
+  {
+    "name": "⩕",
+    "value": "⩕",
+    "escapedValue": "&amp;andand;",
+    "tooltip": "TWO INTERSECTING LOGICAL AND"
+  },
+  {
+    "name": "⩖",
+    "value": "⩖",
+    "escapedValue": "&amp;oror;",
+    "tooltip": "TWO INTERSECTING LOGICAL OR"
+  },
+  {
+    "name": "⩗",
+    "value": "⩗",
+    "escapedValue": "&amp;orslope;",
+    "tooltip": "SLOPING LARGE OR"
+  },
+  {
+    "name": "⩘",
+    "value": "⩘",
+    "escapedValue": "&amp;andslope;",
+    "tooltip": "SLOPING LARGE AND"
+  },
+  {
+    "name": "⩚",
+    "value": "⩚",
+    "escapedValue": "&amp;andv;",
+    "tooltip": "LOGICAL AND WITH MIDDLE STEM"
+  },
+  {
+    "name": "⩛",
+    "value": "⩛",
+    "escapedValue": "&amp;orv;",
+    "tooltip": "LOGICAL OR WITH MIDDLE STEM"
+  },
+  {
+    "name": "⩜",
+    "value": "⩜",
+    "escapedValue": "&amp;andd;",
+    "tooltip": "LOGICAL AND WITH HORIZONTAL DASH"
+  },
+  {
+    "name": "⩝",
+    "value": "⩝",
+    "escapedValue": "&amp;ord;",
+    "tooltip": "LOGICAL OR WITH HORIZONTAL DASH"
+  },
+  {
+    "name": "⩟",
+    "value": "⩟",
+    "escapedValue": "&amp;wedbar;",
+    "tooltip": "LOGICAL AND WITH UNDERBAR"
+  },
+  {
+    "name": "⩦",
+    "value": "⩦",
+    "escapedValue": "&amp;sdote;",
+    "tooltip": "EQUALS SIGN WITH DOT BELOW"
+  },
+  {
+    "name": "⩪",
+    "value": "⩪",
+    "escapedValue": "&amp;simdot;",
+    "tooltip": "TILDE OPERATOR WITH DOT ABOVE"
+  },
+  {
+    "name": "⩭",
+    "value": "⩭",
+    "escapedValue": "&amp;congdot;",
+    "tooltip": "CONGRUENT WITH DOT ABOVE"
+  },
+  {
+    "name": "⩮",
+    "value": "⩮",
+    "escapedValue": "&amp;easter;",
+    "tooltip": "EQUALS WITH ASTERISK"
+  },
+  {
+    "name": "⩯",
+    "value": "⩯",
+    "escapedValue": "&amp;apacir;",
+    "tooltip": "ALMOST EQUAL TO WITH CIRCUMFLEX ACCENT"
+  },
+  {
+    "name": "⩰",
+    "value": "⩰",
+    "escapedValue": "&amp;apE;",
+    "tooltip": "APPROXIMATELY EQUAL OR EQUAL TO"
+  },
+  {
+    "name": "⩱",
+    "value": "⩱",
+    "escapedValue": "&amp;eplus;",
+    "tooltip": "EQUALS SIGN ABOVE PLUS SIGN"
+  },
+  {
+    "name": "⩲",
+    "value": "⩲",
+    "escapedValue": "&amp;pluse;",
+    "tooltip": "PLUS SIGN ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⩳",
+    "value": "⩳",
+    "escapedValue": "&amp;Esim;",
+    "tooltip": "EQUALS SIGN ABOVE TILDE OPERATOR"
+  },
+  {
+    "name": "⩴",
+    "value": "⩴",
+    "escapedValue": "&amp;Colone;",
+    "tooltip": "DOUBLE COLON EQUAL"
+  },
+  {
+    "name": "⩵",
+    "value": "⩵",
+    "escapedValue": "&amp;Equal;",
+    "tooltip": "TWO CONSECUTIVE EQUALS SIGNS"
+  },
+  {
+    "name": "⩷",
+    "value": "⩷",
+    "escapedValue": "&amp;eDDot; &amp;ddotseq;",
+    "tooltip": "EQUALS SIGN WITH TWO DOTS ABOVE AND TWO DOTS BELOW"
+  },
+  {
+    "name": "⩸",
+    "value": "⩸",
+    "escapedValue": "&amp;equivDD;",
+    "tooltip": "EQUIVALENT WITH FOUR DOTS ABOVE"
+  },
+  {
+    "name": "⩹",
+    "value": "⩹",
+    "escapedValue": "&amp;ltcir;",
+    "tooltip": "LESS-THAN WITH CIRCLE INSIDE"
+  },
+  {
+    "name": "⩺",
+    "value": "⩺",
+    "escapedValue": "&amp;gtcir;",
+    "tooltip": "GREATER-THAN WITH CIRCLE INSIDE"
+  },
+  {
+    "name": "⩻",
+    "value": "⩻",
+    "escapedValue": "&amp;ltquest;",
+    "tooltip": "LESS-THAN WITH QUESTION MARK ABOVE"
+  },
+  {
+    "name": "⩼",
+    "value": "⩼",
+    "escapedValue": "&amp;gtquest;",
+    "tooltip": "GREATER-THAN WITH QUESTION MARK ABOVE"
+  },
+  {
+    "name": "⩽",
+    "value": "⩽",
+    "escapedValue": "&amp;les; &amp;LessSlantEqual; &amp;leqslant;",
+    "tooltip": "LESS-THAN OR SLANTED EQUAL TO"
+  },
+  {
+    "name": "⩾",
+    "value": "⩾",
+    "escapedValue": "&amp;ges; &amp;GreaterSlantEqual; &amp;geqslant;",
+    "tooltip": "GREATER-THAN OR SLANTED EQUAL TO"
+  },
+  {
+    "name": "⩿",
+    "value": "⩿",
+    "escapedValue": "&amp;lesdot;",
+    "tooltip": "LESS-THAN OR SLANTED EQUAL TO WITH DOT INSIDE"
+  },
+  {
+    "name": "⪀",
+    "value": "⪀",
+    "escapedValue": "&amp;gesdot;",
+    "tooltip": "GREATER-THAN OR SLANTED EQUAL TO WITH DOT INSIDE"
+  },
+  {
+    "name": "⪁",
+    "value": "⪁",
+    "escapedValue": "&amp;lesdoto;",
+    "tooltip": "LESS-THAN OR SLANTED EQUAL TO WITH DOT ABOVE"
+  },
+  {
+    "name": "⪂",
+    "value": "⪂",
+    "escapedValue": "&amp;gesdoto;",
+    "tooltip": "GREATER-THAN OR SLANTED EQUAL TO WITH DOT ABOVE"
+  },
+  {
+    "name": "⪃",
+    "value": "⪃",
+    "escapedValue": "&amp;lesdotor;",
+    "tooltip": "LESS-THAN OR SLANTED EQUAL TO WITH DOT ABOVE RIGHT"
+  },
+  {
+    "name": "⪄",
+    "value": "⪄",
+    "escapedValue": "&amp;gesdotol;",
+    "tooltip": "GREATER-THAN OR SLANTED EQUAL TO WITH DOT ABOVE LEFT"
+  },
+  {
+    "name": "⪅",
+    "value": "⪅",
+    "escapedValue": "&amp;lap; &amp;lessapprox;",
+    "tooltip": "LESS-THAN OR APPROXIMATE"
+  },
+  {
+    "name": "⪆",
+    "value": "⪆",
+    "escapedValue": "&amp;gap; &amp;gtrapprox;",
+    "tooltip": "GREATER-THAN OR APPROXIMATE"
+  },
+  {
+    "name": "⪇",
+    "value": "⪇",
+    "escapedValue": "&amp;lne; &amp;lneq;",
+    "tooltip": "LESS-THAN AND SINGLE-LINE NOT EQUAL TO"
+  },
+  {
+    "name": "⪈",
+    "value": "⪈",
+    "escapedValue": "&amp;gne; &amp;gneq;",
+    "tooltip": "GREATER-THAN AND SINGLE-LINE NOT EQUAL TO"
+  },
+  {
+    "name": "⪉",
+    "value": "⪉",
+    "escapedValue": "&amp;lnap; &amp;lnapprox;",
+    "tooltip": "LESS-THAN AND NOT APPROXIMATE"
+  },
+  {
+    "name": "⪊",
+    "value": "⪊",
+    "escapedValue": "&amp;gnap; &amp;gnapprox;",
+    "tooltip": "GREATER-THAN AND NOT APPROXIMATE"
+  },
+  {
+    "name": "⪋",
+    "value": "⪋",
+    "escapedValue": "&amp;lEg; &amp;lesseqqgtr;",
+    "tooltip": "LESS-THAN ABOVE DOUBLE-LINE EQUAL ABOVE GREATER-THAN"
+  },
+  {
+    "name": "⪌",
+    "value": "⪌",
+    "escapedValue": "&amp;gEl; &amp;gtreqqless;",
+    "tooltip": "GREATER-THAN ABOVE DOUBLE-LINE EQUAL ABOVE LESS-THAN"
+  },
+  {
+    "name": "⪍",
+    "value": "⪍",
+    "escapedValue": "&amp;lsime;",
+    "tooltip": "LESS-THAN ABOVE SIMILAR OR EQUAL"
+  },
+  {
+    "name": "⪎",
+    "value": "⪎",
+    "escapedValue": "&amp;gsime;",
+    "tooltip": "GREATER-THAN ABOVE SIMILAR OR EQUAL"
+  },
+  {
+    "name": "⪏",
+    "value": "⪏",
+    "escapedValue": "&amp;lsimg;",
+    "tooltip": "LESS-THAN ABOVE SIMILAR ABOVE GREATER-THAN"
+  },
+  {
+    "name": "⪐",
+    "value": "⪐",
+    "escapedValue": "&amp;gsiml;",
+    "tooltip": "GREATER-THAN ABOVE SIMILAR ABOVE LESS-THAN"
+  },
+  {
+    "name": "⪑",
+    "value": "⪑",
+    "escapedValue": "&amp;lgE;",
+    "tooltip": "LESS-THAN ABOVE GREATER-THAN ABOVE DOUBLE-LINE EQUAL"
+  },
+  {
+    "name": "⪒",
+    "value": "⪒",
+    "escapedValue": "&amp;glE;",
+    "tooltip": "GREATER-THAN ABOVE LESS-THAN ABOVE DOUBLE-LINE EQUAL"
+  },
+  {
+    "name": "⪓",
+    "value": "⪓",
+    "escapedValue": "&amp;lesges;",
+    "tooltip": "LESS-THAN ABOVE SLANTED EQUAL ABOVE GREATER-THAN ABOVE SLANTED EQUAL"
+  },
+  {
+    "name": "⪔",
+    "value": "⪔",
+    "escapedValue": "&amp;gesles;",
+    "tooltip": "GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL"
+  },
+  {
+    "name": "⪕",
+    "value": "⪕",
+    "escapedValue": "&amp;els; &amp;eqslantless;",
+    "tooltip": "SLANTED EQUAL TO OR LESS-THAN"
+  },
+  {
+    "name": "⪖",
+    "value": "⪖",
+    "escapedValue": "&amp;egs; &amp;eqslantgtr;",
+    "tooltip": "SLANTED EQUAL TO OR GREATER-THAN"
+  },
+  {
+    "name": "⪗",
+    "value": "⪗",
+    "escapedValue": "&amp;elsdot;",
+    "tooltip": "SLANTED EQUAL TO OR LESS-THAN WITH DOT INSIDE"
+  },
+  {
+    "name": "⪘",
+    "value": "⪘",
+    "escapedValue": "&amp;egsdot;",
+    "tooltip": "SLANTED EQUAL TO OR GREATER-THAN WITH DOT INSIDE"
+  },
+  {
+    "name": "⪙",
+    "value": "⪙",
+    "escapedValue": "&amp;el;",
+    "tooltip": "DOUBLE-LINE EQUAL TO OR LESS-THAN"
+  },
+  {
+    "name": "⪚",
+    "value": "⪚",
+    "escapedValue": "&amp;eg;",
+    "tooltip": "DOUBLE-LINE EQUAL TO OR GREATER-THAN"
+  },
+  {
+    "name": "⪝",
+    "value": "⪝",
+    "escapedValue": "&amp;siml;",
+    "tooltip": "SIMILAR OR LESS-THAN"
+  },
+  {
+    "name": "⪞",
+    "value": "⪞",
+    "escapedValue": "&amp;simg;",
+    "tooltip": "SIMILAR OR GREATER-THAN"
+  },
+  {
+    "name": "⪟",
+    "value": "⪟",
+    "escapedValue": "&amp;simlE;",
+    "tooltip": "SIMILAR ABOVE LESS-THAN ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⪠",
+    "value": "⪠",
+    "escapedValue": "&amp;simgE;",
+    "tooltip": "SIMILAR ABOVE GREATER-THAN ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⪡",
+    "value": "⪡",
+    "escapedValue": "&amp;LessLess;",
+    "tooltip": "DOUBLE NESTED LESS-THAN"
+  },
+  {
+    "name": "⪢",
+    "value": "⪢",
+    "escapedValue": "&amp;GreaterGreater;",
+    "tooltip": "DOUBLE NESTED GREATER-THAN"
+  },
+  {
+    "name": "⪤",
+    "value": "⪤",
+    "escapedValue": "&amp;glj;",
+    "tooltip": "GREATER-THAN OVERLAPPING LESS-THAN"
+  },
+  {
+    "name": "⪥",
+    "value": "⪥",
+    "escapedValue": "&amp;gla;",
+    "tooltip": "GREATER-THAN BESIDE LESS-THAN"
+  },
+  {
+    "name": "⪦",
+    "value": "⪦",
+    "escapedValue": "&amp;ltcc;",
+    "tooltip": "LESS-THAN CLOSED BY CURVE"
+  },
+  {
+    "name": "⪧",
+    "value": "⪧",
+    "escapedValue": "&amp;gtcc;",
+    "tooltip": "GREATER-THAN CLOSED BY CURVE"
+  },
+  {
+    "name": "⪨",
+    "value": "⪨",
+    "escapedValue": "&amp;lescc;",
+    "tooltip": "LESS-THAN CLOSED BY CURVE ABOVE SLANTED EQUAL"
+  },
+  {
+    "name": "⪩",
+    "value": "⪩",
+    "escapedValue": "&amp;gescc;",
+    "tooltip": "GREATER-THAN CLOSED BY CURVE ABOVE SLANTED EQUAL"
+  },
+  {
+    "name": "⪪",
+    "value": "⪪",
+    "escapedValue": "&amp;smt;",
+    "tooltip": "SMALLER THAN"
+  },
+  {
+    "name": "⪫",
+    "value": "⪫",
+    "escapedValue": "&amp;lat;",
+    "tooltip": "LARGER THAN"
+  },
+  {
+    "name": "⪬",
+    "value": "⪬",
+    "escapedValue": "&amp;smte;",
+    "tooltip": "SMALLER THAN OR EQUAL TO"
+  },
+  {
+    "name": "⪭",
+    "value": "⪭",
+    "escapedValue": "&amp;late;",
+    "tooltip": "LARGER THAN OR EQUAL TO"
+  },
+  {
+    "name": "⪮",
+    "value": "⪮",
+    "escapedValue": "&amp;bumpE;",
+    "tooltip": "EQUALS SIGN WITH BUMPY ABOVE"
+  },
+  {
+    "name": "⪯",
+    "value": "⪯",
+    "escapedValue": "&amp;pre; &amp;preceq; &amp;PrecedesEqual;",
+    "tooltip": "PRECEDES ABOVE SINGLE-LINE EQUALS SIGN"
+  },
+  {
+    "name": "⪰",
+    "value": "⪰",
+    "escapedValue": "&amp;sce; &amp;succeq; &amp;SucceedsEqual;",
+    "tooltip": "SUCCEEDS ABOVE SINGLE-LINE EQUALS SIGN"
+  },
+  {
+    "name": "⪳",
+    "value": "⪳",
+    "escapedValue": "&amp;prE;",
+    "tooltip": "PRECEDES ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⪴",
+    "value": "⪴",
+    "escapedValue": "&amp;scE;",
+    "tooltip": "SUCCEEDS ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⪵",
+    "value": "⪵",
+    "escapedValue": "&amp;prnE; &amp;precneqq;",
+    "tooltip": "PRECEDES ABOVE NOT EQUAL TO"
+  },
+  {
+    "name": "⪶",
+    "value": "⪶",
+    "escapedValue": "&amp;scnE; &amp;succneqq;",
+    "tooltip": "SUCCEEDS ABOVE NOT EQUAL TO"
+  },
+  {
+    "name": "⪷",
+    "value": "⪷",
+    "escapedValue": "&amp;prap; &amp;precapprox;",
+    "tooltip": "PRECEDES ABOVE ALMOST EQUAL TO"
+  },
+  {
+    "name": "⪸",
+    "value": "⪸",
+    "escapedValue": "&amp;scap; &amp;succapprox;",
+    "tooltip": "SUCCEEDS ABOVE ALMOST EQUAL TO"
+  },
+  {
+    "name": "⪹",
+    "value": "⪹",
+    "escapedValue": "&amp;prnap; &amp;precnapprox;",
+    "tooltip": "PRECEDES ABOVE NOT ALMOST EQUAL TO"
+  },
+  {
+    "name": "⪺",
+    "value": "⪺",
+    "escapedValue": "&amp;scnap; &amp;succnapprox;",
+    "tooltip": "SUCCEEDS ABOVE NOT ALMOST EQUAL TO"
+  },
+  {
+    "name": "⪻",
+    "value": "⪻",
+    "escapedValue": "&amp;Pr;",
+    "tooltip": "DOUBLE PRECEDES"
+  },
+  {
+    "name": "⪼",
+    "value": "⪼",
+    "escapedValue": "&amp;Sc;",
+    "tooltip": "DOUBLE SUCCEEDS"
+  },
+  {
+    "name": "⪽",
+    "value": "⪽",
+    "escapedValue": "&amp;subdot;",
+    "tooltip": "SUBSET WITH DOT"
+  },
+  {
+    "name": "⪾",
+    "value": "⪾",
+    "escapedValue": "&amp;supdot;",
+    "tooltip": "SUPERSET WITH DOT"
+  },
+  {
+    "name": "⪿",
+    "value": "⪿",
+    "escapedValue": "&amp;subplus;",
+    "tooltip": "SUBSET WITH PLUS SIGN BELOW"
+  },
+  {
+    "name": "⫀",
+    "value": "⫀",
+    "escapedValue": "&amp;supplus;",
+    "tooltip": "SUPERSET WITH PLUS SIGN BELOW"
+  },
+  {
+    "name": "⫁",
+    "value": "⫁",
+    "escapedValue": "&amp;submult;",
+    "tooltip": "SUBSET WITH MULTIPLICATION SIGN BELOW"
+  },
+  {
+    "name": "⫂",
+    "value": "⫂",
+    "escapedValue": "&amp;supmult;",
+    "tooltip": "SUPERSET WITH MULTIPLICATION SIGN BELOW"
+  },
+  {
+    "name": "⫃",
+    "value": "⫃",
+    "escapedValue": "&amp;subedot;",
+    "tooltip": "SUBSET OF OR EQUAL TO WITH DOT ABOVE"
+  },
+  {
+    "name": "⫄",
+    "value": "⫄",
+    "escapedValue": "&amp;supedot;",
+    "tooltip": "SUPERSET OF OR EQUAL TO WITH DOT ABOVE"
+  },
+  {
+    "name": "⫅",
+    "value": "⫅",
+    "escapedValue": "&amp;subE; &amp;subseteqq;",
+    "tooltip": "SUBSET OF ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⫆",
+    "value": "⫆",
+    "escapedValue": "&amp;supE; &amp;supseteqq;",
+    "tooltip": "SUPERSET OF ABOVE EQUALS SIGN"
+  },
+  {
+    "name": "⫇",
+    "value": "⫇",
+    "escapedValue": "&amp;subsim;",
+    "tooltip": "SUBSET OF ABOVE TILDE OPERATOR"
+  },
+  {
+    "name": "⫈",
+    "value": "⫈",
+    "escapedValue": "&amp;supsim;",
+    "tooltip": "SUPERSET OF ABOVE TILDE OPERATOR"
+  },
+  {
+    "name": "⫋",
+    "value": "⫋",
+    "escapedValue": "&amp;subnE; &amp;subsetneqq;",
+    "tooltip": "SUBSET OF ABOVE NOT EQUAL TO"
+  },
+  {
+    "name": "⫌",
+    "value": "⫌",
+    "escapedValue": "&amp;supnE; &amp;supsetneqq;",
+    "tooltip": "SUPERSET OF ABOVE NOT EQUAL TO"
+  },
+  {
+    "name": "⫏",
+    "value": "⫏",
+    "escapedValue": "&amp;csub;",
+    "tooltip": "CLOSED SUBSET"
+  },
+  {
+    "name": "⫐",
+    "value": "⫐",
+    "escapedValue": "&amp;csup;",
+    "tooltip": "CLOSED SUPERSET"
+  },
+  {
+    "name": "⫑",
+    "value": "⫑",
+    "escapedValue": "&amp;csube;",
+    "tooltip": "CLOSED SUBSET OR EQUAL TO"
+  },
+  {
+    "name": "⫒",
+    "value": "⫒",
+    "escapedValue": "&amp;csupe;",
+    "tooltip": "CLOSED SUPERSET OR EQUAL TO"
+  },
+  {
+    "name": "⫓",
+    "value": "⫓",
+    "escapedValue": "&amp;subsup;",
+    "tooltip": "SUBSET ABOVE SUPERSET"
+  },
+  {
+    "name": "⫔",
+    "value": "⫔",
+    "escapedValue": "&amp;supsub;",
+    "tooltip": "SUPERSET ABOVE SUBSET"
+  },
+  {
+    "name": "⫕",
+    "value": "⫕",
+    "escapedValue": "&amp;subsub;",
+    "tooltip": "SUBSET ABOVE SUBSET"
+  },
+  {
+    "name": "⫖",
+    "value": "⫖",
+    "escapedValue": "&amp;supsup;",
+    "tooltip": "SUPERSET ABOVE SUPERSET"
+  },
+  {
+    "name": "⫗",
+    "value": "⫗",
+    "escapedValue": "&amp;suphsub;",
+    "tooltip": "SUPERSET BESIDE SUBSET"
+  },
+  {
+    "name": "⫘",
+    "value": "⫘",
+    "escapedValue": "&amp;supdsub;",
+    "tooltip": "SUPERSET BESIDE AND JOINED BY DASH WITH SUBSET"
+  },
+  {
+    "name": "⫙",
+    "value": "⫙",
+    "escapedValue": "&amp;forkv;",
+    "tooltip": "ELEMENT OF OPENING DOWNWARDS"
+  },
+  {
+    "name": "⫚",
+    "value": "⫚",
+    "escapedValue": "&amp;topfork;",
+    "tooltip": "PITCHFORK WITH TEE TOP"
+  },
+  {
+    "name": "⫛",
+    "value": "⫛",
+    "escapedValue": "&amp;mlcp;",
+    "tooltip": "TRANSVERSAL INTERSECTION"
+  },
+  {
+    "name": "⫤",
+    "value": "⫤",
+    "escapedValue": "&amp;Dashv; &amp;DoubleLeftTee;",
+    "tooltip": "VERTICAL BAR DOUBLE LEFT TURNSTILE"
+  },
+  {
+    "name": "⫦",
+    "value": "⫦",
+    "escapedValue": "&amp;Vdashl;",
+    "tooltip": "LONG DASH FROM LEFT MEMBER OF DOUBLE VERTICAL"
+  },
+  {
+    "name": "⫧",
+    "value": "⫧",
+    "escapedValue": "&amp;Barv;",
+    "tooltip": "SHORT DOWN TACK WITH OVERBAR"
+  },
+  {
+    "name": "⫨",
+    "value": "⫨",
+    "escapedValue": "&amp;vBar;",
+    "tooltip": "SHORT UP TACK WITH UNDERBAR"
+  },
+  {
+    "name": "⫩",
+    "value": "⫩",
+    "escapedValue": "&amp;vBarv;",
+    "tooltip": "SHORT UP TACK ABOVE SHORT DOWN TACK"
+  },
+  {
+    "name": "⫫",
+    "value": "⫫",
+    "escapedValue": "&amp;Vbar;",
+    "tooltip": "DOUBLE UP TACK"
+  },
+  {
+    "name": "⫬",
+    "value": "⫬",
+    "escapedValue": "&amp;Not;",
+    "tooltip": "DOUBLE STROKE NOT SIGN"
+  },
+  {
+    "name": "⫭",
+    "value": "⫭",
+    "escapedValue": "&amp;bNot;",
+    "tooltip": "REVERSED DOUBLE STROKE NOT SIGN"
+  },
+  {
+    "name": "⫮",
+    "value": "⫮",
+    "escapedValue": "&amp;rnmid;",
+    "tooltip": "DOES NOT DIVIDE WITH REVERSED NEGATION SLASH"
+  },
+  {
+    "name": "⫯",
+    "value": "⫯",
+    "escapedValue": "&amp;cirmid;",
+    "tooltip": "VERTICAL LINE WITH CIRCLE ABOVE"
+  },
+  {
+    "name": "⫰",
+    "value": "⫰",
+    "escapedValue": "&amp;midcir;",
+    "tooltip": "VERTICAL LINE WITH CIRCLE BELOW"
+  },
+  {
+    "name": "⫱",
+    "value": "⫱",
+    "escapedValue": "&amp;topcir;",
+    "tooltip": "DOWN TACK WITH CIRCLE BELOW"
+  },
+  {
+    "name": "⫲",
+    "value": "⫲",
+    "escapedValue": "&amp;nhpar;",
+    "tooltip": "PARALLEL WITH HORIZONTAL STROKE"
+  },
+  {
+    "name": "⫳",
+    "value": "⫳",
+    "escapedValue": "&amp;parsim;",
+    "tooltip": "PARALLEL WITH TILDE OPERATOR"
+  },
+  {
+    "name": "⫽",
+    "value": "⫽",
+    "escapedValue": "&amp;parsl;",
+    "tooltip": "DOUBLE SOLIDUS OPERATOR"
+  },
+  {
+    "name": "ﬀ",
+    "value": "ﬀ",
+    "escapedValue": "&amp;fflig;",
+    "tooltip": "LATIN SMALL LIGATURE FF"
+  },
+  {
+    "name": "ﬁ",
+    "value": "ﬁ",
+    "escapedValue": "&amp;filig;",
+    "tooltip": "LATIN SMALL LIGATURE FI"
+  },
+  {
+    "name": "ﬂ",
+    "value": "ﬂ",
+    "escapedValue": "&amp;fllig;",
+    "tooltip": "LATIN SMALL LIGATURE FL"
+  },
+  {
+    "name": "ﬃ",
+    "value": "ﬃ",
+    "escapedValue": "&amp;ffilig;",
+    "tooltip": "LATIN SMALL LIGATURE FFI"
+  },
+  {
+    "name": "ﬄ",
+    "value": "ﬄ",
+    "escapedValue": "&amp;ffllig;",
+    "tooltip": "LATIN SMALL LIGATURE FFL"
+  },
+  {
+    "name": "𝒜",
+    "value": "𝒜",
+    "escapedValue": "&amp;Ascr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL A"
+  },
+  {
+    "name": "𝒞",
+    "value": "𝒞",
+    "escapedValue": "&amp;Cscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL C"
+  },
+  {
+    "name": "𝒟",
+    "value": "𝒟",
+    "escapedValue": "&amp;Dscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL D"
+  },
+  {
+    "name": "𝒢",
+    "value": "𝒢",
+    "escapedValue": "&amp;Gscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL G"
+  },
+  {
+    "name": "𝒥",
+    "value": "𝒥",
+    "escapedValue": "&amp;Jscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL J"
+  },
+  {
+    "name": "𝒦",
+    "value": "𝒦",
+    "escapedValue": "&amp;Kscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL K"
+  },
+  {
+    "name": "𝒩",
+    "value": "𝒩",
+    "escapedValue": "&amp;Nscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL N"
+  },
+  {
+    "name": "𝒪",
+    "value": "𝒪",
+    "escapedValue": "&amp;Oscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL O"
+  },
+  {
+    "name": "𝒫",
+    "value": "𝒫",
+    "escapedValue": "&amp;Pscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL P"
+  },
+  {
+    "name": "𝒬",
+    "value": "𝒬",
+    "escapedValue": "&amp;Qscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL Q"
+  },
+  {
+    "name": "𝒮",
+    "value": "𝒮",
+    "escapedValue": "&amp;Sscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL S"
+  },
+  {
+    "name": "𝒯",
+    "value": "𝒯",
+    "escapedValue": "&amp;Tscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL T"
+  },
+  {
+    "name": "𝒰",
+    "value": "𝒰",
+    "escapedValue": "&amp;Uscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL U"
+  },
+  {
+    "name": "𝒱",
+    "value": "𝒱",
+    "escapedValue": "&amp;Vscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL V"
+  },
+  {
+    "name": "𝒲",
+    "value": "𝒲",
+    "escapedValue": "&amp;Wscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL W"
+  },
+  {
+    "name": "𝒳",
+    "value": "𝒳",
+    "escapedValue": "&amp;Xscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL X"
+  },
+  {
+    "name": "𝒴",
+    "value": "𝒴",
+    "escapedValue": "&amp;Yscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL Y"
+  },
+  {
+    "name": "𝒵",
+    "value": "𝒵",
+    "escapedValue": "&amp;Zscr;",
+    "tooltip": "MATHEMATICAL SCRIPT CAPITAL Z"
+  },
+  {
+    "name": "𝒶",
+    "value": "𝒶",
+    "escapedValue": "&amp;ascr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL A"
+  },
+  {
+    "name": "𝒷",
+    "value": "𝒷",
+    "escapedValue": "&amp;bscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL B"
+  },
+  {
+    "name": "𝒸",
+    "value": "𝒸",
+    "escapedValue": "&amp;cscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL C"
+  },
+  {
+    "name": "𝒹",
+    "value": "𝒹",
+    "escapedValue": "&amp;dscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL D"
+  },
+  {
+    "name": "𝒻",
+    "value": "𝒻",
+    "escapedValue": "&amp;fscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL F"
+  },
+  {
+    "name": "𝒽",
+    "value": "𝒽",
+    "escapedValue": "&amp;hscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL H"
+  },
+  {
+    "name": "𝒾",
+    "value": "𝒾",
+    "escapedValue": "&amp;iscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL I"
+  },
+  {
+    "name": "𝒿",
+    "value": "𝒿",
+    "escapedValue": "&amp;jscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL J"
+  },
+  {
+    "name": "𝓀",
+    "value": "𝓀",
+    "escapedValue": "&amp;kscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL K"
+  },
+  {
+    "name": "𝓁",
+    "value": "𝓁",
+    "escapedValue": "&amp;lscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL L"
+  },
+  {
+    "name": "𝓂",
+    "value": "𝓂",
+    "escapedValue": "&amp;mscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL M"
+  },
+  {
+    "name": "𝓃",
+    "value": "𝓃",
+    "escapedValue": "&amp;nscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL N"
+  },
+  {
+    "name": "𝓅",
+    "value": "𝓅",
+    "escapedValue": "&amp;pscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL P"
+  },
+  {
+    "name": "𝓆",
+    "value": "𝓆",
+    "escapedValue": "&amp;qscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL Q"
+  },
+  {
+    "name": "𝓇",
+    "value": "𝓇",
+    "escapedValue": "&amp;rscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL R"
+  },
+  {
+    "name": "𝓈",
+    "value": "𝓈",
+    "escapedValue": "&amp;sscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL S"
+  },
+  {
+    "name": "𝓉",
+    "value": "𝓉",
+    "escapedValue": "&amp;tscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL T"
+  },
+  {
+    "name": "𝓊",
+    "value": "𝓊",
+    "escapedValue": "&amp;uscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL U"
+  },
+  {
+    "name": "𝓋",
+    "value": "𝓋",
+    "escapedValue": "&amp;vscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL V"
+  },
+  {
+    "name": "𝓌",
+    "value": "𝓌",
+    "escapedValue": "&amp;wscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL W"
+  },
+  {
+    "name": "𝓍",
+    "value": "𝓍",
+    "escapedValue": "&amp;xscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL X"
+  },
+  {
+    "name": "𝓎",
+    "value": "𝓎",
+    "escapedValue": "&amp;yscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL Y"
+  },
+  {
+    "name": "𝓏",
+    "value": "𝓏",
+    "escapedValue": "&amp;zscr;",
+    "tooltip": "MATHEMATICAL SCRIPT SMALL Z"
+  },
+  {
+    "name": "𝔄",
+    "value": "𝔄",
+    "escapedValue": "&amp;Afr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL A"
+  },
+  {
+    "name": "𝔅",
+    "value": "𝔅",
+    "escapedValue": "&amp;Bfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL B"
+  },
+  {
+    "name": "𝔇",
+    "value": "𝔇",
+    "escapedValue": "&amp;Dfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL D"
+  },
+  {
+    "name": "𝔈",
+    "value": "𝔈",
+    "escapedValue": "&amp;Efr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL E"
+  },
+  {
+    "name": "𝔉",
+    "value": "𝔉",
+    "escapedValue": "&amp;Ffr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL F"
+  },
+  {
+    "name": "𝔊",
+    "value": "𝔊",
+    "escapedValue": "&amp;Gfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL G"
+  },
+  {
+    "name": "𝔍",
+    "value": "𝔍",
+    "escapedValue": "&amp;Jfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL J"
+  },
+  {
+    "name": "𝔎",
+    "value": "𝔎",
+    "escapedValue": "&amp;Kfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL K"
+  },
+  {
+    "name": "𝔏",
+    "value": "𝔏",
+    "escapedValue": "&amp;Lfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL L"
+  },
+  {
+    "name": "𝔐",
+    "value": "𝔐",
+    "escapedValue": "&amp;Mfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL M"
+  },
+  {
+    "name": "𝔑",
+    "value": "𝔑",
+    "escapedValue": "&amp;Nfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL N"
+  },
+  {
+    "name": "𝔒",
+    "value": "𝔒",
+    "escapedValue": "&amp;Ofr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL O"
+  },
+  {
+    "name": "𝔓",
+    "value": "𝔓",
+    "escapedValue": "&amp;Pfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL P"
+  },
+  {
+    "name": "𝔔",
+    "value": "𝔔",
+    "escapedValue": "&amp;Qfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL Q"
+  },
+  {
+    "name": "𝔖",
+    "value": "𝔖",
+    "escapedValue": "&amp;Sfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL S"
+  },
+  {
+    "name": "𝔗",
+    "value": "𝔗",
+    "escapedValue": "&amp;Tfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL T"
+  },
+  {
+    "name": "𝔘",
+    "value": "𝔘",
+    "escapedValue": "&amp;Ufr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL U"
+  },
+  {
+    "name": "𝔙",
+    "value": "𝔙",
+    "escapedValue": "&amp;Vfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL V"
+  },
+  {
+    "name": "𝔚",
+    "value": "𝔚",
+    "escapedValue": "&amp;Wfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL W"
+  },
+  {
+    "name": "𝔛",
+    "value": "𝔛",
+    "escapedValue": "&amp;Xfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL X"
+  },
+  {
+    "name": "𝔜",
+    "value": "𝔜",
+    "escapedValue": "&amp;Yfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR CAPITAL Y"
+  },
+  {
+    "name": "𝔞",
+    "value": "𝔞",
+    "escapedValue": "&amp;afr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL A"
+  },
+  {
+    "name": "𝔟",
+    "value": "𝔟",
+    "escapedValue": "&amp;bfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL B"
+  },
+  {
+    "name": "𝔠",
+    "value": "𝔠",
+    "escapedValue": "&amp;cfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL C"
+  },
+  {
+    "name": "𝔡",
+    "value": "𝔡",
+    "escapedValue": "&amp;dfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL D"
+  },
+  {
+    "name": "𝔢",
+    "value": "𝔢",
+    "escapedValue": "&amp;efr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL E"
+  },
+  {
+    "name": "𝔣",
+    "value": "𝔣",
+    "escapedValue": "&amp;ffr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL F"
+  },
+  {
+    "name": "𝔤",
+    "value": "𝔤",
+    "escapedValue": "&amp;gfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL G"
+  },
+  {
+    "name": "𝔥",
+    "value": "𝔥",
+    "escapedValue": "&amp;hfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL H"
+  },
+  {
+    "name": "𝔦",
+    "value": "𝔦",
+    "escapedValue": "&amp;ifr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL I"
+  },
+  {
+    "name": "𝔧",
+    "value": "𝔧",
+    "escapedValue": "&amp;jfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL J"
+  },
+  {
+    "name": "𝔨",
+    "value": "𝔨",
+    "escapedValue": "&amp;kfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL K"
+  },
+  {
+    "name": "𝔩",
+    "value": "𝔩",
+    "escapedValue": "&amp;lfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL L"
+  },
+  {
+    "name": "𝔪",
+    "value": "𝔪",
+    "escapedValue": "&amp;mfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL M"
+  },
+  {
+    "name": "𝔫",
+    "value": "𝔫",
+    "escapedValue": "&amp;nfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL N"
+  },
+  {
+    "name": "𝔬",
+    "value": "𝔬",
+    "escapedValue": "&amp;ofr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL O"
+  },
+  {
+    "name": "𝔭",
+    "value": "𝔭",
+    "escapedValue": "&amp;pfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL P"
+  },
+  {
+    "name": "𝔮",
+    "value": "𝔮",
+    "escapedValue": "&amp;qfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL Q"
+  },
+  {
+    "name": "𝔯",
+    "value": "𝔯",
+    "escapedValue": "&amp;rfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL R"
+  },
+  {
+    "name": "𝔰",
+    "value": "𝔰",
+    "escapedValue": "&amp;sfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL S"
+  },
+  {
+    "name": "𝔱",
+    "value": "𝔱",
+    "escapedValue": "&amp;tfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL T"
+  },
+  {
+    "name": "𝔲",
+    "value": "𝔲",
+    "escapedValue": "&amp;ufr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL U"
+  },
+  {
+    "name": "𝔳",
+    "value": "𝔳",
+    "escapedValue": "&amp;vfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL V"
+  },
+  {
+    "name": "𝔴",
+    "value": "𝔴",
+    "escapedValue": "&amp;wfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL W"
+  },
+  {
+    "name": "𝔵",
+    "value": "𝔵",
+    "escapedValue": "&amp;xfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL X"
+  },
+  {
+    "name": "𝔶",
+    "value": "𝔶",
+    "escapedValue": "&amp;yfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL Y"
+  },
+  {
+    "name": "𝔷",
+    "value": "𝔷",
+    "escapedValue": "&amp;zfr;",
+    "tooltip": "MATHEMATICAL FRAKTUR SMALL Z"
+  },
+  {
+    "name": "𝔸",
+    "value": "𝔸",
+    "escapedValue": "&amp;Aopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL A"
+  },
+  {
+    "name": "𝔹",
+    "value": "𝔹",
+    "escapedValue": "&amp;Bopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL B"
+  },
+  {
+    "name": "𝔻",
+    "value": "𝔻",
+    "escapedValue": "&amp;Dopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL D"
+  },
+  {
+    "name": "𝔼",
+    "value": "𝔼",
+    "escapedValue": "&amp;Eopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL E"
+  },
+  {
+    "name": "𝔽",
+    "value": "𝔽",
+    "escapedValue": "&amp;Fopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL F"
+  },
+  {
+    "name": "𝔾",
+    "value": "𝔾",
+    "escapedValue": "&amp;Gopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL G"
+  },
+  {
+    "name": "𝕀",
+    "value": "𝕀",
+    "escapedValue": "&amp;Iopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL I"
+  },
+  {
+    "name": "𝕁",
+    "value": "𝕁",
+    "escapedValue": "&amp;Jopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL J"
+  },
+  {
+    "name": "𝕂",
+    "value": "𝕂",
+    "escapedValue": "&amp;Kopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL K"
+  },
+  {
+    "name": "𝕃",
+    "value": "𝕃",
+    "escapedValue": "&amp;Lopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL L"
+  },
+  {
+    "name": "𝕄",
+    "value": "𝕄",
+    "escapedValue": "&amp;Mopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL M"
+  },
+  {
+    "name": "𝕆",
+    "value": "𝕆",
+    "escapedValue": "&amp;Oopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL O"
+  },
+  {
+    "name": "𝕊",
+    "value": "𝕊",
+    "escapedValue": "&amp;Sopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL S"
+  },
+  {
+    "name": "𝕋",
+    "value": "𝕋",
+    "escapedValue": "&amp;Topf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL T"
+  },
+  {
+    "name": "𝕌",
+    "value": "𝕌",
+    "escapedValue": "&amp;Uopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL U"
+  },
+  {
+    "name": "𝕍",
+    "value": "𝕍",
+    "escapedValue": "&amp;Vopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL V"
+  },
+  {
+    "name": "𝕎",
+    "value": "𝕎",
+    "escapedValue": "&amp;Wopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL W"
+  },
+  {
+    "name": "𝕏",
+    "value": "𝕏",
+    "escapedValue": "&amp;Xopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL X"
+  },
+  {
+    "name": "𝕐",
+    "value": "𝕐",
+    "escapedValue": "&amp;Yopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK CAPITAL Y"
+  },
+  {
+    "name": "𝕒",
+    "value": "𝕒",
+    "escapedValue": "&amp;aopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL A"
+  },
+  {
+    "name": "𝕓",
+    "value": "𝕓",
+    "escapedValue": "&amp;bopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL B"
+  },
+  {
+    "name": "𝕔",
+    "value": "𝕔",
+    "escapedValue": "&amp;copf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL C"
+  },
+  {
+    "name": "𝕕",
+    "value": "𝕕",
+    "escapedValue": "&amp;dopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL D"
+  },
+  {
+    "name": "𝕖",
+    "value": "𝕖",
+    "escapedValue": "&amp;eopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL E"
+  },
+  {
+    "name": "𝕗",
+    "value": "𝕗",
+    "escapedValue": "&amp;fopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL F"
+  },
+  {
+    "name": "𝕘",
+    "value": "𝕘",
+    "escapedValue": "&amp;gopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL G"
+  },
+  {
+    "name": "𝕙",
+    "value": "𝕙",
+    "escapedValue": "&amp;hopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL H"
+  },
+  {
+    "name": "𝕚",
+    "value": "𝕚",
+    "escapedValue": "&amp;iopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL I"
+  },
+  {
+    "name": "𝕛",
+    "value": "𝕛",
+    "escapedValue": "&amp;jopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL J"
+  },
+  {
+    "name": "𝕜",
+    "value": "𝕜",
+    "escapedValue": "&amp;kopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL K"
+  },
+  {
+    "name": "𝕝",
+    "value": "𝕝",
+    "escapedValue": "&amp;lopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL L"
+  },
+  {
+    "name": "𝕞",
+    "value": "𝕞",
+    "escapedValue": "&amp;mopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL M"
+  },
+  {
+    "name": "𝕟",
+    "value": "𝕟",
+    "escapedValue": "&amp;nopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL N"
+  },
+  {
+    "name": "𝕠",
+    "value": "𝕠",
+    "escapedValue": "&amp;oopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL O"
+  },
+  {
+    "name": "𝕡",
+    "value": "𝕡",
+    "escapedValue": "&amp;popf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL P"
+  },
+  {
+    "name": "𝕢",
+    "value": "𝕢",
+    "escapedValue": "&amp;qopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL Q"
+  },
+  {
+    "name": "𝕣",
+    "value": "𝕣",
+    "escapedValue": "&amp;ropf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL R"
+  },
+  {
+    "name": "𝕤",
+    "value": "𝕤",
+    "escapedValue": "&amp;sopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL S"
+  },
+  {
+    "name": "𝕥",
+    "value": "𝕥",
+    "escapedValue": "&amp;topf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL T"
+  },
+  {
+    "name": "𝕦",
+    "value": "𝕦",
+    "escapedValue": "&amp;uopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL U"
+  },
+  {
+    "name": "𝕧",
+    "value": "𝕧",
+    "escapedValue": "&amp;vopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL V"
+  },
+  {
+    "name": "𝕨",
+    "value": "𝕨",
+    "escapedValue": "&amp;wopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL W"
+  },
+  {
+    "name": "𝕩",
+    "value": "𝕩",
+    "escapedValue": "&amp;xopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL X"
+  },
+  {
+    "name": "𝕪",
+    "value": "𝕪",
+    "escapedValue": "&amp;yopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL Y"
+  },
+  {
+    "name": "𝕫",
+    "value": "𝕫",
+    "escapedValue": "&amp;zopf;",
+    "tooltip": "MATHEMATICAL DOUBLE-STRUCK SMALL Z"
+  }
+]

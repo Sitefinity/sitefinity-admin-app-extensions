@@ -4,7 +4,8 @@
   "description": "Provides extensions for the backend of the Progress Sitefinity Admin App",
   "main": "main.ts",
   "scripts": {
-    "build": "webpack --config config/webpack.config.js --display-modules",
+    "build": "webpack --config config/webpack.config.js --display-modules --env.dev",
+    "build:prod": "webpack --config config/webpack.config.js --display-modules --env.production",
     "start": "webpack-dev-server --config config/webpack.config.js",
     "lint": "tslint --project ./tsconfig.json"
   },
@@ -40,6 +41,7 @@
     "tslint": "5.9.1",
     "tslint-eslint-rules": "4.1.1",
     "typescript": "2.7.1",
+    "uglifyjs-webpack-plugin": "1.2.5",
     "webpack": "3.4.0",
     "webpack-dev-server": "2.11.1",
     "webpack-sources": "1.0.1"

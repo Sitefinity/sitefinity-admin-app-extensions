@@ -51,9 +51,14 @@ module.exports = function(env, argv) {
     };
 
     if (env.production) {
+
+        // ugilify the code, so we can take advantage of a smaller bundle to reduce network traffic
         const uglifyConfig = require('./uglify.conf.json');
         const uglifyPlugin = new UglifyJsPlugin(uglifyConfig);
         config.plugins.push(uglifyPlugin);
+
+        // no need for source maps in production
+        delete config.devtool;
     }
 
     return config;

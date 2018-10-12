@@ -49,7 +49,7 @@ Enter **http://localhost:3000/assets/auth/silent-renew.html**
 Enter **http://localhost:3000/auth/oidc/sign-in**
 5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
 
-**NOTE:** After modifying the authentication settings, you need to *restart the application*. If you are in load balanced enviroment make sure to apply this steps to all necesery nodes.
+**NOTE:** After modifying the authentication settings, you need to **restart the application**. If you are in load balanced enviroment make sure to apply this steps to all necesery nodes.
 
 ####	Web service configuration
 1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Routes* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*

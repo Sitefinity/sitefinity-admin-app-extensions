@@ -6,6 +6,8 @@ Leveraging the API-first approach of the Admin App, you can extend and add funct
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, Webstorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
+**NOTE:** The samples in this reposotory are supported from Sitefintiy version 11.0.6700.0 and above.
+
 ### Prerequisites
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
@@ -47,10 +49,10 @@ Enter **http://localhost:3000/assets/auth/silent-renew.html**
 Enter **http://localhost:3000/auth/oidc/sign-in**
 5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
 
-**NOTE:** In case you modified the authentication settings, you need to restart the application.
+**NOTE:** After modifying the authentication settings, you need to restart the application.
 
 ####	Web service configuration
-1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
+1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Routes* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
 2.	Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**. 
 3.	Save your changes.
 
@@ -73,6 +75,8 @@ The extensibility API leverages Angular DI mechanism via **InjectionTokens** and
 ### Debugging
 To start debugging, execute the following command:
 **npm start**
+
+The command will start the webpack development server and will host the Admin App alongisde the compiled extensions under http://localhost:3000. If you wish to debug the application simply open the developer tools on your browser and search for your code as with any regular Angular app.
 
 **NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
 
@@ -98,6 +102,7 @@ For example, the folder structure in Admin App folder may look like the followin
 * **edtitor-power-tools.extensions.bundle.js**
 
 **IMPORTANT:** You must follow the naming convention: **{{bundle prefix}}.extensions.bundle.js**
+**NOTE:** the source map files **{{bundle prefix}}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect.
 
 ### Extensibility endpoints
 
@@ -142,10 +147,10 @@ A reference to the component that is displayed in the grid cell.
 
 Once the component is instantiated, the Admin App assigns the context property to it. This property displays in the grid the information for the current item, as well as the model properties you defined.
 
-#### Custom content editor toolbar
+#### Custom content editor
 
 When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. Out-of-the-box, content editors can work with image and link selector contextual toolsets for Sitefinity CMS content. You can also add a custom video selector for Sitefinity CMS content by injecting a custom **ToolBarItem**.
-To do this, you provide a custom implementation of the **ToolBarItemsProvider**. The provider has a single method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want to be displayed in the editor. In this case, this is the video selector.
+To do this, you provide a custom implementation of the **EditorConfigProvider**. The provider has a method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want to be displayed in the editor. In this case, this is the video selector.
 
 In this example, you use the built-in SelectorService class, which has two methods:
 
@@ -155,10 +160,15 @@ Opens the video selector.
 * **openDialog**
 Opens the custom dialogs.
 
+Not only can you add commands to the Kendo UI editor but also you can remove such. The **EditorConfigProvider** interface defines a method **getToolBarItemsNamesToRemove**. The method should return an array with the names of the toolbar items that you want to remove. In case you don't want to remove any toolbar items the method should return an empty array.
+
+**NOTE:** Only default Kendo UI toolbar items can be removed. Toolbar items added by custom implementations of the **EditorConfigProvider** interface cannot be removed.
+
+What is more you have the power to edit the configurations which are used to instantiate the Kendo UI editor. The **EditorConfigProvider** interface defines a method **configureEditor** that is invoked before the Kendo UI editor is instantiated. The method accepts the current editor configuration object and should return the modified configurations.
 
 #### Custom content editor toolbar with word count
 
-Apart from the major formatting functions, located on the formatting bar in the HTML content editor, you can add a word counter functionality. You do this by providing a custom implementation of the **ToolBarItemsProvider**, which you place in the **toolbar-extender** folder.
+Apart from the major formatting functions, located on the formatting bar in the HTML content editor, you can add a word counter functionality. You do this by providing a custom implementation of the **EditorConfigProvider**, which you place in the **toolbar-extender** folder.
 
 #### Custom dialogs in the grid and in editing mode
 

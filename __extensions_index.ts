@@ -3,7 +3,7 @@ import { Extension } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { GridExtenderModule } from "./grid-extender";
 import { CustomFieldsModule } from "./custom-fields";
 import { CommandsExtenderModule } from "./commands-extender";
-import { ToolbarExtenderModule } from "./toolbar-extender";
+import { EditorExtenderModule } from "./editor-extender";
 import { ExtensionComponentsModule } from "./extension-components/extension-components.module";
 import { checkTheme } from "./extension-components/theme/theme.component";
 
@@ -13,7 +13,6 @@ import { checkTheme } from "./extension-components/theme/theme.component";
  * Here all of the NgModules are returned and are loaded into the main module.
  */
 export class SamplesExtension implements Extension {
-
     /**
      * On application bootstrap this method is called to get all extensions as angular modules.
      */
@@ -22,7 +21,7 @@ export class SamplesExtension implements Extension {
             GridExtenderModule,
             CustomFieldsModule,
             CommandsExtenderModule,
-            ToolbarExtenderModule,
+            EditorExtenderModule,
             ExtensionComponentsModule
         ];
     }

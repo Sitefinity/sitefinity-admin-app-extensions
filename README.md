@@ -92,6 +92,11 @@ Once you are done with the backend customizations and development:
 
 **RESULT:** Next time you open Sitefinity CMS your customizations are visible in the backend.
 
+### Minification
+To build a minified version of extensions, run the command npm run build:prod.
+
+**NOTE:** Minification is supported by versions of Sitefinity >= 11.1
+
 ### Multiple bundles support
 
 After you execute the **npm run build** command, you get as an output the **sample.extensions.bundle** file. This file is a single bundle that contains a specific piece of functionality. With the Admin App, however, you can support more than one extensions bundle. This is handy when you need to compile two different types of functionalities and distribute them separately.

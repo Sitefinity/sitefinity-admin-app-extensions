@@ -1,0 +1,13 @@
+{
+    "--color-main-success": "#9999ff",       
+    "--color-main-light": "#f5f5f5",         
+    "--color-main-black": "#0000ff",             
+    "--color-main-pure-black": "#000099",             
+    "--color-main-white": "#ffffcc",            
+    "--color-accent-schedule": "#ccffff",    
+    "--color-accent-lock": "#ffcccc",        
+    "--color-accent-wait": "#ed8527",        
+    "--color-error": "#cc33cc",              
+    "--color-info": "#ffff66",               
+    "--color-success": "#66ff99"            
+}

@@ -8,11 +8,12 @@ const constants = require("./constants");
 const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
-    // get the info i need
+    // get latest version tag
     const latestCompatibleVersionTag = require('child_process')
         .execSync('git describe --abbrev=0 --tags')
         .toString();
 
+    // get all version tags for the commit specified by the latest tag
     let compatibleVersionsTags = [];
     if (!latestCompatibleVersionTag.includes('fatal: Not a git repository') && !latestCompatibleVersionTag.includes('is not recognized as an internal or external command')) {
         compatibleVersionsTags = require('child_process')

@@ -8,9 +8,22 @@ const constants = require("./constants");
 const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
+    // get the info i need
+    const latestCompatibleVersionTag = require('child_process')
+        .execSync('git describe --abbrev=0 --tags')
+        .toString();
+
+    let compatibleVersionsTags = [];
+    if (!latestCompatibleVersionTag.includes('fatal: Not a git repository') && !latestCompatibleVersionTag.includes('is not recognized as an internal or external command')) {
+        compatibleVersionsTags = require('child_process')
+        .execSync(`git show -s --format=%D ${latestCompatibleVersionTag}`)
+        .toString();
+    }
+
     this.options = {
         context: options.context,
-        modules: options.manifest.modules
+        modules: options.manifest.modules,
+        compatibleVersionsTags: compatibleVersionsTags
     };
 }
 
@@ -58,7 +71,7 @@ ImportPlugin.prototype.apply = function (compiler) {
             const indexOfExports = originalSource.indexOf("exports.", indexOfMethod);
             const indexOfDelimeter = originalSource.indexOf(";", indexOfExports);
 
-            const codeToInject = `exports.metadata = { version: ${JSON.stringify(require("../package.json").devDependencies["progress-sitefinity-adminapp-sdk"])}, name: "${constants.extensionsKey}" };`;
+            const codeToInject = `exports.metadata = { compatibleVersionsTags: ${JSON.stringify(this.options.compatibleVersionsTags)}, name: "${constants.extensionsKey}" };`;
             let modifiedSource = originalSource.slice(0, indexOfDelimeter + 1) + codeToInject + originalSource.slice(indexOfDelimeter + 1);
 
             asset.source = () => { return modifiedSource; };

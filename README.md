@@ -8,6 +8,13 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 **NOTE:** The samples in this reposotory are supported from Sitefintiy version 11.0.6700.0 and above.
 
+**Backward compatibility:** 
+
+If building extensions for Sitefinity version 11.0.6700.0, after cloning the repository you need to checkout the compatible extensions version. Execute the following command in the repository **root** folder:
+```
+git checkout 20180523_395
+```
+
 ### Prerequisites
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
@@ -91,6 +98,11 @@ Once you are done with the backend customizations and development:
 3.	Restart the Sitefinity CMS application, so that all files are processed.
 
 **RESULT:** Next time you open Sitefinity CMS your customizations are visible in the backend.
+
+### Minification
+To build a minified version of extensions, run the command npm run build:prod.
+
+**NOTE:** Minification is supported by versions of Sitefinity >= 11.1
 
 ### Multiple bundles support
 

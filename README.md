@@ -8,6 +8,13 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 **NOTE:** The samples in this reposotory are supported from Sitefintiy version 11.0.6700.0 and above.
 
+**Backward compatibility:** 
+
+If building extensions for Sitefinity version 11.0.6700.0, after cloning the repository you need to checkout the compatible extensions version. Execute the following command in the repository **root** folder:
+```
+git checkout 20180523_395
+```
+
 ### Prerequisites
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
@@ -49,7 +56,7 @@ Enter **http://localhost:3000/assets/auth/silent-renew.html**
 Enter **http://localhost:3000/auth/oidc/sign-in**
 5. Under **PostLogoutRedirectUris**, enter **http://localhost:3000/auth/oidc/sign-out**
 
-**NOTE:** After modifying the authentication settings, you need to restart the application.
+**NOTE:** After modifying the authentication settings, you need to **restart the application**. If you are in load balanced enviroment make sure to apply this steps to all necesery nodes.
 
 ####	Web service configuration
 1.	Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Routes* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*

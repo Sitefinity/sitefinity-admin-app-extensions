@@ -1,6 +1,7 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { EditorConfigProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { Observable } from "rxjs";
+import { fromEvent } from "rxjs";
+import { first } from "rxjs/operators";
 
 // These classes are defined in the application's styles.
 const RTL_CLASS = "-sf-direction-rtl";
@@ -64,9 +65,8 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         };
 
         // Should group the direction buttons once the editor is loaded and focused.
-        Observable
-            .fromEvent(editorHost.context, "focusin")
-            .first()
+        fromEvent(editorHost.context, "focusin")
+            .pipe(first())
             .subscribe(() => {
                 const toolbar = editorHost.getKendoEditor().toolbar.element;
                 groupToolbarButtons(toolbar, RTL_BUTTON_SELECTOR, LTR_BUTTON_SELECTOR, false);

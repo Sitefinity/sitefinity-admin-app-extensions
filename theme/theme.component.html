@@ -1,0 +1,41 @@
+<div class="sf-form -medium -sf-centered-box -txt-align-center">
+
+    <header>
+        <h1 class="-sf-mb-3xl -sf-mt-5xl">Theme settings</h1>
+    </header>
+
+    <main>
+        <form [formGroup]="themeForm" (ngSubmit)="onSubmit()" class="-txt-align-left">
+            <fieldset class="sf-theme-select">
+                <legend class="sf-field__label">Select theme</legend>
+                <ng-container *ngIf="!isLoading else loading">
+                    <ul *ngIf="!isLoading" class="sf-field__content">
+                        <li *ngFor="let theme of themes; let i = index">
+                            <input type="radio" id="{{theme + i}}" value="{{theme}}" formControlName="predefinedTheme">
+                            <label for="{{theme + i}}">{{theme}}</label>
+                        </li>
+                    </ul>
+                </ng-container>
+            </fieldset>
+        </form>
+    </main>
+
+    <hr>
+
+    <footer class="sf-modal__buttons -sf-mt-m">
+        <button (click)="onSubmit()" class="sf-button -action -large">Save</button>
+        <button (click)="onCancel()" class="sf-button -large">Cancel</button>
+    </footer>
+
+</div>
+
+<ng-template #loading>
+    <div *ngIf="isLoading" class="sf-loader -skeleton -title -sf-mt-5xs">
+        <div class="loader__content">
+            <div class="loader__rect -first"></div>
+            <div class="loader__rect -second"></div>
+            <div class="loader__rect -third"></div>
+            <div class="loader__rect -fourth"></div>
+        </div>
+    </div>
+</ng-template>

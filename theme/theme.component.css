@@ -1,0 +1,27 @@
+.sf-theme-select ul li {
+    list-style: none;
+}
+
+.sf-theme-select .sf-field__content input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+}
+
+.sf-theme-select .sf-field__content label {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    position: relative;
+    padding: 10px;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.sf-theme-select .sf-field__content label:hover {
+    background-color: #f5f5f5;
+}
+
+.sf-theme-select .sf-field__content input:checked ~ label {
+    background-color: #dcecf5;
+}

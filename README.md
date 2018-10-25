@@ -10,10 +10,7 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 **Backward compatibility:** 
 
-If building extensions for Sitefinity version 11.0.6700.0, after cloning the repository you need to checkout the compatible extensions version. Execute the following command in the repository **root** folder:
-```
-git checkout 20180523_395
-```
+Before you start developing make sure to checkout the tag corresponding to your Sitefinity host version. This way you can be sure that the extension you will build will work once you copy the package to your Sitefinity host. The package is future proof, it will work with future versions of Sitefinity as well, so you can upgrade your Sitefinity instance without worriyng that you will break your extensions.
 
 ### Prerequisites
 

@@ -21,23 +21,36 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 ### Quick start
 
-1. Clone or download this repository to a location of your choice and execute the following command in the repository **root** folder:
+1. Clone the repository:
+```
+git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions.git
+```
+
+2. Checkout the tag that is equal to your Sitefinity version:
+```
+git checkout {Sitefinity version}
+
+
+examlple: git checkout 11.0.6700.0
+```
+
+3. Clone or download this repository to a location of your choice and execute the following command in the repository **root** folder:
 ```
 npm install
 ```
 
-2. Start the development server by executing the following command:
+4. Start the development server by executing the following command:
 ```
 npm start
 ```
 
-3. When you are done developing execute the following command:
+5. When you are done developing execute the following command:
 ```
 npm run build
 ```
 As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
-4. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance.
+6. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance.
 
 
 ### Configure Sitefinity CMS for development of custom extensions

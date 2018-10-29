@@ -8,17 +8,25 @@ const constants = require("./constants");
 const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
-    // get latest version tag
-    const latestCompatibleVersionTag = require('child_process')
-        .execSync('git describe --abbrev=0 --tags')
-        .toString();
-
-    // get all version tags for the commit specified by the latest tag
     let compatibleVersionsTags = [];
-    if (!latestCompatibleVersionTag.includes('fatal: Not a git repository') && !latestCompatibleVersionTag.includes('is not recognized as an internal or external command')) {
+
+    try {
+        // try get latest version tag
+        const latestCompatibleVersionTag = require('child_process')
+            .execSync('git describe --abbrev=0 --tags 2> nul')
+            .toString();
+
+        // get all version tags for the commit specified by the latest tag
         compatibleVersionsTags = require('child_process')
         .execSync(`git show -s --format=%D ${latestCompatibleVersionTag}`)
         .toString();
+    }
+    catch(err) {
+        if (err.message.includes('Command failed')) {
+            console.warn('\x1b[33m%s\x1b[0m', 'Version verification for these extensions will not be available. Most probably this is either not a git repo or git is not installed. Please refer to: https://github.com/Sitefinity/sitefinity-admin-app-extensions');
+        } else {
+            throw err;
+        }
     }
 
     this.options = {

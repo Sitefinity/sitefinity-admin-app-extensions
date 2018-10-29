@@ -1,6 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ThemeProvider, THEME_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-provider";
-import { ThemeItem } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-file";
+import { ThemeItem } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-item";
 
 @Injectable()
 export class CustomThemeProvider implements ThemeProvider {
@@ -17,7 +17,7 @@ export class CustomThemeProvider implements ThemeProvider {
     }
 }
 
-export const THEME_PROVIDER: ClassProvider = {
+export const CUSTOM_THEME_PROVIDER: ClassProvider = {
     multi: true,
     provide: THEME_TOKEN,
     useClass: CustomThemeProvider

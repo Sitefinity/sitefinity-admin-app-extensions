@@ -8,7 +8,7 @@ const constants = require("./constants");
 const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
-    let compatibleVersionsTags = [];
+    let compatibleVersionsTags = "";
 
     try {
         // try get latest version tag

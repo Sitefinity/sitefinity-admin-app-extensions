@@ -23,9 +23,10 @@
     "moment": "2.22.2",
     "path": "0.12.7",
     "protractor": "5.4.1",
+    "protractor-angular-screenshot-reporter": "0.1.2",
     "sitefinity-webservices-sdk": "0.2.42-beta",
-    "tslib": "1.7.1",
     "ts-node": "3.0.2",
+    "tslib": "1.7.1",
     "typescript": "2.3.3",
     "xmlhttprequest": "1.8.0"
   }

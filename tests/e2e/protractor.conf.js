@@ -48,7 +48,7 @@ switch(browserParameter) {
             browserSettings.chromeOptions.args = browserSettings.chromeOptions.args.concat([
                 "--headless",
                 "--disable-gpu",
-                "--window-size=1024,768"
+                "--window-size=1920,1080"
             ]);
         }
         break;

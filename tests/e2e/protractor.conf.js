@@ -97,7 +97,7 @@ exports.config = {
     specs: ["app-specs/**/**.e2e-spec.ts"],
 
     // We should turn off control_flow. We cannot use a mix of async/await and the control flow:
-    // async/await causes the control flow to become unreliable. See teampulse item #241056 and links in it.
+    // async/await causes the control flow to become unreliable. See TeamPulse item #241056 and links in it.
     SELENIUM_PROMISE_MANAGER: false,
 
     // If needed to run/debug protractor tests via WebStorm, uncomment the following lines and set parameters.

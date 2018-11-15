@@ -6,6 +6,7 @@ import { ThemeVariablesKeyValuePair } from "progress-sitefinity-adminapp-sdk/app
 
 @Injectable()
 export class CustomThemeProvider implements ThemeProvider {
+    // #region Blue theme variables
     private blueThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
         key: ThemeVariables.DefaultButtonColor,
         value: "#000"
@@ -52,6 +53,8 @@ export class CustomThemeProvider implements ThemeProvider {
         key: ThemeVariables.ActionButtonDisabledBackgroundColor,
         value: "#b8cee1"
     }];
+    // #endregion
+    // #region Dark theme variables
     private darkThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
         key: ThemeVariables.DefaultButtonColor,
         value: "#fff"
@@ -98,6 +101,7 @@ export class CustomThemeProvider implements ThemeProvider {
         key: ThemeVariables.ActionButtonDisabledBackgroundColor,
         value: "#97afaa"
     }];
+    // #endregion
 
     private themes: Array<ThemeItem> = [{
         name: "Dark",

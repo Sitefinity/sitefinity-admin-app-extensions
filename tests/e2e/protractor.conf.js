@@ -1,5 +1,10 @@
 "use strict";
 var jasmineReporters = require("jasmine-reporters");
+var HtmlReporter = require('protractor-angular-screenshot-reporter');
+
+var screenshotReporter = new HtmlReporter({
+    baseDirectory: './test-results/html-report' 
+}).getJasmine2Reporter();
 
 // Override "source-map-support"'s install function, since it is causing issues protractor bootstrap
 // TODO
@@ -43,7 +48,7 @@ switch(browserParameter) {
             browserSettings.chromeOptions.args = browserSettings.chromeOptions.args.concat([
                 "--headless",
                 "--disable-gpu",
-                "--window-size=1024,768"
+                "--window-size=1920,1080"
             ]);
         }
         break;
@@ -108,6 +113,7 @@ exports.config = {
             .window()
             .maximize();
         jasmine.getEnv().addReporter(junitReporter);
+        jasmine.getEnv().addReporter(screenshotReporter);
     },
 
     // Options to be passed to Jasmine.

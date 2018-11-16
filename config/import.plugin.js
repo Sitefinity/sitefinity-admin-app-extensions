@@ -8,9 +8,31 @@ const constants = require("./constants");
 const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
+    let compatibleVersionsTags = "";
+
+    try {
+        // try get latest version tag
+        const latestCompatibleVersionTag = require('child_process')
+            .execSync('git describe --abbrev=0 --tags 2> nul')
+            .toString();
+
+        // get all version tags for the commit specified by the latest tag
+        compatibleVersionsTags = require('child_process')
+        .execSync(`git show -s --format=%D ${latestCompatibleVersionTag}`)
+        .toString();
+    }
+    catch(err) {
+        if (err.message.includes('Command failed')) {
+            console.warn('\x1b[33m%s\x1b[0m', 'Version verification for these extensions will not be available. Most probably this is either not a git repo or git is not installed. Please refer to: https://github.com/Sitefinity/sitefinity-admin-app-extensions');
+        } else {
+            throw err;
+        }
+    }
+
     this.options = {
         context: options.context,
-        modules: options.manifest.modules
+        modules: options.manifest.modules,
+        compatibleVersionsTags: compatibleVersionsTags
     };
 }
 
@@ -58,7 +80,7 @@ ImportPlugin.prototype.apply = function (compiler) {
             const indexOfExports = originalSource.indexOf("exports.", indexOfMethod);
             const indexOfDelimeter = originalSource.indexOf(";", indexOfExports);
 
-            const codeToInject = `exports.metadata = { version: ${JSON.stringify(require("../package.json").devDependencies["progress-sitefinity-adminapp-sdk"])}, name: "${constants.extensionsKey}" };`;
+            const codeToInject = `arguments[1].metadata = { compatibleVersionsTags: ${JSON.stringify(this.options.compatibleVersionsTags)}, name: "${constants.extensionsKey}" };`;
             let modifiedSource = originalSource.slice(0, indexOfDelimeter + 1) + codeToInject + originalSource.slice(indexOfDelimeter + 1);
 
             asset.source = () => { return modifiedSource; };

@@ -1,7 +1,7 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ThemeProvider, THEME_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-provider";
 import { ThemeItem } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-item";
-import { ThemeVariables } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-variable";
+import { ThemeVariables } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-variables";
 import { ThemeVariablesKeyValuePair } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-variable-key-value-pair";
 
 @Injectable()

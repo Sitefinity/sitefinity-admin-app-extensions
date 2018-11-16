@@ -23,7 +23,7 @@ function ImportPlugin(options) {
     }
     catch(err) {
         if (err.message.includes('Command failed')) {
-            console.warn('\x1b[33m%s\x1b[0m', 'Version verification for these extensions will not be available. Most probably this is either not a git repo or git is not installed. Please refer to: https://github.com/Sitefinity/sitefinity-admin-app-extensions');
+            console.warn('\x1b[33m%s\x1b[0m', 'Version verification for these extensions will not be available. Most probably this is either not a git repository or git is not installed. Please refer to: https://github.com/Sitefinity/sitefinity-admin-app-extensions');
         } else {
             throw err;
         }

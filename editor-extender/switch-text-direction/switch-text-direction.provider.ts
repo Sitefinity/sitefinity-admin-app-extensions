@@ -91,7 +91,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     /**
      * This gives access to the Kendo UI Editor configuration object
      * that is used to initialize the editor upon creation
-     * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
+     * Kendo UI Editor configuration overview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      *
      * @param {*} configuration
      * @returns The modified configuration.
@@ -102,7 +102,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     }
 
     /**
-     * Finds the parent element of the one that is the carret on.
+     * Finds the parent element of the one that is the caret on.
      *
      * @private
      * @param {*} editorHost The Kendo's editor object.
@@ -197,10 +197,10 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     }
 
     /**
-     * When the carret's position is changed by clicking in the editor or
+     * When the caret's position is changed by clicking in the editor or
      * by navigating with the arrows, the toolbar's buttons should have
      * the correct selected state, depending on the direction of the element
-     * on which the carret is.
+     * on which the caret is.
      *
      * @private
      * @param {*} editorHost The Kendo's editor object.
@@ -299,7 +299,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
     private getSelectionDirection(selection): SelectionDirection {
         const focusNode: HTMLElement = selection.focusNode;
 
-        // Workaround for firefox. The slection API does not provide baseNode. The alternative is anchorNode.
+        // Workaround for firefox. The selection API does not provide baseNode. The alternative is anchorNode.
         const baseNode: HTMLElement = selection.baseNode || selection.anchorNode;
         const positionA = focusNode.compareDocumentPosition(baseNode);
         const positionB = baseNode.compareDocumentPosition(focusNode);

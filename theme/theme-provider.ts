@@ -52,6 +52,18 @@ export class CustomThemeProvider implements ThemeProvider {
     }, {
         key: ThemeVariables.ActionButtonDisabledBackgroundColor,
         value: "#b8cee1"
+    }, {
+        key: ThemeVariables.GlobalOutline,
+        value: "5px solid #dcecf5"
+    }, {
+        key: ThemeVariables.GlobalOutlineOffset,
+        value: "5px"
+    }, {
+        key: ThemeVariables.SecondaryTextColor,
+        value: "#666"
+    }, {
+        key: ThemeVariables.InputPlaceholderColor,
+        value: "#bbb"
     }];
     // #endregion
     // #region Dark theme variables

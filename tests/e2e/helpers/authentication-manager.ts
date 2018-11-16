@@ -64,7 +64,7 @@ export default class AuthenticationManager {
     };
 
     /**
-     * Since AuthenticationManager is a static class, it should not get intantiated.
+     * Since AuthenticationManager is a static class, it should not get instantiated.
      *
      */
     constructor() {

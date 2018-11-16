@@ -30,7 +30,7 @@ export class CustomFieldsProvider implements FieldsProvider {
     }
 
     /**
-     * This method finds an implmentation of the field to be overridden.
+     * This method finds an implementation of the field to be overridden.
      * @param fieldRegistryKey The metadata needed to determine which field to display.
      */
     private findRegistration(fieldRegistryKey: FieldData): FieldRegistration {
@@ -59,7 +59,7 @@ export class CustomFieldsProvider implements FieldsProvider {
             typeName: "newsitems"
         };
 
-        // The result field registration that will be returened to the AdminApp.
+        // The result field registration that will be returned to the AdminApp.
         const customInputRegistration: FieldRegistration = {
             writeComponent: CustomInputWriteComponent,
             readComponent: CustomInputReadonlyComponent,

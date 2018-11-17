@@ -5,6 +5,7 @@ import { BrowserNavigate } from "../helpers/browser-helpers";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
+import { ServerConsoleLogs } from "./../helpers/common";
 
 describe("Verify extensions", () => {
     const typeToTest = "News";
@@ -15,6 +16,11 @@ describe("Verify extensions", () => {
         await initAuth(USERNAME, PASSWORD);
         done();
     }, TIMEOUT);
+
+    afterEach(async (done: DoneFn) => {
+        await ServerConsoleLogs();
+        done();
+    });
 
     it("images column", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);

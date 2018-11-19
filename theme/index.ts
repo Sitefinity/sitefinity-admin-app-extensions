@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CUSTOM_THEME_PROVIDER, CustomThemeProvider } from "./theme-provider";
+import { SAMPLE_THEME_PROVIDER, SampleThemeProvider } from "./theme-provider";
 
 @NgModule({
     providers: [
-        CUSTOM_THEME_PROVIDER,
-        CustomThemeProvider
+        SAMPLE_THEME_PROVIDER,
+        SampleThemeProvider
     ],
     imports: [
         CommonModule

@@ -5,122 +5,50 @@ import { ThemeVariables } from "progress-sitefinity-adminapp-sdk/app/api/v1/them
 import { ThemeVariablesKeyValuePair } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-variable-key-value-pair";
 
 @Injectable()
-export class CustomThemeProvider implements ThemeProvider {
-    // #region Blue theme variables
-    private blueThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
+export class SampleThemeProvider implements ThemeProvider {
+    // #region Sample theme variables
+    private sampleThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
+        key: ThemeVariables.DefaultButtonBorderColor,
+        value: "#333"
+    }, {
+        key: ThemeVariables.DefaultButtonBackgroundColor,
+        value: "#FFF"
+    }, {
         key: ThemeVariables.DefaultButtonColor,
         value: "#000"
     }, {
-        key: ThemeVariables.DefaultButtonBorderColor,
-        value: "#eee"
+        key: ThemeVariables.DefaultButtonInteractionBorderColor,
+        value: "#E4E4E4"
     }, {
-        key: ThemeVariables.DefaultButtonBackgroundColor,
-        value: "#eee"
-    }, {
-        key: ThemeVariables.DefaultButtonInteractionColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.DefaultButtonBorderColor,
-        value: "#ccc"
-    }, {
-        key: ThemeVariables.DefaultButtonBackgroundColor,
-        value: "#ccc"
-    }, {
-        key: ThemeVariables.ActionButtonColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.ActionButtonBorderColor,
-        value: "#0168c1"
-    }, {
-        key: ThemeVariables.ActionButtonBackgroundColor,
-        value: "#0168c1"
-    }, {
-        key: ThemeVariables.ActionButtonInteractionColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.ActionButtonInteractionBorderColor,
-        value: "#01539a"
-    }, {
-        key: ThemeVariables.ActionButtonInteractionBackgroundColor,
-        value: "#01539a"
-    }, {
-        key: ThemeVariables.ActionButtonDisabledColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.ActionButtonDisabledBorderColor,
-        value: "#b8cee1"
-    }, {
-        key: ThemeVariables.ActionButtonDisabledBackgroundColor,
-        value: "#b8cee1"
-    }, {
-        key: ThemeVariables.GlobalOutline,
-        value: "5px solid #dcecf5"
-    }, {
-        key: ThemeVariables.GlobalOutlineOffset,
-        value: "5px"
-    }, {
-        key: ThemeVariables.SecondaryTextColor,
-        value: "#666"
-    }, {
-        key: ThemeVariables.InputPlaceholderColor,
-        value: "#bbb"
-    }];
-    // #endregion
-    // #region Dark theme variables
-    private darkThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
-        key: ThemeVariables.DefaultButtonColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.DefaultButtonBorderColor,
-        value: "#3b4744"
-    }, {
-        key: ThemeVariables.DefaultButtonBackgroundColor,
-        value: "#3b4744"
+        key: ThemeVariables.DefaultButtonInteractionBackgroundColor,
+        value: "#E4E4E4"
     }, {
         key: ThemeVariables.DefaultButtonInteractionColor,
-        value: "#fff"
-    }, {
-        key: ThemeVariables.DefaultButtonBorderColor,
-        value: "#3b4744"
-    }, {
-        key: ThemeVariables.DefaultButtonBackgroundColor,
-        value: "#3b4744"
-    }, {
-        key: ThemeVariables.ActionButtonColor,
-        value: "#000"
+        value: "#333"
     }, {
         key: ThemeVariables.ActionButtonBorderColor,
-        value: "#64dbc3"
+        value: "#006CD9"
     }, {
         key: ThemeVariables.ActionButtonBackgroundColor,
-        value: "#64dbc3"
+        value: "#006CD9"
     }, {
-        key: ThemeVariables.ActionButtonInteractionColor,
-        value: "#000"
+        key: ThemeVariables.ActionButtonColor,
+        value: "#FFF"
     }, {
         key: ThemeVariables.ActionButtonInteractionBorderColor,
-        value: "#64dbc3"
+        value: "#0053C0"
     }, {
         key: ThemeVariables.ActionButtonInteractionBackgroundColor,
-        value: "#64dbc3"
+        value: "#0053C0"
     }, {
-        key: ThemeVariables.ActionButtonDisabledColor,
-        value: "#000"
-    }, {
-        key: ThemeVariables.ActionButtonDisabledBorderColor,
-        value: "#97afaa"
-    }, {
-        key: ThemeVariables.ActionButtonDisabledBackgroundColor,
-        value: "#97afaa"
+        key: ThemeVariables.ActionButtonInteractionColor,
+        value: "#FFF"
     }];
     // #endregion
 
     private themes: Array<ThemeItem> = [{
-        name: "Dark",
-        themeVariables: this.darkThemeVariables
-    }, {
-        name: "Blue",
-        themeVariables: this.blueThemeVariables
+        name: "Sample",
+        themeVariables: this.sampleThemeVariables
     }];
 
     getThemes(): Array<ThemeItem> {
@@ -128,8 +56,8 @@ export class CustomThemeProvider implements ThemeProvider {
     }
 }
 
-export const CUSTOM_THEME_PROVIDER: ClassProvider = {
+export const SAMPLE_THEME_PROVIDER: ClassProvider = {
     multi: true,
     provide: THEME_TOKEN,
-    useClass: CustomThemeProvider
+    useClass: SampleThemeProvider
 };

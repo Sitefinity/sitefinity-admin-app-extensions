@@ -5,7 +5,7 @@ import { ThemeVariables } from "progress-sitefinity-adminapp-sdk/app/api/v1/them
 import { ThemeVariablesKeyValuePair } from "progress-sitefinity-adminapp-sdk/app/api/v1/theme/theme-variable-key-value-pair";
 
 @Injectable()
-export class SampleThemeProvider implements ThemeProvider {
+class SampleThemeProvider implements ThemeProvider {
     // #region Sample theme variables
     private sampleThemeVariables: Array<ThemeVariablesKeyValuePair> = [{
         key: ThemeVariables.DefaultButtonBorderColor,
@@ -26,6 +26,15 @@ export class SampleThemeProvider implements ThemeProvider {
         key: ThemeVariables.DefaultButtonInteractionColor,
         value: "#333"
     }, {
+        key: ThemeVariables.DefaultButtonDisabledBorderColor,
+        value: "#C2C2C2"
+    }, {
+        key: ThemeVariables.DeleteButtonDisabledBackgroundColor,
+        value: "#FFF"
+    }, {
+        key: ThemeVariables.DefaultButtonDisabledColor,
+        value: "#C2C2C2"
+    }, {
         key: ThemeVariables.ActionButtonBorderColor,
         value: "#006CD9"
     }, {
@@ -42,6 +51,15 @@ export class SampleThemeProvider implements ThemeProvider {
         value: "#0053C0"
     }, {
         key: ThemeVariables.ActionButtonInteractionColor,
+        value: "#FFF"
+    }, {
+        key: ThemeVariables.ActionButtonDisabledBorderColor,
+        value: "#BFD4F3"
+    }, {
+        key: ThemeVariables.ActionButtonDisabledBackgroundColor,
+        value: "#BFD4F3"
+    }, {
+        key: ThemeVariables.ActionButtonDisabledColor,
         value: "#FFF"
     }];
     // #endregion

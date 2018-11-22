@@ -10,6 +10,7 @@ export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;
 export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
 export const CONTENT_NEWS_URL = `${BASE_URL}content/newsitems`;
+export const THEME_URL = `${BASE_URL}theme`;
 
 export const EC = protractor.ExpectedConditions;
 export const URL_IN_CONFIG_FILE = browser.params.sfUrl;

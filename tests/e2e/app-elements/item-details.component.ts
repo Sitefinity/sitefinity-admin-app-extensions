@@ -1,10 +1,8 @@
 require("jasmine-expect");
 import { browser } from "protractor";
-import { protractor } from "protractor/built/ptor";
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
-import { EC } from "../helpers/constants";
 import { ItemListMap } from "./item-list.map";
 
 export class ItemDetails {
@@ -35,12 +33,11 @@ export class ItemDetails {
         expect(await ItemDetailsMap.ExtendedTitleField.isPresent()).toBeTruthy("The title field extension class was not found");
     }
 
-    static async ClickBackButton(handleAlert: boolean = false): Promise<void> {
-        await browser.wait(EC.elementToBeClickable(ItemListMap.BackButton), 2000, "Back button is not clickable");
-        expect(await ItemListMap.BackButton.isDisplayed()).toBeTruthy();
+    static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
+        await BrowserWaitForElement(ItemListMap.BackButton);
         await ItemListMap.BackButton.click();
 
-        if (handleAlert === true) {
+        if (acceptAlert === true) {
             const alert = browser.switchTo().alert();
             await alert.accept();
         }

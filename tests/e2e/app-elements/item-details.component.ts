@@ -30,12 +30,6 @@ export class ItemDetails {
         await htmlField.click();
     }
 
-    static async SelectAllAndPasteText(text: string): Promise<void> {
-        await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
-        await browser.actions().keyUp(protractor.Key.CONTROL).perform();
-        await browser.actions().sendKeys(text).perform();
-    }
-
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
         expect(await ItemDetailsMap.ExtendedTitleField.isPresent()).toBeTruthy("The title field extension class was not found");

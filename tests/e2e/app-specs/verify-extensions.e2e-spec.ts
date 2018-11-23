@@ -1,7 +1,7 @@
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, SAMPLE_TEXT_CONTENT } from "../helpers/constants";
-import { BrowserNavigate, BrowserWaitForElement } from "../helpers/browser-helpers";
+import { BrowserNavigate, BrowserWaitForElement, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
@@ -38,7 +38,7 @@ describe("Verify extensions", () => {
 
     it("word count editor toolbar button ", async () => {
         await ItemDetails.ExpandHtmlField();
-        await ItemDetails.SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
+        await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);
     });
 

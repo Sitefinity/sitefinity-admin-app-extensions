@@ -28,9 +28,14 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
     ```shell
     git checkout {Sitefinity version}
-
-    example: git checkout 11.0.6700.0
     ```
+    For example:
+
+    ```shell
+    git checkout 11.0.6700.0
+    ```
+
+    Note: To check the version of your Sitefinity instance go to _Administration => Version & Licensing_. There you will find it as _Product file version_
 
 1. Clone or download this repository to a location of your choice and execute the following command in the repository **root** folder:
 

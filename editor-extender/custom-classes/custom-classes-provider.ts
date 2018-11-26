@@ -35,7 +35,7 @@ class CustomClassesProvider implements EditorConfigProvider {
      * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      */
     configureEditor(configuration: any) {
-        debugger;
+debugger;
         configuration.tools[0] = {name: "formatting", items: [
             {text: "Heading 1", value: "h1"},
             {text: "Heading 2", value: "h2"},
@@ -46,6 +46,7 @@ class CustomClassesProvider implements EditorConfigProvider {
             {text:"Button Primary","value":"span.btn btn-primary"},
             {text:"Button Success","value":"span.btn btn-success"}
             ]};
+            configuration.stylesheets = ["/ResourcePackages/CorianderLane/assets/dist/css/main.min.css"];
         return configuration;
     }
 }

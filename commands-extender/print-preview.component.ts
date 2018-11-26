@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { HTTP_PREFIX } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { delay } from "rxjs/operators";
 
 /**
  * A component that loads the data item from the OData rest services and displays the title of the data item.
@@ -36,8 +37,8 @@ export class PrintPreviewComponent implements OnInit {
         // http prefix is dynamically replaced with the actual url of sitefinity
         const url = `${HTTP_PREFIX}/sf/system/${routeParams.entitySet}(${routeParams.id})` + (routeParams.provider ? `?sf_provider=${routeParams.provider}` : ``);
 
-        // dealy so there is always a minimum loading time
-        this.http.get(url).delay(500).subscribe((dataItem) => {
+        // delay so there is always a minimum loading time
+        this.http.get(url).pipe(delay(500)).subscribe((dataItem) => {
             this.dataItem = dataItem;
         });
     }

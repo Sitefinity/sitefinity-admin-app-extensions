@@ -1,0 +1,11 @@
+{
+  "uglifyOptions": {
+    "output": {
+      "ascii_only": true,
+      "beautify": false
+    },
+    "compress": {
+      "negate_iife": false
+    }
+  }
+}

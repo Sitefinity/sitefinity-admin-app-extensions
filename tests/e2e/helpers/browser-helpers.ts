@@ -6,7 +6,7 @@ export async function BrowserWaitForElement(element: ElementFinder) {
 }
 
 export async function BrowserWaitForElementHidden(element: ElementFinder) {
-    await browser.wait(EC.invisibilityOf(element), TIME_TO_WAIT, "Elemen is visible, but should not be. Locator used - " + element.locator());
+    await browser.wait(EC.invisibilityOf(element), TIME_TO_WAIT, "Element is visible, but should not be. Locator used - " + element.locator());
 }
 
 export async function BrowserGetUrl(): Promise<string> {

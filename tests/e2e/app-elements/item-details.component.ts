@@ -10,7 +10,7 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
         const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
         await toolbarButton.click();
-        await BrowserVerifyAlert("Words count: 1115");
+        await BrowserVerifyAlert("Words count: 1223");
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
@@ -46,7 +46,7 @@ export class ItemDetails {
         // should hide the popup when symbol is clicked
         await BrowserWaitForElementHidden(EditorPopupMap.ToolPopup);
 
-        // should have one more characted after the symbol is inserted
+        // should have one more character after the symbol is inserted
         expect(contents.length).toBe(contentAfterInsert.length - 1);
     }
 }

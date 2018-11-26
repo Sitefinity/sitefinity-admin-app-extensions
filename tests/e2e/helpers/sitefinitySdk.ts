@@ -12,7 +12,7 @@ class SitefinitySdk {
 
     private static instance: any;
     /**
-     * Since SitefinitySdk is a static class, it should not get intantiated.
+     * Since SitefinitySdk is a static class, it should not get instantiated.
      *
      */
     constructor() {

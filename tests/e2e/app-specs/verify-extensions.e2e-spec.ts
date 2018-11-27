@@ -1,10 +1,11 @@
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
-import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, THEME_URL } from "../helpers/constants";
-import { BrowserNavigate } from "../helpers/browser-helpers";
+import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, SAMPLE_TEXT_CONTENT, THEME_URL } from "../helpers/constants";
+import { BrowserNavigate, BrowserWaitForElement, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
+import { ItemListMap } from "../app-elements/item-list.map";
 import { Theme } from "../app-elements/theme.component";
 
 describe("Verify extensions", () => {
@@ -37,25 +38,27 @@ describe("Verify extensions", () => {
     });
 
     it("word count editor toolbar button ", async () => {
-        await ItemDetails.ClickOnHtmlField();
-        await ItemDetails.VerifyHtmlToolbarWordCount();
+        await ItemDetails.ExpandHtmlField();
+        await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
+        await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);
     });
 
     it("videos toolbar button ", async () => {
         await ItemDetails.ClickHtmlToolbarSitefinityVideos();
         await VideosModal.VerifyModalTitle();
         await VideosModal.CancelModal();
+        await ItemDetails.ClickBackButton(true);
+        await BrowserWaitForElement(ItemListMap.CountLabel);
     });
 
     it("insert symbol", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
-        await ItemDetails.ClickOnHtmlField();
+        await ItemDetails.ExpandHtmlField();
         await ItemDetails.VerifyAndClickSymbolListButton();
     });
 
-    // Should be enabled when Custom theme for Iris is in master.
-    xit("applied theme", async () => {
+    it("applied theme", async () => {
         await BrowserNavigate(THEME_URL);
         await Theme.SelectTheme("Sample");
         await Theme.UseSelectedTheme();

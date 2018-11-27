@@ -33,7 +33,7 @@ class InsertSymbolProvider implements EditorConfigProvider {
     /**
      * This gives access to the Kendo UI Editor configuration object
      * that is used to initialize the editor upon creation
-     * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
+     * Kendo UI Editor configuration overview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      *
      * @param {*} configuration
      * @returns The modified configuration.

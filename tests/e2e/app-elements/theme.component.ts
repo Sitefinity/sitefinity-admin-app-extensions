@@ -5,8 +5,6 @@ import { BrowserWaitForElement } from "../helpers/browser-helpers";
 import { EC } from "../helpers/constants";
 import { browser } from "protractor";
 
-const backgroundColorAttribute = "backgroundColor";
-const expectedButtonColor = "rgba(0, 99, 208, 1)";
 const timeToWait = 3000;
 
 export class Theme {
@@ -20,11 +18,5 @@ export class Theme {
         await BrowserWaitForElement(ThemeMap.UseSelectedButton);
         await ThemeMap.UseSelectedButton.click();
         await browser.wait(EC.elementToBeClickable(ThemeMap.UseSelectedButton), timeToWait);
-    }
-
-    public static async ValidateButtonColor() {
-        const button = await ThemeMap.UseSelectedButton;
-        const actualButtonColor = await button.getCssValue(backgroundColorAttribute);
-        expect(actualButtonColor).toBe(expectedButtonColor);
     }
 }

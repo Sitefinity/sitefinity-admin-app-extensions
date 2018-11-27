@@ -1,5 +1,5 @@
 import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandModel, CommandCategory } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
 import { PrintPreviewCommand } from "./print-preview.command";
 
@@ -61,7 +61,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
         }
 
         // return an observable here, because generating the actions might be a time consuming operation
-        return Observable.of(commands);
+        return of(commands);
     }
 
     /**
@@ -70,7 +70,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
      * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
      */
     getCategories(data: CommandsData): Observable<CommandCategory[]> {
-        return Observable.of([CUSTOM_CATEGORY]);
+        return of([CUSTOM_CATEGORY]);
     }
 }
 

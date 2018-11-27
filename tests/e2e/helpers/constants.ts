@@ -104,3 +104,6 @@ export const HIERARCHICAL_ITEM_HEADERS = [TABLE_HEADERS_CONSTANTS.TITLE, TABLE_H
 export const VIDEO_LIBRARIES = "videolibraries";
 export const IMAGE_LIBRARIES = "albums";
 export const DOCUMENT_LIBRARIES = "documentlibraries";
+
+// Sample content
+export const SAMPLE_TEXT_CONTENT = "one two three four five six seven eight nine ten";

@@ -1,16 +1,18 @@
 require("jasmine-expect");
+import { browser } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
+import { ItemListMap } from "./item-list.map";
 
 export class ItemDetails {
-
-    static async VerifyHtmlToolbarWordCount(): Promise<void> {
+    static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
         const wordCountButtonClass = "k-i-Words-count";
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
         const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
         await toolbarButton.click();
-        await BrowserVerifyAlert("Words count: 1223");
+        const expectedCount = expectedContent.split(" ").length;
+        await BrowserVerifyAlert(`Words count: ${expectedCount}`);
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
@@ -20,15 +22,25 @@ export class ItemDetails {
         await toolbarButton.click();
     }
 
-    static async ClickOnHtmlField(): Promise<void>  {
-        await BrowserWaitForElement(ItemDetailsMap.HtmlField);
-        const htmlField = ItemDetailsMap.HtmlField;
+    static async ExpandHtmlField(): Promise<void>  {
+        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpander);
+        const htmlField = ItemDetailsMap.HtmlFieldExpander;
         await htmlField.click();
     }
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
         expect(await ItemDetailsMap.ExtendedTitleField.isPresent()).toBeTruthy("The title field extension class was not found");
+    }
+
+    static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
+        await BrowserWaitForElement(ItemListMap.BackButton);
+        await ItemListMap.BackButton.click();
+
+        if (acceptAlert === true) {
+            const alert = browser.switchTo().alert();
+            await alert.accept();
+        }
     }
 
     static async VerifyAndClickSymbolListButton(): Promise<void> {

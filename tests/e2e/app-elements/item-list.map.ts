@@ -6,7 +6,7 @@ export class ItemListMap {
     public static CountLabel: ElementFinder = element(by.css("div.sf-row__col.-sf-txt-align-right.-sf-txt-hint"));
     public static TableHeaders: ElementArrayFinder = element(by.className("sf-tree-list__row -head")).all(by.className("sf-tree-list__cell -head"));
     public static TableElements: ElementArrayFinder = element.all(by.css(".sf-tree-list__row:not(.-head):not(.-loading)"));
-    public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title=Back]"));
+    public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title='All items']"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {
         const itemRow = ItemListMap.GetTableRow(rowTitle);

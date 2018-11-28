@@ -58,7 +58,7 @@ describe("Verify extensions", () => {
         await ItemDetails.VerifyAndClickSymbolListButton();
     });
 
-    fit("applied theme", async () => {
+    it("applied theme", async () => {
         await BrowserNavigate(THEME_URL);
         await Theme.SelectTheme("Sample");
         await Theme.UseSelectedTheme();

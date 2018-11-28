@@ -151,6 +151,7 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
                             });
 
                             editor.value(text);
+                            editor.trigger("change");
                         }
             })},
             (error: any) => {

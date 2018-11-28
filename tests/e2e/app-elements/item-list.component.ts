@@ -5,6 +5,9 @@ import { ItemListMap } from "./item-list.map";
 import { BrowserWaitForElement, BrowserGetUrl } from "../helpers/browser-helpers";
 import { CONTENT_PAGE_URL, DEFAULT_ITEMS_NUMBER } from "../helpers/constants";
 
+const backgroundColorAttribute = "backgroundColor";
+const expectedButtonColor = "rgba(0, 108, 217, 1)";
+
 export class ItemList {
 
     static async VerifyBasicUIElements(typeName: string, itemTitlePlural: string) {
@@ -46,6 +49,12 @@ export class ItemList {
         await BrowserWaitForElement(ItemListMap.GetRowTitleCell(title));
         const item = ItemListMap.GetRowTitleCell(title);
         await item.click();
+    }
+
+    static async VerifyThemeButtonColor() {
+        await BrowserWaitForElement(ItemListMap.GetCreateItemButton());
+        const actualButtonColor = await ItemListMap.GetCreateItemButton().getCssValue(backgroundColorAttribute);
+        expect(actualButtonColor).toBe(expectedButtonColor);
     }
 
     private static async VerifyHeaders(headers: string[]) {

@@ -1,7 +1,7 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, forkJoin } from "rxjs";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./editor-spell-check-provider.css");
@@ -9,14 +9,9 @@ require("!style-loader!css-loader!./editor-spell-check-provider.css");
 /**
  * Indicates the minimum value of certainty that is needed in order a correction to be applied.
  */
-const MIN_CERTAINTY = 0.6;
+const MIN_CERTAINTY = 0.5;
 const HOST = 'https://api.cognitive.microsoft.com';
 const PATH = '/bing/v7.0/spellcheck';
-
-/*
- * NOTE: Replace this example key with your subscription key .
- */
-const KEY = '032f64be381a4566af2e50c3cd212647';
 
 /**
  * Mode of spellcheck
@@ -26,7 +21,24 @@ const KEY = '032f64be381a4566af2e50c3cd212647';
  *         It will correct small queries(up to length 9 tokens) without any casing changes and
  *         will be more optimized (perf and relevance) towards search like queries.
  */
-const MODE = "proof";
+const PROOF_MODE = "proof";
+const SPELL_MODE = "spell";
+
+/**
+ * Currently the proof mode supports only these 3 cultures. For other cultures spell mode should be used.
+ * The list is subject to change.
+ * For more information check: https://docs.microsoft.com/bg-bg/azure/cognitive-services/bing-spell-check/proof-text
+ */
+const proofModeCultures = [
+    "en-US",
+    "es-ES",
+    "pt-BR"
+];
+
+/*
+ * NOTE: Replace this example key with your subscription key .
+ */
+const KEY = '';
 
 /**
  * A custom toolbar provider implementation for checheking and correcting the spelling in the kendo editor.
@@ -34,9 +46,9 @@ const MODE = "proof";
  */
 @Injectable()
 class EditorSpellCheckProvider implements EditorConfigProvider {
+    private culture: string;
 
-    constructor(
-        private http: HttpClient) {
+    constructor(private http: HttpClient) {
     }
 
     /**
@@ -44,24 +56,14 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
      * @param editorHost The instance of the editor.
      */
     getToolBarItems(editorHost: any): ToolBarItem[] {
-        /**
-         * A custom toolbar item
-         */
-        const SPELL_CORRECTION_TOOLBAR_ITEM: ToolBarItem = {
-            name: "Spell-correction",
-            tooltip: "Spell correction",
-            ordinal: -1,
-            exec: () => this.spellCorrect(editorHost)
-        };
-
         const SPELL_CHECK_TOOLBAR_ITEM: ToolBarItem = {
             name: "Spell-check",
             tooltip: "Spell check",
             ordinal: -1,
-            exec: () => this.spellCheck(editorHost)
+            exec: () => this.spellCheck(editorHost, this.culture)
         };
 
-        return [SPELL_CHECK_TOOLBAR_ITEM, SPELL_CORRECTION_TOOLBAR_ITEM];
+        return [SPELL_CHECK_TOOLBAR_ITEM];
     }
 
     getToolBarItemsNamesToRemove(): string[] {
@@ -80,132 +82,128 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
      * that is used to initialize the editor upon creation
      * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      */
-    configureEditor(configuration: any) {
+    configureEditor(configuration: any, culture: string) {
+        this.culture = culture;
         return configuration;
     }
 
-    private spellCheck(editorHost: any) {
+    private spellCheck(editorHost: any, culture: string) {
         const editor = editorHost.getKendoEditor();
-
-        // TODO: get selection not the whole text
         let text = editor.value();
+        const textWithoutHTMLTags = this.stripHTML(text);
 
-        // TODO: use the real culture
-        this.makeRequest(text).subscribe((response: any) => {
-            if (response._type == "SpellCheck") {
-                let lastMarkedErrorIndex = 0;
-                response.flaggedTokens.forEach(token => {
-                    // find the token in the text
-                    const indexOfMisspelledWord = text.indexOf(token.token, lastMarkedErrorIndex);
-                    if (indexOfMisspelledWord < token.offset)
-                        return;
+        let batches = [{
+            text: textWithoutHTMLTags,
+            startIndex: 0
+        }];
 
-                    if (token.suggestions.length <= 0)
-                        return;
+        let mode = PROOF_MODE;
 
-                    // get the best suggestion if over the min required certainty
-                    const suggestion = token.suggestions[0].suggestion;
-                    const certainty = token.suggestions[0].score;
-                    const markedWord = document.createElement("SPAN") as HTMLSpanElement;
-                    markedWord.setAttribute("suggestion", suggestion);
-                    markedWord.setAttribute("certainty", certainty);
-                    markedWord.setAttribute("data-sf-ec-immutable", "");
-                    markedWord.setAttribute("custom-edit-menu", "");
-                    markedWord.innerText = token.token;
-
-                    // apply the mark
-                    text = text.slice(0, indexOfMisspelledWord)
-                        + text.slice(indexOfMisspelledWord, indexOfMisspelledWord + token.token.length).replace(token.token, markedWord.outerHTML)
-                        + text.slice(indexOfMisspelledWord + token.token.length);
-
-                    // bump the counter of fixed words
-                    lastMarkedErrorIndex = indexOfMisspelledWord;
-                });
-
-                editor.value(text);
-            } else if (response._type == "ErrorResponse") {
-                // TODO: handle errors https://dev.cognitive.microsoft.com/docs/services/5f7d486e04d2430193e1ca8f760cd7ed/operations/57855119bca1df1c647bc358
-                alert("An error occured");
-            }
-        });
-    }
-
-    private spellCorrect(editorHost: any) {
-        const editor = editorHost.getKendoEditor();
-        // TODO: get selection not the whole text
-        let text = editor.value();
-        text = this.removeSpellChecks(text);
-
-        // TODO: use the real culture
-        this.makeRequest(text).subscribe((response: any) => {
-            if (response._type == "SpellCheck") {
-                if (window.confirm("Are you sure you want to automatically correct all spelling mistakes?")) {
-                    let fixedErrorsCount = 0;
-                    let lastFixedErrorIndex = 0;
-                    response.flaggedTokens.forEach(token => {
-                        // find the token in the text
-                        const indexOfMisspelledWord = text.indexOf(token.token, lastFixedErrorIndex);
-                        if (indexOfMisspelledWord < token.offset)
-                            return;
-
-                        const suggestions = token.suggestions.filter(s => s.score >= MIN_CERTAINTY);
-                        if (suggestions.length <= 0)
-                            return;
-
-                        // get the best suggestion if over the min required certainty
-                        const suggestion = suggestions[0].suggestion;
-
-                        // apply the correction
-                        text = text.slice(0, indexOfMisspelledWord)
-                            + text.slice(indexOfMisspelledWord, indexOfMisspelledWord + token.token.length).replace(token.token, suggestion)
-                            + text.slice(indexOfMisspelledWord + token.token.length);
-
-                        // bump the counter of fixed words
-                        ++fixedErrorsCount;
-                        lastFixedErrorIndex = indexOfMisspelledWord;
-                    });
-
-                    editor.value(text);
-                    editor.trigger("change");
-                    alert(`${fixedErrorsCount} errors were fixed!`);
-                }
-            } else if (response._type == "ErrorResponse") {
-                // TODO: handle errors https://dev.cognitive.microsoft.com/docs/services/5f7d486e04d2430193e1ca8f760cd7ed/operations/57855119bca1df1c647bc358
-                alert("An error occured");
-            }
-        });
-    }
-
-    private removeSpellChecks(text: string) {
-        var wrapper= document.createElement('div');
-        wrapper.innerHTML= text;
-
-        //const doc = new DOMParser().parseFromString(text, "text/xml");
-        const spans = wrapper.querySelectorAll("span[suggestion]");
-        for (let i = 0; i < spans.length; i++) {
-            spans[i].outerHTML = spans[i].textContent;
+        /*
+        * NOTE: Spell mode will make a batch of queries.
+        * There is a change your subscription plan does not support multiple queries per second.
+        * In such case use proof mode.
+        */
+        if (proofModeCultures.indexOf(culture) === -1) {
+            mode = SPELL_MODE;
+            batches = this.splitTextInBatches(textWithoutHTMLTags);
         }
 
-        return wrapper.outerHTML;
+        const requests = [];
+        batches.forEach(batch => {
+            requests.push(this.makeRequest(batch.text, culture, mode));
+        });
+
+        forkJoin(requests).subscribe(
+            (responses: any) => {
+                let lastMarkedErrorIndex = 0;
+                responses.forEach((response: any, index) => {
+                        if (response._type == "SpellCheck") {
+                            response.flaggedTokens.forEach(token => {
+                                // find the token in the text
+                                const indexOfMisspelledWord = text.indexOf(token.token, lastMarkedErrorIndex);
+                                if (indexOfMisspelledWord < token.offset + batches[index].startIndex)
+                                    return;
+
+                                if (token.suggestions.length <= 0)
+                                    return;
+
+                                // get the best suggestion if over the min required certainty
+                                const suggestion = token.suggestions[0].suggestion;
+                                const certainty = token.suggestions[0].score;
+
+                                if (certainty < MIN_CERTAINTY)
+                                    return;
+
+                                const markedWord = document.createElement("SPAN") as HTMLSpanElement;
+                                markedWord.setAttribute("suggestion", suggestion);
+                                markedWord.setAttribute("data-sf-ec-immutable", "");
+                                markedWord.setAttribute("custom-edit-menu", "");
+                                markedWord.innerText = token.token;
+
+                                // apply the mark
+                                text = text.slice(0, indexOfMisspelledWord)
+                                    + text.slice(indexOfMisspelledWord, indexOfMisspelledWord + token.token.length).replace(token.token, markedWord.outerHTML)
+                                    + text.slice(indexOfMisspelledWord + token.token.length);
+
+                                // bump the counter of fixed words
+                                lastMarkedErrorIndex = indexOfMisspelledWord + markedWord.outerHTML.length;
+                            });
+
+                            editor.value(text);
+                        }
+            })},
+            (error: any) => {
+                alert(`${error.error.message} Contact your administrator to resolve this issue.`);
+            });
     }
 
-    private makeRequest(text: string, culture: string = "en-US"): Observable<object> {
-        const textWithoutHTMLTags = this.stripHTML(text);
-        const query_string = "?mkt=" + culture + "&mode=" + MODE + "&text=" + textWithoutHTMLTags;
+    private makeRequest(text: string, culture: string = "en-US", mode: string = "proof"): Observable<object> {
+        const query_string = "?mkt=" + culture + "&mode=" + mode;
         const url = HOST + PATH + query_string;
+        const body = new URLSearchParams();
+        body.set('text', text);
         const options = {
             headers : {
-                'Ocp-Apim-Subscription-Key' : KEY
+                'Ocp-Apim-Subscription-Key' : KEY,
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
         };
 
-        return this.http.get(url, options);
+        return this.http.post(url, body.toString(), options);
     }
 
     private stripHTML(html: string): string {
         var tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
+    }
+
+    private splitTextInBatches(text: string): any[] {
+        const batches = [];
+        var words = text.split(' ');
+        const batch = {
+            text: '',
+            startIndex: 0
+        };
+        let lastMarkedBatchIndex = 0;
+
+        words.forEach(word => {
+            const newBatchText = batch.text === '' ? word : batch.text + ' ' + word;
+            if (newBatchText.length <= 65) {
+                batch.text = newBatchText;
+            } else {
+                // find the batch in the text
+                const indexOfBatch = text.indexOf(batch.text, lastMarkedBatchIndex);
+                batch.startIndex = indexOfBatch;
+                lastMarkedBatchIndex = indexOfBatch;
+                batches.push(JSON.parse(JSON.stringify(batch)));
+                batch.text = word;
+            }
+        });
+
+        batches.push(batch);
+        return batches;
     }
 }
 

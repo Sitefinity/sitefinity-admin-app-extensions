@@ -14,13 +14,22 @@ class EditMenuSpellCheckProvider implements EditMenuProvider {
 
     private createSpellCheckButtons(element: HTMLElement): Array<EditMenuSection> {
         const suggestion = element.attributes["suggestion"].value;
+        const fakeWordButton: EditMenuButton = {
+            name: "suggestion",
+            action: null,
+            text: `${suggestion}`,
+            tooltip: `${suggestion}`,
+            isActive: false,
+            closeMenuOnClick: false
+        };
+
         const acceptButton: EditMenuButton = {
             name: "check",
             action: () => {
                 element.outerHTML = suggestion;
             },
-            text: `${suggestion} - ${Math.round( element.attributes["certainty"].value * 100)}%`,
-            tooltip: "Make correction",
+            text: null,
+            tooltip: "Accept correction",
             isActive: false,
             closeMenuOnClick: true
         };
@@ -31,12 +40,13 @@ class EditMenuSpellCheckProvider implements EditMenuProvider {
                 element.outerHTML = element.innerText;
             },
             text: null,
-            tooltip: "Discard correction",
+            tooltip: "Discard",
             isActive: false,
             closeMenuOnClick: true
         };
 
         return [
+            new EditMenuSection(fakeWordButton),
             new EditMenuSection(acceptButton),
             new EditMenuSection(cancelButton)
         ];

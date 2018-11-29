@@ -82,8 +82,8 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
      * that is used to initialize the editor upon creation
      * Kendo UI Editor configuration Overiview documentation -> https://docs.telerik.com/kendo-ui/controls/editors/editor/overview#configuration
      */
-    configureEditor(configuration: any, culture: string) {
-        this.culture = culture;
+    configureEditor(configuration: any) {
+        this.culture = configuration.culture;
         return configuration;
     }
 
@@ -104,7 +104,7 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
         * There is a change your subscription plan does not support multiple queries per second.
         * In such case use proof mode.
         */
-        if (proofModeCultures.indexOf(culture) === -1) {
+        if (culture && proofModeCultures.indexOf(culture) === -1) {
             mode = SPELL_MODE;
             batches = this.splitTextInBatches(textWithoutHTMLTags);
         }

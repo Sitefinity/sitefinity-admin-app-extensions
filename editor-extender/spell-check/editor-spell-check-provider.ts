@@ -18,7 +18,7 @@ const PATH = '/bing/v7.0/spellcheck';
  * Proof - Meant to provide Office Word like spelling corrections.
  *         It can correct long queries, provide casing corrections and suppresses aggressive corrections.
  * Spell - Meant to provide Search engine like spelling corrections.
- *         It will correct small queries(up to length 9 tokens) without any casing changes and
+ *         It will correct small queries(up to length 65 tokens) without any casing changes and
  *         will be more optimized (perf and relevance) towards search like queries.
  */
 const PROOF_MODE = "proof";
@@ -140,6 +140,11 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
                                 markedWord.setAttribute("data-sf-ec-immutable", "");
                                 markedWord.setAttribute("custom-edit-menu", "");
                                 markedWord.innerText = token.token;
+
+                                // check if word is already marked
+                                const indexOfMarkedWord = text.indexOf(markedWord.outerHTML, lastMarkedErrorIndex);
+                                if (indexOfMarkedWord !== -1 && indexOfMarkedWord < indexOfMisspelledWord)
+                                    return;
 
                                 // apply the mark
                                 text = text.slice(0, indexOfMisspelledWord)

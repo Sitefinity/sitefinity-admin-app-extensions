@@ -4,7 +4,6 @@ import { GridExtenderModule } from "./grid-extender";
 import { CustomFieldsModule } from "./custom-fields";
 import { CommandsExtenderModule } from "./commands-extender";
 import { EditorExtenderModule } from "./editor-extender";
-import { ThemeModule } from "./theme";
 
 /**
  * The entry point of the extensions. Each extension bundle needs to have exactly one export
@@ -20,8 +19,7 @@ export class SamplesExtension implements Extension {
             GridExtenderModule,
             CustomFieldsModule,
             CommandsExtenderModule,
-            EditorExtenderModule,
-            ThemeModule
+            EditorExtenderModule
         ];
     }
 }

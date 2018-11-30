@@ -18,11 +18,6 @@ export class ItemListMap {
         return itemRow.element(by.css("[title=Actions]"));
     }
 
-    public static GetCreateItemButton(): ElementFinder {
-        const listHeaderBar = element(by.css(".sf-main__header"));
-        return listHeaderBar.element(by.cssContainingText("button.sf-button.-action", "Create a"));
-    }
-
     private static GetTableRow(rowTitle: string): ElementFinder {
         return element(by.cssContainingText(".tree-node-level-1", rowTitle));
     }

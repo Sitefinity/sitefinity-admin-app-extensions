@@ -62,8 +62,6 @@ describe("Verify extensions", () => {
         await BrowserNavigate(THEME_URL);
         await Theme.SelectTheme("Sample");
         await Theme.UseSelectedTheme();
-
-        await BrowserNavigate(CONTENT_NEWS_URL);
-        await ItemList.VerifyThemeButtonColor();
+        await Theme.ValidateButtonColor();
     });
 });

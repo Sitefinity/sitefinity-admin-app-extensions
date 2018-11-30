@@ -24,7 +24,7 @@ To customize the Admin App theme, you need to create a custom implementation of 
 
 The following table lists all exposed variables, that is UI components, along with sample values. 
 | Name                                          | Key                                                       | Value                 |
-| --------------------------------------------- |:---------------------------------------------------------:| ---------------------:|
+| --------------------------------------------- |-----------------------------------------------------------| ----------------------|
 | Default button border color                   | ThemeVariables.DefaultButtonBorderColor                   | "#E4E4E4"             |
 | Default button background color               | ThemeVariables.DefaultButtonBackgroundColor               | "#FFF"                |
 | Default button color                          | ThemeVariables.DefaultButtonColor                         | "#333"                |

@@ -1,4 +1,4 @@
-import { browser, ElementFinder } from "protractor";
+import { browser, ElementFinder, protractor } from "protractor";
 import { EC, TIME_TO_WAIT } from "./constants";
 
 export async function BrowserWaitForElement(element: ElementFinder) {
@@ -30,4 +30,10 @@ export async function BrowserVerifyAlert(expectedAlertText: string): Promise<voi
     const actualAlertText = await alertDialog.getText();
     expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
     await alertDialog.accept();
+}
+
+export async function SelectAllAndPasteText(text: string): Promise<void> {
+    await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
+    await browser.actions().keyUp(protractor.Key.CONTROL).perform();
+    await browser.actions().sendKeys(text).perform();
 }

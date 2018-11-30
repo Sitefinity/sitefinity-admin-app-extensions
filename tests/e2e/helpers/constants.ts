@@ -108,3 +108,8 @@ export const DOCUMENT_LIBRARIES = "documentlibraries";
 
 // Sample content
 export const SAMPLE_TEXT_CONTENT = "one two three four five six seven eight nine ten";
+
+export const FIRST_WORD_WITH_ERROR = "wirh"; // with
+export const SECOND_WORD_WITH_ERROR = "erors"; // errors
+export const SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS = "<p>Some text <span suggestion='with' data-sf-ec-immutable='' custom-edit-menu=''>wirh</span> <span suggestion='errors' data-sf-ec-immutable='' custom-edit-menu=''>erors</span></p>";
+export const SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS = "Some text with erors";

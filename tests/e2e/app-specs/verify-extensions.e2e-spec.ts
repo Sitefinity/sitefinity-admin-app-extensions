@@ -1,6 +1,6 @@
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
-import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, SAMPLE_TEXT_CONTENT, THEME_URL } from "../helpers/constants";
+import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, SAMPLE_TEXT_CONTENT, THEME_URL, FIRST_WORD_WITH_ERROR, SECOND_WORD_WITH_ERROR, SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS, SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS } from "../helpers/constants";
 import { BrowserNavigate, BrowserWaitForElement, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
@@ -63,5 +63,19 @@ describe("Verify extensions", () => {
         await Theme.SelectTheme("Sample");
         await Theme.UseSelectedTheme();
         await Theme.ValidateButtonColor();
+    });
+
+    it("spell checker", async () => {
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.ExpandHtmlField();
+        await ItemDetails.ChangeEditorContent(SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS);
+        await ItemDetails.FocusHtmlField();
+        await ItemDetails.VerifyHtmlToolbarSpellCheck();
+        await ItemDetails.ClickEditorImmutableElement(FIRST_WORD_WITH_ERROR);
+        await ItemDetails.ClickEditorMenuButton("Accept correction");
+        await ItemDetails.ClickEditorImmutableElement(SECOND_WORD_WITH_ERROR);
+        await ItemDetails.ClickEditorMenuButton("Discard");
+        await ItemDetails.VerifyEditorContent(SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS);
     });
 });

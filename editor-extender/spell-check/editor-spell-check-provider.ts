@@ -6,6 +6,12 @@ import { Observable, forkJoin } from "rxjs";
 // This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./editor-spell-check-provider.css");
 
+/*
+ * NOTE: Replace this example key with your subscription key.
+ * For more information on how to get a key check here: https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/
+ */
+const AZURE_LANGUAGE_SERVICES_API_KEY = '';
+
 /**
  * Indicates the minimum value of certainty that is needed in order a correction to be applied.
  */
@@ -34,11 +40,6 @@ const proofModeCultures = [
     "es-ES",
     "pt-BR"
 ];
-
-/*
- * NOTE: Replace this example key with your subscription key .
- */
-const KEY = '';
 
 /**
  * A custom toolbar provider implementation for checheking and correcting the spelling in the kendo editor.
@@ -171,7 +172,7 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
         body.set('text', text);
         const options = {
             headers : {
-                'Ocp-Apim-Subscription-Key' : KEY,
+                'Ocp-Apim-Subscription-Key' : AZURE_LANGUAGE_SERVICES_API_KEY,
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         };

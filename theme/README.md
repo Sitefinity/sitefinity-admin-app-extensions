@@ -10,6 +10,8 @@ You can customize the appearance of the Admin App by modifying specific componen
 
 You can also set an outline style for all UI focusable elements, for example, buttons or input fields, and so on. 
 
+**NOTE:** The custom theme and its customizations are stored in the **Local Storage**. Thus, you can see the custom Admin App theme in the current browser only. Therefore, in case you clear your **Local Storage** or use another browser, the theme applied will be the default one, not the custom one.
+
 To customize the Admin App theme, you need to create a custom implementation of the **ThemeProvider** interface and its **getThemes()** method. The method returns an **Array** of the **ThemeItem** object. Theme items must contain the **name** of your custom theme and an array of the **ThemeVariablesKeyValuePair**. The key-value pair contains the following: 
 
 * **key: ThemeVariables**
@@ -20,8 +22,9 @@ To customize the Admin App theme, you need to create a custom implementation of 
 
 **NOTE:** In key-value pairs, you abide by the following syntax: **{ key: ThemeVariables.DefaultButtonColor, value: "#333" }**. You thus set the color of the default button to be color **#333**. 
 
+The following table lists all exposed variables, that is UI components, along with sample values. 
 | Name                                          | Key                                                       | Value                 |
-| --------------------------------------------- |:---------------------------------------------------------:| ---------------------:|
+| --------------------------------------------- |-----------------------------------------------------------| ----------------------|
 | Default button border color                   | ThemeVariables.DefaultButtonBorderColor                   | "#E4E4E4"             |
 | Default button background color               | ThemeVariables.DefaultButtonBackgroundColor               | "#FFF"                |
 | Default button color                          | ThemeVariables.DefaultButtonColor                         | "#333"                |

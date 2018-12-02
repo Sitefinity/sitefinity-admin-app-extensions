@@ -56,6 +56,7 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
         await ItemDetails.VerifyAndClickSymbolListButton();
+        await ItemDetails.ClickBackButton(true);
     });
 
     it("applied theme", async () => {

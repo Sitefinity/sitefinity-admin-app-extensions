@@ -107,7 +107,7 @@ export const IMAGE_LIBRARIES = "albums";
 export const DOCUMENT_LIBRARIES = "documentlibraries";
 
 // Sample content
-export const SAMPLE_TEXT_CONTENT = "one two three four five six seven eight nine ten";
+export const SAMPLE_TEXT_CONTENT = "1 2 3 4 5";
 
 export const FIRST_WORD_WITH_ERROR = "wirh"; // with
 export const SECOND_WORD_WITH_ERROR = "erors"; // errors

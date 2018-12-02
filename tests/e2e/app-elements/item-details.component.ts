@@ -4,6 +4,7 @@ import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
+import { EC, TIME_TO_WAIT } from "../helpers/constants";
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
@@ -25,7 +26,7 @@ export class ItemDetails {
 
     static async VerifyEditorContent(expectedContent: string): Promise<void> {
         const editor = ItemDetailsMap.EditorInternalField;
-        const content= await editor.getText();
+        const content = await editor.getText();
         expect(content).toBe(expectedContent);
     }
 
@@ -68,12 +69,15 @@ export class ItemDetails {
     }
 
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
-        await BrowserWaitForElement(ItemListMap.BackButton);
-        await ItemListMap.BackButton.click();
+        await BrowserWaitForElement(ItemDetailsMap.BackButton);
+        await ItemDetailsMap.BackButton.click();
 
         if (acceptAlert === true) {
-            const alert = browser.switchTo().alert();
-            await alert.accept();
+            browser.waitForAngularEnabled(false);
+            await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Expected alert is not shown.");
+            await browser.switchTo().alert().accept();
+            await BrowserWaitForElement(ItemListMap.TitleTag);
+            browser.waitForAngularEnabled(true);
         }
     }
 

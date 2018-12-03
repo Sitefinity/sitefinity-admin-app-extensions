@@ -6,6 +6,7 @@ import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { ItemListMap } from "../app-elements/item-list.map";
+import { ItemDetailsMap } from "../app-elements/item-details.map";
 
 describe("Verify extensions", () => {
     const typeToTest = "News";
@@ -60,7 +61,7 @@ describe("Verify extensions", () => {
     it("item hooks", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
-        await BrowserWaitForElement(Item.PublishButton);
+        await BrowserWaitForElement(ItemDetailsMap.PublishButton);
         await BrowserVerifyConsoleOutput(itemToVerify);
     });
 });

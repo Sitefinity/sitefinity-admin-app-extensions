@@ -3,7 +3,7 @@ var jasmineReporters = require("jasmine-reporters");
 var HtmlReporter = require('protractor-angular-screenshot-reporter');
 
 var screenshotReporter = new HtmlReporter({
-    baseDirectory: './test-results/html-report' 
+    baseDirectory: './test-results/html-report'
 }).getJasmine2Reporter();
 
 // Override "source-map-support"'s install function, since it is causing issues protractor bootstrap
@@ -18,7 +18,7 @@ var junitReporter = new jasmineReporters.JUnitXmlReporter({
 
 var browserParameter;
 var headlessParameter = false;
-  
+
 for (let index = 0; index < process.argv.length; index++) {
     const element = process.argv[index];
 
@@ -36,11 +36,14 @@ for (let index = 0; index < process.argv.length; index++) {
 
 var browserSettings;
 switch(browserParameter) {
-    case "chrome":                
+    case "chrome":
         browserSettings = {
             browserName: "chrome",
             chromeOptions: {
                 args: []
+            },
+            loggingPrefs: {
+                browser: "ALL"
             }
         };
 
@@ -52,7 +55,7 @@ switch(browserParameter) {
             ]);
         }
         break;
-        
+
     case "firefox":
         browserSettings = {
             browserName: "firefox",
@@ -61,6 +64,9 @@ switch(browserParameter) {
                 log: {
                     "level": "error"
                 }
+            },
+            loggingPrefs: {
+                browser: "ALL"
             }
         };
 
@@ -68,7 +74,7 @@ switch(browserParameter) {
             browserSettings["moz:firefoxOptions"].args = browserSettings["moz:firefoxOptions"].args.concat([
                 "--headless"
             ]);
-        }        
+        }
         break;
 
     default:
@@ -77,6 +83,9 @@ switch(browserParameter) {
             browserName: "chrome",
             chromeOptions: {
                 args: []
+            },
+            loggingPrefs: {
+                browser: "ALL"
             }
         };
 }
@@ -106,7 +115,7 @@ exports.config = {
     useAllAngular2AppRoots: true,
 
     baseUrl: "http://localhost:3000/",
-    
+
     onPrepare: function() {
         browser
             .manage()

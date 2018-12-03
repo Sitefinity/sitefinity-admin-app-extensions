@@ -213,10 +213,6 @@ Holds the type of component to be instantiated and what properties are assigned 
 
 Contains commands that serve as buttons in the dialog that is displayed.
 
-### Admin App custom theme
-
-You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app)
-
 ### Access data from OData services
 
-You can make HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the HTTP_PREFIX constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.
+You can HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the HTTP_PREFIX constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.

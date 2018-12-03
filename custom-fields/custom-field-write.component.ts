@@ -9,4 +9,12 @@ import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
     templateUrl: "./custom-field-write.component.html",
     styleUrls: [ "./custom-field-write.component.css" ]
 })
-export class CustomInputWriteComponent extends FieldBase { }
+export class CustomInputWriteComponent extends FieldBase {
+    processErrors(errors: any) {
+        if (errors.pattern) {
+            return ["Invalid email !"];
+        }
+
+        return [];
+    }
+}

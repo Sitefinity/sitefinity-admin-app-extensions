@@ -22,6 +22,9 @@ import { FrameworkModule } from "progress-sitefinity-adminapp-sdk/app/api/v1";
     providers: [
         CUSTOM_FIELDS_PROVIDER
     ],
+
+    // import the framework module as it holds the components that the AdminApp uses
+    // for a list of components see
     imports: [FormsModule, FrameworkModule]
 })
 export class CustomFieldsModule { }

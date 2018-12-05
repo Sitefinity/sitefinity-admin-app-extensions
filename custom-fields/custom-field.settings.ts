@@ -6,6 +6,12 @@ import { ValidatorFn, Validators } from "@angular/forms";
  * Examples of such are validations, the title to be shown and so on.
  */
 export class CustomShortTextSettings extends SettingsBase {
+    init(metadata: any) {
+        super.init(metadata);
+
+        // set the recommended characters for this field to 20
+        this.recommendedCharacters = 20;
+    }
     getValidators(): ValidatorFn[] {
         const baseValidators = super.getValidators();
 

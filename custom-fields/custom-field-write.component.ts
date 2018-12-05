@@ -10,7 +10,11 @@ import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
     styleUrls: [ "./custom-field-write.component.css" ]
 })
 export class CustomInputWriteComponent extends FieldBase {
-    processErrors(errors: any) {
+    processErrors(errors: { [key: string]: any }) {
+
+        // the pattern validator in the custom-field.settings file sets a pattern object
+        // that holds information regarding the validation. If the pattern property exists
+        // the validation has not passed and we can return an error message
         if (errors.pattern) {
             return ["Invalid email !"];
         }

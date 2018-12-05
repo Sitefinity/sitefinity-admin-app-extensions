@@ -9,6 +9,7 @@ export class CustomShortTextSettings extends SettingsBase {
     getValidators(): ValidatorFn[] {
         const baseValidators = super.getValidators();
 
+        // add an email pattern validator
         const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const emailValidator = Validators.pattern(emailPattern);
         baseValidators.push(emailValidator);

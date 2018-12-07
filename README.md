@@ -206,6 +206,10 @@ What is more you have the power to edit the configurations which are used to ins
 
 Apart from the major formatting functions, located on the formatting bar in the HTML content editor, you can add a word counter functionality. You do this by providing a custom implementation of the **EditorConfigProvider**, which you place in the **toolbar-extender** folder.
 
+### Custom content editor toolbar spellcheck
+
+You can find another sample of extending the editor toolbar in the editor-extender/spell-check folder. This extension adds a button that calls an external API - the Azure cognitive services' Bing spell check and based on the response styles the issues differently and adds a tooltip with the proposed changes that is showed on click so the user can accept the correct spelling. You can find more in the comments in the files, but to get it working you need to add your Azure API key (More information on how to get a key: https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/) in the editor-spell-check-provider.ts file and add the Aure API endpoint (https://api.cognitive.microsoft.com) to the connect-src section of you Sitefinity's WebSecurity module.
+
 ### Custom dialogs in the grid and in editing mode
 
 When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the **SelectorService** and the **OpenDialog** method. The method accepts the **DialogData** argument, which has the following properties:

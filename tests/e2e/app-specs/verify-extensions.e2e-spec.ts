@@ -9,8 +9,6 @@ import { ItemListMap } from "../app-elements/item-list.map";
 import { ItemDetailsMap } from "../app-elements/item-details.map";
 
 describe("Verify extensions", () => {
-    const typeToTest = "News";
-    const imageColumnHeader = "IMAGE";
     const itemToVerify = "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1";
 
     beforeAll(async (done: DoneFn) => {
@@ -20,14 +18,11 @@ describe("Verify extensions", () => {
 
     it("images column", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
-        await ItemList.VerifyBasicUIElements(NEWS_TYPE_NAME, typeToTest);
-
-        const extensionHeaders = DYNAMIC_ITEM_HEADERS.map((header) => { return header === TABLE_HEADERS_CONSTANTS.DATE_CREATED ? imageColumnHeader : header; });
-        await ItemList.VerifyBasicGridElements(typeToTest, extensionHeaders, 34);
+        await ItemList.VerifyImageColumn();
     });
 
-    it("print preview ", async () => {
-        await ItemList.ClickPrintPreview(itemToVerify);
+    it("print preview", async () => {
+        await ItemList.ClickPrintPreview();
         await PrintPreview.VerifyPrintPreview(itemToVerify);
     });
 
@@ -55,13 +50,13 @@ describe("Verify extensions", () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
+        await ItemDetails.ClickToolbarButtonByTitle("Insert symbol");
         await ItemDetails.VerifyAndClickSymbolListButton();
     });
 
     it("item hooks", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
-        await BrowserWaitForElement(ItemDetailsMap.PublishButton);
         await BrowserVerifyConsoleOutput(itemToVerify);
     });
 });

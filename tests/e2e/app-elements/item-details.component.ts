@@ -16,16 +16,16 @@ export class ItemDetails {
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
-        const wordCountButtonClass = "k-i-Sitefinity-videos";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
+        const videosButtonTitle = "Sitefinity videos";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(videosButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(videosButtonTitle);
         await toolbarButton.click();
     }
 
     static async ExpandHtmlField(): Promise<void>  {
-        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpander);
-        const htmlField = ItemDetailsMap.HtmlFieldExpander;
-        await htmlField.click();
+        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpandButton);
+        const htmlFieldExpandButton = ItemDetailsMap.HtmlFieldExpandButton;
+        await htmlFieldExpandButton.click();
     }
 
     static async VerifyCustomTitleField(): Promise<void> {
@@ -43,11 +43,17 @@ export class ItemDetails {
         }
     }
 
-    static async VerifyAndClickSymbolListButton(): Promise<void> {
-        const symbolListButtonClass = "k-i-insertsymbol";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(symbolListButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(symbolListButtonClass);
+    static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(buttonTitle);
         await toolbarButton.click();
+    }
+
+    static async VerifyAndClickSymbolListButton(): Promise<void> {
+        // const symbolListButtonClass = "k-i-insertsymbol";
+        // await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(symbolListButtonClass));
+        // const toolbarButton = ItemDetailsMap.ToolbarButton(symbolListButtonClass);
+        // await toolbarButton.click();
         await BrowserWaitForElement(EditorPopupMap.ToolPopup);
         const symbolButton = EditorPopupMap.SymbolCell;
         const editor = ItemDetailsMap.EditorInternalField;

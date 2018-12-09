@@ -16,6 +16,10 @@ export class ItemList {
         expect(await ItemListMap.TitleTag.getText()).toBe(itemTitlePlural);
     }
 
+    static async VerifyImageColumn() {
+        await BrowserWaitForElement(ItemListMap.ImageColumn);
+    }
+
     static async VerifyBasicGridElements(itemTitle: string, headers: string[], allItems: number, currentLoadedItems = DEFAULT_ITEMS_NUMBER) {
         await BrowserWaitForElement(ItemListMap.TitleTag);
         await ItemList.VerifyHeaders(headers);
@@ -33,8 +37,8 @@ export class ItemList {
         expect(await ItemListMap.CountLabel.getText()).toBe(expectedItemCountLabel);
     }
 
-    static async ClickPrintPreview(title: string) {
-        const actionButton = ItemListMap.GetItemActionsMenu(title);
+    static async ClickPrintPreview() {
+        const actionButton = ItemListMap.GetItemActionsMenu();
 
         await actionButton.click();
         await BrowserWaitForElement(ItemListMap.PrintPreviewButton);
@@ -42,7 +46,6 @@ export class ItemList {
     }
 
     static async ClickOnItem(title: string) {
-        await BrowserWaitForElement(ItemListMap.CountLabel);
         await BrowserWaitForElement(ItemListMap.GetRowTitleCell(title));
         const item = ItemListMap.GetRowTitleCell(title);
         await item.click();

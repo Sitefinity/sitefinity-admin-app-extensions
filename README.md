@@ -186,6 +186,7 @@ Once the component is instantiated, the Admin App assigns the context property t
 When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. Out-of-the-box, content editors can work with image and link selector contextual toolsets for Sitefinity CMS content. You can also add a custom video selector for Sitefinity CMS content by injecting a custom **ToolBarItem**.
 To do this, you provide a custom implementation of the **EditorConfigProvider**. The provider has a method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want to be displayed in the editor. In this case, this is the video selector.
 
+
 In this example, you use the built-in SelectorService class, which has two methods:
 
 * **openVideoLibrarySelector**
@@ -214,6 +215,7 @@ Another useful addition to the content editing experience is having a dedicated 
 To extend the contextual toolset, you need to implement the **EditMenuProvider** interface, which defines the **getButtons** method. The method returns the buttons that are displayed on clicking the marked word. To make an element, in this example - the contextual toolset, editable, you need to mark it with at least the following 2 attributes:
 * **data-sf-ec-immutable**
 * **custom-edit-menu**
+
 It is a good idea to mark the element with another custom unique attribute that will be used for identification in the **getButtons** method. In this example, the **suggestion** attribute is used.
 Keep in mind that you need an Azure API key to make calls to the Azure service. For more information about getting the Azure API key, see the [Azure spell check documentation](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/). After you acquire a key, place it in the **editor-spell-check-provider.ts** file.
 Add the [Azure API endpoint](https://api.cognitive.microsoft.com/) to the **connect-src** section of the Sitefinity Web security module. For more information, see [Content policy HTTP header syntax reference](https://www.progress.com/documentation/sitefinity-cms/content-security-policy-http-header-syntax-reference).
@@ -233,7 +235,7 @@ Contains commands that serve as buttons in the dialog that is displayed.
 
 ### Admin App custom theme
 
-You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app)
+You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app).
 
 ### Access data from OData services
 

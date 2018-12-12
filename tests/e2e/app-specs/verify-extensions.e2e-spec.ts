@@ -35,9 +35,12 @@ describe("Verify extensions", () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.VerifyCustomTitleField();
+        await ItemDetails.ClickBackButton(true);
     });
 
     it("word count editor toolbar button ", async () => {
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
         await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);

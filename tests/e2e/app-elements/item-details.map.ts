@@ -1,11 +1,11 @@
 import { element, by, ElementFinder } from "protractor";
 
-const defaultFieldLocator = ".sf-input.-rich-text";
-const itemTitleExtensionCssClass = ".custom-title-input";
+const defaultFieldLocator = ".-sf-short-text-default";
 
 export class ItemDetailsMap {
     public static TitleField: ElementFinder = element(by.css(defaultFieldLocator));
-    public static ExtendedTitleField: ElementFinder = element(by.css(itemTitleExtensionCssClass));
+    public static TitleInput: ElementFinder = ItemDetailsMap.TitleField.element(by.css("input"));
+    public static TitleError: ElementFinder = ItemDetailsMap.TitleField.element(by.css("sf-error"));
     public static HtmlFieldExpander: ElementFinder = element(by.css(".sf-expand-button"));
     public static EditorInternalField: ElementFinder = element(by.css(".k-editor.k-editor-inline"));
     public static EditorCustomEditMenu: ElementFinder = element.all(by.css(".sf-notification__content")).last();
@@ -24,5 +24,9 @@ export class ItemDetailsMap {
 
     public static EditorMenuButton(buttonTitle: string): ElementFinder {
         return ItemDetailsMap.EditorCustomEditMenu.element(by.css(`.sf-notification__tool-button[title='${buttonTitle}']`));
+    }
+
+    public static FieldCharCounter(field: ElementFinder): ElementFinder {
+        return field.element(by.css('.sf-input__char-counter'));
     }
 }

@@ -1,4 +1,4 @@
-import { browser } from "protractor";
+import { browser, ElementFinder } from "protractor";
 import { SEVERE_LOG_LEVEL, NEW_LINE } from "./constants";
 
 export function removeQueryParams(url: Promise<string>): Promise<string> {
@@ -23,4 +23,9 @@ export async function ServerConsoleLogs() {
 
 export function capitalizeFirstLetter(stringToCapitalize: string) {
     return stringToCapitalize.charAt(0) + stringToCapitalize.slice(1);
+}
+
+export async function ElementHasClass(element: ElementFinder, className: string) {
+    const classes = (await element.getAttribute('class')).split(' ');
+    return classes.indexOf(className) !== -1;
 }

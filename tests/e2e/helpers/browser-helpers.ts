@@ -30,6 +30,4 @@ export async function SelectAllAndPasteText(text: string): Promise<void> {
     await browser.actions().keyUp(protractor.Key.CONTROL).perform();
     await browser.actions().sendKeys(protractor.Key.BACK_SPACE).perform();
     await browser.actions().sendKeys(text).perform();
-    await browser.actions().sendKeys(protractor.Key.DELETE).perform();
-    await browser.actions().sendKeys(protractor.Key.DELETE).perform();
 }

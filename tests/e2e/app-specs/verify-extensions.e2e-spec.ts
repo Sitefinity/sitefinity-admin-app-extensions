@@ -77,7 +77,7 @@ describe("Verify extensions", () => {
         await ItemList.VerifyThemeButtonColor();
     });
 
-    it("spell checker", async () => {
+    xit("spell checker", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();

@@ -10,6 +10,7 @@ export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;
 export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
 export const CONTENT_NEWS_URL = `${BASE_URL}content/newsitems`;
+export const THEME_URL = `${BASE_URL}theme`;
 
 export const EC = protractor.ExpectedConditions;
 export const URL_IN_CONFIG_FILE = browser.params.sfUrl;
@@ -104,3 +105,11 @@ export const HIERARCHICAL_ITEM_HEADERS = [TABLE_HEADERS_CONSTANTS.TITLE, TABLE_H
 export const VIDEO_LIBRARIES = "videolibraries";
 export const IMAGE_LIBRARIES = "albums";
 export const DOCUMENT_LIBRARIES = "documentlibraries";
+
+// Sample content
+export const SAMPLE_TEXT_CONTENT = "1 2 3 4 5";
+
+export const FIRST_WORD_WITH_ERROR = "wirh"; // with
+export const SECOND_WORD_WITH_ERROR = "erors"; // errors
+export const SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS = "<p>Some text <span suggestion='with' data-sf-ec-immutable='' custom-edit-menu=''>wirh</span> <span suggestion='errors' data-sf-ec-immutable='' custom-edit-menu=''>erors</span></p>";
+export const SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS = "Some text with erors";

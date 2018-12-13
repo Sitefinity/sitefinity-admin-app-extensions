@@ -1,10 +1,11 @@
 require("jasmine-expect");
-import { browser } from "protractor";
+import { browser, protractor } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
-import { EC, TIME_TO_WAIT } from "../helpers/constants";
+import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
+import { ElementHasClass } from '../helpers/common';
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
@@ -39,6 +40,8 @@ export class ItemDetails {
         const monacoEditor = ItemDetailsMap.MonacoEditor;
         await monacoEditor.click();
         await SelectAllAndPasteText(newContent);
+        await browser.actions().sendKeys(protractor.Key.DELETE).perform();
+        await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         const doneButton = ItemDetailsMap.DoneButton;
         await doneButton.click();
         await BrowserWaitForElement(ItemDetailsMap.PublishButton);
@@ -65,7 +68,33 @@ export class ItemDetails {
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
-        expect(await ItemDetailsMap.ExtendedTitleField.isPresent()).toBeTruthy("The title field extension class was not found");
+
+        // verify title has error
+        const titleError = ItemDetailsMap.TitleError;
+        expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
+        const errorContent = await titleError.getText();
+        expect(errorContent.trim()).toBe(TITLE_ERROR);
+
+        // verify title has char counter
+        const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
+        expect(await charCounter.isPresent()).toBeTruthy("Character counter is not present");
+        expect(ElementHasClass(charCounter, '-error')).toBeTrue();
+
+        const titleInput = ItemDetailsMap.TitleInput;
+        await titleInput.click();
+        await SelectAllAndPasteText(TITLE_VALID_TEXT);
+
+        // click html field to loose focus from the title
+        await ItemDetails.ExpandHtmlField();
+
+        // verify char counter has no error
+        expect(ElementHasClass(charCounter, '-error')).toBeFalse();
+
+        // verify title has no error
+        expect(await titleError.isPresent()).toBeFalse();
+
+        // verify title has no char counter
+        expect(await charCounter.isPresent()).toBeFalse();
     }
 
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {

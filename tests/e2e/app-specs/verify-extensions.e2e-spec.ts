@@ -5,7 +5,6 @@ import { BrowserNavigate, BrowserWaitForElement, SelectAllAndPasteText } from ".
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
-import { ServerConsoleLogs } from "./../helpers/common";
 import { ItemListMap } from "../app-elements/item-list.map";
 import { Theme } from "../app-elements/theme.component";
 
@@ -19,10 +18,10 @@ describe("Verify extensions", () => {
         done();
     }, TIMEOUT);
 
-    afterEach(async (done: DoneFn) => {
-        await ServerConsoleLogs();
-        done();
-    });
+    // afterEach(async (done: DoneFn) => {
+    //     await ServerConsoleLogs();
+    //     done();
+    // });
 
     it("images column", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);

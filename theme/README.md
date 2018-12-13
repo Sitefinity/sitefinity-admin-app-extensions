@@ -22,9 +22,10 @@ To customize the Admin App theme, you need to create a custom implementation of 
 
 **NOTE:** In key-value pairs, you abide by the following syntax: **{ key: ThemeVariables.DefaultButtonColor, value: "#333" }**. You thus set the color of the default button to be color **#333**. 
 
-The following table lists all exposed variables, that is UI components, along with sample values. 
+The following table lists all exposed variables, that is UI components, along with sample values.
+
 | Name                                          | Key                                                       | Value                 |
-| --------------------------------------------- |-----------------------------------------------------------| ----------------------|
+| --------------------------------------------- | --------------------------------------------------------- | --------------------- |
 | Default button border color                   | ThemeVariables.DefaultButtonBorderColor                   | "#E4E4E4"             |
 | Default button background color               | ThemeVariables.DefaultButtonBackgroundColor               | "#FFF"                |
 | Default button color                          | ThemeVariables.DefaultButtonColor                         | "#333"                |

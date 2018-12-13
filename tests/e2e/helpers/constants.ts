@@ -116,3 +116,5 @@ export const SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS = "Some text with erors";
 
 export const TITLE_ERROR = "Invalid email !";
 export const TITLE_VALID_TEXT = "user@test.test";
+
+export const ITEM_CONTENT_BEGINNING = "Hello everyone,";

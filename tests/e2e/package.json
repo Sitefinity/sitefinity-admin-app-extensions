@@ -4,7 +4,7 @@
   "license": "private",
   "private": true,
   "scripts": {
-    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone",
+    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone --versions.chrome 2.42",
     "e2e": "node ./node_modules/protractor/bin/protractor",
     "e2e:headlessChrome": "npm run e2e -- --params.browser=chrome --params.headless"
   },

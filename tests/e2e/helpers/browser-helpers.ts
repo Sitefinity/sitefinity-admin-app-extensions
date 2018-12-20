@@ -17,6 +17,13 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
+export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
+    return await browser.manage().logs().get('browser').then((browserLog) => {
+        const log = browserLog.find(entry => entry.level.name === 'INFO' && entry.message.includes(expectedOutput));
+        expect(log).not.toBeUndefined();
+    });
+}
+
 export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
     await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
     const alertDialog = browser.switchTo().alert();

@@ -9,10 +9,6 @@ import { ElementHasClass } from '../helpers/common';
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
-        const wordCountButtonClass = "k-i-Words-count";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
-        await toolbarButton.click();
         const expectedCount = expectedContent.split(" ").length;
         await BrowserVerifyAlert(`Words count: ${expectedCount}`);
     }
@@ -55,9 +51,9 @@ export class ItemDetails {
     }
 
     static async ExpandHtmlField(): Promise<void>  {
-        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpander);
-        const htmlField = ItemDetailsMap.HtmlFieldExpander;
-        await htmlField.click();
+        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpandButton);
+        const htmlFieldExpandButton = ItemDetailsMap.HtmlFieldExpandButton;
+        await htmlFieldExpandButton.click();
     }
 
     static async FocusHtmlField(): Promise<void>  {
@@ -116,28 +112,32 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.EditorCustomEditMenu);
     }
 
-    static async ClickEditorMenuButton(buttonTitle: string) {
+    static async ClickEditorPopupMenuButton(buttonTitle: string) {
         const element = ItemDetailsMap.EditorMenuButton(buttonTitle);
         await element.click();
         await BrowserWaitForElementHidden(ItemDetailsMap.EditorCustomEditMenu);
     }
 
-    static async VerifyAndClickSymbolListButton(): Promise<void> {
-        const symbolListButtonClass = "k-i-insertsymbol";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(symbolListButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(symbolListButtonClass);
+    static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(buttonTitle);
         await toolbarButton.click();
-        await BrowserWaitForElement(EditorPopupMap.ToolPopup);
-        const symbolButton = EditorPopupMap.SymbolCell;
-        const editor = ItemDetailsMap.EditorInternalField;
+    }
 
-        const contents = await editor.getText();
+    static async VerifyAndClickSymbolListButton(): Promise<void> {
+        await BrowserWaitForElement(EditorPopupMap.ToolPopup);
+        const editor = ItemDetailsMap.EditorInternalField;
+        const contentsBeforeInsert = await editor.getText();
+
+        const symbolButton = EditorPopupMap.SymbolCell;
         await symbolButton.click();
+
         const contentAfterInsert = await editor.getText();
+
         // should hide the popup when symbol is clicked
         await BrowserWaitForElementHidden(EditorPopupMap.ToolPopup);
 
         // should have one more character after the symbol is inserted
-        expect(contents.length).toBe(contentAfterInsert.length - 1);
+        expect(contentAfterInsert.length).toBe(contentsBeforeInsert.length + 1);
     }
 }

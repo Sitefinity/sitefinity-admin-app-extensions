@@ -5,7 +5,7 @@ import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden,
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
-import { ElementHasClass } from '../helpers/common';
+import { ElementHasClass } from "../helpers/common";
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
@@ -14,9 +14,9 @@ export class ItemDetails {
     }
 
     static async VerifyHtmlToolbarSpellCheck(): Promise<void> {
-        const spellCheckButtonClass = "k-i-Spell-check";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(spellCheckButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(spellCheckButtonClass);
+        const spellCheckButtonTitle = "Spell check";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(spellCheckButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(spellCheckButtonTitle);
         await toolbarButton.click();
         await BrowserVerifyAlert(`Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. Contact your administrator to resolve this issue.`);
     }
@@ -28,9 +28,9 @@ export class ItemDetails {
     }
 
     static async ChangeEditorContent(newContent: string) {
-        const viewHTMLButtonClass = "k-i-html";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(viewHTMLButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(viewHTMLButtonClass);
+        const viewHTMLButtonTitle = "View HTML";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(viewHTMLButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(viewHTMLButtonTitle);
         await toolbarButton.click();
         await BrowserWaitForElement(ItemDetailsMap.MonacoEditor);
         const monacoEditor = ItemDetailsMap.MonacoEditor;
@@ -44,9 +44,9 @@ export class ItemDetails {
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
-        const wordCountButtonClass = "k-i-Sitefinity-videos";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
+        const wordCountButtonTitle = "Words count";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(wordCountButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(wordCountButtonTitle);
         await toolbarButton.click();
     }
 
@@ -74,7 +74,7 @@ export class ItemDetails {
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
         expect(await charCounter.isPresent()).toBeTruthy("Character counter is not present");
-        expect(ElementHasClass(charCounter, '-error')).toBeTrue();
+        expect(ElementHasClass(charCounter, "-error")).toBeTrue();
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
@@ -84,7 +84,7 @@ export class ItemDetails {
         await ItemDetails.ExpandHtmlField();
 
         // verify char counter has no error
-        expect(ElementHasClass(charCounter, '-error')).toBeFalse();
+        expect(ElementHasClass(charCounter, "-error")).toBeFalse();
 
         // verify title has no error
         expect(await titleError.isPresent()).toBeFalse();

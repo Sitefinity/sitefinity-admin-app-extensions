@@ -1,12 +1,11 @@
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import { BrowserNavigate, SelectAllAndPasteText, BrowserVerifyConsoleOutput, BrowserWaitForElement } from "../helpers/browser-helpers";
-import { USERNAME, PASSWORD, TIMEOUT, DYNAMIC_ITEM_HEADERS, TABLE_HEADERS_CONSTANTS, CONTENT_NEWS_URL, NEWS_TYPE_NAME, SAMPLE_TEXT_CONTENT, THEME_URL, FIRST_WORD_WITH_ERROR, SECOND_WORD_WITH_ERROR, SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS, SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS } from "../helpers/constants";
+import { USERNAME, PASSWORD, TIMEOUT, CONTENT_NEWS_URL, SAMPLE_TEXT_CONTENT, THEME_URL, FIRST_WORD_WITH_ERROR, SECOND_WORD_WITH_ERROR, SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS, SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS } from "../helpers/constants";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
-import { ItemDetailsMap } from "../app-elements/item-details.map";
 import { ItemListMap } from "../app-elements/item-list.map";
 
 describe("Verify extensions", () => {
@@ -40,6 +39,8 @@ describe("Verify extensions", () => {
     });
 
     it("word count editor toolbar button", async () => {
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
         await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.ClickToolbarButtonByTitle("Words count");

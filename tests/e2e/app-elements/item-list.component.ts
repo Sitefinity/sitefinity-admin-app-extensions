@@ -29,17 +29,4 @@ export class ItemList {
         const actualButtonColor = await ItemListMap.GetCreateItemButton().getCssValue(backgroundColorAttribute);
         expect(actualButtonColor).toBe(expectedButtonColor);
     }
-
-    private static async VerifyHeaders(headers: string[]) {
-        const headersNumber = headers.length;
-        try {
-            expect(await ItemListMap.TableHeaders.count()).toBe(headersNumber);
-            for (let i = 0; i < headersNumber; i++) {
-                const innerText = await ItemListMap.TableHeaders.get(i).getAttribute("innerText");
-                expect(innerText.toUpperCase().trim()).toBe(headers[i].toUpperCase());
-            }
-        } catch (e) {
-            throw new Error("Table headers are not correct.");
-        }
-    }
 }

@@ -5,7 +5,7 @@ import { BrowserNavigate, SelectAllAndPasteText, BrowserVerifyConsoleOutput, Bro
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
-import { ItemListMap } from '../app-elements/item-list.map';
+import { ItemListMap } from "../app-elements/item-list.map";
 
 describe("Verify extensions", () => {
     const itemToVerify = "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1";
@@ -53,7 +53,7 @@ describe("Verify extensions", () => {
         await ItemDetails.ClickToolbarButtonByTitle("Insert symbol");
         await ItemDetails.VerifyAndClickSymbolListButton();
         await ItemDetails.ClickBackButton(true);
-+        await BrowserWaitForElement(ItemListMap.ImageColumn);
+        await BrowserWaitForElement(ItemListMap.ImageColumn);
     });
 
     it("item hooks", async () => {

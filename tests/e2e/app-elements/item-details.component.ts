@@ -34,7 +34,7 @@ export class ItemDetails {
             await BrowserWaitForElement(ItemListMap.TitleTag);
             browser.waitForAngularEnabled(true);
         }
-    } 
+    }
 
     static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));

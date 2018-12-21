@@ -52,6 +52,8 @@ describe("Verify extensions", () => {
         await ItemDetails.ExpandHtmlField();
         await ItemDetails.ClickToolbarButtonByTitle("Insert symbol");
         await ItemDetails.VerifyAndClickSymbolListButton();
+        await ItemDetails.ClickBackButton(true);
++        await BrowserWaitForElement(ItemListMap.ImageColumn);
     });
 
     it("item hooks", async () => {

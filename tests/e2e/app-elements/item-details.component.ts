@@ -1,6 +1,7 @@
 require("jasmine-expect");
 import { browser } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
+import { EC, TIME_TO_WAIT } from "../helpers/constants";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
@@ -23,14 +24,17 @@ export class ItemDetails {
     }
 
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
-        await BrowserWaitForElement(ItemListMap.BackButton);
-        await ItemListMap.BackButton.click();
+        await BrowserWaitForElement(ItemDetailsMap.BackButton);
+        await ItemDetailsMap.BackButton.click();
 
         if (acceptAlert === true) {
-            const alert = browser.switchTo().alert();
-            await alert.accept();
+            browser.waitForAngularEnabled(false);
+            await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Expected alert is not shown.");
+            await browser.switchTo().alert().accept();
+            await BrowserWaitForElement(ItemListMap.TitleTag);
+            browser.waitForAngularEnabled(true);
         }
-    }
+    } 
 
     static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));

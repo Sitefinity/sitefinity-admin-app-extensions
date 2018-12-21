@@ -5,22 +5,18 @@ import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden,
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
-import { ElementHasClass } from '../helpers/common';
+import { ElementHasClass } from "../helpers/common";
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
-        const wordCountButtonClass = "k-i-Words-count";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
-        await toolbarButton.click();
         const expectedCount = expectedContent.split(" ").length;
         await BrowserVerifyAlert(`Words count: ${expectedCount}`);
     }
 
     static async VerifyHtmlToolbarSpellCheck(): Promise<void> {
-        const spellCheckButtonClass = "k-i-Spell-check";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(spellCheckButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(spellCheckButtonClass);
+        const spellCheckButtonTitle = "Spell check";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(spellCheckButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(spellCheckButtonTitle);
         await toolbarButton.click();
         await BrowserVerifyAlert(`Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. Contact your administrator to resolve this issue.`);
     }
@@ -32,9 +28,9 @@ export class ItemDetails {
     }
 
     static async ChangeEditorContent(newContent: string) {
-        const viewHTMLButtonClass = "k-i-html";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(viewHTMLButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(viewHTMLButtonClass);
+        const viewHTMLButtonTitle = "View HTML";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(viewHTMLButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(viewHTMLButtonTitle);
         await toolbarButton.click();
         await BrowserWaitForElement(ItemDetailsMap.MonacoEditor);
         const monacoEditor = ItemDetailsMap.MonacoEditor;
@@ -48,16 +44,16 @@ export class ItemDetails {
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
-        const wordCountButtonClass = "k-i-Sitefinity-videos";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(wordCountButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(wordCountButtonClass);
+        const wordCountButtonTitle = "Words count";
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(wordCountButtonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(wordCountButtonTitle);
         await toolbarButton.click();
     }
 
     static async ExpandHtmlField(): Promise<void>  {
-        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpander);
-        const htmlField = ItemDetailsMap.HtmlFieldExpander;
-        await htmlField.click();
+        await BrowserWaitForElement(ItemDetailsMap.HtmlFieldExpandButton);
+        const htmlFieldExpandButton = ItemDetailsMap.HtmlFieldExpandButton;
+        await htmlFieldExpandButton.click();
     }
 
     static async FocusHtmlField(): Promise<void>  {
@@ -78,7 +74,7 @@ export class ItemDetails {
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
         expect(await charCounter.isPresent()).toBeTruthy("Character counter is not present");
-        expect(ElementHasClass(charCounter, '-error')).toBeTrue();
+        expect(ElementHasClass(charCounter, "-error")).toBeTrue();
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
@@ -88,7 +84,7 @@ export class ItemDetails {
         await ItemDetails.ExpandHtmlField();
 
         // verify char counter has no error
-        expect(ElementHasClass(charCounter, '-error')).toBeFalse();
+        expect(ElementHasClass(charCounter, "-error")).toBeFalse();
 
         // verify title has no error
         expect(await titleError.isPresent()).toBeFalse();
@@ -116,28 +112,32 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.EditorCustomEditMenu);
     }
 
-    static async ClickEditorMenuButton(buttonTitle: string) {
+    static async ClickEditorPopupMenuButton(buttonTitle: string) {
         const element = ItemDetailsMap.EditorMenuButton(buttonTitle);
         await element.click();
         await BrowserWaitForElementHidden(ItemDetailsMap.EditorCustomEditMenu);
     }
 
-    static async VerifyAndClickSymbolListButton(): Promise<void> {
-        const symbolListButtonClass = "k-i-insertsymbol";
-        await BrowserWaitForElement(ItemDetailsMap.ToolbarButton(symbolListButtonClass));
-        const toolbarButton = ItemDetailsMap.ToolbarButton(symbolListButtonClass);
+    static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));
+        const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(buttonTitle);
         await toolbarButton.click();
-        await BrowserWaitForElement(EditorPopupMap.ToolPopup);
-        const symbolButton = EditorPopupMap.SymbolCell;
-        const editor = ItemDetailsMap.EditorInternalField;
+    }
 
-        const contents = await editor.getText();
+    static async VerifyAndClickSymbolListButton(): Promise<void> {
+        await BrowserWaitForElement(EditorPopupMap.ToolPopup);
+        const editor = ItemDetailsMap.EditorInternalField;
+        const contentsBeforeInsert = await editor.getText();
+
+        const symbolButton = EditorPopupMap.SymbolCell;
         await symbolButton.click();
+
         const contentAfterInsert = await editor.getText();
+
         // should hide the popup when symbol is clicked
         await BrowserWaitForElementHidden(EditorPopupMap.ToolPopup);
 
         // should have one more character after the symbol is inserted
-        expect(contents.length).toBe(contentAfterInsert.length - 1);
+        expect(contentAfterInsert.length).toBe(contentsBeforeInsert.length + 1);
     }
 }

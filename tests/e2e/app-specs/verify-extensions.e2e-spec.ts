@@ -73,12 +73,6 @@ describe("Verify extensions", () => {
         await ItemList.VerifyThemeButtonColor();
     });
 
-    it("item hooks", async () => {
-        await BrowserNavigate(CONTENT_NEWS_URL);
-        await ItemList.ClickOnItem(itemToVerify);
-        await BrowserVerifyConsoleOutput(itemToVerify);
-    });
-
     xit("spell checker", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);

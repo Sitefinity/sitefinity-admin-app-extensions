@@ -14,7 +14,7 @@ export class Theme {
         await item.click();
     }
 
-     public static async UseSelectedTheme() {
+    public static async UseSelectedTheme() {
         await BrowserWaitForElement(ThemeMap.UseSelectedButton);
         await ThemeMap.UseSelectedButton.click();
         await browser.wait(EC.elementToBeClickable(ThemeMap.UseSelectedButton), timeToWait);

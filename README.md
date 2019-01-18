@@ -28,9 +28,14 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
     ```shell
     git checkout {Sitefinity version}
-
-    example: git checkout 11.0.6700.0
     ```
+    For example:
+
+    ```shell
+    git checkout 11.0.6700.0
+    ```
+
+    Note: If you are not sure what is the version of your Sitefinity instance go to _Administration => Version & Licensing_. There you will find it as _Product file version_
 
 1. Clone or download this repository to a location of your choice and execute the following command in the repository **root** folder:
 
@@ -178,8 +183,10 @@ Once the component is instantiated, the Admin App assigns the context property t
 
 ### Custom content editor
 
+
 When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. Out-of-the-box, content editors can work with image and link selector contextual toolsets for Sitefinity CMS content. You can also add a custom video selector for Sitefinity CMS content by injecting a custom **ToolBarItem**.
 To do this, you provide a custom implementation of the **EditorConfigProvider**. The provider has a method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want to be displayed in the editor. In this case, this is the video selector.
+
 
 In this example, you use the built-in SelectorService class, which has two methods:
 
@@ -201,6 +208,21 @@ What is more you have the power to edit the configurations which are used to ins
 
 Apart from the major formatting functions, located on the formatting bar in the HTML content editor, you can add a word counter functionality. You do this by providing a custom implementation of the **EditorConfigProvider**, which you place in the **toolbar-extender** folder.
 
+### Custom content editor toolbar with spellcheck functionality and spellcheck contextual toolset
+
+Another useful addition to the content editing experience is having a dedicated button in the content editor’s toolbar that enables content authors to perform spellcheck on the go. The extension sample, located in the **editor-extender/spell-check folder**, adds an extra toolbar button that calls an external API - the Azure cognitive services Bing spell check. Based on the response from the API, all spelling-related issues are marked with yellow in the content. Upon clicking on a marked word, a custom contextual toolset (edit menu) is displayed. The toolset contains:
+* Proposed change
+* Accept and reject buttons
+
+To extend the contextual toolset, you need to implement the **EditMenuProvider** interface, which defines the **getButtons** method. The method returns the buttons that are displayed on clicking the marked word. To make an element, in this example - the contextual toolset, editable, you need to mark it with at least the following 2 attributes:
+* **data-sf-ec-immutable**
+* **custom-edit-menu**
+
+It is a good idea to mark the element with another custom unique attribute that will be used for identification in the **getButtons** method. In this example, the **suggestion** attribute is used.
+Keep in mind that you need an Azure API key to make calls to the Azure service. For more information about getting the Azure API key, see the [Azure spell check documentation](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/). After you acquire a key, place it in the **editor-spell-check-provider.ts** file.
+Add the [Azure API endpoint](https://api.cognitive.microsoft.com/) to the **connect-src** section of the Sitefinity Web security module. For more information, see [Content policy HTTP header syntax reference](https://www.progress.com/documentation/sitefinity-cms/content-security-policy-http-header-syntax-reference).
+
+
 ### Custom dialogs in the grid and in editing mode
 
 When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the **SelectorService** and the **OpenDialog** method. The method accepts the **DialogData** argument, which has the following properties:
@@ -212,6 +234,10 @@ Holds the type of component to be instantiated and what properties are assigned 
 * **commands** property
 
 Contains commands that serve as buttons in the dialog that is displayed.
+
+### Admin App custom theme
+
+You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app).
 
 ### Access data from OData services
 

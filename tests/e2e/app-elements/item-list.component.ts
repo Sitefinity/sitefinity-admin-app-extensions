@@ -3,6 +3,9 @@ require("jasmine-expect");
 import { ItemListMap } from "./item-list.map";
 import { BrowserWaitForElement } from "../helpers/browser-helpers";
 
+const backgroundColorAttribute = "backgroundColor";
+const expectedButtonColor = "rgba(0, 108, 217, 1)";
+
 export class ItemList {
     static async VerifyImageColumn() {
         await BrowserWaitForElement(ItemListMap.ImageColumn);
@@ -19,5 +22,11 @@ export class ItemList {
         await BrowserWaitForElement(ItemListMap.GetRowTitleCell(title));
         const item = ItemListMap.GetRowTitleCell(title);
         await item.click();
+    }
+
+    static async VerifyThemeButtonColor() {
+        await BrowserWaitForElement(ItemListMap.GetCreateItemButton());
+        const actualButtonColor = await ItemListMap.GetCreateItemButton().getCssValue(backgroundColorAttribute);
+        expect(actualButtonColor).toBe(expectedButtonColor);
     }
 }

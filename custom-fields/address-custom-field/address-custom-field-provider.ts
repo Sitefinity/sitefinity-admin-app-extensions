@@ -53,7 +53,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
         // to the list view of the specific type.
         const customInputKey: FieldData = {
             fieldName: "CustomAddress",
-            fieldType: "sf-short-text-default",
+            fieldType: "sf-short-text",
             typeName: "newsitems"
         };
 

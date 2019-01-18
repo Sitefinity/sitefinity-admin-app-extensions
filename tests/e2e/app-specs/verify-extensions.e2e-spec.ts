@@ -64,6 +64,15 @@ describe("Verify extensions", () => {
         await ItemDetails.ClickBackButton(true);
     });
 
+    it("applied theme", async () => {
+        await BrowserNavigate(THEME_URL);
+        await Theme.SelectTheme("Sample");
+        await Theme.UseSelectedTheme();
+
+        await BrowserNavigate(CONTENT_NEWS_URL);
+        await ItemList.VerifyThemeButtonColor();
+    });
+
     it("item hooks", async () => {
         await BrowserNavigate(CONTENT_NEWS_URL);
         await ItemList.ClickOnItem(itemToVerify);

@@ -241,4 +241,4 @@ You can customize the appearance of the Admin App by modifying specific componen
 
 ### Access data from OData services
 
-You can HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the HTTP_PREFIX constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.
+You can make HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the HTTP_PREFIX constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.

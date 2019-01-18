@@ -1,12 +1,34 @@
-<sf-input
-    [name]="settings.key"
-    [look]="settings.look"
-    [placeholder]="settings.placeholder"
-    [recommendedCharacters]="settings.recommendedCharacters"
-    #inputField
-    ngDefaultControl
-    [(ngModel)]="value"
-    (onBlur)="onBlur()"
-    (onFocus)="onFocus()">
-</sf-input>
-bace
+<span sfTrackFocus
+    (contentFocusIn)="onFocus()"
+    (contentFocusOut)="onFocusOut()">
+    <span class="sf-input sf-popup">
+        <input type="text"
+             #editableElement
+             class="sf-input__field"
+             autocomplete="off"
+             (keydown.enter)="onEnterKey($event)"
+             (keydown.escape)="onEscapeKey()"
+             (keydown.arrowUp)="onFocusPreviousNode()"
+             (keydown.arrowDown)="onFocusNextNode()"
+             (input)="onNewInputValue($event)"
+             [(ngModel)]="searchTerm">
+        <sf-popup [isOpen]="isPopupVisible">
+           <div class="sf-popup__content sf-dropdown -condensed">
+                <div *ngIf="searchTerm && !(hasSuggestions | async)" class="sf-dropdown__no-items">
+                        No results found
+                </div>
+                <sf-tree
+                    data-sftest="related-data_popup-tree"
+                    #popupTree
+                    focusFirstNode="true"
+                    displayField="label"
+                    [nodes]="suggestions$ | async"
+                    look="flat condensed"
+                    [config]="popupTreeConfig"
+                    [textToMatch]="searchTerm"
+                    (treeNodeClicked)="onNewItemSelected($event)">
+                </sf-tree>
+            </div>
+        </sf-popup>
+    </span>
+</span>

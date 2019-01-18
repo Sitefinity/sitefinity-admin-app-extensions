@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";
@@ -30,6 +31,6 @@ import { ADDRESS_CUSTOM_FIELDS_PROVIDER } from "./address-custom-field/address-c
 
     // import the framework module as it holds the components that the AdminApp uses
     // for a list of components see
-    imports: [FormsModule, FrameworkModule]
+    imports: [FormsModule, FrameworkModule, CommonModule]
 })
 export class CustomFieldsModule { }

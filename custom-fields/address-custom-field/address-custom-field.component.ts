@@ -1,7 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, BehaviorSubject } from "rxjs";
+import { map } from "rxjs/operators";
+
 
 /*
  * NOTE: Replace this example keys with your subscription keys.
@@ -16,30 +18,57 @@ const PATH = '/6.2/suggest.json';
 @Component({
     templateUrl: "./address-custom-field.component.html"
 })
-export class AddressCustomFieldComponent extends FieldBase {
+export class AddressCustomFieldComponent extends FieldBase implements OnInit {
+    popupTreeConfig: any;
+    searchTerm: string;
+    hasSuggestions: Observable<boolean>;
+    isPopupVisible: boolean = false;
+
+    private _suggestionsSubject$: BehaviorSubject<any[]>;
+    private _suggestions$: Observable<any[]>;
+
     constructor(private http: HttpClient) {
         super();
+
+        this._suggestionsSubject$ = new BehaviorSubject<any[]>([]);
+        this._suggestions$ = this._suggestionsSubject$.asObservable();
+        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { console.log(arr); return arr.length > 0;}));
     }
 
-    writeValue(value: any): void {
-        // The null check is required because of the initial load of the field
-        if (this.getValue() !== null && this.getValue() !== value) {
-            console.log(value);
-            this.makeRequest(value).subscribe((result) => {
-                console.log(result);
-            });
+    get suggestions$(): Observable<any[]> {
+        return this._suggestions$;
+    }
+
+    ngOnInit(): void {
+        this.popupTreeConfig = {
+            noSelection: true
+        };
+
+        this.searchTerm = this.getValue();
+    }
+
+    onFocus(): void {
+        if (this.searchTerm !== null) {
+            this.isPopupVisible = true;
         }
-
-        super.writeValue(value);
     }
 
-    private makeRequest(queryText: string): Observable<object> {
+    onFocusOut(): void {
+        this.isPopupVisible = false;
+    }
+
+    onNewInputValue(event: Event): void {
+        this.getSuggestions(this.searchTerm).subscribe((result: any) => {
+            this._suggestionsSubject$.next(result.suggestions);
+            console.log(result);
+        });
+    }
+
+    private getSuggestions(queryText: string): Observable<object> {
         let queryParams = new HttpParams();
         queryParams = queryParams.append('app_id', HERE_MAPS_APP_ID);
         queryParams = queryParams.append('app_code', HERE_MAPS_APP_CODE);
         queryParams = queryParams.append('query', queryText);
-        queryParams = queryParams.append('beginHighlight', '<b>');
-        queryParams = queryParams.append('endHighlight', '</b>');
 
         const url = HOST + PATH;
         return this.http.get(url, { params: queryParams });

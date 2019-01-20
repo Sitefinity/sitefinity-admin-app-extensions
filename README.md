@@ -55,7 +55,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 ## Configure Sitefinity CMS for development of custom extensions
 
-To enable Sitefinity CMS to recognize and allow working with the Ad, you wing:
+To enable Sitefinity CMS to recognize and allow working with the Ad, you :
 
 ### STS configuration
 

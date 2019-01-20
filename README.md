@@ -61,7 +61,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
 
-1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**.
+1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**. Test change
 
 1. Under **RedirectUris**, click the *Create new* button. Enter **http://localhost:3000/assets/auth/silent-renew.html**
 

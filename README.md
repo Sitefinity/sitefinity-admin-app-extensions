@@ -51,7 +51,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```
     As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
-1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You can rename the file to **{your_extension_name}.extensions.bundle.js** if you wish.
+1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You crename the file to **{your_extension_name}.extensions.bundle.js** if you wish.
 
 ## Configure Sitefinity CMS for development of custom extensions
 

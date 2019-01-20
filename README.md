@@ -1,5 +1,7 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
+[![Build status](https://prgs-sitefinity.visualstudio.com/sitefinity/_apis/build/status/Iris/DeprecatedAndExperimental/AdminApp.Extensions.CI?branchName=patches)](https://prgs-sitefinity.visualstudio.com/sitefinity/_build/latest?definitionId=185)
+
 ## Overview
 
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.

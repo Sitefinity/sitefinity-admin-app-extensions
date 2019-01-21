@@ -25,7 +25,7 @@ export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
 }
 
 export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
-    await browser.wait(EC.alertIsPresent(), 5000, "Alert is not shown");
+    await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
     const alertDialog = browser.switchTo().alert();
     const actualAlertText = await alertDialog.getText();
     expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
@@ -35,5 +35,6 @@ export async function BrowserVerifyAlert(expectedAlertText: string): Promise<voi
 export async function SelectAllAndPasteText(text: string): Promise<void> {
     await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
     await browser.actions().keyUp(protractor.Key.CONTROL).perform();
+    await browser.actions().sendKeys(protractor.Key.BACK_SPACE).perform();
     await browser.actions().sendKeys(text).perform();
 }

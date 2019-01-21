@@ -4,7 +4,11 @@ import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "progress
 @Injectable()
 class CustomItemHooksProvider implements ItemHooksProvider {
     onItemLoaded(item: DataItem): void {
-        console.log(`Item is loaded: ${item.data.Title}`);
+        if (item.data) {
+            console.log(`Item is loaded: ${item.data.Title}`);
+        } else {
+            console.log(`A new item is being created`);
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
-[![Build status](https://prgs-sitefinity.visualstudio.com/sitefinity/_apis/build/status/Iris/DeprecatedAndExperimental/AdminApp.Extensions.CI?branchName=master)](https://prgs-sitefinity.visualstudio.com/sitefinity/_build/latest?definitionId=185)
+![Build status](https://prgs-sitefinity.visualstudio.com/sitefinity/_apis/build/status/Iris/DeprecatedAndExperimental/AdminApp.Extensions.CI?branchName=master "Build Status")
 
 ## Overview
 

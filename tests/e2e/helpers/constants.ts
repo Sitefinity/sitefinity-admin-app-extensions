@@ -5,11 +5,13 @@ export const ACTIVATE_DYNAMIC_MODULE_SERVICE_URL = "/sf/system/content-types-ser
 export const BASE_URL = "http://localhost:3000/";
 
 export const NEWS_TYPE_NAME = "newsitems";
+export const PAGES_TYPE_NAME = "pages";
 
 export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;
 export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
 export const CONTENT_NEWS_URL = `${BASE_URL}content/newsitems`;
+export const PAGES_URL = `${BASE_URL}pages`;
 export const THEME_URL = `${BASE_URL}theme`;
 
 export const EC = protractor.ExpectedConditions;

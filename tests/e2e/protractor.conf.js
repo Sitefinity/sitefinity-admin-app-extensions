@@ -11,11 +11,6 @@ var screenshotReporter = new HtmlReporter({
 require("source-map-support").install = function() {};
 require("ts-node/register");
 
-process.on('unhandledRejection', error => {
-    // Will print "unhandledRejection err is not defined"
-    console.log('unhandledRejection', JSON.stringify(error));
-  });
-
 var junitReporter = new jasmineReporters.JUnitXmlReporter({
     filePrefix: "e2e-tests.xml",
     consolidateAll: true

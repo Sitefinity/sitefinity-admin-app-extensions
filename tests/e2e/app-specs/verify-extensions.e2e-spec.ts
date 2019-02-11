@@ -27,17 +27,17 @@ import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
 
-describe("Verify extensions", () => {
-    const ENTITY_MAP = new Map<string, any>()
-        .set(NEWS_TYPE_NAME, {
-            url: CONTENT_NEWS_URL,
-            title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
-        })
-        .set(PAGES_TYPE_NAME, {
-            url: PAGES_URL,
-            title: "Home"
-        });
+const ENTITY_MAP = new Map<string, any>()
+    .set(NEWS_TYPE_NAME, {
+        url: CONTENT_NEWS_URL,
+        title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
+    })
+    .set(PAGES_TYPE_NAME, {
+        url: PAGES_URL,
+        title: "Home"
+    });
 
+describe("Verify extensions", () => {
     beforeAll(async (done: DoneFn) => {
         await initAuth(USERNAME, PASSWORD);
         done();
@@ -131,8 +131,15 @@ describe("Verify extensions", () => {
     });
 
     it(`item hooks [${entity}]`, async () => {
+        // verify create
         await BrowserNavigate(url);
+        await ItemList.ClickOnCreate();
+        await BrowserVerifyConsoleOutput("new item");
+        await ItemDetails.ClickBackButton();
+
+        // verify edit
         await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
     });
 });

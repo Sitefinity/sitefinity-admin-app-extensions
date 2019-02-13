@@ -6,7 +6,7 @@
 
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
-You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, WebStorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
+You can extend the Admin App A PI independently of the Sitefinity CMS in any IDE that you work with, for example, Visual Studio, WebStorm, Notepad++, and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
 
 **NOTE:** The samples in this repository are supported from Sitefinity version 11.0.6700.0 and above.
 
@@ -14,7 +14,7 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 Before you start developing make sure to checkout the tag corresponding to your Sitefinity host version (see [quick start section](#quick-start)). This way you can be sure that the extension will work once you copy the package to your Sitefinity host. Extensions packages are future proof, they will work with future versions of Sitefinity, so you can upgrade your Sitefinity instance without worrying that you will break your extensions.
 
-## Prerequisites
+## Prerequisite s
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node).
 

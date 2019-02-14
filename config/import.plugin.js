@@ -61,8 +61,7 @@ ImportPlugin.prototype.apply = function (compiler) {
                         delegatedModuleId = ++delegatedModuleCounter;
                         delegatedModuleCache[request] = delegatedModuleId;
                     }
-
-                    return new DelegatedModule(this.options.source, delegatedModuleId, request);
+                    return new DelegatedModule(this.options.source, delegatedModuleId, request, module.type);
                 }
             }
             return module;
@@ -119,13 +118,7 @@ ImportPlugin.prototype.apply = function (compiler) {
                     modifiedIds.push(modified);
                 });
 
-                chunk.ids = modifiedIds;
-                if (chunk.name === extensionsKey) {
-                    chunk.entrypoints[0] = {
-                        name: "app",
-                        chunks: []
-                    };
-                }
+                chunk.ids = modifiedIds;                
             });
         });
     });

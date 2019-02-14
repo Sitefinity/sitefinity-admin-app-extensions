@@ -10,14 +10,14 @@ require("!style-loader!css-loader!./editor-spell-check-provider.css");
  * NOTE: Replace this example key with your subscription key.
  * For more information on how to get a key check here: https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/
  */
-const AZURE_LANGUAGE_SERVICES_API_KEY = '';
+const AZURE_LANGUAGE_SERVICES_API_KEY = "";
 
 /**
  * Indicates the minimum value of certainty that is needed in order a correction to be applied.
  */
 const MIN_CERTAINTY = 0.5;
-const HOST = 'https://api.cognitive.microsoft.com';
-const PATH = '/bing/v7.0/spellcheck';
+const HOST = "https://api.cognitive.microsoft.com";
+const PATH = "/bing/v7.0/spellcheck";
 
 /**
  * Mode of spellcheck
@@ -119,7 +119,7 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
             (responses: any) => {
                 let lastMarkedErrorIndex = 0;
                 responses.forEach((response: any, index) => {
-                        if (response._type == "SpellCheck") {
+                        if (response._type === "SpellCheck") {
                             response.flaggedTokens.forEach(token => {
                                 // find the token in the text
                                 const indexOfMisspelledWord = text.indexOf(token.token, lastMarkedErrorIndex);
@@ -159,21 +159,21 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
                             editor.value(text);
                             editor.trigger("change");
                         }
-            })},
+            }); },
             (error: any) => {
                 alert(`${error.error.message} Contact your administrator to resolve this issue.`);
             });
     }
 
     private makeRequest(text: string, culture: string = "en-US", mode: string = "proof"): Observable<object> {
-        const query_string = "?mkt=" + culture + "&mode=" + mode;
-        const url = HOST + PATH + query_string;
+        const queryString = "?mkt=" + culture + "&mode=" + mode;
+        const url = HOST + PATH + queryString;
         const body = new URLSearchParams();
-        body.set('text', text);
+        body.set("text", text);
         const options = {
             headers : {
-                'Ocp-Apim-Subscription-Key' : AZURE_LANGUAGE_SERVICES_API_KEY,
-                'Content-Type': 'application/x-www-form-urlencoded'
+                "Ocp-Apim-Subscription-Key" : AZURE_LANGUAGE_SERVICES_API_KEY,
+                "Content-Type": "application/x-www-form-urlencoded"
             }
         };
 
@@ -181,22 +181,22 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
     }
 
     private stripHTML(html: string): string {
-        var tmp = document.createElement("DIV");
+        let tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }
 
     private splitTextInBatches(text: string): any[] {
         const batches = [];
-        var words = text.split(' ');
+        let words = text.split(" ");
         const batch = {
-            text: '',
+            text: "",
             startIndex: 0
         };
         let lastMarkedBatchIndex = 0;
 
         words.forEach(word => {
-            const newBatchText = batch.text === '' ? word : batch.text + ' ' + word;
+            const newBatchText = batch.text === "" ? word : batch.text + " " + word;
             if (newBatchText.length <= 65) {
                 batch.text = newBatchText;
             } else {

@@ -8,7 +8,7 @@ const extensionsKey = constants.extensionsKey;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = function(env, argv) {
-    const enviroment = env.dev ? env.dev: env.production;
+    const enviroment = env.dev ? "none" : "production";
     const config = {
         cache: true,
         mode: enviroment,

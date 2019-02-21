@@ -8,9 +8,10 @@ const extensionsKey = constants.extensionsKey;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = function(env, argv) {
+    const enviroment = env.dev ? env.dev: env.production;
     const config = {
         cache: true,
-        mode: "production",
+        mode: enviroment,
         devtool: "source-map",
         entry: {
             [extensionsKey]: extensionsFileName

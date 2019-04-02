@@ -8,7 +8,7 @@ export class ItemListMap {
     public static BackButton: ElementFinder = element(by.css("button[title=Back]"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {
-        return element(by.cssContainingText("p", rowTitle));
+        return element(by.cssContainingText("sf-main-field", rowTitle));
     }
 
     public static GetItemActionsMenu(): ElementFinder {

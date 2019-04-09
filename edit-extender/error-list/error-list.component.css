@@ -1,0 +1,15 @@
+.sf-error-list-nav {
+    position: fixed;
+    top: 170px;
+    right: 0;
+    margin-right: 20px;
+    max-width: 300px;
+}
+
+.sf-error-list-nav ul {
+    font-size: 15px;
+}
+
+.sf-error-list-nav h3 {
+    font-size: 18px;
+}

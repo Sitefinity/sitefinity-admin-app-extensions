@@ -20,6 +20,8 @@ function ImportPlugin(options) {
         compatibleVersionsTags = require('child_process')
         .execSync(`git show -s --format=%D ${latestCompatibleVersionTag}`)
         .toString();
+
+        compatibleVersionsTags = compatibleVersionsTags.trim().replace("tag: ", "");
     }
     catch(err) {
         if (err.message.includes('Command failed')) {
@@ -70,7 +72,8 @@ ImportPlugin.prototype.apply = function (compiler) {
     }.bind(this));
 
     compiler.plugin("emit", function(compilation, callback) {
-        const compilationAssetName = Object.keys(compilation.assets).find(x => x.includes(constants.extensionsKey));
+        const assetCompare = `./${constants.extensionsKey}.bundle.js`;
+        const compilationAssetName = Object.keys(compilation.assets).find(x => x === assetCompare);
         const asset = compilation.assets[compilationAssetName];
         if (asset) {
             var originalSource = asset.source().toString();
@@ -86,6 +89,13 @@ ImportPlugin.prototype.apply = function (compiler) {
 
             asset.size = () => { return modifiedSource.length; };
         }
+
+        // remove unneeded runtime bundle
+        const assetsToRemove = `runtime~${constants.extensionsKey}.bundle.js`;
+        const runtimeAssetNames = Object.keys(compilation.assets).filter(x => x.includes(assetsToRemove));
+        runtimeAssetNames.forEach((assetName) => {
+            delete compilation.assets[assetName];
+        });
 
         callback();
     }.bind(this));
@@ -118,7 +128,7 @@ ImportPlugin.prototype.apply = function (compiler) {
                     modifiedIds.push(modified);
                 });
 
-                chunk.ids = modifiedIds;                
+                chunk.ids = modifiedIds;
             });
         });
     });

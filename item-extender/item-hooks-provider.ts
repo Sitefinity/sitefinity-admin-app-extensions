@@ -5,8 +5,10 @@ import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "progress
 class CustomItemHooksProvider implements ItemHooksProvider {
     onItemLoaded(item: DataItem): void {
         if (item.data) {
+            // tslint:disable-next-line:no-console
             console.log(`Item is loaded: ${item.data.Title}`);
         } else {
+            // tslint:disable-next-line:no-console
             console.log(`A new item is being created`);
         }
     }

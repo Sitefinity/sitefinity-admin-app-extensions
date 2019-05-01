@@ -18,9 +18,9 @@ export async function BrowserNavigate(url: string): Promise<void> {
 }
 
 export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
-    return await browser.manage().logs().get('browser').then((browserLog) => {
-        const log = browserLog.find(entry => entry.level.name === 'INFO' && entry.message.includes(expectedOutput));
-        expect(log).not.toBeUndefined();
+    return await browser.manage().logs().get("browser").then((browserLog) => {
+        const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
+        expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
     });
 }
 

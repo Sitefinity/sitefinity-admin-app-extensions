@@ -24,6 +24,12 @@ export class ItemList {
         await item.click();
     }
 
+    static async ClickOnCreate() {
+        await BrowserWaitForElement(ItemListMap.GetCreateItemButton());
+        const create = ItemListMap.GetCreateItemButton();
+        await create.click();
+    }
+
     static async VerifyThemeButtonColor() {
         await BrowserWaitForElement(ItemListMap.GetCreateItemButton());
         const actualButtonColor = await ItemListMap.GetCreateItemButton().getCssValue(backgroundColorAttribute);

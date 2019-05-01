@@ -4,8 +4,8 @@ var RawSource = require("webpack-sources").RawSource;
 var WebpackMissingModule = require("webpack/lib/dependencies/WebpackMissingModule");
 
 class DelegatedModule extends DelegateModuleWebPack {
-    constructor(sourceRequest, request, userRequest) {
-        super(sourceRequest, request, null, userRequest);
+    constructor(sourceRequest, request, userRequest, type) {
+        super(sourceRequest, request, type, userRequest);
         this.request = request;
     }
 

@@ -1,0 +1,9 @@
+# Custom grid
+
+You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. To do this, you use a specific extensibility point. You have to develop a custom implementation of the [**columnsProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/columnsprovider.html) interface and its method [**getColumns()**](http://admin-app-extensions-docs.sitefinity.site/interfaces/columnsprovider.html#getcolumns), which returns an **Observable** of the [**ColumnModel**](http://admin-app-extensions-docs.sitefinity.site/interfaces/columnmodel.html) object.
+
+The [**ColumnModel**](http://admin-app-extensions-docs.sitefinity.site/interfaces/columnmodel.html) object has several properties. Most notable is the [**componentData**](http://admin-app-extensions-docs.sitefinity.site/interfaces/columnmodel.html#componentdata) which is a reference to the component that is displayed in the grid cell. This component should inherit the [**DataContextComponent**](http://admin-app-extensions-docs.sitefinity.site/interfaces/datacontextcomponent.html) interface which brings the [**context**](http://admin-app-extensions-docs.sitefinity.site/interfaces/datacontextcomponent.html#context) property.
+
+Once the component is instantiated, the Admin App assigns the [**context**](http://admin-app-extensions-docs.sitefinity.site/interfaces/datacontextcomponent.html#context) property to it, that contains information for the current item, as well as all model properties you passed throug using the [**ComponentData**](http://admin-app-extensions-docs.sitefinity.site/interfaces/componentdata.html#properties) interface. 
+
+The custom component you defined is displayed in the grid cell.

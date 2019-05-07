@@ -143,34 +143,23 @@ For example, the folder structure in Admin App folder may look like the followin
 ## Extensibility endpoints
 
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
-The following provides you with some example extensions.
 
-* ### [Custom *Actions* menu](./commands-extender/README.md).
+Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation] (https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-* ### [Custom field](./custom-fields/README.md).
+* [Custom *Actions* menu](./commands-extender/README.md) - You can register a custom command in the Actions menu of an item.
 
-* ### [Custom grid](./grid-extender/README.md).
+* [Custom field](./custom-fields/README.md) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
 
-* ### [Custom content editor](./editor-extender/README.md).
+* [Custom grid](./grid-extender/README.md) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems.
 
-* ### Custom dialogs in the grid and in editing mode
+* [Custom content editor](./editor-extender/README.md) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
 
-When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The method accepts the [**DialogData**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dialogdata.html) argument, which has the following properties:
+* Custom dialogs in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 
-* [**componentData**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dialogdata.html#componentdata) object
-
-Holds the type of component to be instantiated and what properties are assigned to the component once it is instantiated.
-
-* [**commands**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dialogdata.html#commands) property
-
-Contains commands that serve as buttons in the dialog that is displayed.
-
-The [**videos toolbar item extension**](./editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
-
-* ### Admin App custom theme
+### Admin App custom theme
 
 You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app).
 
-* ### Access data from OData services
+### Access data from OData services
 
 You can make HTTP calls to Sitefinity CMS OData services via the Angular **HttpClient**. When you make the request, you use the [**HTTP_PREFIX**](http://admin-app-extensions-docs.sitefinity.site/index.html#http_prefix) constant, so that the Admin App automatically detects this is a request to Sitefinity CMS and completes the request accordingly.

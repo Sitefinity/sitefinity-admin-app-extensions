@@ -8,7 +8,7 @@
     "build:prod": "webpack --config config/webpack.config.js --display-modules --env.production",
     "start": "webpack-dev-server --config config/webpack.config.js --env.dev",
     "lint": "tslint --project ./tsconfig.json",
-    "lint:fix": "tslint --fix  --project ./tsconfig.json"    
+    "lint:fix": "tslint --fix  --project ./tsconfig.json"
   },
   "keywords": [
     "extensions",

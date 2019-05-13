@@ -54,7 +54,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
         const customInputKey: FieldData = {
             fieldName: "CustomAddress",
             fieldType: "sf-short-text",
-            typeName: "newsitems"
+            typeName: "test"
         };
 
         // The result field registration that will be returned to the AdminApp.

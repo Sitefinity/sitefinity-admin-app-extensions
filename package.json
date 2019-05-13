@@ -9,7 +9,6 @@
     "start": "webpack-dev-server --config config/webpack.config.js --env.dev",
     "lint": "tslint --project ./tsconfig.json",
     "lint:fix": "tslint --fix  --project ./tsconfig.json"
-    
   },
   "keywords": [
     "extensions",

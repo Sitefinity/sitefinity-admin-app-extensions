@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FieldBase, InputComponent } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";

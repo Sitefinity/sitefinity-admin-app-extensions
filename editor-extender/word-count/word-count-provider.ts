@@ -58,7 +58,7 @@ class WordCountProvider implements EditorConfigProvider {
     }
 
     private stripHTML(html: string): string {
-        var tmp = document.createElement("DIV");
+        const tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }

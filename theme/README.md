@@ -12,10 +12,10 @@ You can also set an outline style for all UI focusable elements, for example, bu
 
 **NOTE:** The custom theme and its customizations are stored in the **Local Storage**. Thus, you can see the custom Admin App theme in the current browser only. Therefore, in case you clear your **Local Storage** or use another browser, the theme applied will be the default one, not the custom one.
 
-To customize the Admin App theme, you need to create a custom implementation of the **ThemeProvider** interface and its **getThemes()** method. The method returns an **Array** of the **ThemeItem** object. Theme items must contain the **name** of your custom theme and an array of the **ThemeVariablesKeyValuePair**. The key-value pair contains the following: 
+To customize the Admin App theme, you need to create a custom implementation of the [**ThemeProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/themeprovider.html) interface and its [**getThemes()**](http://admin-app-extensions-docs.sitefinity.site/interfaces/themeprovider.html#getthemes) method. The method returns an **Array** of the [**ThemeItem**](http://admin-app-extensions-docs.sitefinity.site/interfaces/themeitem.html) object. Theme items must contain the [**name**](http://admin-app-extensions-docs.sitefinity.site/interfaces/themeitem.html#name) of your custom theme and an array of the [**ThemeVariablesKeyValuePair**](http://admin-app-extensions-docs.sitefinity.site/interfaces/themevariableskeyvaluepair.html). The key-value pair contains the following: 
 
 * **key: ThemeVariables**
-  The **ThemeVariables** value is an Enum of all exposed CSS variables that can be modified, such as the properties of colors or buttons. 
+  The [**ThemeVariables**](http://admin-app-extensions-docs.sitefinity.site/enums/themevariables.html) value is an Enum of all exposed CSS variables that can be modified, such as the properties of colors or buttons. 
 
 * **value: string**
   The string value is the value that you set for the specific CSS variable, for example, *"#38AB63"*. 

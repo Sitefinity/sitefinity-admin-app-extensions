@@ -4,7 +4,13 @@ import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "progress
 @Injectable()
 class CustomItemHooksProvider implements ItemHooksProvider {
     onItemLoaded(item: DataItem): void {
-        console.log(`Item is loaded: ${item.data.Title}`);
+        if (item.data) {
+            // tslint:disable-next-line:no-console
+            console.log(`Item is loaded: ${item.data.Title}`);
+        } else {
+            // tslint:disable-next-line:no-console
+            console.log(`A new item is being created`);
+        }
     }
 }
 

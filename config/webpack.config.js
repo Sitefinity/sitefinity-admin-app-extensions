@@ -8,13 +8,18 @@ const extensionsKey = constants.extensionsKey;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = function(env, argv) {
+    const enviroment = env.dev ? "none" : "production";
     const config = {
         cache: true,
+        mode: enviroment,
         devtool: "source-map",
         entry: {
             [extensionsKey]: extensionsFileName
         },
-
+        optimization: {
+            runtimeChunk: true,
+            minimize: false
+        },
         output: {
             path: path.join(__dirname, "../dist"),
             filename: "./[name].bundle.js",
@@ -44,9 +49,8 @@ module.exports = function(env, argv) {
 
         module: {
             rules: [
-                { test: /\.ts$/, use:[ "awesome-typescript-loader", "angular2-template-loader" ] },
+                { test: /\.ts$/, use:[ "ts-loader", "angular2-template-loader" ] },
                 { test: /\.html$/, use:[ "html-loader" ] },
-                { test: /\.json$/, use:[ "json-loader" ] },
                 { test: /\.css$/, use: [ "css-to-string-loader", "css-loader" ] }
             ]
         }

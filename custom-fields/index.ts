@@ -8,6 +8,8 @@ import { CUSTOM_FIELDS_PROVIDER } from "./custom-fields-provider";
 import { FrameworkModule } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { AddressCustomFieldComponent } from "./address-custom-field/address-custom-field.component";
 import { ADDRESS_CUSTOM_FIELDS_PROVIDER } from "./address-custom-field/address-custom-field-provider";
+import { DynamicScriptLoaderService } from "./address-custom-field/script-service";
+
 
 /**
  * The custom fields module.
@@ -26,7 +28,8 @@ import { ADDRESS_CUSTOM_FIELDS_PROVIDER } from "./address-custom-field/address-c
     ],
     providers: [
         CUSTOM_FIELDS_PROVIDER,
-        ADDRESS_CUSTOM_FIELDS_PROVIDER
+        ADDRESS_CUSTOM_FIELDS_PROVIDER,
+        DynamicScriptLoaderService
     ],
 
     // import the framework module as it holds the components that the AdminApp uses

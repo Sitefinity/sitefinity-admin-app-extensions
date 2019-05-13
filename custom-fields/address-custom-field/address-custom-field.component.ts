@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { FieldBase, InputComponent } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
@@ -19,6 +19,8 @@ const PATH = '/6.2/suggest.json';
     templateUrl: "./address-custom-field.component.html"
 })
 export class AddressCustomFieldComponent extends FieldBase implements OnInit {
+    @ViewChild("streetAddress") streetAddress: any;
+
     popupTreeConfig: any;
     searchTerm: string;
     hasSuggestions: Observable<boolean>;
@@ -32,7 +34,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         this._suggestionsSubject$ = new BehaviorSubject<any[]>([]);
         this._suggestions$ = this._suggestionsSubject$.asObservable();
-        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { console.log(arr); return arr.length > 0;}));
+        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { return arr.length > 0;}));
     }
 
     get suggestions$(): Observable<any[]> {
@@ -60,8 +62,32 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     onNewInputValue(event: Event): void {
         this.getSuggestions(this.searchTerm).subscribe((result: any) => {
             this._suggestionsSubject$.next(result.suggestions);
-            console.log(result);
         });
+
+        setTimeout(() => {
+            if (!this.isPopupVisible) {
+                this.isPopupVisible = true;
+            }
+        }, 300);
+    }
+
+    onNewItemSelected(event) {
+        this.writeValue(JSON.stringify(event.data));
+    }
+
+    writeValue(value) {
+        if (this.isJSON(value)) {
+            const realValue = JSON.parse(value);
+
+            if (realValue.label) {
+                this.streetAddress.nativeElement.value = realValue.label;
+                this.searchTerm = realValue.label;
+            }
+
+            super.writeValue(realValue);
+        } else {
+            super.writeValue(value);
+        }
     }
 
     private getSuggestions(queryText: string): Observable<object> {
@@ -72,5 +98,14 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         const url = HOST + PATH;
         return this.http.get(url, { params: queryParams });
+    }
+
+    private isJSON(value: string) {
+        try {
+            JSON.parse(value);
+        } catch (e) {
+            return false;
+        }
+        return true;
     }
 }

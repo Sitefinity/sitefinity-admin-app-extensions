@@ -16,6 +16,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
         this.customFieldsMappings = [];
 
         this.registerCustomComponents();
+        this.registerCustomWidgetComponents();
     }
 
     /**
@@ -55,6 +56,32 @@ export class AddressCustomFieldProvider implements FieldsProvider {
             fieldName: "CustomAddress",
             fieldType: "sf-text-area",
             typeName: "tests"
+        };
+
+        // The result field registration that will be returned to the AdminApp.
+        const customInputRegistration: FieldRegistration = {
+            writeComponent: AddressCustomFieldComponent,
+            readComponent: AddressCustomFieldComponent,
+            settingsType: SettingsBase
+        };
+
+        const customFieldRegistrationPair: RegistrationPair = {
+             key: customInputKey,
+             registration: customInputRegistration
+        };
+
+        this.customFieldsMappings.push(customFieldRegistrationPair);
+    }
+
+    private registerCustomWidgetComponents(): void {
+
+        // The field name is the name which identifies the field uniquely.
+        // The typename is the OData entity set name. It matches the url segment when navigating
+        // to the list view of the specific type.
+        const customInputKey: FieldData = {
+            fieldName: "Address",
+            fieldType: "sf-short-text",
+            typeName: "widget-HereAddress"
         };
 
         // The result field registration that will be returned to the AdminApp.

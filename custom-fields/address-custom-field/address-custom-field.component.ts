@@ -76,18 +76,17 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     writeValue(value) {
-        if (this.isJSON(value)) {
+        debugger
+        if (value && this.isJSON(value)) {
             const realValue = JSON.parse(value);
 
             if (realValue.label) {
                 this.streetAddress.nativeElement.value = realValue.label;
                 this.searchTerm = realValue.label;
             }
-
-            super.writeValue(realValue);
-        } else {
-            super.writeValue(value);
         }
+
+        super.writeValue(value);
     }
 
     private getSuggestions(queryText: string): Observable<object> {

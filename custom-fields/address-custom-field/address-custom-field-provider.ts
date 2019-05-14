@@ -35,8 +35,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
     private findRegistration(fieldRegistryKey: FieldData): FieldRegistration {
         for (const pair of this.customFieldsMappings) {
             if (fieldRegistryKey.fieldName === pair.key.fieldName &&
-                fieldRegistryKey.fieldType === pair.key.fieldType &&
-                fieldRegistryKey.typeName === pair.key.typeName) {
+                fieldRegistryKey.fieldType === pair.key.fieldType) {
                     return pair.registration;
             }
         }
@@ -55,7 +54,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
         const customInputKey: FieldData = {
             fieldName: "CustomAddress",
             fieldType: "sf-text-area",
-            typeName: "tests"
+            typeName: undefined
         };
 
         // The result field registration that will be returned to the AdminApp.

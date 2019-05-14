@@ -28,6 +28,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     @ViewChild("county") county: ElementRef;
     @ViewChild("city") city: ElementRef;
     @ViewChild("postcode") postcode: ElementRef;
+    @ViewChild("popupTree") popupTree: any;
 
     popupTreeConfig: any;
     searchTerm: string;
@@ -65,24 +66,17 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.loadScripts();
     }
 
-    onFocus(): void {
-        if (this.searchTerm !== null) {
-            this.isPopupVisible = true;
-            this.updateSuggestions();
-        }
-    }
-
     onFocusOut(): void {
+
         this.isPopupVisible = false;
     }
 
     onNewInputValue(data: any): void {
-        debugger
         this.clearOldSuggestions();
         this.updateSuggestions();
 
         setTimeout(() => {
-            if (!this.isPopupVisible) {
+            if (!this.isPopupVisible && data.label) {
                 this.isPopupVisible = true;
             }
         }, 300);
@@ -102,6 +96,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     onNewItemSelected(event) {
+        this.isPopupVisible = false;
         this.writeValue(JSON.stringify(event.data));
     }
 
@@ -122,6 +117,23 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         }
 
         super.writeValue(value);
+    }
+
+    onEscapeKey(): void {
+        this.isPopupVisible = false;
+    }
+
+    onFocusNextNode(): void {
+        this.popupTree.focusNextNode();
+    }
+
+    onFocusPreviousNode(): void {
+        this.popupTree.focusPreviousNode();
+    }
+
+    onEnterKey(): void {
+        this.isPopupVisible = false;
+        this.popupTree.selectCurrentNode();
     }
 
     private addSuggestionToMap(locationId: string) {
@@ -146,6 +158,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
                       this.hereGroup.addObject(marker);
 
                       this.hereMap.setViewBounds(this.hereGroup.getBounds());
+                      this.hereMap.setZoom(16);
                   },
                   () => { });
         }
@@ -207,7 +220,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     /**
      * Removes all H.map.Marker points from the map and adds closes the info bubble
      */
-    private clearOldSuggestions(){
+    private clearOldSuggestions() {
         this.hereGroup.removeAll();
         if (this.hereBubble) {
             this.hereBubble.close();

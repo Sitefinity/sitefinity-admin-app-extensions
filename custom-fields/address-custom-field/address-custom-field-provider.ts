@@ -53,7 +53,7 @@ export class AddressCustomFieldProvider implements FieldsProvider {
         // The typename is the OData entity set name. It matches the url segment when navigating
         // to the list view of the specific type.
         const customInputKey: FieldData = {
-            fieldName: "CustomAddress",
+            fieldName: "HereAddress",
             fieldType: "sf-text-area",
             typeName: "tests"
         };

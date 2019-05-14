@@ -345,6 +345,6 @@ interface Address {
 }
 
 interface HereCredentials {
-    AppId: string,
-    AppCode: string
+    AppId: string;
+    AppCode: string;
 }

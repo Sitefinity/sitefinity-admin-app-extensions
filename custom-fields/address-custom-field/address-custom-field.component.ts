@@ -1,16 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldBase, HTTP_PREFIX } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable, BehaviorSubject } from "rxjs";
+import { Observable, BehaviorSubject, ReplaySubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { DynamicScriptLoaderService } from "./script-service";
-
-/*
- * NOTE: Replace this example keys with your subscription keys.
- * For more information on how to get a key check here: https://developer.here.com/?create=Freemium-Basic&keepState=true&step=terms
- */
-const HERE_MAPS_APP_ID = "iV0wv8ievlwH8Fd5Raii";
-const HERE_MAPS_APP_CODE = "AHNPEuMJkSuNjkP7SpW2xg";
 
 const HOST = "http://autocomplete.geocoder.api.here.com";
 const PATH = "/6.2/suggest.json";
@@ -45,6 +38,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     private hereGroup: any;
     private hereUI: any;
     private hereBubble: any;
+    private credentials: HereCredentials;
 
     constructor(private http: HttpClient, private dynamicScriptLoader: DynamicScriptLoaderService) {
         super();
@@ -64,7 +58,9 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         };
 
         this.searchTerm = this.getValue();
-        this.loadScripts();
+        this.getCredentials().subscribe(() => {
+            this.loadScripts();
+        });
     }
 
     onFocusOut(): void {
@@ -133,6 +129,17 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     onEnterKey(): void {
         this.isPopupVisible = false;
         this.popupTree.selectCurrentNode();
+    }
+
+    private getCredentials(): Observable<HereCredentials> {
+        const result = new ReplaySubject<HereCredentials>(1);
+        const url = `${HTTP_PREFIX}/restapi/hereCredentials?format=json`;
+        this.http.get(url).subscribe((data: HereCredentials) => {
+            this.credentials = data;
+            result.next(this.credentials);
+        });
+
+        return result;
     }
 
     /**
@@ -234,8 +241,8 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     private initializeMap() {
         // Step 1: initialize communication with the platform
         this.herePlatform = new H.service.Platform({
-            "app_id": HERE_MAPS_APP_ID,
-            "app_code": HERE_MAPS_APP_CODE,
+            "app_id": this.credentials.AppId,
+            "app_code": this.credentials.AppCode,
             useCIT: false,
             useHTTPS: true
             });
@@ -313,8 +320,8 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
     private getSuggestions(queryText: string): Observable<object> {
         let queryParams = new HttpParams();
-        queryParams = queryParams.append("app_id", HERE_MAPS_APP_ID);
-        queryParams = queryParams.append("app_code", HERE_MAPS_APP_CODE);
+        queryParams = queryParams.append("app_id", this.credentials.AppId);
+        queryParams = queryParams.append("app_code", this.credentials.AppCode);
         queryParams = queryParams.append("query", queryText);
 
         const url = HOST + PATH;
@@ -336,4 +343,9 @@ interface Address {
     county: string;
     city: string;
     postalCode: string;
+}
+
+interface HereCredentials {
+    AppId: string,
+    AppCode: string
 }

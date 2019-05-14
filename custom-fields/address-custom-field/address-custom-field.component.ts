@@ -68,7 +68,6 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     onFocusOut(): void {
-
         this.isPopupVisible = false;
     }
 
@@ -99,6 +98,8 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     onNewItemSelected(event) {
         this.isPopupVisible = false;
         this.writeValue(JSON.stringify(event.data));
+        const currenValue = this.getValue();
+        this.addSuggestionToMap(currenValue ? JSON.parse(currenValue) : null);
     }
 
     writeValue(value) {
@@ -112,9 +113,6 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
             this.county.nativeElement.value = addrData.address && addrData.address.county ? addrData.address.county : null;
             this.city.nativeElement.value = addrData.address && addrData.address.city ? addrData.address.city : null;
             this.postcode.nativeElement.value = addrData.address && addrData.address.postalCode ? addrData.address.postalCode : null;
-
-            // TODO: return lat & long and add them to object
-            this.addSuggestionToMap(addrData);
         }
 
         super.writeValue(value);

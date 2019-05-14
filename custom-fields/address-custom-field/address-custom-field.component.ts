@@ -135,6 +135,56 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.popupTree.selectCurrentNode();
     }
 
+    /**
+     * An event listener is added to listen to tap events on the map.
+     * Clicking on the map displays an alert box containing the latitude and longitude
+     * of the location pressed.
+     * @param  {H.Map} map      A HERE Map instance within the application
+     */
+    private setUpClickListener(hereMap) {
+        // Attach an event listener to map display
+        // obtain the coordinates and display in an alert box.
+        hereMap.addEventListener("tap", (event) => {
+            const coord = hereMap.screenToGeo(event.currentPointer.viewportX, event.currentPointer.viewportY);
+            this.clearOldSuggestions();
+
+            // get address suggestion// Create the parameters for the reverse geocoding request:
+            const reverseGeocodingParameters = {
+                prox: `${coord.lat},${coord.lng}`,
+                mode: "retrieveAddresses",
+                maxresults: 1
+            };
+
+            // Call the geocode method with the geocoding parameters,
+            // the callback and an error callback function (called if a
+            // communication error occurs):
+            this.hereGeocoder.reverseGeocode(
+                reverseGeocodingParameters,
+                (data) => {
+                    const location = data.Response.View[0].Result[0].Location;
+                    const addrData: AddressData = {
+                        label: location.Address.Label,
+                        lat: location.DisplayPosition.Latitude,
+                        lng: location.DisplayPosition.Longitude,
+                        label2: null,
+                        locationId: location.LocationId,
+                        address: {
+                            country: location.Address.Country,
+                            county: location.Address.County,
+                            city: location.Address.City,
+                            postalCode: location.Address.PostalCode
+                        }
+                    };
+
+                    this.addMarkerToMap(coord.lat, coord.lng, location.Address.Label);
+                    this.writeValue(JSON.stringify(addrData));
+                },
+                () => {
+                    // empty
+                });
+        });
+    }
+
     private addSuggestionToMap(addressData: AddressData) {
         if (this.herePlatform && addressData && addressData.locationId) {
             const geocodingParameters = {
@@ -144,25 +194,29 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
               this.hereGeocoder.geocode(
                   geocodingParameters,
                   (result) => {
-                      let marker;
                       const location = result.Response.View[0].Result;
-
-                      marker = new H.map.Marker({
-                          lat : location[0].Location.DisplayPosition.Latitude,
-                          lng : location[0].Location.DisplayPosition.Longitude
-                      });
-
-                      marker.setData(location[0].Location.Address.Label);
-
-                      this.hereGroup.addObject(marker);
-
-                      this.hereMap.setViewBounds(this.hereGroup.getBounds());
-                      this.hereMap.setZoom(16);
+                      this.addMarkerToMap(
+                          location[0].Location.DisplayPosition.Latitude,
+                          location[0].Location.DisplayPosition.Longitude,
+                          location[0].Location.Address.Label);
                   },
                   () => {
                       // empty
                   });
         }
+    }
+
+    private addMarkerToMap(lat: string, lng: string, label: string) {
+        let marker;
+
+        marker = new H.map.Marker({ lat, lng });
+
+        marker.setData(label);
+
+        this.hereGroup.addObject(marker);
+
+        this.hereMap.setViewBounds(this.hereGroup.getBounds());
+        this.hereMap.setZoom(16);
     }
 
     private loadScripts() {
@@ -189,7 +243,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.hereGeocoder = this.herePlatform.getGeocodingService();
         this.hereGroup = new H.map.Group();
 
-        this.hereGroup.addEventListener("tap", (event) => {
+        this.hereGroup.addEventListener("longpress", (event) => {
             this.hereMap.setCenter(event.target.getPosition());
             this.openBubble(event.target.getPosition(), event.target.getData());
         }, false);
@@ -208,6 +262,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
             });
 
         this.hereMap.addObject(this.hereGroup);
+        this.setUpClickListener(this.hereMap);
 
         // Step 3: make the map interactive
         // MapEvents enables the event system

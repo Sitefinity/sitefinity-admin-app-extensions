@@ -113,7 +113,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
             this.postcode.nativeElement.value = addrData.address && addrData.address.postalCode ? addrData.address.postalCode : null;
 
             // TODO: return lat & long and add them to object
-            this.addSuggestionToMap(addrData.locationId);
+            this.addSuggestionToMap(addrData);
         }
 
         super.writeValue(value);
@@ -136,10 +136,10 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.popupTree.selectCurrentNode();
     }
 
-    private addSuggestionToMap(locationId: string) {
-        if (this.herePlatform) {
+    private addSuggestionToMap(addressData: AddressData) {
+        if (this.herePlatform && addressData && addressData.locationId) {
             const geocodingParameters = {
-                locationId : locationId
+                locationId : addressData.locationId
               };
 
               this.hereGeocoder.geocode(
@@ -215,6 +215,10 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         // Create the default UI components
         this.hereUI = H.ui.UI.createDefault(this.hereMap, defaultLayers);
+
+        // add the suggestion to map if such
+        const currenValue = this.getValue();
+        this.addSuggestionToMap(currenValue ? JSON.parse(currenValue) : null);
     }
 
     /**

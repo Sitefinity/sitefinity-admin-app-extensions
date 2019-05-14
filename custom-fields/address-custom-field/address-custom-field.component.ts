@@ -9,11 +9,11 @@ import { DynamicScriptLoaderService } from "./script-service";
  * NOTE: Replace this example keys with your subscription keys.
  * For more information on how to get a key check here: https://developer.here.com/?create=Freemium-Basic&keepState=true&step=terms
  */
-const HERE_MAPS_APP_ID = 'iV0wv8ievlwH8Fd5Raii';
-const HERE_MAPS_APP_CODE = 'AHNPEuMJkSuNjkP7SpW2xg';
+const HERE_MAPS_APP_ID = "iV0wv8ievlwH8Fd5Raii";
+const HERE_MAPS_APP_CODE = "AHNPEuMJkSuNjkP7SpW2xg";
 
-const HOST = 'http://autocomplete.geocoder.api.here.com';
-const PATH = '/6.2/suggest.json';
+const HOST = "http://autocomplete.geocoder.api.here.com";
+const PATH = "/6.2/suggest.json";
 
 declare var H: any;
 
@@ -21,13 +21,20 @@ declare var H: any;
     templateUrl: "./address-custom-field.component.html"
 })
 export class AddressCustomFieldComponent extends FieldBase implements OnInit {
-    @ViewChild("streetAddress") streetAddress: any;
+    @ViewChild("streetAddress") streetAddress: ElementRef;
     @ViewChild("mapContainer") mapContainer: ElementRef;
+    @ViewChild("streetAddress2") streetAddress2: ElementRef;
+    @ViewChild("country") country: ElementRef;
+    @ViewChild("county") county: ElementRef;
+    @ViewChild("city") city: ElementRef;
+    @ViewChild("postcode") postcode: ElementRef;
+    @ViewChild("popupTree") popupTree: any;
 
     popupTreeConfig: any;
     searchTerm: string;
     hasSuggestions: Observable<boolean>;
     isPopupVisible: boolean = false;
+    hereBahavior: any;
 
     private _suggestionsSubject$: BehaviorSubject<any[]>;
     private _suggestions$: Observable<any[]>;
@@ -44,7 +51,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         this._suggestionsSubject$ = new BehaviorSubject<any[]>([]);
         this._suggestions$ = this._suggestionsSubject$.asObservable();
-        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { return arr.length > 0;}));
+        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { return arr.length > 0; }));
     }
 
     get suggestions$(): Observable<any[]> {
@@ -60,81 +67,164 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.loadScripts();
     }
 
-    onFocus(): void {
-        if (this.searchTerm !== null) {
-            this.isPopupVisible = true;
-            this.updateSuggestions();
-        }
-    }
-
     onFocusOut(): void {
         this.isPopupVisible = false;
     }
 
-    onNewInputValue(event: Event): void {
+    onNewInputValue(data: any): void {
         this.clearOldSuggestions();
         this.updateSuggestions();
 
         setTimeout(() => {
-            if (!this.isPopupVisible) {
+            if (!this.isPopupVisible && data.label) {
                 this.isPopupVisible = true;
             }
         }, 300);
+
+        const currentValue = this.getValue();
+        if (currentValue) {
+            const addrData: AddressData = JSON.parse(currentValue);
+            if (data.address) {
+                addrData.address = { ...addrData.address, ...data.address };
+                this.writeValue(JSON.stringify(addrData));
+            } else {
+                this.writeValue(JSON.stringify({ ...addrData, ...data }));
+            }
+        } else {
+            this.writeValue(JSON.stringify(data));
+        }
     }
 
     onNewItemSelected(event) {
+        this.isPopupVisible = false;
         this.writeValue(JSON.stringify(event.data));
+        const currenValue = this.getValue();
+        this.addSuggestionToMap(currenValue ? JSON.parse(currenValue) : null);
     }
 
     writeValue(value) {
-        if (value && this.isJSON(value)) {
-            const realValue = JSON.parse(value);
+        if (value) {
+            const addrData: AddressData = JSON.parse(value);
 
-            if (realValue.label) {
-                this.streetAddress.nativeElement.value = realValue.label;
-                this.searchTerm = realValue.label;
-            }
-
-            // TODO: return lat & long and add them to object
-            this.addSuggestionToMap(realValue.locationId);
+            this.streetAddress.nativeElement.value = addrData.label ? addrData.label : null;
+            this.searchTerm = this.streetAddress.nativeElement.value;
+            this.streetAddress2.nativeElement.value = addrData.label2 ? addrData.label2 : null;
+            this.country.nativeElement.value = addrData.address && addrData.address.country ? addrData.address.country : null;
+            this.county.nativeElement.value = addrData.address && addrData.address.county ? addrData.address.county : null;
+            this.city.nativeElement.value = addrData.address && addrData.address.city ? addrData.address.city : null;
+            this.postcode.nativeElement.value = addrData.address && addrData.address.postalCode ? addrData.address.postalCode : null;
         }
 
         super.writeValue(value);
     }
 
-    private addSuggestionToMap(locationId: string) {
-        if (this.herePlatform) {
+    onEscapeKey(): void {
+        this.isPopupVisible = false;
+    }
+
+    onFocusNextNode(): void {
+        this.popupTree.focusNextNode();
+    }
+
+    onFocusPreviousNode(): void {
+        this.popupTree.focusPreviousNode();
+    }
+
+    onEnterKey(): void {
+        this.isPopupVisible = false;
+        this.popupTree.selectCurrentNode();
+    }
+
+    /**
+     * An event listener is added to listen to tap events on the map.
+     * Clicking on the map displays an alert box containing the latitude and longitude
+     * of the location pressed.
+     * @param  {H.Map} map      A HERE Map instance within the application
+     */
+    private setUpClickListener(hereMap) {
+        // Attach an event listener to map display
+        // obtain the coordinates and display in an alert box.
+        hereMap.addEventListener("tap", (event) => {
+            const coord = hereMap.screenToGeo(event.currentPointer.viewportX, event.currentPointer.viewportY);
+            this.clearOldSuggestions();
+
+            // get address suggestion// Create the parameters for the reverse geocoding request:
+            const reverseGeocodingParameters = {
+                prox: `${coord.lat},${coord.lng}`,
+                mode: "retrieveAddresses",
+                maxresults: 1
+            };
+
+            // Call the geocode method with the geocoding parameters,
+            // the callback and an error callback function (called if a
+            // communication error occurs):
+            this.hereGeocoder.reverseGeocode(
+                reverseGeocodingParameters,
+                (data) => {
+                    const location = data.Response.View[0].Result[0].Location;
+                    const addrData: AddressData = {
+                        label: location.Address.Label,
+                        lat: location.DisplayPosition.Latitude,
+                        lng: location.DisplayPosition.Longitude,
+                        label2: null,
+                        locationId: location.LocationId,
+                        address: {
+                            country: location.Address.Country,
+                            county: location.Address.County,
+                            city: location.Address.City,
+                            postalCode: location.Address.PostalCode
+                        }
+                    };
+
+                    this.addMarkerToMap(coord.lat, coord.lng, location.Address.Label);
+                    this.writeValue(JSON.stringify(addrData));
+                },
+                () => {
+                    // empty
+                });
+        });
+    }
+
+    private addSuggestionToMap(addressData: AddressData) {
+        if (this.herePlatform && addressData && addressData.locationId) {
             const geocodingParameters = {
-                locationId : locationId
+                locationId : addressData.locationId
               };
 
               this.hereGeocoder.geocode(
                   geocodingParameters,
                   (result) => {
-                      let marker;
                       const location = result.Response.View[0].Result;
-
-                      marker = new H.map.Marker({
-                          lat : location[0].Location.DisplayPosition.Latitude,
-                          lng : location[0].Location.DisplayPosition.Longitude
-                      });
-
-                      marker.setData(location[0].Location.Address.Label);
-
-                      this.hereGroup.addObject(marker);
-
-                      this.hereMap.setViewBounds(this.hereGroup.getBounds());
+                      this.addMarkerToMap(
+                          location[0].Location.DisplayPosition.Latitude,
+                          location[0].Location.DisplayPosition.Longitude,
+                          location[0].Location.Address.Label);
                   },
-                  () => { });
+                  () => {
+                      // empty
+                  });
         }
+    }
+
+    private addMarkerToMap(lat: string, lng: string, label: string) {
+        let marker;
+
+        marker = new H.map.Marker({ lat, lng });
+
+        marker.setData(label);
+
+        this.hereGroup.addObject(marker);
+
+        this.hereMap.setViewBounds(this.hereGroup.getBounds());
+        this.hereMap.setZoom(16);
     }
 
     private loadScripts() {
         // You can load multiple scripts by just providing the key as argument into load method of the service
         this.dynamicScriptLoader
-        .load('here-maps-core', 'here-maps-css')
+        .load("here-maps-core", "here-maps-css")
         .then(() => {
-            this.dynamicScriptLoader.load('here-maps-service', 'here-maps-ui', 'here-maps-events').then(data => {
+            this.dynamicScriptLoader.load("here-maps-service", "here-maps-ui", "here-maps-events").then(data => {
                 // Script Loaded Successfully. We should initialize all objects needed
                 this.initializeMap();
             });
@@ -144,8 +234,8 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     private initializeMap() {
         // Step 1: initialize communication with the platform
         this.herePlatform = new H.service.Platform({
-            'app_id': HERE_MAPS_APP_ID,
-            'app_code': HERE_MAPS_APP_CODE,
+            "app_id": HERE_MAPS_APP_ID,
+            "app_code": HERE_MAPS_APP_CODE,
             useCIT: false,
             useHTTPS: true
             });
@@ -153,7 +243,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.hereGeocoder = this.herePlatform.getGeocodingService();
         this.hereGroup = new H.map.Group();
 
-        this.hereGroup.addEventListener('tap', (event) => {
+        this.hereGroup.addEventListener("longpress", (event) => {
             this.hereMap.setCenter(event.target.getPosition());
             this.openBubble(event.target.getPosition(), event.target.getData());
         }, false);
@@ -172,21 +262,25 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
             });
 
         this.hereMap.addObject(this.hereGroup);
+        this.setUpClickListener(this.hereMap);
 
-        debugger;
         // Step 3: make the map interactive
         // MapEvents enables the event system
         // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-        new H.mapevents.Behavior(new H.mapevents.MapEvents(this.hereMap));
+        this.hereBahavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.hereMap));
 
         // Create the default UI components
         this.hereUI = H.ui.UI.createDefault(this.hereMap, defaultLayers);
+
+        // add the suggestion to map if such
+        const currenValue = this.getValue();
+        this.addSuggestionToMap(currenValue ? JSON.parse(currenValue) : null);
     }
 
     /**
      * Removes all H.map.Marker points from the map and adds closes the info bubble
      */
-    private clearOldSuggestions(){
+    private clearOldSuggestions() {
         this.hereGroup.removeAll();
         if (this.hereBubble) {
             this.hereBubble.close();
@@ -198,15 +292,15 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
      * @param  {H.geo.Point} position     The location on the map.
      * @param  {String} text              The contents of the infobubble.
      */
-    private openBubble(position, text){
+    private openBubble(position, text) {
         if (!this.hereBubble) {
             this.hereBubble = new H.ui.InfoBubble(
                 position,
-                {content: '<small>' + text+ '</small>'});
+                {content: "<small>" + text + "</small>"});
             this.hereUI.addBubble(this.hereBubble);
         } else {
             this.hereBubble.setPosition(position);
-            this.hereBubble.setContent('<small>' + text+ '</small>');
+            this.hereBubble.setContent("<small>" + text + "</small>");
             this.hereBubble.open();
         }
    }
@@ -219,20 +313,27 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
     private getSuggestions(queryText: string): Observable<object> {
         let queryParams = new HttpParams();
-        queryParams = queryParams.append('app_id', HERE_MAPS_APP_ID);
-        queryParams = queryParams.append('app_code', HERE_MAPS_APP_CODE);
-        queryParams = queryParams.append('query', queryText);
+        queryParams = queryParams.append("app_id", HERE_MAPS_APP_ID);
+        queryParams = queryParams.append("app_code", HERE_MAPS_APP_CODE);
+        queryParams = queryParams.append("query", queryText);
 
         const url = HOST + PATH;
         return this.http.get(url, { params: queryParams });
     }
+}
 
-    private isJSON(value: string) {
-        try {
-            JSON.parse(value);
-        } catch (e) {
-            return false;
-        }
-        return true;
-    }
+interface AddressData {
+    locationId: string;
+    address: Address;
+    lat: string;
+    lng: string;
+    label: string;
+    label2: string;
+}
+
+interface Address {
+    country: string;
+    county: string;
+    city: string;
+    postalCode: string;
 }

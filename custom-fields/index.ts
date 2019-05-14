@@ -10,7 +10,6 @@ import { AddressCustomFieldComponent } from "./address-custom-field/address-cust
 import { ADDRESS_CUSTOM_FIELDS_PROVIDER } from "./address-custom-field/address-custom-field-provider";
 import { DynamicScriptLoaderService } from "./address-custom-field/script-service";
 
-
 /**
  * The custom fields module.
  */

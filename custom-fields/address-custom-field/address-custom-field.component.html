@@ -1,36 +1,108 @@
-<span sfTrackFocus
-    (contentFocusIn)="onFocus()"
-    (contentFocusOut)="onFocusOut()">
-    <span class="sf-input sf-popup">
-        <input type="text"
-             #streetAddress
-             class="sf-input__field"
-             autocomplete="off"
-             (keydown.enter)="onEnterKey($event)"
-             (keydown.escape)="onEscapeKey()"
-             (keydown.arrowUp)="onFocusPreviousNode()"
-             (keydown.arrowDown)="onFocusNextNode()"
-             (input)="onNewInputValue($event)"
-             [(ngModel)]="searchTerm">
-        <sf-popup [isOpen]="isPopupVisible">
-           <div class="sf-popup__content sf-dropdown -condensed">
-                <div *ngIf="searchTerm && !(hasSuggestions | async)" class="sf-dropdown__no-items">
-                        No results found
-                </div>
-                <sf-tree
-                    data-sftest="related-data_popup-tree"
-                    #popupTree
-                    focusFirstNode="true"
-                    displayField="label"
-                    [nodes]="suggestions$ | async"
-                    look="flat condensed"
-                    [config]="popupTreeConfig"
-                    [textToMatch]="searchTerm"
-                    (treeNodeClicked)="onNewItemSelected($event)">
-                </sf-tree>
-            </div>
-        </sf-popup>
-    </span>
-</span>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            Address line 1
+        </legend>
+        <span sfTrackFocus
+            (contentFocusIn)="onFocus()"
+            (contentFocusOut)="onFocusOut()">
+            <span class="sf-input sf-popup">
+                <input type="text"
+                     #streetAddress
+                     class="sf-input__field"
+                     autocomplete="off"
+                     (keydown.enter)="onEnterKey($event)"
+                     (keydown.escape)="onEscapeKey()"
+                     (keydown.arrowUp)="onFocusPreviousNode()"
+                     (keydown.arrowDown)="onFocusNextNode()"
+                     (input)="onNewInputValue({ label: $event.srcElement.value })"
+                     [(ngModel)]="searchTerm">
+                <sf-popup [isOpen]="isPopupVisible">
+                   <div class="sf-popup__content sf-dropdown -condensed">
+                        <div *ngIf="searchTerm && !(hasSuggestions | async)" class="sf-dropdown__no-items">
+                                No results found
+                        </div>
+                        <sf-tree
+                            data-sftest="related-data_popup-tree"
+                            #popupTree
+                            focusFirstNode="true"
+                            displayField="label"
+                            [nodes]="suggestions$ | async"
+                            look="flat condensed"
+                            [config]="popupTreeConfig"
+                            [textToMatch]="searchTerm"
+                            (treeNodeClicked)="onNewItemSelected($event)">
+                        </sf-tree>
+                    </div>
+                </sf-popup>
+            </span>
+        </span>
+    </fieldset>
+</div>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            Address line 2
+        </legend>
+            <span class="sf-input sf-popup">
+                <input type="text"
+                    #streetAddress2
+                    (input)="onNewInputValue({ label2: $event.srcElement.value })"
+                    class="sf-input__field">
+            </span>
+    </fieldset>
+</div>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            Country
+        </legend>
+            <span class="sf-input sf-popup">
+                <input type="text"
+                    #country
+                    (input)="onNewInputValue({ address: { country: $event.srcElement.value }})"
+                    class="sf-input__field">
+            </span>
+    </fieldset>
+</div>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            County/State/Province
+        </legend>
+            <span class="sf-input sf-popup">
+                <input type="text"
+                    #county
+                    (input)="onNewInputValue({ address: { county: $event.srcElement.value }})"
+                    class="sf-input__field">
+            </span>
+    </fieldset>
+</div>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            Town/City
+        </legend>
+            <span class="sf-input sf-popup">
+                <input type="text"
+                    #city
+                    (input)="onNewInputValue({ address: { city: $event.srcElement.value }})"
+                    class="sf-input__field">
+            </span>
+    </fieldset>
+</div>
+<div class="sf-field" >
+    <fieldset>
+        <legend class="sf-field__label -legend">
+            Postcode/Zip
+        </legend>
+            <span class="sf-input sf-popup">
+                <input type="text"
+                    #postcode
+                    (input)="onNewInputValue({ address: { postalCode: $event.srcElement.value }})"
+                    class="sf-input__field">
+            </span>
+    </fieldset>
+</div>
 
 <div style="width: 640px; height: 480px" #mapContainer></div>

@@ -21,8 +21,13 @@ declare var H: any;
     templateUrl: "./address-custom-field.component.html"
 })
 export class AddressCustomFieldComponent extends FieldBase implements OnInit {
-    @ViewChild("streetAddress") streetAddress: any;
+    @ViewChild("streetAddress") streetAddress: ElementRef;
     @ViewChild("mapContainer") mapContainer: ElementRef;
+    @ViewChild("streetAddress2") streetAddress2: ElementRef;
+    @ViewChild("country") country: ElementRef;
+    @ViewChild("county") county: ElementRef;
+    @ViewChild("city") city: ElementRef;
+    @ViewChild("postcode") postcode: ElementRef;
 
     popupTreeConfig: any;
     searchTerm: string;
@@ -71,7 +76,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.isPopupVisible = false;
     }
 
-    onNewInputValue(event: Event): void {
+    onNewInputValue(data: any): void {
         this.clearOldSuggestions();
         this.updateSuggestions();
 
@@ -80,6 +85,19 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
                 this.isPopupVisible = true;
             }
         }, 300);
+
+        const currentValue = this.getValue();
+        if (currentValue) {
+            const addrData: AddressData = JSON.parse(currentValue);
+            if (data.address) {
+                addrData.address = { ...addrData.address, ...data.address }
+                this.writeValue(JSON.stringify(addrData));
+            } else {
+                this.writeValue(JSON.stringify({ ...addrData, ...data }));
+            }
+        } else {
+            this.writeValue(JSON.stringify(data));
+        }
     }
 
     onNewItemSelected(event) {
@@ -87,16 +105,19 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     writeValue(value) {
-        if (value && this.isJSON(value)) {
-            const realValue = JSON.parse(value);
+        if (value) {
+            const addrData: AddressData = JSON.parse(value);
 
-            if (realValue.label) {
-                this.streetAddress.nativeElement.value = realValue.label;
-                this.searchTerm = realValue.label;
-            }
+            this.streetAddress.nativeElement.value = addrData.label ? addrData.label : null;
+            this.searchTerm = this.streetAddress.nativeElement.value;
+            this.streetAddress2.nativeElement.value = addrData.label2 ? addrData.label2 : null;
+            this.country.nativeElement.value = addrData.address.country ? addrData.address.country : null;
+            this.county.nativeElement.value = addrData.address.county ? addrData.address.county : null;
+            this.city.nativeElement.value = addrData.address.city ? addrData.address.city : null;
+            this.postcode.nativeElement.value = addrData.address.postalCode ? addrData.address.postalCode : null;
 
             // TODO: return lat & long and add them to object
-            this.addSuggestionToMap(realValue.locationId);
+            this.addSuggestionToMap(addrData.locationId);
         }
 
         super.writeValue(value);
@@ -173,7 +194,6 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         this.hereMap.addObject(this.hereGroup);
 
-        debugger;
         // Step 3: make the map interactive
         // MapEvents enables the event system
         // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
@@ -226,13 +246,20 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         const url = HOST + PATH;
         return this.http.get(url, { params: queryParams });
     }
+}
 
-    private isJSON(value: string) {
-        try {
-            JSON.parse(value);
-        } catch (e) {
-            return false;
-        }
-        return true;
-    }
+interface AddressData {
+    locationId: string,
+    address: Address,
+    lat: string,
+    lng: string,
+    label: string,
+    label2: string
+}
+
+interface Address {
+    country: string,
+    county: string,
+    city: string,
+    postalCode: string
 }

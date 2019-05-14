@@ -77,6 +77,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     onNewInputValue(data: any): void {
+        debugger
         this.clearOldSuggestions();
         this.updateSuggestions();
 
@@ -111,10 +112,10 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
             this.streetAddress.nativeElement.value = addrData.label ? addrData.label : null;
             this.searchTerm = this.streetAddress.nativeElement.value;
             this.streetAddress2.nativeElement.value = addrData.label2 ? addrData.label2 : null;
-            this.country.nativeElement.value = addrData.address.country ? addrData.address.country : null;
-            this.county.nativeElement.value = addrData.address.county ? addrData.address.county : null;
-            this.city.nativeElement.value = addrData.address.city ? addrData.address.city : null;
-            this.postcode.nativeElement.value = addrData.address.postalCode ? addrData.address.postalCode : null;
+            this.country.nativeElement.value = addrData.address && addrData.address.country ? addrData.address.country : null;
+            this.county.nativeElement.value = addrData.address && addrData.address.county ? addrData.address.county : null;
+            this.city.nativeElement.value = addrData.address && addrData.address.city ? addrData.address.city : null;
+            this.postcode.nativeElement.value = addrData.address && addrData.address.postalCode ? addrData.address.postalCode : null;
 
             // TODO: return lat & long and add them to object
             this.addSuggestionToMap(addrData.locationId);

@@ -9,11 +9,11 @@ import { DynamicScriptLoaderService } from "./script-service";
  * NOTE: Replace this example keys with your subscription keys.
  * For more information on how to get a key check here: https://developer.here.com/?create=Freemium-Basic&keepState=true&step=terms
  */
-const HERE_MAPS_APP_ID = 'iV0wv8ievlwH8Fd5Raii';
-const HERE_MAPS_APP_CODE = 'AHNPEuMJkSuNjkP7SpW2xg';
+const HERE_MAPS_APP_ID = "iV0wv8ievlwH8Fd5Raii";
+const HERE_MAPS_APP_CODE = "AHNPEuMJkSuNjkP7SpW2xg";
 
-const HOST = 'http://autocomplete.geocoder.api.here.com';
-const PATH = '/6.2/suggest.json';
+const HOST = "http://autocomplete.geocoder.api.here.com";
+const PATH = "/6.2/suggest.json";
 
 declare var H: any;
 
@@ -34,6 +34,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     searchTerm: string;
     hasSuggestions: Observable<boolean>;
     isPopupVisible: boolean = false;
+    hereBahavior: any;
 
     private _suggestionsSubject$: BehaviorSubject<any[]>;
     private _suggestions$: Observable<any[]>;
@@ -50,7 +51,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
         this._suggestionsSubject$ = new BehaviorSubject<any[]>([]);
         this._suggestions$ = this._suggestionsSubject$.asObservable();
-        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { return arr.length > 0;}));
+        this.hasSuggestions = this._suggestions$.pipe(map((arr) => { return arr.length > 0; }));
     }
 
     get suggestions$(): Observable<any[]> {
@@ -85,7 +86,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         if (currentValue) {
             const addrData: AddressData = JSON.parse(currentValue);
             if (data.address) {
-                addrData.address = { ...addrData.address, ...data.address }
+                addrData.address = { ...addrData.address, ...data.address };
                 this.writeValue(JSON.stringify(addrData));
             } else {
                 this.writeValue(JSON.stringify({ ...addrData, ...data }));
@@ -160,16 +161,18 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
                       this.hereMap.setViewBounds(this.hereGroup.getBounds());
                       this.hereMap.setZoom(16);
                   },
-                  () => { });
+                  () => {
+                      // empty
+                  });
         }
     }
 
     private loadScripts() {
         // You can load multiple scripts by just providing the key as argument into load method of the service
         this.dynamicScriptLoader
-        .load('here-maps-core', 'here-maps-css')
+        .load("here-maps-core", "here-maps-css")
         .then(() => {
-            this.dynamicScriptLoader.load('here-maps-service', 'here-maps-ui', 'here-maps-events').then(data => {
+            this.dynamicScriptLoader.load("here-maps-service", "here-maps-ui", "here-maps-events").then(data => {
                 // Script Loaded Successfully. We should initialize all objects needed
                 this.initializeMap();
             });
@@ -179,8 +182,8 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     private initializeMap() {
         // Step 1: initialize communication with the platform
         this.herePlatform = new H.service.Platform({
-            'app_id': HERE_MAPS_APP_ID,
-            'app_code': HERE_MAPS_APP_CODE,
+            "app_id": HERE_MAPS_APP_ID,
+            "app_code": HERE_MAPS_APP_CODE,
             useCIT: false,
             useHTTPS: true
             });
@@ -188,7 +191,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         this.hereGeocoder = this.herePlatform.getGeocodingService();
         this.hereGroup = new H.map.Group();
 
-        this.hereGroup.addEventListener('tap', (event) => {
+        this.hereGroup.addEventListener("tap", (event) => {
             this.hereMap.setCenter(event.target.getPosition());
             this.openBubble(event.target.getPosition(), event.target.getData());
         }, false);
@@ -211,7 +214,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         // Step 3: make the map interactive
         // MapEvents enables the event system
         // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-        new H.mapevents.Behavior(new H.mapevents.MapEvents(this.hereMap));
+        this.hereBahavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.hereMap));
 
         // Create the default UI components
         this.hereUI = H.ui.UI.createDefault(this.hereMap, defaultLayers);
@@ -236,15 +239,15 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
      * @param  {H.geo.Point} position     The location on the map.
      * @param  {String} text              The contents of the infobubble.
      */
-    private openBubble(position, text){
+    private openBubble(position, text) {
         if (!this.hereBubble) {
             this.hereBubble = new H.ui.InfoBubble(
                 position,
-                {content: '<small>' + text+ '</small>'});
+                {content: "<small>" + text + "</small>"});
             this.hereUI.addBubble(this.hereBubble);
         } else {
             this.hereBubble.setPosition(position);
-            this.hereBubble.setContent('<small>' + text+ '</small>');
+            this.hereBubble.setContent("<small>" + text + "</small>");
             this.hereBubble.open();
         }
    }
@@ -257,9 +260,9 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 
     private getSuggestions(queryText: string): Observable<object> {
         let queryParams = new HttpParams();
-        queryParams = queryParams.append('app_id', HERE_MAPS_APP_ID);
-        queryParams = queryParams.append('app_code', HERE_MAPS_APP_CODE);
-        queryParams = queryParams.append('query', queryText);
+        queryParams = queryParams.append("app_id", HERE_MAPS_APP_ID);
+        queryParams = queryParams.append("app_code", HERE_MAPS_APP_CODE);
+        queryParams = queryParams.append("query", queryText);
 
         const url = HOST + PATH;
         return this.http.get(url, { params: queryParams });
@@ -267,17 +270,17 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
 }
 
 interface AddressData {
-    locationId: string,
-    address: Address,
-    lat: string,
-    lng: string,
-    label: string,
-    label2: string
+    locationId: string;
+    address: Address;
+    lat: string;
+    lng: string;
+    label: string;
+    label2: string;
 }
 
 interface Address {
-    country: string,
-    county: string,
-    city: string,
-    postalCode: string
+    country: string;
+    county: string;
+    city: string;
+    postalCode: string;
 }

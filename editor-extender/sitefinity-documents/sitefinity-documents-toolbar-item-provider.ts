@@ -5,6 +5,7 @@ import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService,
 require("!style-loader!css-loader!./sitefinity-documents-toolbar-item-provider.css");
 
 const TRAILING_BREAK = "<br class='k-br'>";
+const DOCUMENT_TOOTIP_NAME = "Sitefinity documents";
 
 export const ensureTrailingBreaks = (html: string): string => {
     return `${TRAILING_BREAK}${html}${TRAILING_BREAK}`;
@@ -21,7 +22,7 @@ class DocumentsToolbarItemProvider implements ToolBarItemsProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {
         const CUSTOM_TOOLBAR_ITEM: ToolBarItem = {
             name: "Sitefinity-documents",
-            tooltip: "Sitefinity documents",
+            tooltip: DOCUMENT_TOOTIP_NAME,
             ordinal: 9,
             exec: () => {
                 const editor = editorHost.getKendoEditor();
@@ -41,7 +42,7 @@ class DocumentsToolbarItemProvider implements ToolBarItemsProvider {
                         editor.selectRange(currentRange);
                         const anchor = document.createElement("a");
                         // Allow the opening of contextual menu for links.
-                        anchor.setAttribute("data-sf-ec-immutable","");
+                        anchor.setAttribute("data-sf-ec-immutable", "");
                         anchor.text = doc.title;
                         anchor.href = doc.url;
 

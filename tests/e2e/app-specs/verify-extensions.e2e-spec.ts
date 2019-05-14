@@ -26,6 +26,7 @@ import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
+import { DocumentsModal } from '../app-elements/documents-modal.component';
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
@@ -95,6 +96,28 @@ describe("Verify extensions", () => {
         await VideosModal.VerifyModalTitle();
         await VideosModal.CancelModal();
         await ItemDetails.ClickBackButton();
+        await BrowserWaitForElement(ItemListMap.ImageColumn);
+    });
+
+    it(`embed document editor toolbar button [${entity}] and press cancel`, async () => {
+        await BrowserNavigate(url);
+        await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.ExpandHtmlField();
+        await ItemDetails.ClickToolbarButtonByTitle("Sitefinity documents");
+        await DocumentsModal.VerifyModalTitle();
+        await DocumentsModal.CancelModal();
+        await ItemDetails.ClickBackButton();
+        await BrowserWaitForElement(ItemListMap.ImageColumn);
+    });
+
+    it(`embed document editor toolbar button [${entity}] and press Use selected`, async () => {
+        await BrowserNavigate(url);
+        await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.ExpandHtmlField();
+        await ItemDetails.ClickToolbarButtonByTitle("Sitefinity documents");
+        await DocumentsModal.ClickOnThumbnail();
+        await DocumentsModal.UseSelected();
+        await ItemDetails.ClickBackButton(true);
         await BrowserWaitForElement(ItemListMap.ImageColumn);
     });
 

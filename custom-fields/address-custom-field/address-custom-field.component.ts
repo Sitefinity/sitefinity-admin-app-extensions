@@ -200,6 +200,10 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
                   geocodingParameters,
                   (result) => {
                       const location = result.Response.View[0].Result;
+                      addressData.lat = location[0].Location.DisplayPosition.Latitude;
+                      addressData.lng = location[0].Location.DisplayPosition.Longitude;
+                      this.writeValue(JSON.stringify(addressData));
+
                       this.addMarkerToMap(
                           location[0].Location.DisplayPosition.Latitude,
                           location[0].Location.DisplayPosition.Longitude,

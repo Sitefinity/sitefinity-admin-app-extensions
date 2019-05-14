@@ -68,7 +68,6 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     onNewInputValue(data: any): void {
-        this.clearOldSuggestions();
         this.updateSuggestions();
 
         setTimeout(() => {
@@ -153,7 +152,6 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
         // obtain the coordinates and display in an alert box.
         hereMap.addEventListener("tap", (event) => {
             const coord = hereMap.screenToGeo(event.currentPointer.viewportX, event.currentPointer.viewportY);
-            this.clearOldSuggestions();
 
             // get address suggestion// Create the parameters for the reverse geocoding request:
             const reverseGeocodingParameters = {
@@ -214,6 +212,7 @@ export class AddressCustomFieldComponent extends FieldBase implements OnInit {
     }
 
     private addMarkerToMap(lat: string, lng: string, label: string) {
+        this.clearOldSuggestions();
         let marker;
 
         marker = new H.map.Marker({ lat, lng });

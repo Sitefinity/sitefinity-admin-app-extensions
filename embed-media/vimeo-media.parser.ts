@@ -29,8 +29,8 @@ export class VimeoMediaParser extends EmbedMediaParser {
                 const media: Media = {
                     html: r.html,
                     isValid: true,
-                    height: { value: 300, hasValue: true },
-                    width: { value: 600, hasValue: true },
+                    height: { value: r.height, hasValue: true },
+                    width: { value: r.width, hasValue: true },
                     type: MediaType.IFrame
                 };
 

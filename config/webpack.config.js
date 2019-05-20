@@ -44,12 +44,13 @@ module.exports = function(env, argv) {
         ],
 
         resolve: {
-            extensions: [".ts", ".js", ".json", ".html"]
+            extensions: [".ts", ".js", ".json", ".html", ".tsx"]
         },
 
         module: {
             rules: [
                 { test: /\.ts$/, use:[ "ts-loader", "angular2-template-loader" ] },
+                { test: /\.tsx$/, use:[ "ts-loader" ] },
                 { test: /\.html$/, use:[ "html-loader" ] },
                 { test: /\.css$/, use: [ "css-to-string-loader", "css-loader" ] }
             ]

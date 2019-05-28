@@ -4,6 +4,7 @@ import { ITEM_CONTENT_BEGINNING } from "../helpers/constants";
 const defaultFieldLocator = ".-sf-short-text-default";
 
 export class ItemDetailsMap {
+    public static Editor = element(by.className("sf-editor"));
     public static ExtendedTitleField: ElementFinder = element(by.css(".custom-title-input"));
     public static EditorInternalField: ElementFinder = element(by.cssContainingText("div", "Hello everyone"));
     public static HtmlFieldExpandButton: ElementFinder = element(by.css("a[title=Expand]"));

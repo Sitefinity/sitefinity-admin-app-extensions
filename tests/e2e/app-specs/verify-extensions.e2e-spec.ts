@@ -2,7 +2,7 @@ import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import {
     BrowserNavigate,
-    SelectAllAndPasteText,
+    SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement
 } from "../helpers/browser-helpers";
@@ -26,6 +26,8 @@ import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
+import { by } from "protractor";
+import { ItemDetailsMap } from "../app-elements/item-details.map";
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
@@ -81,7 +83,7 @@ describe("Verify extensions", () => {
         await BrowserNavigate(url);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
-        await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
+        await SelectAllAndTypeText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.ClickToolbarButtonByTitle("Words count");
         await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);
         await ItemDetails.ClickBackButton(true);
@@ -141,5 +143,24 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
+    });
+
+    it("recognize Vimeo pastes in RTE", async () => {
+        await BrowserNavigate(url);
+        await ItemList.ClickOnCreate();
+
+        const videoId = "76979871";
+        const vimeoUrl = `https://vimeo.com/${videoId}`;
+
+        await ItemDetails.PasteContentInEditor(vimeoUrl);
+
+        const iframeLocator = ItemDetailsMap.Editor.element(by.css("iframe"));
+
+        await BrowserWaitForElement(iframeLocator);
+
+        const src = await iframeLocator.getAttribute("src");
+        const expectedUrl = `https://player.vimeo.com/video/${videoId}`;
+
+        expect(src).toContain(expectedUrl);
     });
 });

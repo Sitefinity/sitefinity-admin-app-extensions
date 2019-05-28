@@ -32,7 +32,7 @@ export async function BrowserVerifyAlert(expectedAlertText: string): Promise<voi
     await alertDialog.accept();
 }
 
-export async function SelectAllAndPasteText(text: string): Promise<void> {
+export async function SelectAllAndTypeText(text: string): Promise<void> {
     await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
     await browser.actions().keyUp(protractor.Key.CONTROL).perform();
     await browser.actions().sendKeys(protractor.Key.BACK_SPACE).perform();

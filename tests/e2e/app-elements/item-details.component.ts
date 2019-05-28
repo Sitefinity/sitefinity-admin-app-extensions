@@ -1,7 +1,7 @@
 require("jasmine-expect");
-import { browser, protractor } from "protractor";
+import { browser, protractor, by, element } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
@@ -27,6 +27,36 @@ export class ItemDetails {
         expect(content).toBe(expectedContent);
     }
 
+    static async PasteContentInEditor(text: string) {
+        const addHiddenInput = () => {
+            const input = document.createElement("input");
+
+            input.setAttribute("id", "sf-input-used-to-copy-text-from");
+
+            (document.body as any).prepend(input);
+        };
+
+        const removeHiddenInput = () => {
+           const input = document.getElementById("sf-input-used-to-copy-text-from");
+
+           document.body.removeChild(input);
+        };
+
+        await browser.executeScript(addHiddenInput);
+
+        const input = element(by.id("sf-input-used-to-copy-text-from"));
+
+        await input.sendKeys(text);
+        await input.sendKeys(protractor.Key.CONTROL, "a");
+        await input.sendKeys(protractor.Key.CONTROL, "c");
+
+        await browser.executeScript(removeHiddenInput);
+
+        const editor = ItemDetailsMap.Editor;
+        await editor.click();
+        await editor.sendKeys(protractor.Key.CONTROL, "v");
+    }
+
     static async ChangeEditorContent(newContent: string) {
         const viewHTMLButtonTitle = "View HTML";
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(viewHTMLButtonTitle));
@@ -35,7 +65,7 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.MonacoEditor);
         const monacoEditor = ItemDetailsMap.MonacoEditor;
         await monacoEditor.click();
-        await SelectAllAndPasteText(newContent);
+        await SelectAllAndTypeText(newContent);
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         const doneButton = ItemDetailsMap.DoneButton;
@@ -78,7 +108,7 @@ export class ItemDetails {
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
-        await SelectAllAndPasteText(TITLE_VALID_TEXT);
+        await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
         // click html field to loose focus from the title
         await ItemDetails.ExpandHtmlField();

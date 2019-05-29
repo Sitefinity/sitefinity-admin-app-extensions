@@ -63,6 +63,7 @@ export class ItemDetails {
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
+        await BrowserWaitForElement(ItemDetailsMap.TitleError);
 
         // verify title has error
         let titleError = ItemDetailsMap.TitleError;

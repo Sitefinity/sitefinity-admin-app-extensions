@@ -15,7 +15,7 @@ export class ItemDetailsMap {
     public static MonacoEditor: ElementFinder = element(by.cssContainingText("div", ITEM_CONTENT_BEGINNING));
     public static DoneButton: ElementFinder = element(by.cssContainingText(".sf-button", "Done"));
     public static PublishButton: ElementFinder = element(by.cssContainingText("button", "Publish"));
-    public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon"));
+    public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title='All items']"));
 
     public static ToolbarButtonByTitle(buttonTitle: string): ElementFinder {
         return element(by.css(`a[Title="${buttonTitle}"]`));

@@ -1,5 +1,5 @@
 require("jasmine-expect");
-import { browser, protractor } from "protractor";
+import { browser, protractor, by } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
@@ -66,15 +66,16 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
 
         // verify title has error
-        const titleError = ItemDetailsMap.TitleError;
+        let titleError = ItemDetailsMap.TitleError;
         expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
         const errorContent = await titleError.getText();
         expect(errorContent.trim()).toBe(TITLE_ERROR);
 
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
-        expect(await charCounter.isPresent()).toBeTruthy("Character counter is not present");
-        expect(ElementHasClass(charCounter, "-error")).toBeTrue();
+        let counterPresent = await charCounter.isPresent();
+        expect(counterPresent).toBeTrue();
+        expect(await ElementHasClass(charCounter, "-error")).toBeTrue();
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
@@ -84,13 +85,14 @@ export class ItemDetails {
         await ItemDetails.ExpandHtmlField();
 
         // verify char counter has no error
-        expect(ElementHasClass(charCounter, "-error")).toBeFalse();
+        const countersFound = await ItemDetailsMap.TitleField.all(by.css(".sf-input__char-counter"));
+        counterPresent = countersFound.length > 0;
+        expect(counterPresent).toBeFalse();
 
         // verify title has no error
-        expect(await titleError.isPresent()).toBeFalse();
-
-        // verify title has no char counter
-        expect(await charCounter.isPresent()).toBeFalse();
+        titleError = ItemDetailsMap.TitleError;
+        const errorPresent = await titleError.isPresent();
+        expect(errorPresent).toBeFalse();
     }
 
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {

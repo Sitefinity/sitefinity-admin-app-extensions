@@ -1,16 +1,15 @@
 require("jasmine-expect");
 import { browser, protractor, by } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText, BrowserVerifyWordCountAlert } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
 import { ElementHasClass } from "../helpers/common";
 
 export class ItemDetails {
-    static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
-        const expectedCount = expectedContent.split(" ").length;
-        await BrowserVerifyAlert(`Words count: ${expectedCount}`);
+    static async VerifyHtmlToolbarWordCount(): Promise<void> {
+        await BrowserVerifyWordCountAlert();
     }
 
     static async VerifyHtmlToolbarSpellCheck(): Promise<void> {
@@ -35,7 +34,7 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.MonacoEditor);
         const monacoEditor = ItemDetailsMap.MonacoEditor;
         await monacoEditor.click();
-        await SelectAllAndPasteText(newContent);
+        await SelectAllAndTypeText(newContent);
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         const doneButton = ItemDetailsMap.DoneButton;
@@ -79,7 +78,7 @@ export class ItemDetails {
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
-        await SelectAllAndPasteText(TITLE_VALID_TEXT);
+        await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
         // click html field to loose focus from the title
         await ItemDetails.ExpandHtmlField();

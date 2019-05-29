@@ -9,7 +9,6 @@
     "start": "webpack-dev-server --config config/webpack.config.js --env.dev",
     "lint": "tslint --project ./tsconfig.json",
     "lint:fix": "tslint --fix  --project ./tsconfig.json"
-    
   },
   "keywords": [
     "extensions",
@@ -38,7 +37,7 @@
     "css-to-string-loader": "0.1.3",
     "html-loader": "0.5.5",
     "json-loader": "0.5.7",
-    "progress-sitefinity-adminapp-sdk": "1.0.2",
+    "progress-sitefinity-adminapp-sdk": "1.0.3",
     "rxjs": "6.2.2",
     "style-loader": "0.20.3",
     "tslib": "1.7.1",

@@ -1,10 +1,10 @@
-import { element, by, ElementFinder } from "protractor";
+import { element, by, ElementFinder, ElementArrayFinder } from "protractor";
 
 export class ItemListMap {
     public static PrintPreviewButton: ElementFinder = element(by.cssContainingText("div[role=option]", "Print preview"));
     public static TitleTag: ElementFinder = element.all(by.css(".sf-row h1")).last();
     public static ImageColumn: ElementFinder = element(by.cssContainingText(`div[data-sftest=image3]`, "Image"));
-    public static ActionsButton: ElementFinder = element(by.css("[title=Actions]"));
+    public static ActionsButton: ElementArrayFinder = element.all(by.css("[title=Actions]"));
     public static BackButton: ElementFinder = element(by.css("button[title=Back]"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {
@@ -12,7 +12,7 @@ export class ItemListMap {
     }
 
     public static GetItemActionsMenu(): ElementFinder {
-        return this.ActionsButton;
+        return this.ActionsButton.first();
     }
 
     public static GetCreateItemButton(): ElementFinder {

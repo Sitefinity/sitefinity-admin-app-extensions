@@ -24,6 +24,14 @@ export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
     });
 }
 
+export async function BrowserVerifyWordCountAlert(): Promise<void> {
+    await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
+    const alertDialog = browser.switchTo().alert();
+    const actualAlertText = await alertDialog.getText();
+    expect(actualAlertText).toMatch(/Words count: \d+/);
+    await alertDialog.accept();
+}
+
 export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
     await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
     const alertDialog = browser.switchTo().alert();
@@ -32,7 +40,7 @@ export async function BrowserVerifyAlert(expectedAlertText: string): Promise<voi
     await alertDialog.accept();
 }
 
-export async function SelectAllAndPasteText(text: string): Promise<void> {
+export async function SelectAllAndTypeText(text: string): Promise<void> {
     await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
     await browser.actions().keyUp(protractor.Key.CONTROL).perform();
     await browser.actions().sendKeys(protractor.Key.BACK_SPACE).perform();

@@ -1,7 +1,7 @@
 require("jasmine-expect");
 import { browser, protractor } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText, BrowserVerifyWordCountAlert } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
@@ -9,8 +9,7 @@ import { ElementHasClass } from "../helpers/common";
 
 export class ItemDetails {
     static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
-        const expectedCount = expectedContent.split(" ").length;
-        await BrowserVerifyAlert(`Words count: ${expectedCount}`);
+        await BrowserVerifyWordCountAlert();
     }
 
     static async VerifyHtmlToolbarSpellCheck(): Promise<void> {

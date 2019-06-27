@@ -42,6 +42,10 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.PublishButton);
     }
 
+    static async WaitForPublishButton(): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.PublishButton);
+    }
+
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {
         const wordCountButtonTitle = "Words count";
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(wordCountButtonTitle));

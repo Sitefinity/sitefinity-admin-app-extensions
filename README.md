@@ -31,6 +31,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```shell
     git checkout {Sitefinity version}
     ```
+
     For example:
 
     ```shell
@@ -56,6 +57,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```shell
     npm run build
     ```
+
     As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
 1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You can rename the file to **{your_extension_name}.extensions.bundle.js** if you wish.
@@ -143,10 +145,91 @@ For example, the folder structure in Admin App folder may look like the followin
 ## Extensibility endpoints
 
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
+The following provides you with some example extensions.
+
+### Custom *Actions* menu
+
+You can register a custom command in the *Actions* menu of an item. To do this, you implement the **CommandProvider** interface. The interface consists of two methods:
+
+* The first method returns an **Observable** of **CommandModels**. You can configure these commands to be placed in either the grid *Actions* menu or in the *Action* menu in the content editor. The **token.type** property must contain either an **InjectionToken** or a **Type**. Once the Admin App identifies the **token.type** property, it dynamically instantiates the **Command** implementation and invokes it with the data provided by the properties property.
+
+* The second method returns the categories of commands, described above.
+
+### Custom field
+
+When in content editing mode, content editors can modify content properties and add content relations via dedicated fields in the UI. For example, **ShortText**, **LongText**, **Number**, **Classifications**, **RelatedData**, and so on. With the Admin App, you can replace one of the default fields when creating and editing items with a custom one. In addition, you can implement a custom visualization for each custom field you create. You do this by providing a custom implementation of the **FieldsProvider** interface. For each field rendered in the UI, the **overrideField** method is called. You can also provide a custom field registration for all of the fields or for a specific one.
+You also need to provide an implementation of the field for both read and write actions because there may be a case when due to lack of proper permissions or because the item is locked, it cannot be edited.
+
+**NOTE:** Since these components are dynamically instantiated, you need to register them with the entryComponents property of the NgModule.
+
+**NOTE:** In case there are two custom **FieldProvider** interfaces that attempt to override the same field, the provider that is first invoked has a priority.
+
+### Custom grid
+
+You can add custom columns in the grid, for example related data or data from external systems. To do this, you use a specific extensibility point. You develop a custom implementation of the **ColumnsProvider** interface and its method **getColumns()**, which returns an **Observable** of the **ColumnModel** object.
+
+**NOTE:** You place the custom column in the **grid-extender** folder.
+The **ColumnModel** object has three properties:
+
+* **name**
+
+The unique name that identifies this column.
+
+* **title**
+
+The display name of the column.
+
+* **componentData**
+
+A reference to the component that is displayed in the grid cell.
+
+Once the component is instantiated, the Admin App assigns the context property to it. This property displays in the grid the information for the current item, as well as the model properties you defined.
+
+### Custom content editor
+
+
+When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. Out-of-the-box, content editors can work with image and link selector contextual toolsets for Sitefinity CMS content. You can also add a custom video selector for Sitefinity CMS content by injecting a custom **ToolBarItem**.
+To do this, you provide a custom implementation of the **EditorConfigProvider**. The provider has a method **getToolBarItems** that is invoked before the Kendo UI editor is instantiated. You need to provide a custom set of commands that you want to be displayed in the editor. In this case, this is the video selector.
+
+
+In this example, you use the built-in SelectorService class, which has two methods:
+
+* **openVideoLibrarySelector**
+
+Opens the video selector.
+
+* **openDialog**
+
+Opens the custom dialogs.
+
+Not only can you add commands to the Kendo UI editor but also you can remove such. The **EditorConfigProvider** interface defines a method **getToolBarItemsNamesToRemove**. The method should return an array with the names of the toolbar items that you want to remove. In case you don't want to remove any toolbar items the method should return an empty array.
+
+**NOTE:** Only default Kendo UI toolbar items can be removed. Toolbar items added by custom implementations of the **EditorConfigProvider** interface cannot be removed.
+
+What is more you have the power to edit the configurations which are used to instantiate the Kendo UI editor. The **EditorConfigProvider** interface defines a method **configureEditor** that is invoked before the Kendo UI editor is instantiated. The method accepts the current editor configuration object and should return the modified configurations.
+
+### Custom content editor toolbar with word count
 
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation] (https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
+
+### Custom content editor toolbar with spellcheck functionality and spellcheck contextual toolset
+
+Another useful addition to the content editing experience is having a dedicated button in the content editor’s toolbar that enables content authors to perform spellcheck on the go. The extension sample, located in the **editor-extender/spell-check folder**, adds an extra toolbar button that calls an external API - the Azure cognitive services Bing spell check. Based on the response from the API, all spelling-related issues are marked with yellow in the content. Upon clicking on a marked word, a custom contextual toolset (edit menu) is displayed. The toolset contains:
+* Proposed change
+* Accept and reject buttons
+
+To extend the contextual toolset, you need to implement the **EditMenuProvider** interface, which defines the **getButtons** method. The method returns the buttons that are displayed on clicking the marked word. To make an element, in this example - the contextual toolset, editable, you need to mark it with at least the following 2 attributes:
+* **data-sf-ec-immutable**
+* **custom-edit-menu**
+
+It is a good idea to mark the element with another custom unique attribute that will be used for identification in the **getButtons** method. In this example, the **suggestion** attribute is used.
+Keep in mind that you need an Azure API key to make calls to the Azure service. For more information about getting the Azure API key, see the [Azure spell check documentation](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/). After you acquire a key, place it in the **editor-spell-check-provider.ts** file.
+Add the [Azure API endpoint](https://api.cognitive.microsoft.com/) to the **connect-src** section of the Sitefinity Web security module. For more information, see [Content policy HTTP header syntax reference](https://www.progress.com/documentation/sitefinity-cms/content-security-policy-http-header-syntax-reference).
+
+
+### Custom dialogs in the grid and in editing mode
 
 * [Custom *Actions* menu](./commands-extender/README.md) - You can register a custom command in the Actions menu of an item.
 

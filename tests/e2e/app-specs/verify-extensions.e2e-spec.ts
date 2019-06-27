@@ -134,11 +134,13 @@ describe("Verify extensions", () => {
         // verify create
         await BrowserNavigate(url);
         await ItemList.ClickOnCreate();
+        await ItemDetails.WaitForPublishButton();
         await BrowserVerifyConsoleOutput("new item");
         await ItemDetails.ClickBackButton();
 
         // verify edit
         await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.WaitForPublishButton();
         await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
     });

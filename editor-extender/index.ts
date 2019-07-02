@@ -6,6 +6,7 @@ import { SWITCH_TEXT_DIRECTION_PROVIDER } from "./switch-text-direction/switch-t
 import { INSERT_SYMBOL_PROVIDER } from "./insert-symbol/insert-symbol.provider";
 import { EDIT_MENU_SPELL_CHECK_PROVIDER } from "./spell-check/edit-menu-spell-check-provider";
 import { EDITOR_SPELL_CHECK_PROVIDER } from "./spell-check/editor-spell-check-provider";
+import { CAPITALISE_TEXT_PROVIDER } from "./capitalise-text/capitalise-text-provider";
 
 /**
  * The toolbar extender module.
@@ -17,7 +18,8 @@ import { EDITOR_SPELL_CHECK_PROVIDER } from "./spell-check/editor-spell-check-pr
         SWITCH_TEXT_DIRECTION_PROVIDER,
         INSERT_SYMBOL_PROVIDER,
         EDITOR_SPELL_CHECK_PROVIDER,
-        EDIT_MENU_SPELL_CHECK_PROVIDER
+        EDIT_MENU_SPELL_CHECK_PROVIDER,
+        CAPITALISE_TEXT_PROVIDER
     ],
     imports: [
         CommonModule

@@ -40,18 +40,9 @@ class SplitIntoColumnsProvider implements EditorConfigProvider {
      */
     configureEditor(configuration: any) {
         configuration.serialization.semantic = true;
-
-        const base = configuration.select;
-        configuration.select = (e) => {
-            base();
-            this.selected(e);
-        }
         return configuration;
     }
 
-    selected(e) {
-        console.log(e);
-    }
     /**
      * The method that gets invoked when the editor constructs the toolbar actions.
      *
@@ -103,6 +94,7 @@ class SplitIntoColumnsProvider implements EditorConfigProvider {
                 const selection = this._editor.getSelection();
                 const parent = selection.focusNode.parentElement;
                 const parentStyle = parent.style;
+                console.log(parent);
                 if (parent.tagName === "SPAN") {
                     parent.style.display = "inline-block";
                 }

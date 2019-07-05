@@ -1,3 +1,4 @@
+import { browser } from 'protractor';
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import {
@@ -26,11 +27,13 @@ import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
+import { element, by } from 'protractor';
+import { protractor } from 'protractor/built/ptor';
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
         url: CONTENT_NEWS_URL,
-        title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
+        title: "Quantum launches new business notebook \"Gluon\""
     })
     .set(PAGES_TYPE_NAME, {
         url: PAGES_URL,
@@ -143,5 +146,26 @@ describe("Verify extensions", () => {
         await ItemDetails.WaitForPublishButton();
         await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
+    });
+
+    fit(`column splitter [${entity}]`, async () => {
+        await BrowserNavigate(url);
+        await ItemList.ClickOnItem(itemToVerify);
+        // await ItemDetails.FocusHtmlField();
+        const textInput = element.all(by.css("sf-editor")).first();
+        await BrowserWaitForElement(textInput);
+        await textInput.click();
+        await browser.actions().sendKeys(protractor.Key.ARROW_RIGHT)
+                                .sendKeys(protractor.Key.ARROW_RIGHT).perform();
+        // await ItemDetails.ExpandHtmlField();
+        await ItemDetails.ClickToolbarButtonByTitle("Split into columns");
+        await element.all(by.css("div[data-value='2']")).first().click();
+        let paragraph = element.all(by.css("sf-editor p[style*='column-count: 2'")).first();
+        expect(await paragraph.getCssValue("column-count")).toBe("2");
+
+        await ItemDetails.ClickToolbarButtonByTitle("Split into columns");
+        await element.all(by.css("div[data-value='1']")).first().click();
+        paragraph = element.all(by.css("sf-editor p[style*='column-count: 1'")).first();
+        expect(await paragraph.getCssValue("column-count")).toBe("1");
     });
 });

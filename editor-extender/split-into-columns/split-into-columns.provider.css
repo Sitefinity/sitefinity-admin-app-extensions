@@ -1,0 +1,9 @@
+.k-ct-popup.split-popup {
+    width: 100px !important;
+    padding: 5px 10px 10px 10px !important;
+}
+
+.k-i-splitintocolumns::before {
+    font-family: WebComponentsIcons;
+    content: "\2637";
+}

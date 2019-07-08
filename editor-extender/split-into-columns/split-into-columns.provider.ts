@@ -94,7 +94,6 @@ class SplitIntoColumnsProvider implements EditorConfigProvider {
                 const selection = this._editor.getSelection();
                 const parent = selection.focusNode.parentElement;
                 const parentStyle = parent.style;
-                console.log(parent);
                 if (parent.tagName === "SPAN") {
                     parent.style.display = "inline-block";
                 }

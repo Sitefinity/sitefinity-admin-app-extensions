@@ -1,4 +1,5 @@
-import { browser } from 'protractor';
+import { EC } from "./../helpers/constants";
+import { browser } from "protractor";
 import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import {
@@ -27,8 +28,11 @@ import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
-import { element, by } from 'protractor';
-import { protractor } from 'protractor/built/ptor';
+import { element, by } from "protractor";
+import { protractor } from "protractor/built/ptor";
+
+const LOREM_IPSUM = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar lacus a dui auctor pulvinar.`;
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
@@ -148,12 +152,15 @@ describe("Verify extensions", () => {
         await BrowserVerifyConsoleOutput(itemToVerify);
     });
 
-    fit(`column splitter [${entity}]`, async () => {
+    it(`column splitter [${entity}]`, async () => {
         await BrowserNavigate(url);
-        await ItemList.ClickOnItem(itemToVerify);
         // await ItemDetails.FocusHtmlField();
+        const createItemButton = ItemListMap.GetCreateItemButton();
+        await browser.wait(EC.visibilityOf(createItemButton));
+        createItemButton.click();
         const textInput = element.all(by.css("sf-editor")).first();
         await BrowserWaitForElement(textInput);
+        SelectAllAndTypeText(LOREM_IPSUM);
         await textInput.click();
         await browser.actions().sendKeys(protractor.Key.ARROW_RIGHT)
                                 .sendKeys(protractor.Key.ARROW_RIGHT).perform();

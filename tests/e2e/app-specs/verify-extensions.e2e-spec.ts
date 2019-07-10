@@ -37,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar lacus a d
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
         url: CONTENT_NEWS_URL,
-        title: "Quantum launches new business notebook \"Gluon\""
+        title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
     })
     .set(PAGES_TYPE_NAME, {
         url: PAGES_URL,

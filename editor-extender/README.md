@@ -23,6 +23,9 @@ What is more you have the power to edit the configurations which are used to ins
 
 ### [Custom content editor toolbar with insert symbol functionality](./insert-symbol/README.md).
 
+### [Custom content editor toolbar with column split functionality](./split-into-columns/README.md).
+
+
 ### [Custom content editor toolbar with word count](./word-count/README.md).
 
 ### [Custom content editor toolbar with spellcheck functionality and spellcheck contextual toolset](./spell-check/README.md).

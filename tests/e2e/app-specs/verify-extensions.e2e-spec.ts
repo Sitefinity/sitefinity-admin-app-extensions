@@ -160,10 +160,10 @@ describe("Verify extensions", () => {
         createItemButton.click();
         const textInput = element.all(by.css("sf-editor")).first();
         await BrowserWaitForElement(textInput);
-        SelectAllAndTypeText(LOREM_IPSUM);
         await textInput.click();
         await browser.actions().sendKeys(protractor.Key.ARROW_RIGHT)
                                 .sendKeys(protractor.Key.ARROW_RIGHT).perform();
+        SelectAllAndTypeText(LOREM_IPSUM);
         // await ItemDetails.ExpandHtmlField();
         await ItemDetails.ClickToolbarButtonByTitle("Split into columns");
         await element.all(by.css("div[data-value='2']")).first().click();

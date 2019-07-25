@@ -117,10 +117,8 @@ exports.config = {
     baseUrl: "http://localhost:3000/",
 
     onPrepare: function() {
-        browser
-            .manage()
-            .window()
-            .maximize();
+        browser.manage().window().setSize(1920, 1080);
+        browser.manage().window().maximize();
         jasmine.getEnv().addReporter(junitReporter);
         jasmine.getEnv().addReporter(screenshotReporter);
     },

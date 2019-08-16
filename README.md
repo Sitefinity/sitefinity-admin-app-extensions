@@ -146,7 +146,7 @@ The Admin App provides you with several extensibility points for plugging your f
 
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 
-Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation] (https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
+Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
 * [Custom *Actions* menu](./commands-extender/README.md) - You can register a custom command in the Actions menu of an item.
 

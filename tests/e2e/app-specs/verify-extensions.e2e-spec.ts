@@ -2,7 +2,7 @@ import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import {
     BrowserNavigate,
-    SelectAllAndPasteText,
+    SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement
 } from "../helpers/browser-helpers";
@@ -81,9 +81,9 @@ describe("Verify extensions", () => {
         await BrowserNavigate(url);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
-        await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
+        await SelectAllAndTypeText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.ClickToolbarButtonByTitle("Words count");
-        await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);
+        await ItemDetails.VerifyHtmlToolbarWordCount();
         await ItemDetails.ClickBackButton(true);
     });
 

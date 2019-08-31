@@ -10,11 +10,11 @@ In the root of this folder in **config.json** input Sitefinity url and login cre
 
 Execute the following commands at root _./tests/e2e_ :
 
-```
+```bash
 npm install
 ```
 
-```
+```bash
 npm run e2e
 ```
 

@@ -19,11 +19,13 @@
 
 .k-i-Left-to-right::before {
     content: "\f0da";
+    margin-left: 15px;
 }
 
 .k-tool-icon.k-i-Left-to-right::before,
 .k-tool-icon.k-i-Right-to-left::before {
     padding-right: 0;
+    width: auto !important;
 }
 
 .k-tool-icon.k-i-Left-to-right::after,

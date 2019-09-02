@@ -1,16 +1,15 @@
 require("jasmine-expect");
-import { browser, protractor } from "protractor";
+import { browser, protractor, by } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndPasteText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText, BrowserVerifyWordCountAlert } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
 import { ElementHasClass } from "../helpers/common";
 
 export class ItemDetails {
-    static async VerifyHtmlToolbarWordCount(expectedContent: string): Promise<void> {
-        const expectedCount = expectedContent.split(" ").length;
-        await BrowserVerifyAlert(`Words count: ${expectedCount}`);
+    static async VerifyHtmlToolbarWordCount(): Promise<void> {
+        await BrowserVerifyWordCountAlert();
     }
 
     static async VerifyHtmlToolbarSpellCheck(): Promise<void> {
@@ -35,11 +34,15 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.MonacoEditor);
         const monacoEditor = ItemDetailsMap.MonacoEditor;
         await monacoEditor.click();
-        await SelectAllAndPasteText(newContent);
+        await SelectAllAndTypeText(newContent);
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         await browser.actions().sendKeys(protractor.Key.DELETE).perform();
         const doneButton = ItemDetailsMap.DoneButton;
         await doneButton.click();
+        await BrowserWaitForElement(ItemDetailsMap.PublishButton);
+    }
+
+    static async WaitForPublishButton(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.PublishButton);
     }
 
@@ -64,33 +67,36 @@ export class ItemDetails {
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
+        await BrowserWaitForElement(ItemDetailsMap.TitleError);
 
         // verify title has error
-        const titleError = ItemDetailsMap.TitleError;
+        let titleError = ItemDetailsMap.TitleError;
         expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
         const errorContent = await titleError.getText();
         expect(errorContent.trim()).toBe(TITLE_ERROR);
 
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
-        expect(await charCounter.isPresent()).toBeTruthy("Character counter is not present");
-        expect(ElementHasClass(charCounter, "-error")).toBeTrue();
+        let counterPresent = await charCounter.isPresent();
+        expect(counterPresent).toBeTrue();
+        expect(await ElementHasClass(charCounter, "-error")).toBeTrue();
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
-        await SelectAllAndPasteText(TITLE_VALID_TEXT);
+        await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
         // click html field to loose focus from the title
         await ItemDetails.ExpandHtmlField();
 
         // verify char counter has no error
-        expect(ElementHasClass(charCounter, "-error")).toBeFalse();
+        const countersFound = await ItemDetailsMap.TitleField.all(by.css(".sf-input__char-counter"));
+        counterPresent = countersFound.length > 0;
+        expect(counterPresent).toBeFalse();
 
         // verify title has no error
-        expect(await titleError.isPresent()).toBeFalse();
-
-        // verify title has no char counter
-        expect(await charCounter.isPresent()).toBeFalse();
+        titleError = ItemDetailsMap.TitleError;
+        const errorPresent = await titleError.isPresent();
+        expect(errorPresent).toBeFalse();
     }
 
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {

@@ -2,7 +2,7 @@ import { initAuth } from "../helpers/authentication-manager";
 import { ItemList } from "../app-elements/item-list.component";
 import {
     BrowserNavigate,
-    SelectAllAndPasteText,
+    SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement
 } from "../helpers/browser-helpers";
@@ -81,9 +81,9 @@ describe("Verify extensions", () => {
         await BrowserNavigate(url);
         await ItemList.ClickOnItem(itemToVerify);
         await ItemDetails.ExpandHtmlField();
-        await SelectAllAndPasteText(SAMPLE_TEXT_CONTENT);
+        await SelectAllAndTypeText(SAMPLE_TEXT_CONTENT);
         await ItemDetails.ClickToolbarButtonByTitle("Words count");
-        await ItemDetails.VerifyHtmlToolbarWordCount(SAMPLE_TEXT_CONTENT);
+        await ItemDetails.VerifyHtmlToolbarWordCount();
         await ItemDetails.ClickBackButton(true);
     });
 
@@ -134,11 +134,13 @@ describe("Verify extensions", () => {
         // verify create
         await BrowserNavigate(url);
         await ItemList.ClickOnCreate();
+        await ItemDetails.WaitForPublishButton();
         await BrowserVerifyConsoleOutput("new item");
         await ItemDetails.ClickBackButton();
 
         // verify edit
         await ItemList.ClickOnItem(itemToVerify);
+        await ItemDetails.WaitForPublishButton();
         await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
     });

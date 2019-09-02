@@ -6,6 +6,7 @@ import { CommandsExtenderModule } from "./commands-extender";
 import { EditorExtenderModule } from "./editor-extender";
 import { ItemExtenderModule } from "./item-extender";
 import { ThemeModule } from "./theme";
+import { ExternalStyles } from "./external-styles";
 
 /**
  * The entry point of the extensions. Each extension bundle needs to have exactly one export
@@ -23,7 +24,8 @@ export class SamplesExtension implements Extension {
             CommandsExtenderModule,
             EditorExtenderModule,
             ItemExtenderModule,
-            ThemeModule
+            ThemeModule,
+            ExternalStyles
         ];
     }
 }

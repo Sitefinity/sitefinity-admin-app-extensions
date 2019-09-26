@@ -1,6 +1,7 @@
 # Custom content editor toolbar with spellcheck functionality and spellcheck contextual toolset
 
 Another useful addition to the content editing experience is having a dedicated button in the content editor’s toolbar that enables content authors to perform spellcheck on the go. This extension sample adds an extra toolbar button that calls an external API - the Azure cognitive services Bing spell check. Based on the response from the API, all spelling-related issues are marked with yellow in the content. Upon clicking on a marked word, a custom contextual toolset (edit menu) is displayed. The toolset contains:
+
 * Proposed change
 * Accept and reject buttons
 

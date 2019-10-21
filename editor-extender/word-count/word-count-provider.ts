@@ -1,5 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { TestService } from "../../services/test-service";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./editor-config-provider.css");
@@ -10,6 +11,9 @@ require("!style-loader!css-loader!./editor-config-provider.css");
  */
 @Injectable()
 class WordCountProvider implements EditorConfigProvider {
+    constructor(private testService: TestService) {
+    }
+
     /**
      * The method that gets invoked when the editor constructs the toolbar actions.
      * @param editorHost The instance of the editor.
@@ -20,6 +24,7 @@ class WordCountProvider implements EditorConfigProvider {
             const editorValue = this.stripHTML(editor.value());
             const count = editorValue ? editorValue.split(" ").length : 0;
 
+            this.testService.doSomething();
             alert(`Words count: ${count}`);
         };
 

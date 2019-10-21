@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { TestService } from "../services/test-service";
 
 /**
  * The component used to display the field in write mode.
@@ -10,6 +11,12 @@ import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
     styleUrls: [ "./custom-field-write.component.css" ]
 })
 export class CustomInputWriteComponent extends FieldBase {
+
+    constructor(private testService: TestService) {
+        super();
+        this.testService.doSomething();
+    }
+
     processErrors(errors: { [key: string]: any }) {
 
         // the pattern validator in the custom-field.settings file sets a pattern object

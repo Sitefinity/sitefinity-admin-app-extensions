@@ -7,4 +7,12 @@ import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 @Component({
     templateUrl: "./array-of-guids-write.component.html"
 })
-export class ArrayOfGUIDsWriteComponent extends FieldBase { }
+export class ArrayOfGUIDsWriteComponent extends FieldBase {
+    writeValue(value: any) {
+        if (typeof value === "string") {
+            super.writeValue(value.split(","));
+        } else {
+           super.writeValue(value);
+        }
+    }
+}

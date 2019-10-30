@@ -99,6 +99,13 @@ export class ItemDetails {
         expect(errorPresent).toBeFalse();
     }
 
+    static async VerifyCustomArrayOfGUIDsField(fieldValue: string): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.ArrayOfGUIDsInput);
+        let customFieldInput = ItemDetailsMap.ArrayOfGUIDsInput;
+        const customFieldContent = await customFieldInput.getAttribute('value');
+        expect(customFieldContent.trim()).toBe(fieldValue);
+    }
+
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.BackButton);
         await ItemDetailsMap.BackButton.click();

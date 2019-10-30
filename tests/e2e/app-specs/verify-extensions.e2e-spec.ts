@@ -19,13 +19,17 @@ import {
     SAMPLE_TEXT_WITH_SPELL_CHECK_SUGGESTIONS,
     PAGES_URL,
     NEWS_TYPE_NAME,
-    PAGES_TYPE_NAME
+    PAGES_TYPE_NAME,
+    BASE_URL
 } from "../helpers/constants";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
 import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
+import dynamicModuleOperations from '../setup/dynamic-module-operations';
+import { generateModuleMock } from '../setup/module-mock';
+import { setTypeNamePlural } from '../helpers/set-typename-plural';
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
@@ -37,11 +41,21 @@ const ENTITY_MAP = new Map<string, any>()
         title: "Home"
     });
 
+const dynamicModuleMock = generateModuleMock();
+const dynamicItemTitlePlural = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
+let moduleId: string;
+
 describe("Verify extensions", () => {
     beforeAll(async (done: DoneFn) => {
         await initAuth(USERNAME, PASSWORD);
+        moduleId = await dynamicModuleOperations.initiateDynamicModule(dynamicModuleMock);
         done();
     }, TIMEOUT);
+
+    afterAll(async (done: DoneFn) => {
+        await dynamicModuleOperations.deleteDynamicModule(moduleId);
+        done();
+    });
 
     // afterEach(async (done: DoneFn) => {
     //     await ServerConsoleLogs();
@@ -143,5 +157,27 @@ describe("Verify extensions", () => {
         await ItemDetails.WaitForPublishButton();
         await ItemDetails.FocusHtmlField(); // wait for fields to load
         await BrowserVerifyConsoleOutput(itemToVerify);
+    });
+
+    it("custom array of guids field", async () => {
+        const dynamicModuleUrl = `${BASE_URL}adminapp/content/${dynamicItemTitlePlural}`;
+        const dynamicItemTitle = "Some random title"
+        const dynamicItem = {
+            typeName: dynamicItemTitlePlural,
+            data: {
+                "Title": dynamicItemTitle,
+                "UrlName": "some-url",
+                "ArrayOfGuidsField": ["2c379b03-5427-44bb-8880-d3e8d16e83a5","00beeddf-1fff-43aa-8630-c3fd310d016c"]
+            }
+
+        };
+        const expectedValue = "2c379b03-5427-44bb-8880-d3e8d16e83a5,00beeddf-1fff-43aa-8630-c3fd310d016c";
+
+        await dynamicModuleOperations.createDynamicModuleItem(dynamicItem);
+
+        await BrowserNavigate(dynamicModuleUrl);
+        await ItemList.ClickOnItem(dynamicItemTitle);
+        await ItemDetails.VerifyCustomArrayOfGUIDsField(expectedValue);
+        await ItemDetails.ClickBackButton(false);
     });
 });

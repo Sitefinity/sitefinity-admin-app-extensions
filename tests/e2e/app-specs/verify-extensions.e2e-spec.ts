@@ -160,7 +160,7 @@ describe("Verify extensions", () => {
     });
 
     it("custom array of guids field", async () => {
-        const dynamicModuleUrl = `${BASE_URL}adminapp/content/${dynamicItemTitlePlural}`;
+        const dynamicModuleUrl = `${BASE_URL}content/${dynamicItemTitlePlural}`;
         const dynamicItemTitle = "Some random title"
         const dynamicItem = {
             typeName: dynamicItemTitlePlural,

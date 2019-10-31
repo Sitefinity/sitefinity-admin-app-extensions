@@ -2,7 +2,7 @@ import { protractor, browser } from "protractor";
 
 export const ACTIVATE_DYNAMIC_MODULE_SERVICE_URL = "/sf/system/content-types-service/activate/";
 
-export const BASE_URL = "http://localhost:3000/";
+export const BASE_URL = "http://localhost:3000/adminapp/";
 
 export const NEWS_TYPE_NAME = "newsitems";
 export const PAGES_TYPE_NAME = "pages";

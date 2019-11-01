@@ -18,5 +18,5 @@ export class ItemListMap {
     public static GetCreateItemButton(): ElementFinder {
         const listHeaderBar = element(by.css(".sf-main__header"));
         return listHeaderBar.element(by.cssContainingText("button.sf-button.-action", "Create a"));
-}
+    }
 }

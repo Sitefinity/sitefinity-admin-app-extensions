@@ -10,6 +10,8 @@ export class ItemDetailsMap {
     public static TitleField: ElementFinder = element(by.css(defaultFieldLocator));
     public static TitleInput: ElementFinder = ItemDetailsMap.TitleField.element(by.css("input"));
     public static TitleError: ElementFinder = ItemDetailsMap.TitleField.element(by.css("sf-error"));
+    public static ArrayOfGUIDsField: ElementFinder = element(by.css(".-sf-array-of-guids"));
+    public static ArrayOfGUIDsInput: ElementFinder = ItemDetailsMap.ArrayOfGUIDsField.element(by.css("input"));
     public static HtmlFieldExpander: ElementFinder = element(by.css(".sf-expand-button"));
     public static EditorCustomEditMenu: ElementFinder = element.all(by.css(".sf-notification__content")).last();
     public static MonacoEditor: ElementFinder = element.all(by.cssContainingText("div", ITEM_CONTENT_BEGINNING)).first();

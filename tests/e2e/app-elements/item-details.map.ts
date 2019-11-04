@@ -5,7 +5,7 @@ const defaultFieldLocator = ".-sf-short-text-default";
 
 export class ItemDetailsMap {
     public static ExtendedTitleField: ElementFinder = element(by.css(".custom-title-input"));
-    public static EditorInternalField: ElementFinder = element.all(by.cssContainingText("div", ITEM_CONTENT_BEGINNING)).first();
+    public static EditorInternalField: ElementFinder = element.all(by.css("sf-editor .sf-editor")).first();
     public static HtmlFieldExpandButton: ElementFinder = element(by.css("a[title=Expand]"));
     public static TitleField: ElementFinder = element(by.css(defaultFieldLocator));
     public static TitleInput: ElementFinder = ItemDetailsMap.TitleField.element(by.css("input"));

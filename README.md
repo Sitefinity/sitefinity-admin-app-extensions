@@ -31,6 +31,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```shell
     git checkout {Sitefinity version}
     ```
+
     For example:
 
     ```shell
@@ -56,6 +57,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```shell
     npm run build
     ```
+
     As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
 1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You can rename the file to **{your_extension_name}.extensions.bundle.js** if you wish.
@@ -146,7 +148,7 @@ The Admin App provides you with several extensibility points for plugging your f
 
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 
-Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation] (https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
+Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
 * [Custom *Actions* menu](./commands-extender/README.md) - You can register a custom command in the Actions menu of an item.
 

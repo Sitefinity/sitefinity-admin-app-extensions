@@ -66,6 +66,49 @@ export function generateModuleMock() {
             "ClassificationId": "cb0f3a19-a211-48a7-88ec-77495c0f5374",
             "ColumnName": "",
             "DBLength": "",
+            "DBType": "CLOB",
+            "DecimalPlacesCount": 0,
+            "DefaultValue": "",
+            "FileExtensions": "",
+            "FileMaxSize": 0,
+            "ImageExtensions": "",
+            "ImageMaxSize": 0,
+            "IncludeInIndexes": false,
+            "InstructionalChoice": "- Select -",
+            "InstructionalText": "",
+            "IsHiddenField": false,
+            "IsRequired": false,
+            "IsRequiredToSelectCheckbox": false,
+            "IsRequiredToSelectDdlValue": false,
+            "LengthValidationMessage": "",
+            "MaxLength": 0,
+            "MediaType": "",
+            "MinLength": 0,
+            "Name": "Content",
+            "NumberUnit": "",
+            "RegularExpression": null,
+            "Title": "Content",
+            "TypeName": "LongText",
+            "TypeUIName": "Long text",
+            "VideoExtensions": "",
+            "VideoMaxSize": 0,
+            "WidgetTypeName": "Telerik.Sitefinity.Web.UI.Fields.HtmlField",
+            "IsLocalizable": true
+        },
+        {
+            "AllowImageLibrary": false,
+            "AllowMultipleFiles": false,
+            "AllowMultipleImages": false,
+            "AllowMultipleVideos": false,
+            "AllowNulls": false,
+            "CanCreateItemsWhileSelecting": true,
+            "CanSelectMultipleItems": true,
+            "CheckedByDefault": false,
+            "ChoiceRenderType": "",
+            "Choices": "",
+            "ClassificationId": "cb0f3a19-a211-48a7-88ec-77495c0f5374",
+            "ColumnName": "",
+            "DBLength": "",
             "DBType": null,
             "DecimalPlacesCount": 0,
             "DefaultValue": "",
@@ -106,4 +149,16 @@ export function generateModuleMock() {
         "IsSelfReferencing": false,
         "CheckFieldPermissions": false
     };
+}
+
+export function generateDynamicItemMock(typeName: string, itemTitle: string) {
+    return {
+        typeName,
+        data: {
+            "Title": itemTitle,
+            "UrlName": "some-url",
+            "Content": "<p>Hello everyone, this is a long text field</p>",
+            "ArrayOfGuidsField": ["2c379b03-5427-44bb-8880-d3e8d16e83a5", "00beeddf-1fff-43aa-8630-c3fd310d016c"]
+        }
+    }
 }

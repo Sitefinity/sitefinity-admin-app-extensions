@@ -41,7 +41,7 @@ let moduleId: string;
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
         url: CONTENT_NEWS_URL,
-        title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
+        title: "Quantum Photo Contest"
     })
     .set(PAGES_TYPE_NAME, {
         url: PAGES_URL,

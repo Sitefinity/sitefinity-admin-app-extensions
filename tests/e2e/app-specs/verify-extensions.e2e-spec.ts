@@ -57,7 +57,7 @@ describe("Verify extensions", () => {
         await initAuth(USERNAME, PASSWORD);
         moduleId = await dynamicModuleOperations.initiateDynamicModule(dynamicModuleMock);
         await dynamicModuleOperations.createDynamicModuleItem(dynamicItemMock);
-        dynamicModuleOperations.includeDynamicModuleToSite(includeInSitePayload);
+        await dynamicModuleOperations.includeDynamicModuleToSite(includeInSitePayload);
         done();
     }, TIMEOUT);
 

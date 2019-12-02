@@ -185,8 +185,6 @@ async function includeDynamicModuleToSite(includeInSiteMock: any) {
     /* Site ID is currently hardcoded. We need to use getSitedID in order to get the default site ID.
     Currently when use getSideID the module is included in the site but there is couple of seconds
     delay before the module is visible in iris */
-    //let siteId = await getSiteID();
-    //siteId = await getSiteID();
     const url = URL_IN_CONFIG_FILE + SITES_API_PATH + "/4c922118-f076-4e24-9193-93e004f50107" + MULTISITE_CIONFIG_SERVICE_URL;
     await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
     const request = new Request(method, url, getRequestHeaders(), JSON.stringify(includeInSiteMock));

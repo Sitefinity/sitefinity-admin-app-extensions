@@ -28,18 +28,20 @@ import { VideosModal } from "../app-elements/videos-modal.component";
 import { Theme } from "../app-elements/theme.component";
 import { ItemListMap } from "../app-elements/item-list.map";
 import dynamicModuleOperations from "../setup/dynamic-module-operations";
-import { generateModuleMock, generateDynamicItemMock } from "../setup/module-mock";
+import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
 const dynamicItemMock = generateDynamicItemMock(dynamicTypeName, "Some item");
+const moduleName = dynamicModuleMock.ContentTypeName;
+const includeInSitePayload = includeInSiteMock(moduleName);
 let moduleId: string;
 
 const ENTITY_MAP = new Map<string, any>()
     .set(NEWS_TYPE_NAME, {
         url: CONTENT_NEWS_URL,
-        title: "Building an Appointment Tracking App by using Telerik’s WP Cloud Components - Part 1"
+        title: "Quantum Photo Contest"
     })
     .set(PAGES_TYPE_NAME, {
         url: PAGES_URL,
@@ -55,6 +57,7 @@ describe("Verify extensions", () => {
         await initAuth(USERNAME, PASSWORD);
         moduleId = await dynamicModuleOperations.initiateDynamicModule(dynamicModuleMock);
         await dynamicModuleOperations.createDynamicModuleItem(dynamicItemMock);
+        await dynamicModuleOperations.includeDynamicModuleToSite(includeInSitePayload);
         done();
     }, TIMEOUT);
 

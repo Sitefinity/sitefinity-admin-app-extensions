@@ -31,6 +31,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
     ```shell
     git checkout {Sitefinity version}
     ```
+
     For example:
 
     ```shell

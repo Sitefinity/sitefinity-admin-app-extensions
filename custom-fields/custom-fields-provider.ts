@@ -62,8 +62,8 @@ export class CustomFieldsProvider implements FieldsProvider {
         // The typename is the OData entity set name. It matches the url segment when navigating
         // to the list view of the specific type.
         const customInputKey: FieldData = {
-            fieldName: "Title",
-            fieldType: "sf-short-text-default",
+            fieldName: "Test",
+            fieldType: "sf-short-text",
             typeName: "newsitems"
         };
 

@@ -7,6 +7,7 @@ import { CUSTOM_FIELDS_PROVIDER } from "./custom-fields-provider";
 import { ArrayOfGUIDsReadonlyComponent } from "./array-of-guids/array-of-guids-readonly.component";
 import { ArrayOfGUIDsWriteComponent } from "./array-of-guids/array-of-guids-write.component";
 import { FrameworkModule } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { CommonModule } from '@angular/common';
 
 /**
  * The custom fields module.
@@ -31,6 +32,6 @@ import { FrameworkModule } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
     // import the framework module as it holds the components that the AdminApp uses
     // for a list of components see
-    imports: [FormsModule, FrameworkModule]
+    imports: [FormsModule, FrameworkModule, CommonModule]
 })
 export class CustomFieldsModule { }

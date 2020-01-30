@@ -1,11 +1,6 @@
-<sf-input
-    [name]="settings.key"
-    [look]="settings.look"
-    [placeholder]="settings.placeholder"
-    [recommendedCharacters]="settings.recommendedCharacters"
-    #inputField
-    ngDefaultControl
-    [(ngModel)]="value"
-    (onBlur)="onBlur()"
-    (onFocus)="onFocus()">
-</sf-input>
+<select (change)="syncValue($event.target.value)">
+    <option value="0">--All--</option>
+    <option *ngFor="let option of options" value={{option.value}} [selected]="option.value === this.getValue()">
+        {{option.name}}
+    </option>
+</select>

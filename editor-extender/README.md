@@ -18,3 +18,5 @@ What is more you have the power to edit the configurations which are used to ins
 ### [Custom content editor toolbar with spellcheck functionality and spellcheck contextual toolset](./spell-check/README.md).
 
 ### [Custom content editor toolbar with insert video functionality](./sitefinity-videos/README.md).
+
+### [Custom content editor toolbar with switch text direction functionality](./switch-text-direction/README.md).

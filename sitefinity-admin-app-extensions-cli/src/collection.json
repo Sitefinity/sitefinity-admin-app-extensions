@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "adminapp-extensions-cli": {
+      "description": "A blank schematic.",
+      "factory": "../dist/adminapp-extensions-cli/index#adminappExtensionsCli",
+    }
+  }
+}

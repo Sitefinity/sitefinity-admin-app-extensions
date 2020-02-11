@@ -1,0 +1,35 @@
+{
+  "name": "adminapp-extensions-cli",
+  "version": "0.0.2",
+  "description": "A blank schematics",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "start": "npm run clean-gen-files && npm run build && schematics .:adminapp-extensions-cli --debug=false --sampleExtensionName=custom-fields",
+    "clean-gen-files": "rimraf ./dist && rimraf ./custom-fields-sample",
+    "lint-fix": "tslint --fix --project ./tsconfig.json",
+    "local-publish": "npm run build && npm link"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^8.3.25",
+    "@angular-devkit/schematics": "^8.3.25",
+    "@types/jasmine": "^3.3.9",
+    "@types/node": "^8.0.31",
+    "jasmine": "^3.3.1",
+    "nodegit": "^0.26.4",
+    "rxjs": "^6.5.4",
+    "typescript": "3.7.5"
+  },
+  "devDependencies": {
+    "@angular-devkit/schematics-cli": "^0.900.1",
+    "@types/nodegit": "^0.26.1",
+    "rimraf": "^3.0.2",
+    "tslint": "^6.0.0"
+  }
+}

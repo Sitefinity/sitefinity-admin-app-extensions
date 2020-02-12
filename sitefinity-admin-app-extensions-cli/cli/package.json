@@ -1,0 +1,20 @@
+{
+  "name": "adminapp-extensions-wrapper-cli",
+  "version": "0.0.2",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build && node ./dist/index.js --sampleExtensionName custom-fields"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/cli": "9.0.1",
+    "@types/node": "^8.0.31",
+    "adminapp-extensions-cli": "0.0.7",
+    "commander": "^4.1.1"
+  },
+  "devDependencies": {
+    "typescript": "3.7.5",
+    "tslint": "^6.0.0"
+  }
+}

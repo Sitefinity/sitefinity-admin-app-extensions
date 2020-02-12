@@ -8,4 +8,4 @@ You can register a custom command in the *Actions* menu of an item. To do this, 
 
 ## Example
 
-![Print preview](./../../assets/print-preview.JPG)
+![Print preview](./../assets/print-preview.JPG)

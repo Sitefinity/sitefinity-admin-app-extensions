@@ -10,4 +10,4 @@ The custom component you defined is displayed in the grid cell.
 
 ## Example
 
-![Image column](./../../assets/image-column.JPG)
+![Image column](./../assets/image-column.JPG)

@@ -9,4 +9,4 @@ You also need to provide an implementation of the field for both read and write 
 
 ## Example
 
-![Custom field validation](./../../assets/custom-field.JPG)
+![Custom field validation](./../assets/custom-field.JPG)

@@ -21,3 +21,7 @@ Opens the video selector.
 * [**openDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog)
 
 Opens the custom dialogs.
+
+## Example
+
+![Insert video](./../../assets/insert-video.JPG)

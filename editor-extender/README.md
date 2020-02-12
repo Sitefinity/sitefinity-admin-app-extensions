@@ -7,7 +7,7 @@ Not only can you add commands to the Kendo UI editor but also you can remove suc
 
 **NOTE:** Only default Kendo UI toolbar items can be removed. Toolbar items added by custom implementations of the [**EditorConfigProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/editorconfigprovider.html) interface cannot be removed.
 
-What is more you have the power to edit the configurations which are used to instantiate the Kendo UI editor. The [**EditorConfigProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/editorconfigprovider.html) interface defines a method [**configureEditor**](http://admin-app-extensions-docs.sitefinity.site/interfaces/editorconfigprovider.html#configureeditor) that is invoked before the Kendo UI editor is instantiated. The method accepts the current editor configuration object and should return the modified configurations.
+What is more you have the power to edit the configurations which are used to instantiate the Kendo UI editor. The [**EditorConfigProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/editorconfigprovider.html) interface defines a method [**configureEditor**](http://admin-app-extensions-docs.sitefinity.site/interfaces/editorconfigprovider.html#configureeditor) that is invoked before the Kendo UI editor is instantiated. The method accepts the current editor configuration object and returns the modified configurations.
 
 ## Custom content editor samples
 

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "start": "npm run clean-gen-files && npm run build && schematics .:adminapp-extensions-cli --debug=false --sampleExtensionName=custom-fields",
+    "start": "npm run clean-gen-files && npm run build && schematics .:adminapp-extensions-cli --localRun=true --debug=false --sampleExtensionName=custom-fields",
     "clean-gen-files": "rimraf ./dist && rimraf ./custom-fields-sample",
     "lint-fix": "tslint --fix --project ./tsconfig.json",
     "local-publish": "npm run build && npm link"

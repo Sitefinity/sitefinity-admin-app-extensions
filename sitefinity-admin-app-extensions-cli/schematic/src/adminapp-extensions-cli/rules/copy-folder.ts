@@ -10,20 +10,20 @@ export function copyFolderRecursively(path: string, destinationDir: string, fold
             const dirNames: string[] = [];
             const fileNames: string[] = [];
 
-            folderContent.forEach(x => {
-                const stat = statSync(combinePath(x));
+            folderContent.forEach(contentName => {
+                const stat = statSync(combinePath(contentName));
                 if (stat.isFile()) {
-                    if (filesFilterCb && !filesFilterCb(x)) {
+                    if (filesFilterCb && !filesFilterCb(contentName)) {
                         return;
                     }
 
-                    fileNames.push(x);
+                    fileNames.push(contentName);
                 } else  {
-                    if (folderFilterCb && !folderFilterCb(x)) {
+                    if (folderFilterCb && !folderFilterCb(join(folderPath, contentName))) {
                         return;
                     }
 
-                    dirNames.push(x);
+                    dirNames.push(contentName);
                 }
             });
 

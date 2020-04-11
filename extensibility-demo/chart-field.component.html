@@ -1,0 +1,16 @@
+<p>
+    Total cases: {{currentValue?.TotalConfirmed}}
+</p>
+<p>
+    Total recovered: {{currentValue?.TotalRecovered}}
+</p>
+<p>
+    Total deaths: {{currentValue?.TotalDeaths}}
+</p>
+
+<button (click)="updateData()" class="sf-button">
+    Update Data
+</button>
+<button (click)="openDialog()" class="sf-button">
+    Open chart
+</button>

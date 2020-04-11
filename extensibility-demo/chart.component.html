@@ -1,0 +1,11 @@
+<h1>Coronavirus cases</h1>
+
+<div class="chart-wrap vertical">
+    <div class="grid">
+        <div class="bar" [style.width.%]="percentages.recovered" data-name="Total recoverd" title="Recovered {{chartData.TotalRecovered}}"></div>
+        <div class="bar" [style.width.%]="percentages.deaths" data-name="Total deaths" title="Deaths {{chartData.TotalDeaths}}"></div>
+        <div class="bar" [style.width.%]="percentages.ill" data-name="Currently ill" title="Currently ill {{chartData.TotalConfirmed - chartData.TotalDeaths - chartData.TotalRecovered}}"></div>
+    </div>
+</div>
+
+

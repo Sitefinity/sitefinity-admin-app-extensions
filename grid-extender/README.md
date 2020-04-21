@@ -7,3 +7,7 @@ The [**ColumnModel**](http://admin-app-extensions-docs.sitefinity.site/interface
 Once the component is instantiated, the Admin App assigns the [**context**](http://admin-app-extensions-docs.sitefinity.site/interfaces/datacontextcomponent.html#context) property to it, that contains information for the current item, as well as all model properties you passed throug using the [**ComponentData**](http://admin-app-extensions-docs.sitefinity.site/interfaces/componentdata.html#properties) interface. 
 
 The custom component you defined is displayed in the grid cell.
+
+## Example
+
+![Image column](./../assets/image-column.JPG)

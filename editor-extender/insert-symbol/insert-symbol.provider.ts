@@ -1,7 +1,7 @@
 import { Injectable, ClassProvider } from "@angular/core";
 import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { InsertSymbolGenerator, DATA_ATTRIBUTE_NAME } from "./symbol-list/insert-symbol-generator";
-import { ToolBuilder, ToolConfig } from "../../helpers/tool-builder";
+import { ToolBuilder, ToolConfig } from "../helpers/tool-builder";
 
 const TOOLBAR_BUTTON_DATA = {
     DEFAULT: {

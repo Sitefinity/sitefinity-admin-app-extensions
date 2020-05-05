@@ -22,5 +22,8 @@
   },
   "files": [    
     "./__extensions_index.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
 }

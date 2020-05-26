@@ -6,3 +6,7 @@ You also need to provide an implementation of the field for both read and write 
 **NOTE:** Since these components are dynamically instantiated, you need to register them with the **entryComponents** property of the **NgModule**.
 
 **NOTE:** In case there are two custom [**FieldsProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/fieldsprovider.html) interfaces that attempt to override the same field, the provider that is first invoked has a priority.
+
+## Example
+
+![Custom field validation](./../assets/custom-field.JPG)

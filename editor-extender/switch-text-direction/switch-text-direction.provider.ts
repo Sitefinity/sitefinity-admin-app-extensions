@@ -65,7 +65,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
         };
 
         // Should group the direction buttons once the editor is loaded and focused.
-        fromEvent(editorHost.context, "focusin")
+        fromEvent(editorHost[0], "focusin")
             .pipe(first())
             .subscribe(() => {
                 const toolbar = editorHost.getKendoEditor().toolbar.element;
@@ -207,7 +207,7 @@ class SwitchTextDirectionProvider implements EditorConfigProvider {
      * @memberof SwitchTextDirectionProvider
      */
     private handleCursorMove(editorHost) {
-        const editorElement: HTMLElement = editorHost.context;
+        const editorElement: HTMLElement = editorHost[0];
         const toggleToolbarButtonsSelectedClasses = () => {
             let parent = this.findParent(editorHost);
 

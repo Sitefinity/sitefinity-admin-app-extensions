@@ -3,7 +3,7 @@
 import AuthenticationManager from "../helpers/authentication-manager";
 import SitefinitySdk from "../helpers/sitefinitySdk";
 import { Request } from "../helpers/request";
-import { URL_IN_CONFIG_FILE, DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX, ACTIVATE_DYNAMIC_MODULE_SERVICE_URL, DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX, USERNAME, PASSWORD, stringConstants } from "../helpers/constants";
+import { URL_IN_CONFIG_FILE, DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX, ACTIVATE_DYNAMIC_MODULE_SERVICE_URL, DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX, USERNAME, PASSWORD, stringConstants, SITES_API_PATH, MULTISITE_CIONFIG_SERVICE_URL } from "../helpers/constants";
 
 let requestHeaders: Object;
 
@@ -175,10 +175,33 @@ function createDynamicModuleItems(dynamicItems: Array<Object>, workflowStatus?: 
     return new Promise(promiseExecutor);
 }
 
+/**
+ * Method for including dynamic module to default site
+ *
+ * @param {*} includeInSiteMock - object for adding dynamic item
+ */
+async function includeDynamicModuleToSite(includeInSiteMock: any) {
+    const method = "POST";
+    /* Site ID is currently hardcoded. We need to use getSitedID in order to get the default site ID.
+    Currently when use getSideID the module is included in the site but there is couple of seconds
+    delay before the module is visible in iris */
+    const url = URL_IN_CONFIG_FILE + SITES_API_PATH + "/4c922118-f076-4e24-9193-93e004f50107" + MULTISITE_CIONFIG_SERVICE_URL;
+    await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
+    const request = new Request(method, url, getRequestHeaders(), JSON.stringify(includeInSiteMock));
+
+    try {
+        await request.execute();
+    } catch (error) {
+        error = error as XMLHttpRequest;
+        throw new Error("Dynamic module not included to site: " + error.responseText);
+    }
+}
+
 export default {
     initiateDynamicModule,
     deleteDynamicModule,
     getContentTypeId,
     createDynamicModuleItem,
-    createDynamicModuleItems
+    createDynamicModuleItems,
+    includeDynamicModuleToSite
 };

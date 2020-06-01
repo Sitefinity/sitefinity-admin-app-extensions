@@ -7,6 +7,8 @@ export const BASE_URL = "http://localhost:3000/adminapp/";
 export const NEWS_TYPE_NAME = "newsitems";
 export const PAGES_TYPE_NAME = "pages";
 
+export const SITES_API_PATH = "/sf/system/sites";
+
 export const CONFIG_PAGE_URL = `${BASE_URL}config`;
 export const CONTENT_PAGE_URL = `${BASE_URL}content/`;
 export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
@@ -21,6 +23,7 @@ export const PASSWORD = browser.params.login.password;
 
 export const DEFAULT_ITEMS_NUMBER = 20;
 export const DEFAULT_SERVICE_URL = "sf/system/";
+export const MULTISITE_CIONFIG_SERVICE_URL = "/Default.SaveSiteDataSources";
 export const DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX = "/sf/system/content-types-service/";
 export const DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX = "/?deleteData=true";
 

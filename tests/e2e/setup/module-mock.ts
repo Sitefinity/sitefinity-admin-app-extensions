@@ -151,6 +151,23 @@ export function generateModuleMock() {
     };
 }
 
+export function includeInSiteMock(name: string) {
+    return {
+        "dataSourceConfigurations": [
+            {
+                "IsChecked": true,
+                "Links": [
+                    {
+                        "IsDefault": true,
+                        "ProviderName": "OpenAccessProvider"
+                    }
+                ],
+                "Name": name
+            }
+        ]
+    };
+}
+
 export function generateDynamicItemMock(typeName: string, itemTitle: string) {
     return {
         typeName,

@@ -71,7 +71,7 @@ class InsertSymbolProvider implements EditorConfigProvider {
         const NS = "kendoEditor";
 
         const popupTemplateGenerator = function () {
-            const symbolGenerator = new InsertSymbolGenerator(symbolList);
+            const symbolGenerator = new InsertSymbolGenerator(Object.keys(symbolList).map(k => symbolList[k]));
             const generatedHtml = symbolGenerator.generateHtml();
             return `<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'>INSERT SPECIAL CHARACTERS</div>${generatedHtml}</div>`;
         };

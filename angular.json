@@ -17,6 +17,7 @@
                         "main": "src/__extensions_index.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": false,
+                        "extractLicenses": false,
                         "customWebpackConfig": {
                             "path": "./build/webpack-custom.ts",
                             "mergeStrategies": {
@@ -26,7 +27,12 @@
                     },
                     "configurations": {
                         "prod": {
-                            "optimization": true
+                            "customWebpackConfig": {
+                                "path": "./build/webpack-custom.prod.ts",
+                                "mergeStrategies": {
+                                    "externals": "replace"
+                                }
+                            }
                         }
                     }
                 },

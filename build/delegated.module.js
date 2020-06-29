@@ -25,7 +25,7 @@ class DelegatedModule extends DelegateModuleWebPack {
         if (!sourceModule) {
             str = WebpackMissingModule.moduleCode(this.sourceRequest);
         } else {
-            str = `module.exports = __webpack_require__(0).__iris_require__('${this.userRequest}')`;
+            str = `module.exports = __iris_require__('${this.userRequest}')`;
         }
         return new RawSource(str);
     }

@@ -149,7 +149,7 @@ describe("Verify extensions", () => {
         await ItemDetails.VerifyEditorContent(SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS);
     });
 
-    fit("remove column", async () => {
+    it("remove column", async () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
         await ItemList.VerifyColumnDoesntExist("Last modified");
     });

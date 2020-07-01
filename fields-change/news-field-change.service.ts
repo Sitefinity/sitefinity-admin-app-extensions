@@ -5,6 +5,13 @@ const NEWS_TYPE_FULL_NAME = "Telerik.Sitefinity.News.Model.NewsItem";
 const TITLE_FIELD_NAME = "Title";
 const RITCH_TEXT_EDITOR_FIELD_NAME = "Content";
 
+/**
+ * Service which listens for field changes for news items.
+ *
+ * @export
+ * @class NewsFieldsChangeService
+ * @implements {FieldChangeService}
+ */
 @Injectable()
 export class NewsFieldsChangeService implements FieldChangeService {
     /**

@@ -184,6 +184,4 @@ describe("Verify extensions", () => {
         await ItemDetails.VerifyCustomArrayOfGUIDsField(dynamicItemMock.data.ArrayOfGuidsField.join(","));
         await ItemDetails.ClickBackButton(false);
     });
-
-
 });

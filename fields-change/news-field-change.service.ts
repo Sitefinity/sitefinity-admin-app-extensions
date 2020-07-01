@@ -15,7 +15,7 @@ const RITCH_TEXT_EDITOR_FIELD_NAME = "Content";
 @Injectable()
 export class NewsFieldsChangeService implements FieldChangeService {
     /**
-     * Method called when on of the field changes.
+     * Method called on every field change.
      *
      * @param {string} changedFieldName The name of the field that was changed.
      * @param {*} changedValue The new value of the field.
@@ -32,10 +32,10 @@ export class NewsFieldsChangeService implements FieldChangeService {
     }
 
     /**
-     * Determines if this service can process the changed field.
+     * Determines whether the service can process field changes for a certain content type.
      *
      * @param {string} typeFullName The CLR full name of the item(ex: Telerik.Sitefinity.News.Model.NewsItem)
-     * @returns {boolean} Wheter the field can be processed.
+     * @returns {boolean} A value indicating whether the service can process field changes.
      * @memberof FieldsChangeService
      */
     canProcess(typeFullName: string): boolean {

@@ -32,6 +32,10 @@ class DynamicItemIndexColumnsProvider implements ColumnsProvider {
         // return an observable here, because this might be a time consuming operation
         return of([column]);
     }
+
+    getColumnsToRemove(entityData: EntityData): Observable<string[]> {
+        return of([]);
+    }
 }
 
 /**

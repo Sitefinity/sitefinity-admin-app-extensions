@@ -11,6 +11,11 @@ export class ItemList {
         await BrowserWaitForElement(ItemListMap.ImageColumn);
     }
 
+    static async VerifyColumnDoesntExist(columnTitle: string) {
+        const cols = ItemListMap.Columns.filter(async x => (await (await x.getText()).includes(columnTitle));
+        expect((await cols).length).toBe(0, `Column '${columnTitle}' should not exist.`);
+    }
+
     static async ClickPrintPreview() {
         const actionButton = ItemListMap.GetItemActionsMenu();
         await actionButton.click();

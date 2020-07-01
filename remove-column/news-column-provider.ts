@@ -3,6 +3,7 @@ import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 
 const COLUMN_TO_REMOVE = "LastModified";
+const NEWS_ENTITY_SET_NAME = "newsitems";
 
 /**
  * A columns provider to provide columns for the list view of the content screen.
@@ -20,7 +21,9 @@ export class NewsColumnProvider implements ColumnsProvider {
      * Gets an obaservable collection of columns to be removed.
      */
     getColumnsToRemove(entityData: EntityData): Observable<string[]> {
-        return of([COLUMN_TO_REMOVE]);
+        return entityData.metadata.setName === NEWS_ENTITY_SET_NAME ?
+            of([COLUMN_TO_REMOVE]) :
+            of([]);
     }
 }
 

@@ -3,6 +3,8 @@ import { ColumnsProvider, ColumnModel, COLUMNS_TOKEN, EntityData } from "progres
 import { ImageComponent } from "./image.component";
 import { ClassProvider, Injectable } from "@angular/core";
 
+const COLUMN_TO_REMOVE = "LastModified";
+
 /**
  * The index provider provides the custom columns back to the AdminApp.
  */
@@ -32,9 +34,14 @@ class DynamicItemIndexColumnsProvider implements ColumnsProvider {
         // return an observable here, because this might be a time consuming operation
         return of([column]);
     }
-
-    getColumnsToRemove(entityData: EntityData): Observable<string[]> {
-        return of([]);
+/**
+ * Gets an obaservable collection of columns to be removed.
+ * @param {EntityData} entityData Provides metadata for the current type.
+ * @returns {Observable<string[]>} The columns which should be removed.
+ * @memberof DynamicItemIndexColumnsProvider
+ */
+getColumnsToRemove(entityData: EntityData): Observable<string[]> {
+        return of([COLUMN_TO_REMOVE]);
     }
 }
 

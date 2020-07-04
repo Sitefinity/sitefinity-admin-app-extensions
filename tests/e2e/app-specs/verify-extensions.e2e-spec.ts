@@ -4,7 +4,8 @@ import {
     BrowserNavigate,
     SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
-    BrowserWaitForElement
+    BrowserWaitForElement,
+    BrowserWaitForTextToBePresent
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -137,6 +138,7 @@ describe("Verify extensions", () => {
         await ItemDetailsMap.TitleInput.click();
         await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
+        BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
         await ItemDetails.VerifyEditorContent(TITLE_VALID_TEXT);
     });
 

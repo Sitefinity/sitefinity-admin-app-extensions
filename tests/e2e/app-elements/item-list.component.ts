@@ -12,7 +12,7 @@ export class ItemList {
     }
 
     static async VerifyColumnDoesntExist(columnTitle: string) {
-        const cols = ItemListMap.Columns.filter(async x => (await (await x.getText()).includes(columnTitle));
+        const cols = ItemListMap.Columns.filter(async x => ((await x.getText()).includes(columnTitle)));
         expect((await cols).length).toBe(0, `Column '${columnTitle}' should not exist.`);
     }
 

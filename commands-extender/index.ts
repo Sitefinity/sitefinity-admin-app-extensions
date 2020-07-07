@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { COMMANDS_PROVIDER } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
 import { PrintPreviewCommand } from "./print-preview.command";
+import { BULK_COMMANDS_EXTENDER } from "./bulk-commands-extender";
 
 /**
  * The command extender module.
@@ -19,6 +20,7 @@ import { PrintPreviewCommand } from "./print-preview.command";
     ],
     providers: [
         COMMANDS_PROVIDER,
+        BULK_COMMANDS_EXTENDER,
         PrintPreviewCommand
     ],
     imports: [

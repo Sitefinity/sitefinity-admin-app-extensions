@@ -17,6 +17,11 @@ export default function (config: Configuration) {
     ]);
 
     config.optimization.minimizer = config.optimization.minimizer.filter(x => x.constructor.name !== "HashedModuleIdsPlugin");
+    config.module.rules = config.module.rules.filter(x => !x.test.toString().includes(".css"));
+    config.module.rules.push({
+        test: /\.css$/,
+        use: [ "css-to-string-loader", "css-loader" ]
+    });
 
     if (config["devServer"]) {
         config["devServer"].historyApiFallback = true;

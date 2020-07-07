@@ -1,5 +1,5 @@
 import { Observable, of } from "rxjs";
-import { ColumnsProvider, ColumnModel, COLUMNS_TOKEN, EntityData } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ColumnModel, COLUMNS_TOKEN, EntityData, ListColumnsProvider } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { ImageComponent } from "./image.component";
 import { ClassProvider, Injectable } from "@angular/core";
 
@@ -9,7 +9,7 @@ const COLUMN_TO_REMOVE = "LastModified";
  * The index provider provides the custom columns back to the AdminApp.
  */
 @Injectable()
-class DynamicItemIndexColumnsProvider implements ColumnsProvider {
+class DynamicItemIndexColumnsProvider implements ListColumnsProvider {
     private columnName: string = "image3";
     private columnTitle: string = "Image";
 

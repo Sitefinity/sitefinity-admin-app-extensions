@@ -4,7 +4,7 @@
   "description": "Provides extensions for the backend of the Progress Sitefinity Admin App",
   "scripts": {
     "debug:cli": "node --max-old-space-size=8192 --inspect-brk ./node_modules/@angular/cli/bin/ng build",
-    "start": "ng serve",
+    "start": "ng serve --port 3000",
     "build": "ng build",
     "build:prod": "ng build -c prod"
   },

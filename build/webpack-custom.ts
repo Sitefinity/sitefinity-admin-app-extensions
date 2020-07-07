@@ -18,5 +18,9 @@ export default function (config: Configuration) {
 
     config.optimization.minimizer = config.optimization.minimizer.filter(x => x.constructor.name !== "HashedModuleIdsPlugin");
 
+    if (config["devServer"]) {
+        config["devServer"].historyApiFallback = true;
+    }
+
     return config;
 }

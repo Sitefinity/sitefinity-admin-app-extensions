@@ -149,6 +149,17 @@ describe("Verify extensions", () => {
         await ItemDetails.VerifyEditorContent(SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS);
     });
 
+    it("bulk command", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
+        await ItemList.SelectListRows(2);
+        await BrowserWaitForElement(ItemListMap.BulkActionsMenuButton);
+        await ItemListMap.BulkActionsMenuButton.click();
+        await BrowserWaitForElement(ItemListMap.BulkDropdown);
+        await ItemList.ClickActionFromBulkDropdown("List selected items");
+        await BrowserWaitForElement(ItemListMap.BulkNotification);
+        await BrowserVerifyConsoleOutput("Selected items:");
+    });
+
     it(`item hooks [${dynamicTypeName}]`, async () => {
         // verify create
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);

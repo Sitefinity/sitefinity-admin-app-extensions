@@ -2,6 +2,7 @@ require("jasmine-expect");
 
 import { ItemListMap } from "./item-list.map";
 import { BrowserWaitForElement } from "../helpers/browser-helpers";
+import { by } from "protractor";
 
 const backgroundColorAttribute = "backgroundColor";
 const expectedButtonColor = "rgba(0, 108, 217, 1)";
@@ -9,6 +10,19 @@ const expectedButtonColor = "rgba(0, 108, 217, 1)";
 export class ItemList {
     static async VerifyImageColumn() {
         await BrowserWaitForElement(ItemListMap.ImageColumn);
+    }
+
+    static async ClickActionFromBulkDropdown(actionTitle: string) {
+        const actionButtons = ItemListMap.BulkDropdown.all(by.css("div[role='option']"));
+        const operationButton = actionButtons.filter(async x => (await x.getText()).includes(actionTitle));
+
+        await operationButton.click();
+    }
+
+    static async SelectListRows(rowsCount: number) {
+        for (let i = 0; i < rowsCount; i++) {
+            await ItemListMap.RowsCheckboxes.get(i).click();
+        }
     }
 
     static async ClickPrintPreview() {

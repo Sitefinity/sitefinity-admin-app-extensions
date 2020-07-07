@@ -1,4 +1,4 @@
-import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandModel, CommandCategory, Operation } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandModel, CommandCategory } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable, of } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
 import { PrintPreviewCommand } from "./print-preview.command";
@@ -30,13 +30,11 @@ const CUSTOM_CATEGORY: CommandCategory = {
 /**
  * The operation model containing the metadata of the operation.
  */
-export const LIST_SELECTED_ITEMS_OPERATION: Operation = {
-    Name: "ListSelectedItems",
-    Title: "List selected items",
-    Category: {
-        Name: "CustomCategory",
-        Title: "Custom category"
-    }
+export const LIST_SELECTED_ITEMS_OPERATION: CommandModel = {
+    name: "ListSelectedItems",
+    title: "List selected items",
+    category: CUSTOM_CATEGORY_NAME,
+    ordinal: CUSTOM_COMMAND_BASE.ordinal + 1
 };
 
 /**
@@ -72,6 +70,10 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
             commands.push(previewCommand);
         }
 
+        if (data.target === CommandsTarget.Bulk) {
+            commands.push(LIST_SELECTED_ITEMS_OPERATION);
+        }
+
         // return an observable here, because generating the actions might be a time consuming operation
         return of(commands);
     }
@@ -83,14 +85,6 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
      */
     getCategories(data: CommandsData): Observable<CommandCategory[]> {
         return of([CUSTOM_CATEGORY]);
-    }
-
-    /**
-     * Fetches the operations for the provided context.
-     * @param data The context for the operations.
-     */
-    getOperations(): Observable<Operation[]> {
-        return of([LIST_SELECTED_ITEMS_OPERATION]);
     }
 }
 

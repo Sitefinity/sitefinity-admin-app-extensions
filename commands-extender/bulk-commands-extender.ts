@@ -44,7 +44,7 @@ export class BulkCommandsExtender extends BulkCommandExtenderBase {
      * @memberof BulkCommandsExtender
      */
     tryHandleCommand(action: ActionButton, data: {dataItems: DataItem[], entityData: EntityData}): Command {
-        if (action.name === LIST_SELECTED_ITEMS_OPERATION.Name) {
+        if (action.name === LIST_SELECTED_ITEMS_OPERATION.name) {
             const command  = new ListSelectedItemsCommand(data.dataItems);
             return command;
         }

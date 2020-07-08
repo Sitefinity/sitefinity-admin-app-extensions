@@ -2,7 +2,7 @@ import { ClassProvider, Injectable } from "@angular/core";
 import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
-import "./editor-config-provider.css";
+require("!style-loader!css-loader!./editor-config-provider.css");
 
 /**
  * A custom toolbar provider implementation for counting the words in the html editor.

@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, forkJoin } from "rxjs";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
-import "./editor-spell-check-provider.css";
+require("!style-loader!css-loader!./editor-spell-check-provider.css");
 
 /*
  * NOTE: Replace this example key with your subscription key.

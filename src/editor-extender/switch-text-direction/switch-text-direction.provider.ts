@@ -30,7 +30,7 @@ enum SelectionDirection {
 
 declare var jQuery: any;
 
-import "./switch-text-direction.provider.css";
+require("!style-loader!css-loader!./switch-text-direction.provider.css");
 
 @Injectable()
 class SwitchTextDirectionProvider implements EditorConfigProvider {

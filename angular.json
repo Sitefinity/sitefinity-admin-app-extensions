@@ -23,7 +23,8 @@
                             "mergeStrategies": {
                                 "externals": "replace"
                             }
-                        }
+                        },
+                        "vendorChunk": false
                     },
                     "configurations": {
                         "prod": {

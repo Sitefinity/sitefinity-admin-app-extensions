@@ -12,7 +12,7 @@ const TOOLBAR_BUTTON_DATA = {
 
 declare var kendo;
 
-import "./insert-symbol.provider.css";
+require("!style-loader!css-loader!./insert-symbol.provider.css");
 import * as symbolList from "./symbol-list/symbol-list.json";
 
 @Injectable()

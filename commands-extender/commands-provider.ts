@@ -2,6 +2,7 @@ import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandM
 import { Observable, of } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
 import { PrintPreviewCommand } from "./print-preview.command";
+import { ListSelectedItemsComponent } from "./list-selected-items.component";
 
 /**
  * The category name in which to place the custom commands.
@@ -71,6 +72,10 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
         }
 
         if (data.target === CommandsTarget.Bulk) {
+            LIST_SELECTED_ITEMS_OPERATION.token = {
+                type: ListSelectedItemsComponent
+            };
+console.log(data)
             commands.push(LIST_SELECTED_ITEMS_OPERATION);
         }
 

@@ -24,19 +24,11 @@ export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
     });
 }
 
-export async function BrowserVerifyWordCountAlert(): Promise<void> {
+export async function BrowserVerifyAlert(expectedAlertText: string | RegExp): Promise<void> {
     await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
     const alertDialog = browser.switchTo().alert();
     const actualAlertText = await alertDialog.getText();
-    expect(actualAlertText).toMatch(/Words count: \d+/);
-    await alertDialog.accept();
-}
-
-export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
-    await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
-    const alertDialog = browser.switchTo().alert();
-    const actualAlertText = await alertDialog.getText();
-    expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
+    expect(actualAlertText).toMatch(expectedAlertText, "The expected alert was shown but the text was not expected");
     await alertDialog.accept();
 }
 

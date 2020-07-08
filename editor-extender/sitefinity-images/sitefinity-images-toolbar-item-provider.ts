@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider, Inject } from "@angular/core";
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE, DataItem } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 const TRAILING_BREAK = "<br class='k-br'>";
 
@@ -33,13 +33,13 @@ class ImagesToolbarItemProvider implements ToolBarItemsProvider {
                 };
 
                 // open the selector and subscribe to the result
-                this.selectorService.openImageLibrarySelector(selectorOptions).subscribe(imageIds => {
-                    if (imageIds.length) {
+                this.selectorService.openImageLibrarySelector(selectorOptions).subscribe(images => {
+                    if (images.length) {
                         // Restore editor's saved position.
                         editor.selectRange(currentRange);
-                        imageIds.forEach(id => {
-                            const imageElement = document.createElement("div");
-                            imageElement.innerText = id;
+                        images.forEach((img: DataItem) => {
+                            const imageElement = document.createElement("img");
+                            imageElement.src = img.data.ThumbnailUrl;
 
                             // Insert the HTML and trigger editor's change, so the
                             // HTML can be saved.

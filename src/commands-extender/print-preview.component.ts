@@ -8,7 +8,7 @@ import { delay } from "rxjs/operators";
  * A component that loads the data item from the OData rest services and displays the title of the data item.
  */
 @Component({
-    template: require("./print-preview.component.html")
+    templateUrl: "./print-preview.component.html"
 })
 export class PrintPreviewComponent implements OnInit {
 

@@ -51,7 +51,7 @@ ImportPlugin.prototype.apply = function (compiler) {
         var nmf = params.normalModuleFactory;
 
         nmf.plugin("module", function (module) {
-            if (module.libIdent) {
+            if (module) {
                 var request = module.libIdent(this.options);
 
                 const found = this.options.modules.find(x => x === request);

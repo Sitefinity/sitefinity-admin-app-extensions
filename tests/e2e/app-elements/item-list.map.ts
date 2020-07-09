@@ -6,6 +6,10 @@ export class ItemListMap {
     public static ImageColumn: ElementFinder = element(by.cssContainingText(`div.-head[title="Image"]`, "Image"));
     public static ActionsButton: ElementArrayFinder = element.all(by.css("i[title=Actions]"));
     public static BackButton: ElementFinder = element(by.css("button[title=Back]"));
+    public static RowsCheckboxes: ElementArrayFinder = element.all(by.css(".tree-node-checkbox"));
+    public static BulkActionsMenuButton: ElementFinder = element(by.css(".sf-main-list-header__bulk div[role='listbox']"));
+    public static BulkDropdown: ElementFinder = element(by.css("sf-bulk-operations div.sf-dropdown"));
+    public static BulkNotification: ElementFinder = element(by.css("sf-bulk-operations-notification"));
     public static Columns: ElementArrayFinder = element.all(by.css(".sf-tree-list__cell.-head"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {

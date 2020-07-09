@@ -7,6 +7,7 @@ import { COMMANDS_PROVIDER } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
 import { PrintPreviewCommand } from "./print-preview.command";
 import { CUSTOM_COMMANDS_FILTER } from "./commands-filter";
+import { ListSelectedItemsCommand } from "./list-selected-items.command";
 
 /**
  * The command extender module.
@@ -21,7 +22,8 @@ import { CUSTOM_COMMANDS_FILTER } from "./commands-filter";
     providers: [
         COMMANDS_PROVIDER,
         CUSTOM_COMMANDS_FILTER,
-        PrintPreviewCommand
+        PrintPreviewCommand,
+        ListSelectedItemsCommand
     ],
     imports: [
         RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent }]),

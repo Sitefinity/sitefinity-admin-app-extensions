@@ -20,6 +20,8 @@ export class ItemList {
     }
 
     static async SelectListRows(rowsCount: number) {
+        await BrowserWaitForElement(ItemListMap.RowsCheckboxes.first());
+
         for (let i = 0; i < rowsCount; i++) {
             await ItemListMap.RowsCheckboxes.get(i).click();
         }

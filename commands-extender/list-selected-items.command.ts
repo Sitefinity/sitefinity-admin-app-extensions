@@ -22,7 +22,8 @@ export class ListSelectedItemsCommand implements Command, ExecuteOnceInBulkComma
         // get the selected items from the context.
         const selectedItems = context.data.selectedItems;
 
-        alert(`Selected items: ${selectedItems.map(x => x.title).join(", ")}`);
+        // tslint:disable-next-line: no-console
+        console.log(`Custom bulk command executed. Selected items: ${selectedItems.map(x => x.title).join(", ")}`);
 
         const result: BulkOperationResult = {
             success: true,

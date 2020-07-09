@@ -4,8 +4,7 @@ import {
     BrowserNavigate,
     SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
-    BrowserWaitForElement,
-    BrowserVerifyAlert
+    BrowserWaitForElement
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -157,8 +156,7 @@ describe("Verify extensions", () => {
         await ItemListMap.BulkActionsMenuButton.click();
         await BrowserWaitForElement(ItemListMap.BulkDropdown);
         await ItemList.ClickActionFromBulkDropdown("List selected items");
-        await BrowserWaitForElement(ItemListMap.BulkNotification);
-        await BrowserVerifyAlert("Selected items:");
+        await BrowserVerifyConsoleOutput("Selected items:");
     });
 
     it("remove column", async () => {

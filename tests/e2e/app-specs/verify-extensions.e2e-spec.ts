@@ -167,6 +167,11 @@ describe("Verify extensions", () => {
         await ItemDetails.VerifyEditorContent(SAMPLE_TEXT_AFTER_SPELL_CHECK_CORRECTIONS);
     });
 
+    it("remove column", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
+        await ItemList.VerifyColumnDoesntExist("Last modified");
+    });
+
     it(`item hooks [${dynamicTypeName}]`, async () => {
         // verify create
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);

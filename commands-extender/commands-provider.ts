@@ -2,7 +2,7 @@ import { CommandProvider, CommandsData, COMMANDS_TOKEN, CommandsTarget, CommandM
 import { Observable, of } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
 import { PrintPreviewCommand } from "./print-preview.command";
-import { ListSelectedItemsComponent } from "./list-selected-items.component";
+import { ListSelectedItemsCommand } from "./list-selected-items.command";
 
 /**
  * The category name in which to place the custom commands.
@@ -32,7 +32,7 @@ const CUSTOM_CATEGORY: CommandCategory = {
  * The operation model containing the metadata of the operation.
  */
 export const LIST_SELECTED_ITEMS_OPERATION: CommandModel = {
-    name: "ListSelectedItems",
+    name: "List",
     title: "List selected items",
     category: CUSTOM_CATEGORY_NAME,
     ordinal: CUSTOM_COMMAND_BASE.ordinal + 1
@@ -72,11 +72,13 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
         }
 
         if (data.target === CommandsTarget.Bulk) {
-            LIST_SELECTED_ITEMS_OPERATION.token = {
-                type: ListSelectedItemsComponent
+            const bulkCommand = Object.assign({}, LIST_SELECTED_ITEMS_OPERATION);
+
+            bulkCommand.token = {
+                type: ListSelectedItemsCommand
             };
-console.log(data)
-            commands.push(LIST_SELECTED_ITEMS_OPERATION);
+
+            commands.push(bulkCommand);
         }
 
         // return an observable here, because generating the actions might be a time consuming operation

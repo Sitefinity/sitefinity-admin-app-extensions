@@ -7,6 +7,8 @@ class CustomCommandsFilter implements CommandsFilter  {
         if (data.dataItem.metadata.setName === "newsitems") {
             return operations.filter(x => x.name !== "Delete");
         }
+
+        return operations;
     }
 }
 

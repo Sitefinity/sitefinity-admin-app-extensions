@@ -2,7 +2,7 @@ import { CommandsFilter, CommandsData, COMMANDS_FILTER_TOKEN, CommandModel } fro
 import { Injectable } from "@angular/core";
 
 @Injectable()
-class NewsCommandsFilter implements CommandsFilter  {
+class CustomCommandsFilter implements CommandsFilter  {
     filter(operations: CommandModel[], data: CommandsData): CommandModel[] {
         if (data.dataItem.metadata.setName === "newsitems") {
             return operations.filter(x => x.name !== "Delete");
@@ -10,8 +10,8 @@ class NewsCommandsFilter implements CommandsFilter  {
     }
 }
 
-export const NEWS_COMMANDS_FILTER = {
+export const CUSTOM_COMMANDS_FILTER = {
     provide: COMMANDS_FILTER_TOKEN,
-    useClass: NewsCommandsFilter,
+    useClass: CustomCommandsFilter,
     multi: true
 };

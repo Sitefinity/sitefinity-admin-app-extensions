@@ -140,6 +140,8 @@ describe("Verify extensions", () => {
 
         BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
         await ItemDetails.VerifyEditorContent(TITLE_VALID_TEXT);
+
+        await ItemDetails.ClickBackButton(true);
     });
 
     it(`applied theme [${dynamicTypeName}]`, async () => {

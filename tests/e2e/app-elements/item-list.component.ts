@@ -24,6 +24,10 @@ export class ItemList {
             await ItemListMap.RowsCheckboxes.get(i).click();
         }
     }
+    static async VerifyColumnDoesntExist(columnTitle: string) {
+        const cols = ItemListMap.Columns.filter(async x => ((await x.getText()).includes(columnTitle)));
+        expect((await cols).length).toBe(0, `Column '${columnTitle}' should not exist.`);
+    }
 
     static async ClickPrintPreview() {
         const actionButton = ItemListMap.GetItemActionsMenu();

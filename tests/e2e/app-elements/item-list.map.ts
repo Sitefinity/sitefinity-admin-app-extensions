@@ -10,6 +10,7 @@ export class ItemListMap {
     public static BulkActionsMenuButton: ElementFinder = element(by.css(".sf-main-list-header__bulk div[role='listbox']"));
     public static BulkDropdown: ElementFinder = element(by.css("sf-bulk-operations div.sf-dropdown"));
     public static BulkNotification: ElementFinder = element(by.css("sf-bulk-operations-notification"));
+    public static Columns: ElementArrayFinder = element.all(by.css(".sf-tree-list__cell.-head"));
 
     public static GetRowTitleCell(rowTitle: string): ElementFinder {
         return element(by.cssContainingText("sf-main-field", rowTitle));

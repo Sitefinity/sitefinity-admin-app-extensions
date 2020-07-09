@@ -160,6 +160,11 @@ describe("Verify extensions", () => {
         await BrowserVerifyConsoleOutput("Selected items:");
     });
 
+    it("remove column", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
+        await ItemList.VerifyColumnDoesntExist("Last modified");
+    });
+
     it(`item hooks [${dynamicTypeName}]`, async () => {
         // verify create
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);

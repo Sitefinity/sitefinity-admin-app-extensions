@@ -4,7 +4,8 @@ import {
     BrowserNavigate,
     SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
-    BrowserWaitForElement
+    BrowserWaitForElement,
+    BrowserWaitForTextToBePresent
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -20,7 +21,8 @@ import {
     PAGES_URL,
     NEWS_TYPE_NAME,
     PAGES_TYPE_NAME,
-    CONTENT_PAGE_URL
+    CONTENT_PAGE_URL,
+    TITLE_VALID_TEXT
 } from "../helpers/constants";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
@@ -30,6 +32,7 @@ import { ItemListMap } from "../app-elements/item-list.map";
 import dynamicModuleOperations from "../setup/dynamic-module-operations";
 import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
+import { ItemDetailsMap } from "../app-elements/item-details.map";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
@@ -123,6 +126,21 @@ describe("Verify extensions", () => {
         await ItemDetails.FocusHtmlField();
         await ItemDetails.ClickToolbarButtonByTitle("Insert symbol");
         await ItemDetails.VerifyAndClickSymbolListButton();
+        await ItemDetails.ClickBackButton(true);
+    });
+
+    it("fields change service", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
+        await ItemList.ClickOnItem(ENTITY_MAP.get(NEWS_TYPE_NAME).title);
+
+        BrowserWaitForElement(ItemDetailsMap.TitleInput);
+
+        await ItemDetailsMap.TitleInput.click();
+        await SelectAllAndTypeText(TITLE_VALID_TEXT);
+
+        BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
+        await ItemDetails.VerifyEditorContent(TITLE_VALID_TEXT);
+
         await ItemDetails.ClickBackButton(true);
     });
 

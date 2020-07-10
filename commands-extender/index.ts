@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { COMMANDS_PROVIDER } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
 import { PrintPreviewCommand } from "./print-preview.command";
+import { CUSTOM_COMMANDS_FILTER } from "./commands-filter";
 import { ListSelectedItemsCommand } from "./list-selected-items.command";
 
 /**
@@ -20,6 +21,7 @@ import { ListSelectedItemsCommand } from "./list-selected-items.command";
     ],
     providers: [
         COMMANDS_PROVIDER,
+        CUSTOM_COMMANDS_FILTER,
         PrintPreviewCommand,
         ListSelectedItemsCommand
     ],

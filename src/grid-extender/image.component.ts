@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataContextComponent, DataContext } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 
 // Get a collection with images in base64 format from image-data.json file
-import * as imageData from "./image-data.json";
+const imageData = require("./image-data.json");
 
 /**
  * A custom component to be displayed in each cell in a specific column in the grid.

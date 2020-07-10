@@ -13,7 +13,6 @@ const TOOLBAR_BUTTON_DATA = {
 declare var kendo;
 
 require("!style-loader!css-loader!./insert-symbol.provider.css");
-import * as symbolList from "./symbol-list/symbol-list.json";
 
 @Injectable()
 class InsertSymbolProvider implements EditorConfigProvider {
@@ -71,7 +70,8 @@ class InsertSymbolProvider implements EditorConfigProvider {
         const NS = "kendoEditor";
 
         const popupTemplateGenerator = function () {
-            const symbolGenerator = new InsertSymbolGenerator(Object.keys(symbolList).map(k => symbolList[k]));
+            const symbolList = require("./symbol-list/symbol-list.json");
+            const symbolGenerator = new InsertSymbolGenerator(symbolList);
             const generatedHtml = symbolGenerator.generateHtml();
             return `<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'>INSERT SPECIAL CHARACTERS</div>${generatedHtml}</div>`;
         };

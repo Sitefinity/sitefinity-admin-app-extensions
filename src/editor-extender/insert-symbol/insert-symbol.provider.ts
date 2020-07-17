@@ -13,7 +13,7 @@ const TOOLBAR_BUTTON_DATA = {
 declare var kendo;
 
 require("!style-loader!css-loader!./insert-symbol.provider.css");
-import * as symbolList from "./symbol-list/symbol-list.json";
+import symbolList from "./symbol-list/symbol-list.json";
 
 @Injectable()
 class InsertSymbolProvider implements EditorConfigProvider {

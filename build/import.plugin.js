@@ -2,10 +2,8 @@ var DelegatedModule = require("./delegated.module");
 var DelegatedSourceDependency = require("webpack/lib/dependencies/DelegatedSourceDependency");
 var ExternalsPlugin = require("webpack/lib/ExternalsPlugin");
 
-const initialModuleId = 100000;
+const initialModuleId = `ext_mod_id_${Date.now()}`;
 const constants = require("./constants");
-
-const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
     let compatibleVersionsTags = "";
@@ -112,9 +110,7 @@ ImportPlugin.prototype.apply = function (compiler) {
                 if (module.userRequest && module.userRequest.endsWith(constants.indexFileName)) {
                     module.id = initialModuleId;
                 } else {
-                    if (module.id <= initialModuleId) {
-                        module.id = initialModuleId + optimizeCounter++;
-                    }
+                    module.id = `${initialModuleId}_${optimizeCounter++}`;
                 }
             });
         });

@@ -89,7 +89,7 @@ ImportPlugin.prototype.apply = function (compiler) {
         }
 
         // remove unneeded runtime bundle
-        const assetsToRemove = `runtime~${constants.extensionsKey}.bundle.js`;
+        const assetsToRemove = `runtime.js`;
         const runtimeAssetNames = Object.keys(compilation.assets).filter(x => x.includes(assetsToRemove));
         runtimeAssetNames.forEach((assetName) => {
             delete compilation.assets[assetName];

@@ -17,8 +17,8 @@ class WordCountProvider implements EditorConfigProvider {
     getToolBarItems(editorHost: any): ToolBarItem[] {
         const wordsCount = () => {
             const editor = editorHost.getKendoEditor();
-           
-            const count = editor.value() ? editor.value().split(" ").length : 0;
+            const editorValue = this.stripHTML(editor.value());
+            const count = editorValue ? editorValue.split(" ").length : 0;
 
             alert(`Words count: ${count}`);
         };
@@ -56,6 +56,12 @@ class WordCountProvider implements EditorConfigProvider {
     configureEditor(configuration: any) {
         configuration.pasteCleanup.span = false;
         return configuration;
+    }
+
+    private stripHTML(html: string): string {
+        const tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
     }
 }
 

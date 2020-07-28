@@ -20,7 +20,7 @@
       "node_modules/@types"
     ]
   },
-  "files": [
-    "./index.ts"
+  "files": [    
+    "./__extensions_index.ts"
   ]
 }

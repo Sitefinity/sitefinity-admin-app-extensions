@@ -4,7 +4,7 @@
   "license": "private",
   "private": true,
   "scripts": {
-    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone",
+    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone --versions.chrome 2.42",
     "e2e": "node ./node_modules/protractor/bin/protractor",
     "e2e:headlessChrome": "npm run e2e -- --params.browser=chrome --params.headless"
   },
@@ -12,7 +12,7 @@
     "@types/es6-shim": "0.31.32",
     "@types/jasmine": "2.8.6",
     "@types/jasmine-expect": "2.0.29",
-    "@types/selenium-webdriver": "3.0.0",
+    "@types/selenium-webdriver": "4.0.3",
     "fs": "0.0.1-security",
     "fs-extra": "2.1.2",
     "jasmine-expect": "3.0.1",

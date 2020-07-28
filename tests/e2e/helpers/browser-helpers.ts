@@ -1,4 +1,4 @@
-import { browser, ElementFinder } from "protractor";
+import { browser, ElementFinder, protractor } from "protractor";
 import { EC, TIME_TO_WAIT } from "./constants";
 
 export async function BrowserWaitForElement(element: ElementFinder) {
@@ -17,10 +17,32 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
+export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
+    return await browser.manage().logs().get("browser").then((browserLog) => {
+        const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
+        expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
+    });
+}
+
+export async function BrowserVerifyWordCountAlert(): Promise<void> {
+    await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
+    const alertDialog = browser.switchTo().alert();
+    const actualAlertText = await alertDialog.getText();
+    expect(actualAlertText).toMatch(/Words count: \d+/);
+    await alertDialog.accept();
+}
+
 export async function BrowserVerifyAlert(expectedAlertText: string): Promise<void> {
-    await browser.wait(EC.alertIsPresent(), 5000, "Alert is not shown");
+    await browser.wait(EC.alertIsPresent(), TIME_TO_WAIT, "Alert is not shown");
     const alertDialog = browser.switchTo().alert();
     const actualAlertText = await alertDialog.getText();
     expect(actualAlertText).toBe(expectedAlertText, "The expected alert was shown but the text was not expected");
     await alertDialog.accept();
+}
+
+export async function SelectAllAndTypeText(text: string): Promise<void> {
+    await browser.actions().keyDown(protractor.Key.CONTROL).sendKeys("a").perform();
+    await browser.actions().keyUp(protractor.Key.CONTROL).perform();
+    await browser.actions().sendKeys(protractor.Key.BACK_SPACE).perform();
+    await browser.actions().sendKeys(text).perform();
 }

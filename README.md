@@ -153,6 +153,8 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom field](./custom-fields/README.md) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
 
+* [Fields binding](./fields-change/README.md) - Sometimes when updating a field you may need to change another field's value, settings, visibility, etc. You can create a binding between two or more fields and achieve the described behavior by creating a simple service that will handle those changes.
+
 * [Custom grid](./grid-extender/README.md) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
 
 * [Custom content editor](./editor-extender/README.md) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.

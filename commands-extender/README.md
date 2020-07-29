@@ -30,7 +30,7 @@ To add a command to the exact place where you want the [**data**](http://admin-a
 
 You can not only add new custom commands but also remove some of the default ones. To achieve this you have to implement the [**CommandsFilter**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsfilter.html) interface. The interface consists of a single method:
 
-* [**filter()**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsfilter.html#filter) - the method acceps an array of [**CommandModel[]**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandmodel.html) that contains all commands and [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html) parameter. Similarly to when adding custom command you have to use the [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html) parameter to determine the place from where you want to remove the command (grid, bulk menu, actions menu, etc.). The method should return the filtered commands.
+* [**filter()**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsfilter.html#filter) - the method accepts an array of [**CommandModel[]**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandmodel.html) that contains all commands and [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html) parameter. Similarly to when adding custom command you have to use the [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html) parameter to determine the place from where you want to remove the command (grid, bulk menu, actions menu, etc.). The method should return the filtered commands.
 
 ## Example
 

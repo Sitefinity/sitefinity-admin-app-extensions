@@ -1,17 +1,14 @@
 # Extending search functionality in AdminApp
 
 ***Disclaimer: Currently the search extensibility works only for the list view!***
-<pre>
-
-</pre>
 
 You can simply extend which fields to be used for search by editing your **config.json** file in **SitefinityWebApp\AdminApp**.
 
 The config file has the following structure:
 <pre>
 {
-	"editorSettings": {},
-	"searchSettings": {}
+  "editorSettings": {},
+  "searchSettings": {}
 }
 </pre>
 
@@ -19,9 +16,9 @@ Search settings are per content type. For example, if you want to configure sear
 
 <pre>
 {
-	"searchSettings": {
-		"newsitems": ["Content"]
-   }
+  "searchSettings": {
+    "newsitems": ["Content"]
+  }
 }
 </pre>
 

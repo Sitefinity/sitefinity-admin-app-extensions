@@ -1,6 +1,6 @@
 # Extending search functionality in AdminApp
 
-***Disclaimer: Currently the search extensibility works only for the list view!***
+***Disclaimer: Currently the search extensibility works for list view, related data, media selector. Searching in parent selectors for libraries and pages doesn't work.!***
 
 You can simply extend which fields to be used for search by editing your **config.json** file in **SitefinityWebApp\AdminApp**.
 

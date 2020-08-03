@@ -7,7 +7,6 @@ import { EditorExtenderModule } from "./editor-extender";
 import { ItemExtenderModule } from "./item-extender";
 import { ThemeModule } from "./theme";
 import { FieldsChangeModule } from "./fields-change";
-import { CustomSearchModule } from "./search";
 
 /**
  * The entry point of the extensions. Each extension bundle needs to have exactly one export
@@ -26,8 +25,7 @@ export class SamplesExtension implements Extension {
             EditorExtenderModule,
             ItemExtenderModule,
             ThemeModule,
-            FieldsChangeModule,
-            CustomSearchModule
+            FieldsChangeModule
         ];
     }
 }

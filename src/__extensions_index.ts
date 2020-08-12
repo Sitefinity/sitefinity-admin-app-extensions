@@ -5,7 +5,7 @@ import { EditorExtenderModule } from "./editor-extender";
 import { ItemExtenderModule } from "./item-extender";
 import { ThemeModule } from "./theme";
 import { SitefinityExtensionStore } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { FieldsChangeModule } from "fields-change";
+import { FieldsChangeModule } from "./fields-change";
 
 declare var sitefinityExtensionsStore: SitefinityExtensionStore;
 

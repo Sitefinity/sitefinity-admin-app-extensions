@@ -1,10 +1,10 @@
 # Extending search functionality in AdminApp
 
-***Disclaimer: Currently the search extensibility works for list view, related data, media selector. Searching in parent selectors for libraries and pages doesn't work.!***
+***Disclaimer: The search extensibility works for list view, related data fields and media selectors. Searching in parent selectors for Libraries and Pages cannot be currently modified.!***
 
-You can simply extend which fields to be used for search by editing your **config.json** file in **SitefinityWebApp\AdminApp**.
+You can simply extend which fields to be used when searching by editing your **config.json** file in the **AdminApp** folder.
 
-The config file has the following structure:
+The config file should have the following structure:
 <pre>
 {
   "editorSettings": {},
@@ -22,6 +22,6 @@ Search settings are per content type. For example, if you want to configure sear
 }
 </pre>
 
-To target given content type, you have to use its entity set name as key and in an array to specify which fields to be used.
-This will configure the search to use the Content field for finding results.
+To target given content type, you have to use its entity set name as key and an array with the names of the fields that should be used when searching as value.
+For example the code from the sample will configure the search so that the Content field would be used for finding news.
 If you don't provide configuration, the default field will be used.

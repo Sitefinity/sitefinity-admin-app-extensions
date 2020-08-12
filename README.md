@@ -163,7 +163,7 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * Custom dialogs in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 
-* [Search](./search/README.md) - By default the AdminApp uses the default field to display search results. This may not be enough. You can define what fields should be used when a search is performed for given content type.
+* [Search](./search/README.md) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
 
 ### Admin App custom theme
 

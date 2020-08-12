@@ -6,6 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { COMMANDS_PROVIDER } from "./commands-provider";
 import { PrintPreviewComponent } from "./print-preview.component";
 import { PrintPreviewCommand } from "./print-preview.command";
+import { CUSTOM_COMMANDS_FILTER } from "./commands-filter";
+import { ListSelectedItemsCommand } from "./list-selected-items.command";
 
 /**
  * The command extender module.
@@ -19,7 +21,9 @@ import { PrintPreviewCommand } from "./print-preview.command";
     ],
     providers: [
         COMMANDS_PROVIDER,
-        PrintPreviewCommand
+        CUSTOM_COMMANDS_FILTER,
+        PrintPreviewCommand,
+        ListSelectedItemsCommand
     ],
     imports: [
         RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent }]),

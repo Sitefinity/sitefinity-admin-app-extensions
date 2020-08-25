@@ -2,10 +2,8 @@ var DelegatedModule = require("./delegated.module");
 var DelegatedSourceDependency = require("webpack/lib/dependencies/DelegatedSourceDependency");
 var ExternalsPlugin = require("webpack/lib/ExternalsPlugin");
 
-const initialModuleId = 100000;
+const initialModuleId = `ext_mod_id_${Date.now()}`;
 const constants = require("./constants");
-
-const extensionsKey = constants.extensionsKey;
 
 function ImportPlugin(options) {
     let compatibleVersionsTags = "";
@@ -51,7 +49,7 @@ ImportPlugin.prototype.apply = function (compiler) {
         var nmf = params.normalModuleFactory;
 
         nmf.plugin("module", function (module) {
-            if (module.libIdent) {
+            if (module) {
                 var request = module.libIdent(this.options);
 
                 const found = this.options.modules.find(x => x === request);
@@ -91,7 +89,7 @@ ImportPlugin.prototype.apply = function (compiler) {
         }
 
         // remove unneeded runtime bundle
-        const assetsToRemove = `runtime~${constants.extensionsKey}.bundle.js`;
+        const assetsToRemove = `runtime.js`;
         const runtimeAssetNames = Object.keys(compilation.assets).filter(x => x.includes(assetsToRemove));
         runtimeAssetNames.forEach((assetName) => {
             delete compilation.assets[assetName];
@@ -112,9 +110,7 @@ ImportPlugin.prototype.apply = function (compiler) {
                 if (module.userRequest && module.userRequest.endsWith(constants.indexFileName)) {
                     module.id = initialModuleId;
                 } else {
-                    if (module.id <= initialModuleId) {
-                        module.id = initialModuleId + optimizeCounter++;
-                    }
+                    module.id = `${initialModuleId}_${optimizeCounter++}`;
                 }
             });
         });

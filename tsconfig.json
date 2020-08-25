@@ -1,26 +1,27 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "baseUrl": "./",
+    "outDir": "./dist",
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "noEmitHelpers": true,
+    "emitDecoratorMetadata": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "importHelpers": true,
-    "noUnusedLocals": true,
-    "outDir": "./../dist/wwwroot/app",
+    "target": "ES5",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "lib": [
-      "es6",
+      "es2018",
       "dom"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
     ]
   },
-  "files": [    
-    "./__extensions_index.ts"
-  ]
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableIvy": "true"
+  }
 }

@@ -20,7 +20,7 @@ export class ItemDetailsMap {
     public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title='All items']"));
 
     public static ToolbarButtonByTitle(buttonTitle: string): ElementFinder {
-        return element(by.css(`a[Title="${buttonTitle}"]`));
+        return element(by.css(`button[title="${buttonTitle}"]`));
     }
 
     public static EditorImmutableElement(elementText: string): ElementFinder {

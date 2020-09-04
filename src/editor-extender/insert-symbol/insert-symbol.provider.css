@@ -1,0 +1,49 @@
+.k-icon.k-i-insertsymbol {
+    font-family: WebComponentsIcons;
+    font-size: 1.4em;
+}
+
+.k-i-insertsymbol::before {
+    font-family: WebComponentsIcons;
+    content: "\03a9";
+}
+
+.k-i-insertsymbol::after {
+    font-family: WebComponentsIcons;
+    content: "\e006";
+}
+
+.k-icon.k-i-insert-symbol::before {
+    padding-right: 0;
+}
+
+.k-state-selected .k-icon::after {
+    background-color: #e4e4e4;
+    border-radius: 0;
+}
+
+.symbol-cell {
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333333;
+    padding: 0px 5px 0px 5px;
+}
+
+.symbol-cell:hover {
+    color: #999999;
+}
+
+.k-ct-popup.symbol-popup {
+    display: block;
+    width: 350px !important;
+    padding: 5px 10px 10px 10px !important;
+}
+
+.symbol-title {
+    font-size: 10px;
+    color: #999999;
+    margin: 10px 5px;
+}

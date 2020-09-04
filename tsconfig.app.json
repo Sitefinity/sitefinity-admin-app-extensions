@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [
+    "src/__extensions_index.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

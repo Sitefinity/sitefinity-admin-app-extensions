@@ -1,0 +1,48 @@
+.k-icon.k-i-Left-to-right,
+.k-icon.k-i-Right-to-left {
+    font-family: FontAwesome;
+    font-size: 16px !important;
+    width: auto !important;
+}
+
+.k-i-Right-to-left::after {
+    content: "\f0d9";
+}
+
+.k-i-Right-to-left::before {
+    content: "\f1dd";
+}
+
+.k-i-Left-to-right::after {
+    content: "\f1dd";
+}
+
+.k-i-Left-to-right::before {
+    content: "\f0da";
+    margin-left: 15px;
+}
+
+.k-icon.k-i-Left-to-right::before,
+.k-icon.k-i-Right-to-left::before {
+    padding-right: 0;
+    width: auto !important;
+}
+
+.k-icon.k-i-Left-to-right::after,
+.k-icon.k-i-Right-to-left::after {
+    padding: 5px 5px 5px 0;
+    height: 25px !important;
+}
+
+.k-icon.k-i-Right-to-left::before {
+    margin-right: 0 !important;
+}
+
+.k-icon.k-i-Right-to-left::after {
+    margin-right: 15px;
+}
+
+.k-state-selected .k-icon::after {
+    background-color: #e4e4e4;
+    border-radius: 0;
+}

@@ -165,6 +165,10 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Search](./search/README.md) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
 
+* Custom notifications - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the **NotificationService** and its **publishBasicNotification** method. The method accepts an object of type **NotificationInfo** that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](./commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the **NotificationService**.
+
+* [Sections menu](./sections-menu/README.md) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
+
 ### Admin App custom theme
 
 You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app).

@@ -4,4 +4,4 @@ Apart from the major formatting functions, located on the formatting bar in the 
 
 ## Example
 
-![Words count](./../../assets/words-count.JPG)
+![Words count](./../../../assets/words-count.JPG)

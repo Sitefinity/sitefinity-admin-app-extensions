@@ -14,4 +14,4 @@ To extend the editor, a custom implementation of [**EditorConfigProvider**](http
 
 ## Example
 
-![Switch text direction](./../../assets/switch-text-direction.JPG)
+![Switch text direction](./../../../assets/switch-text-direction.JPG)

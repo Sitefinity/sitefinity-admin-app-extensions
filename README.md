@@ -1,7 +1,5 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
-![Build status](https://prgs-sitefinity.visualstudio.com/sitefinity/_apis/build/status/Iris/DeprecatedAndExperimental/AdminApp.Extensions.CI?branchName=patches "Build Status")
-
 ## Overview
 
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
@@ -149,29 +147,29 @@ You can find more details about the API we provide in the [API documentation](ht
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-* [Add custom commands](./commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution. 
+* [Add custom commands](./src/commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution. 
 
-* [Remove default commands](./commands-extender/README.md#remove-default-commands) - You can remove one or more of the default commands.
+* [Remove default commands](./src/commands-extender/README.md#remove-default-commands) - You can remove one or more of the default commands.
 
-* [Custom field](./custom-fields/README.md) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
+* [Custom field](./src/custom-fields/README.md) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
 
-* [Fields binding](./fields-change/README.md) - Sometimes when updating a field you may need to change another field's value, settings, visibility, etc. You can create a binding between two or more fields and achieve the described behavior by creating a simple service that will handle those changes.
+* [Fields binding](./src/fields-change/README.md) - Sometimes when updating a field you may need to change another field's value, settings, visibility, etc. You can create a binding between two or more fields and achieve the described behavior by creating a simple service that will handle those changes.
 
-* [Custom grid](./grid-extender/README.md) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
+* [Custom grid](./src/grid-extender/README.md) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
 
-* [Custom content editor](./editor-extender/README.md) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
+* [Custom content editor](./src/editor-extender/README.md) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
 
-* Custom dialogs in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
+* Custom dialogs in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./src/editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 
-* [Search](./search/README.md) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
+* [Search](./src/search/README.md) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
 
-* Custom notifications - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the **NotificationService** and its **publishBasicNotification** method. The method accepts an object of type **NotificationInfo** that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](./commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the **NotificationService**.
+* Custom notifications - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html) and its [**publishBasicNotification**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html#publishbasicnotification) method. The method accepts an object of type [**NotificationInfo**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationinfo.html) that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](./src/commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html).
 
-* [Sections menu](./sections-menu/README.md) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
+* [Sections menu](./src/sections-menu/README.md) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
 
 ### Admin App custom theme
 
-You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./theme/README.md#custom-theme-for-sitefinity-cms-admin-app).
+You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./src/theme/README.md#custom-theme-for-sitefinity-cms-admin-app).
 
 ### Access data from OData services
 

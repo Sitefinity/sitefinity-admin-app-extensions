@@ -35,4 +35,4 @@ No added dependencies
 
 ## Example 
 
-![Insert symbol](./../../assets/insert-symbol.JPG)
+![Insert symbol](./../../../assets/insert-symbol.JPG)

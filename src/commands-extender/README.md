@@ -34,4 +34,4 @@ You can not only add new custom commands but also remove some of the default one
 
 ## Example
 
-![Print preview](./../assets/print-preview.JPG)
+![Print preview](./../../assets/print-preview.JPG)

@@ -1,7 +1,7 @@
 require("jasmine-expect");
 import { browser, protractor, by } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText, BrowserWaitForElementToBeClickable } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
@@ -142,7 +142,8 @@ export class ItemDetails {
         const editor = ItemDetailsMap.EditorInternalField;
         const contentsBeforeInsert = await editor.getText();
 
-        const symbolButton = EditorPopupMap.SymbolCell;
+        const symbolButton = EditorPopupMap.SymbolCellElement("QUOTATION MARK");
+        await BrowserWaitForElementToBeClickable(symbolButton);
         await symbolButton.click();
 
         const contentAfterInsert = await editor.getText();

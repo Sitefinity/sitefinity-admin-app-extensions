@@ -5,12 +5,16 @@ export async function BrowserWaitForElement(element: ElementFinder) {
     await browser.wait(EC.visibilityOf(element), TIME_TO_WAIT, "Element is not visible. Locator used - " + element.locator());
 }
 
+export async function BrowserWaitForElementToBeClickable(element: ElementFinder) {
+    await browser.wait(EC.elementToBeClickable(element), TIME_TO_WAIT, "Element is not clickable. Locator used - " + element.locator());
+}
+
 export async function BrowserWaitForTextToBePresent(element: ElementFinder, text: string) {
     await browser.wait(EC.textToBePresentInElement(element, text), TIME_TO_WAIT, `Text '${text}' was not present. Locator used - ${element.locator()}`);
 }
 
 export async function BrowserWaitForElementHidden(element: ElementFinder) {
-    await browser.wait(EC.invisibilityOf(element), TIME_TO_WAIT, "Element is visible, but should not be. Locator used - " + element.locator());
+    await browser.wait(EC.not(EC.visibilityOf(element)), TIME_TO_WAIT, "Element is visible, but should not be. Locator used - " + element.locator());
 }
 
 export async function BrowserGetUrl(): Promise<string> {

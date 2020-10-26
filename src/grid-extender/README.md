@@ -14,4 +14,4 @@ The other method of the interface [**getColumnsToRemove()**](http://admin-app-ex
 
 ## Example
 
-![Image column](./../assets/image-column.JPG)
+![Image column](./../../assets/image-column.JPG)

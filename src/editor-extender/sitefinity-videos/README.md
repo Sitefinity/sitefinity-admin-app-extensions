@@ -28,4 +28,4 @@ Opens an image selector.
 
 ## Example
 
-![Insert video](./../../assets/insert-video.JPG)
+![Insert video](./../../../assets/insert-video.JPG)

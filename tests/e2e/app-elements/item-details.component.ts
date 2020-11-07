@@ -71,15 +71,17 @@ export class ItemDetails {
 
         // verify title has error
         let titleError = ItemDetailsMap.TitleError;
-        expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
+        await browser.wait(EC.presenceOf(titleError), TIME_TO_WAIT, "The title field does not have an error");
+
         const errorContent = await titleError.getText();
         expect(errorContent.trim()).toBe(TITLE_ERROR);
 
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
-        let counterPresent = await charCounter.isPresent();
-        expect(counterPresent).toBeTrue();
-        expect(await ElementHasClass(charCounter, "-error")).toBeTrue();
+        await browser.wait(EC.presenceOf(charCounter), TIME_TO_WAIT, "The title field does not have an error");
+
+        const isError = await ElementHasClass(charCounter, "-error");
+        expect(isError).toBe(true, "The character counter element doesn't have the error class set");
 
         const titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
@@ -89,14 +91,12 @@ export class ItemDetails {
         await ItemDetails.ExpandHtmlField();
 
         // verify char counter has no error
-        const countersFound = await ItemDetailsMap.TitleField.all(by.css(".sf-input__char-counter"));
-        counterPresent = countersFound.length > 0;
-        expect(counterPresent).toBeFalse();
+        const countersFindExpression = ItemDetailsMap.TitleField.element(by.css(".sf-input__char-counter"));
+        await browser.wait(EC.not(EC.visibilityOf(countersFindExpression)), TIME_TO_WAIT, "Counter still visible");
 
         // verify title has no error
         titleError = ItemDetailsMap.TitleError;
-        const errorPresent = await titleError.isPresent();
-        expect(errorPresent).toBeFalse();
+        await browser.wait(EC.not(EC.visibilityOf(titleError)), TIME_TO_WAIT, "Custom extension error is still present");
     }
 
     static async VerifyCustomArrayOfGUIDsField(fieldValue: string): Promise<void> {

@@ -18,6 +18,7 @@ export class ItemDetailsMap {
     public static DoneButton: ElementFinder = element(by.cssContainingText(".sf-button", "Done"));
     public static PublishButton: ElementFinder = element(by.cssContainingText("button", "Publish"));
     public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title='All items']"));
+    public static HeaderTitle: ElementFinder = element(by.css("h3"));
 
     public static ToolbarButtonByTitle(buttonTitle: string): ElementFinder {
         return element(by.css(`button[title="${buttonTitle}"]`));

@@ -67,11 +67,18 @@ export class ItemDetails {
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
+
+        // Click title to trigger validation
+        let titleInput = ItemDetailsMap.TitleInput;
+        await titleInput.click();
+
+        // Click navigation header loose focus from the title and verify validation error
+        await ItemDetailsMap.HeaderTitle.click();
         await BrowserWaitForElement(ItemDetailsMap.TitleError);
 
-        // verify title has error
         let titleError = ItemDetailsMap.TitleError;
         expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
+
         const errorContent = await titleError.getText();
         expect(errorContent.trim()).toBe(TITLE_ERROR);
 
@@ -81,12 +88,12 @@ export class ItemDetails {
         expect(counterPresent).toBeTrue();
         expect(await ElementHasClass(charCounter, "-error")).toBeTrue();
 
-        const titleInput = ItemDetailsMap.TitleInput;
+        titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
         await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
-        // click html field to loose focus from the title
-        await ItemDetails.ExpandHtmlField();
+        // Click navigation header loose focus from the title
+        await ItemDetailsMap.HeaderTitle.click();
 
         // verify char counter has no error
         const countersFound = await ItemDetailsMap.TitleField.all(by.css(".sf-input__char-counter"));

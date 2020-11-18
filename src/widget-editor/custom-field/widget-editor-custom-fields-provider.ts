@@ -2,7 +2,7 @@ import { Injectable, ClassProvider } from "@angular/core";
 
 import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FieldRegistration, FieldTypes } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { CustomInputWriteComponent } from './custom-field/custom-field-write.component';
+import { CustomInputWriteComponent } from './custom-field-write.component';
 
 /**
  * The fields provider provides the overridden fields back to the AdminApp.

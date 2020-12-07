@@ -58,7 +58,7 @@ export class CustomWidgetEditorComponent implements WidgetEditor {
             this._value = JSON.parse(v);
             this.detector.detectChanges();
         } catch (e) {
-            console.log("error occored while you were typing the JSON");
+            console.log("error occured while you were typing the JSON");
         }
     }
 }

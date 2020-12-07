@@ -3,8 +3,7 @@ import { EditorComponentContext, EditorViewComponent, WidgetEditorViewProvider, 
 import { CustomWidgetEditorComponent } from './custom-widget-editor.component';
 
 /**
- * The ViewRegistrationProvider class works with all of the edior view providers and combines their views into a single
- * views array.
+ * The WidgetEditorViewProvider class provides the pluggability point to override the views for the auto generated designers.
  */
 @Injectable()
 export class CustomWidgetEditorViewProvider implements WidgetEditorViewProvider {

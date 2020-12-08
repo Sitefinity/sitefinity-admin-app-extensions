@@ -1,6 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
 
-import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase, FieldTypes } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
@@ -63,7 +63,7 @@ export class CustomFieldsProvider implements FieldsProvider {
         // to the list view of the specific type.
         const customInputKey: FieldData = {
             fieldName: "Title",
-            fieldType: FieldTypes.shortTextDefault,
+            fieldType: "sf-short-text-default",
             typeName: "newsitems"
         };
 
@@ -84,7 +84,7 @@ export class CustomFieldsProvider implements FieldsProvider {
         // Registration of Array of GUIDs custom field
         const arrayOfGUIDsKey: FieldData = {
             fieldName: null,
-            fieldType: FieldTypes.arrayOfGUIDs,
+            fieldType: "sf-array-of-guids",
             typeName: null
         };
 

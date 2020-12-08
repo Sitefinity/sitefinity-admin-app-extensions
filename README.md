@@ -167,8 +167,6 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Sections menu](./src/sections-menu/README.md) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
 
-* [Custom widget editor](./src/widget-editor/README.md) - With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
-
 ### Admin App custom theme
 
 You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI. For more details, see [Admin App custom theme](./src/theme/README.md#custom-theme-for-sitefinity-cms-admin-app).

@@ -24,4 +24,4 @@ Opens the custom dialogs.
 
 ## Example
 
-![Insert video](./../../assets/insert-video.JPG)
+![Insert video](./../../../assets/insert-video.JPG)

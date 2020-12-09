@@ -1,7 +1,7 @@
 require("jasmine-expect");
 import { browser, protractor, by } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
-import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText } from "../helpers/browser-helpers";
+import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText, BrowserWaitForElementToBeClickable } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
 import { ItemListMap } from "./item-list.map";
 import { EC, TIME_TO_WAIT, TITLE_ERROR, TITLE_VALID_TEXT } from "../helpers/constants";
@@ -67,36 +67,42 @@ export class ItemDetails {
 
     static async VerifyCustomTitleField(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.TitleField);
+
+        // Click title to trigger validation
+        let titleInput = ItemDetailsMap.TitleInput;
+        await titleInput.click();
+
+        // Click navigation header loose focus from the title and verify validation error
+        await ItemDetailsMap.HeaderTitle.click();
         await BrowserWaitForElement(ItemDetailsMap.TitleError);
 
-        // verify title has error
         let titleError = ItemDetailsMap.TitleError;
-        expect(await titleError.isPresent()).toBeTruthy("The title field does not have an error");
+        await browser.wait(EC.presenceOf(titleError), TIME_TO_WAIT, "The title field does not have an error");
+
         const errorContent = await titleError.getText();
         expect(errorContent.trim()).toBe(TITLE_ERROR);
 
         // verify title has char counter
         const charCounter = ItemDetailsMap.FieldCharCounter(ItemDetailsMap.TitleField);
-        let counterPresent = await charCounter.isPresent();
-        expect(counterPresent).toBeTrue();
-        expect(await ElementHasClass(charCounter, "-error")).toBeTrue();
+        await browser.wait(EC.presenceOf(charCounter), TIME_TO_WAIT, "The title field does not have an error");
 
-        const titleInput = ItemDetailsMap.TitleInput;
+        const isError = await ElementHasClass(charCounter, "-error");
+        expect(isError).toBe(true, "The character counter element doesn't have the error class set");
+
+        titleInput = ItemDetailsMap.TitleInput;
         await titleInput.click();
         await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
-        // click html field to loose focus from the title
-        await ItemDetails.ExpandHtmlField();
+        // Click navigation header loose focus from the title
+        await ItemDetailsMap.HeaderTitle.click();
 
         // verify char counter has no error
-        const countersFound = await ItemDetailsMap.TitleField.all(by.css(".sf-input__char-counter"));
-        counterPresent = countersFound.length > 0;
-        expect(counterPresent).toBeFalse();
+        const countersFindExpression = ItemDetailsMap.TitleField.element(by.css(".sf-input__char-counter"));
+        await browser.wait(EC.not(EC.visibilityOf(countersFindExpression)), TIME_TO_WAIT, "Counter still visible");
 
         // verify title has no error
         titleError = ItemDetailsMap.TitleError;
-        const errorPresent = await titleError.isPresent();
-        expect(errorPresent).toBeFalse();
+        await browser.wait(EC.not(EC.visibilityOf(titleError)), TIME_TO_WAIT, "Custom extension error is still present");
     }
 
     static async VerifyCustomArrayOfGUIDsField(fieldValue: string): Promise<void> {
@@ -142,7 +148,8 @@ export class ItemDetails {
         const editor = ItemDetailsMap.EditorInternalField;
         const contentsBeforeInsert = await editor.getText();
 
-        const symbolButton = EditorPopupMap.SymbolCell;
+        const symbolButton = EditorPopupMap.SymbolCellElement("QUOTATION MARK");
+        await BrowserWaitForElementToBeClickable(symbolButton);
         await symbolButton.click();
 
         const contentAfterInsert = await editor.getText();

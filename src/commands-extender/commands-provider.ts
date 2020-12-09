@@ -3,6 +3,7 @@ import { Observable, of } from "rxjs";
 import { ClassProvider, Injectable } from "@angular/core";
 import { PrintPreviewCommand } from "./print-preview.command";
 import { ListSelectedItemsCommand } from "./list-selected-items.command";
+import { NotificationCommand } from './notification.command';
 
 /**
  * The category name in which to place the custom commands.
@@ -29,11 +30,21 @@ const CUSTOM_CATEGORY: CommandCategory = {
 };
 
 /**
- * The operation model containing the metadata of the operation.
+ * The command model containing the metadata of the command.
  */
-export const LIST_SELECTED_ITEMS_OPERATION: CommandModel = {
+export const LIST_SELECTED_ITEMS_COMMAND: CommandModel = {
     name: "List",
     title: "List selected items",
+    category: CUSTOM_CATEGORY_NAME,
+    ordinal: CUSTOM_COMMAND_BASE.ordinal + 1
+};
+
+/**
+ * The command model containing the metadata of the command.
+ */
+export const NOTIFICATION_COMMAND: CommandModel = {
+    name: "Notification",
+    title: "Show notification",
     category: CUSTOM_CATEGORY_NAME,
     ordinal: CUSTOM_COMMAND_BASE.ordinal + 1
 };
@@ -52,8 +63,26 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
     getCommands(data: CommandsData): Observable<CommandModel[]> {
 
         // the commands to be returned
-        const commands = [];
+        const commands: CommandModel[] = [];
 
+        this.addPrintPreviewCommand(data, commands);
+        this.addListSelectedItemsCommand(data, commands);
+        this.addNotificationCommand(data, commands);
+
+        // return an observable here, because generating the actions might be a time consuming operation
+        return of(commands);
+    }
+
+    /**
+     * The method that gets invoked asking for the category models when the action menu is constructed.
+     * Categories are used to group similar commands in the action menu
+     * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
+     */
+    getCategories(data: CommandsData): Observable<CommandCategory[]> {
+        return of([CUSTOM_CATEGORY]);
+    }
+
+    private addPrintPreviewCommand(data: CommandsData, commands: CommandModel[]) {
         // we wish to inject this command only in the list view
         if (data.target === CommandsTarget.List && data.dataItem) {
             const previewCommand = Object.assign({}, CUSTOM_COMMAND_BASE);
@@ -70,9 +99,11 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
 
             commands.push(previewCommand);
         }
+    }
 
+    private addListSelectedItemsCommand(data: CommandsData, commands: CommandModel[]) {
         if (data.target === CommandsTarget.Bulk) {
-            const bulkCommand = Object.assign({}, LIST_SELECTED_ITEMS_OPERATION);
+            const bulkCommand = Object.assign({}, LIST_SELECTED_ITEMS_COMMAND);
 
             bulkCommand.token = {
                 type: ListSelectedItemsCommand
@@ -80,18 +111,25 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
 
             commands.push(bulkCommand);
         }
-
-        // return an observable here, because generating the actions might be a time consuming operation
-        return of(commands);
     }
 
-    /**
-     * The method that gets invoked asking for the category models when the action menu is constructed.
-     * Categories are used to group similar commands in the action menu
-     * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
-     */
-    getCategories(data: CommandsData): Observable<CommandCategory[]> {
-        return of([CUSTOM_CATEGORY]);
+    private addNotificationCommand(data: CommandsData, commands: CommandModel[]) {
+        // we wish to inject this command only in the edit item view
+        if (data.target === CommandsTarget.Edit) {
+            const notificationCommand = Object.assign({}, NOTIFICATION_COMMAND);
+
+            // assign an injection token or just the class
+            notificationCommand.token = {
+                type: NotificationCommand,
+
+                // assign custom properties to be passed in the context
+                properties: {
+                    dataItem: data.dataItem
+                }
+            };
+
+            commands.push(notificationCommand);
+        }
     }
 }
 

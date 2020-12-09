@@ -147,7 +147,7 @@ You can find more details about the API we provide in the [API documentation](ht
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-* [Add custom commands](./src/commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution. 
+* [Add custom commands](./src/commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution.
 
 * [Remove default commands](./src/commands-extender/README.md#remove-default-commands) - You can remove one or more of the default commands.
 
@@ -162,6 +162,12 @@ Take a look at the following overview of the Admin App extension samples we prov
 * Custom dialogs in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./src/editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 
 * [Search](./src/search/README.md) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
+
+* Custom notifications - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html) and its [**publishBasicNotification**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html#publishbasicnotification) method. The method accepts an object of type [**NotificationInfo**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationinfo.html) that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](./src/commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html).
+
+* [Sections menu](./src/sections-menu/README.md) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
+
+* [Custom Widget Editor](./src/widget-editor/README.md) - With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
 
 ### Admin App custom theme
 

@@ -17,4 +17,4 @@ sitefinityExtensionsStore.addExtensionModule(EditorExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(ItemExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(ThemeModule);
 sitefinityExtensionsStore.addExtensionModule(FieldsChangeModule);
-sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule);
+sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule)

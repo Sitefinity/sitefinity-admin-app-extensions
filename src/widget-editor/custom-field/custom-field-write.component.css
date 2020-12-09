@@ -1,0 +1,9 @@
+.custom-title-input {
+    border: 0;
+    border-bottom: 2px dashed #38ab63;
+    padding: .2em;
+    font-weight: 700;
+    font-size: 3em;
+    width: 100%;
+    color: #38ab63;
+}

@@ -147,7 +147,7 @@ You can find more details about the API we provide in the [API documentation](ht
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-* [Add custom commands](./src/commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution. 
+* [Add custom commands](./src/commands-extender/README.md#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution.
 
 * [Remove default commands](./src/commands-extender/README.md#remove-default-commands) - You can remove one or more of the default commands.
 

@@ -30,7 +30,7 @@
     "ts-node": "8.3.0",
     "tslint": "6.1.0",
     "typescript": "3.8.3",
-    "progress-sitefinity-adminapp-sdk": "13.2.7500",
+    "progress-sitefinity-adminapp-sdk": "13.2.7521",
     "zone.js": "0.10.2",
     "tslint-eslint-rules": "4.1.1",
     "@angular-builders/custom-webpack": "9.1.0",

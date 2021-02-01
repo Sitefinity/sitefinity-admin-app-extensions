@@ -137,10 +137,15 @@ export class ItemDetails {
         await BrowserWaitForElementHidden(ItemDetailsMap.EditorCustomEditMenu);
     }
 
-    static async ClickToolbarButtonByTitle(buttonTitle: string): Promise<void> {
+    static async ClickToolbarButtonByTitle(buttonTitle: string, waitForAnimation: boolean = false): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.ToolbarButtonByTitle(buttonTitle));
         const toolbarButton = ItemDetailsMap.ToolbarButtonByTitle(buttonTitle);
         await toolbarButton.click();
+
+        if (waitForAnimation) {
+            // Implicit wait is needed because many of these buttons have kendo animations causing instability
+            await browser.sleep(1000);
+        }
     }
 
     static async VerifyAndClickSymbolListButton(): Promise<void> {

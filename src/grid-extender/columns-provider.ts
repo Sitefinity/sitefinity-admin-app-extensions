@@ -34,16 +34,17 @@ class DynamicItemIndexColumnsProvider implements ListColumnsProvider {
         // return an observable here, because this might be a time consuming operation
         return of([column]);
     }
-/**
- * Gets an obaservable collection of columns to be removed.
- * @param {EntityData} entityData Provides metadata for the current type.
- * @returns {Observable<string[]>} The columns which should be removed.
- * @memberof DynamicItemIndexColumnsProvider
- */
-getColumnsToRemove(entityData: EntityData): Observable<string[]> {
-        return of([COLUMN_TO_REMOVE]);
+
+    /**
+     * Gets an obaservable collection of columns to be removed.
+     * @param {EntityData} entityData Provides metadata for the current type.
+     * @returns {Observable<string[]>} The columns which should be removed.
+     * @memberof DynamicItemIndexColumnsProvider
+     */
+    getColumnsToRemove(entityData: EntityData): Observable<string[]> {
+            return of([COLUMN_TO_REMOVE]);
+        }
     }
-}
 
 /**
  * Export a 'multi' class provider so that multiple instances of the same provider can coexist.

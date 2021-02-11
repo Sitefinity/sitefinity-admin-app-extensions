@@ -43,6 +43,7 @@ class CustomItemHooksProvider implements ItemHooksProvider {
 
         setTimeout(() => {
             console.log(message);
+            result$.next();
         }, 1000);
 
         return result$.asObservable();

@@ -182,7 +182,7 @@ describe("Verify extensions", () => {
         await ItemList.VerifyColumnDoesntExist("Last modified");
     });
 
-    fit("verify image column position in news", async () => {
+    it("verify image column position in news", async () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
         await ItemList.VerifyColumnPosition("Image", 1);
     })

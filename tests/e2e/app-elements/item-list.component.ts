@@ -32,10 +32,8 @@ export class ItemList {
         expect((await cols).length).toBe(0, `Column '${columnTitle}' should not exist.`);
     }
 
-
     static async VerifyColumnPosition(columnTitle: string, columnPosition: number) {
-        const cols = ItemListMap.Columns.filter(async x => ((await x.getText()).includes(columnTitle)));
-        expect(await cols[columnPosition].getText()).toBe(columnTitle);
+        expect(await ItemListMap.Columns[columnPosition].getText()).toBe(columnTitle);
     }
 
     static async ClickPrintPreview() {

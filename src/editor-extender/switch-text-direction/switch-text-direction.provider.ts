@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { EditorConfigProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { EditorConfigProvider, ToolBarItem, TOOLBARITEMS_TOKEN, groupToolbarButtons } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { fromEvent } from "rxjs";
 import { first } from "rxjs/operators";
 

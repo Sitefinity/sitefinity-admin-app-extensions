@@ -39,7 +39,7 @@
                             "assets": [
                                 {
                                     "glob": "**/*",
-                                    "input": "./node_modules/progress-sitefinity-adminapp-sdk/wwwroot",
+                                    "input": "./node_modules/@progress/sitefinity-adminapp-sdk/wwwroot",
                                     "output": "./"
                                 }
                             ]

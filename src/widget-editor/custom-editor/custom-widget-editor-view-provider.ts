@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { EditorComponentContext, EditorViewComponent, WidgetEditorViewProvider, WIDGET_VIEW_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { EditorComponentContext, EditorViewComponent, WidgetEditorViewProvider, WIDGET_VIEW_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { CustomWidgetEditorComponent } from './custom-widget-editor.component';
 
 /**

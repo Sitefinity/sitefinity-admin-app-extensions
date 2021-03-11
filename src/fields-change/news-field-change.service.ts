@@ -1,4 +1,4 @@
-import { FieldChangeService, FieldWrapper, FIELDS_CHANGE_SERVICE_TOKEN } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldChangeService, FieldWrapper, FIELDS_CHANGE_SERVICE_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { Injectable } from "@angular/core";
 
 const NEWS_TYPE_FULL_NAME = "Telerik.Sitefinity.News.Model.NewsItem";

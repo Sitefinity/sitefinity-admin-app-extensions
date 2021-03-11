@@ -1,4 +1,4 @@
-import { CommandsFilter, CommandsData, COMMANDS_FILTER_TOKEN, CommandModel } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { CommandsFilter, CommandsData, COMMANDS_FILTER_TOKEN, CommandModel } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { Injectable } from "@angular/core";
 
 @Injectable()

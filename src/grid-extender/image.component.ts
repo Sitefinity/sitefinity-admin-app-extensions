@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { DataContextComponent, DataContext, HTTP_PREFIX } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { DataContextComponent, DataContext, HTTP_PREFIX } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { Observable } from "rxjs";
 import { map } from "rxjs/internal/operators/map";
 

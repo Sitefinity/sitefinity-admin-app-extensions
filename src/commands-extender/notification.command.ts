@@ -2,7 +2,7 @@ import { Injectable, Inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, of } from "rxjs";
 
-import { Command, ExecutionContext, DataItem, NotificationService, NotificationInfo, NOTIFICATION_LOOK_SUCCESS, NOTIFICATION_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { Command, ExecutionContext, DataItem, NotificationService, NotificationInfo, NOTIFICATION_LOOK_SUCCESS, NOTIFICATION_SERVICE } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 /**
  * Serves as a command that gets invoked when the notification action button is clicked

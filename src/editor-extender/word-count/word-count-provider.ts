@@ -1,5 +1,5 @@
 import { ClassProvider, Injectable } from "@angular/core";
-import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, EditorConfigProvider, EDITOR_CONFIG_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./editor-config-provider.css");

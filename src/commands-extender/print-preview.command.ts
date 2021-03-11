@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, from } from "rxjs";
 
-import { Command, ExecutionContext } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { Command, ExecutionContext } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 /**
  * Serves as a command that gets invoked when the print preview action

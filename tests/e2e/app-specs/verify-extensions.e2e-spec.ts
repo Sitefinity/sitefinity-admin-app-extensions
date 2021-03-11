@@ -124,7 +124,7 @@ describe("Verify extensions", () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.FocusHtmlField();
-        await ItemDetails.ClickToolbarButtonByTitle("Insert symbol");
+        await ItemDetails.ClickToolbarButtonByTitle("Insert symbol", true);
         await ItemDetails.VerifyAndClickSymbolListButton();
         await ItemDetails.ClickBackButton(true);
     });

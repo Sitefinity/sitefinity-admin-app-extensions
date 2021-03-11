@@ -1,7 +1,7 @@
 import { Injectable, ClassProvider } from "@angular/core";
 
-import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase, FieldTypes } from "progress-sitefinity-adminapp-sdk/app/api/v1";
-import { FieldRegistration } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase, FieldTypes } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { FieldRegistration } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";

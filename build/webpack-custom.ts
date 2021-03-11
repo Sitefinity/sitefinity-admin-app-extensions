@@ -12,7 +12,7 @@ export default function (config: Configuration) {
         new ContextReplacementPlugin(/angular(\\|\/)core/, __dirname, {}),
         new ImportPlugin({
             context: ".",
-            manifest: require("progress-sitefinity-adminapp-sdk/manifest.json")
+            manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
         })
     ]);
 

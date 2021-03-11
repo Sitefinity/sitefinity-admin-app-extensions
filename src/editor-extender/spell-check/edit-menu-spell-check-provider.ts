@@ -1,5 +1,5 @@
 import { ClassProvider, Injectable } from "@angular/core";
-import { EditMenuProvider, EDIT_MENU_TOKEN, EditMenuSection, EditMenuButton } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { EditMenuProvider, EDIT_MENU_TOKEN, EditMenuSection, EditMenuButton } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 @Injectable()
 class EditMenuSpellCheckProvider implements EditMenuProvider {

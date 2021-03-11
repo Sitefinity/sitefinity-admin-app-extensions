@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider, Inject } from "@angular/core";
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE, DataItem } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE, DataItem } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 const TRAILING_BREAK = "<br class='k-br'>";
 

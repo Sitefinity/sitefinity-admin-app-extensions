@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider, Inject } from "@angular/core";
-import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ToolBarItem, ToolBarItemsProvider, TOOLBARITEMS_TOKEN, SelectorService, SelectorOptions, SELECTOR_SERVICE } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 // This is webpack specific loader syntax for injecting css as <style> tag in header
 require("!style-loader!css-loader!./sitefinity-videos-toolbar-item-provider.css");

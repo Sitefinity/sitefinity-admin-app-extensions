@@ -1,5 +1,5 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 @Injectable()
 class CustomItemHooksProvider implements ItemHooksProvider {

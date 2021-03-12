@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
-import { HTTP_PREFIX } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { HTTP_PREFIX } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { delay } from "rxjs/operators";
 
 /**

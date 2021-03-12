@@ -1,5 +1,5 @@
 import { Observable, of } from "rxjs";
-import { ColumnModel, COLUMNS_TOKEN, EntityData, ListColumnsProvider } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { ColumnModel, COLUMNS_TOKEN, EntityData, ListColumnsProvider } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { ImageComponent } from "./image.component";
 import { ClassProvider, Injectable } from "@angular/core";
 

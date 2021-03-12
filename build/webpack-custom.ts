@@ -12,11 +12,11 @@ export default function (config: Configuration) {
         new ContextReplacementPlugin(/angular(\\|\/)core/, __dirname, {}),
         new ImportPlugin({
             context: ".",
-            manifest: require("progress-sitefinity-adminapp-sdk/manifest.json")
+            manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
         })
     ]);
 
-    config.optimization.minimizer = config.optimization.minimizer.filter(x => x.constructor.name !== "HashedModuleIdsPlugin");
+    config.optimization.moduleIds = "natural";
     config.module.rules = config.module.rules.filter(x => !x.test.toString().includes(".css"));
     config.module.rules.push({
         test: /\.css$/,

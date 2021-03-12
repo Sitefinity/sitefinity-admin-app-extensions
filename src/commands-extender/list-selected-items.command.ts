@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { Command, ExecutionContext, ExecuteOnceInBulkCommand, BulkOperationResult } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { Command, ExecutionContext, ExecuteOnceInBulkCommand, BulkOperationResult } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 /**
  * Serves as a command that gets invoked when the list items bulk action

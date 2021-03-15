@@ -202,7 +202,7 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
 
         // onInit hook
-        await BrowserVerifyConsoleOutput("Item initializing");
+        await BrowserVerifyConsoleOutput("Item initializing", "edit item hooks");
 
         await ItemDetails.ClickBackButton();
 

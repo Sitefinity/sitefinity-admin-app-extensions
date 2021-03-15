@@ -197,6 +197,19 @@ describe("Verify extensions", () => {
         await BrowserVerifyConsoleOutput(ENTITY_MAP.get(dynamicTypeName).title);
     });
 
+    it(`edit item hooks`, async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+
+        // onInit hook
+        await BrowserVerifyConsoleOutput("Item initializing");
+
+        await ItemDetails.ClickBackButton();
+
+        // destroy hook
+        await BrowserVerifyConsoleOutput("Item unloading");
+    });
+
     it(`custom array of guids field [${dynamicTypeName}]`, async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);

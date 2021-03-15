@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FieldBase } from "progress-sitefinity-adminapp-sdk/app/api/v1";
+import { FieldBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 /**
  * The component used to display the field in read only mode.

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ActionContext, Dictionary, PropertyData, ValidationResult, WidgetEditor, WidgetMetadata } from 'progress-sitefinity-adminapp-sdk/app/api/v1';
+import { ActionContext, Dictionary, PropertyData, ValidationResult, WidgetEditor, WidgetMetadata } from '@progress/sitefinity-adminapp-sdk/app/api/v1';
 import { Observable, of } from 'rxjs';
 
 @Component({

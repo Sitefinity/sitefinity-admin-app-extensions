@@ -1,6 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem, EditLifecycleHookParam, ListLifecycleHookParam } from "progress-sitefinity-adminapp-sdk/app/api/v1";
 import { Observable, ReplaySubject } from "rxjs";
+import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem, EditLifecycleHookParam, ListLifecycleHookParam } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 @Injectable()
 class CustomItemHooksProvider implements ItemHooksProvider {
@@ -15,33 +15,34 @@ class CustomItemHooksProvider implements ItemHooksProvider {
     }
 
     onEditItemChanged(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item changed: ${data.item?.data?.Title || 'No item'}`);
+        return this.executeAsyncOperation(`Item changed: ${data.item?.data?.Title || "No item"}`);
     }
 
     onEditItemInitializing(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item initializing: ${data.item?.data?.Title || 'No item'}`);
+        return this.executeAsyncOperation(`Item initializing: ${data.item?.data?.Title || "No item"}`);
     }
 
     onEditItemUnloading(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item unloading: ${data.item?.data?.Title || 'No item'}`);
+        return this.executeAsyncOperation(`Item unloading: ${data.item?.data?.Title || "No item"}`);
     }
 
     onGridItemsChanged(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : 'No items'}`);
+        return this.executeAsyncOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     onGridItemsInitializing(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items initializing: ${data.items?.length ? data.items.map(x => x.data.Title) : 'No items'}`);
+        return this.executeAsyncOperation(`Grid items initializing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     onGridItemsUnloading(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : 'No items'}`);
+        return this.executeAsyncOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     private executeAsyncOperation(message: string): Observable<void> {
         const result$ = new ReplaySubject<void>();
 
         setTimeout(() => {
+            // tslint:disable-next-line: no-console
             console.log(message);
             result$.next();
         }, 1000);

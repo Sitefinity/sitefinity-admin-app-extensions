@@ -30,6 +30,7 @@ export async function BrowserVerifyConsoleOutput(expectedOutput: string, testNam
         if (testName) {
             console.log(browserLog.find(entry => !!entry))
         }
+
         const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
         expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
     });

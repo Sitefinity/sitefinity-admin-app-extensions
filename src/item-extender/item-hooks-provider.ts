@@ -10,9 +10,6 @@ class CustomItemHooksProvider implements ItemHooksProvider {
         } else {
             // tslint:disable-next-line:no-console
             console.log(`A new item is being created`);
-
-            // tslint:disable-next-line:no-console
-            console.log();
         }
     }
 }

@@ -5,7 +5,8 @@ import {
     SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
-    BrowserWaitForTextToBePresent
+    BrowserWaitForTextToBePresent,
+    BrowserWaitTime
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -200,11 +201,13 @@ describe("Verify extensions", () => {
     it(`edit item hooks`, async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+        await BrowserWaitTime(1000);
 
         // onInit hook
         await BrowserVerifyConsoleOutput("Item initializing", "edit item hooks");
 
         await ItemDetails.ClickBackButton();
+        await BrowserWaitTime(1000);
 
         // destroy hook
         await BrowserVerifyConsoleOutput("Item unloading");

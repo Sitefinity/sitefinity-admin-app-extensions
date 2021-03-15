@@ -25,12 +25,13 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
+export async function BrowserWaitTime(timeInMs: number) {
+    return await browser.sleep(timeInMs);
+}
+
 export async function BrowserVerifyConsoleOutput(expectedOutput: string, testName = "") {
     return await browser.manage().logs().get("browser").then((browserLog) => {
-        if (testName) {
-            console.log(browserLog.find(entry => !!entry))
-        }
-
+        console.log(browserLog);
         const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
         expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
     });

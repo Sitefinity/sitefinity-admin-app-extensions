@@ -15,37 +15,35 @@ class CustomItemHooksProvider implements ItemHooksProvider {
     }
 
     onEditItemChanged(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item changed: ${data.item?.data?.Title || "No item"}`);
+        return this.executeOperation(`Item changed: ${data.item?.data?.Title || "No item"}`);
     }
 
     onEditItemInitializing(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item initializing: ${data.item?.data?.Title || "No item"}`);
+        return this.executeOperation(`Item initializing: ${data.item?.data?.Title || "No item"}`);
     }
 
     onEditItemUnloading(data: EditLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Item unloading: ${data.item?.data?.Title || "No item"}`);
+        return this.executeOperation(`Item unloading: ${data.item?.data?.Title || "No item"}`);
     }
 
     onGridItemsChanged(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+        return this.executeOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     onGridItemsInitializing(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items initializing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+        return this.executeOperation(`Grid items initializing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     onGridItemsUnloading(data: ListLifecycleHookParam): Observable<void> {
-        return this.executeAsyncOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+        return this.executeOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
-    private executeAsyncOperation(message: string): Observable<void> {
+    private executeOperation(message: string): Observable<void> {
         const result$ = new ReplaySubject<void>();
 
-        setTimeout(() => {
-            // tslint:disable-next-line: no-console
-            console.log(message);
-            result$.next();
-        }, 1000);
+        // tslint:disable-next-line: no-console
+        console.log(message);
+        result$.next();
 
         return result$.asObservable();
     }

@@ -6,7 +6,6 @@ import {
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
-    BrowserWaitTime,
     BrowserWaitForElementToBeClickable
 } from "../helpers/browser-helpers";
 import {
@@ -35,6 +34,7 @@ import dynamicModuleOperations from "../setup/dynamic-module-operations";
 import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
 import { ItemDetailsMap } from "../app-elements/item-details.map";
+import { by, element } from "protractor";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
@@ -201,14 +201,14 @@ describe("Verify extensions", () => {
 
     it("grid item hooks", async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
-        await BrowserWaitTime(1000);
+        await BrowserWaitForElementToBeClickable(element(by.css(".sf-button.-action")));
 
         // onInit hook
         await BrowserVerifyConsoleOutput("Grid items initializing");
 
         // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
-        await BrowserWaitTime(1000);
+        await ItemDetails.WaitForPublishButton();
 
         // destroy hook
         await BrowserVerifyConsoleOutput("Grid items unloading");
@@ -217,7 +217,7 @@ describe("Verify extensions", () => {
     it(`edit item hooks`, async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
-        await BrowserWaitTime(1000);
+        await ItemDetails.WaitForPublishButton();
 
         // onInit hook
         await BrowserVerifyConsoleOutput("Item initializing");
@@ -230,7 +230,6 @@ describe("Verify extensions", () => {
         // item changes hook
         await BrowserVerifyConsoleOutput("Item initializing");
         await ItemDetails.ClickBackButton();
-        await BrowserWaitTime(1000);
 
         // destroy hook
         await BrowserVerifyConsoleOutput("Item unloading");

@@ -25,10 +25,6 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
-export async function BrowserWaitTime(timeInMs: number) {
-    return await browser.sleep(timeInMs);
-}
-
 export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
     return await browser.manage().logs().get("browser").then((browserLog) => {
         const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));

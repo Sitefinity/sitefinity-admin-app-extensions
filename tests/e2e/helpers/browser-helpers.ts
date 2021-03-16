@@ -31,11 +31,7 @@ export async function BrowserWaitTime(timeInMs: number) {
 
 export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
     return await browser.manage().logs().get("browser").then((browserLog) => {
-        console.log(browserLog);
-        const log = browserLog.find(entry => {
-            console.log(entry.message);
-            return   entry.level.name === "INFO" && entry.message.includes(expectedOutput)
-        });
+        const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
         expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
     });
 }

@@ -6,7 +6,8 @@ import {
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
-    BrowserWaitTime
+    BrowserWaitTime,
+    BrowserWaitForElementToBeClickable
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -198,14 +199,36 @@ describe("Verify extensions", () => {
         await BrowserVerifyConsoleOutput(ENTITY_MAP.get(dynamicTypeName).title);
     });
 
+    it("grid item hooks", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+        await BrowserWaitTime(1000);
+
+        // onInit hook
+        await BrowserVerifyConsoleOutput("Grid items initializing");
+
+        // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+        await BrowserWaitTime(1000);
+
+        // destroy hook
+        await BrowserVerifyConsoleOutput("Grid items unloading");
+    });
+
     it(`edit item hooks`, async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await BrowserWaitTime(1000);
 
         // onInit hook
-        await BrowserVerifyConsoleOutput("Item initializing", "edit item hooks");
+        await BrowserVerifyConsoleOutput("Item initializing");
 
+        await ItemDetails.FocusHtmlField();
+        await ItemDetails.ChangeEditorContent("New content");
+        await ItemDetails.ClickMainWorkflowButton();
+        await BrowserWaitForElementToBeClickable(ItemDetailsMap.BackButton);
+
+        // item changes hook
+        await BrowserVerifyConsoleOutput("Item initializing");
         await ItemDetails.ClickBackButton();
         await BrowserWaitTime(1000);
 

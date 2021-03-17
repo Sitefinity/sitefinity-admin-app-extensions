@@ -34,7 +34,6 @@ import dynamicModuleOperations from "../setup/dynamic-module-operations";
 import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
 import { ItemDetailsMap } from "../app-elements/item-details.map";
-import { browser } from "protractor";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
@@ -201,10 +200,10 @@ describe("Verify extensions", () => {
 
     it("grid item hooks", async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
-        await browser.sleep(3000);
 
         // onInit hook
-        // await BrowserWaitForElement(ENTITY_MAP.get(dynamicTypeName).title);
+        const createbutton = await ItemListMap.GetCreateItemButton();
+        await BrowserWaitForElement(createbutton);
         await BrowserVerifyConsoleOutput("Grid items initializing");
 
         // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
@@ -231,7 +230,8 @@ describe("Verify extensions", () => {
 
         // item changes hook
         await ItemDetails.ClickBackButton();
-        await browser.sleep(2000);
+        const createbutton = await ItemListMap.GetCreateItemButton();
+        await BrowserWaitForElement(createbutton);
         await BrowserVerifyConsoleOutput("Item unloading");
     });
 

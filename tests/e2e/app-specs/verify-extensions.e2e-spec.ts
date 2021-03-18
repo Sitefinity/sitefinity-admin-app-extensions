@@ -180,8 +180,13 @@ describe("Verify extensions", () => {
 
     it("remove column", async () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
-        await ItemList.VerifyColumnDoesntExist("Last modified");
+        await ItemList.VerifyColumnDoesntExist("LAST MODIFIED");
     });
+
+    it("verify image column position in news", async () => {        
+        await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
+        await ItemList.VerifyColumnPosition("Image", 1);
+    })
 
     it(`item hooks [${dynamicTypeName}]`, async () => {
         // verify create

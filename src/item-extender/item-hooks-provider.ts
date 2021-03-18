@@ -1,5 +1,6 @@
 import { Injectable, ClassProvider } from "@angular/core";
-import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { Observable, ReplaySubject } from "rxjs";
+import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem, EditLifecycleHookParam, ListLifecycleHookParam } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 @Injectable()
 class CustomItemHooksProvider implements ItemHooksProvider {
@@ -11,6 +12,40 @@ class CustomItemHooksProvider implements ItemHooksProvider {
             // tslint:disable-next-line:no-console
             console.log(`A new item is being created`);
         }
+    }
+
+    onEditItemChanged(data: EditLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Item changed: ${data.item?.data?.Title || "No item"}`);
+    }
+
+    onEditItemInitializing(data: EditLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Item initializing: ${data.item?.data?.Title || "No item"}`);
+    }
+
+    onEditItemUnloading(data: EditLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Item unloading: ${data.item?.data?.Title || "No item"}`);
+    }
+
+    onGridItemsChanged(data: ListLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+    }
+
+    onGridItemsInitializing(data: ListLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Grid items initializing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+    }
+
+    onGridItemsUnloading(data: ListLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+    }
+
+    private executeOperation(message: string): Observable<void> {
+        const result$ = new ReplaySubject<void>();
+
+        // tslint:disable-next-line: no-console
+        console.log(message);
+        result$.next();
+
+        return result$.asObservable();
     }
 }
 

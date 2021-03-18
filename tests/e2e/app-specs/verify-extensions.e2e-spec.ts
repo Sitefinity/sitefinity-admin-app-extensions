@@ -5,7 +5,8 @@ import {
     SelectAllAndTypeText,
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
-    BrowserWaitForTextToBePresent
+    BrowserWaitForTextToBePresent,
+    BrowserWaitForElementToBeClickable
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -182,7 +183,7 @@ describe("Verify extensions", () => {
         await ItemList.VerifyColumnDoesntExist("LAST MODIFIED");
     });
 
-    it("verify image column position in news", async () => {        
+    it("verify image column position in news", async () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
         await ItemList.VerifyColumnPosition("Image", 1);
     })
@@ -207,5 +208,42 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.VerifyCustomArrayOfGUIDsField(dynamicItemMock.data.ArrayOfGuidsField.join(","));
         await ItemDetails.ClickBackButton(false);
+    });
+
+    it("grid item hooks", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+
+        // onInit hook
+        const createbutton = await ItemListMap.GetCreateItemButton();
+        await BrowserWaitForElement(createbutton);
+        await BrowserVerifyConsoleOutput("Grid items initializing");
+
+        // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+        await ItemDetails.WaitForPublishButton();
+
+        // destroy hook
+        await BrowserVerifyConsoleOutput("Grid items unloading");
+    });
+
+    it(`edit item hooks`, async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+        await ItemDetails.WaitForPublishButton();
+
+        // onInit hook
+        await BrowserVerifyConsoleOutput("Item initializing");
+
+        await ItemDetails.FocusHtmlField();
+        await ItemDetails.ChangeEditorContent("New content");
+        await ItemDetails.ClickMainWorkflowButton();
+        await BrowserWaitForElementToBeClickable(ItemDetailsMap.BackButton);
+        await BrowserVerifyConsoleOutput("Item changed");
+
+        // item changes hook
+        await ItemDetails.ClickBackButton();
+        const createbutton = await ItemListMap.GetCreateItemButton();
+        await BrowserWaitForElement(createbutton);
+        await BrowserVerifyConsoleOutput("Item unloading");
     });
 });

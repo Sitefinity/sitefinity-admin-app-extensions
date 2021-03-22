@@ -10,7 +10,7 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 ## Backward compatibility
 
-With the release of 13.3 due to the name change of one of our dependencies ( from "sitefinity-adminapp-sdk" - > to "@progress/sitefinity-adminapp-sdk). You will need to update the repo with our latest official version tag #13.3.7600.0 and rebuild your extenssion.
+With the release of 13.3 due to the name change of one of our dependencies ( from "sitefinity-adminapp-sdk" - > to "@progress/sitefinity-adminapp-sdk). You will need to update the repo with our latest official version tag #13.3.7600.0 and rebuild your extension.
 
 Before you start developing make sure to checkout the tag corresponding to your Sitefinity host version (see [quick start section](#quick-start)). This way you can be sure that the extension will work once you copy the package to your Sitefinity host. Extensions packages are future proof, they will work with future versions of Sitefinity, so you can upgrade your Sitefinity instance without worrying that you will break your extensions.
 

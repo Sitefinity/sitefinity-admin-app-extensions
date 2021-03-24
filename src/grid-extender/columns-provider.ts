@@ -23,7 +23,6 @@ class DynamicItemIndexColumnsProvider implements ListColumnsProvider {
         const column: ColumnModel = {
             name: this.columnName,
             title: this.columnTitle,
-            ordinal: 50,
 
             // The componentData object holds the type of component to initialize
             // properties can be passed as well. They will be set on the component once it is initialized.

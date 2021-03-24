@@ -26,18 +26,9 @@ export class ItemList {
             await ItemListMap.RowsCheckboxes.get(i).click();
         }
     }
-
     static async VerifyColumnDoesntExist(columnTitle: string) {
-        await BrowserWaitForElement(ItemListMap.GetColumnByName("Title"));
         const cols = ItemListMap.Columns.filter(async x => ((await x.getText()).includes(columnTitle)));
         expect((await cols).length).toBe(0, `Column '${columnTitle}' should not exist.`);
-    }
-
-    static async VerifyColumnPosition(columnTitle: string, columnPosition: number) {
-        await BrowserWaitForElement(ItemListMap.GetColumnByName(columnTitle));
-        const columns = await ItemListMap.Columns;
-        // toUpperCase because of css rule
-        expect(await columns[columnPosition].getText()).toBe(columnTitle.toUpperCase())
     }
 
     static async ClickPrintPreview() {

@@ -48,143 +48,15 @@ To add a command to the exact place where you want the [**data**](http://admin-a
 
 * To add a command to the grid view - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**List**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#list). **Important:** the command should have a category named 'Default'. Otherwise it will not be visible.
 
-```typescript
-    getCommands(data: CommandsData): Observable<CommandModel[]> {
-        const commands: CommandModel[] = [];
-
-        if (data.target === CommandsTarget.List && data.dataItem) {
-            const commnad: CommandModel = {
-                name: "exampleCommand",
-                title: "Example Command",
-                category: "Default",
-                ordinal: 1
-            }
-            
-            commnad.token = {
-                type: CommandImplementationClass,
-                properties: {
-                    dataItem: data.dataItem
-                }
-            };
-
-            commands.push(commnad);
-        }
-        
-        return of(commands);      
-    }
-```
-
 * To add a command to the grid view settings sidebar - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**List**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#list). **Important:** the command should have a category named 'Settings'. Otherwise it will not be visible.
-
-```typescript
-    getCommands(data: CommandsData): Observable<CommandModel[]> {
-        const commands: CommandModel[] = [];
-
-        if (data.target === CommandsTarget.List) {
-            const commnad: CommandModel = {
-                name: "exampleCommand",
-                title: "Example Command",
-                category: "Settings",
-                ordinal: 1
-            }
-            
-            commnad.token = {
-                type: CommandImplementationClass,
-                properties: {
-                    dataItem: data.dataItem
-                }
-            };
-
-            commands.push(commnad);
-        }
-        
-        return of(commands);      
-    }
-```
 
 * To add a command to the grid *Bulk Actions* menu - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**Bulk**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#bulk).
 
-```typescript
-    getCommands(data: CommandsData): Observable<CommandModel[]> {
-        const commands: CommandModel[] = [];
-
-        if (data.target === CommandsTarget.Bulk) {
-            const commnad: CommandModel = {
-                name: "exampleCommand",
-                title: "Example Command",
-                category: "Custom",
-                ordinal: 1
-            }
-            
-            commnad.token = {
-                type: CommandImplementationClass,
-                properties: {
-                    dataItem: data.dataItem
-                }
-            };
-
-            commands.push(commnad);
-        }
-        
-        return of(commands);      
-    }
-```
-
 * To add a command to the grid *Actions* menu of an item - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should **not** be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**List**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#list).
 
-```typescript
-    getCommands(data: CommandsData): Observable<CommandModel[]> {
-        const commands: CommandModel[] = [];
-
-        if (data.target === CommandsTarget.Bulk && data.dataItem) {
-            const commnad: CommandModel = {
-                name: "exampleCommand",
-                title: "Example Command",
-                category: "Custom",
-                ordinal: 1
-            }
-            
-            commnad.token = {
-                type: CommandImplementationClass,
-                properties: {
-                    dataItem: data.dataItem
-                }
-            };
-
-            commands.push(commnad);
-        }
-        
-        return of(commands);      
-    }
-```
 
 * To add a command to the edit view *Actions* menu of an item - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should **not** be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**Edit**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#edit).
 
-```typescript
-    getCommands(data: CommandsData): Observable<CommandModel[]> {
-        const commands: CommandModel[] = [];
-
-        if (data.target === CommandsTarget.Edit && data.dataItem) {
-            const commnad: CommandModel = {
-                name: "exampleCommand",
-                title: "Example Command",
-                category: "Custom",
-                ordinal: 1
-            }
-            
-            commnad.token = {
-                type: CommandImplementationClass,
-                properties: {
-                    dataItem: data.dataItem
-                }
-            };
-
-            commands.push(commnad);
-        }
-        
-        return of(commands);      
-    }
-```
 
 * To add a command to the create view *Actions* menu of an item - the [**dataItem's**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#dataitem) [**data**](http://admin-app-extensions-docs.sitefinity.site/interfaces/dataitem.html#data) property should be null and the [**target**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandsdata.html#target) property should have value [**Create**](http://admin-app-extensions-docs.sitefinity.site/enums/commandstarget.html#create).
 

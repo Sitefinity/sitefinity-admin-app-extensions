@@ -29,6 +29,10 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 ## Backward compatibility
 Extensions packages are future proof, they will work with future versions of Sitefinity, so you can upgrade your Sitefinity instance without worrying that you will break your extensions.
 
+With the release of 13.3 due to the name change of one of our dependencies ( from "sitefinity-adminapp-sdk" - > to "@progress/sitefinity-adminapp-sdk). You will need to update the repo with our latest official version tag #13.3.7600.0 and rebuild your extension.
+
+Before you start developing make sure to checkout the tag corresponding to your Sitefinity host version (see [quick start section](#quick-start)). This way you can be sure that the extension will work once you copy the package to your Sitefinity host. Extensions packages are future proof, they will work with future versions of Sitefinity, so you can upgrade your Sitefinity instance without worrying that you will break your extensions.
+
 ## Prerequisites
 
 Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node versions [10x - 12x].
@@ -211,7 +215,6 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
 ### Modifications done in the config.json
-
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 
 * [Sections menu](./src/sections-menu#extending-sections-menu-functionality-in-adminapp) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.

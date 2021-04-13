@@ -1,0 +1,11 @@
+<kendo-datepicker
+	[disabled]="isReadOnly"
+	[bottomView]="dateBottomView"
+	[topView]="dateTopView"
+	[(ngModel)]="dateValue"
+	(valueChange)="onDateChange($event)" 
+	[format]="format">
+    <kendo-datepicker-messages
+        toggle="Select date">
+    </kendo-datepicker-messages>
+</kendo-datepicker>

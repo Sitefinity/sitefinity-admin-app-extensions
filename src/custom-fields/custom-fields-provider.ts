@@ -8,6 +8,8 @@ import { CustomInputWriteComponent } from "./custom-field-write.component";
 import { CustomShortTextSettings } from "./custom-field.settings";
 import { ArrayOfGUIDsWriteComponent } from "./array-of-guids/array-of-guids-write.component";
 import { ArrayOfGUIDsReadonlyComponent } from "./array-of-guids/array-of-guids-readonly.component";
+import { CustomDateWriteComponent } from './custom-date.components';
+import { CustomDateReadComponent } from './custom-date-read.components';
 
 /**
  * The fields provider provides the overridden fields back to the AdminApp.
@@ -57,7 +59,7 @@ export class CustomFieldsProvider implements FieldsProvider {
      * Initializes the custom field(component) registrations.
      */
     private registerCustomComponents(): void {
-
+debugger
         // The field name is the name which identifies the field uniquely.
         // The typename is the OData entity set name. It matches the url segment when navigating
         // to the list view of the specific type.
@@ -100,6 +102,25 @@ export class CustomFieldsProvider implements FieldsProvider {
         };
 
         this.customFieldsMappings.push(arrayOfGUIDsRegistrationPair);
+
+        const customDateKey: FieldData = {
+            fieldName: "ddtt",
+            fieldType: "sf-date-time",
+            typeName: "qqqs"
+        };
+
+        const customDateRegistration: FieldRegistration = {
+            writeComponent: CustomDateWriteComponent,
+            readComponent: CustomDateReadComponent,
+            settingsType: SettingsBase
+        };
+
+        const customDateRegistrationPair: RegistrationPair = {
+             key: customDateKey,
+             registration: customDateRegistration
+        };
+
+        this.customFieldsMappings.push(customDateRegistrationPair);
     }
 }
 

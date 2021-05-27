@@ -68,6 +68,20 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 ### STS configuration
 
+#### When using Default authentication protocol
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Security*.
+
+1. Under *AccessControlAllowOrigin*, eter the URL of the development server of the Admin App Extensibility SDK or **\***. Default value is **http://localhost:3000**.
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *OAuthServer* -> *AuthorizedClients*.
+
+1. Click *Create new*. For **ClientId** enter *sitefinity*, leave **Secret** blank.
+
+1. Under **RedirectUrl**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
+
+#### When using OpenId authentication protocol
+
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
 
 1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is **http://localhost:3000**.

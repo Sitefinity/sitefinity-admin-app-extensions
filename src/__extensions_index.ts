@@ -10,11 +10,11 @@ import { WidgetEditorExtenderModule } from "./widget-editor";
 
 declare var sitefinityExtensionsStore: SitefinityExtensionStore;
 
-sitefinityExtensionsStore.addExtensionModule(GridExtenderModule);
-sitefinityExtensionsStore.addExtensionModule(CustomFieldsModule);
-sitefinityExtensionsStore.addExtensionModule(CommandsExtenderModule);
+// sitefinityExtensionsStore.addExtensionModule(GridExtenderModule);
+// sitefinityExtensionsStore.addExtensionModule(CustomFieldsModule);
+// sitefinityExtensionsStore.addExtensionModule(CommandsExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(EditorExtenderModule);
-sitefinityExtensionsStore.addExtensionModule(ItemExtenderModule);
-sitefinityExtensionsStore.addExtensionModule(ThemeModule);
-sitefinityExtensionsStore.addExtensionModule(FieldsChangeModule);
-sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule);
+// sitefinityExtensionsStore.addExtensionModule(ItemExtenderModule);
+// sitefinityExtensionsStore.addExtensionModule(ThemeModule);
+// sitefinityExtensionsStore.addExtensionModule(FieldsChangeModule);
+// sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule);

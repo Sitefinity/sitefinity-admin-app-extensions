@@ -218,6 +218,9 @@ describe("Verify extensions", () => {
         await BrowserWaitForElement(createbutton);
         await BrowserVerifyConsoleOutput("Grid items initializing");
 
+        // afterViewInit hook
+        await BrowserVerifyConsoleOutput("After grid init");
+
         // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.WaitForPublishButton();
@@ -233,6 +236,9 @@ describe("Verify extensions", () => {
 
         // onInit hook
         await BrowserVerifyConsoleOutput("Item initializing");
+
+        // afterViewInit hook
+        await BrowserVerifyConsoleOutput("After edit item init");
 
         await ItemDetails.FocusHtmlField();
         await ItemDetails.ChangeEditorContent("New content");

@@ -175,7 +175,7 @@ describe("Verify extensions", () => {
         await ItemListMap.BulkActionsMenuButton.click();
         await BrowserWaitForElement(ItemListMap.BulkDropdown);
         await ItemList.ClickActionFromBulkDropdown("List selected items");
-        await BrowserVerifyConsoleOutput("Selected items:");
+        await BrowserVerifyConsoleOutput(["Selected items:"]);
     });
 
     it("remove column", async () => {
@@ -193,7 +193,7 @@ describe("Verify extensions", () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnCreate();
         await ItemDetails.WaitForPublishButton();
-        await BrowserVerifyConsoleOutput("new item");
+        await BrowserVerifyConsoleOutput(["new item"]);
         await ItemDetails.ClickBackButton();
 
         // verify edit
@@ -213,21 +213,17 @@ describe("Verify extensions", () => {
     it("grid item hooks", async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
 
-        // onInit hook
+        // onInit, afterViewInit hooks
         const createbutton = await ItemListMap.GetCreateItemButton();
         await BrowserWaitForElement(createbutton);
-        await BrowserVerifyConsoleOutput("Grid items initializing");
-
-        // afterViewInit hook
-        await BrowserWaitForElement(ItemListMap.GetRowTitleCell(ENTITY_MAP.get(dynamicTypeName).title));
-        await BrowserVerifyConsoleOutput("After grid init");
+        await BrowserVerifyConsoleOutput(["Grid items initializing", "After grid init"]);
 
         // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.WaitForPublishButton();
 
         // destroy hook
-        await BrowserVerifyConsoleOutput("Grid items unloading");
+        await BrowserVerifyConsoleOutput(["Grid items unloading"]);
     });
 
     it(`edit item hooks`, async () => {
@@ -235,23 +231,19 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.WaitForPublishButton();
 
-        // onInit hook
-        await BrowserVerifyConsoleOutput("Item initializing");
-
-        // afterViewInit hook
-        await BrowserWaitForElement(ItemDetailsMap.EditorInternalField);
-        await BrowserVerifyConsoleOutput("After edit item init");
+        // onInit, afterViewInit hooks
+        await BrowserVerifyConsoleOutput(["Item initializing", "After edit item init"]);
 
         await ItemDetails.FocusHtmlField();
         await ItemDetails.ChangeEditorContent("New content");
         await ItemDetails.ClickMainWorkflowButton();
         await BrowserWaitForElementToBeClickable(ItemDetailsMap.BackButton);
-        await BrowserVerifyConsoleOutput("Item changed");
+        await BrowserVerifyConsoleOutput(["Item changed"]);
 
         // item changes hook
         await ItemDetails.ClickBackButton();
         const createbutton = await ItemListMap.GetCreateItemButton();
         await BrowserWaitForElement(createbutton);
-        await BrowserVerifyConsoleOutput("Item unloading");
+        await BrowserVerifyConsoleOutput(["Item unloading"]);
     });
 });

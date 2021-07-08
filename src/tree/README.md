@@ -5,6 +5,15 @@ The tree component in the Sitefinity AdminApp is used in various places in the a
 
 ![Location of where the custom component will be rendered in the tree](./../../assets/tree/sample.png)
 
+### Demo for related data
+The custom component for the related data feature will be rendered, in the following parts of the UI
+* already selected related items
+* dropdown selector for the recent items and adjacent search feature
+* related data selector and adjacent search feature
+* readonly mode of the content item
+
+![Demo](./../../assets/tree/RelatedDataCustomTreeComponent.gif)
+
 The custom component you develop will get the currently rendered content item data passed into it, for example, the item passed in to the sample custom component has this json representation:
 ```json
 {

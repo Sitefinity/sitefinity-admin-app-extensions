@@ -1,4 +1,3 @@
-
 import { ClassProvider } from "@angular/core";
 import { ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/index-component/component-data";
 import { CustomTreeComponentProvider, CUSTOM_TREE_COMPONENT_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
@@ -16,10 +15,7 @@ export class RelatedDataCustomTreeComponentProvider implements CustomTreeCompone
 
     private createSampleComponent(): ComponentData {
         const componentData: ComponentData = {
-            type: RelatedDataCustomComponent,
-            afterComponentInit: (component: RelatedDataCustomComponent) => {
-                // console.log(component);
-            }
+            type: RelatedDataCustomComponent
         };
 
         return componentData;

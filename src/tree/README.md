@@ -3,7 +3,7 @@
 ## Intro
 The tree component in the Sitefinity AdminApp is used in various places in the application, for example, the grid (the list of content items), the sidebar, related data and so forth. This extension will allow you to inject a custom Angualr component in the tree's item template. The picture below shows where the custom component will be rendered in the tree's item template. 
 
-![Location of where the custom component will be rendered in the tree](./../../../assets/tree/sample.png)
+![Location of where the custom component will be rendered in the tree](./../../assets/tree/sample.png)
 
 The custom component you develop will get the currently rendered content item data passed into it, for example, the item passed in to the sample custom component has this json representation:
 ```json

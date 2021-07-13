@@ -29,11 +29,11 @@ export class ImageComponent implements OnInit, DataContextComponent {
     constructor(private http: HttpClient) {}
 
     ngOnInit() {
-        this.imageSource = this.getSampleImageFromJSON();
+        // this.imageSource = this.getSampleImageFromJSON();
 
         // To display a related image comment the line above and uncomment the line below.
         // NOTE: relatedImageFieldName variable should be assigned by the name of the related image field
-        // this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource);
+        this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource); 
     }
 
     /**
@@ -42,7 +42,7 @@ export class ImageComponent implements OnInit, DataContextComponent {
      */
     private getRelatedImageSource(): Observable<string> {
         // Replace the value with the related image field name
-        const relatedImageFieldName = "_REPLACE_WITH_RELATED_IMAGE_FIELD_NAME_";
+        const relatedImageFieldName = "Image";
 
         // http prefix is dynamically replaced with the actual url of sitefinity
         const url = `${HTTP_PREFIX}/sf/system/${this.context.dataItem.metadata.setName}(${this.context.dataItem.key})/${relatedImageFieldName}`

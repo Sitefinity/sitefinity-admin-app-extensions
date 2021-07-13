@@ -4,7 +4,7 @@ import { TreeNodeComponentProvider , CUSTOM_TREE_COMPONENT_TOKEN } from "@progre
 import { TreeNodeComponentFeatures } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree/custom-tree-node-component-features";
 import { RelatedDataCustomComponent } from "./related-data-custom.component";
 
-export class RelatedDataCustomTreeComponentProvider implements TreeNodeComponentProvider {
+export class RelatedDataTreeNodeComponentProvider implements TreeNodeComponentProvider {
     componentDataMap: Map<string, any>;
     featureMap: Map<TreeNodeComponentFeatures, Map<string, ComponentData>>;
 
@@ -31,7 +31,7 @@ export class RelatedDataCustomTreeComponentProvider implements TreeNodeComponent
 }
 
 export const CUSTOM_TREE_COMPONENT_PROVIDER: ClassProvider = {
-    useClass: RelatedDataCustomTreeComponentProvider,
+    useClass: RelatedDataTreeNodeComponentProvider,
     multi: true,
     provide: CUSTOM_TREE_COMPONENT_TOKEN
 };

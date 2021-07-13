@@ -123,7 +123,7 @@ export class RelatedDataCustomComponent extends CustomTreeComponentBase {
 
 ### Registering the component
 
-The component you have implemented must be registered in a class that implements the `CustomTreeComponentProvider` interface. The interface has two properties, `feature: string` which determines in which area of the AdminApp the custom component will be injected in the tree, *please note that currently only `"related-data"` is supported.*, this property cannot be a null or empty string. The other property is the `componentDataMap: Map<string, ComponentData>`. The key of the map is the so-called entity set names in the AdminApp, here is a list of all the default entity set names in the app:
+The component you have implemented must be registered in a class that implements the `TreeNodeComponentProvider` interface. The interface has a single method `getComponentData` which accepts two parameters, `feature` of type `TreeNodeComponentFeatures`, which currently supports only one feature - the related data, and `entitySet` which is a `string`, intended to represent the currently loaded data. This method will be called by the AdminApp, for example if we assume that your project's news items, have a related data field for events, the values passed in the method will `TreeNodeComponentFeatures.RelatedData` and `events`, therefore your implementation of the provider should return a `ComponentData` object that you would like to be used when displaying the related data nodes in the content item.
 
 * "albums"
 * "blogposts"
@@ -152,50 +152,42 @@ Go to Sitefinity > Administration > Module Builder > { desired module } > Code r
 Find the namespace of the type, for example Telerik.Sitefinity.DynamicTypes.Model.Pressreleases.PressRelease
 The last part of the namespace, all lower letters and pluralized is the entity set name pressreleases
 
-To implement a custom provider you start of by creating a custom class, which for the sake of the sample will be called `RelatedDataCustomTreeComponentProvider` and it must implement the `CustomTreeComponentProvider` interface.
+To implement a custom provider you start of by creating a custom class, which for the sake of the sample will be called `RelatedDataTreeNodeComponentProvider` and it must implement the `TreeNodeComponentProvider` interface.
 
 ```typescript
-import { ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/index-component/component-data";
-import { CustomTreeComponentProvider } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
+import { TreeNodeComponentProvider, ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { TreeNodeComponentFeatures } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree/custom-tree-node-component-features";
 
-export class RelatedDataCustomTreeComponentProvider implements CustomTreeComponentProvider {
-    componentDataMap: Map<string, ComponentData>;
-    feature: string;
-}
+export class RelatedDataTreeNodeComponentProvider implements TreeNodeComponentProvider {
 
-```
-
-Then you must specify the `feature` in which this provider will be used, the constructor of this class is a convenient place to do so.
-
-```typescript
-import { ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/index-component/component-data";
-import { CustomTreeComponentProvider } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
-
-export class RelatedDataCustomTreeComponentProvider implements CustomTreeComponentProvider {
-    componentDataMap: Map<string, ComponentData>;
-    feature: string;
-
-    constructor() {
-        this.feature = "related-data";
+    getComponentData(feature: TreeNodeComponentFeatures, entitySet: string): ComponentData {
     }
 }
+
 ```
 
-Now you must populate the `componentDataMap` with the data pointing to your custom angular component. When setting the entry in the map, please note that the key must be the entity set for which you would like your component to be used, i.e. `"newsitems"` for the Sitefinity news items content type.
+In the sample implementation we've chosen to use a map to register the custom components and have the `getComponentData` method return a single `ComponentData` object. Populate the `componentDataMap` with the data pointing to your custom angular component. When setting the entry in the map, please note that the key should be the entity set for which you would like your component to be used, i.e. `"newsitems"` for the Sitefinity news items content type.
 
 ```typescript
-import { ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/index-component/component-data";
-import { CustomTreeComponentProvider } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
+import { TreeNodeComponentProvider, ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { TreeNodeComponentFeatures } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree/custom-tree-node-component-features";
 import { RelatedDataCustomComponent } from "./related-data-custom.component";
 
-export class RelatedDataCustomTreeComponentProvider implements CustomTreeComponentProvider {
-    componentDataMap: Map<string, ComponentData>;
-    feature: string;
+export class RelatedDataTreeNodeComponentProvider implements TreeNodeComponentProvider {
+    componentDataMap: Map<string, any>;
+    featureMap: Map<TreeNodeComponentFeatures, Map<string, ComponentData>>;
 
     constructor() {
-        this.feature = "related-data";
-        this.componentDataMap = new Map<string, ComponentData>();
-        this.componentDataMap.set("newsitems", this.createSampleComponent());
+        this.featureMap = new Map<TreeNodeComponentFeatures, Map<string, ComponentData>>();
+
+        const componentDataMap = new Map<string, ComponentData>();
+        componentDataMap.set("newsitems", this.createSampleComponent());
+
+        this.featureMap.set(TreeNodeComponentFeatures.RelatedData, componentDataMap)
+    }
+
+    getComponentData(feature: TreeNodeComponentFeatures, entitySet: string): ComponentData {
+        return this.featureMap.get(feature)?.get(entitySet);
     }
 
     private createSampleComponent(): ComponentData {
@@ -213,17 +205,25 @@ Almost there, we need to export the provider using a special Angualr DI token `C
 ```typescript
 import { ClassProvider } from "@angular/core";
 import { ComponentData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/index-component/component-data";
-import { CustomTreeComponentProvider, CUSTOM_TREE_COMPONENT_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
+import { TreeNodeComponentProvider , CUSTOM_TREE_COMPONENT_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
+import { TreeNodeComponentFeatures } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree/custom-tree-node-component-features";
 import { RelatedDataCustomComponent } from "./related-data-custom.component";
 
-export class RelatedDataCustomTreeComponentProvider implements CustomTreeComponentProvider {
+export class RelatedDataTreeNodeComponentProvider implements TreeNodeComponentProvider {
     componentDataMap: Map<string, any>;
-    feature: string;
+    featureMap: Map<TreeNodeComponentFeatures, Map<string, ComponentData>>;
 
     constructor() {
-        this.feature = "related-data";
-        this.componentDataMap = new Map<string, ComponentData>();
-        this.componentDataMap.set("newsitems", this.createSampleComponent());
+        this.featureMap = new Map<TreeNodeComponentFeatures, Map<string, ComponentData>>();
+
+        const componentDataMap = new Map<string, ComponentData>();
+        componentDataMap.set("newsitems", this.createSampleComponent());
+
+        this.featureMap.set(TreeNodeComponentFeatures.RelatedData, componentDataMap)
+    }
+
+    getComponentData(feature: TreeNodeComponentFeatures, entitySet: string): ComponentData {
+        return this.featureMap.get(feature)?.get(entitySet);
     }
 
     private createSampleComponent(): ComponentData {
@@ -236,7 +236,7 @@ export class RelatedDataCustomTreeComponentProvider implements CustomTreeCompone
 }
 
 export const CUSTOM_TREE_COMPONENT_PROVIDER: ClassProvider = {
-    useClass: RelatedDataCustomTreeComponentProvider,
+    useClass: RelatedDataTreeNodeComponentProvider,
     multi: true,
     provide: CUSTOM_TREE_COMPONENT_TOKEN
 };

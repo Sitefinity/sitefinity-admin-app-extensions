@@ -4,10 +4,10 @@ import { CustomTreeNodeComponentBase } from "@progress/sitefinity-adminapp-sdk/a
 
 @Component({
     template: `
-    <div>{{item.data.Title}} - {{item.data.CreatedBy}}</div>
+    <div>{{item.data.Title}} <span >&bull;&nbsp;</span> <span data-sftest="custom-created-by">{{item.data.CreatedBy}}</span></div>
     <div class="sf-tree__description sf-breadcrumb -sf-overflow-ellipsis">
-        <span>
-            Created on {{item.data.DateCreated}}
+        <span data-sftest="custom-created-on">
+            {{item.data.DateCreated | date:"medium" }}
         </span>
     </div>
     `

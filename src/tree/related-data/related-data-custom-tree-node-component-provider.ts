@@ -5,28 +5,16 @@ import { TreeNodeComponentFeatures } from "@progress/sitefinity-adminapp-sdk/app
 import { RelatedDataCustomComponent } from "./related-data-custom.component";
 
 export class RelatedDataTreeNodeComponentProvider implements TreeNodeComponentProvider {
-    componentDataMap: Map<string, any>;
-    featureMap: Map<TreeNodeComponentFeatures, Map<string, ComponentData>>;
-
-    constructor() {
-        this.featureMap = new Map<TreeNodeComponentFeatures, Map<string, ComponentData>>();
-
-        const componentDataMap = new Map<string, ComponentData>();
-        componentDataMap.set("newsitems", this.createSampleComponent());
-
-        this.featureMap.set(TreeNodeComponentFeatures.RelatedData, componentDataMap)
-    }
-
     getComponentData(feature: TreeNodeComponentFeatures, entitySet: string): ComponentData {
-        return this.featureMap.get(feature)?.get(entitySet);
-    }
+        if (feature === TreeNodeComponentFeatures.RelatedData && entitySet === "newsitems") {
+            const componentData: ComponentData = {
+                type: RelatedDataCustomComponent
+            };
 
-    private createSampleComponent(): ComponentData {
-        const componentData: ComponentData = {
-            type: RelatedDataCustomComponent
-        };
+            return componentData;
+        }
 
-        return componentData;
+        return null;
     }
 }
 

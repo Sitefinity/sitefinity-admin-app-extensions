@@ -123,8 +123,8 @@ export class ItemDetails {
         await BrowserWaitForElement(ItemDetailsMap.AddRelatedDataNewsItemsButton);
         await ItemDetailsMap.AddRelatedDataNewsItemsButton.click();
         await BrowserWaitForElement(ItemDetailsMap.FirstRelatedDataItem);
-        const createdOn = await ItemDetailsMap.FirstRelatedDataItem.findElement(by.css("span[data-sftest=\"custom-created-by\"]"));
-        const createdBy = await ItemDetailsMap.FirstRelatedDataItem.findElement(by.css("span[data-sftest=\"custom-created-on\"]"));
+        const createdOn = await ItemDetailsMap.FirstRelatedDataItem.element(by.css("span[data-sftest=\"custom-created-by\"]"));
+        const createdBy = await ItemDetailsMap.FirstRelatedDataItem.element(by.css("span[data-sftest=\"custom-created-on\"]"));
 
         expect(createdOn).toBeTruthy();
         expect(createdBy).toBeTruthy();

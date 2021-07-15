@@ -119,7 +119,7 @@ export class ItemDetails {
         expect(customFieldContent.trim()).toBe(fieldValue);
     }
 
-    static async VerifyCustomTreeNodeComponent(){
+    static async VerifyCustomTreeNodeComponent(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.AddRelatedDataNewsItemsButton);
         await ItemDetailsMap.AddRelatedDataNewsItemsButton.click();
         await BrowserWaitForElement(ItemDetailsMap.FirstRelatedDataItem);

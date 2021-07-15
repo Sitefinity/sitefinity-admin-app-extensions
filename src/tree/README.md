@@ -1,6 +1,6 @@
 # Custom components loaded in the tree
 
-## Intro
+## Introduction
 The tree component in the Sitefinity AdminApp is used in various places in the application, for example, the grid (the list of content items), the sidebar, related data and so forth. This extension will allow you to inject a custom Angualr component in the tree's item template. The picture below shows where the custom component will be rendered in the tree's item template. 
 
 ![Location of where the custom component will be rendered in the tree](./../../assets/tree/sample.png)
@@ -103,20 +103,21 @@ Implement a component as you normally would in Angular, with just one requiremen
 
 ```typescript
 import { Component, Input } from "@angular/core";
-import { CustomTreeComponentBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
+import { DataItem } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { CustomTreeNodeComponentBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
 
 @Component({
     template: `
-    <div>{{item?.Title}} - {{item?.CreatedBy}}</div>
+    <div>{{item.data.Title}} <span >&bull;&nbsp;</span> <span data-sftest="custom-created-by">{{item.data.CreatedBy}}</span></div>
     <div class="sf-tree__description sf-breadcrumb -sf-overflow-ellipsis">
-        <span>
-            Created on {{item?.DateCreated}}
+        <span data-sftest="custom-created-on">
+            {{item.data.DateCreated | date:"medium" }}
         </span>
     </div>
     `
 })
-export class RelatedDataCustomComponent extends CustomTreeComponentBase {
-    @Input() item: any;
+export class RelatedDataCustomComponent extends CustomTreeNodeComponentBase {
+    @Input() item: DataItem;
 }
 
 ```
@@ -247,8 +248,9 @@ Last but not least, we must create a custom angular module for this extension (y
 Custom module: 
 
 ```typescript
+import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { CUSTOM_TREE_COMPONENT_PROVIDER } from "./related-data-custom-tree-component-provider";
+import { CUSTOM_TREE_COMPONENT_PROVIDER } from "./related-data-custom-tree-node-component-provider";
 import { RelatedDataCustomComponent } from "./related-data-custom.component";
 
 @NgModule({
@@ -259,10 +261,15 @@ import { RelatedDataCustomComponent } from "./related-data-custom.component";
         RelatedDataCustomComponent
     ],
     providers: [
-        CUSTOM_TREE_COMPONENT_PROVIDER
+        CUSTOM_TREE_COMPONENT_PROVIDER,
+        DatePipe
+    ],
+    imports: [
+        CommonModule
     ]
 })
 export class RelatedDateExtenderModule { /* empty */ }
+
 ```
 
 To register the module, go to the `__extensions_index.ts` file and add the following line:

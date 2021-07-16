@@ -26,6 +26,10 @@ class CustomItemHooksProvider implements ItemHooksProvider {
         return this.executeOperation(`Item unloading: ${data.item?.data?.Title || "No item"}`);
     }
 
+    afterEditItemInit(data: EditLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`After edit item init: ${data.item?.data?.Title || "No item"}`);
+    }
+
     onGridItemsChanged(data: ListLifecycleHookParam): Observable<void> {
         return this.executeOperation(`Grid items changing: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
@@ -36,6 +40,10 @@ class CustomItemHooksProvider implements ItemHooksProvider {
 
     onGridItemsUnloading(data: ListLifecycleHookParam): Observable<void> {
         return this.executeOperation(`Grid items unloading: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
+    }
+
+    afterGridInit(data: ListLifecycleHookParam): Observable<void> {
+        return this.executeOperation(`After grid init: ${data.items?.length ? data.items.map(x => x.data.Title) : "No items"}`);
     }
 
     private executeOperation(message: string): Observable<void> {

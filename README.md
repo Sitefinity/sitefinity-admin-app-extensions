@@ -87,6 +87,20 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 ### STS configuration
 
+#### When using Default authentication protocol
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Security*.
+
+1. Under *AccessControlAllowOrigin*, enter the URL of the development server of the Admin App Extensibility SDK or **\***. Default value is **http://localhost:3000**.
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *OAuthServer* -> *AuthorizedClients*.
+
+1. Click *Create new*. For **ClientId** enter *sitefinity*, leave **Secret** blank.
+
+1. Under **RedirectUrls**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
+
+#### When using OpenId authentication protocol
+
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
 
 1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is `http://localhost:3000`
@@ -213,6 +227,8 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Custom Widget Editor](./src/widget-editor#admin-app-custom-widget-editor) - With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
 
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
+
+* [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
 
 ### Modifications done in the config.json
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.

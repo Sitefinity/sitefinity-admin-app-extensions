@@ -228,6 +228,8 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
+* [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
+
 ### Modifications done in the config.json
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 

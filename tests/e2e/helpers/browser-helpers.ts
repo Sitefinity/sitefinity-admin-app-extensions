@@ -25,14 +25,10 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
-export async function BrowserVerifyConsoleOutput(expectedOutputs: string[]) {
+export async function BrowserVerifyConsoleOutput(expectedOutput: string) {
     return await browser.manage().logs().get("browser").then((browserLog) => {
-        const infoLogs = browserLog.filter(entry => entry.level.name === "INFO");
-        for (let i = 0; i < expectedOutputs.length; i++) {
-            const expectedOutput = expectedOutputs[i];
-            const log = infoLogs.find(entry => entry.message.includes(expectedOutput));
-            expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
-        }
+        const log = browserLog.find(entry => entry.level.name === "INFO" && entry.message.includes(expectedOutput));
+        expect(log).not.toBeUndefined(`${expectedOutput} was not found in logs`);
     });
 }
 

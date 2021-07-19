@@ -3,7 +3,7 @@
 import AuthenticationManager from "../helpers/authentication-manager";
 import SitefinitySdk from "../helpers/sitefinitySdk";
 import { Request } from "../helpers/request";
-import { URL_IN_CONFIG_FILE, DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX, ACTIVATE_DYNAMIC_MODULE_SERVICE_URL, DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX, USERNAME, PASSWORD, stringConstants, SITES_API_PATH, MULTISITE_CIONFIG_SERVICE_URL } from "../helpers/constants";
+import { URL_IN_CONFIG_FILE, DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX, ACTIVATE_DYNAMIC_MODULE_SERVICE_URL, DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX, stringConstants, SITES_API_PATH, MULTISITE_CIONFIG_SERVICE_URL } from "../helpers/constants";
 
 let requestHeaders: Object;
 
@@ -17,7 +17,6 @@ function getRequestHeaders() {
 //#region Set up Dynamic Module
 async function initiateDynamicModule(module: any, parentModuleId: string = stringConstants.DEFAULT_GUID) {
     let moduleId: string;
-    await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
     moduleId = await createDynamicModule(JSON.stringify(module), parentModuleId);
     await activateDynamicModule(moduleId);
     return moduleId;
@@ -54,7 +53,6 @@ async function activateDynamicModule(moduleId: string) {
 
 //#region Delete Dynamic Module
 async function deleteDynamicModule(moduleId: string) {
-    await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
     await deleteDynamicModuleInternal(moduleId);
 }
 
@@ -73,7 +71,6 @@ async function deleteDynamicModuleInternal(moduleId: string) {
 //#endregion
 
 async function getContentTypeId(moduleId: string) {
-    await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
     return await getContentTypeIdInternal(moduleId);
 }
 
@@ -186,7 +183,6 @@ async function includeDynamicModuleToSite(includeInSiteMock: any) {
     Currently when use getSideID the module is included in the site but there is couple of seconds
     delay before the module is visible in iris */
     const url = URL_IN_CONFIG_FILE + SITES_API_PATH + "/4c922118-f076-4e24-9193-93e004f50107" + MULTISITE_CIONFIG_SERVICE_URL;
-    await AuthenticationManager.getInstance().authenticate(USERNAME, PASSWORD);
     const request = new Request(method, url, getRequestHeaders(), JSON.stringify(includeInSiteMock));
 
     try {

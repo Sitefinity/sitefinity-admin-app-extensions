@@ -1,5 +1,5 @@
 require("jasmine-expect");
-import { browser, protractor, by } from "protractor";
+import { browser, protractor, by, element } from "protractor";
 import { ItemDetailsMap } from "./item-details.map";
 import { BrowserWaitForElement, BrowserVerifyAlert, BrowserWaitForElementHidden, SelectAllAndTypeText, BrowserWaitForElementToBeClickable } from "../helpers/browser-helpers";
 import { EditorPopupMap } from "./editor-popup.map";
@@ -44,6 +44,13 @@ export class ItemDetails {
 
     static async WaitForPublishButton(): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.PublishButton);
+    }
+
+    static async ClickMainWorkflowButton(buttonName: string = "Publish"): Promise<void> {
+        const button = element(by.cssContainingText("button", buttonName));
+
+        await BrowserWaitForElement(button);
+        return button.click();
     }
 
     static async ClickHtmlToolbarSitefinityVideos(): Promise<void> {

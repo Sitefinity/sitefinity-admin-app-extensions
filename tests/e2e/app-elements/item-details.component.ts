@@ -119,6 +119,17 @@ export class ItemDetails {
         expect(customFieldContent.trim()).toBe(fieldValue);
     }
 
+    static async VerifyCustomTreeNodeComponent(): Promise<void> {
+        await BrowserWaitForElement(ItemDetailsMap.AddRelatedDataNewsItemsButton);
+        await ItemDetailsMap.AddRelatedDataNewsItemsButton.click();
+        await BrowserWaitForElement(ItemDetailsMap.FirstRelatedDataItem);
+        const createdOn = await ItemDetailsMap.FirstRelatedDataItem.element(by.css("span[data-sftest=\"custom-created-by\"]"));
+        const createdBy = await ItemDetailsMap.FirstRelatedDataItem.element(by.css("span[data-sftest=\"custom-created-on\"]"));
+
+        expect(createdOn).toBeTruthy();
+        expect(createdBy).toBeTruthy();
+    }
+
     static async ClickBackButton(acceptAlert: boolean = false): Promise<void> {
         await BrowserWaitForElement(ItemDetailsMap.BackButton);
         await ItemDetailsMap.BackButton.click();

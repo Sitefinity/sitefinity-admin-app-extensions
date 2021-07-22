@@ -5,7 +5,7 @@ By default the date and time formats used by the date and time fields, for examp
 ```json
 {
     "dateTimeFormat": {
-        "useBrowserLocale": "true",
+        "useBrowserLocale": true,
         "browserLocaleFormatWidth": "long",
         "timeFormat": "HH:mm",
         "dateFormat": " d/MMM/yyyy"

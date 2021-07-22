@@ -20,9 +20,9 @@ The custom component for the related data feature will be rendered, in the follo
 
 ### Implement the component
 
-Implement a component as you normally would in Angular, with just one requirement, that your custom component **must** extend the `abstract class CustomTreeComponentBase`, it will force you to implement the only property `item: any`, which as stated on top, will be populated by the item that is going to be rendered.
+Implement a component as you normally would in Angular, with just one requirement, that your custom component **should** extend the `abstract class CustomTreeComponentBase`, it will force you to implement the only property `item: DataItem`, which as stated on top, will be populated by the item that is going to be rendered.
 
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy".
+> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
 ```typescript
 import { Component, Input } from "@angular/core";
@@ -30,11 +30,17 @@ import { DataItem } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { CustomTreeNodeComponentBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1/tree";
 
 @Component({
+    styles: [
+        ".bull { font-weight: bolder; }"
+    ],
     template: `
-    <div [textContent]="item.data.Title"><span>&bull;&nbsp;</span> <span data-sftest="custom-created-by" [textContent]="item.data.CreatedBy"></span></div>
+    <div>
+        <span [textContent]="item.data.Title"></span>
+        <span class="bull">&nbsp;&bull;&nbsp;</span>
+        <span data-sftest="custom-created-by" [textContent]="item.data.CreatedBy"></span>
+    </div>
     <div class="sf-tree__description sf-breadcrumb -sf-overflow-ellipsis">
-        <span data-sftest="custom-created-on" [textContent]="item.data.DateCreated | date:'medium'">
-        </span>
+        <span data-sftest="custom-created-on" [textContent]="item.data.DateCreated | date:'medium'"></span>
     </div>
     `
 })

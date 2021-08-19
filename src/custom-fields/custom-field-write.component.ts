@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FieldBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 /**
@@ -9,7 +9,11 @@ import { FieldBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
     templateUrl: "./custom-field-write.component.html",
     styleUrls: [ "./custom-field-write.component.css" ]
 })
-export class CustomInputWriteComponent extends FieldBase {
+export class CustomInputWriteComponent extends FieldBase implements OnInit {
+    ngOnInit() {
+        console.log((this as any).settings.entityData.metadata.setName);
+    }
+
     processErrors(errors: { [key: string]: any }) {
 
         // the pattern validator in the custom-field.settings file sets a pattern object

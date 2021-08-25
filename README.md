@@ -239,3 +239,5 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Search](./src/search#extending-search-functionality-in-adminapp) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
 
 * [Change the date and time format of the date time fields](./src/change-date-format#configuring-the-date-and-time-format-of-the-date-time-fields) - A configuration that allows you to change the format of the date and time fields.
+
+* [Reordering the children of a hierarchical type](./src/reorder-children-list#reordering-the-children-of-a-hierarchical-type) - This configuration allows the reordering of the child types in the contains column of hierarchical types with two or more children.

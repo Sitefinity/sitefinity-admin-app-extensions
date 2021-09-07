@@ -4,7 +4,7 @@
   "license": "private",
   "private": true,
   "scripts": {
-    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone --versions.chrome 2.42",
+    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --standalone --versions.chrome 84.0.4147.30",
     "e2e": "node ./node_modules/protractor/bin/protractor",
     "e2e:headlessChrome": "npm run e2e -- --params.browser=chrome --params.headless"
   },
@@ -22,7 +22,7 @@
     "mock-browser": "0.92.12",
     "moment": "2.22.2",
     "path": "0.12.7",
-    "protractor": "5.4.1",
+    "protractor": "5.4.2",
     "protractor-angular-screenshot-reporter": "0.1.2",
     "sitefinity-webservices-sdk": "0.2.42-beta",
     "ts-node": "3.0.2",

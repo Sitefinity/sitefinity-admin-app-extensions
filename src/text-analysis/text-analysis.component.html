@@ -1,0 +1,12 @@
+<div class="text-analysis-sidebar">
+    <h2>Tags</h2>
+
+    <div *ngFor="let tag of tags">
+        <div>
+            <input type="checkbox" id="scales" name="{{tag.parsed_value}}" (change)="checkValue(tag.parsed_value, $event)">
+            <label for="{{tag.parsed_value}}">{{tag.parsed_value}}</label>
+          </div>
+    </div>
+
+    <button (click)="onSaveClick()">Save</button>
+</div>

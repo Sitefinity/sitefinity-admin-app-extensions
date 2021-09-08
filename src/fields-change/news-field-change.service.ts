@@ -1,9 +1,9 @@
 import { FieldChangeService, FieldWrapper, FIELDS_CHANGE_SERVICE_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { Injectable } from "@angular/core";
+import { FieldHolderService } from "./field-holder.service";
 
 const NEWS_TYPE_FULL_NAME = "Telerik.Sitefinity.News.Model.NewsItem";
 const TITLE_FIELD_NAME = "Title";
-const RITCH_TEXT_EDITOR_FIELD_NAME = "Content";
 
 /**
  * Service which listens for field changes for news items.
@@ -14,6 +14,13 @@ const RITCH_TEXT_EDITOR_FIELD_NAME = "Content";
  */
 @Injectable()
 export class NewsFieldsChangeService implements FieldChangeService {
+
+    public tagsFieldReference: FieldWrapper;
+
+    constructor(private fieldHolder: FieldHolderService) {
+
+    }
+
     /**
      * Method called on every field change.
      *
@@ -23,12 +30,8 @@ export class NewsFieldsChangeService implements FieldChangeService {
      * @memberof FieldsChangeService
      */
     processChange(changedFieldName: string, changedValue: any, fields: FieldWrapper[]): void {
-        // When the title field is changed, we want to update the long text field with the same value(mirroring).
-        if (changedFieldName === TITLE_FIELD_NAME) {
-            const ritchTextEditorField = fields.find(x => x.fieldModel.key === RITCH_TEXT_EDITOR_FIELD_NAME);
-
-            ritchTextEditorField.writeValue(changedValue);
-        }
+        const tagsFieldReference = fields.find(x => x.fieldModel.key === "Tags");
+        this.fieldHolder.getTagsField().next(tagsFieldReference);
     }
 
     /**
@@ -39,7 +42,7 @@ export class NewsFieldsChangeService implements FieldChangeService {
      * @memberof FieldsChangeService
      */
     canProcess(typeFullName: string): boolean {
-        return typeFullName === NEWS_TYPE_FULL_NAME;
+        return true;
     }
 }
 

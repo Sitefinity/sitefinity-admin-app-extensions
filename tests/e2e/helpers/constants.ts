@@ -2,7 +2,8 @@ import { protractor, browser } from "protractor";
 
 export const ACTIVATE_DYNAMIC_MODULE_SERVICE_URL = "/sf/system/content-types-service/activate/";
 
-export const BASE_URL = "http://localhost:3000/adminapp/";
+export const BASE_URL_NO_PREFIX = "http://localhost:3000";
+export const BASE_URL = `${BASE_URL_NO_PREFIX}/adminapp/`;
 
 export const NEWS_TYPE_NAME = "newsitems";
 export const PAGES_TYPE_NAME = "pages";
@@ -15,6 +16,7 @@ export const CONTENT_BLOGS_PAGE_URL = `${BASE_URL}content/blogs`;
 export const CONTENT_NEWS_URL = `${BASE_URL}content/newsitems`;
 export const PAGES_URL = `${BASE_URL}pages`;
 export const THEME_URL = `${BASE_URL}theme`;
+export const PRINT_PREVIEW_URL = `${BASE_URL_NO_PREFIX}/print-preview`
 
 export const EC = protractor.ExpectedConditions;
 export const URL_IN_CONFIG_FILE = browser.params.sfUrl;

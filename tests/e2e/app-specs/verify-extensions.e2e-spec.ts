@@ -6,7 +6,8 @@ import {
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
-    BrowserWaitForElementToBeClickable
+    BrowserWaitForElementToBeClickable,
+    BrowserGetUrl
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -23,7 +24,11 @@ import {
     NEWS_TYPE_NAME,
     PAGES_TYPE_NAME,
     CONTENT_PAGE_URL,
-    TITLE_VALID_TEXT
+    TITLE_VALID_TEXT,
+    PRINT_PREVIEW_URL,
+    CONFIG_PAGE_URL,
+    BASE_URL,
+    URL_IN_CONFIG_FILE
 } from "../helpers/constants";
 import { PrintPreview } from "../app-elements/print-preview.component";
 import { ItemDetails } from "../app-elements/item-details.component";
@@ -34,6 +39,7 @@ import dynamicModuleOperations from "../setup/dynamic-module-operations";
 import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
 import { ItemDetailsMap } from "../app-elements/item-details.map";
+import { browser } from "protractor";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();
@@ -55,6 +61,25 @@ const ENTITY_MAP = new Map<string, any>()
         url: `${CONTENT_PAGE_URL}${dynamicTypeName}`,
         title: dynamicItemMock.data.Title
     });
+
+describe("Verify protected route", () => {
+    it("verify config guard", async () => {
+        await BrowserNavigate(PRINT_PREVIEW_URL);
+        const currentUrl = await BrowserGetUrl();
+        expect(currentUrl).toBe(CONFIG_PAGE_URL);
+    });
+
+    it("verify auth guard", async () => {
+        await BrowserNavigate(BASE_URL);
+        const setLocalStorageString = `localStorage.setItem("sf.config.serviceUrl","${URL_IN_CONFIG_FILE}");`;
+        await browser.executeScript(setLocalStorageString);
+
+        browser.waitForAngularEnabled(false)
+        await BrowserNavigate(PRINT_PREVIEW_URL);
+        const currentUrl = await BrowserGetUrl();
+        expect(currentUrl).toContain("/Sitefinity/Login");
+    });
+});
 
 describe("Verify extensions", () => {
     beforeAll(async (done: DoneFn) => {

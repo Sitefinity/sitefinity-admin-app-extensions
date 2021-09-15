@@ -18,3 +18,7 @@ To rearrange the child types, find the `config.json` file located in `{{your_pro
 ```
 
 After this configuration is applied the "contains" column will now list the types in the order of "territories" and "towns" and when the parent is click it will redirect to the territories list view.
+
+> **Important notes**:
+> * As of Sitefinity 13.3.7622.0 the `config.json` file is no longer shipped with the product.
+> * The `config.json` file is located in `{{project_root}}/SitefinityWebApp/AdminApp`, if it is missing please create your own file so that you may apply the desired configurations.

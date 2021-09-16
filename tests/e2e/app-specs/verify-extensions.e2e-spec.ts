@@ -134,12 +134,12 @@ describe("Verify extensions", () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(NEWS_TYPE_NAME).title);
 
-        BrowserWaitForElement(ItemDetailsMap.TitleInput);
+        await BrowserWaitForElement(ItemDetailsMap.TitleInput);
 
         await ItemDetailsMap.TitleInput.click();
         await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
-        BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
+        await BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
         await ItemDetails.VerifyEditorContent(TITLE_VALID_TEXT);
 
         await ItemDetails.ClickBackButton(true);

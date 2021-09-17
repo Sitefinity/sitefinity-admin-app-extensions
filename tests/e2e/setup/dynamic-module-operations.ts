@@ -25,7 +25,6 @@ async function initiateDynamicModule(module: any, parentModuleId: string = strin
 async function createDynamicModule(dynamicModule: string, parentModuleId: string) {
     const method = "PUT";
     const url = URL_IN_CONFIG_FILE + DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX + parentModuleId + "/";
-    console.log("The url is: " + url);
     const trimurl = url.replace(/['"]+/g, "");
     const request = new Request(method, trimurl, getRequestHeaders(), dynamicModule);
 
@@ -59,7 +58,6 @@ async function deleteDynamicModule(moduleId: string) {
 
 async function deleteDynamicModuleInternal(moduleId: string) {
     const method = "DELETE";
-    console.log("The moduleId is: " + moduleId);
     const url = URL_IN_CONFIG_FILE + DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX + moduleId.replace(/"/g, "") + DELETE_DYNAMIC_MODULE_SERVICE_URL_SUFFIX;
     const request = new Request(method, url, getRequestHeaders());
 
@@ -78,7 +76,6 @@ async function getContentTypeId(moduleId: string) {
 
 async function getContentTypeIdInternal(moduleId: string) {
     const method = "GET";
-    console.log("The moduleId is: " + moduleId);
     const url = URL_IN_CONFIG_FILE + DELETE_DYNAMIC_MODULE_SERVICE_URL_PREFIX + moduleId.replace(/['"]+/g, "") + "/";
     const request = new Request(method, url, getRequestHeaders());
 

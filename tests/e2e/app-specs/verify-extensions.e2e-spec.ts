@@ -83,10 +83,8 @@ describe("Verify extensions", () => {
 
         it(`images column [${entity}]`, async () => {
             let browserUrl = await BrowserGetUrl();
-            console.log("Browser url is: " + browserUrl);
             await BrowserNavigate(url);
             browserUrl = await BrowserGetUrl();
-            console.log("Browser url after navigation is: " + browserUrl);
             await ItemList.VerifyImageColumn();
         });
 

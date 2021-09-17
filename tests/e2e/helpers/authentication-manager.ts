@@ -161,7 +161,6 @@ export default class AuthenticationManager {
 
 export async function initAuth(username: string, password: string) {
     const token = await AuthenticationManager.getInstance().authenticate(username, password);
-    console.log("The token is: " + token);
     await browser.get(BASE_URL);
 
     const setLocalStorageString = `localStorage.setItem("sf.config.serviceUrl","${URL_IN_CONFIG_FILE}");`;

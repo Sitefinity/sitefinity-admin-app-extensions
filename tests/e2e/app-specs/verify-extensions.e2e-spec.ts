@@ -6,7 +6,8 @@ import {
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
-    BrowserWaitForElementToBeClickable
+    BrowserWaitForElementToBeClickable,
+    BrowserGetUrl
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -81,7 +82,11 @@ describe("Verify extensions", () => {
         const itemToVerify = ENTITY_MAP.get(entity).title;
 
         it(`images column [${entity}]`, async () => {
+            let browserUrl = await BrowserGetUrl();
+            console.log("Browser url is: " + browserUrl);
             await BrowserNavigate(url);
+            browserUrl = await BrowserGetUrl();
+            console.log("Browser url after navigation is: " + browserUrl);
             await ItemList.VerifyImageColumn();
         });
 

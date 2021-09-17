@@ -19,4 +19,7 @@ The array should contain the type names of the content types that should have th
 }
 ```
 
-Note: The command will always be available for Pages regardless of the value of the **changeOwnerAllowedTypes** property.
+> **Important notes**:
+> * The command will always be available for Pages regardless of the value of the **changeOwnerAllowedTypes** property.
+> * As of Sitefinity 13.3.7622.0 the `config.json` file is no longer shipped with the product.
+> * The `config.json` file is located in `{{project_root}}/SitefinityWebApp/AdminApp`, if it is missing please create your own file so that you may apply the desired configurations.

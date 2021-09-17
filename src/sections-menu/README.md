@@ -21,4 +21,7 @@ Then you need to add another property **sectionsMenuMinColumnsNumber** of type n
 }
 ```
 
-NOTE: If you don't provide this configuration, the default value - 5, will be used.
+> **Important notes**:
+> * If you don't provide the configuration for `sectionsMenuMinColumnsNumber` the default value `5`, will be used.
+> * As of Sitefinity 13.3.7622.0 the `config.json` file is no longer shipped with the product.
+> * The `config.json` file is located in `{{project_root}}/SitefinityWebApp/AdminApp`, if it is missing please create your own file so that you may apply the desired configurations.

@@ -6,7 +6,8 @@ import {
     BrowserVerifyConsoleOutput,
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
-    BrowserWaitForElementToBeClickable
+    BrowserWaitForElementToBeClickable,
+    BrowserGetUrl
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -81,7 +82,9 @@ describe("Verify extensions", () => {
         const itemToVerify = ENTITY_MAP.get(entity).title;
 
         it(`images column [${entity}]`, async () => {
+            let browserUrl = await BrowserGetUrl();
             await BrowserNavigate(url);
+            browserUrl = await BrowserGetUrl();
             await ItemList.VerifyImageColumn();
         });
 
@@ -134,12 +137,12 @@ describe("Verify extensions", () => {
         await BrowserNavigate(ENTITY_MAP.get(NEWS_TYPE_NAME).url);
         await ItemList.ClickOnItem(ENTITY_MAP.get(NEWS_TYPE_NAME).title);
 
-        BrowserWaitForElement(ItemDetailsMap.TitleInput);
+        await BrowserWaitForElement(ItemDetailsMap.TitleInput);
 
         await ItemDetailsMap.TitleInput.click();
         await SelectAllAndTypeText(TITLE_VALID_TEXT);
 
-        BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
+        await BrowserWaitForTextToBePresent(ItemDetailsMap.EditorInternalField, TITLE_VALID_TEXT);
         await ItemDetails.VerifyEditorContent(TITLE_VALID_TEXT);
 
         await ItemDetails.ClickBackButton(true);
@@ -175,7 +178,7 @@ describe("Verify extensions", () => {
         await ItemListMap.BulkActionsMenuButton.click();
         await BrowserWaitForElement(ItemListMap.BulkDropdown);
         await ItemList.ClickActionFromBulkDropdown("List selected items");
-        await BrowserVerifyConsoleOutput("Selected items:");
+        await BrowserVerifyConsoleOutput(["Selected items:"]);
     });
 
     it("remove column", async () => {
@@ -193,7 +196,7 @@ describe("Verify extensions", () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
         await ItemList.ClickOnCreate();
         await ItemDetails.WaitForPublishButton();
-        await BrowserVerifyConsoleOutput("new item");
+        await BrowserVerifyConsoleOutput(["new item"]);
         await ItemDetails.ClickBackButton();
 
         // verify edit
@@ -213,17 +216,17 @@ describe("Verify extensions", () => {
     it("grid item hooks", async () => {
         await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
 
-        // onInit hook
+        // onInit, afterViewInit hooks
         const createbutton = await ItemListMap.GetCreateItemButton();
         await BrowserWaitForElement(createbutton);
-        await BrowserVerifyConsoleOutput("Grid items initializing");
+        await BrowserVerifyConsoleOutput(["Grid items initializing", "After grid init"]);
 
         // enter edit item, so the grid will be destroyed and onDestroy hook will be calle
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.WaitForPublishButton();
 
         // destroy hook
-        await BrowserVerifyConsoleOutput("Grid items unloading");
+        await BrowserVerifyConsoleOutput(["Grid items unloading"]);
     });
 
     it(`edit item hooks`, async () => {
@@ -231,19 +234,26 @@ describe("Verify extensions", () => {
         await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
         await ItemDetails.WaitForPublishButton();
 
-        // onInit hook
-        await BrowserVerifyConsoleOutput("Item initializing");
+        // onInit, afterViewInit hooks
+        await BrowserVerifyConsoleOutput(["Item initializing", "After edit item init"]);
 
         await ItemDetails.FocusHtmlField();
         await ItemDetails.ChangeEditorContent("New content");
         await ItemDetails.ClickMainWorkflowButton();
         await BrowserWaitForElementToBeClickable(ItemDetailsMap.BackButton);
-        await BrowserVerifyConsoleOutput("Item changed");
+        await BrowserVerifyConsoleOutput(["Item changed"]);
 
         // item changes hook
         await ItemDetails.ClickBackButton();
         const createbutton = await ItemListMap.GetCreateItemButton();
         await BrowserWaitForElement(createbutton);
-        await BrowserVerifyConsoleOutput("Item unloading");
+        await BrowserVerifyConsoleOutput(["Item unloading"]);
     });
+
+    it("verify custom tree node components", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+
+        await ItemDetails.VerifyCustomTreeNodeComponent();
+    })
 });

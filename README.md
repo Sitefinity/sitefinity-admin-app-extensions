@@ -31,8 +31,6 @@ Extensions packages are future proof, they will work with future versions of Sit
 
 With the release of 13.3 due to the name change of one of our dependencies ( from "sitefinity-adminapp-sdk" - > to "@progress/sitefinity-adminapp-sdk). You will need to update the repo with our latest official version tag #13.3.7600.0 and rebuild your extension.
 
-With the release of 13.3 due to the name change of one of our dependencies ( from "sitefinity-adminapp-sdk" - > to "@progress/sitefinity-adminapp-sdk). You will need to update the repo with our latest official version tag #13.3.7600.0 and rebuild your extension.
-
 Before you start developing make sure to checkout the tag corresponding to your Sitefinity host version (see [quick start section](#quick-start)). This way you can be sure that the extension will work once you copy the package to your Sitefinity host. Extensions packages are future proof, they will work with future versions of Sitefinity, so you can upgrade your Sitefinity instance without worrying that you will break your extensions.
 
 ## Prerequisites
@@ -204,6 +202,8 @@ this.http.get(url).subscribe(response => { /* do work */ });
 
 ## Extensibility endpoints
 
+> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
+
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 
@@ -229,9 +229,15 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
+* [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
+
 ### Modifications done in the config.json
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 
 * [Sections menu](./src/sections-menu#extending-sections-menu-functionality-in-adminapp) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
 
 * [Search](./src/search#extending-search-functionality-in-adminapp) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
+
+* [Change the date and time format of the date time fields](./src/change-date-format#configuring-the-date-and-time-format-of-the-date-time-fields) - A configuration that allows you to change the format of the date and time fields.
+
+* [Reordering the children of a hierarchical type](./src/reorder-children-list#reordering-the-children-of-a-hierarchical-type) - This configuration allows the reordering of the child types in the contains column of hierarchical types with two or more children.

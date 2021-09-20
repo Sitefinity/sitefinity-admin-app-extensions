@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is an extension to the rich text editor in **AdminApp** that allows the user to insert video content from Sitefinity CMS. 
+This is an extension to the rich text editor in **AdminApp** that allows the user to insert video content from Sitefinity CMS.
 
 ## Interactions
 

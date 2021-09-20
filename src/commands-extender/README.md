@@ -8,6 +8,9 @@
 * [Example](#example)
 
 ## Overview
+
+> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
+
 You can register custom command and execute some custom logic when executing them. They can be added in several places:
 * in the Grid View 
    * next to the Create command

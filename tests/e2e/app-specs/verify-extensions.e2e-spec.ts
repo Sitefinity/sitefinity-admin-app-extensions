@@ -7,7 +7,9 @@ import {
     BrowserWaitForElement,
     BrowserWaitForTextToBePresent,
     BrowserWaitForElementToBeClickable,
-    BrowserGetUrl
+    BrowserGetUrl,
+    BrowserExecuteScript,
+    BrowserWaitForAngularEnabled
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -72,9 +74,9 @@ describe("Verify protected route", () => {
     it("verify auth guard", async () => {
         await BrowserNavigate(BASE_URL);
         const setLocalStorageString = `localStorage.setItem("sf.config.serviceUrl","${URL_IN_CONFIG_FILE}");`;
-        await browser.executeScript(setLocalStorageString);
+        await BrowserExecuteScript(setLocalStorageString);
 
-        browser.waitForAngularEnabled(false)
+        await BrowserWaitForAngularEnabled(false);
         await BrowserNavigate(PRINT_PREVIEW_URL);
         const currentUrl = await BrowserGetUrl();
         expect(currentUrl).toContain("/Sitefinity/Login");

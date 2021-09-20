@@ -25,6 +25,14 @@ export async function BrowserNavigate(url: string): Promise<void> {
     return await browser.get(url);
 }
 
+export async function BrowserExecuteScript(script: string): Promise<void> {
+    return await browser.executeScript(script);
+}
+
+export async function BrowserWaitForAngularEnabled(enabled: boolean): Promise<boolean> {
+    return await browser.waitForAngularEnabled(enabled);
+}
+
 export async function BrowserVerifyConsoleOutput(expectedOutputs: string[]) {
     return await browser.manage().logs().get("browser").then((browserLog) => {
         const infoLogs = browserLog.filter(entry => entry.level.name === "INFO");

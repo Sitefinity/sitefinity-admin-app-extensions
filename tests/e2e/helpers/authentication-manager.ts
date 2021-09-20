@@ -5,12 +5,12 @@ import { browser } from "protractor";
 import { URL_IN_CONFIG_FILE, BASE_URL } from "./constants";
 
 function getToken(username: string, password: string): Promise<any> {
-    const url = URL_IN_CONFIG_FILE + "/Sitefinity/Authenticate/OpenID/connect/token";
+    const url = URL_IN_CONFIG_FILE + "/Sitefinity/oauth/token";
     const data = {
         username: username,
         password: password,
         grant_type: "password",
-        scope: "openid",
+        scope: "oauth",
         client_id: "iris",
         client_secret: "secret"
     };
@@ -47,7 +47,7 @@ function getToken(username: string, password: string): Promise<any> {
                 resolve(tokenObj);
             },
             (response) => {
-                reject(response);
+                reject(response.responseText);
             }
         );
     };
@@ -107,7 +107,8 @@ export default class AuthenticationManager {
         const token = await getToken(username, password);
         try {
             this.requestHeaders["Authorization"] = `${token.type} ${token.value}`;
-            return await SitefinitySdk.getInstance().authentication.setToken(token);
+            await SitefinitySdk.getInstance().authentication.setToken(token);
+            return token;
         } catch (error) {
             console.log(this.parseError(token));
         }
@@ -159,12 +160,13 @@ export default class AuthenticationManager {
 }
 
 export async function initAuth(username: string, password: string) {
-    const token = await getToken(username, password);
+    const token = await AuthenticationManager.getInstance().authenticate(username, password);
     await browser.get(BASE_URL);
+
     const setLocalStorageString = `localStorage.setItem("sf.config.serviceUrl","${URL_IN_CONFIG_FILE}");`;
     await browser.executeScript(setLocalStorageString);
+
     const serializedToken = JSON.stringify(token);
     const setTokenScriptString = `localStorage.setItem("sf.token",'${serializedToken}');`;
-
     await browser.executeScript(setTokenScriptString);
 }

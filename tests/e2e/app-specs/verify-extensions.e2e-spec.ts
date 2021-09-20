@@ -246,4 +246,11 @@ describe("Verify extensions", () => {
         await BrowserWaitForElement(createbutton);
         await BrowserVerifyConsoleOutput(["Item unloading"]);
     });
+
+    it("verify custom tree node components", async () => {
+        await BrowserNavigate(ENTITY_MAP.get(dynamicTypeName).url);
+        await ItemList.ClickOnItem(ENTITY_MAP.get(dynamicTypeName).title);
+
+        await ItemDetails.VerifyCustomTreeNodeComponent();
+    })
 });

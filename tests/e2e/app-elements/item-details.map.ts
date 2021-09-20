@@ -19,6 +19,8 @@ export class ItemDetailsMap {
     public static PublishButton: ElementFinder = element(by.cssContainingText("button", "Publish"));
     public static BackButton: ElementFinder = element(by.css(".sf-button.-toggle.-icon[title='All items']"));
     public static HeaderTitle: ElementFinder = element(by.css("h3"));
+    public static AddRelatedDataNewsItemsButton: ElementFinder = element(by.css("button[title='Select news']"));
+    public static FirstRelatedDataItem: ElementFinder = element(by.css("sf-tree[data-sftest='related-data_popup-tree'] div.sf-tree__content"));
 
     public static ToolbarButtonByTitle(buttonTitle: string): ElementFinder {
         return element(by.css(`button[title="${buttonTitle}"]`));

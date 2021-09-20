@@ -87,6 +87,20 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 ### STS configuration
 
+#### When using Default authentication protocol
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Security*.
+
+1. Under *AccessControlAllowOrigin*, enter the URL of the development server of the Admin App Extensibility SDK or **\***. Default value is **http://localhost:3000**.
+
+1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *OAuthServer* -> *AuthorizedClients*.
+
+1. Click *Create new*. For **ClientId** enter *sitefinity*, leave **Secret** blank.
+
+1. Under **RedirectUrls**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
+
+#### When using OpenId authentication protocol
+
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
 
 1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is `http://localhost:3000`
@@ -188,12 +202,13 @@ this.http.get(url).subscribe(response => { /* do work */ });
 
 ## Extensibility endpoints
 
+> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
+
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-### [Custom commands](./src/commands-extender#custom-commands)
 * [Add custom commands](./src/commands-extender#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution.
 
 * [Remove default commands](./src/commands-extender#remove-default-commands) - You can remove one or more of the default commands.
@@ -214,11 +229,15 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
+* [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
+
 ### Modifications done in the config.json
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 
 * [Sections menu](./src/sections-menu#extending-sections-menu-functionality-in-adminapp) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.
 
 * [Search](./src/search#extending-search-functionality-in-adminapp) - By default when search is executed the AdminApp searches only by a content type's default field. This may not be enough, therefore you have the ability to define the fields to be used when search is performed per content type.
+
+* [Change the date and time format of the date time fields](./src/change-date-format#configuring-the-date-and-time-format-of-the-date-time-fields) - A configuration that allows you to change the format of the date and time fields.
 
 * [Reordering the children of a hierarchical type](./src/reorder-children-list#reordering-the-children-of-a-hierarchical-type) - This configuration allows the reordering of the child types in the contains column of hierarchical types with two or more children.

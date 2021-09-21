@@ -26,7 +26,7 @@ export async function BrowserNavigate(url: string): Promise<void> {
 }
 
 export async function BrowserExecuteScript(script: string): Promise<void> {
-    return await browser.executeScript(script);
+    return await browser.executeScript<void>(script);
 }
 
 export async function BrowserWaitForAngularEnabled(enabled: boolean): Promise<boolean> {

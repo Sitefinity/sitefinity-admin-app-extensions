@@ -41,7 +41,6 @@ import dynamicModuleOperations from "../setup/dynamic-module-operations";
 import { generateModuleMock, generateDynamicItemMock, includeInSiteMock } from "../setup/module-mock";
 import { setTypeNamePlural } from "../helpers/set-typename-plural";
 import { ItemDetailsMap } from "../app-elements/item-details.map";
-import { browser } from "protractor";
 
 const dynamicModuleMock = generateModuleMock();
 const dynamicTypeName = setTypeNamePlural(dynamicModuleMock.ContentTypeItemTitle).toLowerCase();

@@ -9,7 +9,8 @@ import {
     BrowserWaitForElementToBeClickable,
     BrowserGetUrl,
     BrowserExecuteScript,
-    BrowserWaitForAngularEnabled
+    BrowserWaitForAngularEnabled,
+    BrowserWaitForUrl
 } from "../helpers/browser-helpers";
 import {
     USERNAME,
@@ -77,8 +78,7 @@ describe("Verify protected route", () => {
 
         await BrowserWaitForAngularEnabled(false);
         await BrowserNavigate(PRINT_PREVIEW_URL);
-        const currentUrl = await BrowserGetUrl();
-        expect(currentUrl).toContain("/Sitefinity/Login");
+        await BrowserWaitForUrl("/Sitefinity/Login");
     });
 });
 

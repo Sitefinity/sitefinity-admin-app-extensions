@@ -17,6 +17,10 @@ export async function BrowserWaitForElementHidden(element: ElementFinder) {
     await browser.wait(EC.not(EC.visibilityOf(element)), TIME_TO_WAIT, "Element is visible, but should not be. Locator used - " + element.locator());
 }
 
+export async function BrowserWaitForUrl(url: string) {
+    await browser.wait(EC.urlContains(url), TIME_TO_WAIT, "Url does not contain substring - " + url);
+}
+
 export async function BrowserGetUrl(): Promise<string> {
     return await browser.getCurrentUrl();
 }

@@ -13,6 +13,10 @@ export async function BrowserWaitForTextToBePresent(element: ElementFinder, text
     await browser.wait(EC.textToBePresentInElement(element, text), TIME_TO_WAIT, `Text '${text}' was not present. Locator used - ${element.locator()}`);
 }
 
+export async function BrowserWaitForTextToBeHidden(element: ElementFinder, text: string) {
+    await browser.wait(EC.not(EC.textToBePresentInElement(element, text)), TIME_TO_WAIT, `Text '${text}' was present. Locator used - ${element.locator()}`);
+}
+
 export async function BrowserWaitForElementHidden(element: ElementFinder) {
     await browser.wait(EC.not(EC.visibilityOf(element)), TIME_TO_WAIT, "Element is visible, but should not be. Locator used - " + element.locator());
 }

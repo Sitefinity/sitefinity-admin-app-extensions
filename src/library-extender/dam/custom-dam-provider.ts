@@ -1,9 +1,10 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { DamProviderBase, DAM_PROVIDER_TOKEN, EntityData } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-asset";
 
 declare var cloudinary: any;
 
-const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded. Contact your administrator.";
+const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
 const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
 
 @Injectable()
@@ -18,6 +19,8 @@ class CustomDamProvider extends DamProviderBase {
             return;
         }
 
+        alert("load custom dam provider wowowo");
+
         this.loadDynamicScript(this.getPropertyValue("ScriptUrl")).subscribe(() => {
             if (typeof cloudinary === "undefined") {
                 this.error(CUSTOM_MEDIA_CANNOT_BE_LOADED);
@@ -31,20 +34,12 @@ class CustomDamProvider extends DamProviderBase {
                 inline_container: `.${damWrapper.className.replace(/\s/g, ".")}`,
                 remove_header: true,
                 integration: {
-                    type: "progress_sitefinity_connector",
-                    platform: "Sitefinity",
+                    type: "custom_progress_sitefinity_connector_for_frontify",
+                    platform: "admin app extensions",
                     version: "1.0",
                     environment: null
                 }
             };
-            const mediaEntity = mediaEntityData.metadata as any;
-            if (mediaEntity.acceptableFileTypes && mediaEntity.acceptableFileTypes.length) {
-                config = Object.assign(config, {
-                    search: {
-                        expression: mediaEntity.acceptableFileTypes.map(x => `format=${x}`).join(" OR ")
-                    }
-                });
-            }
 
             const handlers = {
                 insertHandler: this.insertHandler.bind(this),
@@ -64,10 +59,10 @@ class CustomDamProvider extends DamProviderBase {
 
     private insertHandler(data): void {
         this.mediaSelected();
-        const damAssets: any[] = [];
+        const damAssets: DamAsset[] = [];
         if (data.assets) {
             data.assets.forEach(asset => {
-                const damAsset: any = this.getDamAsset(asset);
+                const damAsset: DamAsset = this.getDamAsset(asset);
 
                 damAssets.push(damAsset);
             });
@@ -101,7 +96,7 @@ class CustomDamProvider extends DamProviderBase {
         return true;
     }
 
-    private getDamAsset(asset: any): any {
+    private getDamAsset(asset: any): DamAsset {
         const slashIndex = asset.public_id.lastIndexOf("/");
         let title = asset.public_id.substring(slashIndex + 1);
         const dotIndex = title.indexOf(".");
@@ -110,7 +105,7 @@ class CustomDamProvider extends DamProviderBase {
             title = title.substring(0, dotIndex);
         }
 
-        const damAsset: any = {
+        const damAsset: DamAsset = {
             id: asset.public_id,
             title: title,
             mimeType: null,
@@ -124,7 +119,6 @@ class CustomDamProvider extends DamProviderBase {
         return damAsset;
     }
 }
-
 
 export const CUSTOM_DAM_PROVIDER: ClassProvider = {
     multi: true,

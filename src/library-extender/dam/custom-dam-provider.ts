@@ -5,29 +5,32 @@ import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-a
 declare var cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
-const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
+const CUSTOM_PROVIDER_TYPE_NAME = "CustomCloudinaryBlobStorageProvider";
 
+// example implementation for custom provider based on Cloudinary
 @Injectable()
 class CustomDamProvider extends DamProviderBase {
     isSupported(providerTypeName: string): boolean {
+        // validate the configured provider name equals with the custom implemented
         return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
     }
 
     loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMultiSelect: boolean): void {
+        // first validate the settings coming from the server
         if (!this.areSettingsPropertiesValid()) {
             this.error(CUSTOM_MEDIA_CANNOT_BE_LOADED);
             return;
         }
 
-        alert("load custom dam provider wowowo");
-
         this.loadDynamicScript(this.getPropertyValue("ScriptUrl")).subscribe(() => {
+            // if script is loaded successfully 'cloudinary' variable must be initialized
             if (typeof cloudinary === "undefined") {
                 this.error(CUSTOM_MEDIA_CANNOT_BE_LOADED);
                 return;
             }
 
-            let config = {
+            // create configuration specific for Cloudinary
+            const config = {
                 cloud_name: this.getPropertyValue("CloudName"),
                 api_key: this.getPropertyValue("ApiKey"),
                 multiple: allowMultiSelect,
@@ -47,8 +50,8 @@ class CustomDamProvider extends DamProviderBase {
             };
 
             try {
-                const mediaLibrary = cloudinary.createMediaLibrary(config, handlers);
-                mediaLibrary.show(config);
+                // instantiate and open widget
+                cloudinary.openMediaLibrary(config, handlers);
             } catch (error) {
                 this.error(error);
             }
@@ -62,11 +65,12 @@ class CustomDamProvider extends DamProviderBase {
         const damAssets: DamAsset[] = [];
         if (data.assets) {
             data.assets.forEach(asset => {
+                // convert selected DAM assets to DamAsset interface
                 const damAsset: DamAsset = this.getDamAsset(asset);
-
                 damAssets.push(damAsset);
             });
 
+            // pass converted assets to base class
             this.assetsSelected(damAssets);
         } else {
             this.error("FAILED_TO_INSERT_MEDIA_ASSET");

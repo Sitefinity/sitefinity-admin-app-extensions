@@ -4,7 +4,8 @@
 
 You can add custom DAM providers if the one you are using is not supported by default from Sitefinity - Frontify and Cloudinary.
     
-    Note: There must be only one enabled DAM provider on the server - In your case ths should be the server-side implementation of your custom DAM provider.
+    Note: There must be only one enabled DAM provider on the server - 
+          In your case ths should be the server-side implementation of your custom DAM provider.
 
 In order to register new provider you need to create new class which extends **DamProviderBase**.
 ```typescript
@@ -29,14 +30,14 @@ class CustomDamProvider extends DamProviderBase {
 }    
 ```
 There are two abstract methods that need to be implemented because they are specific for each provider:
-* #### isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
+* isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
 ```typescript
 isSupported(providerTypeName: string): boolean {
 	return providerTypeName === "CustomProviderName";
 }
 ```
-* #### loadMediaSelector - Use this method to instantiate the widget which is used to select and import asses from your DAM.
-It must convert all selected assets to a specific interface **DamAsset**, add them to an array and call __assetsSelected__ method of the base class.
+* loadMediaSelector - Use this method to instantiate the widget which is used to select and import asses from your DAM.
+It must call **loadDynamicScript** to embed the script of the DAM's widget into the page in order to open it. After script is loaded use the API of the DAM to create instance of the widget and open it. Attatch to the handler for inserting assets and convert all selected to the specific interface **DamAsset**. Add them to an array and call __assetsSelected__ method of the base class.
 ```typescript
 loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMultiSelect: boolean): void {
     if (!this.areSettingsPropertiesValid()) {

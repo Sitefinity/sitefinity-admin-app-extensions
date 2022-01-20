@@ -7,15 +7,13 @@ You can add custom DAM providers if the one you are using is not supported by de
 
 In order to register new provider you need to create new provider which extends **DamProviderBase**.
 There are two abstract methods that need to be implemented because they are specific for each provider:
-#### isSupported
-Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
+* #### isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
 ```javascript
 isSupported(providerTypeName: string): boolean {
 	return providerTypeName === "CustomProviderName";
 }
 ```
-#### loadMediaSelector
-Use this method to instantiate the widget which is used to select and import asses from your DAM.
+* #### loadMediaSelector - Use this method to instantiate the widget which is used to select and import asses from your DAM.
 It must convert all selected assets to a specific interface **DamAsset**, add them to an array and call __assetsSelected__ method of the base class.
 ```javascript
 loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMultiSelect: boolean): void {

@@ -10,13 +10,12 @@ You can add custom DAM providers if the one you are using is not supported by de
 In order to register new provider you need to create new class which extends **DamProviderBase**.
 ```typescript
 import { ClassProvider, Injectable } from "@angular/core";
-import { DamProviderBase, DAM_PROVIDER_TOKEN, EntityData } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
-import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-asset";
+import { EntityData, DamAsset, DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 declare var cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
-const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
+const CUSTOM_PROVIDER_TYPE_NAME = "CustomCloudinaryBlobStorageProvider";
 
 @Injectable()
 class CustomDamProvider extends DamProviderBase {
@@ -33,7 +32,7 @@ There are two abstract methods that need to be implemented because they are spec
 * isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
 ```typescript
 isSupported(providerTypeName: string): boolean {
-	return providerTypeName === "CustomProviderName";
+	return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
 }
 ```
 * loadMediaSelector - Use this method to instantiate the widget which is used to select and import asses from your DAM.

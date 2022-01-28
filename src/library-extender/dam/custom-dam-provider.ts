@@ -1,6 +1,5 @@
 import { ClassProvider, Injectable } from "@angular/core";
-import { DamProviderBase, DAM_PROVIDER_TOKEN, EntityData } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
-import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-asset";
+import { EntityData, DamAsset, DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 declare var cloudinary: any;
 
@@ -9,7 +8,7 @@ const CUSTOM_PROVIDER_TYPE_NAME = "CustomCloudinaryBlobStorageProvider";
 
 // example implementation for custom provider based on Cloudinary
 @Injectable()
-class CustomDamProvider extends DamProviderBase {
+ class CustomDamProvider extends DamProviderBase {
     isSupported(providerTypeName: string): boolean {
         // validate the configured provider name equals with the custom implemented
         return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
@@ -110,7 +109,6 @@ class CustomDamProvider extends DamProviderBase {
         }
 
         const damAsset: DamAsset = {
-            id: asset.public_id,
             title: title,
             mimeType: null,
             extension: `.${asset.format}`,

@@ -1,14 +1,18 @@
-import { ClassProvider, Injectable } from "@angular/core";
+import { ClassProvider, Injectable, NgZone } from "@angular/core";
 import { EntityData, DamAsset, DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 declare var cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
-const CUSTOM_PROVIDER_TYPE_NAME = "CustomCloudinaryBlobStorageProvider";
+const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
 
 // example implementation for custom provider based on Cloudinary
 @Injectable()
  class CustomDamProvider extends DamProviderBase {
+    constructor(zone: NgZone) {
+        super(zone);
+    }
+
     isSupported(providerTypeName: string): boolean {
         // validate the configured provider name equals with the custom implemented
         return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
@@ -36,7 +40,7 @@ const CUSTOM_PROVIDER_TYPE_NAME = "CustomCloudinaryBlobStorageProvider";
                 inline_container: `.${damWrapper.className.replace(/\s/g, ".")}`,
                 remove_header: true,
                 integration: {
-                    type: "custom_progress_sitefinity_connector_for_frontify",
+                    type: "custom_progress_sitefinity_connector_for_cloudinary",
                     platform: "admin app extensions",
                     version: "1.0",
                     environment: null

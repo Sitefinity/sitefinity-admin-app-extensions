@@ -5,6 +5,8 @@ declare var cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
 const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
+const CLOUDINARY_ID_QUERY_PARAM = "sf_cl_id";
+const CLOUDINARY_VERSION_QUERY_PARAM = "sf_cl_version";
 
 // example implementation for custom provider based on Cloudinary
 @Injectable()
@@ -106,23 +108,47 @@ const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
     private getDamAsset(asset: any): DamAsset {
         const slashIndex = asset.public_id.lastIndexOf("/");
         let title = asset.public_id.substring(slashIndex + 1);
-        const dotIndex = title.indexOf(".");
-        if (dotIndex > - 1) {
-            asset.format = asset.format ?? title.substring(dotIndex + 1);
-            title = title.substring(0, dotIndex);
+        asset.format = asset.format || this.getExtensionFromFileName(title);
+        title = this.getFileNameWithoutExtension(title);
+
+        let url: string = asset.secure_url;
+        if (asset.derived && asset.derived.length) {
+            url = asset.derived[0].secure_url;
+            asset.format = this.getExtensionFromFileName(url) || asset.format;
         }
+
+        const appendSymbol = url.indexOf("?") === -1 ? "?" : "&";
+        url += `${appendSymbol}${CLOUDINARY_ID_QUERY_PARAM}=${asset.public_id}&${CLOUDINARY_VERSION_QUERY_PARAM}=${asset.version}`;
 
         const damAsset: DamAsset = {
             title: title,
             mimeType: null,
             extension: `.${asset.format}`,
-            width: parseInt(asset.width) || null,
-            height: parseInt(asset.height) || null,
-            size: parseInt(asset.bytes),
-            url: asset.secure_url
+            width: Math.floor(asset.width) || null,
+            height: Math.floor(asset.height) || null,
+            size: Math.floor(asset.bytes),
+            url: url
         };
 
         return damAsset;
+    }
+
+    private getExtensionFromFileName(fileName: string): string {
+        const nameArray = fileName.split(".");
+        if (nameArray.length > 1) {
+            return nameArray.pop();
+        }
+
+        return "";
+    }
+
+    private getFileNameWithoutExtension(fileName: string): string {
+        const nameArray = fileName.split(".");
+        if (nameArray && nameArray.length) {
+            return nameArray[0];
+        }
+
+        return fileName;
     }
 }
 

@@ -1,5 +1,5 @@
 import { ClassProvider, Injectable } from "@angular/core";
-import { SystemNotificationIconProvider, SYSTEM_NOTIFICATION_ICON_TOKEN } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { SystemNotificationIconProvider, SYSTEM_NOTIFICATION_ICON_TOKEN, SYSTEM_NOTIFICATION_KEYS } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 
 const DEFAULT_ICON = "check";
 const FIRST_CUSTOM_ICON = "user";
@@ -16,7 +16,7 @@ export class CustomSystemNotificationIconProvider implements SystemNotificationI
             case "video-published":
                 return VIDEO_PUBLISHED_ICON;
             // override the default form resoinse notification icon
-            case "subscribed-responses":
+            case SYSTEM_NOTIFICATION_KEYS.FORM_RESPONSE:
                 return NEW_FORM_RESPONSE_ICON;
             // override the default icon
             default:

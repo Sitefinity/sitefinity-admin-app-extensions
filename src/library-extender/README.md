@@ -3,8 +3,8 @@
 > IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
 You can add custom DAM providers if the one you are using is not supported by default from Sitefinity - Frontify and Cloudinary.
-    
-    Note: There must be only one enabled DAM provider on the server - 
+
+    Note: There must be only one enabled DAM provider on the server -
           In your case ths should be the server-side implementation of your custom DAM provider.
 
 In order to register new provider you need to create new class which extends **DamProviderBase**.
@@ -22,14 +22,14 @@ class CustomDamProvider extends DamProviderBase {
     isSupported(providerTypeName: string): boolean {
         ...
     }
-    
+
     loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMultiSelect: boolean): void {
         ...
     }
-}    
+}
 ```
 There are two abstract methods that need to be implemented because they are specific for each provider:
-* isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the provider which is defined server-side.
+* isSupported - Use this method to determine if your provider supports the one that is enabled on the server. As parameter it receives the name of the Provider Type. You can name the provider anyway you want, what matters is the name of the Class on the server.
 ```typescript
 isSupported(providerTypeName: string): boolean {
 	return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
@@ -57,7 +57,7 @@ loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMul
             inline_container: `.${damWrapper.className.replace(/\s/g, ".")}`,
             remove_header: true,
             integration: {
-                type: "custom_progress_sitefinity_connector_for_frontify",
+                type: "custom_progress_sitefinity_connector_for_cloudinary",
                 platform: "admin app extensions",
                 version: "1.0",
                 environment: null

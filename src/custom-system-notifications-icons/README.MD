@@ -1,8 +1,8 @@
-# Custom notification icon
+# Custom system notification icon
 
 ## Implementation
 
-Each system notification coming from Sitefinity has a property **NotificationKey**. This property is used to build the class of the icon for the specific notification. Whether you create your own custom notifications, or you are working with the ones already registered in Sitefinity, you can interact with this property to change the icon of the notification.
+Each system notification coming from Sitefinity has a property **NotificationKey**. This property is used to build the class of the icon for the specific notification. Whether you create your own custom notifications, or you are working with the ones already registered in Sitefinity, you can use this property, and depending on its value, change the icon of the notification.
 
 In order to do that, you have to register your own notification icon provider by inheriting from the **SystemNotificationIconProvider**. This will force you to implement the `parseIcon()` method, which will actually build the icon class, depending on the **NotificationKey**.
 
@@ -14,7 +14,7 @@ In order to do that, you have to register your own notification icon provider by
     const NEW_FORM_RESPONSE_ICON = "form-response";
 
 	@Injectable()
-	export class CustomNotificationIconProvider implements SystemNotificationIconProvider {
+	export class CustomSystemNotificationIconProvider implements SystemNotificationIconProvider {
 		parseIcon(key: string): string {
 			switch (key) {
 				// custom icons
@@ -32,7 +32,7 @@ In order to do that, you have to register your own notification icon provider by
 		}
 	}
 
-In the above example, the key argument, passed to the `parseIcon()` function is the **NotificationKey**, coming from Sitefinity. Here are covered the following scenarios: 
+In the above example, **"check"**, **"user"** and **"film"** are font awesome icons. The **key** argument, passed to the `parseIcon()` function is the **NotificationKey**, coming from Sitefinity. Here are covered the following scenarios: 
 
 1. The first two cases will be handled if you have declared custom notification with keys "user-created" or "video-published".
 2. The "subscribed-responses" is actually the default **NotificationKey** in Sitefinity, for form responses. So, in this case you can override its default icon class.

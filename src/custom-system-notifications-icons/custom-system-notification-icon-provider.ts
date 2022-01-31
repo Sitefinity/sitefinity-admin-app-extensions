@@ -7,7 +7,7 @@ const VIDEO_PUBLISHED_ICON = "film";
 const NEW_FORM_RESPONSE_ICON = "form-response";
 
 @Injectable()
-export class CustomNotificationIconProvider implements SystemNotificationIconProvider {
+export class CustomSystemNotificationIconProvider implements SystemNotificationIconProvider {
     parseIcon(key: string): string {
         switch (key) {
             // custom icons
@@ -25,8 +25,8 @@ export class CustomNotificationIconProvider implements SystemNotificationIconPro
     }
 }
 
-export const CUSTOM_NOTIFICATION_ICON_PROVIDER: ClassProvider = {
+export const CUSTOM_SYSTEM_NOTIFICATION_ICON_PROVIDER: ClassProvider = {
     multi: true,
     provide: SYSTEM_NOTIFICATION_ICON_TOKEN,
-    useClass: CustomNotificationIconProvider
+    useClass: CustomSystemNotificationIconProvider
 };

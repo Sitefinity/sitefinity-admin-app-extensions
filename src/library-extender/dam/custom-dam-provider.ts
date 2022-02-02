@@ -4,20 +4,20 @@ import { EntityData, DamAsset, DamProviderBase, DAM_PROVIDER_TOKEN  } from "@pro
 declare var cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
-const CUSTOM_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
+const CLOUDINARY_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";
 const CLOUDINARY_ID_QUERY_PARAM = "sf_cl_id";
 const CLOUDINARY_VERSION_QUERY_PARAM = "sf_cl_version";
 
 // example implementation for custom provider based on Cloudinary
 @Injectable()
- class CustomDamProvider extends DamProviderBase {
+ class CustomCloudinaryDamProvider extends DamProviderBase {
     constructor(zone: NgZone) {
         super(zone);
     }
 
     isSupported(providerTypeName: string): boolean {
         // validate the configured provider name equals with the custom implemented
-        return providerTypeName === CUSTOM_PROVIDER_TYPE_NAME;
+        return providerTypeName === CLOUDINARY_PROVIDER_TYPE_NAME;
     }
 
     loadMediaSelector(damWrapper: HTMLElement, mediaEntityData: EntityData, allowMultiSelect: boolean): void {
@@ -152,8 +152,8 @@ const CLOUDINARY_VERSION_QUERY_PARAM = "sf_cl_version";
     }
 }
 
-export const CUSTOM_DAM_PROVIDER: ClassProvider = {
+export const CUSTOM_CLOUDINARY_DAM_PROVIDER: ClassProvider = {
     multi: true,
     provide: DAM_PROVIDER_TOKEN,
-    useClass: CustomDamProvider
+    useClass: CustomCloudinaryDamProvider
 };

@@ -2,10 +2,12 @@
 
 > IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
-You can add custom DAM providers if the one you are using is not supported by default from Sitefinity - Frontify and Cloudinary.
+You can add custom DAM providers in case you are using DAM which is not supported from Sitefinity by default.
+
+If you prefer your custom implementation for any of the DAM providers which is supported by default just make sure that it's _isSupported_ method returns **true** for that _providerTypeName_ e.g. `return providerTypeName === "CloudinaryBlobStorageProvider";`.
 
     Note: There must be only one enabled DAM provider on the server -
-          In your case ths should be the server-side implementation of your custom DAM provider.
+          In your case this should be the server-side implementation of your custom DAM provider.
 
 In order to register new provider you need to create new class which extends **DamProviderBase**.
 ```typescript

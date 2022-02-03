@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CUSTOM_CLOUDINARY_DAM_PROVIDER } from "./dam/custom-dam-provider";
+import { CUSTOM_CLOUDINARY_DAM_PROVIDER } from "./dam/custom-cloudinary-dam-provider";
 
 /**
  * The Lib extender module.

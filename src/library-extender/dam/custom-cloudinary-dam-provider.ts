@@ -1,5 +1,6 @@
 import { ClassProvider, Injectable, NgZone } from "@angular/core";
-import { DamAsset, DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-asset";
 import { EntityData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/metadata/entity-data";
 
 declare var cloudinary: any;

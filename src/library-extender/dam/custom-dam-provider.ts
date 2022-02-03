@@ -83,10 +83,6 @@ const CLOUDINARY_VERSION_QUERY_PARAM = "sf_cl_version";
     }
 
     private areSettingsPropertiesValid(): boolean {
-        if (!this.settings) {
-            return false;
-        }
-
         const cloudName = this.getPropertyValue("CloudName");
         if (!cloudName) {
             return false;

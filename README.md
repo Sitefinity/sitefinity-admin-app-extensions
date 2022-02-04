@@ -1,16 +1,17 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
-#### Table of content
+## Table of content
+
 * [Overview](#overview)
 * [Backward compatibility](#backward-compatibility)
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)
 * [Configure Sitefinity CMS for development of custom extensions](#configure-sitefinity-cms-for-development-of-custom-extensions)
-   * [STS configuration](#sts-configuration)
-   * [Web service configuration](#web-service-configuration)
+  * [STS configuration](#sts-configuration)
+  * [Web service configuration](#web-service-configuration)
 * [Development and extensibility](#development-and-extensibility)
-   * [NgModules](#ngmodules)
-   * [Dependency injection mechanism](#dependency-injection-mechanism)
+  * [NgModules](#ngmodules)
+  * [Dependency injection mechanism](#dependency-injection-mechanism)
 * [Debugging](#debugging)
 * [Deployment](#deployment)
 * [Minification](#minification)

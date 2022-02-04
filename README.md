@@ -1,16 +1,17 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
-#### Table of content
+## Table of content
+
 * [Overview](#overview)
 * [Backward compatibility](#backward-compatibility)
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)
 * [Configure Sitefinity CMS for development of custom extensions](#configure-sitefinity-cms-for-development-of-custom-extensions)
-   * [STS configuration](#sts-configuration)
-   * [Web service configuration](#web-service-configuration)
+  * [STS configuration](#sts-configuration)
+  * [Web service configuration](#web-service-configuration)
 * [Development and extensibility](#development-and-extensibility)
-   * [NgModules](#ngmodules)
-   * [Dependency injection mechanism](#dependency-injection-mechanism)
+  * [NgModules](#ngmodules)
+  * [Dependency injection mechanism](#dependency-injection-mechanism)
 * [Debugging](#debugging)
 * [Deployment](#deployment)
 * [Minification](#minification)
@@ -230,6 +231,8 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
 * [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
+
+* [Custom system notifications icons](./src/custom-system-notifications-icons) - This extension is used to generate css class that can be used to style a system notification icon. If you have some custom system notifications you can use this extension to create your own icon, instead of using the default one. You can also use it to override the already available icons in the system.
 
 * [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 

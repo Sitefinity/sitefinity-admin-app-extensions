@@ -231,7 +231,10 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
 
+* [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
+
 ### Modifications done in the config.json
+
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 
 * [Sections menu](./src/sections-menu#extending-sections-menu-functionality-in-adminapp) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.

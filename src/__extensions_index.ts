@@ -8,8 +8,6 @@ import { SitefinityExtensionStore } from "@progress/sitefinity-adminapp-sdk/app/
 import { FieldsChangeModule } from "./fields-change";
 import { WidgetEditorExtenderModule } from "./widget-editor";
 import { RelatedDateExtenderModule } from "./tree/related-data";
-import { SystemNotificationsIconsExtenderModule } from "./custom-system-notifications-icons";
-import { LibraryExtenderModule } from "./library-extender";
 
 declare var sitefinityExtensionsStore: SitefinityExtensionStore;
 
@@ -22,5 +20,3 @@ sitefinityExtensionsStore.addExtensionModule(ThemeModule);
 sitefinityExtensionsStore.addExtensionModule(FieldsChangeModule);
 sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(RelatedDateExtenderModule);
-sitefinityExtensionsStore.addExtensionModule(SystemNotificationsIconsExtenderModule);
-sitefinityExtensionsStore.addExtensionModule(LibraryExtenderModule);

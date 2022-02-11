@@ -232,10 +232,6 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
 
-* [Custom system notifications icons](./src/custom-system-notifications-icons) - This extension is used to generate css class that can be used to style a system notification icon. If you have some custom system notifications you can use this extension to create your own icon, instead of using the default one. You can also use it to override the already available icons in the system.
-
-* [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
-
 ### Modifications done in the config.json
 
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.

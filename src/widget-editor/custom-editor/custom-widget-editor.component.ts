@@ -35,9 +35,7 @@ export class CustomWidgetEditorComponent implements WidgetEditor {
         });
     }
     actionExecuting(context: ActionContext): Observable<void> {
-        return new Observable((subscriber) => {
-            subscriber.next();
-        });
+        return of(null);
     }
     getModifiedProperties(): PropertyData[] {
         const parsedObject = JSON.parse(this.propertiesValue);

@@ -8,6 +8,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,

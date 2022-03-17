@@ -1,16 +1,17 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
-#### Table of content
+## Table of content
+
 * [Overview](#overview)
 * [Backward compatibility](#backward-compatibility)
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)
 * [Configure Sitefinity CMS for development of custom extensions](#configure-sitefinity-cms-for-development-of-custom-extensions)
-   * [STS configuration](#sts-configuration)
-   * [Web service configuration](#web-service-configuration)
+  * [STS configuration](#sts-configuration)
+  * [Web service configuration](#web-service-configuration)
 * [Development and extensibility](#development-and-extensibility)
-   * [NgModules](#ngmodules)
-   * [Dependency injection mechanism](#dependency-injection-mechanism)
+  * [NgModules](#ngmodules)
+  * [Dependency injection mechanism](#dependency-injection-mechanism)
 * [Debugging](#debugging)
 * [Deployment](#deployment)
 * [Minification](#minification)
@@ -35,7 +36,7 @@ Before you start developing make sure to checkout the tag corresponding to your 
 
 ## Prerequisites
 
-Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node versions [10x - 12x].
+Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node versions [12x].
 
 ## Quick start
 
@@ -83,7 +84,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 ## Configure Sitefinity CMS for development of custom extensions
 
-To enable Sitefinity CMS to recognize and allow working with the Admin App, you need to configure the following:
+To enable Sitefinity CMS to recognize and allow working with the Admin App, you need to configure the following: 
 
 ### STS configuration
 
@@ -231,7 +232,12 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
 
+* [Custom system notifications icons](./src/custom-system-notifications-icons) - This extension is used to generate css class that can be used to style a system notification icon. If you have some custom system notifications you can use this extension to create your own icon, instead of using the default one. You can also use it to override the already available icons in the system.
+
+* [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
+
 ### Modifications done in the config.json
+
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 
 * [Sections menu](./src/sections-menu#extending-sections-menu-functionality-in-adminapp) - By default the sections menu in the item edit screen is visible only when there are 5 or more field sections. You can control this behavior by changing the number of sections needed for the menu to be visible.

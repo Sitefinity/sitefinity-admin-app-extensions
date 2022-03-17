@@ -10,6 +10,8 @@ import { CUSTOM_COMMANDS_FILTER } from "./commands-filter";
 import { ListSelectedItemsCommand } from "./list-selected-items.command";
 import { NotificationCommand } from "./notification.command";
 
+import { AuthGuard, ConfigurationGuard } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+
 /**
  * The command extender module.
  */
@@ -28,7 +30,7 @@ import { NotificationCommand } from "./notification.command";
         NotificationCommand
     ],
     imports: [
-        RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent }]),
+        RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent, canActivate: [ConfigurationGuard, AuthGuard] }]),
         CommonModule,
         HttpClientModule
     ]

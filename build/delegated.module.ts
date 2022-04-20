@@ -1,9 +1,12 @@
+import DelegatedModule from "webpack/lib/DelegatedModule";
+import { RawSource } from "webpack-sources";
+import WebpackMissingModule from "./webpack-missing.module";
 
-var DelegateModuleWebPack = require("webpack/lib/DelegatedModule");
-var RawSource = require("webpack-sources").RawSource;
-var WebpackMissingModule = require("webpack/lib/dependencies/WebpackMissingModule");
-
-class DelegatedModule extends DelegateModuleWebPack {
+export default class DelegatedModuleCustom extends DelegatedModule {
+    request: any;
+    originalRequest: any;
+    dependencies: any;
+    userRequest: any;
     constructor(sourceRequest, request, userRequest, type) {
         super(sourceRequest, request, type, userRequest);
         this.request = request;
@@ -14,10 +17,10 @@ class DelegatedModule extends DelegateModuleWebPack {
             return null;
         }
 
-		return typeof this.originalRequest === "string"
-			? this.originalRequest
-			: this.originalRequest.libIdent(options);
-	}
+        return typeof this.originalRequest === "string"
+            ? this.originalRequest
+            : this.originalRequest.libIdent(options);
+    }
 
     source() {
         var sourceModule = this.dependencies[0].module;
@@ -30,6 +33,7 @@ class DelegatedModule extends DelegateModuleWebPack {
         return new RawSource(str);
     }
 
+    sourceRequest(sourceRequest: any): any {
+        throw new Error("Method not implemented.");
+    }
 }
-
-module.exports = DelegatedModule;

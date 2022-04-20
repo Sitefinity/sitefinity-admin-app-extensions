@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/internal/operators/map";
 
 // Get a collection with images in base64 format from image-data.json file
-import * as imageData from "./image-data.json";
+import imageData from "./image-data.json";
 
 /**
  * A custom component to be displayed in each cell in a specific column in the grid.
@@ -33,7 +33,7 @@ export class ImageComponent implements OnInit, DataContextComponent {
 
         // To display a related image comment the line above and uncomment the line below.
         // NOTE: relatedImageFieldName variable should be assigned by the name of the related image field
-        // this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource);
+        this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource);
     }
 
     /**

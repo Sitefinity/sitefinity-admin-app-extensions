@@ -1,7 +1,11 @@
-import { Configuration, ContextReplacementPlugin } from "webpack";
-import ImportPlugin = require("./import.plugin");
+import { Configuration, ContextReplacementPlugin, RuleSetRule } from "webpack";
+import ImportPlugin from "./import.plugin";
 
-export default function (config: Configuration) {
+declare var __webpack_hash__: any;
+
+export default (
+    config: Configuration
+) => {
     const mainBundlePath = config.entry["main"];
 
     config.entry = {
@@ -16,15 +20,30 @@ export default function (config: Configuration) {
         })
     ]);
 
+    config.optimization.minimize = false;
+    config.optimization.minimizer = [];
+    config.optimization.chunkIds = "natural";
+    config.optimization.splitChunks = {
+        cacheGroups: {
+            default: false
+        }
+    }
+
     config.optimization.moduleIds = "natural";
-    config.module.rules = config.module.rules.filter(x => !x.test.toString().includes(".css"));
+    config.optimization.runtimeChunk = false;
+
+    config.module.rules = config.module.rules.filter(x => !(x as RuleSetRule).test.toString().includes("css"));
     config.module.rules.push({
-        test: /\.css$/,
-        use: [ "css-to-string-loader", "css-loader" ]
+        test: /\.css$/i,
+        use: [
+            "style-loader",
+            "css-loader"
+        ],
     });
 
     if (config["devServer"]) {
         config["devServer"].historyApiFallback = true;
+        config["devServer"].hot = false;
     }
 
     return config;

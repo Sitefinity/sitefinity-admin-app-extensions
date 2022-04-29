@@ -1,15 +1,19 @@
 import DelegatedModule from "webpack/lib/DelegatedModule";
 import { RawSource } from "webpack-sources";
 import WebpackMissingModule from "./webpack-missing.module";
+import { Compilation } from "webpack";
 
 export default class DelegatedModuleCustom extends DelegatedModule {
     request: any;
     originalRequest: any;
     dependencies: any;
     userRequest: any;
-    constructor(sourceRequest, request, userRequest, type) {
+    webpackCompilation: Compilation;
+
+    constructor(sourceRequest, request, type, userRequest, webpackCompilation) {
         super(sourceRequest, request, type, userRequest);
         this.request = request;
+        this.webpackCompilation = webpackCompilation;
     }
 
     libIdent(options) {
@@ -22,15 +26,24 @@ export default class DelegatedModuleCustom extends DelegatedModule {
             : this.originalRequest.libIdent(options);
     }
 
-    source() {
-        var sourceModule = this.dependencies[0].module;
-        var str;
+    codeGeneration() {
+        const sourceModule = this.webpackCompilation.moduleGraph.getModule(this.dependencies[0])
+        let str;
         if (!sourceModule) {
             str = WebpackMissingModule.moduleCode(this.sourceRequest);
         } else {
             str = `module.exports = __iris_require__('${this.userRequest}')`;
         }
-        return new RawSource(str);
+        const sources = new Map();
+        sources.set("javascript", new RawSource(str));
+        const runtimeRequirements = new Set([
+            "module",
+            "__iris_require__"
+        ]);
+        return {
+            sources,
+            runtimeRequirements
+        }
     }
 
     sourceRequest(sourceRequest: any): any {

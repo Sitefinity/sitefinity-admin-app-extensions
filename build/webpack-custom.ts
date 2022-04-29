@@ -12,22 +12,26 @@ export default (
         "sample.extensions.bundle": mainBundlePath
     };
 
-    config.plugins.push(...[
+    config.plugins.push(
         new ContextReplacementPlugin(/angular(\\|\/)core/, __dirname, {}),
-        new ImportPlugin({
-            context: ".",
-            manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
-        })
-    ]);
+    );
+    config.plugins.push(new ImportPlugin({
+        context: ".",
+        manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
+    }));
+
+    // config.externals = {
+    //     adminapp: "adminapp"
+    // }
 
     config.optimization.minimize = false;
     config.optimization.minimizer = [];
-    config.optimization.chunkIds = "natural";
-    config.optimization.splitChunks = {
-        cacheGroups: {
-            default: false
-        }
-    }
+    // config.optimization.chunkIds = "natural";
+    // config.optimization.splitChunks = {
+    //     cacheGroups: {
+    //         default: false
+    //     }
+    // }
 
     config.optimization.moduleIds = "natural";
     config.optimization.runtimeChunk = false;

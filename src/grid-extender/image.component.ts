@@ -33,7 +33,7 @@ export class ImageComponent implements OnInit, DataContextComponent {
 
         // To display a related image comment the line above and uncomment the line below.
         // NOTE: relatedImageFieldName variable should be assigned by the name of the related image field
-        this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource);
+        // this.getRelatedImageSource().subscribe(imageSource => this.imageSource = imageSource);
     }
 
     /**

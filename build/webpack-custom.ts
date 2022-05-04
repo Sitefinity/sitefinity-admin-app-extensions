@@ -1,8 +1,6 @@
 import { Configuration, ContextReplacementPlugin, RuleSetRule } from "webpack";
 import ImportPlugin from "./import.plugin";
 
-declare var __webpack_hash__: any;
-
 export default (
     config: Configuration
 ) => {
@@ -20,18 +18,8 @@ export default (
         manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
     }));
 
-    // config.externals = {
-    //     adminapp: "adminapp"
-    // }
-
     config.optimization.minimize = false;
     config.optimization.minimizer = [];
-    // config.optimization.chunkIds = "natural";
-    // config.optimization.splitChunks = {
-    //     cacheGroups: {
-    //         default: false
-    //     }
-    // }
 
     config.optimization.moduleIds = "natural";
     config.optimization.runtimeChunk = false;

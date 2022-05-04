@@ -46,9 +46,7 @@ export default class ImportPlugin {
 
     apply(compiler: Compiler) {
         const pluginName = this.constructor.name;
-
-        const type = "dll-reference"
-        const source = `${type} adminapp`;
+        const source = "dll-reference adminapp";
 
         const externalsPlugin = new ExternalsPlugin("var", source)
         externalsPlugin.apply(compiler);
@@ -150,7 +148,7 @@ export default class ImportPlugin {
                     if (module.userRequest && module.userRequest.endsWith(constants.indexFileName)) {
                         compilation.chunkGraph.setModuleId(module, initialModuleId);
                     } else {
-                        compilation.chunkGraph.setModuleId(module, `${initialModuleId}_${optimizeCounter++}`)
+                        compilation.chunkGraph.setModuleId(module, `${initialModuleId}_${optimizeCounter++}`);
                     }
                 });
             });
@@ -168,7 +166,5 @@ export default class ImportPlugin {
                 });
             });
         });
-
-
     };
 }

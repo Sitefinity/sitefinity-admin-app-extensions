@@ -19,8 +19,8 @@ export class ImageComponent implements OnInit, DataContextComponent {
     // It holds metadata that includes the data item for the current row and the column model as well.
     context: DataContext;
     // Sample height of the image
-    protected imageHeight = 50;
-    protected imageSource;
+    imageHeight = 50;
+    imageSource;
 
     /**
      * Initializes a new instance of the ImageComponent.

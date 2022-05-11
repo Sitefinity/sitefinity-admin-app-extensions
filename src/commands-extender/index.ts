@@ -11,6 +11,11 @@ import { ListSelectedItemsCommand } from "./list-selected-items.command";
 import { NotificationCommand } from "./notification.command";
 
 import { AuthGuard, ConfigurationGuard } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+
+import { SfInputModule } from "@progress/sitefinity-component-framework"
+
 
 /**
  * The command extender module.
@@ -32,7 +37,10 @@ import { AuthGuard, ConfigurationGuard } from "@progress/sitefinity-adminapp-sdk
     imports: [
         RouterModule.forChild([{ path: "print-preview", component: PrintPreviewComponent, canActivate: [ConfigurationGuard, AuthGuard] }]),
         CommonModule,
-        HttpClientModule
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        SfInputModule
     ]
 })
 export class CommandsExtenderModule {

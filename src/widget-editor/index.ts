@@ -25,7 +25,7 @@ import { CustomWidgetEditorComponent } from './custom-editor/custom-widget-edito
     ],
 
     imports: [
-        FormsModule, FrameworkModule
+        FormsModule
     ]
 })
 export class WidgetEditorExtenderModule { /* empty */ }

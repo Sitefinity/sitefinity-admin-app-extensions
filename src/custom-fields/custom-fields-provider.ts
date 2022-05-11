@@ -1,13 +1,13 @@
 import { Injectable, ClassProvider } from "@angular/core";
 
-import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, SettingsBase, FieldTypes } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
+import { FIELDS_PROVIDER_TOKEN, FieldData, FieldsProvider, FieldTypes } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { FieldRegistration } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 import { RegistrationPair } from "./registration-pair";
 import { CustomInputReadonlyComponent } from "./custom-field-readonly.component";
 import { CustomInputWriteComponent } from "./custom-field-write.component";
 import { CustomShortTextSettings } from "./custom-field.settings";
-import { ArrayOfGUIDsWriteComponent } from "./array-of-guids/array-of-guids-write.component";
-import { ArrayOfGUIDsReadonlyComponent } from "./array-of-guids/array-of-guids-readonly.component";
+// import { ArrayOfGUIDsWriteComponent } from "./array-of-guids/array-of-guids-write.component";
+// import { ArrayOfGUIDsReadonlyComponent } from "./array-of-guids/array-of-guids-readonly.component";
 
 /**
  * The fields provider provides the overridden fields back to the AdminApp.
@@ -82,24 +82,24 @@ export class CustomFieldsProvider implements FieldsProvider {
         this.customFieldsMappings.push(customFieldRegistrationPair);
 
         // Registration of Array of GUIDs custom field
-        const arrayOfGUIDsKey: FieldData = {
-            fieldName: null,
-            fieldType: FieldTypes.arrayOfGUIDs,
-            typeName: null
-        };
+        // const arrayOfGUIDsKey: FieldData = {
+        //     fieldName: null,
+        //     fieldType: FieldTypes.arrayOfGUIDs,
+        //     typeName: null
+        // };
 
-        const arrayOfGUIDsRegistration: FieldRegistration = {
-            writeComponent: ArrayOfGUIDsWriteComponent,
-            readComponent: ArrayOfGUIDsReadonlyComponent,
-            settingsType: SettingsBase
-        };
+        // const arrayOfGUIDsRegistration: FieldRegistration = {
+        //     writeComponent: ArrayOfGUIDsWriteComponent,
+        //     readComponent: ArrayOfGUIDsReadonlyComponent,
+        //     settingsType: SettingsBase
+        // };
 
-        const arrayOfGUIDsRegistrationPair: RegistrationPair = {
-             key: arrayOfGUIDsKey,
-             registration: arrayOfGUIDsRegistration
-        };
+        // const arrayOfGUIDsRegistrationPair: RegistrationPair = {
+        //      key: arrayOfGUIDsKey,
+        //      registration: arrayOfGUIDsRegistration
+        // };
 
-        this.customFieldsMappings.push(arrayOfGUIDsRegistrationPair);
+        // this.customFieldsMappings.push(arrayOfGUIDsRegistrationPair);
     }
 }
 

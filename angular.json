@@ -1,5 +1,8 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "cli": {
+        "analytics": false
+    },
     "version": 1,
     "projects": {
         "extensions-cli": {
@@ -16,7 +19,8 @@
                         "index": "",
                         "main": "src/__extensions_index.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "aot": false,
+                        "aot": true,
+                        "buildOptimizer": true,
                         "extractLicenses": false,
                         "customWebpackConfig": {
                             "path": "./build/webpack-custom.ts",
@@ -44,7 +48,8 @@
                                 }
                             ]
                         }
-                    }
+                    },
+                    "defaultConfiguration": "dev"
                 },
                 "serve": {
                     "builder": "@angular-builders/custom-webpack:dev-server",

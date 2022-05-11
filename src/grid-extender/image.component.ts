@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/internal/operators/map";
 
 // Get a collection with images in base64 format from image-data.json file
-import * as imageData from "./image-data.json";
+import imageData from "./image-data.json";
 
 /**
  * A custom component to be displayed in each cell in a specific column in the grid.
@@ -19,8 +19,8 @@ export class ImageComponent implements OnInit, DataContextComponent {
     // It holds metadata that includes the data item for the current row and the column model as well.
     context: DataContext;
     // Sample height of the image
-    protected imageHeight = 50;
-    protected imageSource;
+    imageHeight = 50;
+    imageSource;
 
     /**
      * Initializes a new instance of the ImageComponent.

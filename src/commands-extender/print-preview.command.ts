@@ -11,6 +11,7 @@ import { Command, ExecutionContext } from "@progress/sitefinity-adminapp-sdk/app
 @Injectable()
 export class PrintPreviewCommand implements Command {
 
+
     /**
      * Initializes a new instance of the PrintPreviewCommand.
      * @param router The router that is used to navigate.

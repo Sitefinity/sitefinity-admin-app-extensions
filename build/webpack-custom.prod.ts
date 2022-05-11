@@ -11,7 +11,7 @@ export default function (config: Configuration) {
         parallel: false,
         terserOptions: {
             compress: {
-                global_defs: {"ngDevMode": false, "ngI18nClosureMode": false, "ngJitMode": false }
+                global_defs: {"ngDevMode": false, "ngI18nClosureMode": false, "ngJitMode": true }
             }
         }
     }));

@@ -11,6 +11,7 @@ import { delay } from "rxjs/operators";
     templateUrl: "./print-preview.component.html"
 })
 export class PrintPreviewComponent implements OnInit {
+    brat = "braaaaaaat";
 
     /**
      * The data item used in the view.

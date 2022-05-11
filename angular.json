@@ -19,8 +19,8 @@
                         "index": "",
                         "main": "src/__extensions_index.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "aot": false,
-                        "buildOptimizer": false,
+                        "aot": true,
+                        "buildOptimizer": true,
                         "extractLicenses": false,
                         "customWebpackConfig": {
                             "path": "./build/webpack-custom.ts",

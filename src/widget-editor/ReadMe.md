@@ -1,7 +1,5 @@
 # Admin App custom widget editor
 
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
-
 With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
 
 In this example we have provided two samples:
@@ -14,7 +12,7 @@ In this example we have provided two samples:
 
 The process is exactly the same as it is with overriding a field for a content type with the exception that the typeName of the item is equal to widget-{WIDGET_NAME}.
 
-The process involves registering a custom field provider class by inheriting from the [FieldsProvider provider interface](http://admin-app-extensions-docs.sitefinity.site/interfaces/fieldsprovider.html) and implementing the method ["overrideField"](http://admin-app-extensions-docs.sitefinity.site/interfaces/fieldsprovider.html#overridefield). This method is called for each and every field when it is being rendered in the interface. Thus you are able to replace each field. 
+The process involves registering a custom field provider class by inheriting from the [FieldsProvider provider interface](http://admin-app-extensions-docs.sitefinity.site/interfaces/fieldsprovider.html) and implementing the method ["overrideField"](http://admin-app-extensions-docs.sitefinity.site/interfaces/fieldsprovider.html#overridefield). This method is called for each and every field when it is being rendered in the interface. Thus you are able to replace each field.
 
  The parameter that is passed to the method contains three properties:
 

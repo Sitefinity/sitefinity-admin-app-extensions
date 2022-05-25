@@ -21,7 +21,11 @@
         "@angular/platform-browser": "11.0.3",
         "@angular/platform-browser-dynamic": "11.0.3",
         "@angular/router": "11.0.3",
+<<<<<<< HEAD
         "@progress/sitefinity-adminapp-sdk": "14.1.7823",
+=======
+        "@progress/sitefinity-adminapp-sdk": "14.1.7824",
+>>>>>>> patches
         "@types/node": "14.14.13",
         "codelyzer": "5.1.2",
         "karma": "5.2.3",

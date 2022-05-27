@@ -22,7 +22,7 @@
         "@angular/platform-browser": "13.3.3",
         "@angular/platform-browser-dynamic": "13.3.3",
         "@angular/router": "13.3.3",
-        "@progress/sitefinity-adminapp-sdk": "14.1.7823",
+        "@progress/sitefinity-adminapp-sdk": "14.1.7824",
         "@types/node": "17.0.24",
         "@types/webpack": "5.28.0",
         "css-loader": "6.7.1",

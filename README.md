@@ -84,7 +84,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 ## Configure Sitefinity CMS for development of custom extensions
 
-To enable Sitefinity CMS to recognize and allow working with the Admin App, you need to configure the following: 
+To enable Sitefinity CMS to recognize and allow working with the Admin App, you need to configure the following:
 
 ### STS configuration
 
@@ -202,8 +202,6 @@ this.http.get(url).subscribe(response => { /* do work */ });
 **NOTE**: More information on the OData web services is available in [Sitefinity's documentation](https://www.progress.com/documentation/sitefinity-cms/for-developers-client-side-programming-and-web-services). Please bear in mind that the documentation focuses more on the frontend use cases of the services, this being said the differences between the frontend and backend services is the type of access they require and the URL segments. The backend OData services require an authenticated Sitefinity backend user to access them and are located on the URL `{{ domain }}/sf/system/`, whereas the frontend services are located `{{ domain }}/api/{{ service-name }}`. While it is technically possible to use the frontend services in the backend, we strongly advice against this.
 
 ## Extensibility endpoints
-
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).

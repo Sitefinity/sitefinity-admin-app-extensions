@@ -1,11 +1,6 @@
 import { Compilation, Compiler, ExternalsPlugin, NormalModule } from "webpack";
 import DelegatedSourceDependency from "webpack/lib/dependencies/DelegatedSourceDependency";
 import DelegatedModuleCustom from "./delegated.module";
-// import DelegatedModule from "webpack/lib/DelegatedModule";
-import path from "path";
-
-const ModuleFilenameHelpers = require('webpack/lib/ModuleFilenameHelpers');
-const ExternalModule = require('webpack/lib/ExternalModule');
 
 const initialModuleId = `ext_mod_id_${Date.now()}`;
 const constants = require("./constants");
@@ -51,26 +46,8 @@ export default class ImportPlugin {
         const externalsPlugin = new ExternalsPlugin("var", source)
         externalsPlugin.apply(compiler);
 
-        // compiler.hooks.normalModuleFactory.tap(pluginName, function (nmf) {
-        //     nmf.hooks.factorize.tap(pluginName,
-        //         (data) => {
-        //             const dependency = data.dependencies[0];
-
-        //             if (source === dependency.request) {
-        //                 return new ExternalModule("adminapp", "var", source);
-        //             }
-
-        //             return undefined;
-        //         }
-        //     );
-        // });
-
         const delegatedModuleCache = {};
         let delegatedModuleCounter = 0;
-
-        // compiler.hooks.compile.tap(pluginName, (...params) => {
-        //     compilation.hooks.module
-        // });
 
         compiler.hooks.compilation.tap(pluginName, (...params) => {
             const nmf = params[1].normalModuleFactory;
@@ -79,8 +56,6 @@ export default class ImportPlugin {
             nmf.hooks.module.tap(pluginName, module => {
                 if (module) {
                     const request = module.libIdent(this.options);
-
-                    // const webpackCompilation = new Compilation(compiler, params);
 
                     const found = this.options.modules.find(x => x === request);
                     if (found) {
@@ -117,7 +92,7 @@ export default class ImportPlugin {
                     const indexOfDelimiter = originalSource.indexOf(";", indexOfExports);
 
                     const codeToInject = `arguments[1].metadata = { compatibleVersionsTags: ${JSON.stringify(this.options.compatibleVersionsTags)}, name: "${constants.extensionsKey}" };`;
-                    let modifiedSource = originalSource.slice(0, indexOfDelimiter + 1) + codeToInject + originalSource.slice(indexOfDelimiter + 1);
+                    const modifiedSource = originalSource.slice(0, indexOfDelimiter + 1) + codeToInject + originalSource.slice(indexOfDelimiter + 1);
 
                     asset.source = () => { return modifiedSource; };
 
@@ -166,5 +141,5 @@ export default class ImportPlugin {
                 });
             });
         });
-    };
+    }
 }

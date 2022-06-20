@@ -78,6 +78,7 @@ class DynamicItemIndexCommandProvider implements CommandProvider {
      * Categories are used to group similar commands in the action menu
      * @param data The data needed to determine the types of command to return and where to place them - in the list or in edit mode
      */
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     getCategories(data: CommandsData): Observable<CommandCategory[]> {
         return of([CUSTOM_CATEGORY]);
     }

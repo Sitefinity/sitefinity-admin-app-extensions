@@ -10,7 +10,7 @@ import { FieldBase } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
 export class ArrayOfGUIDsWriteComponent extends FieldBase {
     writeValue(value: any) {
         if (typeof value === "string") {
-            var arrayValue = value ? value.split(",").map(item => item.trim()) : [];
+            const arrayValue = value ? value.split(",").map(item => item.trim()) : [];
             super.writeValue(arrayValue);
         } else {
             super.writeValue(value);

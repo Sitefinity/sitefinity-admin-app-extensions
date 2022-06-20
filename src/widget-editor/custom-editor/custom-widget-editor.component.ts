@@ -26,17 +26,22 @@ export class CustomWidgetEditorComponent implements WidgetEditor {
             subscriber.next();
         });
     }
+
     setValues(propValues: Dictionary): void {
         this.propertiesValue = JSON.stringify(propValues);
     }
+
     validate(): Observable<ValidationResult> {
         return of({
             isValid: true
         });
     }
+
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     actionExecuting(context: ActionContext): Observable<void> {
         return of(null);
     }
+
     getModifiedProperties(): PropertyData[] {
         const parsedObject = JSON.parse(this.propertiesValue);
         return Object.keys(parsedObject).map((key) => {

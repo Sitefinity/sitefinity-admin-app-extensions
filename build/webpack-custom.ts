@@ -1,4 +1,4 @@
-import { Configuration, ContextReplacementPlugin, RuleSetRule } from "webpack";
+import { Configuration, ContextReplacementPlugin } from "webpack";
 import ImportPlugin from "./import.plugin";
 
 export default (
@@ -23,15 +23,6 @@ export default (
 
     config.optimization.moduleIds = "natural";
     config.optimization.runtimeChunk = false;
-
-    // config.module.rules = config.module.rules.filter(x => !(x as RuleSetRule).test.toString().includes("css"));
-    // config.module.rules.push({
-    //     test: /\.css$/i,
-    //     use: [
-    //         "style-loader",
-    //         "css-loader"
-    //     ],
-    // });
 
     if (config["devServer"]) {
         config["devServer"].historyApiFallback = true;

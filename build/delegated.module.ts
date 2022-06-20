@@ -46,7 +46,7 @@ export default class DelegatedModuleCustom extends DelegatedModule {
         }
     }
 
-    sourceRequest(sourceRequest: any): any {
+    sourceRequest(): any {
         throw new Error("Method not implemented.");
     }
 }

@@ -10,7 +10,7 @@ const TOOLBAR_BUTTON_DATA = {
     }
 };
 
-declare var kendo;
+declare const kendo;
 
 require("!style-loader!css-loader!./insert-symbol.provider.css");
 import symbolList from "./symbol-list/symbol-list.json";
@@ -51,6 +51,7 @@ class InsertSymbolProvider implements EditorConfigProvider {
      * @returns {ToolBarItem[]} The custom toolbar items that will be added to the Kendo's toolbar.
      * @memberof InsertSymbolProvider
      */
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     getToolBarItems(editorHost: any): ToolBarItem[] {
         /**
          * The custom tool.
@@ -78,7 +79,7 @@ class InsertSymbolProvider implements EditorConfigProvider {
 
         const config: ToolConfig = {
             _activate: function () {
-                let that = this;
+                const that = this;
                 const element = that.popup().element;
 
                 element.autoApplyNS(NS).on("down", function (e) {

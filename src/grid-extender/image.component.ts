@@ -59,7 +59,7 @@ export class ImageComponent implements OnInit, DataContextComponent {
      */
     private getSampleImageFromJSON(): string {
         // Get a random image index from imageData
-        let randomNumber = this.getRandomInt(0, imageData.images.length);
+        const randomNumber = this.getRandomInt(0, imageData.images.length);
 
         // Get this image's source for rendering
         return imageData.images[randomNumber].source;

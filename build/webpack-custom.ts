@@ -18,9 +18,6 @@ export default (
         manifest: require("@progress/sitefinity-adminapp-sdk/manifest.json")
     }));
 
-    config.optimization.minimize = false;
-    config.optimization.minimizer = [];
-
     config.optimization.moduleIds = "natural";
     config.optimization.runtimeChunk = false;
 

@@ -17,6 +17,7 @@ class DynamicItemIndexColumnsProvider implements ListColumnsProvider {
      * This method gets invoked by the AdminApp when the columns from all of the providers are needed.
      * @param entityData Provides metadata for the current type.
      */
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     getColumns(entityData: EntityData): Observable<ColumnModel[]> {
 
         // return the column model
@@ -42,6 +43,7 @@ class DynamicItemIndexColumnsProvider implements ListColumnsProvider {
      * @returns {Observable<string[]>} The columns which should be removed.
      * @memberof DynamicItemIndexColumnsProvider
      */
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     getColumnsToRemove(entityData: EntityData): Observable<string[]> {
             return of([COLUMN_TO_REMOVE]);
         }

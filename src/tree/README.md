@@ -1,7 +1,7 @@
 # Custom list components
 
 ## Introduction
-The list component in the Sitefinity AdminApp is used in various places in the application, for example, the grid (the list of content items), the sidebar, related data and so forth. This extension will allow you to inject a custom Angualr component in the list's item template. The picture below shows where the custom component will be rendered in the list's item template. 
+The list component in the Sitefinity AdminApp is used in various places in the application, for example, the grid (the list of content items), the sidebar, related data and so forth. This extension will allow you to inject a custom Angualr component in the list's item template. The picture below shows where the custom component will be rendered in the list's item template.
 
 ![Location of where the custom component will be rendered in the list](./../../assets/tree/sample.png)
 
@@ -21,8 +21,6 @@ The custom component for the related data feature will be rendered, in the follo
 ### Implement the component
 
 Implement a component as you normally would in Angular, with just one requirement, that your custom component **should** extend the `abstract class CustomTreeComponentBase`, it will force you to implement the only property `item: DataItem`, which as stated on top, will be populated by the item that is going to be rendered.
-
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
 ```typescript
 import { Component, Input } from "@angular/core";
@@ -123,7 +121,7 @@ export const CUSTOM_TREE_COMPONENT_PROVIDER: ClassProvider = {
 
 Last but not least, we must create a custom angular module for this extension (you could reuse another module if you have created one previously) and register it where all other extension are registered.
 
-Custom module: 
+Custom module:
 
 ```typescript
 import { CommonModule, DatePipe } from "@angular/common";

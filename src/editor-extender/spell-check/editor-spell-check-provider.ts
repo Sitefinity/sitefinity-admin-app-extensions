@@ -181,14 +181,14 @@ class EditorSpellCheckProvider implements EditorConfigProvider {
     }
 
     private stripHTML(html: string): string {
-        let tmp = document.createElement("DIV");
+        const tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }
 
     private splitTextInBatches(text: string): any[] {
         const batches = [];
-        let words = text.split(" ");
+        const words = text.split(" ");
         const batch = {
             text: "",
             startIndex: 0

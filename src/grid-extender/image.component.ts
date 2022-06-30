@@ -28,12 +28,6 @@ export class ImageComponent implements OnInit, DataContextComponent {
      */
     constructor(private http: HttpClient) {}
 
-    /**
-     * Initializes a new instance of the ImageComponent.
-     * @param http - The http client service used for making http requests.
-     */
-    constructor(private http: HttpClient) {}
-
     ngOnInit() {
         this.imageSource = this.getSampleImageFromJSON();
 

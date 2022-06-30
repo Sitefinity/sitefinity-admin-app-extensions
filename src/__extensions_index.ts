@@ -11,7 +11,7 @@ import { RelatedDateExtenderModule } from "./tree/related-data";
 import { SystemNotificationsIconsExtenderModule } from "./custom-system-notifications-icons";
 import { LibraryExtenderModule } from "./library-extender";
 
-declare var sitefinityExtensionsStore: SitefinityExtensionStore;
+declare const sitefinityExtensionsStore: SitefinityExtensionStore;
 
 sitefinityExtensionsStore.addExtensionModule(GridExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(CustomFieldsModule);

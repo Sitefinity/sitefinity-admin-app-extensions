@@ -1,4 +1,4 @@
-declare var jQuery;
+declare const jQuery;
 
 /**
  * Represents an optional interface for the configuration of a custom tool.

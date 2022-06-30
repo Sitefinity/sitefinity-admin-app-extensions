@@ -28,7 +28,7 @@ enum SelectionDirection {
     bottomToTop
 }
 
-declare var jQuery: any;
+declare const jQuery: any;
 
 require("!style-loader!css-loader!./switch-text-direction.provider.css");
 

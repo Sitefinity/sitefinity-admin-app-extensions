@@ -6,10 +6,8 @@ import { ItemHooksProvider, ITEM_HOOKS_PROVIDER_TOKEN, DataItem, EditLifecycleHo
 class CustomItemHooksProvider implements ItemHooksProvider {
     onItemLoaded(item: DataItem): void {
         if (item.data) {
-            // tslint:disable-next-line:no-console
             console.log(`Item is loaded: ${item.data.Title}`);
         } else {
-            // tslint:disable-next-line:no-console
             console.log(`A new item is being created`);
         }
     }
@@ -49,7 +47,6 @@ class CustomItemHooksProvider implements ItemHooksProvider {
     private executeOperation(message: string): Observable<void> {
         const result$ = new ReplaySubject<void>();
 
-        // tslint:disable-next-line: no-console
         console.log(message);
         result$.next();
 

@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-this-alias": "off",
+        "no-useless-escape": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-prototype-builtins": "off"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    },
+    {
+      "files": [
+        "*.js"
+      ],
+      "extends": [
+        "eslint:recommended"
+      ],
+      "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+      }
+    }
+  ]
+}

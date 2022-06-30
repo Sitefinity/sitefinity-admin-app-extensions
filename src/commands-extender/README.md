@@ -9,17 +9,15 @@
 
 ## Overview
 
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
-
 You can register custom command and execute some custom logic when executing them. They can be added in several places:
-* in the Grid View 
+* in the Grid View
    * next to the Create command
    * in the settings sidebar (next to the Permissions, Settings, Custom fields, etc. commands)
    * in the grid *Bulk Actions* menu
    * in the *Actions* menu of an item
 * in the Edit View
-   * next to the Publish button 
-   * in the *Actions* menu of an item 
+   * next to the Publish button
+   * in the *Actions* menu of an item
 
 
 In order to register a custom command, you have to implement the [**CommandProvider**](http://admin-app-extensions-docs.sitefinity.site/interfaces/commandprovider.html) interface. The interface consists of two methods:
@@ -36,9 +34,9 @@ import { Observable } from "rxjs";
 @Injectable()
 class DynamicItemIndexCommandProvider implements CommandProvider {
     getCommands(data: CommandsData): Observable<CommandModel[]> {
-        return of([]);        
+        return of([]);
     }
-    
+
     getCategories(data: CommandsData): Observable<CommandCategory[]> {
         return of([]);
     }
@@ -74,7 +72,7 @@ To add a command to the exact place where you want the [**data**](http://admin-a
                 category: "Custom",
                 ordinal: 1
             }
-            
+
             commnad.token = {
                 type: CommandImplementationClass,
                 properties: {
@@ -84,8 +82,8 @@ To add a command to the exact place where you want the [**data**](http://admin-a
 
             commands.push(commnad);
         }
-        
-        return of(commands);      
+
+        return of(commands);
     }
 ```
 

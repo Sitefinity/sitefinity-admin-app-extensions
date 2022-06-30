@@ -3,7 +3,7 @@ import { DamProviderBase, DAM_PROVIDER_TOKEN  } from "@progress/sitefinity-admin
 import { DamAsset } from "@progress/sitefinity-adminapp-sdk/app/api/v1/dam/dam-asset";
 import { EntityData } from "@progress/sitefinity-adminapp-sdk/app/api/v1/metadata/entity-data";
 
-declare var cloudinary: any;
+declare const cloudinary: any;
 
 const CUSTOM_MEDIA_CANNOT_BE_LOADED = "Custom media selector cannot be loaded.";
 const CLOUDINARY_PROVIDER_TYPE_NAME = "CloudinaryBlobStorageProvider";

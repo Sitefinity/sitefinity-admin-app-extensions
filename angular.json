@@ -1,5 +1,8 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "cli": {
+        "analytics": false
+    },
     "version": 1,
     "projects": {
         "extensions-cli": {
@@ -17,6 +20,8 @@
                         "main": "src/__extensions_index.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": false,
+                        "buildOptimizer": false,
+                        "optimization": false,
                         "extractLicenses": false,
                         "customWebpackConfig": {
                             "path": "./build/webpack-custom.ts",
@@ -28,12 +33,7 @@
                     },
                     "configurations": {
                         "prod": {
-                            "customWebpackConfig": {
-                                "path": "./build/webpack-custom.prod.ts",
-                                "mergeStrategies": {
-                                    "externals": "replace"
-                                }
-                            }
+                            "optimization": true
                         },
                         "dev": {
                             "assets": [
@@ -44,12 +44,25 @@
                                 }
                             ]
                         }
-                    }
+                    },
+                    "defaultConfiguration": "dev"
                 },
                 "serve": {
                     "builder": "@angular-builders/custom-webpack:dev-server",
                     "options": {
                         "browserTarget": "extensions-cli:build:dev"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "./src/**/*.ts",
+                            "./src/**/*.html",
+                            "./build/**/*.ts",
+                            "./**/*.js"
+                        ],
+                        "cache": true
                     }
                 }
             }

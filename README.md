@@ -36,7 +36,7 @@ Before you start developing make sure to checkout the tag corresponding to your 
 
 ## Prerequisites
 
-Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node versions [12x].
+Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node versions [16x].
 
 ## Quick start
 

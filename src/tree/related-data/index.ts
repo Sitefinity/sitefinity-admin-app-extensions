@@ -7,9 +7,6 @@ import { RelatedDataCustomComponent } from "./related-data-custom.component";
     declarations: [
         RelatedDataCustomComponent
     ],
-    entryComponents: [
-        RelatedDataCustomComponent
-    ],
     providers: [
         CUSTOM_TREE_COMPONENT_PROVIDER,
         DatePipe

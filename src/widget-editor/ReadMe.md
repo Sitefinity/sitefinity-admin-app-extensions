@@ -1,7 +1,5 @@
 # Admin App custom widget editor
 
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
-
 With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
 
 In this example we have provided two samples:

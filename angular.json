@@ -67,5 +67,6 @@
                 }
             }
         }
-    }
+    },
+    "defaultProject": "extensions-cli"
 }

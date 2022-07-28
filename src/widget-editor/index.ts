@@ -18,12 +18,6 @@ import { CustomWidgetEditorComponent } from './custom-editor/custom-widget-edito
         CustomInputWriteComponent,
         CustomWidgetEditorComponent
     ],
-    entryComponents: [
-        // The component needs to be registered here as it is instantiated dynamically.
-        CustomInputWriteComponent,
-        CustomWidgetEditorComponent
-    ],
-
     imports: [
         FormsModule, FrameworkModule
     ]

@@ -26,6 +26,7 @@ export interface ToolConfig {
      * Used to clean up event handlers.
      */
     _close?: Function;
+    contextThis?: any;
 }
 
 /**

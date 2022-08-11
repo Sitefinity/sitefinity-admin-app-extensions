@@ -17,6 +17,7 @@ import symbolList from "./symbol-list/symbol-list.json";
 
 @Injectable()
 class InsertSymbolProvider implements EditorConfigProvider {
+    private test;
     /**
      * If you want to remove some toolbar items return their names as strings in the array. Order is insignificant.
      * Otherwise return an empty array.
@@ -63,22 +64,39 @@ class InsertSymbolProvider implements EditorConfigProvider {
             exec: () => { return; }
         };
 
-        this.configureInsertSymbolTool();
+        this.configureInsertSymbolTool(editorHost);
         return [DEFAULT_TOOL];
     }
 
-    private configureInsertSymbolTool() {
+    private testContext(){
+        return this;
+    }
+
+    private configureInsertSymbolTool(editorHost) {
+        //// Simulates a server call returning value in 10 sec. You can open the popup and watch how it is replaced on the go.
+        window.setTimeout(() =>{
+            //// testing the this setting 
+            this.test = "SOME VALUE"
+
+            const newValue = "<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'><div>1 </div><div>2</div></div></div>";
+
+            editorHost.data("kendoEditor").toolbar.tools.insertsymbol._popup.element[0].innerHTML = newValue;
+        }, 10000)
+        
         const buttonTemplate = kendo.ui.editor.EditorUtils.buttonTemplate;
         const NS = "kendoEditor";
 
         const popupTemplateGenerator = function () {
             const symbolGenerator = new InsertSymbolGenerator(Object.keys(symbolList).map(k => symbolList[k]));
             const generatedHtml = symbolGenerator.generateHtml();
-            return `<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'>INSERT SPECIAL CHARACTERS</div>${generatedHtml}</div>`;
+            //// Initial vlaue of the popup. 
+            return `<div class='k-ct-popup symbol-popup'><div class='k-status symbol-title'>Loading data ...</div></div>`;
         };
 
         const config: ToolConfig = {
+            contextThis: this.testContext.bind(this),
             _activate: function () {
+                // use the contextThis approach if you want to access this in the scope of any function inside the config.
                 const that = this;
                 const element = that.popup().element;
 

@@ -9,10 +9,6 @@ import { COLUMNS_PROVIDER } from "./columns-provider";
     declarations: [
         ImageComponent
     ],
-    entryComponents: [
-        // The component needs to be registered here as it is instantiated dynamically.
-        ImageComponent
-    ],
     providers: [
         COLUMNS_PROVIDER
     ]

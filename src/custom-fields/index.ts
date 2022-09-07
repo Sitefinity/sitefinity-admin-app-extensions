@@ -18,17 +18,9 @@ import { FrameworkModule } from "@progress/sitefinity-adminapp-sdk/app/api/v1";
         ArrayOfGUIDsReadonlyComponent,
         ArrayOfGUIDsWriteComponent
     ],
-    entryComponents: [
-        // The components need to be registered here as they are instantiated dynamically.
-        CustomInputReadonlyComponent,
-        CustomInputWriteComponent,
-        ArrayOfGUIDsReadonlyComponent,
-        ArrayOfGUIDsWriteComponent
-    ],
     providers: [
         CUSTOM_FIELDS_PROVIDER
     ],
-
     // import the framework module as it holds the components that the AdminApp uses
     // for a list of components see
     imports: [FormsModule, FrameworkModule]

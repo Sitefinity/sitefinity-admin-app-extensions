@@ -19,9 +19,6 @@ import { AuthGuard, ConfigurationGuard } from "@progress/sitefinity-adminapp-sdk
     declarations: [
         PrintPreviewComponent
     ],
-    entryComponents: [
-        PrintPreviewComponent
-    ],
     providers: [
         COMMANDS_PROVIDER,
         CUSTOM_COMMANDS_FILTER,

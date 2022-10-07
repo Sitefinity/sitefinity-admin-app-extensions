@@ -1,15 +1,15 @@
 # Configuring the date and time format of the date time fields
 
-By default the date and time formats used by the date and time fields, for example the start and end dates of the event content items, are in the format `h:mm a` for the time component and `M/dd/yyyy` for the date component. You can change these formats by adding the following to the `config.json` file located in the `{rootDirectory}\SitefinityWebApp\AdminApp\` folder: 
+By default the date and time formats used by the date and time fields, for example the start and end dates of the event content items, are in the format `h:mm a` for the time component and `M/dd/yyyy` for the date component. In order to change these formats you need to navigate to **Administration -> Settings -> Backend interface**.: 
+
+Go to the **Item editing** section and modify the **Date and time format for fields** field.
 
 ```json
 {
-    "dateTimeFormat": {
         "useBrowserLocale": true,
         "browserLocaleFormatWidth": "long",
         "timeFormat": "HH:mm",
         "dateFormat": " d/MMM/yyyy"
-    }
 }
 ```
 
@@ -92,7 +92,3 @@ Time formats:
 "h:mm:ss a", // 9:15:00 PM (no leading zero for the hour)
 "hh:mm:ss a" // 09:15:00 PM
 ```
-
-> **Important notes**:
-> * As of Sitefinity 13.3.7622.0 the `config.json` file is no longer shipped with the product.
-> * The `config.json` file is located in `{{project_root}}/SitefinityWebApp/AdminApp`, if it is missing please create your own file so that you may apply the desired configurations.

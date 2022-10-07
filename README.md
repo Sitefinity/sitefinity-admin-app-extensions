@@ -245,7 +245,7 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 
-### Modifications done in the config.json
+### Modifications done in the Backend interface settings
 
 * [Change owner command](./src/change-owner#allowing-change-owner-command-in-adminapp) - By default the change owner command is available only for pages. You can also make it available for other content types.
 

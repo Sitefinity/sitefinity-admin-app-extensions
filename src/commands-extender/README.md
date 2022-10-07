@@ -1,6 +1,7 @@
 # Custom commands
 
-### Table of content
+## Table of content
+
 * [Overview](#overview)
 * [Add custom commands](#add-custom-commands)
 * [Add custom command categories](#add-custom-command-categories)

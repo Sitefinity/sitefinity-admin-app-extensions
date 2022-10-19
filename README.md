@@ -97,7 +97,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 1. Under **RedirectUrls**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
 
-#### When using OpenId authentication protocol
+#### (LEGACY) When using OpenId authentication protocol
 
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
 

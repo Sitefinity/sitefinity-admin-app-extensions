@@ -59,7 +59,7 @@ class InsertSymbolProvider implements EditorConfigProvider {
         const DEFAULT_TOOL: ToolBarItem = {
             name: TOOLBAR_BUTTON_DATA.DEFAULT.name,
             tooltip: TOOLBAR_BUTTON_DATA.DEFAULT.tooltip,
-            ordinal: 30,
+            ordinal: -1,
             exec: () => { return; }
         };
 

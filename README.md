@@ -121,6 +121,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
   Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically re-compiles and serves any newly created files.
 
 ## Sitefinity compatibility
+
 We are doing our best to keep extensions packages future proof, so that they will work with future versions of Sitefinity. This way you can upgrade your Sitefinity instance without having to upgrade and rebuild your extensions.
 
 However sometimes there are breaking changes in the underlying frameworks (Angular, Webpack) that we cannot handle in other way but to also declare a breaking change in the Admin App extensions. In such cases you would need to update the repo with the version tag corresponding to your Sitefinity host version and rebuild your extensions.

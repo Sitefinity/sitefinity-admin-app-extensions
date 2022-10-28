@@ -73,7 +73,6 @@ To add a command to the exact place where you want the [**data**](http://admin-a
                 category: "Custom",
                 ordinal: 1
             }
-
             commnad.token = {
                 type: CommandImplementationClass,
                 properties: {

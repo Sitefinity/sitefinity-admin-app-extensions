@@ -212,8 +212,6 @@ For example, the folder structure in Admin App folder may look like the followin
 
 ## Extensibility endpoints
 
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
-
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).
 

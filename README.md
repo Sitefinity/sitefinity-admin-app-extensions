@@ -19,7 +19,7 @@
 * [Minification](#minification)
 * [Multiple bundles support](#multiple-bundles-support)
 * [Extensibility endpoints](#extensibility-endpoints)
-  * [Modifications done in the config.json](#modifications-done-in-the-config.json)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-Backend-interface-settings)
 
 ## Overview
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
@@ -121,7 +121,6 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
   Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically re-compiles and serves any newly created files.
 
 ## Sitefinity compatibility
-
 We are doing our best to keep extensions packages future proof, so that they will work with future versions of Sitefinity. This way you can upgrade your Sitefinity instance without having to upgrade and rebuild your extensions.
 
 However sometimes there are breaking changes in the underlying frameworks (Angular, Webpack) that we cannot handle in other way but to also declare a breaking change in the Admin App extensions. In such cases you would need to update the repo with the version tag corresponding to your Sitefinity host version and rebuild your extensions.
@@ -212,8 +211,6 @@ For example, the folder structure in Admin App folder may look like the followin
 **NOTE:** the source map files **{{ bundle-name }}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect.
 
 ## Extensibility endpoints
-
-> IMPORTANT - Please note that there is a known limitation, you cannot use the Angular binding syntax {{item.data.CreatedBy}}, when creating component HTML templates, you must use another binding, for example [textContent]="item.data.CreatedBy", or [innerHtml]="item.data.Content".
 
 The Admin App provides you with several extensibility points for plugging your functionality in the interface.
 You can find more details about the API we provide in the [API documentation](http://admin-app-extensions-docs.sitefinity.site/index.html).

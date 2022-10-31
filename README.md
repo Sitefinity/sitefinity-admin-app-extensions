@@ -19,7 +19,7 @@
 * [Minification](#minification)
 * [Multiple bundles support](#multiple-bundles-support)
 * [Extensibility endpoints](#extensibility-endpoints)
-  * [Modifications done in the config.json](#modifications-done-in-the-config.json)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-Backend-interface-settings)
 
 ## Overview
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
@@ -168,7 +168,7 @@ const url = `${HTTP_PREFIX}/sf/system/newsitems`;
 this.http.get(url).subscribe(response => { /* do work */ });
 ```
 
-**NOTE**: More information on the OData web services is available in [Sitefinity's documentation](https://www.progress.com/documentation/sitefinity-cms/for-developers-client-side-programming-and-web-services). Please bear in mind that the documentation focuses more on the frontend use cases of the services, this being said the differences between the frontend and backend services is the type of access they require and the URL segments. The backend OData services require an authenticated Sitefinity backend user to access them and are located on the URL `{{ domain }}/sf/system/`, whereas the frontend services are located `{{ domain }}/api/{{ service-name }}`. While it is technically possible to use the frontend services in the backend, we strongly advice against this. 
+**NOTE**: More information on the OData web services is available in [Sitefinity's documentation](https://www.progress.com/documentation/sitefinity-cms/for-developers-client-side-programming-and-web-services). Please bear in mind that the documentation focuses more on the frontend use cases of the services, this being said the differences between the frontend and backend services is the type of access they require and the URL segments. The backend OData services require an authenticated Sitefinity backend user to access them and are located on the URL `{{ domain }}/sf/system/`, whereas the frontend services are located `{{ domain }}/api/{{ service-name }}`. While it is technically possible to use the frontend services in the backend, we strongly advice against this.
 
 ## Debugging
 

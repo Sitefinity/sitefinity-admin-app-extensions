@@ -177,7 +177,7 @@ To start debugging, execute the following command:
 
 The command will start the webpack development server and will host the Admin App alongside the compiled extensions under [http://localhost:3000](http://localhost:3000). If you wish to debug the application simply open the developer tools on your browser and search for your code as with any regular Angular app. If you would like some tips on how to do so please see [this post](https://www.telerik.com/blogs/tips-for-debugging-your-angular-applications) from our blog.
 
-**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
+**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally. 
 
 ## Deployment
 

@@ -19,9 +19,10 @@
 * [Minification](#minification)
 * [Multiple bundles support](#multiple-bundles-support)
 * [Extensibility endpoints](#extensibility-endpoints)
-  * [Modifications done in the Backend interface settings](#modifications-done-in-the-Backend-interface-settings)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-backend-interface-settings)
 
 ## Overview
+
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example Visual Studio Code, WebStorm, Notepad++ and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
@@ -36,46 +37,46 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 1. Clone or download the repository:
 
-    ```shell
-    git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions
-    ```
+```shell
+git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions
+```
 
 1. Checkout the tag that is equal to your Sitefinity version:
 
-    ```shell
-    git checkout {Sitefinity version}
-    ```
+```shell
+git checkout {Sitefinity version}
+```
 
-    For example:
+For example:
 
-    ```shell
-    git checkout 13.3.7600.0
-    ```
+```shell
+git checkout 13.3.7600.0
+```
 
-    Note: If you are not sure what is the version of your Sitefinity instance go to _Administration => Version & Licensing_. There you will find it as _Product file version_
+Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
 
 1. Install the necessary npm packages by executing the following command in the repository **root** folder:
 
-    ```shell
-    npm install
-    ```
+```shell
+npm install
+```
 
 **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
 In such case you can try executing the following: `npm install -f`
 
 1. Start the development server by executing the following command:
 
-    ```shell
-    npm start
-    ```
+  ```shell
+  npm start
+  ```
 
 1. When you are done developing execute the following command:
 
-    ```shell
-    npm run build
-    ```
+```shell
+npm run build
+```
 
-    As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
+As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
 1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You can rename the file to anything as long as you keep to the pattern **{{ bundle-name }}.extensions.bundle.js**.
 
@@ -121,6 +122,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
   Once you setup the Sitefinity CMS instance, the server becomes in watch mode and automatically re-compiles and serves any newly created files.
 
 ## Sitefinity compatibility
+
 We are doing our best to keep extensions packages future proof, so that they will work with future versions of Sitefinity. This way you can upgrade your Sitefinity instance without having to upgrade and rebuild your extensions.
 
 However sometimes there are breaking changes in the underlying frameworks (Angular, Webpack) that we cannot handle in other way but to also declare a breaking change in the Admin App extensions. In such cases you would need to update the repo with the version tag corresponding to your Sitefinity host version and rebuild your extensions.
@@ -128,6 +130,7 @@ However sometimes there are breaking changes in the underlying frameworks (Angul
 **NOTE:** We always recommend to update and rebuild your extensions when upgrading Sitefinity to benefit from the latest improvements.
 
 ### Breaking changes history
+
 * With the release of Sitefinity CMS 13.1 due to an Angular v9 upgrade and the migration of the extensions project to Angular CLI. More info can be found [here](https://www.progress.com/documentation/sitefinity-cms/131/technical-overview-and-extensibility#breaking-changes-for-admin-app-extensions)
 
 * With the release of Sitefinity CMS 13.3 due to the name change of one of our dependencies (from "sitefinity-adminapp-sdk" to "@progress/sitefinity-adminapp-sdk").
@@ -149,7 +152,7 @@ declare var sitefinityExtensionsStore: SitefinityExtensionStore;
 sitefinityExtensionsStore.addExtensionModule(GridExtenderModule);
 ```
 
-You can not only plug in to existing code but also write your own application-specific UI code. For example, you can register a route named **/print-preview** and then either navigate to it directly, or from a custom command in the *Actions* menu. We are referring to our print-preview sample, which shows how to register a command in the command menus, create a custom [Angular component](https://angular.io/api/core/Component), and register a custom route on which the component will be loaded, in this case when the command is triggered. You can find the sample [here](/src/commands-extender).
+You can not only plug in to existing code but also write your own application-specific UI code. For example, you can register a route named **/print-preview** and then either navigate to it directly, or from a custom command in the *Actions* menu. We are referring to our print-preview sample, which shows how to register a command in the command menus, create a custom [Angular component](https://angular.io/api/core/Component), and register a custom route on which the component will be loaded, in this case when the command is triggered. You can find the sample [here](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/commands-extender).
 
 ### Dependency injection mechanism
 
@@ -177,7 +180,7 @@ To start debugging, execute the following command:
 
 The command will start the webpack development server and will host the Admin App alongside the compiled extensions under [http://localhost:3000](http://localhost:3000). If you wish to debug the application simply open the developer tools on your browser and search for your code as with any regular Angular app. If you would like some tips on how to do so please see [this post](https://www.telerik.com/blogs/tips-for-debugging-your-angular-applications) from our blog.
 
-**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally. 
+**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
 
 ## Deployment
 
@@ -205,7 +208,7 @@ For example, the folder structure in Admin App folder may look like the followin
 
 * **sample.extensions.bundle.js**
 * **my-custom-code.extensions.bundle.js**
-* **edtitor-power-tools.extensions.bundle.js**
+* **editor-power-tools.extensions.bundle.js**
 
 **IMPORTANT:** You must follow the naming convention: **{{ bundle-name }}.extensions.bundle.js**
 **NOTE:** the source map files **{{ bundle-name }}.extensions.bundle.js.map** are used only when developing the bundle, deploying to the Sitefinity site will have no effect.
@@ -217,31 +220,31 @@ You can find more details about the API we provide in the [API documentation](ht
 
 Take a look at the following overview of the Admin App extension samples we provide, as well as short descriptions and, where relevant, links to more detailed explanations about how to use each sample. You can also check out the high level Admin App extensibility overview in the [Sitefinity CMS documentation](https://www.progress.com/documentation/sitefinity-cms/technical-overview-and-extensibility).
 
-* [Add custom commands](./src/commands-extender#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution.
+* [Add custom commands](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/commands-extender#add-custom-commands) - You can register a custom command in the grid, Bulk menu, Actions menu of an item, etc. and trigger some custom logic upon command execution.
 
-* [Remove default commands](./src/commands-extender#remove-default-commands) - You can remove one or more of the default commands.
+* [Remove default commands](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/commands-extender#remove-default-commands) - You can remove one or more of the default commands.
 
-* [Custom field](./src/custom-fields#custom-field) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
+* [Custom field](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/custom-fields#custom-field) - When in content editing mode, editors can modify content properties and add content relations via dedicated fields in the UI. You can replace one of the default fields with a custom one and also implement a custom visualization for the field you create.
 
-* [Fields binding](./src/fields-change#fields-change-service) - Sometimes when updating a field you may need to change another field's value, settings, visibility, etc. You can create a binding between two or more fields and achieve the described behavior by creating a simple service that will handle those changes.
+* [Fields binding](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/fields-change#fields-change-service) - Sometimes when updating a field you may need to change another field's value, settings, visibility, etc. You can create a binding between two or more fields and achieve the described behavior by creating a simple service that will handle those changes.
 
-* [Custom grid](./src/grid-extender#custom-grid) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
+* [Custom grid](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/grid-extender#custom-grid) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
 
-* [Custom content editor](./src/editor-extender#custom-content-editor) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
+* [Custom content editor](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender#custom-content-editor) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
 
-* [Custom dialogs](./src/editor-extender/sitefinity-videos) in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](./src/editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
+* [Custom dialogs](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/sitefinity-videos) in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 
-* [Custom notifications](./src/commands-extender/notification.command.ts) - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html) and its [**publishBasicNotification**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html#publishbasicnotification) method. The method accepts an object of type [**NotificationInfo**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationinfo.html) that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](./src/commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html).
+* [Custom notifications](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/commands-extender/notification.command.ts) - Often when the user executes an action he has to be notified somehow about the result of his action. In such cases you have the ability to publish custom notifications in the application. This can be achieved by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html) and its [**publishBasicNotification**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html#publishbasicnotification) method. The method accepts an object of type [**NotificationInfo**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationinfo.html) that contains some configuration options about the notification's message, look, visibility duration, placement, etc. The [**notificaton command extension**](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/commands-extender/notification.command.ts) provides an example how to create your own custom notifictions by using the [**NotificationService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/notificationservice.html).
 
-* [Custom Widget Editor](./src/widget-editor#admin-app-custom-widget-editor) - With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
+* [Custom Widget Editor](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/widget-editor#admin-app-custom-widget-editor) - With this AdminApp extensibility point, you can create your own custom widget designers and override the default auto generated designers.
 
-* [Admin App custom theme](./src/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
+* [Admin App custom theme](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/theme#custom-theme-for-sitefinity-cms-admin-app) - You can customize the appearance of the Admin App by modifying specific components of the user interface. For example, you can customize buttons’ color, background, and text, as well as other supplementary text on the UI.
 
-* [Custom list components](./src/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
+* [Custom list components](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/tree#custom-list-components) - This extension is used to replace a part of each item shown in the tree used throughout the AdminApp. Currently supported only for the related data functionality.
 
-* [Custom system notifications icons](./src/custom-system-notifications-icons) - This extension is used to generate css class that can be used to style a system notification icon. If you have some custom system notifications you can use this extension to create your own icon, instead of using the default one. You can also use it to override the already available icons in the system. Find more information about system notifications [here](https://www.progress.com/documentation/sitefinity-cms/user-notifications).
+* [Custom system notifications icons](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/custom-system-notifications-icons) - This extension is used to generate css class that can be used to style a system notification icon. If you have some custom system notifications you can use this extension to create your own icon, instead of using the default one. You can also use it to override the already available icons in the system. Find more information about system notifications [here](https://www.progress.com/documentation/sitefinity-cms/user-notifications).
 
-* [Custom DAM provider](./src/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
+* [Custom DAM provider](.https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 
 ### Modifications done in the Backend interface settings
 

@@ -38,7 +38,7 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 1. Clone or download the repository:
 
 ```shell
-git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions
+git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions --recurse-submodules
 ```
 
 1. Checkout the tag that is equal to your Sitefinity version:

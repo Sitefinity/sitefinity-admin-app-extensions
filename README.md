@@ -19,10 +19,9 @@
 * [Minification](#minification)
 * [Multiple bundles support](#multiple-bundles-support)
 * [Extensibility endpoints](#extensibility-endpoints)
-  * [Modifications done in the Backend interface settings](#modifications-done-in-the-backend-interface-settings)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-Backend-interface-settings)
 
 ## Overview
-
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example Visual Studio Code, WebStorm, Notepad++ and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
@@ -56,10 +55,14 @@ git checkout 13.3.7600.0
 Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
 
 1. Install the necessary npm packages by executing the following command in the repository **root** folder:
+1. Install the necessary npm packages by executing the following command in the repository **root** folder:
 
 ```shell
 npm install
 ```
+
+**NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
+In such case you can try executing the following: `npm install -f`
 
 **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
 In such case you can try executing the following: `npm install -f`
@@ -172,6 +175,22 @@ this.http.get(url).subscribe(response => { /* do work */ });
 ```
 
 **NOTE**: More information on the OData web services is available in [Sitefinity's documentation](https://www.progress.com/documentation/sitefinity-cms/for-developers-client-side-programming-and-web-services). Please bear in mind that the documentation focuses more on the frontend use cases of the services, this being said the differences between the frontend and backend services is the type of access they require and the URL segments. The backend OData services require an authenticated Sitefinity backend user to access them and are located on the URL `{{ domain }}/sf/system/`, whereas the frontend services are located `{{ domain }}/api/{{ service-name }}`. While it is technically possible to use the frontend services in the backend, we strongly advice against this.
+The extensibility API leverages Angular DI mechanism via [**InjectionTokens**](https://angular.io/api/core/InjectionToken) and [**ClassProviders**](https://angular.io/api/core/ClassProvider). The **multi** property of the class provider interface allows for multiple references to the same token. The Extensibility API endpoints use the multi property of the [**ClassProviders**](https://angular.io/api/core/ClassProvider), so that multiple instances of the providers can coexist within the same bundle.
+
+### Access the OData services
+
+You can make HTTP calls to the Sitefinity CMS OData services via the Angular [**HttpClient**](https://angular.io/api/common/http/HttpClient). When making the request, use the [**HTTP_PREFIX**](http://admin-app-extensions-docs.sitefinity.site/index.html#http_prefix) constant, so that the Admin App can automatically detect this is a request to Sitefinity CMS and add the required authentication data to it.
+
+Lets say you would like to get all the news items from Sitefinity, the URL that the Admin App would request is `http://my.sitefinity.site/sf/system/newsitems`, and since this request is to the backend-only services it must contain some service information in order to authenticate - this is all handled behind the scenes with the help of the [**HTTP_PREFIX**](http://admin-app-extensions-docs.sitefinity.site/index.html#http_prefix).
+
+Example:
+
+```typescript
+const url = `${HTTP_PREFIX}/sf/system/newsitems`;
+this.http.get(url).subscribe(response => { /* do work */ });
+```
+
+**NOTE**: More information on the OData web services is available in [Sitefinity's documentation](https://www.progress.com/documentation/sitefinity-cms/for-developers-client-side-programming-and-web-services). Please bear in mind that the documentation focuses more on the frontend use cases of the services, this being said the differences between the frontend and backend services is the type of access they require and the URL segments. The backend OData services require an authenticated Sitefinity backend user to access them and are located on the URL `{{ domain }}/sf/system/`, whereas the frontend services are located `{{ domain }}/api/{{ service-name }}`. While it is technically possible to use the frontend services in the backend, we strongly advice against this.
 
 ## Debugging
 
@@ -180,7 +199,7 @@ To start debugging, execute the following command:
 
 The command will start the webpack development server and will host the Admin App alongside the compiled extensions under [http://localhost:3000](http://localhost:3000). If you wish to debug the application simply open the developer tools on your browser and search for your code as with any regular Angular app. If you would like some tips on how to do so please see [this post](https://www.telerik.com/blogs/tips-for-debugging-your-angular-applications) from our blog.
 
-**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally.
+**NOTE:** In case there are any runtime errors resulting from the output bundle, they are displayed in the console once the Admin App has loaded. If the errors are critical, the extensions are not loaded and the Admin App will attempt to continue functioning normally. 
 
 ## Deployment
 
@@ -247,5 +266,7 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Custom DAM provider](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 
 ### Modifications done in the Backend interface settings
+### Modifications done in the Backend interface settings
 
+[Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings.
 [Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings.

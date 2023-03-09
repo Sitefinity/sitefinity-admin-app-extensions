@@ -19,10 +19,9 @@
 * [Minification](#minification)
 * [Multiple bundles support](#multiple-bundles-support)
 * [Extensibility endpoints](#extensibility-endpoints)
-  * [Modifications done in the Backend interface settings](#modifications-done-in-the-backend-interface-settings)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-Backend-interface-settings)
 
 ## Overview
-
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example Visual Studio Code, WebStorm, Notepad++ and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
@@ -247,5 +246,4 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Custom DAM provider](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 
 ### Modifications done in the Backend interface settings
-
 [Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings.

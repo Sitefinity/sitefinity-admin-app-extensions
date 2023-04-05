@@ -83,9 +83,7 @@ As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in
 
 To enable Sitefinity CMS to recognize and allow working with the Admin App, you need to configure the following:
 
-### STS configuration
-
-#### When using Default authentication protocol
+### STS configuration using Default authentication protocol
 
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Security*.
 
@@ -96,20 +94,6 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 1. Click *Create new*. For **ClientId** enter *sitefinity*, leave **Secret** blank.
 
 1. Under **RedirectUrls**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
-
-#### When using OpenId authentication protocol
-
-1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *SecurityTokenService* -> *IdentityServer* -> *Clients* -> *sitefinity*.
-
-1. Under *Allowed cors origins*, click *Create new*. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is `http://localhost:3000`
-
-1. Under **RedirectUris**, click the *Create new* button. Enter `http://localhost:3000/assets/auth/silent-renew.html`
-
-1. Under **RedirectUris**, click the *Create new* button. Enter `http://localhost:3000/auth/oidc/sign-in`
-
-1. Under **PostLogoutRedirectUris**, enter `http://localhost:3000/auth/oidc/sign-out`
-
-**NOTE:** After modifying the authentication settings, you need to **restart Sitefinity**. If you are in load balanced environment make sure to apply this steps to all necessary nodes.
 
 ### Web service configuration
 

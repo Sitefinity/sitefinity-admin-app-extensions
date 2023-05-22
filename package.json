@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Provides extensions for the backend of the Progress Sitefinity Admin App",
     "scripts": {
-        "preinstall": "git submodule update --remote",
+        "submodule:update": "git submodule update --remote",
         "debug:cli": "node --max-old-space-size=8192 --inspect-brk ./node_modules/@angular/cli/bin/ng build",
         "start": "ng serve --port 3000",
         "build": "ng build",

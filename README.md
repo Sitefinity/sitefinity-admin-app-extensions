@@ -6,6 +6,27 @@
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)
 * [Configure Sitefinity CMS for development of custom extensions](#configure-sitefinity-cms-for-development-of-custom-extensions)
+  * [STS configuration](#sts-configuration-using-default-authentication-protocol)
+  * [Web service configuration](#web-service-configuration)
+* [Sitefinity compatibility](#sitefinity-compatibility)
+  * [Breaking changes history](#breaking-changes-history)
+* [Development and extensibility](#development-and-extensibility)
+  * [NgModules](#ngmodules)
+  * [Dependency injection mechanism](#dependency-injection-mechanism)
+  * [Access the OData services](#access-the-odata-services)
+* [Debugging](#debugging)
+* [Deployment](#deployment)
+* [Minification](#minification)
+* [Multiple bundles support](#multiple-bundles-support)
+* [Extensibility endpoints](#extensibility-endpoints)
+  * [Modifications done in the Backend interface settings](#modifications-done-in-the-backend-interface-settings)
+
+## Overview
+
+* [Overview](#overview)
+* [Prerequisites](#prerequisites)
+* [Quick start](#quick-start)
+* [Configure Sitefinity CMS for development of custom extensions](#configure-sitefinity-cms-for-development-of-custom-extensions)
   * [STS configuration](#sts-configuration)
   * [Web service configuration](#web-service-configuration)
 * [Sitefinity compatibility](#sitefinity-compatibility)
@@ -230,4 +251,5 @@ Take a look at the following overview of the Admin App extension samples we prov
 * [Custom DAM provider](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/library-extender#custom-digital-assets-management-provider) - This extension is used to implement custom DAM providers. This sample demonstrates how to override one of the DAM providers which comes out of the box with the AdminApp.
 
 ### Modifications done in the Backend interface settings
+
 [Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings.

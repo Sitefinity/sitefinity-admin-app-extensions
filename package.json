@@ -28,7 +28,7 @@
         "@angular-eslint/eslint-plugin": "13.2.1",
         "@angular-eslint/eslint-plugin-template": "13.2.1",
         "@angular-eslint/template-parser": "13.2.1",
-        "@progress/sitefinity-adminapp-sdk": "14.4.8122",
+        "@progress/sitefinity-adminapp-sdk": "14.4.8123",
         "@types/node": "18.13.0",
         "@types/webpack": "5.28.0",
         "@typescript-eslint/eslint-plugin": "5.51.0",

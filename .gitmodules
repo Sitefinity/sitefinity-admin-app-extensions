@@ -1,3 +1,4 @@
 [submodule "samples"]
 	path = samples
 	url = https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples.git
+	branch = master

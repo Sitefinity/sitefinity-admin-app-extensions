@@ -12,6 +12,7 @@
 #### What do I benefit from the new Admin App?
 
 > The Admin App reinvents the way you:
+
 * Browse and edit content
 * Embed media
 * Insert or relate images from libraries

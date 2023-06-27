@@ -29,7 +29,7 @@
     "@angular/platform-browser": "15.2.9",
     "@angular/platform-browser-dynamic": "15.2.9",
     "@angular/router": "15.2.9",
-    "@progress/sitefinity-adminapp-sdk": "14.4.8123",
+    "@progress/sitefinity-adminapp-sdk": "14.4.8125",
     "@types/node": "18.13.0",
     "@types/webpack": "5.28.0",
     "@typescript-eslint/eslint-plugin": "5.51.0",

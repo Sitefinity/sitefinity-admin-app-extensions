@@ -12,6 +12,7 @@
 #### What do I benefit from the new Admin App?
 
 > The Admin App reinvents the way you:
+
 * Browse and edit content
 * Embed media
 * Insert or relate images from libraries
@@ -29,7 +30,7 @@ Once you switch to the new interface, it will be available for all Sitefinity CM
 
 #### How does The Admin App work?
 
-> The Admin App is a Single Page Application (SPA) that works with Angular 4.0, TypeScript, and OData web services to manage content. As a result, the Admin App enables you to implement a better security model, benefit from better performance, and leverage fluid and responsive user interface. 
+> The Admin App is a Single Page Application (SPA) that works with Angular 4.0, TypeScript, and OData web services to manage content. As a result, the Admin App enables you to implement a better security model, benefit from better performance, and leverage fluid and responsive user interface.
 
 #### What do I need to install the Admin App?
 

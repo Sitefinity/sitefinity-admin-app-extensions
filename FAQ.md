@@ -80,6 +80,7 @@ In case you want to develop extensions of the Admin App, Sitefinity CMS provides
 #### I made customizations to the classic interface, can I apply them in the new Admin App?
 
 > When working with the Admin App in integrated mode (switching on the new interface via the *Administration* panel), the modifications you made are present in the new Admin App. This includes:
+
 * Menus
 * New Screens
 * Module builder modifications

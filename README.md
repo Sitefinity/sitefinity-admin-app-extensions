@@ -22,7 +22,6 @@
   * [Modifications done in the Backend interface settings](#modifications-done-in-the-backend-interface-settings)
 
 ## Overview
-
 Leveraging the API-first approach of the Admin App, you can extend and add functionality, for example, in the *Actions* menu, in the grid, or in editing mode for content items. This repository contains everything you need to develop your extensions. The included examples demonstrate the main extensibility points of the API.
 
 You can extend the Admin App API independently of the Sitefinity CMS in any IDE that you work with, for example Visual Studio Code, WebStorm, Notepad++ and so on. Thus, you can develop and test your extended functionality against multiple Sitefinity CMS environments, local or external. Once finished, you can plug in your new functionality by producing a bundle and deploying it to your project.
@@ -37,9 +36,9 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 1. Clone or download the repository:
 
-```shell
-git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions --recurse-submodules
-```
+    ```shell
+    git clone https://github.com/Sitefinity/sitefinity-admin-app-extensions --recurse-submodules
+    ```
 
 1. Checkout the tag that is equal to your Sitefinity version:
 
@@ -49,11 +48,17 @@ git checkout {Sitefinity version}
 
 For example:
 
-```shell
-git checkout 13.3.7600.0
-```
+    ```shell
+    git checkout 13.3.7600.0
+    ```
 
-Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
+    Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
+
+1. Update the samples submodule folder:
+
+    ```shell
+    git submodule update --init --recursive
+    ```
 
 1. Install the necessary npm packages by executing the following command in the repository **root** folder:
 
@@ -63,6 +68,9 @@ npm install
 
 **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
 In such case you can try executing the following: `npm install -f`
+
+    **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
+    In such case you can try executing the following: `npm install -f`
 
 1. Start the development server by executing the following command:
 

@@ -99,7 +99,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 ### Web service configuration
 
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *WebServices* -> *Routes* -> *Sitefinity* -> *services* -> *system* -> *Access Control Allow Origin (CORS)*
-1. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is `http://localhost:3000`
+1. Enter the URL of the development server of the Admin App Extensibility SDK. The default value is `http://localhost:3000`.
 1. Save your changes.
 
   The Admin App is now served on [http://localhost:3000](http://localhost:3000). When you first open the URL, you are prompted to configure the Sitefinity CMS instance you are working with. In the URL field, enter the instance details and then save the configuration. You can later change the configuration by navigating to [config](http://localhost:3000/adminapp/config).

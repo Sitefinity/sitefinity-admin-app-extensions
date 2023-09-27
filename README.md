@@ -42,11 +42,11 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 1. Checkout the tag that is equal to your Sitefinity version:
 
-    ```shell
-    git checkout {Sitefinity version}
-    ```
+```shell
+git checkout {Sitefinity version}
+```
 
-    For example:
+For example:
 
     ```shell
     git checkout 13.3.7600.0
@@ -62,26 +62,29 @@ Install the Node.js and npm. For more information, see [Installing node](https:/
 
 1. Install the necessary npm packages by executing the following command in the repository **root** folder:
 
-    ```shell
-    npm install
-    ```
+```shell
+npm install
+```
+
+**NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
+In such case you can try executing the following: `npm install -f`
 
     **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
     In such case you can try executing the following: `npm install -f`
 
 1. Start the development server by executing the following command:
 
-    ```shell
-    npm start
-    ```
+  ```shell
+  npm start
+  ```
 
 1. When you are done developing execute the following command:
 
-    ```shell
-    npm run build
-    ```
+```shell
+npm run build
+```
 
-    As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
+As a result, a JavaScript file (**sample.extensions.bundle.js**) is generated in the **dist** folder.
 
 1. Register your extensions with the Admin App by uploading the file **sample.extensions.bundle.js** in the **adminapp** subfolder of the Sitefinity CMS web application and then restart your Sitefinity CMS instance. You can rename the file to anything as long as you keep to the pattern **{{ bundle-name }}.extensions.bundle.js**.
 

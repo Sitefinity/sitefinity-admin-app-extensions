@@ -70,8 +70,8 @@ npm install
 **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
 In such case you can try executing the following: `npm install -f`
 
-    **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
-    In such case you can try executing the following: `npm install -f`
+  **NOTE:** If you are using an older/newer than the recommended version of node/npm it is possible to encounter errors when executing the command.
+  In such case you can try executing the following: `npm install -f`
 
 1. Start the development server by executing the following command:
 

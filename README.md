@@ -49,9 +49,9 @@ git checkout {Sitefinity version}
 
 For example:
 
-    ```shell
-    git checkout 13.3.7600.0
-    ```
+```shell
+git checkout 13.3.7600.0
+```
 
     Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
 

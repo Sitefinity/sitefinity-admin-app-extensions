@@ -53,7 +53,7 @@ For example:
 git checkout 13.3.7600.0
 ```
 
-    Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
+  Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
 
 1. Update the samples submodule folder:
 

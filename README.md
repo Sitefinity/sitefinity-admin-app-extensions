@@ -1,6 +1,7 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
 ## Table of content
+
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)

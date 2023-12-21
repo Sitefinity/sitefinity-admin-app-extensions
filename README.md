@@ -1,7 +1,6 @@
 # Sitefinity CMS Admin App extensions development kit with samples
 
 ## Table of content
-
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
 * [Quick start](#quick-start)
@@ -55,12 +54,6 @@ For example:
     Note: If you are not sure what is the version of your Sitefinity instance go to *Administration => Version & Licensing*. There you will find it as *Product file version*
 
 1. Update the samples submodule folder:
-
-    ```shell
-    git submodule update --init --recursive
-    ```
-
-1. Install the necessary npm packages by executing the following command in the repository **root** folder:
 
     ```shell
     git submodule update --init --recursive

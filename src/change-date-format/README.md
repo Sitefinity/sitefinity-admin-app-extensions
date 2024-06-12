@@ -15,13 +15,14 @@ By default the date and time formats used by the date and time fields, for examp
 
 The configurations work as follows:
 * if `useBrowserLocale` is `true`, then the `timeFormat` and `dateFormat` will be disregarded.
-* the `browserLocaleFormatWidth` can be either `short`, `medium` or `long`, if this property is not provided and `useBrowserLocale` is `true`, it will default to `short`
+* the `browserLocaleFormatWidth` can be either `short` or `long`, if this property is not provided and `useBrowserLocale` is `true`, it will default to `short`
 * there are certain limitation that apply to the `timeFormat` and `dateFormat`. The date format accepts only a certain subset of date formats and the time format accepts only a certain subset of time formats. You may find the supported formats below:
 
 Example behavior of `useBrowserLocale` if the browser's language is English (US).
 * If the `browserLocaleFormatWidth` is set to `long` the formats used in the date and time field will be `"h:mm:ss a"` and `"MMMM d, y"`, which will look like `9:22:13 am` and `July 10, 2021`.
-* If the `browserLocaleFormatWidth` is set to `medium` the formats used in the date and time field will be `"h:mm:ss a"` and `"MMM d, y"`, which will look like `9:22:13 am` and `Jul 10, 2021`.
 * If the `browserLocaleFormatWidth` is set to `short` the formats used in the date and time field will be `"h:mm a"` and `"M/d/yy"`, which will look like `9:22 am` and `7/10/2021`.
+
+The formats that are available for each supported culture are stored in a .json file located in `{rootDirectory}\SitefinityWebApp\AdminApp\assets\date-time-formats\date-time-formats.json`. You may edit this file to your needs, but if you do, please make sure to back it up since upgrading Sitefinity may overwrite your changes.
 
 
 Date formats:

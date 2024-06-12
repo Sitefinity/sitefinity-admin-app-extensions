@@ -96,7 +96,7 @@ To enable Sitefinity CMS to recognize and allow working with the Admin App, you 
 
 1. Navigate to *Administration* -> *Settings* -> *Advanced* -> *Authentication* -> *OAuthServer* -> *AuthorizedClients*.
 
-1. Click *Create new*. For **ClientId** enter *sitefinity*, leave **Secret** blank.
+1. Click *Create new*. For **ClientId** enter *sitefinity*, for **Secret** enter secret. It is mandatory to use secret as well.
 
 1. Under **RedirectUrls**, click the *Create new* button. Enter **http://localhost:3000/auth/oauth/sign-in**
 

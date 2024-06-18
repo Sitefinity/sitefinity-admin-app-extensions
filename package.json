@@ -13,7 +13,6 @@
     },
     "private": true,
     "devDependencies": {
-        "@angular-builders/custom-webpack": "17.0.1",
         "@angular-devkit/build-angular": "17.2.1",
         "@angular-eslint/builder": "17.2.1",
         "@angular-eslint/eslint-plugin": "17.2.1",
@@ -29,8 +28,6 @@
         "@angular/platform-browser": "17.2.2",
         "@angular/platform-browser-dynamic": "17.2.2",
         "@angular/router": "17.2.2",
-        "@progress/sitefinity-adminapp-sdk": "15.1.8323",
-        "@progress/sitefinity-component-framework": "10.0.0",
         "@types/node": "20.11.20",
         "@types/webpack": "5.28.5",
         "@typescript-eslint/eslint-plugin": "7.0.2",

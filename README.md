@@ -122,7 +122,7 @@ However sometimes there are breaking changes in the underlying frameworks (Angul
 
 ### Breaking changes history
 
-* With the release of Sitefinity CMS 13.1 due to an Angular v9 upgrade and the migration of the extensions project to Angular CLI. More info can be found [here](https://www.progress.com/documentation/sitefinity-cms/131/technical-overview-and-extensibility#breaking-changes-for-admin-app-extensions).
+* With the release of Sitefinity CMS 13.1 due to an Angular v9 upgrade and the migration of the extensions project to Angular CLI. More info can be found [here](https://www.progress.com/documentation/sitefinity-cms/131/technical-overview-and-extensibility#breaking-changes-for-admin-app-extensions)
 
 * With the release of Sitefinity CMS 13.3 due to the name change of one of our dependencies (from "sitefinity-adminapp-sdk" to "@progress/sitefinity-adminapp-sdk").
 

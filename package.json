@@ -33,7 +33,7 @@
         "@types/webpack": "5.28.5",
         "@typescript-eslint/eslint-plugin": "7.16.0",
         "@typescript-eslint/parser": "7.16.0",
-        "@progress/sitefinity-adminapp-sdk": "15.2.8422",
+        "@progress/sitefinity-adminapp-sdk": "15.2.8423",
         "@progress/sitefinity-component-framework": "11.0.0",
         "css-loader": "5.2.7",
         "eslint": "8.57.0",

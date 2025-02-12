@@ -240,4 +240,4 @@ Take a look at the following overview of the Admin App extension samples we prov
 ### Modifications done in the Backend interface settings
 
 
-[Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings.
+[Backend interface settings](https://www.progress.com/documentation/sitefinity-cms/backend-interface-settings) - Learn how to configure backend interface settings..

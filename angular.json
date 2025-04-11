@@ -50,7 +50,19 @@
                 "serve": {
                     "builder": "@angular-builders/custom-webpack:dev-server",
                     "options": {
-                        "browserTarget": "extensions-cli:build:dev"
+                        "buildTarget": "extensions-cli:build:dev"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "./src/**/*.ts",
+                            "./src/**/*.html",
+                            "./build/**/*.ts",
+                            "./**/*.js"
+                        ],
+                        "cache": true
                     }
                 },
                 "lint": {

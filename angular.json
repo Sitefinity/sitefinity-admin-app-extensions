@@ -64,6 +64,18 @@
                         ],
                         "cache": true
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "./src/**/*.ts",
+                            "./src/**/*.html",
+                            "./build/**/*.ts",
+                            "./**/*.js"
+                        ],
+                        "cache": true
+                    }
                 }
             }
         }

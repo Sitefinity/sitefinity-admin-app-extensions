@@ -34,7 +34,7 @@
         "@typescript-eslint/eslint-plugin": "8.24.1",
         "@typescript-eslint/parser": "8.24.1",
         "@progress/sitefinity-component-framework": "12.0.0",
-        "@progress/sitefinity-adminapp-sdk": "15.4.8623",
+        "@progress/sitefinity-adminapp-sdk": "15.4.8624",
         "css-loader": "5.2.7",
         "eslint": "9.20.1",
         "postcss": "8.5.3",

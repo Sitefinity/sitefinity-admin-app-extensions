@@ -29,7 +29,7 @@
         "@types/node": "25.5.0",
         "@types/webpack": "5.28.5",
         "@progress/sitefinity-component-framework": "12.0.0",
-        "@progress/sitefinity-adminapp-sdk": "15.4.8637",
+        "@progress/sitefinity-adminapp-sdk": "15.4.8639",
         "angular-eslint": "21.3.1",
         "css-loader": "5.2.7",
         "eslint": "10.1.0",

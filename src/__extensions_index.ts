@@ -24,3 +24,4 @@ sitefinityExtensionsStore.addExtensionModule(WidgetEditorExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(RelatedDateExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(SystemNotificationsIconsExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(LibraryExtenderModule);
+//

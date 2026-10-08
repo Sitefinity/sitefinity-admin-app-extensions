@@ -50,3 +50,6 @@ Thumbs.db
 
 e2e-tests.xml
 # tests/e2e/test-results/**
+
+# eslint cache
+.eslintcache

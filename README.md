@@ -29,7 +29,7 @@ You can extend the Admin App API independently of the Sitefinity CMS in any IDE 
 
 ## Prerequisites
 
-Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node version is v16 LTS.
+Install the Node.js and npm. For more information, see [Installing node](https://docs.npmjs.com/getting-started/installing-node). Recomended node version is v20.19+, v22.12+ or v24+ (required by Angular 21). For older Sitefinity versions that use Angular 19 or earlier, use the Node version supported by the corresponding repository tag.
 
 ## Quick start
 
@@ -125,6 +125,8 @@ However sometimes there are breaking changes in the underlying frameworks (Angul
 * With the release of Sitefinity CMS 13.1 due to an Angular v9 upgrade and the migration of the extensions project to Angular CLI. More info can be found [here](https://www.progress.com/documentation/sitefinity-cms/131/technical-overview-and-extensibility#breaking-changes-for-admin-app-extensions)
 
 * With the release of Sitefinity CMS 13.3 due to the name change of one of our dependencies (from "sitefinity-adminapp-sdk" to "@progress/sitefinity-adminapp-sdk").
+
+* With the Admin App upgrade from Angular 19 to Angular 21. See the [migration guide](MIGRATION-ANGULAR-21.md).
 
 ## Development and extensibility
 

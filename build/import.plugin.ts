@@ -59,7 +59,7 @@ export default class ImportPlugin {
 
                     const found = this.options.modules.find(x => x === request);
                     if (found) {
-                        let delegatedModuleId = null;
+                        let delegatedModuleId;
                         if (delegatedModuleCache.hasOwnProperty(request)) {
                             delegatedModuleId = delegatedModuleCache[request];
                         } else {

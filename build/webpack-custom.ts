@@ -1,14 +1,16 @@
 import { Configuration, ContextReplacementPlugin } from "webpack";
 import ImportPlugin from "./import.plugin";
+import * as constants from "./constants";
 
 export default (
     config: Configuration
 ) => {
     const mainBundlePath = config.entry["main"];
 
-    config.entry = {
-        "sample.extensions.bundle": mainBundlePath
-    };
+    config.entry = {};
+
+    const fileName = `${constants.default.extensionsKey}.bundle`;
+    config.entry[fileName] = mainBundlePath;
 
     config.plugins.push(
         new ContextReplacementPlugin(/angular(\\|\/)core/, __dirname, {}),

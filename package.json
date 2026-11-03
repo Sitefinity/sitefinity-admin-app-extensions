@@ -16,21 +16,23 @@
         "@angular-builders/custom-webpack": "21.0.3",
         "@angular-devkit/build-angular": "21.2.3",
         "@angular/animations": "21.2.5",
+        "@angular/cdk": "21.2.5",
         "@angular/cli": "21.2.3",
         "@angular/common": "21.2.5",
         "@angular/compiler": "21.2.5",
         "@angular/compiler-cli": "21.2.5",
         "@angular/core": "21.2.5",
         "@angular/forms": "21.2.5",
+        "@angular/localize": "21.2.5",
         "@angular/platform-browser": "21.2.5",
         "@angular/platform-browser-dynamic": "21.2.5",
         "@angular/router": "21.2.5",
         "@eslint/js": "10.0.1",
         "@types/node": "25.5.0",
         "@types/webpack": "5.28.5",
-        "@progress/sitefinity-component-framework": "12.0.0",
-        "@progress/sitefinity-adminapp-sdk": "15.4.8639",
-        "angular-eslint": "21.3.1",
+        "@progress/sitefinity-component-framework": "13.0.0",
+        "@progress/sitefinity-adminapp-sdk": "15.4.8640",
+        "angular-eslint": "21.4.0",
         "css-loader": "5.2.7",
         "eslint": "10.1.0",
         "globals": "15.15.0",
@@ -44,5 +46,10 @@
         "typescript-eslint": "8.57.2",
         "webpack": "5.105.4",
         "zone.js": "0.15.0"
+    },
+    "overrides": {
+        "@angular-devkit/build-angular": {
+            "@angular/localize": "$@angular/localize"
+        }
     }
 }

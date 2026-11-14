@@ -1,0 +1,158 @@
+# Migrating Admin App extensions from Angular 19 to Angular 21
+
+Starting with **Sitefinity CMS 15.4.8640**, this repository and the Admin App itself use **Angular 21** (previously Angular 19).
+
+This is the only breaking change for extensions in this release. It comes from the Admin App (the host application), not from the extensions API: the public extensions API (`@progress/sitefinity-adminapp-sdk`) is unchanged.
+
+## Who is affected
+
+| Your situation | Action |
+|---|---|
+| You upgrade Sitefinity to the version that includes the Angular 21 Admin App and have an extensions bundle built on Angular 19 | **Rebuild** your extensions on Angular 21 (this guide). The old bundle is not guaranteed to work with the new Admin App. |
+| You stay on a Sitefinity version that uses Angular 19 | Nothing. Keep using the repository tag that matches your Sitefinity version. |
+| You use extensions only through the prebuilt samples | Rebuild from the tag that matches your Sitefinity version. |
+
+> The Admin App provides Angular (`@angular/*`), `rxjs` and the SDK to extensions at runtime; the build plugin in `build/` replaces those imports with references to the host's copies. This is why the Angular major version of the extensions project has to match the Admin App.
+
+## Prerequisites
+
+1. **Node.js `^20.19.0`, `^22.12.0` or `>=24.0.0`.** Angular 21, Angular CLI 21 and ESLint 10 do not support older Node versions (including Node 16/18 and Node 20 releases older than 20.19). The old recommendation of Node 16 LTS no longer applies.
+1. Check out the repository tag that matches your Sitefinity version (for example `15.4.8640.0`) and update the submodule:
+
+    ```shell
+    git checkout {Sitefinity version}
+    git submodule update --init --recursive
+    ```
+
+## Migrating the project
+
+If you started from a copy of this repository, the simplest path is to take the Angular 21 versions of the build files and re-apply your own code and customizations on top. If you keep your own project structure, apply the changes below.
+
+### 1. `package.json`
+
+Update the dev dependencies. Versions used by this repository:
+
+| Package | Angular 19 | Angular 21 |
+|---|---|---|
+| `@angular/*` (animations, common, compiler, compiler-cli, core, forms, platform-browser, platform-browser-dynamic, router) | 19.2.18 | **21.2.5** |
+| `@angular/cli` | 19.2.19 | **21.2.3** |
+| `@angular-devkit/build-angular` | 19.2.19 | **21.2.3** |
+| `@angular-builders/custom-webpack` | 19.0.0 | **21.0.3** |
+| `typescript` | 5.5.4 | **5.9.3** |
+| `rxjs` | 7.8.1 | 7.8.2 |
+| `webpack` | 5.98.0 | 5.105.4 |
+| `style-loader` | 3.3.1 | 4.0.0 |
+| `@types/node` | 22.13.4 | 25.5.0 |
+| `zone.js` | 0.15.0 | 0.15.0 (unchanged) |
+| `@progress/sitefinity-adminapp-sdk` | per your version | **15.4.8640** (the version matching your Sitefinity) |
+
+Linting packages were consolidated:
+
+| Removed | Added |
+|---|---|
+| `@angular-eslint/builder`, `@angular-eslint/eslint-plugin`, `@angular-eslint/eslint-plugin-template`, `@angular-eslint/template-parser` | `angular-eslint` 21.3.1 |
+| `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser` | `typescript-eslint` 8.57.2 |
+| `eslint` 9.20.1 | `eslint` 10.1.0, plus `@eslint/js` 10.0.1 and `globals` 15.15.0 |
+
+Then reinstall from a clean state:
+
+```shell
+rm -rf node_modules package-lock.json   # on Windows: rmdir /s /q node_modules & del package-lock.json
+npm install
+```
+
+> **Peer dependency warning.** `@progress/sitefinity-adminapp-sdk` currently declares Angular peer dependencies of `<=19.2.x`. With Angular 21 npm may stop with an `ERESOLVE` error when resolving from scratch. If it does, run `npm install --legacy-peer-deps` (or `npm install -f`). Installing from the lockfile of this repository (`npm ci`) is not affected.
+
+### 2. `tsconfig.json`
+
+```diff
+-      "moduleResolution": "node",
++      "moduleResolution": "bundler",
+       ...
+-      "lib": [
+-        "es2020",
+-        "dom"
+-      ],
+```
+
+Removing `lib` lets TypeScript use the defaults for the `ES2022` target (including the DOM). Keep your own `lib` entries if you rely on specific ones.
+
+### 3. `angular.json`
+
+Angular CLI 20+ generates files without the `.component`, `.service`, `.directive` and similar type suffixes by default. To keep the naming used by the samples (`foo.component.ts`, `foo.service.ts`, `foo.guard.ts`...), the repository adds a `schematics` section at the end of the file:
+
+```json
+"schematics": {
+  "@schematics/angular:component": { "type": "component" },
+  "@schematics/angular:directive": { "type": "directive" },
+  "@schematics/angular:service": { "type": "service" },
+  "@schematics/angular:guard": { "typeSeparator": "." },
+  "@schematics/angular:interceptor": { "typeSeparator": "." },
+  "@schematics/angular:module": { "typeSeparator": "." },
+  "@schematics/angular:pipe": { "typeSeparator": "." },
+  "@schematics/angular:resolver": { "typeSeparator": "." }
+}
+```
+
+This only affects files generated by `ng generate`; skip it if you don't care about the naming.
+
+The `build/` folder (custom webpack config and `import.plugin.ts`) works unchanged apart from a trivial typing tweak (`let delegatedModuleId;` instead of `= null`). If you copied the folder, take the latest version.
+
+### 4. ESLint (flat config)
+
+ESLint 10 only supports the flat config format. Delete `.eslintrc.json`, `.eslintignore` and `.eslintcache`, and add the `eslint.config.mjs` from this repository. Also add `.eslintcache` to `.gitignore`. `npm run lint` / `ng lint` work as before.
+
+### 5. Your extension code
+
+Angular 21 and TypeScript 5.9 are stricter than version 19 in a few areas. Walk through the official guide for each major version: <https://angular.dev/update-guide> (select 19 → 20, then 20 → 21), and fix whatever applies to your code. The items most relevant to extensions:
+
+- **Optional: control flow.** `*ngIf`, `*ngFor` and `*ngSwitch` still work, but the built-in `@if`, `@for` and `@switch` blocks are the recommended replacement. The only code change in the samples was this one (`print-preview.component.html`):
+
+    ```diff
+    -<h1 *ngIf="dataItem" [textContent]="dataItem.Title"></h1>
+    -<h1 *ngIf="!dataItem">Loading..</h1>
+    +@if (dataItem) {
+    +  <h1 [textContent]="dataItem.Title"></h1>
+    +}
+    +@if (!dataItem) {
+    +  <h1>Loading..</h1>
+    +}
+    ```
+
+    Angular provides a migration: `ng generate @angular/core:control-flow`.
+- **Removed / renamed Angular APIs.** If you use less common Angular APIs (for example `ComponentFactoryResolver`, `NgModuleFactory`, `InjectFlags`, `TestBed.get`, experimental zoneless/`afterRender` APIs), compile against the new version and follow the compiler errors and the update guide.
+- **Stricter TypeScript.** Typings are tighter in TypeScript 5.9; expect to fix some implicit-`any` or inference errors in custom code.
+- **Dependencies of your own.** Any additional npm package you use must be compatible with Angular 21 and the Node versions listed above.
+
+You do not need to change how you use the Admin App extensions API (`@progress/sitefinity-adminapp-sdk`): classes such as `ExtensionBase`, the command, field and grid extension points, and the DI tokens are used the same way as before.
+
+## Build, test and deploy
+
+```shell
+npm start          # development server on http://localhost:3000
+npm run build      # or npm run build:prod for a minified bundle
+```
+
+1. Run the development server and verify that your extensions load and work against your Sitefinity instance (see *Configure Sitefinity CMS for development of custom extensions* in the [README](README.md)).
+1. Build the bundle and take the generated `{{ bundle-name }}.extensions.bundle.js` from the `dist` folder.
+1. Replace the old bundle in the `adminapp` subfolder of the Sitefinity web application and restart the instance.
+
+## Troubleshooting
+
+| Symptom | Likely cause / fix |
+|---|---|
+| `npm install` fails with `ERESOLVE` | See the peer dependency note above; use `--legacy-peer-deps`. |
+| `The Angular CLI requires a minimum Node.js version...` or syntax errors from `eslint` | Upgrade Node to `^20.19`, `^22.12` or `>=24`. |
+| `ng lint` complains about `.eslintrc` | Remove the legacy ESLint files and use `eslint.config.mjs`. |
+| TypeScript errors about `moduleResolution` / unresolved packages | Make sure `tsconfig.json` uses `"moduleResolution": "bundler"` and `"module": "es2020"`. |
+| Extensions load in the dev server but not in Sitefinity | The bundle was built on Angular 19 or against a different SDK version. Rebuild from the tag matching your Sitefinity version. |
+
+## Version summary
+
+| | Before | After |
+|---|---|---|
+| Angular | 19.2.x | 21.2.x |
+| TypeScript | 5.5 | 5.9 |
+| Node.js | 16 LTS recommended | 20.19+ / 22.12+ / 24+ |
+| ESLint | 9, `.eslintrc.json` | 10, `eslint.config.mjs` (flat config) |
+| `@progress/sitefinity-adminapp-sdk` | 15.4.8639 and earlier | 15.4.8640 |

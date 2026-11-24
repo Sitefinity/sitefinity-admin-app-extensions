@@ -9,6 +9,7 @@
   * [Web service configuration](#web-service-configuration)
 * [Sitefinity compatibility](#sitefinity-compatibility)
   * [Breaking changes history](#breaking-changes-history)
+    * [Migrating editor extensions from Kendo UI for jQuery](#migrating-editor-extensions-from-kendo-ui-for-jquery)
 * [Development and extensibility](#development-and-extensibility)
   * [NgModules](#ngmodules)
   * [Dependency injection mechanism](#dependency-injection-mechanism)
@@ -126,6 +127,35 @@ However sometimes there are breaking changes in the underlying frameworks (Angul
 
 * With the release of Sitefinity CMS 13.3 due to the name change of one of our dependencies (from "sitefinity-adminapp-sdk" to "@progress/sitefinity-adminapp-sdk").
 
+* With the release of Sitefinity CMS `<next Sitefinity version>`, which removes Kendo UI for jQuery from the Admin App. The html field editor is now the Sitefinity rich text editor instead of the Kendo UI for jQuery Editor. The Admin App no longer loads jQuery or Kendo UI for jQuery, so extensions must not rely on the `jQuery`/`$` or `kendo` globals, `kendo.ui.editor.*` (`Tool`, `PopupTool`, `EditorUtils.registerTool`, …) or `kendoPopup`. Popup tools use the new `ToolBarItem.popup(container, { editor, close })`. Tools that are not supported are skipped with a warning. See [Migrating editor extensions from Kendo UI for jQuery](#migrating-editor-extensions-from-kendo-ui-for-jquery).
+
+#### Migrating editor extensions from Kendo UI for jQuery
+
+The following table lists what changed for extensions of the html field editor. The [custom content editor samples](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender#custom-content-editor) are ported to the new API, for example:
+
+* [Insert symbol](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/insert-symbol) - a `ToolBarItem.popup` that renders plain DOM buttons and inserts the symbol with `editor.exec("insertHtml", { html })`.
+* [Switch text direction](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/switch-text-direction) - `editorHost.whenReady()` and `groupToolbarButtons()`.
+* [Word count](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/word-count), [Sitefinity videos](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/sitefinity-videos) and [Spell check](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/spell-check) - `editorHost.getEditor()` inside `exec`.
+
+| Before (Kendo UI for jQuery Editor) | Now |
+| --- | --- |
+| `getToolBarItems(editorHost)` received a jQuery object of the editor element. | `editorHost` is an `EditorHost` with `element` (the element hosting the editor), `isPersonalized`, `getEditor()` and `whenReady(editor => ...)`. `getKendoEditor()`, `[0]` and `data()` are removed. |
+| `editorHost.getKendoEditor()` inside `getToolBarItems`. | The editor is created after the providers run. Use `editorHost.whenReady(editor => ...)`, call `editorHost.getEditor()` inside `exec` or use `context.editor` inside `popup`. |
+| `kendo.ui.editor.Tool` / `PopupTool`, `EditorUtils.registerTool`, `kendoPopup`, `jQuery(...)`. | `ToolBarItem.popup(container, context)`: render plain DOM into `container`, return an optional teardown function and call `context.close()` when done. The toolbar handles opening, positioning, Esc and focus return. |
+| `exec(e)` received the Kendo toolbar click event. | `exec` receives `{ name, sender, target, originalEvent, preventDefault }`, where `sender` is the editor. `exec` is optional when `popup` is set. |
+| `editor.element`, `editor.wrapper` and `editor.toolbar.element` were jQuery objects. | They are DOM elements (`HTMLElement`). Use the standard DOM API, for example `editor.element.parentElement` instead of `editor.element.parent()`. |
+| The editor exposed the whole Kendo UI Editor API. | The editor supports `value`, `exec`, `state`, `getRange`, `selectRange`, `paste`, `bind`/`unbind`/`trigger`, `undo`/`redo`, `refreshTools`, `body`, `element`, `wrapper` and `toolbar.element`. |
+| `editor.undoRedoStack` (`stack`, `currentCommandIndex`, `restorePoint`). | `editor.history`: `record(before, after)` with restore points from `editor.createRestorePoint()`, `undo()`, `redo()`, `canUndo()`, `canRedo()`, `clear()`, `truncate(fromIndex)` and `on("undo" \| "redo", listener)`, which returns an unsubscribe function. |
+| `editor.exec(name)` ran any Kendo command. | Supported commands: `bold`, `italic`, `underline`, `strikethrough`, `subscript`, `superscript`, `formatting`, `justifyLeft`/`Center`/`Right`/`Full`, `insertUnorderedList`, `insertOrderedList`, `indent`, `outdent`, `createLink`, `unlink`, `insertHtml`, `horizontalRule`, `cleanFormatting`, `insertParagraph`, `insertLineBreak`, `undo`, `redo` and the table commands (`createTable`, `tableWizard`, `tableProperties`, `tableCellProperties`, `addRowAbove`/`Below`, `addColumnLeft`/`Right`, `deleteRow`, `deleteColumn`, `deleteTable`). |
+| `configureEditor(config)` accepted any Kendo UI Editor option. | Honoured keys: `tools`, `serialization`, `deserialization`, `pasteCleanup`, `immutables` and the `keydown`, `keyup`, `paste`, `change`, `execute` and `select` events. Unknown tools are skipped with a warning. |
+| `groupToolbarButtons(toolbar, insertingSelector, destinationSelector, isAtTheEnd)` took Kendo CSS selectors and removed the Kendo border between buttons. | `groupToolbarButtons(editor.toolbar.element, insertingToolName, destinationToolName, isAtTheEnd)` takes tool names and moves the tool next to the other one in the same group. |
+| Custom tool icons were styled with `.k-editor-toolbar .k-i-<name>` rules. | Set `ToolBarItem.icon` to the CSS classes of an sf-font glyph (`sf-font-image`), a FontAwesome 4.7 glyph (`sf-fa sf-fa-font`) or a class that your extension styles. Tools without an icon show a settings icon. |
+| CSS on the Kendo editor markup (`.k-editor`, `.k-editor-inline`, `.k-editor-toolbar`, `.k-toolbar`, `.k-tool`, `.k-button-group`, …) and the `k-marker`, `k-br` and `k-table` classes in the content. | All Kendo classes are gone. The content uses `sf-rich-text-marker`, `sf-rich-text-br` and `sf-rich-text-table`, and immutable elements use the `data-sf-immutable-id` attribute. Scripts in the content are kept as `sf:script` while editing. |
+| The toolbar moved the tools that didn't fit into an overflow menu. | The toolbar wraps to more rows. |
+| A faulty provider broke the editor. | A provider that throws is skipped and logged. |
+
+Unchanged: `ToolBarItem { name, tooltip, ordinal, template, exec }`, `EDITOR_CONFIG_TOKEN`, `TOOLBARITEMS_TOKEN` (deprecated), `EditMenu*`, `EmbedMediaParser`, `window.sf.rteTools` (bound to the editor) and `window.sf.rteToolsIconsSetupCallback`.
+
 ## Development and extensibility
 
 With the Admin App Extensibility API, you can customize the Sitefinity CMS backend look and feel without a complex set of tooling, such as Visual Studio, IIS, or .NET framework. The Admin App and the Extensibility API are based on Angular and Typescript and the extensibility development is simple and intuitive, leveraging [Angular's dependency injection (DI) mechanism](https://angular.io/guide/dependency-injection) and the architecture for writing [NgModules](https://angular.io/guide/ngmodules). Working with the Extensibility API resembles the straightforward code workflow of writing an Angular application.
@@ -221,7 +251,7 @@ Take a look at the following overview of the Admin App extension samples we prov
 
 * [Custom grid](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/grid-extender#custom-grid) - You can add custom columns in the grid that show more information about the specific data item, for example related data or media, or any other kind of information, like data from external systems. You can also remove some of the existing columns.
 
-* [Custom content editor](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender#custom-content-editor) - When content editors edit their content in HTML mode, they can benefit from the Admin App Kendo UI editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add a custom video selector for Sitefinity CMS content.
+* [Custom content editor](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender#custom-content-editor) - When content editors edit their content in HTML mode, they can benefit from the Admin App rich text editor that provides them with relevant HTML-editing features. On top of the out-of-the-box contextual toolsets, you can add custom toolbar items, for example a video selector for Sitefinity CMS content or a popup for inserting symbols.
 
 * [Custom dialogs](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/sitefinity-videos) in the grid and in editing mode - When in edit mode or when browsing items in the grid, you can implement custom dialogs to be displayed to the user. You do this via the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html) and the [**OpenDialog**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html#opendialog) method. The [**videos toolbar item extension**](https://github.com/Sitefinity/sitefinity-admin-app-extensions-samples/tree/master/editor-extender/sitefinity-videos) provides an example how to implement custom dialogs by using the [**SelectorService**](http://admin-app-extensions-docs.sitefinity.site/interfaces/selectorservice.html).
 

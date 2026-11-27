@@ -13,6 +13,7 @@ import { LibraryExtenderModule } from "../samples/library-extender";
 
 declare const sitefinityExtensionsStore: SitefinityExtensionStore;
 
+// test
 sitefinityExtensionsStore.addExtensionModule(GridExtenderModule);
 sitefinityExtensionsStore.addExtensionModule(CustomFieldsModule);
 sitefinityExtensionsStore.addExtensionModule(CommandsExtenderModule);
